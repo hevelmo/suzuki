@@ -1,0 +1,871 @@
+#concessionaires {
+    height:555px;
+    min-height:555px;
+    overflow:hidden
+}
+#concessionaires .concessionaire-column {
+    float:left;
+    overflow:hidden;
+    width:340px
+}
+#concessionaires .concessionaire-column .content {
+    height:100%;
+    width:340px
+}
+#concessionaires #concessionaires-map {
+    height:100%
+}
+#concessionaires #concessionaires-map .content {
+    width:100%
+}
+#concessionaires #concessionaires-map .content #map_canvas {
+    height:100%;
+    width:100%
+}
+#concessionaires #concessionaires-data {
+    box-shadow:inset 2px 0 6px rgba(0, 0, 0, 0.3), 2px 0 6px rgba(0, 0, 0, 0.3);
+    color:#3f3f3f;
+    display:none;
+    position:relative;
+    width:330px;
+    z-index:1
+}
+#concessionaires #concessionaires-data .concessionaire-close-box {
+    padding:5px 0 5px 295px
+}
+#concessionaires #concessionaires-data .concessionaire-close-box a {
+    display:block;
+    background:url("../../img/sections/concessionaires/close-button.png") right no-repeat;
+    height:30px;
+    width:30px
+}
+#concessionaires #concessionaires-data .concessionaire-close-box a span {
+    display:none
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper {
+    margin:0 auto;
+    width:260px
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .title {
+    border-bottom:1px solid #dfdfdf;
+    padding:10px 0
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .title h1 {
+    font-size:16px;
+    font-weight:900;
+    height:20px;
+    line-height:20px;
+    margin:0;
+    padding:0
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .wrapper-test-drive .view-more {
+    display:none
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data {
+    background:url("../../img/sections/concessionaires/concessionaire-data-address.png") left top no-repeat;
+    padding:0 0 15px 30px;
+    font-size:13px;
+    line-height:14px;
+    margin-top:20px
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data address, #concessionaires #concessionaires-data .concessionaire-data-wrapper .data p, #concessionaires #concessionaires-data .concessionaire-data-wrapper .data a {
+    color:#3f3f3f;
+    font-style:normal;
+    line-height:16px;
+    margin:0
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data .section-name {
+    font-weight:900;
+    line-height:16px;
+    margin-bottom:5px
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data.phone {
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-phone.png")
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data.website {
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-website.png")
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data.test-drive {
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-test-drive.png")
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data.test-drive a {
+    border-bottom:1px solid #d73034;
+    color:#d73034;
+    display:block;
+    padding:2px 0 7px
+}
+#concessionaires #concessionaires-data .concessionaire-data-wrapper .data.test-drive a:hover {
+    text-decoration:none
+}
+#concessionaires #concessionaires-list .content .concessionaire-search {
+    height:196px
+}
+#concessionaires #concessionaires-list .content .concessionaire-grupo {
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ccc;
+    padding:20px 20px 20px 20px;
+    height:510px;
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .search-box-space {
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ccc;
+    height:100px;
+    padding:30px 0 30px 35px
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .search-box-space h3 {
+    background:url("../../img/sections/concessionaires/concessionaires-icon-marker.png") left top no-repeat;
+    height:36px;
+    line-height:36px;
+    padding:0 0 0 45px;
+    margin:0
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .search-box-space p {
+    margin:0;
+    padding-bottom:4px
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .search-box-space p.view-more {
+    display:none
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .search-box-space #concessionaire-select {
+    width:250px
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .tabs-space {
+    height:35px;
+    line-height:35px
+}
+#concessionaires #concessionaires-list .content .concessionaire-search .tabs-space span {
+    display:block;
+    padding-left:20px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list {
+    /*height:95px;*/
+    overflow-x:hidden;
+    overflow-y:scroll
+}
+#concessionaires #concessionaires-list .content .concessionaire-list ul, #concessionaires #concessionaires-list .content .concessionaire-list li {
+    display:block;
+    margin:0;
+    padding:0
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.separator {
+    background-color:#E1E1E1;
+    color:#333;
+    line-height:20px;
+    height:20px;
+    font-size:13px;
+    font-weight:700;
+    padding:0 20px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire {
+    clear:both;
+    cursor:pointer;
+    border-bottom:1px solid #E1E1E1;
+    height:80px;
+    margin:0;
+    padding:18px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire i {
+    display:none
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .image {
+    float:left;
+    padding:5px 0 0;
+    width:104px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .image img {
+    border:3px solid #ededed;
+    height:auto;
+    width:100%
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address {
+    float:right;
+    width:165px;
+    font-size:11px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address a {
+    color:#333
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address a:hover {
+    color:#333;
+    text-decoration:none
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address h3 {
+    font-size:11px;
+    font-weight:900;
+    margin:0 0 2px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address address {
+    font-style:normal;
+    line-height:14px
+}
+#concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire.active {
+    background:url("../../img/sections/concessionaires/hover-arror.png") 305px center no-repeat #c7effe
+}
+.map-concessionaire-name {
+    margin:0 0 0 53px;
+    width:250px
+}
+.map-concessionaire-name span {
+    background:url("../../img/sections/concessionaires/marker-active-text-bg.png") right top no-repeat;
+    color:#fff;
+    display:inline-table;
+    font-size:14px;
+    font-weight:700;
+    height:40px;
+    line-height:40px;
+    padding:13px 20px 6px 0
+}
+#see-all, #shadow-map, #back-list-concessionaires {
+    display:none
+}
+@media only screen and (max-device-width: 767px) {
+    #concessionaires {
+        min-height:0;
+        height:auto !important
+    }
+    .concessionaire-column {
+        width:100% !important;
+        box-shadow:0 0 0 rgba(0, 0, 0, 0);
+        overflow:visible
+    }
+    #concessionaires .concessionaire-column .content {
+        width:100%
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search {
+        height:auto
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search .search-box-space {
+        background-color:#fff;
+        border-bottom:0;
+        height:auto;
+        padding:15px;
+        text-align:center
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search .search-box-space h3 {
+        background:none;
+        font-size:20px;
+        line-height:100%;
+        font-weight:200;
+        margin:20px 0;
+        height:auto;
+        padding:0;
+        text-transform:uppercase
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search .search-box-space p {
+        display:none
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search .search-box-space .concessionaire-select-wrapper {
+        text-align:left
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search .search-box-space .concessionaire-select-wrapper .chzn-container {
+        width:250px !important;
+        margin:0 auto;
+        display:block
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-search .tabs-space {
+        display:none
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list {
+        display:none;
+        height:auto !important;
+        overflow:visible !important
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.separator {
+        display:none
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire {
+        height:auto;
+        padding:15px 40px 15px 15px;
+        overflow:hidden;
+        position:relative
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire i {
+        display:block;
+        position:absolute;
+        top:40%;
+        right:15px;
+        font-family:'Entypo';
+        font-style:normal;
+        color:#cbcbcb;
+        font-size:28px;
+        line-height:100%;
+        cursor:pointer
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .image, #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .clearfix {
+        display:none
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address {
+        width:100%;
+        float:left;
+        font-size:12px;
+        line-height:16px;
+        color:#656565
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address h3 {
+        color:#003145;
+        font-size:14px;
+        font-weight:bold
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire .address h3 a {
+        color:inherit
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire.active {
+        background:#9fccff
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire.active .address {
+        color:#333
+    }
+    .list {
+        min-height:193px;
+        padding-top:130px
+    }
+    #concessionaire_select_chzn {
+        position:absolute;
+        left:50%;
+        margin-left:-125px !important
+    }
+    #see-all {
+        display:inline-block;
+        margin-top:50px;
+        color:#0051ad;
+        text-decoration:underline
+    }
+    .map {
+        position:absolute;
+        left:0;
+        top:50px;
+        width:100% !important;
+        height:130px !important;
+        z-index:2
+    }
+    #shadow-map {
+        display:block;
+        position:absolute;
+        bottom:-1px;
+        left:0;
+        width:100%;
+        height:1px;
+        box-shadow:0 0px 5px #999;
+        -webkit-box-shadow:0 0px 5px #999;
+        -moz-box-shadow:0 0px 5px #999
+    }
+    #concessionaires #concessionaires-data {
+        height:0;
+        padding-top:0;
+        box-shadow:inset 0px 0 0px rgba(0, 0, 0, 0), 0px 0 0px rgba(0, 0, 0, 0);
+        z-index:1
+    }
+    #concessionaires #concessionaires-data .content {
+        height:auto !important;
+        background:#fff;
+        width:auto !important;
+        padding:0 15px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-close-box {
+        display:none
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper {
+        width:100%;
+        position:relative;
+        padding-top:10px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .data {
+        background:none;
+        padding:0
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .data address {
+        line-height:18px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .phone, #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .website {
+        margin-top:10px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .phone a, #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .website a {
+        text-decoration:underline;
+        color:#0051ad
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .address {
+        margin-top:5px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .title {
+        border-bottom:0
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .title h1 {
+        text-transform:capitalize;
+        font-size:14px;
+        font-weight:bold;
+        line-height:14px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .test-drive a {
+        color:#fff;
+        border-bottom:0;
+        background:#d72f33;
+        text-align:center;
+        padding:15px 0;
+        margin-bottom:20px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .section-name {
+        display:none
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .wrapper-title {
+        padding-left:90px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .wrapper-data {
+        padding-left:90px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .wrapper-image {
+        position:absolute;
+        width:69px;
+        height:69px;
+        top:30px
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .wrapper-image .big-image, #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .wrapper-image img {
+        width:100%;
+        height:100%
+    }
+    #concessionaires #concessionaires-data .content .concessionaire-data-wrapper .wrapper-test-drive {
+        text-align:center
+    }
+    #back-list-concessionaires {
+        display:inline-block;
+        margin:0 0 15px;
+        color:#0051ad;
+        text-decoration:underline
+    }
+}
+
+
+/* Version Mobil */
+#concessionaires-normal {
+    height:555px;
+    min-height:555px;
+    overflow:hidden
+}
+#concessionaires-normal .concessionaire-column {
+    float:left;
+    overflow:hidden;
+    width:340px
+}
+#concessionaires-normal .concessionaire-column .content {
+    height:100%;
+    width:340px
+}
+#concessionaires-normal #concessionaires-map-normal {
+    height:100%
+}
+#concessionaires-normal #concessionaires-map-normal .content {
+    width:100%
+}
+#concessionaires-normal #concessionaires-map-normal .content #map_canvas_normal {
+    height:100%;
+    width:100%
+}
+#concessionaires-normal #concessionaires-data {
+    box-shadow:inset 2px 0 6px rgba(0, 0, 0, 0.3), 2px 0 6px rgba(0, 0, 0, 0.3);
+    color:#3f3f3f;
+    display:none;
+    position:relative;
+    width:330px;
+    z-index:1
+}
+#concessionaires-normal #concessionaires-data .concessionaire-close-box {
+    padding:5px 0 5px 295px
+}
+#concessionaires-normal #concessionaires-data .concessionaire-close-box a {
+    display:block;
+    background:url("../../img/sections/concessionaires/close-button.png") right no-repeat;
+    height:30px;
+    width:30px
+}
+#concessionaires-normal #concessionaires-data .concessionaire-close-box a span {
+    display:none
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper {
+    margin:0 auto;
+    width:260px
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .title {
+    border-bottom:1px solid #dfdfdf;
+    padding:10px 0
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .title h1 {
+    font-size:16px;
+    font-weight:900;
+    height:20px;
+    line-height:20px;
+    margin:0;
+    padding:0
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .wrapper-test-drive .view-more {
+    display:none
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data {
+    background:url("../../img/sections/concessionaires/concessionaire-data-address.png") left top no-repeat;
+    padding:0 0 15px 30px;
+    font-size:13px;
+    line-height:14px;
+    margin-top:20px
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data address, #concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data p, #concessionaires #concessionaires-data .concessionaire-data-wrapper .data a {
+    color:#3f3f3f;
+    font-style:normal;
+    line-height:16px;
+    margin:0
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data .section-name {
+    font-weight:900;
+    line-height:16px;
+    margin-bottom:5px
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.phone {
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-phone.png")
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.website {
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-website.png")
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.test-drive {
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-test-drive.png")
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.test-drive a {
+    border-bottom:1px solid #d73034;
+    color:#d73034;
+    display:block;
+    padding:2px 0 7px
+}
+#concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.test-drive a:hover {
+    text-decoration:none
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search {
+    height:196px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-grupo {
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ccc;
+    padding:20px 20px 20px 20px;
+    height:510px;
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space {
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ccc;
+    height:100px;
+    padding:30px 0 30px 35px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space h3 {
+    background:url("../../img/sections/concessionaires/concessionaires-icon-marker.png") left top no-repeat;
+    height:36px;
+    line-height:36px;
+    padding:0 0 0 45px;
+    margin:0
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space p {
+    margin:0;
+    padding-bottom:4px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space p.view-more {
+    display:none
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space #concessionaire-select {
+    width:250px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .tabs-space {
+    height:35px;
+    line-height:35px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-search .tabs-space span {
+    display:block;
+    padding-left:20px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list {
+    height:95px;
+    overflow-x:hidden;
+    overflow-y:scroll
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list ul, #concessionaires-normal #concessionaires-list .content .concessionaire-list li {
+    display:block;
+    margin:0;
+    padding:0
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.separator {
+    background-color:#E1E1E1;
+    color:#333;
+    line-height:20px;
+    height:20px;
+    font-size:13px;
+    font-weight:700;
+    padding:0 20px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire {
+    clear:both;
+    cursor:pointer;
+    border-bottom:1px solid #E1E1E1;
+    height:80px;
+    margin:0;
+    padding:18px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire i {
+    display:none
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .image {
+    float:left;
+    padding:5px 0 0;
+    width:104px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .image img {
+    border:3px solid #ededed;
+    height:auto;
+    width:100%
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address {
+    float:right;
+    width:165px;
+    font-size:11px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address a {
+    color:#333
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address a:hover {
+    color:#333;
+    text-decoration:none
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address h3 {
+    font-size:11px;
+    font-weight:900;
+    margin:0 0 2px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address address {
+    font-style:normal;
+    line-height:14px
+}
+#concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire.active {
+    background:url("../../img/sections/concessionaires/hover-arror.png") 305px center no-repeat #c7effe
+}
+.map-concessionaire-name {
+    margin:0 0 0 53px;
+    width:250px
+}
+.map-concessionaire-name span {
+    background:url("../../img/sections/concessionaires/marker-active-text-bg.png") right top no-repeat;
+    color:#fff;
+    display:inline-table;
+    font-size:14px;
+    font-weight:700;
+    height:40px;
+    line-height:40px;
+    padding:13px 20px 6px 0
+}
+#see-all, #shadow-map-normal, #back-list-concessionaires {
+    display:none
+}
+@media only screen and (max-device-width: 767px) {
+    #concessionaires-normal {
+        min-height:0;
+        height:auto !important
+    }
+    .concessionaire-column {
+        width:100% !important;
+        box-shadow:0 0 0 rgba(0, 0, 0, 0);
+        overflow:visible
+    }
+    #concessionaires-normal .concessionaire-column .content {
+        width:100%
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search {
+        height:auto
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space {
+        background-color:#fff;
+        border-bottom:0;
+        height:auto;
+        padding:15px;
+        text-align:center
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space h3 {
+        background:none;
+        font-size:20px;
+        line-height:100%;
+        font-weight:200;
+        margin:20px 0;
+        height:auto;
+        padding:0;
+        text-transform:uppercase
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space p {
+        display:block;
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space .concessionaire-select-wrapper {
+        text-align:left
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space .concessionaire-select-wrapper .chzn-container {
+        width:250px !important;
+        margin:0 auto;
+        display:block
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-search .tabs-space {
+        display:block;
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list {
+        display:block;
+        height:auto !important;
+        overflow:visible !important
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.separator {
+        display:block;
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire {
+        height:auto;
+        padding:15px 40px 15px 15px;
+        overflow:hidden;
+        position:relative
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire i {
+        display:block;
+        position:absolute;
+        top:40%;
+        right:15px;
+        font-family:'Entypo';
+        font-style:normal;
+        color:#cbcbcb;
+        font-size:28px;
+        line-height:100%;
+        cursor:pointer
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .image, #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .clearfix {
+        display:block;
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address {
+        width:100%;
+        float:left;
+        font-size:12px;
+        line-height:16px;
+        color:#656565
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address h3 {
+        color:#003145;
+        font-size:14px;
+        font-weight:bold
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire .address h3 a {
+        color:inherit
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire.active {
+        background:#9fccff
+    }
+    #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire.active .address {
+        color:#333
+    }
+    .list-normal {
+        min-height:193px;
+        padding-top:130px
+    }
+    #concessionaire_select_chzn {
+        position:absolute;
+        left:50%;
+        margin-left:-125px !important
+    }
+    #see-all {
+        display:inline-block;
+        margin-top:50px;
+        color:#0051ad;
+        text-decoration:underline
+    }
+    .map-normal {
+        position:absolute;
+        left:0;
+        top:50px;
+        width:100% !important;
+        height:130px !important;
+        z-index:2
+    }
+    #shadow-map-normal {
+        display:block;
+        position:absolute;
+        bottom:-1px;
+        left:0;
+        width:100%;
+        height:1px;
+        box-shadow:0 0px 5px #999;
+        -webkit-box-shadow:0 0px 5px #999;
+        -moz-box-shadow:0 0px 5px #999
+    }
+    #concessionaires-normal #concessionaires-data {
+        height:0;
+        padding-top:0;
+        box-shadow:inset 0px 0 0px rgba(0, 0, 0, 0), 0px 0 0px rgba(0, 0, 0, 0);
+        z-index:1
+    }
+    #concessionaires-normal #concessionaires-data .content {
+        height:auto !important;
+        background:#fff;
+        width:auto !important;
+        padding:0 15px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-close-box {
+        display:block;
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper {
+        width:100%;
+        position:relative;
+        padding-top:10px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .data {
+        background:none;
+        padding:0
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .data address {
+        line-height:18px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .phone, #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .website {
+        margin-top:10px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .phone a, #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .website a {
+        text-decoration:underline;
+        color:#0051ad
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .address {
+        margin-top:5px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .title {
+        border-bottom:0
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .title h1 {
+        text-transform:capitalize;
+        font-size:14px;
+        font-weight:bold;
+        line-height:14px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .test-drive a {
+        color:#fff;
+        border-bottom:0;
+        background:#d72f33;
+        text-align:center;
+        padding:15px 0;
+        margin-bottom:20px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .section-name {
+        display:none
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .wrapper-title {
+        padding-left:90px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .wrapper-data {
+        padding-left:90px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .wrapper-image {
+        position:absolute;
+        width:69px;
+        height:69px;
+        top:30px
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .wrapper-image .big-image, #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .wrapper-image img {
+        width:100%;
+        height:100%
+    }
+    #concessionaires-normal #concessionaires-data .content .concessionaire-data-wrapper .wrapper-test-drive {
+        text-align:center
+    }
+    #back-list-concessionaires {
+        display:inline-block;
+        margin:0 0 15px;
+        color:#0051ad;
+        text-decoration:underline
+    }
+}

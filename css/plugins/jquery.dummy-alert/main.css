@@ -1,0 +1,105 @@
+/*
+ * Basic CSS.
+ * */
+#dummy-alert.hide {
+  opacity: 0;
+}
+#dummy-alert.show:hover {
+  opacity: 1;
+}
+#dummy-alert.show {
+  opacity: 1;
+  left: 20px;
+}
+#dummy-alert {
+  width: 178px;
+  height: auto;
+  position: fixed;
+  bottom: 20px;
+  left: -400px;
+  z-index: 8008;
+  border: 1px solid #3f3f3f;
+  padding: 10px 60px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: rgba(42,42,42,.9);
+  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  -webkit-transition: all 0.4s ease-out;
+     -moz-transition: all 0.4s ease-out;
+      -ms-transition: all 0.4s ease-out;
+       -o-transition: all 0.4s ease-out;
+          transition: all 0.4s ease-out;
+}
+
+#dummy-alert a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 8008;
+}
+
+#dummy-alert a:hover {
+  text-decoration: none;
+}
+
+#dummy-alert div {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 38px;
+  height: 38px;
+  margin-top: -19px;
+  z-index: 8007;
+}
+
+#dummy-alert p {
+  margin: 0;
+  color: #fff;
+  line-height: 18px;
+}
+
+#dummy-alert i {
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  right: 15px;
+  width: 16px;
+  height: 18px;
+  background: url("../../../img/plugins/dummy-alert/x.png");
+  z-index: 8009;
+}
+
+#dummy-alert:hover {
+  text-decoration: none;
+}
+
+#dummy-alert i:hover {
+  cursor: pointer;
+}
+
+/*
+ * Fake CSS for demoing.
+ * */
+#dummy-alert.alert-instantdrive div {
+  background: url("../../../img/plugins/dummy-alert/i.png") center center no-repeat;
+}
+#dummy-alert.alert-suzuki div {
+  background: url("../../../img/plugins/dummy-alert/s.png") center center no-repeat;
+}
+#dummy-alert.alert-funny {
+
+}
+
+/******************** RESPONSIVE *********************/
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-device-width: 767px) {
+  #dummy-alert {
+    display: none !important;
+  }
+}

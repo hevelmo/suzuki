@@ -1,0 +1,26 @@
+@font-face {
+    font-family:'Entypo';
+    src:url("entypo/entypo.eot");
+    src:url("entypo/entypo.eot?#iefix") format("embedded-opentype"),
+         url("entypo/entypo.woff") format("woff"),
+         url("entypo/entypo.ttf") format("truetype"),
+         url("entypo/entypo.svg#Entypo") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family:'Entypo Social';
+    src:url("entypo-social/entypo-social.eot");
+    src:url("entypo-social/entypo-social.eot?#iefix") format("embedded-opentype"),
+        url("entypo-social/entypo-social.woff") format("woff"),
+        url("entypo-social/entypo-social.ttf") format("truetype"),
+        url("entypo-social/entypo-social.svg#EntypoSocial") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+.icon_entypo {
+    font-family:entypo;
+}
+span.entypo {
+    font-family:'Entypo';
+}

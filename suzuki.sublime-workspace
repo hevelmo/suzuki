@@ -1,0 +1,1950 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ta",
+				"ta:r	text-align:right"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"slee",
+				"time_sleep_until"
+			],
+			[
+				"header",
+				"header"
+			],
+			[
+				"include",
+				"Include"
+			],
+			[
+				"rs_a_las",
+				"rs_a_lastname_mather"
+			],
+			[
+				"rs_a_f",
+				"rs_a_folder_user"
+			],
+			[
+				"rs_",
+				"rs_a_name"
+			],
+			[
+				"rs_a_p",
+				"rs_a_password"
+			],
+			[
+				"rs_a",
+				"rs_a_email"
+			],
+			[
+				"rs_a_la",
+				"rs_a_lastname_father"
+			],
+			[
+				"rs_a_t",
+				"rs_a_type_user"
+			],
+			[
+				"rs_a_l",
+				"rs_a_level_user"
+			],
+			[
+				"rs",
+				"rs_a_password"
+			],
+			[
+				"rs_l",
+				"rs_a_lastname_mather"
+			],
+			[
+				"set",
+				"setTimeout(function, milliseconds);"
+			],
+			[
+				"removeC",
+				"removeClass"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"ti",
+				"ti	text-indent"
+			],
+			[
+				"ww",
+				"wow:b	word-wrap:break-word"
+			],
+			[
+				"input",
+				"input	input - radio"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"media",
+				"media landscape	landscape"
+			],
+			[
+				"md",
+				"md3x"
+			],
+			[
+				"A",
+				"Aquamarine"
+			],
+			[
+				"v",
+				"val-rad"
+			],
+			[
+				"c",
+				"capitalize"
+			],
+			[
+				"tt",
+				"tt:l	text-transform:lowercase"
+			],
+			[
+				"td",
+				"td:n	text-decoration:none"
+			],
+			[
+				"html",
+				"html5	Simple HTML5 Boilerplate"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"se",
+				"select"
+			],
+			[
+				"inline",
+				"inline-table"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"fl-",
+				"fl-l	float: left;"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"bg",
+				"bg	background: #${1:000};"
+			],
+			[
+				"del",
+				"del_resp"
+			],
+			[
+				"del_",
+				"del_query"
+			],
+			[
+				"apell",
+				"apellido_materno"
+			],
+			[
+				"fn",
+				"fn_filtro"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"bgs",
+				"bgsz-a	background-size: auto;"
+			],
+			[
+				"ap",
+				"ap_maternoT"
+			],
+			[
+				"no",
+				"nombreT"
+			],
+			[
+				"usu",
+				"usuT"
+			],
+			[
+				"tu",
+				"tusT"
+			],
+			[
+				"ema",
+				"emaT"
+			],
+			[
+				"nom",
+				"nomT"
+			],
+			[
+				"bord",
+				"border-bottom"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"mysql_fe",
+				"mysql_fetch_array"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"mysql_nu",
+				"mysql_num_rows"
+			],
+			[
+				"bus",
+				"buscador"
+			],
+			[
+				"mysql_se",
+				"mysql_select_db"
+			],
+			[
+				"c_",
+				"c_servidor"
+			],
+			[
+				"i_",
+				"i_servidor"
+			],
+			[
+				"my",
+				"mysqli_connect"
+			],
+			[
+				"Re",
+				"RegistrosAMostrar"
+			],
+			[
+				"r",
+				"ready"
+			],
+			[
+				"sele",
+				"selectdb"
+			],
+			[
+				"mysql_f",
+				"mysql_affected_rows"
+			],
+			[
+				"id_",
+				"id_usuario"
+			],
+			[
+				"id",
+				"id_usuario"
+			],
+			[
+				"btn",
+				"btn-close"
+			],
+			[
+				"arrow",
+				"arrow-preview"
+			],
+			[
+				"ma",
+				"mar	margin"
+			],
+			[
+				"thum",
+				"thumb_li"
+			],
+			[
+				"thu",
+				"thumb_ul"
+			],
+			[
+				"na",
+				"nameNewFile"
+			],
+			[
+				"th",
+				"thumbsName"
+			],
+			[
+				"thm",
+				"thumbanil"
+			],
+			[
+				"ext",
+				"extenciones"
+			],
+			[
+				"at",
+				"altName"
+			],
+			[
+				"ex",
+				"extenAlt"
+			],
+			[
+				"base",
+				"basename"
+			],
+			[
+				"nam",
+				"nameFile"
+			],
+			[
+				"name",
+				"nameNewFile"
+			],
+			[
+				"file",
+				"fileInput0"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"cerr",
+				"cerrar-0"
+			],
+			[
+				"File",
+				"FileReader"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"fi",
+				"fileType"
+			],
+			[
+				"fil",
+				"fileInput0"
+			],
+			[
+				"mysql_fetch_",
+				"mysql_fetch_assoc"
+			],
+			[
+				"_",
+				"_GET"
+			],
+			[
+				"date",
+				"date_interval_format"
+			],
+			[
+				"time",
+				"time"
+			],
+			[
+				"id_i",
+				"id_imagen"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"ico",
+				"ico-upload"
+			],
+			[
+				"box",
+				"box_btn_upload"
+			],
+			[
+				"ape",
+				"apellido_paterno"
+			],
+			[
+				"w",
+				"wow	word-wrap"
+			],
+			[
+				"form",
+				"formatos"
+			],
+			[
+				"ch",
+				"chart"
+			],
+			[
+				"lo",
+				"longChart"
+			],
+			[
+				"da",
+				"dateImg"
+			],
+			[
+				"nombre",
+				"nombre_imagen"
+			],
+			[
+				"mysq",
+				"mysql_query"
+			],
+			[
+				"myf",
+				"mysql_fetch_array"
+			],
+			[
+				"mys",
+				"mysql_query"
+			],
+			[
+				"mysql",
+				"mysql_connect"
+			],
+			[
+				"bdr",
+				"bdrz:m	-moz-border-radius"
+			],
+			[
+				"br",
+				"bdrz	border-radius"
+			],
+			[
+				"bdrs",
+				"bdrs	border-radius"
+			],
+			[
+				"re",
+				"respuesta2"
+			],
+			[
+				"ct",
+				"ctFin"
+			],
+			[
+				"le",
+				"letsCut"
+			],
+			[
+				"ci",
+				"circle4"
+			],
+			[
+				"can",
+				"canvasFinal"
+			],
+			[
+				"get",
+				"getContext"
+			],
+			[
+				"ca",
+				"canvasFinal"
+			],
+			[
+				"img",
+				"imgH"
+			],
+			[
+				"im",
+				"imgH"
+			],
+			[
+				"circ",
+				"circle4"
+			],
+			[
+				"str",
+				"strokeWidth"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "css/import.home.css",
+			"settings":
+			{
+				"buffer_size": 670,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 67335,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/main/slider.home.js",
+			"settings":
+			{
+				"buffer_size": 2690,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/main/slider.models.js",
+			"settings":
+			{
+				"buffer_size": 2692,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/suzuki/main.css",
+			"settings":
+			{
+				"buffer_size": 123204,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/home.css",
+			"settings":
+			{
+				"buffer_size": 20474,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/models-home.css",
+			"settings":
+			{
+				"buffer_size": 24636,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/models.css",
+			"settings":
+			{
+				"buffer_size": 55524,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/test_drive_service.css",
+			"settings":
+			{
+				"buffer_size": 12083,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/warranty.css",
+			"settings":
+			{
+				"buffer_size": 6750,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/10reasons.css",
+			"settings":
+			{
+				"buffer_size": 14526,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/concessionaires.css",
+			"settings":
+			{
+				"buffer_size": 29920,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/sections/contact.css",
+			"settings":
+			{
+				"buffer_size": 10732,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/plugins/jquery.fancybox/jquery.fancybox.css",
+			"settings":
+			{
+				"buffer_size": 6353,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/plugins/jquery.fancybox/jquery.fancybox-buttons.css",
+			"settings":
+			{
+				"buffer_size": 2453,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/plugins/jquery.dummy-alert/main.css",
+			"settings":
+			{
+				"buffer_size": 1959,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ciaz.html",
+			"settings":
+			{
+				"buffer_size": 127763,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "concesionarias.html",
+			"settings":
+			{
+				"buffer_size": 74358,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/MAMP/htdocs/medigraf/suzukigdl/kizashi.html",
+			"settings":
+			{
+				"buffer_size": 158482,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/import-models.css",
+			"settings":
+			{
+				"buffer_size": 634,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/import.concesionarias.css",
+			"settings":
+			{
+				"buffer_size": 674,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/import.models.css",
+			"settings":
+			{
+				"buffer_size": 633,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/MAMP/htdocs/medigraf/suzukigdl/index.html",
+			"settings":
+			{
+				"buffer_size": 40692,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!--<script type=\"text/javascript\">var IS_MOBILE = parseInt( 0 );</script>-->\n        <script type=\"text/javascript\">var IS_MOBILE = parseInt( 0 );</script>\n        <script src=\"http://maps.google.com/maps/api/js?libraries=places,geometry&amp;sensor=true&amp;_nc=20140313A\"></script>\n        <!--<script src=\"scripts/libs/jquery-1.10.2.js?_nc=20140313A\"></script>-->\n        <script src=\"scripts/libs/jquery-1.10.2.min.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/jquery-ui-1.10.3.custom.min.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/jquery-ui-1.10.3.custom.extends.min.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/jquery.ui.touch-punch.min.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/modernizr-2.6.2.min.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/mustache.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/instafeed.min.js?_nc=20140313A\"></script>\n        <script src=\"plugins/amplify-1.1.0/amplify.min.js?_nc=20140313A\"></script>\n        <script src=\"scripts/plugins/jquery.easing.1.3.js?_nc=20140313A\"></script>\n        <script src=\"scripts/plugins/jquery.fancybox/jquery.fancybox.pack.js?_nc=20140313A\"></script>\n        <script src=\"scripts/plugins/jquery.chosen/chosen.jquery.js?_nc=20140313A\"></script>\n        <script src=\"plugins/resizeevent/jquery.resize.js?_nc=20140313A\"></script>\n        <!--<script src=\"scripts/plugins/jquery.dummy-alert/jquery.dummy-alert.js?_nc=20140313A\"></script>-->\n        <script src=\"plugins/placeholder/jquery.placeholder.js?_nc=20140313A\"></script>\n        <script src=\"plugins/browserdetect/broswedetect.js?_nc=20140313A\"></script>\n        <script src=\"scripts/suzuki/jquery.concessionaire_selector.js?_nc=20140313A\"></script>\n        <script src=\"scripts/suzuki/ui.js?_nc=20140313A\"></script>\n        <script src=\"scripts/libs/plugins.js?_nc=20140313A\"></script>\n        <script src=\"scripts/suzuki/templates.js?_nc=20140313A\"></script>\n        <script src=\"scripts/suzuki/suzuki.js?_nc=20140313A\"></script>\n        <script src=\"instantdrive/scripts/utils.js?_nc=20140313A\"></script>\n        <!--<script src=\"scripts/plugins/jquery.dummy-alert/jquery.dummy-alert.phrases.js?_nc=20140313A\"></script>-->\n        <script src=\"scripts/sections/home/home.js?_nc=20140313A\"></script>\n        <script src=\"scripts/plugins/jquery.fancybox/jquery.fancybox-thumbs.js?_nc=20140313A\"></script>\n        <!--<script src=\"scripts/sections/models/models.js?_nc=20140313A\"></script>-->\n        <script>\n            //Specifications Slider controls and functionality\n            var specifications_i = 0;\n            var specifications_total =  $('.specifications-wrapper .specification').length - 1;\n            $('a.specifications-controls').on('click', function( e ){\n                e.preventDefault();\n                var direction, fake_div, copy_div;\n                $('.specifications-wrapper .fake_div').remove();\n                if( $(this).attr('href') == '#left' ){\n                    if( specifications_i > 0 ){\n                        specifications_i--;\n                    }else{\n                        specifications_i = specifications_total ;\n                        fake_div = true;\n                        copy_div = $('#features-wrapper .specification').eq( 0).clone();\n                        copy_div.addClass('fake_div');\n                        $('#features-wrapper').append( copy_div ).css({marginLeft: ( ( specifications_i + 1 ) * -100 )+'%' }).stop().animate({marginLeft: ( specifications_i * -100) + '%' });\n                    }\n                }else{\n                    if( specifications_i < specifications_total ){\n                        specifications_i++;\n                    }else{\n                        fake_div = true;\n                        specifications_i = 0;\n                        copy_div = $('#features-wrapper .specification').eq( specifications_i -1  ).clone();\n                        $('#features-wrapper').prepend( copy_div ).css({marginLeft: '100%' }).stop();\n                        copy_div.addClass('fake_div').css({marginLeft:\"-99%\", position:\"absolute\", width: \"100%\"}).stop().animate({marginLeft:'-100%'} );\n                        $('#features-wrapper').animate({marginLeft: '0'});\n                    }\n                }\n                if( !fake_div ){\n                    $('.specifications-wrapper .specifications').stop().animate({marginLeft: ( specifications_i * -100) + '%' });\n                }\n            });\n            $(\"#versions-price-table\").find(\".pdf-download:gt(2)\").css(\"visibility\", \"hidden\");\n            var $display_tables = $('.display-tables'), display_vct_class = 'prices';\n            function display_versions_comparative(){\n                var $div;\n                $display_tables.each(function(){\n                    $div = $(this);\n                    if( display_vct_class == $div.data('display-table') ){\n                        $div.fadeOut().fadeIn(1000);\n                        modifyHeight(\"#comparative-space-wrapper .suzuki-table .body .row\");\n                    }else{\n                        $div.hide();\n                    }\n                });\n            }\n            $('a.swap-display-tables').on('click', function( e ){\n                e.preventDefault();\n                display_vct_class = $(this).data('display-table');\n                $.scroll_to('precios');\n                var timeout = setTimeout(function(){\n                    display_versions_comparative();\n                }, 900 );\n            });\n            display_versions_comparative();\n\n            modifyHeight(\"#features-space-wrapper .suzuki-table .body .row\");\n            //\n            $(function() {\n                /*$(\"#header-mobile i\").click(function () {\n                    $(this).toggleClass(\"header-mobile-icon-active\");\n                    openCloseMenu();\n                });*/\n                /*$('#hide-panel-header-mobile').click(function() {\n                    $(\"#mobile-menu\").slideToggle(\"hide\");\n                });\n                $(\"#mobile-menu\").css({ display: 'none', 'z-index' : '2' });*/\n                $('#show-panel-header-mobile').click(function() {\n                    $(\"#mobile-menu\").slideToggle(\"slow\");\n                });\n                $(\"#mobile-menu\").css({ display: 'none', 'z-index' : '2' });\n\n                $('#panel-before-buy').click(function() {\n                    $(\"#links-before-buy\").slideToggle(\"slow\");\n                });\n                $(\"#links-before-buy\").css({ display: 'none' });\n\n                $('#panel-social-networks').click(function() {\n                    $(\"#links-social-networks\").slideToggle(\"slow\");\n                });\n                $(\"#links-social-networks\").css({ display: 'none' });\n\n                $('#panel-catalog').click(function() {\n                    $(\"#links-catalog\").slideToggle(\"slow\");\n                });\n                $(\"#links-catalog\").css({ display: 'none' });\n            });\n            // jquery script\n            $(document).ready(function() {\n                __sizeCheck($(window));\n                // resize handler for size check\n                $(window).resize(function() {\n                    // check point :)\n                    __sizeCheck($(this));\n                });\n                /** Size checker. */\n                function __sizeCheck(element) {\n                    // current width\n                    var _cWidth = element.width();\n                    // update text\n                    _cText = 'desktop screens > 1200px';\n                    // check block\n                    if(_cWidth > 1200) {\n                        _cText = 'desktop computer ' + _cWidth + 'px';\n                        $(\"#links-before-buy\").css({ display: 'block' });\n                        $(\"#links-social-networks\").css({ display: 'block' });\n                        $(\"#links-catalog\").css({ display: 'block' });\n                    }\n                    if(_cWidth < 1200) {\n                        _cText = 'desktop computer ' + _cWidth + 'px';\n                    }\n                    if(_cWidth < 1024) {\n                        _cText = 'ipad landscape ' + _cWidth + 'px';\n                    }\n                    if(_cWidth < 768) {\n                        _cText = 'ipad portrait ' + _cWidth + 'px';\n                    }\n                    if(_cWidth < 480) {\n                        _cText = 'iphone landscape ' + _cWidth + 'px';\n                    }\n                    if(_cWidth < 320) {\n                        _cText = 'iphone portrait ' + _cWidth + 'px';\n                    }\n                    if(_cWidth < 240) {\n                        _cText = 'so small phones ' + _cWidth + 'px';\n                    }\n                    // update console text\n                    //console.log(_cText);\n                }\n            });\n        </script>",
+			"settings":
+			{
+				"buffer_size": 8901,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "/* bootstrap */\n@import url(bootstrap.css);\n/* main - globals-clases */\n@import url(main/main-globals-clases.css);\n@import url(main/main-buttons.css);\n@import url(main/main-form-elements.css);\n@import url(main/main-helpers.css);\n@import url(main/main-footer.css);\n/* webfont */\n@import url(webfont/entypo-webfont-kit.css);\n@import url(webfont/suzuki-webfont-kit.css);\n@import url(webfont/fontawesome-webfont-kit.css);\n/* header */\n@import url(suzuki/suzuki-header.css);\n/* Car Thumb */\n@import url(suzuki/suzuki-car-thumb.css);\n/* stick-buttons & input rango */\n@import url(suzuki/suzuki-stick-buttons.css);\n/* table */\n@import url(suzuki/suzuki-table.css);\n@import url(suzuki/suzuki-funding-form.css);\n/* ui-datepicker */\n@import url(datepicker.css);\n/* slider index */\n@import url(slider/slider-home.css);\n/* sections home */\n@import url(sections/section-home.css);\n@import url(sections/section-home-new-model.css);\n@import url(sections/section-models.css);\n@import url(sections/section-models-menu.css);\n@import url(sections/section-gallery-grid-models.css);",
+			"settings":
+			{
+				"buffer_size": 1061,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Stylus/Stylus.sublime-build",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Color Picker: Insert Color"
+			],
+			[
+				"color",
+				"Color Picker: Insert Color"
+			],
+			[
+				"contro",
+				"Package Control: Install Package"
+			],
+			[
+				"control",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/MAMP/htdocs/medigraf/suzuki/scripts/sections/home/home.js",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/index.html",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/import.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/sections/section-models.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/slider/slider-home.css",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/css/suzuki/main.css",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/css/sections/models-home.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/sections/section-home.css",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/css/sections/home.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/main/main-globals-clases.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/suzuki/suzuki-header.css",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/ciaz.html",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/sections/section-models-menu.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/sections/section-gallery-grid-models.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/ciaz.html",
+		"/C/MAMP/htdocs/medigraf/suzuki/index.html",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/css/sections/models.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/sections/section-home-new-model.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/main/main-footer.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/lib/main/main-favicon-test.js",
+		"/C/MAMP/htdocs/medigraf/suzuki/lib/main/favicon.js",
+		"/C/MAMP/htdocs/medigraf/land-rover-master/lib/faviconTest.js",
+		"/C/MAMP/htdocs/medigraf/land-rover-master/lib/favicon.js",
+		"/C/MAMP/htdocs/medigraf/suzuki/lib/core-libs.js",
+		"/C/MAMP/htdocs/medigraf/land-rover-master/js/room.js",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/webfont/entypo-webfont-kit.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/datepicker.css",
+		"/C/MAMP/htdocs/medigraf/autos-suzuki-main.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/suzuki/suzuki-table.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/main/main-helpers.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/suzuki/suzuki-car-thumb.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/suzuki/suzuki-stick-buttons.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/main/main-buttons.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/main/main-form-elements.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/suzuki/suzuki-funding-form.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/webfont/entype-webfont-kit.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/webfont/suzuki-webfont-kit.css",
+		"/C/MAMP/htdocs/medigraf/suzuki/css/webfont/fontawesome-webfont-kit.css",
+		"/C/MAMP/htdocs/medigraf/suzukigdl/css/webfonts/suzuki-webfontkit/stylesheet.css",
+		"/C/MAMP/htdocs/medigraf/land-rover-master/index.html",
+		"/C/MAMP/htdocs/medigraf/suzuki/suzuki.sublime-project",
+		"/C/wamp/www/reflection-school/data/vista/css/main.css",
+		"/C/wamp/www/reflection-school/data/vista/js/send-ajax-admon.js",
+		"/C/wamp/www/reflection-school/index.php",
+		"/C/wamp/www/reflection-school/data/control/form/ini_reg_unico.php",
+		"/C/wamp/www/reflection-school/data/control/procesos/reg_admon.php",
+		"/C/wamp/www/create-styles/index.html",
+		"/C/Users/Carlos/Downloads/hevelmo/ajaxupload-v1.2.js",
+		"/C/wamp/www/reflection-school/data/vista/js/show-overlay.js",
+		"/C/wamp/www/userssystem/data/funciones/registros/reg_Admon.php",
+		"/C/wamp/www/reflection-school/data/control/lib/send-ajax-admon.js",
+		"/C/wamp/www/reflection-school/data/vista/js/jquery.blockUI-v2.js",
+		"/C/wamp/www/reflection-school/data/control/conexion/conexion.php",
+		"/C/wamp/www/userssystem/data/funciones/registros/lib/ajax_agregar_student.php",
+		"/C/wamp/www/userssystem/data/funciones/include/PHP-Paging/lib/PHPPaging.lib.php",
+		"/C/wamp/www/reflection-school/data/control/PHP-Paging/PHPPaging.lib.php",
+		"/C/wamp/www/reflection-school/data/index.php",
+		"/C/wamp/www/reflection-school/data/control/form/login.php",
+		"/C/wamp/www/reflection-school/data/vista/css/reflect-icon-font-style.css",
+		"/C/Users/Carlos/AppData/Local/Temp/Rar$DRa0.744/cf_ajax/estilos.css",
+		"/C/wamp/www/reflection-school/data/vista/css/bootstrap.min.css",
+		"/C/wamp/www/reflection-school/data/control/funciones/consultas.php",
+		"/C/wamp/www/userssystem/data/funciones/include/pagination-students.php",
+		"/C/wamp/www/userssystem/data/funciones/include/PHP-Paging/lib/conexion.php",
+		"/C/wamp/www/reflection-school/data/vista/js/lib-ajax/send-ajax-admon.js",
+		"/C/Users/Carlos/AppData/Local/Temp/Rar$DRa0.885/cf_ajax/index.html",
+		"/C/Users/Carlos/AppData/Local/Temp/Rar$DRa0.035/cf_ajax/funciones.js",
+		"/C/Users/Carlos/AppData/Local/Temp/Rar$DRa0.595/cf_ajax/estilos.css",
+		"/C/wamp/www/ohr/css/alternativo/bootstrap.min.css",
+		"/C/wamp/www/create-styles/css/grid-bootstrap/bootstrap.css",
+		"/C/wamp/www/reflection-school/data/vista/css/plugins.css",
+		"/C/wamp/www/create-styles/css/main-style.css",
+		"/C/Users/Carlos/Downloads/darkboldicon/reflection-icon-font/style.css",
+		"/C/wamp/www/create-styles/css/reflect/reflect-icon-font-style.css",
+		"/C/Users/Carlos/Downloads/darkboldicon/reflection-icon-font/demo.html",
+		"/C/Users/Carlos/Downloads/34gridsystem-v1.0-custom/34gridsystem/demo/layout.html",
+		"/C/Users/Carlos/Downloads/bootstrap-3.3.0/bootstrap-3.3.0/docs/examples/navbar-fixed-top/index.html",
+		"/C/Users/Carlos/Downloads/bootstrap/config.json",
+		"/C/wamp/www/create-styles/js/jquery/jquery-2.1.1.js",
+		"/C/wamp/www/create-styles/main-style.css",
+		"/C/Users/Carlos/Downloads/darkboldicon/WDD_Reflection_Icons/reflection-icon-font/demo-files/demo.css",
+		"/C/Users/Carlos/Downloads/darkboldicon/WDD_Reflection_Icons/reflection-icon-font/demo.html",
+		"/C/Users/Carlos/Downloads/darkboldicon/WDD_Reflection_Icons/reflection-icon-font/style.css",
+		"/C/wamp/www/basic_test_project/css/font-awesome.css",
+		"/C/Users/Carlos/Downloads/darkicon/demo-files/demo.css",
+		"/C/Users/Carlos/Downloads/darkboldicon/style.css",
+		"/C/Users/Carlos/AppData/Local/Temp/Rar$DRa0.688/style.css",
+		"/C/wamp/www/new-school-net-system/data/control/form/login.php",
+		"/C/wamp/www/new-school-net-system/data/vista/js/show-overlay.js",
+		"/C/wamp/www/new-school-net-system/data/vista/css/main.css",
+		"/C/wamp/www/userssystem/data/funciones/formularios/form_firstRegiterAdmon.php",
+		"/C/wamp/www/AppUI 1.2 by pixelcave/02 - AppUI Backend Template (HTML)/page_forms_components.html",
+		"/C/wamp/www/new-school-net-system/index.php",
+		"/C/wamp/www/new-school-net-system/data/index.php",
+		"/C/wamp/www/new-school-net-system/data/control/form/ini_reg_unico.php",
+		"/C/wamp/www/new-school-net-system/data/vista/js/ajax-reg-unico.js",
+		"/C/wamp/www/test/index.php",
+		"/C/Users/Carlos/Downloads/darkicon/style.css",
+		"/C/Users/Carlos/Downloads/darkicon (1)/style.css",
+		"/C/Users/Carlos/Downloads/IcoMoon - 451 Icons/sprite/sprite.css",
+		"/C/wamp/www/icomoon/style.css",
+		"/C/wamp/www/icomoon/demo.html",
+		"/C/wamp/www/new-school-net-system/data/vista/js/crypt.sha1-2.2.js",
+		"/C/wamp/www/new-school-net-system/data/vista/js/crypt.md5-2.2.js",
+		"/C/wamp/www/new-school-net-system/Gruntfile.js",
+		"/C/Users/Carlos/AppData/Roaming/Sublime Text 2/Packages/LiveReload/LiveReload.sublime-settings",
+		"/C/wamp/www/new-school-net-system/data/vista/css/plugins.css",
+		"/C/wamp/www/otp-php/index.php",
+		"/C/wamp/www/otp-php/README",
+		"/C/wamp/www/userssystem/data/funciones/registros/lib/ajax_listar.php",
+		"/C/wamp/www/new-school-net-system/data/vista/css/themes.css",
+		"/C/wamp/www/new-school-net-system/data/vista/css/config.css",
+		"/C/wamp/www/new-school-net-system/data/control/conexion/conexion.php",
+		"/C/wamp/www/ohr/web/lib/forms.js",
+		"/C/Users/Carlos/Downloads/matrix.sql",
+		"/C/wamp/www/userssystem/index.php",
+		"/C/wamp/www/ohr/web/sign-up.php",
+		"/C/wamp/www/ohr/api/v1/index.php",
+		"/C/wamp/www/ohr/incorporate/ini_register_ohr.php",
+		"/C/wamp/www/ohr/incorporate/ohr_con_ini.php",
+		"/C/Users/Carlos/Documents/GitHub/ohr/web/sign-up.php",
+		"/C/Users/Carlos/Documents/GitHub/ohr/incorporate/ini_register_ohr.php",
+		"/C/wamp/www/AppUI 1.2 by pixelcave/02 - AppUI Backend Template (HTML)/page_ready_login.html",
+		"/C/wamp/www/new-school-net-system/data/vista/js/jquery.blockUI-v2.js",
+		"/C/Users/Carlos/AppData/Roaming/Sublime Text 2/Packages/Grunt/SublimeGrunt.sublime-settings",
+		"/C/Users/Carlos/AppData/Roaming/Sublime Text 2/Packages/TidyHTML5/TidyHTML.sublime-settings",
+		"/C/Users/Carlos/AppData/Roaming/Sublime Text 2/Packages/User/TidyHTML.sublime-settings",
+		"/C/Users/Carlos/AppData/Roaming/Sublime Text 2/Packages/LiveReload/livereload_st2.py"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\wamp\\www\\basic_test_project\\img"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".model-section .car-main .car-main-title #car-image-ciaz",
+			"features-space-wrapper",
+			"#features-space-wrapper",
+			"entypo",
+			"webfonts/entypo/entypo.ttf ",
+			"img/",
+			"images/sections/models/lightbox-ciaz.jpg",
+			"?_nc=20140313A",
+			"images",
+			"images/",
+			"/img/template/models/button-scroll-top.png",
+			"img/",
+			"img/template/models/logos/swift.png",
+			"/img",
+			"images",
+			"images/sections/models/features-arrows.png",
+			"\"/img/",
+			"webfont/",
+			"/images/",
+			"fancybox",
+			"images",
+			"#features-space-mask",
+			".header-wrapper #header-zone #regular-header",
+			"model-prices",
+			"(\"../../images/",
+			"s-cross.html#",
+			"S-Cross",
+			"s-cross",
+			"}",
+			"images",
+			"/images/",
+			"}",
+			"../../images/",
+			"}",
+			";",
+			"images/",
+			"webfont/",
+			".header-section-content.owners .header-title, .header-section-content.before-buy .header-title",
+			"color: red; font-size: 12px;",
+			"position: relative; top: 7px;",
+			"font-size: 19px; ",
+			"/images/",
+			"../webfonts/",
+			"main",
+			".stick_buttons",
+			".stick_buttons li",
+			".step-nav-tab .options.option-1",
+			"car_select_preview",
+			"/images/",
+			"car_select_preview",
+			"#concessionaires_list a",
+			"car_select_list ul li a i",
+			"<i></i>",
+			"}",
+			": hover",
+			".panel_tabs_nav, .test-panel-tabs",
+			"2014",
+			"/images/",
+			"#header-panel",
+			"#header-mobile",
+			"url(\"../img/",
+			";",
+			"img/",
+			";",
+			"#logo-wrapper",
+			"/images/",
+			"\\",
+			"header-wrapper",
+			"header-content",
+			"#header-spacer",
+			"url('",
+			"url('suzuki-",
+			"lstProObj",
+			"variableInt",
+			"objDemo",
+			"content_app_interactive",
+			"recurrent_div_interactive",
+			"event",
+			" onblur=",
+			"nombre",
+			"elemento",
+			" style=\"border: 1px solid red;\"",
+			"msg",
+			"=",
+			"base",
+			"imgportada",
+			"rs_a_long_char",
+			"rs_a_type",
+			"rs_a_posting",
+			"posting",
+			"destino",
+			"chart",
+			"bg",
+			"bground",
+			"$char",
+			"long_char",
+			"$char",
+			"destino",
+			"caracteres",
+			"=",
+			"dirS",
+			"fotS",
+			"dbCon",
+			"login",
+			" unico de Administrador",
+			"360px",
+			"370px",
+			"append",
+			"text",
+			"1800",
+			"$(\".nombre\").focus();\n            $('.required_name').html",
+			"if (!",
+			".css('border','1px solid red')",
+			"5ccdde",
+			"email",
+			"ap_materno",
+			"ap_paterno",
+			"nombre",
+			"ap_paterno",
+			"form-control",
+			"box-shadow",
+			"focus()",
+			"1900",
+			"2900",
+			"val();",
+			"('hide').animate({ 'right' : '-230px' }, 3",
+			"right: 20px;",
+			"right"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			";}"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "css/import.home.css",
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 67335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7630,
+								7630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1255.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/main/slider.home.js",
+					"settings":
+					{
+						"buffer_size": 2690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2690
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/main/slider.models.js",
+					"settings":
+					{
+						"buffer_size": 2692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2692,
+								2692
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 455.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "css/suzuki/main.css",
+					"settings":
+					{
+						"buffer_size": 123204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87927,
+								87927
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 43543.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/sections/home.css",
+					"settings":
+					{
+						"buffer_size": 20474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4241,
+								4241
+							],
+							[
+								4743,
+								4743
+							],
+							[
+								8327,
+								8327
+							],
+							[
+								15720,
+								15720
+							],
+							[
+								15902,
+								15902
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2977.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "css/sections/models-home.css",
+					"settings":
+					{
+						"buffer_size": 24636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							],
+							[
+								541,
+								541
+							],
+							[
+								1207,
+								1207
+							],
+							[
+								1789,
+								1789
+							],
+							[
+								2569,
+								2569
+							],
+							[
+								5250,
+								5250
+							],
+							[
+								5550,
+								5550
+							],
+							[
+								5864,
+								5864
+							],
+							[
+								6120,
+								6120
+							],
+							[
+								6254,
+								6254
+							],
+							[
+								6389,
+								6389
+							],
+							[
+								6526,
+								6526
+							],
+							[
+								6748,
+								6748
+							],
+							[
+								7968,
+								7968
+							],
+							[
+								8232,
+								8232
+							],
+							[
+								9952,
+								9952
+							],
+							[
+								17277,
+								17277
+							],
+							[
+								19882,
+								19882
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "css/sections/models.css",
+					"settings":
+					{
+						"buffer_size": 55524,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37898,
+								37848
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 18882.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "css/sections/test_drive_service.css",
+					"settings":
+					{
+						"buffer_size": 12083,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1218,
+								1218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 53.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "css/sections/warranty.css",
+					"settings":
+					{
+						"buffer_size": 6750,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1585,
+								1585
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 8946.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "css/sections/10reasons.css",
+					"settings":
+					{
+						"buffer_size": 14526,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14526,
+								14526
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "css/sections/concessionaires.css",
+					"settings":
+					{
+						"buffer_size": 29920,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15513,
+								15513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5980.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "css/sections/contact.css",
+					"settings":
+					{
+						"buffer_size": 10732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36,
+								36
+							],
+							[
+								2182,
+								2182
+							],
+							[
+								2302,
+								2302
+							],
+							[
+								2422,
+								2422
+							],
+							[
+								2499,
+								2499
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "css/plugins/jquery.fancybox/jquery.fancybox.css",
+					"settings":
+					{
+						"buffer_size": 6353,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1672,
+								1672
+							],
+							[
+								1868,
+								1868
+							],
+							[
+								2095,
+								2095
+							],
+							[
+								2493,
+								2493
+							],
+							[
+								2584,
+								2584
+							],
+							[
+								3039,
+								3039
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1248.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "css/plugins/jquery.fancybox/jquery.fancybox-buttons.css",
+					"settings":
+					{
+						"buffer_size": 2453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1603,
+								1603
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 471.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "css/plugins/jquery.dummy-alert/main.css",
+					"settings":
+					{
+						"buffer_size": 1959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1300,
+								1300
+							],
+							[
+								1547,
+								1547
+							],
+							[
+								1666,
+								1666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 936.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "ciaz.html",
+					"settings":
+					{
+						"buffer_size": 127763,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								127731,
+								127731
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 20681.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "concesionarias.html",
+					"settings":
+					{
+						"buffer_size": 74358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3326,
+								3326
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 580.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/C/MAMP/htdocs/medigraf/suzukigdl/kizashi.html",
+					"settings":
+					{
+						"buffer_size": 158482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2822,
+								2822
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 163.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "css/import-models.css",
+					"settings":
+					{
+						"buffer_size": 634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "css/import.concesionarias.css",
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								498,
+								498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "css/import.models.css",
+					"settings":
+					{
+						"buffer_size": 633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								498,
+								498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/C/MAMP/htdocs/medigraf/suzukigdl/index.html",
+					"settings":
+					{
+						"buffer_size": 40692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32216,
+								32145
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 676.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 23,
+					"settings":
+					{
+						"buffer_size": 8901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5680,
+								2545
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Theme - Centurion/Galea.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 200.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"settings":
+					{
+						"buffer_size": 1061,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				0,
+				2,
+				1,
+				3
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.784946236559,
+			0.89247311828,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 88.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/MAMP/htdocs/medigraf/suzuki/suzuki.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 274.0,
+	"status_bar_visible": true
+}

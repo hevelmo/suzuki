@@ -1,0 +1,2102 @@
+.next-link-text {
+    margin:0 auto;
+    text-align:center;
+    width:auto
+}
+.next-link-text a {
+    background:url("../../img/sections/models/next-section.png") right center no-repeat;
+    padding:4px 25px 4px 4px
+}
+.next-link-text a span {
+    color:#404040;
+    font-size:18px;
+    font-weight:300
+}
+.next-link-text a:hover {
+    text-decoration:none
+}
+.full-size-section.gray-degree {
+    background:url("../../img/template/models/gray-bg.png") left top repeat-x
+}
+.special-padding-top {
+    padding:7% 0 0
+}
+.model-section {
+    clear:both
+}
+.section-title {
+    margin:0 auto;
+    padding:0;
+    text-align:center;
+    width:960px;
+    height:120px
+}
+.section-title .title {
+    font-size:36px;
+    font-weight:300;
+    line-height:36px;
+    text-transform:uppercase
+}
+.section-title .description {
+    font-size:18px;
+    line-height:18px;
+    height:18px;
+    padding:5px 0 0
+}
+.car-main {
+    background:url("../../img/template/transparent-bg.png") top center no-repeat;
+    height:100%
+}
+.car-main .car-main-title {
+    text-align:center;
+    padding:50px 0 0
+}
+.car-main .car-main-title .title {
+    font-weight:300;
+    font-size:54px;
+    line-height:100%;
+    text-transform:uppercase
+}
+.car-main .car-main-title .slogan {
+    font-weight:300;
+    font-size:32px;
+    line-height:100%;
+    margin:5px 0 20px
+}
+.car-main .car-main-title .price {
+    font-size:18px;
+    line-height:140%;
+    font-weight:300
+}
+.car-main .car-main-title .car-main-image {
+    display:none
+}
+.car-main .car-next-step {
+    height:164px;
+    margin:380px auto 0;
+    width:82px
+}
+.car-main .car-next-step a {
+    background:url("../../img/sections/models/next-step.png") left top no-repeat;
+    display:block;
+    height:82px
+}
+.car-main .car-next-step a span {
+    display:none
+}
+.car-main.big-main {
+    background-position:center 210px !important
+}
+.car-main.big-main .car-next-step {
+    height:210px;
+    margin:470px auto 0
+}
+.specifications-controls {
+    height:60px;
+    margin:0 auto 140px;
+    max-width:1060px;
+    position:relative
+}
+.specifications-controls .arrows {
+    height:60px;
+    margin-top:-255px
+}
+.specifications-controls .arrows .arrow {
+    float:left;
+    height:60px;
+    width:60px
+}
+.specifications-controls .arrows .arrow a {
+    background:url("../../img/sections/models/features-arrows.png") left bottom no-repeat;
+    display:block;
+    height:60px
+}
+.specifications-controls .arrows .arrow a span {
+    display:none
+}
+.specifications-controls .arrows .arrow a:hover {
+    background-position:top left
+}
+.specifications-controls .arrows .arrow.right {
+    float:right
+}
+.specifications-controls .arrows .arrow.right a {
+    background-position:bottom right
+}
+.specifications-controls .arrows .arrow.right a:hover {
+    background-position:top right
+}
+.specifications-wrapper {
+    height:525px;
+    margin-top:0;
+    overflow:hidden;
+    width:100%
+}
+.specifications-wrapper .specifications {
+    height:100%;
+    width:1000%
+}
+.specifications-wrapper .specifications .specification {
+    background:url("../../img/sections/models/next-step.png") center top no-repeat;
+    height:100%;
+    float:left;
+    width:10%
+}
+.specifications-wrapper .specifications .title-wrapper, .specifications-wrapper .specifications .description {
+    margin:0 auto;
+    width:920px
+}
+.specifications-wrapper .specifications .title-wrapper {
+    height:300px
+}
+.specifications-wrapper .specifications .title-wrapper .title {
+    color:#fff;
+    display:table-cell;
+    font-size:34px;
+    font-weight:900;
+    height:300px;
+    line-height:100%;
+    vertical-align:middle;
+    text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+    text-transform:none;
+    width:400px
+}
+.specifications-wrapper .specifications .description {
+    padding:25px 0 0 42px
+}
+.specifications-wrapper .specifications .description p {
+    font-size:16px !important;
+    line-height:140%;
+    margin:0 0 20px;
+    width:400px
+}
+.specifications-wrapper .specifications .description.compact p {
+    width:350px
+}
+.specifications-wrapper .specifications .description.extra-compact p {
+    width:280px
+}
+.specifications-wrapper .specifications .description.extended p {
+    width:450px
+}
+.model-prices {
+    margin:0 auto;
+    width:960px
+}
+.hidden-list {
+    display:none
+}
+.display-tables {
+    overflow:hidden
+}
+#features-space-mask {
+    margin-bottom:50px
+}
+#comparative-space-wrapper #versions-comparative-table {
+    width:638px;
+    float:left
+}
+#comparative-space-wrapper .cols-2 .head .col-dark {
+    background:#003f87 !important
+}
+#comparative-space-wrapper .cols-2 .cell {
+    float:left;
+    width:319px
+}
+#comparative-space-wrapper .cols-2 .first {
+    margin-right:1px;
+    width:318px
+}
+#comparative-space-wrapper .cols-2 .last {
+    margin-left:0px
+}
+#comparative-space-wrapper .cols-2 .gray .title {
+    background:#999
+}
+#comparative-space-wrapper .cols-2 .bold .title p {
+    font-weight:bold;
+    text-align:left
+}
+#car-comparative-list {
+    float:left;
+    margin-left:1px;
+    width:277px;
+    border:1px solid #e5e5e5;
+    padding:20px 20px 10px 20px
+}
+#car-comparative-list h3 {
+    text-align:center;
+    color:#3f3f3f;
+    font-size:16px;
+    font-weight:normal;
+    margin:0 0 10px;
+    line-height:100%
+}
+#car-comparative-list p {
+    text-align:center;
+    line-height:19px;
+    font-size:13px
+}
+#car-comparative-list ul {
+    margin:15px 0 0;
+    padding:0;
+    list-style:none
+}
+#car-comparative-list ul li a {
+    border-top:1px solid #e5e5e5;
+    padding:10px 0;
+    color:#0051ad;
+    display:block
+}
+#car-comparative-list ul li a:hover {
+    text-decoration:none
+}
+.car-comparative-col {
+    float:left
+}
+.car-comparative-col .head .row .cell {
+    width:319px;
+    margin-left:1px;
+    position:relative
+}
+.car-comparative-col .head .row .cell .control {
+    position:absolute;
+    right:10px;
+    top:13px
+}
+.car-comparative-col .head .row .cell .control .close {
+    cursor:pointer;
+    width:15px;
+    height:15px;
+    z-index:2;
+    background:url("../../img/template/common/header/x-white.png") no-repeat
+}
+.car-comparative-col .head .row .cell .title {
+    background:#003f87 !important
+}
+.car-comparative-col .body .row .cell {
+    width:319px;
+    margin-left:1px
+}
+#button-scroll-top {
+    display:block;
+    width:61px;
+    height:61px;
+    background:url("../../img/sections/models/button-scroll-top.html") no-repeat;
+    position:fixed;
+    bottom:0;
+    right:20px
+}
+.social-bar {
+    position:fixed;
+    top:180px;
+    width:35px;
+    z-index:10
+}
+.social-bar .social-links {
+    background-color:#013A55;
+    padding:2px
+}
+.social-bar .social-links .social-link a {
+    background:url("../../img/template/common/social-left-bar/facebook.png") center center no-repeat;
+    display:block;
+    height:27px
+}
+.social-bar .social-links .social-link a span {
+    display:none
+}
+.social-bar .social-links .social-link a.facebook {
+    background-image:url("../../img/template/common/social-left-bar/facebook.png")
+}
+.social-bar .social-links .social-link a.twitter {
+    background-image:url("../../img/template/common/social-left-bar/twitter.png")
+}
+.social-bar .social-links .social-link a.instagram {
+    background-image:url("../../img/template/common/social-left-bar/instagram.png")
+}
+.social-bar .social-links .social-link a.pinterest {
+    background-image:url("../../img/template/common/social-left-bar/pinterest.png")
+}
+#catalog_title {
+    display:none
+}
+.catalog {
+    margin:0;
+    height:655px;
+    min-width:960px;
+    overflow:hidden
+}
+.catalog .items-wrapper .item {
+    background:url("../../img/template/transparent-bg.png") center top no-repeat;
+    height:655px
+}
+.catalog .items-wrapper .item .content {
+    margin:0 auto;
+    padding:70px 0 0 0;
+    width:960px
+}
+.catalog .items-wrapper .item .content .car_model {
+    display:none
+}
+.catalog .items-wrapper .item .content .model {
+    height:38px
+}
+.catalog .items-wrapper .item .content .model h2 {
+    color:#003f87;
+    margin:25px 0 0;
+    font-size:36px;
+    font-weight:300;
+    text-transform:uppercase
+}
+.catalog .items-wrapper .item .content .description {
+    margin-bottom:28px
+}
+.catalog .items-wrapper .item .content .description p {
+    color:#333333;
+    font-size:16px;
+    line-height:24px;
+    margin:0
+}
+.catalog .items-wrapper .item .content.white .model h2 {
+    color:#fff
+}
+.catalog .items-wrapper .item .content.white .description p {
+    color:#fff
+}
+.lt-ie8 .catalog .items-wrapper .item .content .model h2 {
+    display:block;
+    line-height:0;
+    padding:0 0 20px 0;
+    margin-bottom:20px
+}
+.catalog_switch_menu {
+    float:right;
+    margin-top:-600px;
+    overflow:hidden;
+    right:0;
+    width:255px;
+    position:absolute;
+    z-index:99
+}
+.catalog_switch_menu .catalog_cars_wrapper {
+    width:255px
+}
+.catalog_switch_menu .catalog_cars_wrapper .title {
+    background:url("../../img/sections/catalog/download_arrow.png") 28px center no-repeat #005aab;
+    color:#fff;
+    font-size:14px;
+    font-weight:900;
+    height:55px;
+    line-height:55px;
+    padding:0 0 0 65px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car {
+    background:url("../../img/sections/catalog/cars.png") 0 0 no-repeat #fff;
+    border-bottom:1px solid #e2dedd;
+    height:37px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a {
+    display:block;
+    height:26px;
+    line-height:26px;
+    padding:6px 0 6px 68px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a span {
+    border-left:1px solid #e2dedd;
+    color:#5a5a5a;
+    display:block;
+    height:26px;
+    padding:0 0 0 10px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a span:hover {
+    color:#003f87
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a:hover {
+    text-decoration:none
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.swift-sport {
+    background-position:9px -6px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.swift {
+    background-position:9px -56px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.sx4-crossover {
+    background-position:9px -106px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.sx4-sedan {
+    background-position:9px -156px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.kizashi {
+    background-position:9px -206px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.grand-vitara {
+    background-position:9px -256px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.s-cross {
+    background-position:9px -308px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.ciaz{
+    background-position:9px -355px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.active {
+    background-color:#e7e7e7
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.active a {
+    border-left:7px solid #005baa;
+    padding-left:61px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.active a span {
+    color:#005aab;
+    font-weight:700
+}
+.catalog_switch_menu.active {
+    width:255px
+}
+.content {
+    min-height:550px
+}
+.galery-grid {
+    max-width:1244px;
+    margin:0 auto
+}
+.view {
+    cursor:pointer;
+    height:190px;
+    margin:0 1px 1px 0;
+    overflow:hidden;
+    width:190px
+}
+.view img {
+    display:block;
+    height:auto;
+    width:100%
+}
+.view .mask {
+    background-image:url("../../img/sections/models/common/black.png");
+    overflow:hidden;
+    padding:0;
+    width:100%;
+    z-index:2;
+    position:relative;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition:all ease-in-out 0.1s
+}
+.view .mask a.info {
+    display:block;
+    height:100%;
+    text-decoration:none;
+    color:#fff
+}
+.view .mask a.info span {
+    display:none
+}
+.view .mask a.info.accessories {
+    background:url("../../img/sections/models/common/black_accessories.png") center center no-repeat
+}
+.view .mask a.info.exterior {
+    background:url("../../img/sections/models/common/black_exterior.png") center center no-repeat
+}
+.view .mask a.info.interior {
+    background:url("../../img/sections/models/common/black_interior.png") center center no-repeat
+}
+.view .mask a.info.html {
+    background:url("../../img/sections/models/common/black_360.png") center center no-repeat
+}
+.view .mask a.info.social {
+    background:url("../../img/sections/models/common/black_social.png") center center no-repeat
+}
+.view.box-1, .view.box-2, .view.box-3, .view.box-4, .view.box-5, .view.box-6, .view.box-7, .view.box-8, .view.box-360 {
+    float:left
+}
+.view.box-1, .view.box-8 {
+    width:300px;
+    height:275px
+}
+.view.box-1 img, .view.box-8 img {
+    width:300px;
+    height:275px
+}
+.view.box-1 .mask, .view.box-8 .mask {
+    height:275px;
+    margin-top:-275px
+}
+.view.box-2, .view.box-3, .view.box-6, .view.box-7 {
+    width:320px;
+    height:137px
+}
+.view.box-2 img, .view.box-3 img, .view.box-6 img, .view.box-7 img {
+    width:320px;
+    height:137px
+}
+.view.box-2 .mask, .view.box-3 .mask, .view.box-6 .mask, .view.box-7 .mask {
+    height:137px;
+    margin-top:-137px
+}
+.view.box-4, .view.box-360, .view.box-5 {
+    width:621px;
+    height:275px
+}
+.view.box-4 img, .view.box-360 img, .view.box-5 img {
+    width:621px;
+    height:275px
+}
+.view.box-4 .mask, .view.box-360 .mask, .view.box-5 .mask {
+    height:275px;
+    margin-top:-275px
+}
+.view.box-3 {
+    margin:138px 0 0 -321px
+}
+.view.box-5 {
+    clear:both
+}
+.view.box-7 {
+    margin:138px 0 0 -321px
+}
+.view:hover .mask {
+    opacity:1;
+    filter:alpha(opacity=100)
+}
+.galery-of-s-cross .view {
+    cursor:pointer;
+    height:190px;
+    margin:0 1px 1px 0;
+    overflow:hidden;
+    width:190px
+}
+.galery-of-s-cross .view img {
+    display:block;
+    height:auto;
+    width:100%
+}
+.galery-of-s-cross .view .mask {
+    background-image:url("../../img/sections/models/common/black.png");
+    overflow:hidden;
+    padding:0;
+    width:100%;
+    z-index:2;
+    position:relative;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition:all ease-in-out 0.1s
+}
+.galery-of-s-cross .view .mask a.info {
+    display:block;
+    height:100%;
+    text-decoration:none;
+    color:#fff
+}
+.galery-of-s-cross .view .mask a.info span {
+    display:none
+}
+.galery-of-s-cross .view .mask a.info.accessories {
+    background:url("../../img/sections/models/common/black_accessories.png") center center no-repeat
+}
+.galery-of-s-cross .view .mask a.info.exterior {
+    background:url("../../img/sections/models/common/black_exterior.png") center center no-repeat
+}
+.galery-of-s-cross .view .mask a.info.interior {
+    background:url("../../img/sections/models/common/black_interior.png") center center no-repeat
+}
+.galery-of-s-cross .view .mask a.info.html {
+    background:url("../../img/sections/models/common/black_360.png") center center no-repeat
+}
+.galery-of-s-cross .view .mask a.info.social {
+    background:url("../../img/sections/models/common/black_social.png") center center no-repeat
+}
+.galery-of-s-cross .view.box-1, .galery-of-s-cross .view.box-2, .galery-of-s-cross .view.box-3, .galery-of-s-cross .view.box-4, .galery-of-s-cross .view.box-5, .galery-of-s-cross .view.box-6, .galery-of-s-cross .view.box-7, .galery-of-s-cross .view.box-8, .galery-of-s-cross .view.box-360 {
+    float:left
+}
+.galery-of-s-cross .view.box-4, .galery-of-s-cross .view.box-5 {
+    width:300px;
+    height:275px
+}
+.galery-of-s-cross .view.box-4 img, .galery-of-s-cross .view.box-5 img {
+    width:300px;
+    height:275px
+}
+.galery-of-s-cross .view.box-4 .mask, .galery-of-s-cross .view.box-5 .mask {
+    height:275px;
+    margin-top:-275px
+}
+.galery-of-s-cross .view.box-2, .galery-of-s-cross .view.box-3, .galery-of-s-cross .view.box-6, .galery-of-s-cross .view.box-7 {
+    width:320px;
+    height:137px
+}
+.galery-of-s-cross .view.box-2 img, .galery-of-s-cross .view.box-3 img, .galery-of-s-cross .view.box-6 img, .galery-of-s-cross .view.box-7 img {
+    width:320px;
+    height:137px
+}
+.galery-of-s-cross .view.box-2 .mask, .galery-of-s-cross .view.box-3 .mask, .galery-of-s-cross .view.box-6 .mask, .galery-of-s-cross .view.box-7 .mask {
+    height:137px;
+    margin-top:-137px
+}
+.galery-of-s-cross .view.box-1, .galery-of-s-cross .view.box-8, .galery-of-s-cross .view.box-360 {
+    width:621px;
+    height:275px
+}
+.galery-of-s-cross .view.box-1 img, .galery-of-s-cross .view.box-8 img, .galery-of-s-cross .view.box-360 img {
+    width:621px;
+    height:275px
+}
+.galery-of-s-cross .view.box-1 .mask, .galery-of-s-cross .view.box-8 .mask, .galery-of-s-cross .view.box-360 .mask {
+    height:275px;
+    margin-top:-275px
+}
+.galery-of-s-cross .view.box-7 {
+    margin:138px 0 0 -321px
+}
+.galery-of-s-cross .view.box-1 {
+    clear:both
+}
+.galery-of-s-cross .view.box-3 {
+    margin:138px 0 0 -321px
+}
+.galery-of-s-cross .view:hover .mask {
+    opacity:1;
+    filter:alpha(opacity=100)
+}
+@media screen and (max-width: 1250px) {
+    .galery-grid {
+        width:960px
+    }
+    .galery-grid .view.box-1, .galery-grid .view.box-8, .galery-grid .view.box-360 {
+        width:239px;
+        height:219px
+    }
+    .galery-grid .view.box-1 img, .galery-grid .view.box-8 img, .galery-grid .view.box-360 img {
+        width:239px;
+        height:219px
+    }
+    .galery-grid .view.box-1 .mask, .galery-grid .view.box-8 .mask, .galery-grid .view.box-360 .mask {
+        height:219px;
+        margin-top:-219px
+    }
+    .galery-grid .view.box-2, .galery-grid .view.box-3, .galery-grid .view.box-6, .galery-grid .view.box-7 {
+        width:239px;
+        height:109px
+    }
+    .galery-grid .view.box-2 img, .galery-grid .view.box-3 img, .galery-grid .view.box-6 img, .galery-grid .view.box-7 img {
+        width:239px;
+        height:109px
+    }
+    .galery-grid .view.box-2 .mask, .galery-grid .view.box-3 .mask, .galery-grid .view.box-6 .mask, .galery-grid .view.box-7 .mask {
+        height:109px;
+        margin-top:-109px
+    }
+    .galery-grid .view.box-4, .galery-grid .view.box-5 {
+        width:478px;
+        height:219px
+    }
+    .galery-grid .view.box-4 img, .galery-grid .view.box-5 img {
+        width:478px;
+        height:219px
+    }
+    .galery-grid .view.box-4 .mask, .galery-grid .view.box-5 .mask {
+        height:219px;
+        margin-top:-219px
+    }
+    .galery-grid .view.box-3 {
+        margin:110px 0 0 -240px
+    }
+    .galery-grid .view.box-5 {
+        clear:both
+    }
+    .galery-grid .view.box-7 {
+        margin:110px 0 0 -240px
+    }
+    .galery-of-s-cross {
+        width:960px
+    }
+    .galery-of-s-cross .view.box-4, .galery-of-s-cross .view.box-5 {
+        width:239px;
+        height:219px
+    }
+    .galery-of-s-cross .view.box-4 img, .galery-of-s-cross .view.box-5 img {
+        width:239px;
+        height:219px
+    }
+    .galery-of-s-cross .view.box-4 .mask, .galery-of-s-cross .view.box-5 .mask {
+        height:219px;
+        margin-top:-219px
+    }
+    .galery-of-s-cross .view.box-2, .galery-of-s-cross .view.box-3, .galery-of-s-cross .view.box-6, .galery-of-s-cross .view.box-7 {
+        width:239px;
+        height:109px
+    }
+    .galery-of-s-cross .view.box-2 img, .galery-of-s-cross .view.box-3 img, .galery-of-s-cross .view.box-6 img, .galery-of-s-cross .view.box-7 img {
+        width:239px;
+        height:109px
+    }
+    .galery-of-s-cross .view.box-2 .mask, .galery-of-s-cross .view.box-3 .mask, .galery-of-s-cross .view.box-6 .mask, .galery-of-s-cross .view.box-7 .mask {
+        height:109px;
+        margin-top:-109px
+    }
+    .galery-of-s-cross .view.box-1, .galery-of-s-cross .view.box-8, .galery-of-s-cross .view.box-360 {
+        width:478px;
+        height:219px
+    }
+    .galery-of-s-cross .view.box-1 img, .galery-of-s-cross .view.box-8 img, .galery-of-s-cross .view.box-360 img {
+        width:478px;
+        height:219px
+    }
+    .galery-of-s-cross .view.box-1 .mask, .galery-of-s-cross .view.box-8 .mask, .galery-of-s-cross .view.box-360 .mask {
+        height:219px;
+        margin-top:-219px
+    }
+    .galery-of-s-cross .view.box-7 {
+        margin:110px 0 0 -240px
+    }
+    .galery-of-s-cross .view.box-1 {
+        clear:both
+    }
+    .galery-of-s-cross .view.box-3 {
+        margin:110px 0 0 -240px
+    }
+}
+#instant-drive-container {
+    width:100%;
+    background:url("../../img/sections/models/instant-drive/instant-bg.jpg") center top no-repeat
+}
+#instant-drive-container #instant-drive-wrapper {
+    width:960px;
+    margin:0 auto;
+    overflow:hidden;
+    position:relative
+}
+#instant-drive-container #instant-drive-wrapper #curve {
+    position:absolute;
+    z-index:1;
+    top:142px;
+    left:153px
+}
+#instant-drive-container #instant-drive-wrapper .instant-drive-text {
+    position:relative;
+    z-index:2;
+    float:left;
+    width:318px;
+    margin:150px 1px 80px;
+    text-align:center
+}
+#instant-drive-container #instant-drive-wrapper .instant-drive-text div {
+    margin:17px auto 0
+}
+#instant-drive-container #instant-drive-wrapper .instant-drive-text img {
+    margin:0 auto
+}
+#instant-drive-container #instant-drive-wrapper .instant-drive-text h3 {
+    font-size:18px;
+    color:#000;
+    text-transform:uppercase;
+    margin:10px 0
+}
+#instant-drive-container #instant-drive-wrapper .instant-drive-text p {
+    margin:0;
+    line-height:100%
+}
+#instant-drive-container #instant-drive-wrapper .div-center {
+    width:100%;
+    float:left;
+    clear:both;
+    text-align:center;
+    margin-top:20px
+}
+#instant-drive-container #instant-drive-wrapper .div-center .button {
+    padding:15px 71px
+}
+#instant-drive-container #instant-drive-wrapper .div-center #test-link {
+    color:#3f3f3f;
+    font-size:13px;
+    text-decoration:underline
+}
+#instant-drive-container #instant-drive-wrapper .div-center #test-link:hover {
+    color:#3f3f3f
+}
+#test-drive-steps {
+    margin:0 auto;
+    padding:0;
+    width:960px
+}
+#test-drive-steps #header-prueba-manejo-modelos .test-panel-tabs ul li {
+    width:479px
+}
+#test-drive-steps #header-prueba-manejo-modelos .panel_tabs_container {
+    width:100%
+}
+#test-drive-steps #header-prueba-manejo-modelos .panel_tabs_container .panel_tabs {
+    padding:30px 0;
+    overflow:hidden
+}
+.step-tab {
+    overflow:hidden;
+    width:100%
+}
+#step-2 {
+    display:none
+}
+.step-left, .step-right {
+    float:left
+}
+.step-left {
+    width:320px
+}
+#step-1-car .car_thumb_180 {
+    margin-top:15px
+}
+#step-1-car .car_thumb_180 div {
+    margin:0 auto
+}
+#step-1-car h3 {
+    margin:10px auto;
+    width:186px
+}
+#step-2-car .car_thumb_60 {
+    float:left
+}
+#step-2-car h3 {
+    float:left;
+    margin:20px 20px 0 40px
+}
+.step-right {
+    border-left:1px solid #e5e5e5;
+    padding:0 40px;
+    width:559px
+}
+.step-right #step-1-form fieldset {
+    margin:20px 0;
+    width:290px
+}
+.step-right #step-1-form fieldset input {
+    width:288px
+}
+.step-right #step-1-form #concessionaires_list_models {
+    width:400px
+}
+.step-right #step-1-form #concessionaires_list_models .list {
+    margin-bottom:15px
+}
+.step-right #step-1-form #concessionaires_list_models ul {
+    list-style:none;
+    padding-left:0;
+    margin:0;
+    width:100%
+}
+.step-right #step-1-form #concessionaires_list_models ul li {
+    margin-bottom:5px;
+    width:100%;
+    min-height:80px;
+    background-color:#f2f2f2;
+    position:relative
+}
+.step-right #step-1-form #concessionaires_list_models ul li div {
+    position:absolute;
+    height:100%;
+    cursor:pointer
+}
+.step-right #step-1-form #concessionaires_list_models ul li div span {
+    display:block;
+    padding:10px
+}
+.step-right #step-1-form #concessionaires_list_models ul li div .title {
+    color:#3f3f3f;
+    font-size:14px;
+    font-weight:bold;
+    text-transform:none
+}
+.step-right #step-1-form #concessionaires_list_models ul li div .address {
+    padding-top:0;
+    font-size:12px;
+    line-height:16px
+}
+.step-right #step-1-form #concessionaires_list_models ul li:hover {
+    background-color:#0051AD;
+    color:#fff
+}
+.step-right #step-1-form #concessionaires_list_models ul li:hover .title {
+    color:#fff
+}
+.step-right #step-1-form #concessionaires_list_models a {
+    clear:both;
+    float:left
+}
+.step-right #step-2-form fieldset {
+    width:202px
+}
+.step-right #step-2-form fieldset input {
+    width:169px
+}
+.step-right #step-2-form fieldset .invalid-message {
+    width:181px
+}
+.step-right #step-2-form .fieldset-radio-checkbox {
+    width:auto
+}
+.step-right #step-2-form #mail-cel-step-2 {
+    width:100%
+}
+.step-right #step-2-form #mail-cel-step-2 fieldset {
+    margin-right:20px;
+    float:left
+}
+.step-right #step-2-form #mail-cel-step-2 .name-lastname {
+    float:left;
+    width:100%
+}
+.step-right #step-2-form #step-2-p-date {
+    margin:0 0 10px
+}
+.step-right #step-2-form #step-2-p-contact {
+    margin:20px 0
+}
+.step-right #step-2-form .button, .step-right #step-2-form #step-2-legal {
+    float:left;
+    clear:both;
+    margin-top:10px;
+    margin-bottom:5px
+}
+.step-right #step-2-final {
+    display:none;
+    float:left;
+    clear:both
+}
+.step-right #step-2-final h4 {
+    border-bottom:1px solid #e5e5e5;
+    padding-bottom:15px
+}
+.step-right #step-2-final .button {
+    float:left;
+    clear:both;
+    margin:15px 0;
+    text-align:center
+}
+.et-wrapper {
+    position:relative;
+    -webkit-perspective:1200px;
+    -moz-perspective:1200px;
+    perspective:1200px;
+    display:block;
+    overflow:hidden;
+    width:100%;
+    height:100%
+}
+.et-section {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    visibility:hidden;
+    overflow:hidden;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    transform-style:preserve-3d
+}
+.et-page-current, .no-js .et-page {
+    visibility:visible;
+    z-index:1
+}
+.no-js body {
+    overflow:auto
+}
+.et-page-ontop {
+    z-index:999
+}
+.pt-page-moveToLeft {
+    -webkit-animation:moveToLeft .6s ease both;
+    -moz-animation:moveToLeft .6s ease both;
+    animation:moveToLeft .6s ease both
+}
+.pt-page-moveFromLeft {
+    -webkit-animation:moveFromLeft .6s ease both;
+    -moz-animation:moveFromLeft .6s ease both;
+    animation:moveFromLeft .6s ease both
+}
+.pt-page-moveToRight {
+    -webkit-animation:moveToRight .6s ease both;
+    -moz-animation:moveToRight .6s ease both;
+    animation:moveToRight .6s ease both
+}
+.pt-page-moveFromRight {
+    -webkit-animation:moveFromRight .6s ease both;
+    -moz-animation:moveFromRight .6s ease both;
+    animation:moveFromRight .6s ease both
+}
+.pt-page-moveToTop {
+    -webkit-animation:moveToTop .6s ease both;
+    -moz-animation:moveToTop .6s ease both;
+    animation:moveToTop .6s ease both
+}
+.pt-page-moveFromTop {
+    -webkit-animation:moveFromTop .6s ease both;
+    -moz-animation:moveFromTop .6s ease both;
+    animation:moveFromTop .6s ease both
+}
+.pt-page-moveToBottom {
+    -webkit-animation:moveToBottom .6s ease both;
+    -moz-animation:moveToBottom .6s ease both;
+    animation:moveToBottom .6s ease both
+}
+.pt-page-moveFromBottom {
+    -webkit-animation:moveFromBottom .6s ease both;
+    -moz-animation:moveFromBottom .6s ease both;
+    animation:moveFromBottom .6s ease both
+}
+.pt-page-moveToLeftEasing {
+    -webkit-animation:moveToLeft .7s ease-in-out both;
+    -moz-animation:moveToLeft .7s ease-in-out both;
+    animation:moveToLeft .7s ease-in-out both
+}
+.pt-page-moveToRightEasing {
+    -webkit-animation:moveToRight .7s ease-in-out both;
+    -moz-animation:moveToRight .7s ease-in-out both;
+    animation:moveToRight .7s ease-in-out both
+}
+@-webkit-keyframes moveToLeft {
+    to {
+        -webkit-transform:translateX(-100%)
+    }
+}
+@-moz-keyframes moveToLeft {
+    to {
+        -moz-transform:translateX(-100%)
+    }
+}
+@keyframes moveToLeft {
+    to {
+        transform:translateX(-100%)
+    }
+}
+@-webkit-keyframes moveFromLeft {
+    from {
+        -webkit-transform:translateX(-100%)
+    }
+}
+@-moz-keyframes moveFromLeft {
+    from {
+        -moz-transform:translateX(-100%)
+    }
+}
+@keyframes moveFromLeft {
+    from {
+        transform:translateX(-100%)
+    }
+}
+@-webkit-keyframes moveToRight {
+    to {
+        -webkit-transform:translateX(100%)
+    }
+}
+@-moz-keyframes moveToRight {
+    to {
+        -moz-transform:translateX(100%)
+    }
+}
+@keyframes moveToRight {
+    to {
+        transform:translateX(100%)
+    }
+}
+@-webkit-keyframes moveFromRight {
+    from {
+        -webkit-transform:translateX(100%)
+    }
+}
+@-moz-keyframes moveFromRight {
+    from {
+        -moz-transform:translateX(100%)
+    }
+}
+@keyframes moveFromRight {
+    from {
+        transform:translateX(100%)
+    }
+}
+@-webkit-keyframes moveToTop {
+    to {
+        -webkit-transform:translateY(-100%)
+    }
+}
+@-moz-keyframes moveToTop {
+    to {
+        -moz-transform:translateY(-100%)
+    }
+}
+@keyframes moveToTop {
+    to {
+        transform:translateY(-100%)
+    }
+}
+@-webkit-keyframes moveFromTop {
+    from {
+        -webkit-transform:translateY(-100%)
+    }
+}
+@-moz-keyframes moveFromTop {
+    from {
+        -moz-transform:translateY(-100%)
+    }
+}
+@keyframes moveFromTop {
+    from {
+        transform:translateY(-100%)
+    }
+}
+@-webkit-keyframes moveToBottom {
+    to {
+        -webkit-transform:translateY(100%)
+    }
+}
+@-moz-keyframes moveToBottom {
+    to {
+        -moz-transform:translateY(100%)
+    }
+}
+@keyframes moveToBottom {
+    to {
+        transform:translateY(100%)
+    }
+}
+@-webkit-keyframes moveFromBottom {
+    from {
+        -webkit-transform:translateY(100%)
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform:translateY(100%)
+    }
+}
+@keyframes moveFromBottom {
+    from {
+        transform:translateY(100%)
+    }
+}
+#features-space {
+    margin:0 auto
+}
+.arrow-prices {
+    display:none
+}
+table.suzuki-grid {
+    background-color:#fff;
+    border-spacing:0;
+    border-collapse:collapse;
+    margin:0 auto
+}
+table.suzuki-grid thead tr th {
+    height:150px;
+    vertical-align:bottom;
+    width:480px
+}
+table.suzuki-grid thead tr th a.close {
+    background:url("../../img/sections/models/prices/close-comparisoin.png") right top no-repeat;
+    display:block;
+    float:right;
+    height:30px;
+    margin-bottom:80px;
+    width:30px
+}
+table.suzuki-grid thead tr th a.close span {
+    display:none
+}
+table.suzuki-grid thead tr th span {
+    clear:both;
+    color:#fff;
+    background-color:#0051ad;
+    display:block;
+    font-family:'Lato', sans-serif;
+    font-size:16px;
+    font-weight:400;
+    height:40px;
+    line-height:40px;
+    margin:0 1px;
+    text-align:center
+}
+table.suzuki-grid thead tr th.cols-3 {
+    width:320px
+}
+table.suzuki-grid thead tr th.cols-4 {
+    width:240px
+}
+table.suzuki-grid thead tr th.dark span {
+    background-color:#003f87
+}
+table.suzuki-grid thead tr th.specs span {
+    background-color:#999
+}
+table.suzuki-grid thead tr th.swift-sport-swift-sport {
+    background:url("../../img/sections/models/prices/mini-models/swift-sport-swift-sport.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.swift-ga {
+    background:url("../../img/sections/models/prices/mini-models/swift-ga.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.swift-gls {
+    background:url("../../img/sections/models/prices/mini-models/swift-gls.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.swift-glx {
+    background:url("../../img/sections/models/prices/mini-models/swift-glx.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.sx4-crossover-tm {
+    background:url("../../img/sections/models/prices/mini-models/sx4-crossover-tm.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.sx4-crossover-cvt {
+    background:url("../../img/sections/models/prices/mini-models/sx4-crossover-cvt.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.sx4-sedan-tm {
+    background:url("../../img/sections/models/prices/mini-models/sx4-sedan-tm.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.sx4-sedan-cvt {
+    background:url("../../img/sections/models/prices/mini-models/sx4-sedan-cvt.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.kizashi-kizashi {
+    background:url("../../img/sections/models/prices/mini-models/kizashi-kizashi.html") center top no-repeat
+}
+table.suzuki-grid thead tr th.grand-vitara-gl {
+    background:url("../../img/sections/models/prices/mini-models/grand-vitara-gl.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.grand-vitara-gls {
+    background:url("../../img/sections/models/prices/mini-models/grand-vitara-gls.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.grand-vitara-gls-4x4 {
+    background:url("../../img/sections/models/prices/mini-models/grand-vitara-gls-4x4.png") center top no-repeat
+}
+table.suzuki-grid thead tr th.dummy-car-1, table.suzuki-grid thead tr th.dummy-car-2 {
+    background:url("../../img/sections/models/prices/comparision/homeromovil.png") center top no-repeat
+}
+table.suzuki-grid tbody tr td p {
+    border:1px solid #e6e6e6;
+    color:#333;
+    margin:0 1px;
+    padding:10px;
+    position:relative
+}
+table.suzuki-grid tbody tr td.specs {
+    color:#2a2a2a;
+    font-weight:700;
+    text-align:center
+}
+table.suzuki-grid tbody tr td.price {
+    text-align:center
+}
+table.suzuki-grid tbody tr td.price p {
+    padding:40px 10px
+}
+table.suzuki-grid tbody tr td.yes p {
+    background:url("../../img/sections/models/prices/list-ok.png") center center no-repeat
+}
+table.suzuki-grid tbody tr td.no p {
+    background:url("../../img/sections/models/prices/list-ko.png") center center no-repeat
+}
+table.suzuki-grid tbody tr td.dark p {
+    background-color:#fafafa
+}
+table.suzuki-grid tbody tr td.light p {
+    background-color:#e6e6e6
+}
+.specs-button {
+    background-color:#fff;
+    margin:0 1px;
+    padding:0
+}
+.specs-button a {
+    background:url("../../img/sections/models/prices/specs.png") 25px center no-repeat #fafafa;
+    border:1px solid #e6e6e6;
+    display:block;
+    height:44px;
+    padding:0 0 0 55px;
+    text-decoration:none
+}
+.specs-button a span {
+    color:#003f87;
+    display:block;
+    height:44px;
+    line-height:44px;
+    text-align:left
+}
+.specs-button a.hover {
+    text-decoration:none
+}
+#maintenance-title {
+    padding:30px 0 15px;
+    height:60px
+}
+#versions-maintenance-table .maintenance-head {
+    background:#003f87
+}
+#versions-maintenance-table .maintenance-head .title p {
+    color:#fff
+}
+.comparative-button-wrapper {
+    clear:both;
+    padding:30px 0 30px;
+    text-align:center;
+    display:none
+}
+#comparison-wrapper {
+    display:none;
+    margin:0;
+    width:960px
+}
+#comparison-wrapper #comparison-space {
+    float:left;
+    width:741px
+}
+#comparison-wrapper #comparison-space table#versions-comparison-table th.fixed, #comparison-wrapper #comparison-space table#versions-comparison-table td.fixed {
+    display:table-cell
+}
+#comparison-wrapper #comparison-space table#versions-comparison-table tbody tr td.price {
+    text-align:left
+}
+#comparison-wrapper #comparison-space table#versions-comparison-table tbody tr td.price p {
+    padding:10px
+}
+#comparison-wrapper #comparison-controls {
+    background-color:#fafafa;
+    border:1px solid #e6e6e6;
+    float:right;
+    margin:110px 0 0;
+    width:316px
+}
+#comparison-wrapper #comparison-controls p {
+    margin:15px 20px;
+    padding:0
+}
+#comparison-wrapper #comparison-controls ul {
+    margin:15px 20px 0;
+    padding:0
+}
+#comparison-wrapper #comparison-controls ul li {
+    border-top:1px solid #e6e6e6;
+    clear:both;
+    list-style:none;
+    margin:0;
+    padding:0
+}
+#comparison-wrapper #comparison-controls ul li a, #comparison-wrapper #comparison-controls ul li a:hover {
+    display:block;
+    line-height:35px;
+    padding:0 0 0 5px;
+    text-decoration:none
+}
+#comparison-wrapper #comparison-controls ul li a span, #comparison-wrapper #comparison-controls ul li a:hover span {
+    color:#0051ad
+}
+.step-tab-model {
+    display:none
+}
+.step-tab-model.active {
+    display:block
+}
+.car-comparative-col {
+    display:none
+}
+.car-comparative-col.active {
+    display:block
+}
+#car-comparative-list {
+    display:block
+}
+#car-comparative-list.hidden {
+    display:none
+}
+#instant-drive-section {
+    display:none
+}
+@media only screen and (max-device-width: 767px) {
+    .scroll-in-site, #show-comparative-div, #p-empty, .maintenance-image, .maintenance-note, .maintenance-motor-type, .maintenance-row, #download-catalog-alt, .car-next-step, #text-drive-section {
+        display:none !important;
+        opacity:0 !important;
+        margin-top:0 !important
+    }
+    .model-section {
+        height:auto !important;
+        padding:0 15px;
+        margin:25px 0
+    }
+    .model-section .section-title {
+        width:100%;
+        height:auto;
+        margin-bottom:20px
+    }
+    .model-section .section-title .title {
+        font-size:24px;
+        margin:17px 0 0;
+        line-height:28px
+    }
+    .model-section .section-title .description {
+        font-size:12px;
+        margin:0 0 30px;
+        font-weight:300;
+        height:auto;
+        font-family:'Lato'
+    }
+    .model-section .car-main {
+        height:auto;
+        background:none !important;
+        margin:0 10px
+    }
+    .model-section .car-main .car-main-title {
+        padding:0 0 50px
+    }
+    .model-section .car-main .car-main-title .title {
+        font-size:24px;
+        margin:17px 0
+    }
+    .model-section .car-main .car-main-title .slogan {
+        font-size:14px;
+        line-height:18px;
+        text-transform:uppercase;
+        margin:0 0 5px
+    }
+    .model-section .car-main .car-main-title .price {
+        color:#999;
+        font-size:12px;
+        margin:0 0 25px
+    }
+    .model-section .car-main .car-main-title .car-main-image {
+        display: block;
+        width: 287px;
+        height: 132px;
+        background-size: 1985px 132px !important;
+        margin: 0 auto;
+        background:url("../../img/template/common/header/cars-sprite-160.png") no-repeat;
+        background-repeat: no-repeat;
+    }
+    .model-section .car-main .car-main-title #car-image-swift-sport {
+        background-position: 13px -6px;
+        width: 263px !important;
+        height: 150px !important;
+    }
+    .model-section .car-main .car-main-title #car-image-swift {
+        background-position: -237px -7px;
+        width: 263px !important;
+        height: 149px;
+    }
+    .model-section .car-main .car-main-title #car-image-sx4-crossover {
+        background-position:-358px 0
+    }
+    .model-section .car-main .car-main-title #car-image-sx4-sedan {
+        background-position:-541px 0
+    }
+    .model-section .car-main .car-main-title #car-image-kizashi {
+        background-position: -990px 3px;
+        width: 260px;
+        height: 140px;
+    }
+    .model-section .car-main .car-main-title #car-image-grand-vitara {
+        background-position: -1235px 0;
+        width: 257px;
+        height: 132px;
+    }
+    .model-section .car-main .car-main-title #car-image-s-cross {
+        background-position: -1489px 0;
+        width: 237px;
+    }
+    .model-section .car-main .car-main-title #car-image-ciaz {
+        background-position: -1718px 0 !important;
+    }
+    .model-section .specifications-wrapper {
+        height:auto
+    }
+    .model-section .specifications-wrapper .specifications {
+        height:auto;
+        overflow:hidden
+    }
+    .model-section .specifications-wrapper .specifications .specification {
+        background-size:100% auto
+    }
+    .model-section .specifications-wrapper .specifications .specification .title-wrapper {
+        width:100%;
+        height:200px
+    }
+    .model-section .specifications-wrapper .specifications .specification .title {
+        font-size:18px;
+        font-weight:500;
+        color:#333 !important;
+        text-shadow:0 0 0 #000;
+        height:auto;
+        padding:175px 0 0 15px
+    }
+    .model-section .specifications-wrapper .specifications .specification .description {
+        color:#999;
+        font-size:13px;
+        line-height:17px;
+        padding:10px 0;
+        width:100%
+    }
+    .model-section .specifications-wrapper .specifications .specification .description p {
+        padding:0 15px;
+        margin:0;
+        width:auto
+    }
+    .model-section .specifications-controls {
+        height:35px;
+        margin:0 auto 140px;
+        max-width:100%
+    }
+    .model-section .specifications-controls .arrows {
+        height:35px;
+        margin-top:-200px
+    }
+    .model-section .specifications-controls .arrows .arrow {
+        height:35px;
+        width:35px
+    }
+    .model-section .specifications-controls .arrows .arrow a {
+        height:35px;
+        background-size:70px 70px
+    }
+    .model-section .specifications-controls .arrows .left {
+        margin-left:15px
+    }
+    .model-section .specifications-controls .arrows .right {
+        margin-right:15px
+    }
+    .model-section .model-prices {
+        width:100%
+    }
+    .model-section .model-prices #features-space {
+        width:100% !important;
+        position:relative
+    }
+    #model-section-features {
+        padding:0;
+        min-height:380px;
+        height:100% !important
+    }
+    .full-size-section.gray-degree {
+        background:none
+    }
+    #features-space-mask {
+        width:100%;
+        overflow:hidden
+    }
+    .specs_arrows {
+        display:block !important;
+        position:absolute;
+        left:0;
+        top:10px;
+        width:100%
+    }
+    .specs_arrows div {
+        position:absolute;
+        top:0;
+        width:24px;
+        height:24px;
+        -moz-border-radius:12px;
+        -webkit-border-radius:12px;
+        border-radius:12px;
+        -moz-background-clip:padding;
+        -webkit-background-clip:padding-box;
+        background-clip:padding-box;
+        background-color:#003f87;
+        cursor:pointer
+    }
+    .specs_arrows div i {
+        color:#fff;
+        font-family:'Entypo';
+        font-style:normal;
+        font-size:12px;
+        cursor:pointer;
+        position:absolute;
+        top:3px
+    }
+    .specs_arrows .specs_left {
+        left:0
+    }
+    .specs_arrows .specs_left i {
+        left:8px
+    }
+    .specs_arrows .specs_right {
+        right:0
+    }
+    .specs_arrows .specs_right i {
+        left:10px
+    }
+    .specs_arrows .specs_disabled {
+        opacity:0.5;
+        cursor:default
+    }
+    .specs_arrows .specs_disabled i {
+        cursor:default
+    }
+    table.suzuki-grid {
+        -webkit-transition:all linear .2s;
+        -moz-transition:all linear .2s;
+        -o-transition:all linear .2s;
+        -ms-transition:all linear .2s;
+        transition:all linear .2s
+    }
+    table.suzuki-grid thead tr th {
+        background-size:81px !important;
+        background-position:center top;
+        height:100px !important
+    }
+    table.suzuki-grid span, table.suzuki-grid p {
+        margin:0 !important
+    }
+    .max-colums-1 {
+        width:100% !important
+    }
+    .max-colums-1 td, .max-colums-1 th {
+        width:100%
+    }
+    .max-colums-2 {
+        width:200% !important
+    }
+    .max-colums-2 td, .max-colums-2 th {
+        width:50%
+    }
+    .max-colums-3 {
+        width:300% !important
+    }
+    .max-colums-3 td, .max-colums-3 th {
+        width:33.3%
+    }
+    .galery-grid {
+        width:288px !important;
+        max-width:100% !important;
+        height:215px;
+        padding-bottom:50px
+    }
+    .galery-grid .content {
+        min-height:0;
+        height:100%;
+        position:relative
+    }
+    .galery-grid .content .view {
+        margin:0 !important;
+        position:absolute
+    }
+    .galery-grid .content .view img {
+        width:100% !important;
+        height:100% !important;
+        position:absolute;
+        z-index:1
+    }
+    .galery-grid .content .view .mask {
+        opacity:0;
+        height:100% !important;
+        margin-top:0 !important;
+        position:absolute;
+        z-index:2
+    }
+    .galery-grid .content .box-1 {
+        left:0;
+        top:0;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-grid .content .box-2 {
+        left:72px;
+        top:0;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-grid .content .box-3 {
+        left:0;
+        top:72px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-grid .content .box-4, .galery-grid .content .box-360 {
+        left:72px;
+        top:72px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-grid .content .box-5 {
+        left:144px;
+        top:0;
+        width:143px !important;
+        height:143px !important
+    }
+    .galery-grid .content .box-6 {
+        left:0;
+        top:144px;
+        width:143px !important;
+        height:71px !important
+    }
+    .galery-grid .content .box-7 {
+        left:144px;
+        top:144px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-grid .content .box-8 {
+        left:216px;
+        top:144px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross {
+        width:288px !important;
+        max-width:100% !important;
+        height:215px;
+        padding-bottom:50px
+    }
+    .galery-of-s-cross .content {
+        min-height:0;
+        height:100%;
+        position:relative
+    }
+    .galery-of-s-cross .content .view {
+        margin:0 !important;
+        position:absolute
+    }
+    .galery-of-s-cross .content .view img {
+        width:100% !important;
+        height:100% !important;
+        position:absolute;
+        z-index:1
+    }
+    .galery-of-s-cross .content .view .mask {
+        opacity:0;
+        height:100% !important;
+        margin-top:0 !important;
+        position:absolute;
+        z-index:2
+    }
+    .galery-of-s-cross .content .box-5 {
+        left:0;
+        top:0;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross .content .box-6 {
+        left:72px;
+        top:0;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross .content .box-7 {
+        left:0;
+        top:72px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross .content .box-8 {
+        left:72px;
+        top:72px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross .content .box-1, .galery-of-s-cross .content .box-360 {
+        left:144px;
+        top:0;
+        width:143px !important;
+        height:143px !important
+    }
+    .galery-of-s-cross .content .box-2 {
+        left:0;
+        top:144px;
+        width:143px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross .content .box-3 {
+        left:144px;
+        top:144px;
+        width:71px !important;
+        height:71px !important
+    }
+    .galery-of-s-cross .content .box-4 {
+        left:216px;
+        top:144px;
+        width:71px !important;
+        height:71px !important
+    }
+    #accesorios-padding {
+        padding-bottom:200px
+    }
+    #accesorios-padding p {
+        margin:30px 0 !important
+    }
+    #accesorios-padding p .button {
+        display:block;
+        padding:15px 0;
+        -moz-border-radius:2px;
+        -webkit-border-radius:2px;
+        border-radius:2px
+    }
+    .model-prices {
+        position:relative
+    }
+    .arrow-prices {
+        position:absolute;
+        width:25px;
+        height:25px;
+        cursor:pointer;
+        top:10px;
+        background:url("../../img/sections/models/features-arrows.png") left bottom no-repeat;
+        background-size:50px 50px;
+        z-index:2
+    }
+    .arrow-prices-left {
+        left:0;
+        background-position:bottom left
+    }
+    .arrow-prices-left:hover {
+        background-position:top left
+    }
+    .arrow-prices-right {
+        right:0;
+        background-position:bottom right
+    }
+    .arrow-prices-right:hover {
+        background-position:top right
+    }
+    .arrow-prices-hidden {
+        display:none !important
+    }
+    #features-space .suzuki-table .data-wrapper .head .row .cell .title {
+        background:#003f87
+    }
+    #features-space .suzuki-table .data-wrapper .head .row .cell .image {
+        width:100%;
+        height:60px;
+        text-align:center
+    }
+    #features-space .suzuki-table .data-wrapper .head .row .cell .image img {
+        width:81px;
+        height:38px
+    }
+    #features-space .suzuki-table .price-promotion {
+        background-color:transparent;
+        color:#e1261c
+    }
+    #features-space .suzuki-table.cols-1 .row .cell {
+        width:100%
+    }
+    #features-space .suzuki-table.cols-2 {
+        width:200%
+    }
+    #features-space .suzuki-table.cols-2 .row .cell {
+        width:50%;
+        margin:0
+    }
+    #features-space .suzuki-table.cols-3 {
+        width:300%
+    }
+    #features-space .suzuki-table.cols-3 .row .cell {
+        width:33.3%;
+        margin:0
+    }
+    .maintenance-prices {
+        width:100% !important;
+        float:none;
+        margin-top:-20px;
+        overflow:hidden;
+        padding-bottom:75px
+    }
+    .maintenance-prices .mintenance-header {
+        font-size:16px
+    }
+    .maintenance-prices .suzuki-table .cell {
+        border:0 !important
+    }
+    .maintenance-prices .suzuki-table .cell .title {
+        margin:0 !important;
+        padding:10px 0 !important
+    }
+    .maintenance-prices .suzuki-table .cell p {
+        font-size:12px !important;
+        line-height:15px !important
+    }
+    .maintenance-prices .cols-3 .cell {
+        width:33.3% !important;
+        margin:0 !important
+    }
+    .maintenance-prices .cols-4 .cell {
+        width:25% !important;
+        margin:0 !important
+    }
+    .social-bar, .catalog_switch_menu {
+        display:none
+    }
+    #catalog_title {
+        display:block;
+        text-align:center;
+        margin:18px 15px 0;
+        padding-bottom:20px;
+        font-size:24px;
+        line-height:24px;
+        font-weight:300;
+        border-bottom:1px solid #e5e5e5
+    }
+    .catalog {
+        height:auto;
+        min-width:0;
+        padding:0 15px 20px;
+        overflow:visible
+    }
+    .catalog .items-wrapper .item {
+        height:auto;
+        background:none !important;
+        border-bottom:1px solid #e5e5e5
+    }
+    .catalog .items-wrapper .item .content, .catalog .items-wrapper .item .white {
+        width:auto;
+        min-height:0;
+        padding:18px 0 10px 110px;
+        position:relative
+    }
+    .catalog .items-wrapper .item .content .car_model, .catalog .items-wrapper .item .white .car_model {
+        display:block;
+        position:absolute;
+        left:0;
+        top:18px;
+        width:105px;
+        height:50px;
+        background:url("../../img/template/common/header/cars-sprite-60.png") no-repeat;
+        background-size:620px 50px
+    }
+    .catalog .items-wrapper .item .content .model, .catalog .items-wrapper .item .white .model {
+        height:auto;
+        margin-bottom:5px
+    }
+    .catalog .items-wrapper .item .content .model h2, .catalog .items-wrapper .item .white .model h2 {
+        color:#003145 !important;
+        font-size:14px;
+        font-weight:bold;
+        text-transform:none;
+        margin:0
+    }
+    .catalog .items-wrapper .item .content .description, .catalog .items-wrapper .item .white .description {
+        margin-bottom:5px
+    }
+    .catalog .items-wrapper .item .content .description p, .catalog .items-wrapper .item .white .description p {
+        color:#999 !important;
+        font-size:12px;
+        line-height:16px
+    }
+    .catalog .items-wrapper .item .content .dowload, .catalog .items-wrapper .item .white .dowload {
+        overflow:hidden
+    }
+    .catalog .items-wrapper .item .content .dowload a, .catalog .items-wrapper .item .white .dowload a {
+        background-color:transparent;
+        padding:0 25px 0 0;
+        color:#0051ad;
+        position:relative;
+        float:left;
+        clear:both;
+        margin:10px 0
+    }
+    .catalog .items-wrapper .item .content .dowload a span, .catalog .items-wrapper .item .white .dowload a span {
+        position:absolute;
+        right:0
+    }
+    .catalog .items-wrapper .item .content .dowload a:hover, .catalog .items-wrapper .item .white .dowload a:hover {
+        text-decoration:underline
+    }
+    .catalog .items-wrapper .item .content .dowload a:hover span, .catalog .items-wrapper .item .white .dowload a:hover span {
+        text-decoration:none
+    }
+    .catalog .et-section {
+        position:relative;
+        top:auto;
+        left:auto;
+        overflow:visible;
+        visibility:visible
+    }
+    .et-wrapper {
+        overflow:visible !important
+    }
+    #catalog-swift-sport .car_model {
+        /*background-position:0 0;*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_swift-sport.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #catalog-swift .car_model {
+        /*background-position:-103px 0*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_swift.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #catalog-sx4-crossover .car_model {
+        /*background-position:-206px 0*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_sx4-crossover.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #catalog-sx4-sedan .car_model {
+        /*background-position:-309px 0*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_sx4-sedan.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #catalog-kizashi .car_model {
+        /*background-position:-412px 0*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_kizashi.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #catalog-grand-vitara .car_model {
+        /*background-position:-515px 0*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_grand-vitara.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #catalog-s-cross .car_model {
+        /*background-position:-515px 0*/
+        background-position: 0 0;
+        background: url("../../img/template/common/header/suzuki_s-cross.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
+    #model-section-arrow {
+        display:none !important
+    }
+    #instant-drive-section {
+        display:none !important
+    }
+    .catalog_switch_menu .catalog_cars_wrapper .catalog_car.swift {
+        background-position:9px -56px
+    }
+    .catalog_switch_menu .catalog_cars_wrapper .catalog_car.sx4-crossover {
+        background-position:9px -106px
+    }
+    .catalog_switch_menu .catalog_cars_wrapper .catalog_car.sx4-sedan {
+        background-position:9px -156px
+    }
+    .catalog_switch_menu .catalog_cars_wrapper .catalog_car.kizashi {
+        background-position:9px -206px
+    }
+    .catalog_switch_menu .catalog_cars_wrapper .catalog_car.grand-vitara {
+        background-position:9px -256px
+    }
+    .catalog_switch_menu .catalog_cars_wrapper .catalog_car.s-cross {
+        background-position:9px -308px
+    }
+}
+@media only screen and (max-device-width: 320px) {
+    .model-section .specifications-wrapper .specifications .specification .title-wrapper {
+        height:150px
+    }
+    .model-section .specifications-wrapper .specifications .specification .title {
+        padding:125px 0 0 15px
+    }
+    .model-section .specifications-controls .arrows {
+        margin-top:-210px
+    }
+}
