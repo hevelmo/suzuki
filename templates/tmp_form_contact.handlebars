@@ -1,0 +1,120 @@
+<div class="contact_content">
+    <div id="form-wrapper" >
+        <form id="contactos" name="contactos" method="post" action="contacto.php">
+            <!-- Alerta -->
+            <div class="contact_alert"><span>Los siguientes campos son erróneos:</span></div>
+
+            <!-- Formulario -->
+            <div class="contact_elements">
+                <input type="hidden" name="concesionaria" id="contact_concesionaria" value="Suzuki Guadalajara">
+                <div class="contact_element a">
+                    <fieldset>
+                        <label for="contact_name">Nombre</label>
+                        <input name="name" id="contact_name" type="text" class="icon buddy" value="" data-validation-data="required|name" placeholder="Nombre">
+                        <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset>
+                </div>
+                <div class="contact_element b">
+                    <fieldset>
+                        <label for="contact_lastname">Apellido</label>
+                        <input name="lastname" id="contact_lastname" type="text" class="icon buddy" value="" data-validation-data="required|name" placeholder="Apellidos Paterno y Materno">
+                        <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset>
+                </div>
+
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="contact_elements">
+                <div class="contact_element a">
+                    <fieldset>
+                        <label for="contact_email">Correo electrónico</label>
+                        <input name="email"  id="contact_email" type="email" class="icon email" value="" data-validation-data="required|email" placeholder="Correo electrónico">
+                        <p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset>
+                </div>
+                <div class="contact_element b">
+                    <!--<fieldset>
+                        <label for="contact_city">Ciudad</label>
+                        <input id="contact_city" type="text" value="" data-validation-data="required|address" placeholder="Ciudad">
+                        <p class="invalid-message" id="error_ciudad">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset> -->
+                </div>
+
+                <div class="contact_element a">
+                    <!--<fieldset>
+                        <label for="contact_delegation">Delegación o municipio</label>
+                        <input id="contact_delegation" type="text" value="" data-validation-data="required|address" placeholder="Delegación o municipio">
+                        <p class="invalid-message" id="error_delegacion">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset> -->
+                </div>
+
+            </div>
+
+            <div class="contact_elements">
+
+                <div class="contact_element b">
+                    <fieldset>
+                        <label for="contact_department">Departamento</label>
+                        <select name="departamento" id="contact_department" type="dropdown" class="seleccionar" style="width: 256px;">
+                            <option label="Selecccionar" selected="selected" disabled="disabled" value=""></option>
+                            <option value="ventas"          >Ventas</option>
+                            <option value="servicio"        >Servicio</option>
+                            <option value="refacciones"     >Refacciones / Accesorios</option>
+                            <option value="mercadotecnia"   >Mercadotecnia</option>
+                            <option value="otros"           >Otros</option>
+                        </select>
+                        <p class="invalid-message" id="error_departamento">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset>
+                </div>
+
+                <div class="contact_element a">
+                    <fieldset>
+                        <label for="contact_car_key">Auto</label>
+                        <select name="car" id="contact_car_key" type="dropdown" class="seleccionar" style="width: 256px;" >
+                            <option label="Selecccionar" selected="selected" disabled="disabled" value=""></option>
+                            <option value="swift-sport"     >Swift Sport</option>
+                            <option value="swift"           >Swift</option>
+                            <!--<option value="sx4-crossover"   >SX4 Crossover</option>
+                            <option value="sx4-sedan"       >SX4 Sedán</option>-->
+                            <option value="kizashi"         >Kizashi</option>
+                            <option value="grand-vitara"    >Grand Vitara</option>
+                            <option value="s-cross"         >S-Cross</option>
+                        </select>
+                        <p class="invalid-message" id="error_auto">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="contact_elements">
+                <div class="contact_element ab">
+                    <fieldset>
+                        <label for="contact_message">Mensaje:</label>
+                        <textarea name="message" class="escribir2" id="contact_message"></textarea>
+                        <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
+                    </fieldset>
+
+                    <fieldset class="fieldset-radio-checkbox">
+                        <label for="contact-newsletter" class="label-checkbox checkbox-checked">
+                            <input name="news" type="checkbox" id="contact-newsletter" name="chk-newsletter" checked="checked"> Deseo recibir noticias y promociones.
+                        </label>
+                    </fieldset>
+
+                    <input type="submit" class="enviar button blue" value="Enviar" />
+                    <p id="revisa_aviso">
+                        Tus datos están a salvo.<br/>
+                        Para mayor información revisa nuestro <a href="aviso-privacidad.html">Aviso de privacidad</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="form-thanks" style="display: none">
+        <p class="agradecimiento_titulo">Mensaje enviado</p>
+        <p class="agradecimiento_titulo2">En breve responderemos tu mensaje al siguiente correo:<br /><span id="email-from">-</span></p>
+        <hr>
+        <p class="agradecimiento_titulo3">¡No olvides seguir nuestras noticias y ofertas en las redes sociales!</p>
+        <div class="arrow"><img src="img/sections/contact/arrow.png"></div>
+    </div>
+</div>

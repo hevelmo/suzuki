@@ -1,8 +1,6 @@
 ﻿
-/* webfont */
-@import url(../webfont/entypo-webfont-kit.css);
-@import url(../webfont/suzuki-webfont-kit.css);
-@import url(../webfont/fontawesome-webfont-kit.css);
+@import url("../webfonts/suzuki-webfontkit/stylesheet.css");
+@import url("../webfonts/fontawesome/font-awesome.css");
 
 .hide{display:none!important}.show{display:block!important}
 
@@ -1861,7 +1859,26 @@ a:hover, a:focus {
         height:20px;
     }
 }
-
+@font-face {
+    font-family:'Entypo';
+    src:url("../webfonts/entypo/entypo.eot");
+    src:url("../webfonts/entypo/entypo.eot?#iefix") format("embedded-opentype"), url("../webfonts/entypo/entypo.woff") format("woff"), url("../webfonts/entypo/entypo.ttf") format("truetype"), url("../webfonts/entypo/entypo.svg#Entypo") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family:'Entypo Social';
+    src:url("../webfonts/entypo-social/entypo-social.eot");
+    src:url("../webfonts/entypo-social/entypo-social.eot?#iefix") format("embedded-opentype"), url("../webfonts/entypo-social/entypo-social.woff") format("woff"), url("../webfonts/entypo-social/entypo-social.ttf") format("truetype"), url("../webfonts/entypo-social/entypo-social.svg#EntypoSocial") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+.icon_entypo {
+    font-family:entypo;
+}
+span.entypo {
+    font-family:'Entypo';
+}
 .stick_buttons {
     margin:0;
     padding:0;
@@ -1913,12 +1930,12 @@ a:hover, a:focus {
     border-top-right-radius:2px;
 }
 #range_enganche {
-    background-image:url('//img/template/common/header/range_enganche_rule.png?1398885846');
+    background-image:url('../../img/template/common/header/range_enganche_rule.png?1398885846');
     background-repeat:no-repeat;
     background-position:12px 35px;
 }
 #range_plazo {
-    background-image:url('//img/template/common/header/range_plazo_rule.png?1398885846');
+    background-image:url('../../img/template/common/header/range_plazo_rule.png?1398885846');
     background-repeat:no-repeat;
     background-position:15px 28px;
 }
@@ -2036,32 +2053,35 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     width:167px;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a {
-    padding:0;
-    text-align:center;
+    padding: 0;
+    text-align: center
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.swift-sport {
-    background:url("../../img/template/models/logos/swift_sport.png") center 10px no-repeat;
+    background: url("../../img/template/models/logos/swift_sport.png") center 10px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.swift {
-    background:url("../../img/template/models/logos/swift.png") center 15px no-repeat;
+    background: url("../../img/template/models/logos/swift.png") center 15px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.kizashi {
-    background:url("../../img/template/models/logos/kizashi.png") center 15px no-repeat;
+    background: url("../../img/template/models/logos/kizashi.png") center 15px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.grand-vitara {
-    background:url("../../img/template/models/logos/grand_vitara.png") center 12px no-repeat;
+    background: url("../../img/template/models/logos/grand_vitara.png") center 12px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.sx4-crossover {
-    background:url("../../img/template/models/logos/sx4_crossover.png") center 7px no-repeat;
+    background: url("../../img/template/models/logos/sx4_crossover.png") center 7px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.sx4-sedan {
-    background:url("../../img/template/models/logos/sx4_sedan.png") center 7px no-repeat;
+    background: url("../../img/template/models/logos/sx4_sedan.png") center 7px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first a.s-cross {
-    background:url("../../img/template/models/logos/s-cross.png") center 15px no-repeat;
+    background: url("../../img/template/models/logos/s-cross.png") center 15px no-repeat;
+}
+.header-wrapper #header-zone #models-header ul.models-menu li.first a.ciaz {
+    background: url("../../img/template/models/logos/ciaz.png") center 9px no-repeat;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.first.current a {
-    background-color:#ba1f16;
+    background-color: #ba1f16;
 }
 .header-wrapper #header-zone #models-header ul.models-menu li.top {
     background:none;
@@ -2184,11 +2204,11 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
 }
 .loading-meta-data {
-    background:url("img/template/ajax-loader.gif") center center no-repeat;
+    background:url("../../img/template/ajax-loader.gif") center center no-repeat;
     height:150px;
 }
 #model-section-arrow {
-    background:url("img/template/models/separator2.png") left top no-repeat;
+    background:url("../../img/template/models/separator2.png") left top no-repeat;
     height:12px;
     position:fixed;
     width:20px;
@@ -2197,7 +2217,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     left:50%;
 }
 #model-test-drive-flag {
-    background:url("img/template/models/agendar.png") left top no-repeat;
+    background:url("../../img/template/models/agendar.png") left top no-repeat;
     position:fixed;
     z-index:2000;
     top:-90px;
@@ -2223,7 +2243,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
 #model-test-drive-flag:hover {
     margin-top:0;
 }
-#header-panel {
+.header_panel {
     display:none;
     overflow:hidden;
     padding-top:95px;
@@ -2232,6 +2252,11 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     background-color:#fff;
     box-shadow:0 0 3px rgba(0, 0, 0, 0.4);
     z-index:100;
+}
+.header_panel.header_panel_active {
+    display: block;
+    position: fixed;
+    top: 0px;
 }
 #header-panel #header-sections-wrapper {
     width:1000%;
@@ -2261,7 +2286,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     line-height:16px;
     float:left;
     padding:0 15px 30px 0;
-    width:285px;
+    width:270px;
     position:relative;
 }
 .header-section-content.models .models-wrapper .model a {
@@ -2269,11 +2294,11 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     display:block;
 }
 .header-section-content.models .models-wrapper .model a .car-preview {
-    /*background:url("img/template/common/header/cars-sprite-60.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;*/
+    background: url("../../img/template/common/header/cars-sprite-60.png") 0 0 no-repeat;
+    float: left;
+    height: 60px;
+    width: 120px;
+    padding: 0
 }
 .header-section-content.models .models-wrapper .model a .car-preview span {
     display:none;
@@ -2310,67 +2335,101 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
 .header-section-content.models .models-wrapper .model a i {
     display:none;
 }
+/* img individual */
+    /*
+    .header-section-content.models .models-wrapper .model.swift-sport .car-preview {
+        background:url("../../img/template/common/header/suzuki_swift-sport.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.swift .car-preview {
+        background:url("../../img/template/common/header/suzuki_swift.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.sx4-crossover {
+        padding-right:0;
+    }
+    .header-section-content.models .models-wrapper .model.sx4-crossover .car-preview {
+        background:url("../../img/template/common/header/suzuki_sx4-crossover.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.sx4-sedan .car-preview {
+        background:url("../../img/template/common/header/suzuki_sx4-sedan.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.kizashi .car-preview {
+        background:url("../../img/template/common/header/suzuki_kizashi.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.grand-vitara {
+        padding-right:0;
+    }
+    .header-section-content.models .models-wrapper .model.grand-vitara .car-preview {
+        background:url("../../img/template/common/header/suzuki_grand-vitara.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.s-cross .car-preview {
+        background:url("../../img/template/common/header/suzuki_s-cross.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    .header-section-content.models .models-wrapper .model.ciaz .car-preview {
+        background:url("../../img/template/common/header/suzuki_ciaz.png") 0 0 no-repeat;
+        float:left;
+        height:60px;
+        width:120px;
+        padding:0;
+    }
+    */
+/**/
 .header-section-content.models .models-wrapper .model.swift-sport .car-preview {
-    background:url("../../img/template/common/header/suzuki_swift-sport.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: 0px 0;
 }
 .header-section-content.models .models-wrapper .model.swift .car-preview {
-    background: url("../../img/template/common/header/suzuki_swift.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -120px 0;
 }
 .header-section-content.models .models-wrapper .model.sx4-crossover {
-    padding-right:0;
+    padding-right: 0;
 }
 .header-section-content.models .models-wrapper .model.sx4-crossover .car-preview {
-    background:url("../../img/template/common/header/suzuki_sx4-crossover.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -240px 0;
 }
 .header-section-content.models .models-wrapper .model.sx4-sedan .car-preview {
-    background:url("../../img/template/common/header/suzuki_sx4-sedan.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -360px 0;
 }
 .header-section-content.models .models-wrapper .model.kizashi .car-preview {
-    background:url("../../img/template/common/header/suzuki_kizashi.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -480px 0;
 }
 .header-section-content.models .models-wrapper .model.grand-vitara {
-    padding-right:0;
+    padding-right: 0;
 }
 .header-section-content.models .models-wrapper .model.grand-vitara .car-preview {
-    background:url("../../img/template/common/header/suzuki_grand-vitara.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -600px 0;
 }
 .header-section-content.models .models-wrapper .model.s-cross .car-preview {
-    background:url("../../img/template/common/header/suzuki_s-cross.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -720px 0;
 }
 .header-section-content.models .models-wrapper .model.ciaz .car-preview {
-    background:url("../../img/template/common/header/suzuki_ciaz.png") 0 0 no-repeat;
-    float:left;
-    height:60px;
-    width:120px;
-    padding:0;
+    background-position: -835px 0;
 }
 .header-section-content.models .models-wrapper .note {
     margin:0;
@@ -2394,12 +2453,12 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
 .header-section-content.before-buy .header-title {
     /*display:none;*/
     border-bottom: 1px solid #cdcdcd;
-    color: #003a55;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 100%;
-    margin: 0 0 15px;
-    padding: 0 0 15px;
+color: #003a55;
+font-size: 16px;
+font-weight: 500;
+line-height: 100%;
+margin: 0 0 15px;
+padding: 0 0 15px;
 }
 .header-section-content.before-buy {
     height:250px;
@@ -2774,6 +2833,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     right:0;
     top:5px;
     color:inherit;
+    font-family:'Entypo';
     font-size:16px;
     font-style:normal;
     font-weight:normal;
@@ -3285,94 +3345,97 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     display:block;
 }
 .car_thumb_160 .car {
-    background:url("../../img/template/common/header/cars-sprite-160.png") 0 0 no-repeat;
-    height:160px;
-    width:320px;
+    background: url("../../img/template/common/header/cars-sprite-160.png") 0 0 no-repeat;
+    height: 160px;
+    width: 320px
 }
 .car_thumb_160 .car.swift-sport {
-    background-position:0 0;
+    background-position: 0 0
 }
 .car_thumb_160 .car.swift {
-    background-position:-320px 0;
+    background-position: -320px 0
 }
 .car_thumb_160 .car.sx4-crossover {
-    background-position:-640px 0;
+    background-position: -640px 0
 }
 .car_thumb_160 .car.sx4-sedan {
-    background-position:-960px 0;
+    background-position: -960px 0
 }
 .car_thumb_160 .car.kizashi {
-    background-position:-1280px 0;
+    background-position: -1280px 0
 }
 .car_thumb_160 .car.grand-vitara {
-    background-position:-1600px -4px;
+    background-position: -1600px -4px
 }
 .car_thumb_160 .car.s-cross {
-    background-position:-1910px -4px;
+    background-position: -1910px -4px
+}
+.car_thumb_160 .car.ciaz {
+    background-position: -2210px -4px
 }
 .car_thumb_180 {
-    display:block;
+    display: block
 }
 .car_thumb_180 .car {
-    background:url("../../img/template/common/header/cars-sprite-180.png") 0 0 no-repeat;
-    width:196px;
-    height:98px;
+    background: url("../../img/template/common/header/cars-sprite-180.png") 0 0 no-repeat;
+    width: 196px;
+    height: 98px
 }
 .car_thumb_180 .car.swift-sport {
-    background-position:0 0;
+    background-position: 0 0
 }
 .car_thumb_180 .car.swift {
-    background-position:-198px 0;
+    background-position: -198px 0
 }
 .car_thumb_180 .car.sx4-crossover {
-    background-position:-391px 0;
+    background-position: -391px 0
 }
 .car_thumb_180 .car.sx4-sedan {
-    background-position:-591px 0;
+    background-position: -591px 0
 }
 .car_thumb_180 .car.kizashi {
-    background-position:-789px 0;
+    background-position: -789px 0
 }
 .car_thumb_180 .car.grand-vitara {
-    background-position:-984px -4px;
+    background-position: -984px -4px
 }
 .car_thumb_180 .car.s-cross {
-    background-position:-1180px -4px;
+    background-position: -1180px -4px
 }
 .car_thumb_180 .car.ciaz {
-    background-position: -1383px -4px;
+    background-position: -1383px -4px
 }
 .car_thumb_60 {
-    display:block;
+    display: block
 }
 .car_thumb_60 .car {
-    background:url("../../img/template/common/header/cars-sprite-60.png") 0 0 no-repeat;
-    height:60px;
-    width:120px;
+    background: url("../../img/template/common/header/cars-sprite-60.png") 0 0 no-repeat;
+    height: 60px;
+    width: 120px
 }
 .car_thumb_60 .car.swift-sport {
-    background-position:-0px 0;
+    background-position: -0px 0
 }
 .car_thumb_60 .car.swift {
-    background-position:-120px 0;
+    background-position: -120px 0
 }
 .car_thumb_60 .car.sx4-crossover {
-    background-position:-240px 0;
+    background-position: -240px 0
 }
 .car_thumb_60 .car.sx4-sedan {
-    background-position:-360px 0;
+    background-position: -360px 0
 }
 .car_thumb_60 .car.kizashi {
-    background-position:-480px 0;
+    background-position: -480px 0
 }
 .car_thumb_60 .car.grand-vitara {
-    background-position:-600px 0;
+    background-position: -600px 0
 }
 .car_thumb_60 .car.s-cross {
-    background-position:-715px 0;
+    background-position: -715px 0
 }
-.car_thumb_60 .car.ciaz{
-    background-position:-830px 0;
+.car_thumb_60 .car.ciaz {
+    background-position: -830px 0
 }
 #geolocation-fixed {
     background:#003f87;
@@ -3436,7 +3499,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     top:0;
     width:15px;
     height:15px;
-    background:url("img/template/common/header/x-white.png") no-repeat;
+    background:url("../../img/template/common/header/x-white.png") no-repeat;
 }
 #geolocation-wrapper a:hover {
     text-decoration:none;
@@ -3839,33 +3902,27 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
         top:20px;
     }
     #car_select_preview .car_thumb_160 .car {
-        width: 145px;
-        height: 78px;
-        background-size: 1170px 80px;
+        width:145px;
+        height:78px;
+        background-size:920px 80px;
     }
     #car_select_preview .car_thumb_160 .swift-sport {
-        background-position: -3px 0;
+        background-position:-3px 0;
     }
     #car_select_preview .car_thumb_160 .swift {
-        background-position: -149px 0;
+        background-position:-158px 0;
     }
-    /*#car_select_preview .car_thumb_160 .sx4-crossover {
+    #car_select_preview .car_thumb_160 .sx4-crossover {
         background-position:-308px 0;
     }
     #car_select_preview .car_thumb_160 .sx4-sedan {
         background-position:-464px 0;
-    }*/
+    }
     #car_select_preview .car_thumb_160 .kizashi {
-        background-position: -588px 0;
+        background-position:-618px 0;
     }
     #car_select_preview .car_thumb_160 .grand-vitara {
-        background-position: -735px 0;
-    }
-    #car_select_preview .car_thumb_160 .s-cross {
-        background-position: -875px -0px;
-    }
-    #car_select_preview .car_thumb_160 .ciaz {
-        background-position: -1016px -1px !important;
+        background-position:-770px 0;
     }
     #td_concessionaire_car, #fu_adjust_car {
         float:none;

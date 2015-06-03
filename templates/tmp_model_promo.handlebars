@@ -1,0 +1,76 @@
+<div class="section-title hide_s-cross" style="margin-bottom: 0; border-bottom: none;">
+    <p class="title text-left">Nuevo ciaz</p>
+</div>
+<section>
+    <div id="home-scross" style="background: #9ca9af;">
+        <div class="full_width">
+            <div class="hover_details" style="display: none;">
+                <div class="relative">
+                    <div class="details"><img src="img/sections/home/s-cross/see.png" alt=""/></div>
+                    <div class="up"><img src="img/sections/home/s-cross/up.png" alt=""/></div>
+                    <div class="down"><img src="img/sections/home/s-cross/down.png" alt=""/></div>
+                </div>
+            </div>
+            <!--<img class="scross_bg flash" src="img/sections/home/s-cross/car-on.jpg" alt="S-cross"/ style="opacity: 0; display: block; display: none">-->
+            <img class="scross_bg" src="img/sections/home/s-cross/car.jpg" alt="S-cross"/>
+        </div>
+        <div class="s-cross_form hidden">
+            <div class="promo-video-bg">
+                <video id="video-home-scross" preload="auto" muted="" poster="files/videos/s-cross-promo/s-cross.jpg">
+                    <source src="files/videos/s-cross-promo/s-cross.mp4" type="video/mp4">
+                    <source src="files/videos/s-cross-promo/s-cross.webm" type="video/webm">
+                </video>
+            </div>
+            <div class="s-cross_close"></div>
+            <div class="form-scross-wrapper">
+                <div class="left">
+					<div class="first-step">
+                        <h5>
+                            Nuevo <span>Suzuki</span>
+                            <strong>S-CROSS</strong>
+                            <span class="small">desde</span> $ 249,900<span class="fa fa-asterisk" style="font-size: 15px; top: -15px; left: 2px; position: relative;"></span>
+                        </h5>
+                        <small><span class="fa fa-asterisk"></span> VERSIÓN GL/TM</small>
+                        <p><strong>Agenda tu prueba de manejo.</strong> El crossover que te hará olvidar tu primera camioneta.</p>
+                        <form id="contactos" name="contactos" method="post" action="testscross.php">
+                        <!--<form onsubmit="$.test_drive_promo_s_cross( this ); return false;"> -->
+                            <input type="hidden" name="concesionaria" value="Suzuki Guadalajara">
+                            <input type="hidden" name="modelo" value="s-cross">
+                            <fieldset>
+                                <input type="text"	id="sxc_name" 	name="name"		placeholder="Nombre completo"		data-validation-data="required|name" />
+                                <p class="invalid-message" id="error_mail">&nbsp;<span>&nbsp;</span></p>
+                            </fieldset>
+                            <fieldset>
+                                <input type="tel"	id="sxc_tel" 	name="tel" 		placeholder="Número de celular (10 dígitos)" maxlength="10" 		data-validation-data="required|phone" />
+                                <p class="invalid-message" id="error_mail">&nbsp;<span>&nbsp;</span></p>
+                            </fieldset>
+                            <fieldset>
+                                <input type="email"	id="sxc_email"	name="email"	placeholder="Correo electrónico"	data-validation-data="required|email" />
+                                <p class="invalid-message" id="error_mail">&nbsp;<span>&nbsp;</span></p>
+                            </fieldset>
+                            <fieldset>
+                                <input type="submit" id="sxc_send" value="Enviar"/>
+                            </fieldset>
+                        </form>
+					</div>
+					<div class="second-step hidden">
+						<p class="title">Gracias</p>
+						<p>Tu prueba de manejo ha sido agendada.</p>
+						<p>Pronto recibirás confirmación en tu correo electrónico: <span id="sxc_email_review"></span></p>
+						<p>Te hemos asignado un asesor quien se pondrá en contacto contigo para confirmar tus datos y cualquier duda que puedas tener.</p>
+
+						<p><a href="s-cross.html">Conoce más del S-cross</a></p>
+                        <fieldset>
+                            <button id="s-cross_finish">Finalizar</button>
+                        </fieldset>
+					</div>
+
+                </div>
+                <div class="right">
+                    <img src="img/sections/home/s-cross/badge.png" alt="auto TV Show"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</section>

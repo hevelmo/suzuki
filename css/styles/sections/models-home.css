@@ -1,0 +1,1039 @@
+.full-size-section.gray-degree {
+	background: url("../../img/template/models/gray-bg.png") left top repeat-x
+}
+.special-padding-top {
+	padding: 7% 0 0
+}
+.model-section {
+	clear: both
+}
+/*.section-title {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 960px;
+	height: 120px
+}
+.section-title .title {
+	font-size: 36px;
+	font-weight: 300;
+	line-height: 36px;
+	text-transform: uppercase
+}
+*/.section-title .description {
+	font-size: 18px;
+	line-height: 18px;
+	height: 18px;
+	padding: 5px 0 0
+}
+.car-main {
+	background: url("../../img/template/transparent-bg.png") top center no-repeat;
+	height: 100%
+}
+.car-main .car-main-title {
+	text-align: center;
+	padding: 50px 0 0
+}
+.car-main .car-main-title .title {
+	font-weight: 300;
+	font-size: 54px;
+	line-height: 100%;
+	text-transform: uppercase
+}
+.car-main .car-main-title .slogan {
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 100%;
+	margin: 5px 0 20px
+}
+.car-main .car-main-title .price {
+	font-size: 18px;
+	line-height: 140%;
+	font-weight: 300
+}
+.car-main .car-main-title .car-main-image {
+	display: none
+}
+.car-main .car-next-step {
+	height: 164px;
+	margin: 380px auto 0;
+	width: 82px
+}
+.car-main .car-next-step a {
+	background: url("../../img/sections/models/next-step.png") left top no-repeat;
+	display: block;
+	height: 82px
+}
+.car-main .car-next-step a span {
+	display: none
+}
+.car-main.big-main {
+	background-position: center 210px !important
+}
+.car-main.big-main .car-next-step {
+	height: 210px;
+	margin: 470px auto 0
+}
+
+.specifications-controls{height:60px;margin:0 auto 325px;max-width:1060px;position:relative}
+.specifications-controls .arrows{height:60px;margin-top:-355px}
+.specifications-controls .arrows .arrow{float:left;height:60px;width:60px}
+.specifications-controls .arrows .arrow a{background:url("../../../img/sections/models/features-arrows.png") left bottom no-repeat;display:block;height:60px}
+.specifications-controls .arrows .arrow a span{display:none}
+.specifications-controls .arrows .arrow a:hover{background-position:top left}
+.specifications-controls .arrows .arrow.right{float:right}
+.specifications-controls .arrows .arrow.right a{background-position:bottom right}
+.specifications-controls .arrows
+.promos-wrapper-s{height:450px;overflow:hidden;width:100%}
+.promos-container-s{height:450px;width:500%}
+.arrow.right a:hover{background-position:top right}
+.specifications-wrapper{height:655px;margin-top:0;overflow:hidden;width:100%}
+.specifications-wrapper .specifications{height:100%;width:1000%}
+.specifications-wrapper .specifications .specification{background:url("../../img/sections/models/next-step.png") center top no-repeat;height:100%;float:left;width:10%}
+.specifications-wrapper .specifications .title-wrapper,.specifications-wrapper .specifications .description{margin:0 auto;width:920px}
+.specifications-wrapper .specifications .title-wrapper{height:300px}.specifications-wrapper .specifications .title-wrapper .title{color:#fff;display:table-cell;font-size:34px;font-weight:900;height:300px;line-height:100%;vertical-align:middle;text-shadow:0 1px 3px rgba(0,0,0,0.5);text-transform:none;width:400px}
+.specifications-wrapper .specifications .description{padding:25px 0 0 42px}
+.specifications-wrapper .specifications .description p{font-size:16px !important;line-height:140%;margin:0 0 20px;width:400px}
+.specifications-wrapper .specifications .description.compact p{width:350px}.specifications-wrapper .specifications .description.extra-compact p{width:280px}
+.specifications-wrapper .specifications .description.extended p{width:450px}
+.model-prices{margin:0 auto;width:960px}
+
+.hidden-list {
+	display: none
+}
+.display-tables {
+	overflow: hidden
+}
+#features-space-mask {
+	margin-bottom: 50px
+}
+#comparative-space-wrapper #versions-comparative-table {
+	width: 638px;
+	float: left
+}
+#comparative-space-wrapper .cols-2 .head .col-dark {
+	background: #003f87 !important
+}
+#comparative-space-wrapper .cols-2 .cell {
+	float: left;
+	width: 319px
+}
+#comparative-space-wrapper .cols-2 .first {
+	margin-right: 1px;
+	width: 318px
+}
+#comparative-space-wrapper .cols-2 .last {
+	margin-left: 0px
+}
+#comparative-space-wrapper .cols-2 .gray .title {
+	background: #999
+}
+#comparative-space-wrapper .cols-2 .bold .title p {
+	font-weight: bold;
+	text-align: left
+}
+#car-comparative-list {
+	float: left;
+	margin-left: 1px;
+	width: 277px;
+	border: 1px solid #e5e5e5;
+	padding: 20px 20px 10px 20px
+}
+#car-comparative-list h3 {
+	text-align: center;
+	color: #3f3f3f;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0 0 10px;
+	line-height: 100%
+}
+#car-comparative-list p {
+	text-align: center;
+	line-height: 19px;
+	font-size: 13px
+}
+#car-comparative-list ul {
+	margin: 15px 0 0;
+	padding: 0;
+	list-style: none
+}
+#car-comparative-list ul li a {
+	border-top: 1px solid #e5e5e5;
+	padding: 10px 0;
+	color: #0051ad;
+	display: block
+}
+#car-comparative-list ul li a: hover {
+	text-decoration: none
+}
+.car-comparative-col {
+	float: left
+}
+.car-comparative-col .head .row .cell {
+	width: 319px;
+	margin-left: 1px;
+	position: relative
+}
+.car-comparative-col .head .row .cell .control {
+	position: absolute;
+	right: 10px;
+	top: 13px
+}
+.car-comparative-col .head .row .cell .control .close {
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	z-index: 2;
+	background: url("../../img/template/common/header/x-white.png") no-repeat
+}
+.car-comparative-col .head .row .cell .title {
+	background: #003f87 !important
+}
+.car-comparative-col .body .row .cell {
+	width: 319px;
+	margin-left: 1px
+}
+#button-scroll-top {
+	display: block;
+	width: 61px;
+	height: 61px;
+	background: url("../../img/sections/models/button-scroll-top.html") no-repeat;
+	position: fixed;
+	bottom: 0;
+	right: 20px
+}
+.social-bar {
+	position: fixed;
+	top: 180px;
+	width: 35px;
+	z-index: 10
+}
+.social-bar .social-links {
+	background-color: #013A55;
+	padding: 2px
+}
+.social-bar .social-links .social-link a {
+	background: url("../../img/template/common/social-left-bar/facebook.png") center center no-repeat;
+	display: block;
+	height: 27px
+}
+.social-bar .social-links .social-link a span {
+	display: none
+}
+.social-bar .social-links .social-link a.facebook {
+	background-image: url("../../img/template/common/social-left-bar/facebook.png")
+}
+.social-bar .social-links .social-link a.twitter {
+	background-image: url("../../img/template/common/social-left-bar/twitter.png")
+}
+.social-bar .social-links .social-link a.instagram {
+	background-image: url("../../img/template/common/social-left-bar/instagram.png")
+}
+.social-bar .social-links .social-link a.pinterest {
+	background-image: url("../../img/template/common/social-left-bar/pinterest.png")
+}
+#catalog_title {
+	display: none
+}
+.catalog {
+	margin: 0;
+	height: 655px;
+	min-width: 960px;
+	overflow: hidden
+}
+.catalog .items-wrapper .item {
+	background: url("../../img/template/transparent-bg.png") center top no-repeat;
+	height: 655px
+}
+.catalog .items-wrapper .item .content {
+	margin: 0 auto;
+	padding: 70px 0 0 0;
+	width: 960px
+}
+.catalog .items-wrapper .item .content .car_model {
+	display: none
+}
+.catalog .items-wrapper .item .content .model {
+	height: 38px
+}
+.catalog .items-wrapper .item .content .model h2 {
+	color: #003f87;
+	margin: 25px 0 0;
+	font-size: 36px;
+	font-weight: 300;
+	text-transform: uppercase
+}
+.catalog .items-wrapper .item .content .description {
+	margin-bottom: 28px
+}
+.catalog .items-wrapper .item .content .description p {
+	color: #333333;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0
+}
+.catalog .items-wrapper .item .content.white .model h2 {
+	color: #fff
+}
+.catalog .items-wrapper .item .content.white .description p {
+	color: #fff
+}
+.lt-ie8 .catalog .items-wrapper .item .content .model h2 {
+	display: block;
+	line-height: 0;
+	padding: 0 0 20px 0;
+	margin-bottom: 20px
+}
+.catalog_switch_menu {
+	float: right;
+	margin-top: -600px;
+	overflow: hidden;
+	right: 0;
+	width: 255px;
+	position: absolute;
+	z-index: 99
+}
+.catalog_switch_menu .catalog_cars_wrapper {
+	width: 255px
+}
+.catalog_switch_menu .catalog_cars_wrapper .title {
+	background: url("../../img/sections/catalog/download_arrow.png") 28px center no-repeat #005aab;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 900;
+	height: 55px;
+	line-height: 55px;
+	padding: 0 0 0 65px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car {
+	background: url("../../img/sections/catalog/cars.png") 0 0 no-repeat #fff;
+	border-bottom: 1px solid #e2dedd;
+	height: 37px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a {
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	padding: 6px 0 6px 68px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a span {
+	border-left: 1px solid #e2dedd;
+	color: #5a5a5a;
+	display: block;
+	height: 26px;
+	padding: 0 0 0 10px
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a span:hover {
+	color: #003f87
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car a:hover {
+	text-decoration: none
+}
+.catalog_switch_menu .catalog_cars_wrapper .catalog_car.swift-sport {
+	background-position: 9px -6px
+}
+.model-section {
+	height: auto !important;
+	padding: 0 15px;
+	margin: 25px 0
+}
+.model-section .section-title {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px
+}
+.model-section .section-title .title {
+	font-size: 24px;
+	margin: 17px 0 0;
+	line-height: 28px
+}
+.model-section .section-title .description {
+	font-size: 12px;
+	margin: 0 0 30px;
+	font-weight: 300;
+	height: auto;
+	font-family: 'Lato'
+}
+.model-section .car-main {
+	height: auto;
+	background: none !important;
+	margin: 0 10px
+}
+.model-section .car-main .car-main-title {
+	padding: 0 0 50px
+}
+.model-section .car-main .car-main-title .title {
+	font-size: 24px;
+	margin: 17px 0
+}
+.model-section .car-main .car-main-title .slogan {
+	font-size: 14px;
+	line-height: 18px;
+	text-transform: uppercase;
+	margin: 0 0 5px
+}
+.model-section .car-main .car-main-title .price {
+	color: #999;
+	font-size: 12px;
+	margin: 0 0 25px
+}
+.model-section .car-main .car-main-title .car-main-image {
+	display: block;
+	width: 190px;
+	height: 105px;
+	margin: 0 auto;
+	background: url("../../img/template/common/header/cars-sprite-160.png") no-repeat;
+	background-size: 1275px 106px
+}
+.model-section .car-main .car-main-title #car-image-swift-sport {
+	background-position: 5px 0
+}
+.model-section .car-main .car-main-title #car-image-swift {
+	background-position: -175px 0
+}
+.model-section .car-main .car-main-title #car-image-sx4-crossover {
+	background-position: -358px 0
+}
+.model-section .car-main .car-main-title #car-image-sx4-sedan {
+	background-position: -541px 0
+}
+.model-section .car-main .car-main-title #car-image-kizashi {
+	background-position: -724px 0
+}
+.model-section .car-main .car-main-title #car-image-grand-vitara {
+	background-position: -905px 0
+}
+.model-section .car-main .car-main-title #car-image-s-cross {
+	background-position: -1085px 0
+}
+.model-section .specifications-wrapper {
+	height: auto
+}
+.model-section .specifications-wrapper .specifications {
+	height: auto;
+	overflow: hidden
+}
+.model-section .specifications-wrapper .specifications .specification {
+	background-size: 100% auto
+}
+.model-section .specifications-wrapper .specifications .specification .title-wrapper {
+	width: 100%;
+	height: 200px
+}
+.model-section .specifications-wrapper .specifications .specification .title {
+	font-size: 18px;
+	font-weight: 500;
+	color: #333 !important;
+	text-shadow: 0 0 0 #000;
+	height: auto;
+	padding: 175px 0 0 15px
+}
+.model-section .specifications-wrapper .specifications .specification .description {
+	color: #999;
+	font-size: 13px;
+	line-height: 17px;
+	padding: 10px 0;
+	width: 100%
+}
+.model-section .specifications-wrapper .specifications .specification .description p {
+	padding: 0 15px;
+	margin: 0;
+	width: auto
+}
+.model-section .specifications-controls {
+	height: 35px;
+	margin: 0 auto 140px;
+	max-width: 100%
+}
+.model-section .specifications-controls .arrows {
+	height: 35px;
+	margin-top: -200px
+}
+.model-section .specifications-controls .arrows .arrow {
+	height: 35px;
+	width: 35px
+}
+.model-section .specifications-controls .arrows .arrow a {
+	height: 35px;
+	background-size: 70px 70px
+}
+.model-section .specifications-controls .arrows .left {
+	margin-left: 15px
+}
+.model-section .specifications-controls .arrows .right {
+	margin-right: 15px
+}
+.model-section .model-prices {
+	width: 100%
+}
+.model-section .model-prices #features-space {
+	width: 100% !important;
+	position: relative
+}
+#model-section-features {
+	padding: 0;
+	min-height: 380px;
+	height: 100% !important
+}
+.full-size-section.gray-degree {
+	background: none
+}
+#features-space-mask {
+	width: 100%;
+	overflow: hidden
+}
+.specs_arrows {
+	display: block !important;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 100%
+}
+.specs_arrows div {
+	position: absolute;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #003f87;
+	cursor: pointer
+}
+.specs_arrows div i {
+	color: #fff;
+	font-family: 'Entypo';
+	font-style: normal;
+	font-size: 12px;
+	cursor: pointer;
+	position: absolute;
+	top: 3px
+}
+.specs_arrows .specs_left {
+	left: 0
+}
+.specs_arrows .specs_left i {
+	left: 8px
+}
+.specs_arrows .specs_right {
+	right: 0
+}
+.specs_arrows .specs_right i {
+	left: 10px
+}
+.specs_arrows .specs_disabled {
+	opacity: 0.5;
+	cursor: default
+}
+.specs_arrows .specs_disabled i {
+	cursor: default
+}
+table.suzuki-grid {
+	-webkit-transition: all linear .2s;
+	-moz-transition: all linear .2s;
+	-o-transition: all linear .2s;
+	-ms-transition: all linear .2s;
+	transition: all linear .2s
+}
+table.suzuki-grid thead tr th {
+	background-size: 81px !important;
+	background-position: center top;
+	height: 100px !important
+}
+table.suzuki-grid span,table.suzuki-grid p {
+	margin: 0 !important
+}
+.max-colums-1 {
+	width: 100% !important
+}
+.max-colums-1 td,.max-colums-1 th {
+	width: 100%
+}
+.max-colums-2 {
+	width: 200% !important
+}
+.max-colums-2 td,.max-colums-2 th {
+	width: 50%
+}
+.max-colums-3 {
+	width: 300% !important
+}
+.max-colums-3 td,.max-colums-3 th {
+	width: 33.3%
+}
+.galery-grid {
+	width: 288px !important;
+	max-width: 100% !important;
+	height: 215px;
+	padding-bottom: 50px
+}
+.galery-grid .content {
+	min-height: 0;
+	height: 100%;
+	position: relative
+}
+.galery-grid .content .view {
+	margin: 0 !important;
+	position: absolute
+}
+.galery-grid .content .view img {
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	z-index: 1
+}
+.galery-grid .content .view .mask {
+	opacity: 0;
+	height: 100% !important;
+	margin-top: 0 !important;
+	position: absolute;
+	z-index: 2
+}
+.galery-grid .content .box-1 {
+	left: 0;
+	top: 0;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-grid .content .box-2 {
+	left: 72px;
+	top: 0;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-grid .content .box-3 {
+	left: 0;
+	top: 72px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-grid .content .box-4,.galery-grid .content .box-360 {
+	left: 72px;
+	top: 72px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-grid .content .box-5 {
+	left: 144px;
+	top: 0;
+	width: 143px !important;
+	height: 143px !important
+}
+.galery-grid .content .box-6 {
+	left: 0;
+	top: 144px;
+	width: 143px !important;
+	height: 71px !important
+}
+.galery-grid .content .box-7 {
+	left: 144px;
+	top: 144px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-grid .content .box-8 {
+	left: 216px;
+	top: 144px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-of-s-cross {
+	width: 288px !important;
+	max-width: 100% !important;
+	height: 215px;
+	padding-bottom: 50px
+}
+.galery-of-s-cross .content {
+	min-height: 0;
+	height: 100%;
+	position: relative
+}
+.galery-of-s-cross .content .view {
+	margin: 0 !important;
+	position: absolute
+}
+.galery-of-s-cross .content .view img {
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	z-index: 1
+}
+.galery-of-s-cross .content .view .mask {
+	opacity: 0;
+	height: 100% !important;
+	margin-top: 0 !important;
+	position: absolute;
+	z-index: 2
+}
+.galery-of-s-cross .content .box-5 {
+	left: 0;
+	top: 0;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-of-s-cross .content .box-6 {
+	left: 72px;
+	top: 0;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-of-s-cross .content .box-7 {
+	left: 0;
+	top: 72px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-of-s-cross .content .box-8 {
+	left: 72px;
+	top: 72px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-of-s-cross .content .box-1,.galery-of-s-cross .content .box-360 {
+	left: 144px;
+	top: 0;
+	width: 143px !important;
+	height: 143px !important
+}
+.galery-of-s-cross .content .box-2 {
+	left: 0;
+	top: 144px;
+	width: 143px !important;
+	height: 71px !important
+}
+.galery-of-s-cross .content .box-3 {
+	left: 144px;
+	top: 144px;
+	width: 71px !important;
+	height: 71px !important
+}
+.galery-of-s-cross .content .box-4 {
+	left: 216px;
+	top: 144px;
+	width: 71px !important;
+	height: 71px !important
+}
+#accesorios-padding {
+	padding-bottom: 200px
+}
+#accesorios-padding p {
+	margin: 30px 0 !important
+}
+#accesorios-padding p .button {
+	display: block;
+	padding: 15px 0;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px
+}
+.model-prices {
+	position: relative
+}
+.arrow-prices {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	top: 10px;
+	background: url("../../img/sections/models/features-arrows.png") left bottom no-repeat;
+	background-size: 50px 50px;
+	z-index: 2
+}
+.arrow-prices-left {
+	left: 0;
+	background-position: bottom left
+}
+.arrow-prices-left:hover {
+	background-position: top left
+}
+.arrow-prices-right {
+	right: 0;
+	background-position: bottom right
+}
+.arrow-prices-right:hover {
+	background-position: top right
+}
+.arrow-prices-hidden {
+	display: none !important
+}
+#features-space .suzuki-table .data-wrapper .head .row .cell .title {
+	background: #003f87
+}
+#features-space .suzuki-table .data-wrapper .head .row .cell .image {
+	width: 100%;
+	height: 60px;
+	text-align: center
+}
+#features-space .suzuki-table .data-wrapper .head .row .cell .image img {
+	width: 81px;
+	height: 38px
+}
+#features-space .suzuki-table .price-promotion {
+	background-color: transparent;
+	color: #e1261c
+}
+#features-space .suzuki-table.cols-1 .row .cell {
+	width: 100%
+}
+#features-space .suzuki-table.cols-2 {
+	width: 200%
+}
+#features-space .suzuki-table.cols-2 .row .cell {
+	width: 50%;
+	margin: 0
+}
+#features-space .suzuki-table.cols-3 {
+	width: 300%
+}
+#features-space .suzuki-table.cols-3 .row .cell {
+	width: 33.3%;
+	margin: 0
+}
+.maintenance-prices {
+	width: 100% !important;
+	float: none;
+	margin-top: -20px;
+	overflow: hidden;
+	padding-bottom: 75px
+}
+.maintenance-prices .mintenance-header {
+	font-size: 16px
+}
+.maintenance-prices .suzuki-table .cell {
+	border: 0 !important
+}
+.maintenance-prices .suzuki-table .cell .title {
+	margin: 0 !important;
+	padding: 10px 0 !important
+}
+.maintenance-prices .suzuki-table .cell p {
+	font-size: 12px !important;
+	line-height: 15px !important
+}
+.maintenance-prices .cols-3 .cell {
+	width: 33.3% !important;
+	margin: 0 !important
+}
+.maintenance-prices .cols-4 .cell {
+	width: 25% !important;
+	margin: 0 !important
+}
+.social-bar,.catalog_switch_menu {
+	display: none
+}
+#catalog_title {
+	display: block;
+	text-align: center;
+	margin: 18px 15px 0;
+	padding-bottom: 20px;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 300;
+	border-bottom: 1px solid #e5e5e5
+}
+.catalog {
+	height: auto;
+	min-width: 0;
+	padding: 0 15px 20px;
+	overflow: visible
+}
+.catalog .items-wrapper .item {
+	height: auto;
+	background: none !important;
+	border-bottom: 1px solid #e5e5e5
+}
+.catalog .items-wrapper .item .content,.catalog .items-wrapper .item .white {
+	width: auto;
+	min-height: 0;
+	padding: 18px 0 10px 110px;
+	position: relative
+}
+.catalog .items-wrapper .item .content .car_model,.catalog .items-wrapper .item .white .car_model {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 18px;
+	width: 105px;
+	height: 50px;
+	background: url("../../img/template/common/header/cars-sprite-60.png") no-repeat;
+	background-size: 620px 50px
+}
+.catalog .items-wrapper .item .content .model,.catalog .items-wrapper .item .white .model {
+	height: auto;
+	margin-bottom: 5px
+}
+.catalog .items-wrapper .item .content .model h2,.catalog .items-wrapper .item .white .model h2 {
+	color: #003145 !important;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: none;
+	margin: 0
+}
+.catalog .items-wrapper .item .content .description,.catalog .items-wrapper .item .white .description {
+	margin-bottom: 5px
+}
+.catalog .items-wrapper .item .content .description p,.catalog .items-wrapper .item .white .description p {
+	color: #999 !important;
+	font-size: 12px;
+	line-height: 16px
+}
+.catalog .items-wrapper .item .content .dowload,.catalog .items-wrapper .item .white .dowload {
+	overflow: hidden
+}
+.catalog .items-wrapper .item .content .dowload a,.catalog .items-wrapper .item .white .dowload a {
+	background-color: transparent;
+	padding: 0 25px 0 0;
+	color: #0051ad;
+	position: relative;
+	float: left;
+	clear: both;
+	margin: 10px 0
+}
+.catalog .items-wrapper .item .content .dowload a span,.catalog .items-wrapper .item .white .dowload a span {
+	position: absolute;
+	right: 0
+}
+.catalog .items-wrapper .item .content .dowload a:hover,.catalog .items-wrapper .item .white .dowload a:hover {
+	text-decoration: underline
+}
+.catalog .items-wrapper .item .content .dowload a:hover span,.catalog .items-wrapper .item .white .dowload a:hover span {
+	text-decoration: none
+}
+.catalog .et-section {
+	position: relative;
+	top: auto;
+	left: auto;
+	overflow: visible;
+	visibility: visible
+}
+.et-wrapper {
+	overflow: visible !important
+}
+#catalog-swift-sport .car_model {
+	background-position: 0 0
+}
+#catalog-swift .car_model {
+	background-position: -103px 0
+}
+#catalog-sx4-crossover .car_model {
+	background-position: -206px 0
+}
+#catalog-sx4-sedan .car_model {
+	background-position: -309px 0
+}
+#catalog-kizashi .car_model {
+	background-position: -412px 0
+}
+#catalog-grand-vitara .car_model {
+	background-position: -515px 0
+}
+#catalog-s-cross .car_model {
+	background-position: -515px 0
+}
+#model-section-arrow {
+	display: none !important
+}
+#instant-drive-section {
+	display: none !important
+}
+.margin-description {
+	position: relative;
+	top: -70px;
+}
+.hidden-title-wrapper {
+	display: block;
+}
+@media only screen and (max-device-width: 767px) {
+	.hidden-title-wrapper {
+		display: none;
+	}
+	.promotion .specifications-wrapper {
+        height:auto
+    }
+    .promotion .specifications-wrapper .specifications {
+        height:auto;
+        overflow:hidden
+    }
+    .promotion .specifications-wrapper .specifications .specification {
+        background-size:490px auto;
+    }
+    .promotion .specifications-wrapper .specifications .specification .title-wrapper {
+        width:100%;
+        height:200px
+    }
+    .promotion .specifications-wrapper .specifications .specification .title {
+        font-size:18px;
+        font-weight:500;
+        color:#333 !important;
+        text-shadow:0 0 0 #000;
+        height:auto;
+        padding:175px 0 0 15px
+    }
+    .promotion .specifications-wrapper .specifications .specification .description {
+        color:#999;
+        font-size:13px;
+        line-height:17px;
+        padding:10px 0;
+        width:100%
+    }
+    .margin-description {
+		position: relative;
+		top: 0px;
+	}
+    .promotion .specifications-wrapper .specifications .specification .description p {
+        padding:0 15px;
+        margin:0;
+        width:auto
+    }
+    .promotion .specifications-controls {
+        height:35px;
+        margin:0 auto 140px;
+        max-width:100%
+    }
+    .promotion .specifications-controls .arrows {
+        height:35px;
+        margin-top:-150px
+    }
+    .promotion .specifications-controls .arrows .arrow {
+        height:35px;
+        width:35px
+    }
+    .promotion .specifications-controls .arrows .arrow a {
+        height:35px;
+        background-size:70px 70px
+    }
+    .promotion .specifications-controls .arrows .left {
+        margin-left:15px
+    }
+    .promotion .specifications-controls .arrows .right {
+        margin-right:15px
+    }
+    .promotion .model-prices {
+        width:100%
+    }
+    .promotion .model-prices #features-space {
+        width:100% !important;
+        position:relative
+    }
+    /*#model-section-features {
+        padding:0;
+        min-height:380px;
+        height:100% !important
+    }*/
+}
+
+@media only screen and (max-device-width:  320px) {
+	.model-section .specifications-wrapper .specifications .specification .title-wrapper {
+		height: 150px
+	}
+	.model-section .specifications-wrapper .specifications .specification .title {
+		padding: 125px 0 0 15px
+	}
+	.model-section .specifications-controls .arrows {
+		margin-top: -210px
+	}
+
+}

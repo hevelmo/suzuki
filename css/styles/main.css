@@ -1,0 +1,22 @@
+/* CLOSE PANEL */
+a#close-models-panel,
+a#close-financing-panel,
+a#close-owners-panel,
+a#close-before-buy-panel,
+/* CLICK INDEX */
+a#return-index,
+/* CLICK GRUPO */
+a#go-group,
+/* CLICK CONCESIONARIES */
+a#go-concesionaries,
+/* CLICK CATALOGS */
+a#go-catalogs,
+/* CLICK CONTACT US */
+a#go-contact,
+/* BUTONS CONTROL PANEL MENU */
+a#header-models-button,
+a#header-financing-button,
+a#header-owners-button,
+a#header-before-buy-button {
+        cursor: pointer;
+}

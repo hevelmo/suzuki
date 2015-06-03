@@ -52,16 +52,24 @@
 	padding: 0;
 	text-transform: uppercase
 }
+#menu-cars-home .item.car-1 {
+	margin-top: -25px;
+	width: 145px;
+	margin-left: 40px
+}
 #menu-cars-home .item.car-2 {
-	margin-top: -20px;
-	width: 145px
+	margin-top: -5px;
+	width: 145px;
+	margin-left: 20px
 }
 #menu-cars-home .item.car-3 {
-	margin-top: 0px;
+	margin-top: 10px;
+	margin-left: 10px;
 	width: 164px
 }
 #menu-cars-home .item.car-4 {
-	margin-top: 0px;
+	margin-top: 10px;
+	margin-left: 15px;
 	width: 120px
 }
 #menu-cars-home .item.car-5 {
@@ -299,7 +307,7 @@ h2 {
 	margin: 0;
 	color: #808080
 }
-#home-scross .s-cross_form .form-scross-wrapper .left fieldset input: focus {
+#home-scross .s-cross_form .form-scross-wrapper .left fieldset input:focus {
 	color: #fff;
 	border: 1px solid #fff;
 	outline: none;
@@ -706,25 +714,25 @@ h2 {
 	z-index: 0
 }
 #slider-car1 .slider-car-sprite {
-	background-position: 0 0 !important
+	background-position: -190px 0 !important
 }
 #slider-car2 .slider-car-sprite {
-	background-position: -196px 0 !important
+	background-position: -786px 0 !important
 }
 #slider-car3 .slider-car-sprite {
-	background-position: -787px 0 !important
+	background-position: -1177px 0 !important
+}
+#slider-car4 .slider-car-sprite {
+	background-position: -1378px 0 !important
 }
 #slider-car5 .slider-car-sprite {
 	background-position: -983px 0 !important
 }
 #slider-car6 .slider-car-sprite {
-	background-position: -389px 0 !important
+	background-position: 0 0 !important
 }
 #slider-car7 .slider-car-sprite {
 	background-position: -589px 0 !important
-}
-#slider-car4 .slider-car-sprite {
-	background-position: -1178px 0 !important
 }
 #way-of-life .way-of-life .item {
 	width: 50% !important;
@@ -861,11 +869,11 @@ h2 {
 	margin-top: 10px;
 	margin-bottom: 10px
 }
-#way-of-life .way-of-life .item: nth-of-type(odd) {
+#way-of-life .way-of-life .item:nth-of-type(odd) {
 	margin-left: 4%;
 	margin-right: 0
 }
-#way-of-life .way-of-life .item: nth-of-type(even) {
+#way-of-life .way-of-life .item:nth-of-type(even) {
 	margin-left: 0;
 	margin-right: 4%
 }

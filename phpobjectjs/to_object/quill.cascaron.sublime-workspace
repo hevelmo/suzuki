@@ -1,0 +1,1019 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"div_re",
+				"div_recurrent_body"
+			],
+			[
+				"tmp_",
+				"tmp_section_content_home"
+			],
+			[
+				"import",
+				"@import	@import url(${0});"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"lo",
+				"loadTemplate"
+			],
+			[
+				"do",
+				"domEl"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"jaguar",
+				"jaguarbold"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text",
+				"text-height"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"url",
+				"urlsApi"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"data",
+				"dataForm"
+			],
+			[
+				"daa",
+				"dataForm"
+			],
+			[
+				"mt",
+				"margin-top"
+			],
+			[
+				"p",
+				"padding-left"
+			],
+			[
+				"rgb",
+				"rgb()"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"script",
+				"script	HTML - Script"
+			],
+			[
+				"sc",
+				"scripts"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"doc",
+				"document"
+			],
+			[
+				"pb",
+				"padding-bottom"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"pos",
+				"pos-r	position: relative;"
+			],
+			[
+				"re",
+				"resize"
+			],
+			[
+				"o",
+				"outline"
+			],
+			[
+				"bg",
+				"bg+	background: ${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat};"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"thisForm_message_",
+				"thisForm_message_success"
+			],
+			[
+				"men",
+				"mensaje"
+			],
+			[
+				"lorem",
+				"lorem	HTML - Lorem Ipsum"
+			],
+			[
+				"sha",
+				"shadow_right"
+			],
+			[
+				"foo",
+				"footer_logo"
+			],
+			[
+				"me",
+				"method	Attr"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"gra",
+				"graph-bar"
+			],
+			[
+				"styel",
+				"style	Attr"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"media",
+				"Media"
+			],
+			[
+				"tx",
+				"text-align"
+			],
+			[
+				"style",
+				"style	Attr"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"fw",
+				"fw-br	font-weight: bolder;"
+			],
+			[
+				"stly",
+				"style	Attr"
+			],
+			[
+				"a",
+				"a	HTML - Anchor"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"tel",
+				"telefono"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"img",
+				"img_model"
+			],
+			[
+				"html",
+				"html5	Simple HTML5 Boilerplate"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"n",
+				"none"
+			],
+			[
+				"loca",
+				"location"
+			],
+			[
+				"header",
+				"header"
+			],
+			[
+				"va",
+				"value	Attr"
+			],
+			[
+				"messag",
+				"message"
+			],
+			[
+				"ms",
+				"mnsj"
+			],
+			[
+				"¡",
+				"¡Error"
+			],
+			[
+				"mail",
+				"mail"
+			],
+			[
+				"sub",
+				"subject2"
+			],
+			[
+				"title",
+				"title	Attr"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"image",
+				"image_modelo"
+			],
+			[
+				"ima",
+				"image_modelo"
+			],
+			[
+				"fiel",
+				"fieldnm_2"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"w",
+				"white-space"
+			],
+			[
+				"tra",
+				"transition	CSS - transition: ;"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"brder",
+				"border-right"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"bw",
+				"border-width"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"bo",
+				"both"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"co",
+				"content"
+			],
+			[
+				"pt",
+				"padding-top"
+			],
+			[
+				"br",
+				"break-word"
+			],
+			[
+				"wor",
+				"word-wrap"
+			],
+			[
+				"brea",
+				"word-break"
+			],
+			[
+				"ww",
+				"wow-b	word-wrap: break-word;"
+			],
+			[
+				"con",
+				"con	CSS - content: '';"
+			],
+			[
+				"td",
+				"td-u	text-decoration: underline;"
+			],
+			[
+				"wi",
+				"width	Attr"
+			],
+			[
+				"template",
+				"template_app"
+			],
+			[
+				"tr",
+				"transition	CSS - transition: ;"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"top",
+				"top-header"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"lstn",
+				"list-n	list-style-type: none;"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"lsn",
+				"list-n	list-style-type: none;"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"fix",
+				"fixed"
+			],
+			[
+				"_",
+				"__FILE__"
+			],
+			[
+				"abs",
+				"absolute"
+			],
+			[
+				"javas",
+				"javascript"
+			],
+			[
+				"as",
+				"asunto"
+			],
+			[
+				"Fussion",
+				"FussionGlobalStyle"
+			],
+			[
+				"value",
+				"Value"
+			],
+			[
+				"fr",
+				"fr_model_car"
+			],
+			[
+				"_P",
+				"_POST"
+			],
+			[
+				"la",
+				"label"
+			],
+			[
+				"fr_",
+				"fr_car_monthly_payment"
+			],
+			[
+				"pri",
+				"fr_car_price"
+			],
+			[
+				"hide",
+				"hidden"
+			],
+			[
+				"fr_p",
+				"fr_monthly_payment"
+			],
+			[
+				"car_se",
+				"car_select_name"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"funding_",
+				"funding_result_data"
+			],
+			[
+				"fu",
+				"fun	Function"
+			],
+			[
+				"su",
+				"success"
+			],
+			[
+				"res",
+				"respuesta2"
+			],
+			[
+				"c",
+				"concessionaires_search_models"
+			],
+			[
+				"ste",
+				"step-2-tel"
+			],
+			[
+				"step",
+				"step-2-lastname"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/MAMP/htdocs/suzuki/index.html",
+		"/C/MAMP/htdocs/suzuki/js/room.js",
+		"/C/MAMP/htdocs/suzuki/js/main.js",
+		"/C/MAMP/htdocs/suzuki/js/method.js",
+		"/C/MAMP/htdocs/suzukigdl-master/suzukigdl-master/scripts/suzuki/suzuki.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_main_nav_site_nav_contact.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_main_nav_scroll_nav.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_container_sections_home.handlebars",
+		"/C/MAMP/htdocs/medigraf/aviso_legal.html",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_content_projects_begin_portfolio.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/js/main.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/js/room.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/phpobjectjs/to_object/domEl.php",
+		"/C/MAMP/htdocs/structure-quill/medigraf/js/method.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/js/objects.js",
+		"/C/MAMP/htdocs/structure-quill/subm/index.html",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_main_nav_has_child.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/index.html",
+		"/C/MAMP/htdocs/structure-quill/subm/css/import.css",
+		"/C/MAMP/htdocs/camcar/css/import.css",
+		"/C/MAMP/htdocs/structure-quill/subm/css/styles/style-global-helper-classes.css",
+		"/C/MAMP/htdocs/structure-quill/subm/css/styles/style-nav.css",
+		"/C/MAMP/htdocs/camcar/intranet/js/main.js",
+		"/C/MAMP/htdocs/camcar/sitio/js/main.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_content_home_portfolio.handlebars",
+		"/C/MAMP/htdocs/theme/themeforest-10024125-machine-multipurpose-html-with-page-builder/Machine 1.0.0/variant/builder.html",
+		"/C/MAMP/htdocs/medigraf/proyectos.html",
+		"/C/MAMP/htdocs/structure-quill/medigraf/phpobjectjs/to_object/tempsNames.php",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_content_home_slider.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/jquery.scrollTo.js",
+		"/C/MAMP/htdocs/medigraf/index.html",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_container_sections_projects.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_content_projects_filters.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_content_services.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_content_portfolio.handlebars",
+		"/C/MAMP/htdocs/medigraf/about.html",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-gumby.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/import.css",
+		"/C/MAMP/htdocs/theme/themeforest-10024125-machine-multipurpose-html-with-page-builder/Machine 1.0.0/home-5.html",
+		"/C/MAMP/htdocs/theme/themeforest-7555960-ventcamp-responsive-conference-landing-page/Ventcamp/Ventcamp_HTML/index-overlay.html",
+		"/C/MAMP/htdocs/theme/themeforest-7555960-ventcamp-responsive-conference-landing-page/Ventcamp/Ventcamp_HTML/assets/js/scripts.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/jquery.nav.js",
+		"/C/MAMP/htdocs/medigraf/js/theme.js",
+		"/C/MAMP/htdocs/medigraf/home-two.html",
+		"/C/MAMP/htdocs/medigraf/js/main.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/jquery.nicescroll.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_container_sections.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/webfont/font-medigraf-icon.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/core.libs.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/core.libs.theme.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/min/core.libs.min.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/min/core.libs.theme.min.js",
+		"/C/MAMP/htdocs/medigraf/js/plugins.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/min/jquery.smooth-scroll.min.js",
+		"/C/MAMP/htdocs/smooth-scroll/src/js/smooth-scroll.js",
+		"/C/MAMP/htdocs/smooth-scroll/dist/js/smooth-scroll.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/min/waypoints.min.js",
+		"/C/MAMP/htdocs/waypoints/lib/jquery.waypoints.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/min/modernizr-2.6.2.min.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/jquery.mousewheel.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/jquery.flexslider.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/jquery.placeholder.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/lib/matchMedia.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-medigraf.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-responsive.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-tooltips.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-top-header.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-sliders.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-notes.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-portfolio.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-aesthetics.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-footer.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-header.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-text-styles.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-page-style.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-padding-classes.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-base.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-plugins.css",
+		"/C/MAMP/htdocs/medigraf/css/plugins.css",
+		"/C/MAMP/htdocs/medigraf/css/responsive.css",
+		"/C/MAMP/htdocs/structure-quill/medigraf/css/styles/style-scrollarea.css",
+		"/C/MAMP/htdocs/cascaron/hi/index.php",
+		"/C/MAMP/htdocs/structure-quill/medigraf/api/v1/index.php",
+		"/C/MAMP/htdocs/camcar/js/main.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/phpobjectjs/to_object/urlsApi.php",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/templates.js",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_video_modal.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_planner_modal.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/templates/tmp_search_modal.handlebars",
+		"/C/MAMP/htdocs/structure-quill/medigraf/js/model.js",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_content_link_style.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_panel_menu_models.handlebars",
+		"/C/MAMP/htdocs/suzuki/css/styles/suzuki/main.css",
+		"/C/MAMP/htdocs/suzuki/lib/suzuki/suzuki.js",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_catalogs.handlebars",
+		"/C/MAMP/htdocs/suzuki/css/sections/models.css",
+		"/C/MAMP/htdocs/suzukigdl-master/suzukigdl-master/index.html",
+		"/C/MAMP/htdocs/suzuki/css/sections/models-home.css",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_panel_menu_owners.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_panel_menu_before_buy.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_panel_menu_financing.handlebars",
+		"/C/MAMP/htdocs/suzuki/phpobjectjs/to_object/domEl.php",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_concesionaries.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_group.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_model_swift_sport.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_model_swift.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_model_kizashi.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_model_grand_vitara.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_model_s_cross.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_model_ciaz.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_legal_terms.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_privacy_notice.handlebars",
+		"/C/MAMP/htdocs/suzukigdl-master/suzukigdl-master/ciaz.html",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_content_models_menu.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_home.handlebars",
+		"/C/MAMP/htdocs/suzukigdl-master/suzukigdl-master/catalogo.html",
+		"/C/MAMP/htdocs/seminuevospremium/www/core.min.js",
+		"/C/MAMP/htdocs/suzuki/js/objects.js",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_phone_call.handlebars",
+		"/C/MAMP/htdocs/seminuevospremium/www/seminuevos/js/min/core.min.js",
+		"/C/MAMP/htdocs/suzuki/lib/suzuki/social-bar.js",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_social_bar.handlebars",
+		"/C/MAMP/htdocs/suzuki/css/sections/contact.css",
+		"/C/MAMP/htdocs/suzukigdl-master/suzukigdl-master/contacto.html",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_section_content_contact_us.handlebars",
+		"/C/MAMP/htdocs/suzuki/templates/tmp_form_contact.handlebars",
+		"/C/MAMP/htdocs/suzuki/css/sections/home.css"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\MAMP\\htdocs\\structure-quill\\medigraf",
+			"C:\\MAMP\\htdocs\\suzukigdl-master\\suzukigdl-master",
+			"C:\\MAMP\\htdocs\\suzuki",
+			"C:\\MAMP\\htdocs\\suzuki.crm,<open files>,<open folders>",
+			"C:\\MAMP\\htdocs\\squeleton\\css\\styles",
+			"/Applications/MAMP/htdocs/land-rover",
+			"/Applications/MAMP/htdocs/suzuki-gdl/suzukigdl/css",
+			"/Applications/MAMP/htdocs/proyect_2/css/suzuki",
+			"/Applications/MAMP/htdocs/proyect_2/css/sections",
+			"/Applications/MAMP/htdocs/proyect_2/css",
+			"/Applications/MAMP/htdocs/suzuki-gdl/suzukigdl/css/suzuki",
+			"/Applications/MAMP/htdocs/suzuki-gdl/suzukigdl/css",
+			"/Applications/MAMP/htdocs/eurocavsa/landrover-v2/Images",
+			"/Applications/MAMP/htdocs/admin/js",
+			"/Applications/MAMP/htdocs/vex_crm_clone",
+			"/Applications/MAMP/htdocs/vex_crm_clone/templates",
+			"/Applications/MAMP/htdocs/moss_app",
+			"/Applications/MAMP/htdocs/ohr",
+			"/Applications/MAMP/htdocs/ohr/js",
+			"/Applications/MAMP/htdocs/ohr",
+			"/Applications/MAMP/htdocs/ohr/js",
+			"/Applications/MAMP/htdocs/ohr",
+			"/Applications/MAMP/htdocs/dkh_crm",
+			"/Applications/MAMP/htdocs/dkh_crm/api",
+			"/Applications/MAMP/htdocs/dkh_crm/api/v2",
+			"/Applications/MAMP/htdocs/dkh_crm",
+			"/Applications/MAMP/htdocs/dkh_crm/js",
+			"/Applications/MAMP/htdocs/dkh_crm",
+			"/Applications/MAMP/htdocs/dkh_crm/js",
+			"/Applications/MAMP/htdocs/dkh_crm",
+			"/Applications/MAMP/htdocs/vex_crm/js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<a",
+			"main_menu_available",
+			" class=\"box-header-button\"",
+			"<li",
+			";\n",
+			"has-dropdown",
+			"To",
+			"slicknav_menu",
+			"body_recurrent",
+			">\n",
+			"preview/portafolio/",
+			"tmp_main_nav_scroll_nav",
+			"scroll-nav",
+			"ul",
+			"addClass",
+			"link",
+			" class=\"href\"",
+			" class=\"\"",
+			"class=\"smoothScroll\"",
+			"smoothHeight: true,",
+			"status",
+			"back-to-top",
+			"top-header",
+			"scrollarea",
+			"-ps",
+			"fontawesome",
+			"fontAwesome",
+			"FontAwesome",
+			"portafolio/",
+			"preview/",
+			"preview",
+			"preview/",
+			"tmp_content_portfolio",
+			"deomEl",
+			"tmp_",
+			"content-home-",
+			"nts",
+			"lib/",
+			"<script src=\"",
+			"<script src='",
+			"markup",
+			"/openhand.cur",
+			"../img/",
+			"pictures",
+			"stripe",
+			"-none",
+			"append",
+			"camcaricon",
+			"search_modal",
+			"PRO",
+			"../",
+			"=\"en\">",
+			"en",
+			"Base",
+			"options",
+			"scripts",
+			"event",
+			"append",
+			"();\n",
+			"catalog",
+			"menu_data",
+			"div_header_panel",
+			"models_menu",
+			"menu_data",
+			"header-spacer",
+			"catalog-",
+			".et-page-current, .no-js .et-page",
+			"header-spacer",
+			"close-",
+			"close",
+			"closePanel",
+			"div_panel_menu",
+			"panel_menu",
+			"'.header_panel'",
+			"header-panel",
+			"expanded_links",
+			"openPanel",
+			"patch_bar",
+			"expanded_links",
+			"expand-header",
+			"-panel",
+			"#",
+			"action",
+			"// ",
+			"expand-header",
+			"button_",
+			"buy",
+			"header-",
+			"// ",
+			"' => '",
+			"button_",
+			"view",
+			"-panel",
+			"view-",
+			"THM_MDO_01",
+			"jog",
+			".j",
+			"ren MDO_",
+			"ren MDO__EXT_1.jpg 17_PIC_MDO_EXT_01_01010216_a5coupe.jpg\n",
+			"ren MDO_",
+			"T_0",
+			"18_PIC_DIR_01021403_LND_RRS_2014",
+			"17_PIC_DIR_01010216_AUDI_A5",
+			"16_PIC_DIR_01020315_BMW_X5",
+			"15_PIC_DIR_01010314_BMW_328I",
+			"T_0",
+			".jpg",
+			"T_0",
+			".jpg",
+			"T_0",
+			".jpg",
+			"T_0",
+			".jpg",
+			"T_0",
+			".jpg",
+			"T_0",
+			".jpg",
+			"T_0",
+			"MDO_EXT_0",
+			"T_0",
+			"_0",
+			"07_PIC_MDO_",
+			"MDO_XF_EXT_",
+			"_XF_EXT",
+			"06_PIC_MD",
+			"06_PIC_MDO",
+			"05_PIC_MDO_",
+			"PIC_MDO_EXT_01"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<a style=\"display: inline-block; vertical-align: middle; border: 0; padding-right: 15px;\" href=\"http://landrover.medigraf.com.mx\" target=\"_blank\" rel=\"noreferrer\">\n                                                                    <img src=\"http://jaguar.medigraf.com.mx/img/logo_jaguar.png\" style=\"display: block; border: 0\"  border=\"0\" width=\"75\">\n                                                                </a>",
+			"<td colspan=\"3\" height=\"78\" width=\"11\" style=\"background-color: rgba(72, 72, 72, 0.6)\">\n                                                <p style=\"display: block; color:#ffffff;font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;\">\n                                                    Servicio de Mantenimiento\n                                                </p>\n                                            </td>",
+			"Suzuki Autos Guadalajara",
+			"Suzuki Autos Colima",
+			"Suzuki Autos Morelia",
+			"Suzuki Autos Vallarta",
+			"Suzuki Autos López Mateos",
+			"../../img/texture-grey-mist-light.png",
+			"img/texture-grey-mist-light.png",
+			"../../img/texture-grey-mist-light.png",
+			"<!--<div class=\"concessionaire-column info\" id=\"concessionaires-data\">\n                    <div class=\"content\">\n                        <div class=\"concessionaire-close-box\">\n                            <a href=\"#close\" class=\"concessionaire-close\">\n                                <span>close</span>\n                            </a>\n                        </div>\n                        <div class=\"concessionaire-data-wrapper\">\n                            <div class=\"wrapper-title\">\n                                <div class=\"data title\">\n                                    <h1 id=\"concessionaire-title\">Suzuki López Mateos</h1>\n                                </div>\n                            </div>\n                            <div class=\"wrapper-data\">\n                                <div class=\"data address\">\n                                    <div class=\"section-name\">Dirección</div>\n                                    <address id=\"concessionaire-address\">\n                                        Av. López Mateos Núm. 5654 Col. Arboledas, Zapopan, Jalisco.\n                                    </address>\n                                    <p>CP: <span id=\"concessionaire-zip\">44200</span></p>\n                                </div>\n                                <div class=\"data phone\">\n                                    <div class=\"section-name\">Teléfono</div>\n                                    <a id=\"concessionaire-phone\" href=\"call:01-(33)-3884-8200\" target=\"_blank\">01-(33)-3884-8200</a>\n                                </div>\n                                <div class=\"data website\" id=\"concessionaire-website-wrapper\">\n                                    <div class=\"section-name\">Sitio Web</div>\n                                    <p><a id=\"concessionaire-website\" href=\"#\" target=\"_blank\">Sitio Web</a></p>\n                                </div>\n                            </div>\n                            <div class=\"wrapper-image\">\n                                <div class=\"big-image\">\n                                    <img id=\"concessionaire-image\" src=\"../images/sections/concessionaires/previews/aguascalientes-big.jpg\" alt=\"Suzuki Aguascalientes\" title=\"Suzuki Aguascalientes\" />\n                                </div>\n                            </div>\n                            <div class=\"wrapper-test-drive\">\n                                <div class=\"data test-drive\">\n                                    <a href=\"#prueba-de-manejo\" id=\"open-test-drive\">Agenda tu prueba de manejo</a>\n                                </div>\n                                <div class=\"view-more\"><a href=\"#more\" class=\"view-all-concessionaires\">Ver todas las concesionarias</a></div>\n                                <a href=\"#\" id=\"back-list-concessionaires\">Ver todas las concesionarias</a>\n                            </div>\n                        </div>\n                    </div>\n                </div>-->",
+			"../img/romana/romana-400x250/romana-black-out/romana-black-out-1.jpg",
+			"Recámara",
+			"<li>\n									<!--<li class=\"dropdown-submenu\">-->\n										<a href=\"cocina_id1.html\">Cortinas para Cocina</a>\n										<!--<a data-toggle=\"dropdown\" class=\"active dropdown-toggle\">Cortinas para Cocina</a>-->\n										<!--<ul class=\"dropdown-menu\">\n											<li class=\"active\"><a href=\"cocina_id1.html\" class=\"ajax_right\">Cocina 1</a></li>\n											<li class=\"\"><a href=\"cocina_id2.html\" class=\"ajax_right\">Cocina 2</a></li>\n											<li class=\"\"><a href=\"cocina_id3.html\" class=\"ajax_right\">Cocina 3</a></li>\n											<li class=\"\"><a href=\"cocina_id4.html\" class=\"ajax_right\">Cocina 4</a></li>\n											<li class=\"\"><a href=\"cocina_id5.html\" class=\"ajax_right\">Cocina 5</a></li>\n											<li class=\"\"><a href=\"cocina_id6.html\" class=\"ajax_right\">Cocina 6</a></li>\n											<li class=\"\"><a href=\"cocina_id7.html\" class=\"ajax_right\">Cocina 7</a></li>\n										</ul>-->\n									</li>\n									<li>\n									<!--<li class=\"dropdown-submenu\">-->\n										<a href=\"../comedor/comedor_id1.html\">Cortinas para Comedor</a>\n										<!--<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Comedor</a>-->\n										<!--<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../comedor/comedor_id1.html\" class=\"ajax_right\">Comedor 1</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id2.html\" class=\"ajax_right\">Comedor 2</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id3.html\" class=\"ajax_right\">Comedor 3</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id4.html\" class=\"ajax_right\">Comedor 4</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id5.html\" class=\"ajax_right\">Comedor 5</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id6.html\" class=\"ajax_right\">Comedor 6</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id7.html\" class=\"ajax_right\">Comedor 7</a></li>\n										</ul>-->\n									</li>\n									<li>\n									<!--<li class=\"dropdown-submenu\">-->\n										<a href=\"../oficina/oficina_id1.html\">Cortinas para Oficina</a>\n										<!--<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Oficina</a>-->\n										<!--<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../oficina/oficina_id1.html\" class=\"ajax_right\">Oficina 1</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id2.html\" class=\"ajax_right\">Oficina 2</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id3.html\" class=\"ajax_right\">Oficina 3</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id4.html\" class=\"ajax_right\">Oficina 4</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id5.html\" class=\"ajax_right\">Oficina 5</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id6.html\" class=\"ajax_right\">Oficina 6</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id7.html\" class=\"ajax_right\">Oficina 7</a></li>\n										</ul>-->\n									</li>\n									<li>\n									<!--<li class=\"dropdown-submenu\">-->\n										<a href=\"../recamara/recamara_id1.html\">Cortinas para Recamara</a>\n										<!--<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Recamara</a>-->\n										<!--<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../recamara/recamara_id1.html\" class=\"ajax_right\">Recamara 1</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id2.html\" class=\"ajax_right\">Recamara 2</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id3.html\" class=\"ajax_right\">Recamara 3</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id4.html\" class=\"ajax_right\">Recamara 4</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id5.html\" class=\"ajax_right\">Recamara 5</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id6.html\" class=\"ajax_right\">Recamara 6</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id7.html\" class=\"ajax_right\">Recamara 7</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id8.html\" class=\"ajax_right\">Recamara 8</a></li>\n										</ul>-->\n									</li>\n									<li>\n									<!--<li class=\"dropdown-submenu\">-->\n										<a href=\"../sala/sala_id1.html\">Cortinas para Sala</a>\n										<!--<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Sala</a>-->\n										<!--<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../sala/sala_id1.html\" class=\"ajax_right\">Sala 1</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id2.html\" class=\"ajax_right\">Sala 2</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id3.html\" class=\"ajax_right\">Sala 3</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id4.html\" class=\"ajax_right\">Sala 4</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id5.html\" class=\"ajax_right\">Sala 5</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id6.html\" class=\"ajax_right\">Sala 6</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id7.html\" class=\"ajax_right\">Sala 7</a></li>\n											<li class=\"\"><a href=\"../sala/sala_id8.html\" class=\"ajax_right\">Sala 8</a></li>\n										</ul>-->\n									</li>",
+			"	    <title>CORTINAS.MX</title>\n	</head>\n	<body class=\"no-overflow\">\n		<div class=\"fullscreen_block hided page-container\">\n			<div class=\"top-band\">\n				<div class=\"navbar navbar-fixed-top\">\n					<div class=\"navbar-header\">\n						<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n							<span class=\"sr-only\">Toggle navigation</span>\n							<span class=\"icon-bar\"></span>\n							<span class=\"icon-bar\"></span>\n							<span class=\"icon-bar\"></span>\n						</button>\n						<a href=\"../../	\" class=\"navbar-brand\">\n							<img src=\"../../img/logo.png\" alt=\"CORTINAS\">CORTINAS.MX\n							<!-- span>photo agency</span-->\n						</a>\n					</div>\n					<div class=\"navbar-collapse collapse navbar-right\">\n						<ul class=\"nav navbar-nav\">\n							<li class=\"\"><a href=\"../../\">INICIO</a></li>\n							<li class=\"active dropdown\">\n								<a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">CORTINAS <b class=\"caret\"></b></a>\n								<ul class=\"dropdown-menu\">\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Cocina</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../cocina/cocina_id1.html\" class=\"ajax_right\">Cocina 1</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id2.html\" class=\"ajax_right\">Cocina 2</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id3.html\" class=\"ajax_right\">Cocina 3</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id4.html\" class=\"ajax_right\">Cocina 4</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id5.html\" class=\"ajax_right\">Cocina 5</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id6.html\" class=\"ajax_right\">Cocina 6</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id7.html\" class=\"ajax_right\">Cocina 7</a></li>\n										</ul>\n									</li>\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Comedor</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../comedor/comedor_id1.html\" class=\"ajax_right\">Comedor 1</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id2.html\" class=\"ajax_right\">Comedor 2</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id3.html\" class=\"ajax_right\">Comedor 3</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id4.html\" class=\"ajax_right\">Comedor 4</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id5.html\" class=\"ajax_right\">Comedor 5</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id6.html\" class=\"ajax_right\">Comedor 6</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id7.html\" class=\"ajax_right\">Comedor 7</a></li>\n										</ul>\n									</li>\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Oficina</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../oficina/oficina_id1.html\" class=\"ajax_right\">Oficina 1</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id2.html\" class=\"ajax_right\">Oficina 2</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id3.html\" class=\"ajax_right\">Oficina 3</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id4.html\" class=\"ajax_right\">Oficina 4</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id5.html\" class=\"ajax_right\">Oficina 5</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id6.html\" class=\"ajax_right\">Oficina 6</a></li>\n											<li class=\"\"><a href=\"../oficina/oficina_id7.html\" class=\"ajax_right\">Oficina 7</a></li>\n										</ul>\n									</li>\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\" dropdown-toggle\">Cortinas para Recamara</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../recamara/recamara_id1.html\" class=\"ajax_right\">Recamara 1</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id2.html\" class=\"ajax_right\">Recamara 2</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id3.html\" class=\"ajax_right\">Recamara 3</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id4.html\" class=\"ajax_right\">Recamara 4</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id5.html\" class=\"ajax_right\">Recamara 5</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id6.html\" class=\"ajax_right\">Recamara 6</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id7.html\" class=\"ajax_right\">Recamara 7</a></li>\n											<li class=\"\"><a href=\"../recamara/recamara_id8.html\" class=\"ajax_right\">Recamara 8</a></li>\n										</ul>\n									</li>\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Sala</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"sala_id1.html\" class=\"ajax_right\">Sala 1</a></li>\n											<li class=\"\"><a href=\"sala_id2.html\" class=\"ajax_right\">Sala 2</a></li>\n											<li class=\"\"><a href=\"sala_id3.html\" class=\"ajax_right\">Sala 3</a></li>\n											<li class=\"\"><a href=\"sala_id4.html\" class=\"ajax_right\">Sala 4</a></li>\n											<li class=\"\"><a href=\"sala_id5.html\" class=\"ajax_right\">Sala 5</a></li>\n											<li class=\"\"><a href=\"sala_id6.html\" class=\"ajax_right\">Sala 6</a></li>\n											<li class=\"\"><a href=\"sala_id7.html\" class=\"ajax_right\">Sala 7</a></li>\n											<li class=\"\"><a href=\"sala_id8.html\" class=\"ajax_right\">Sala 8</a></li>\n										</ul>\n									</li>\n								</ul>\n							</li>\n							<li><a href=\"../../contacto.html\" class=\"ajax_right\">CONTACTO</a></li>\n						</ul>\n					</div><!-- /.navbar-collapse -->\n				</div>\n			</div>\n		    <div id=\"container\" class=\"left\">\n				<div id=\"content\">\n					<div class=\"content_inner\">\n						<div id=\"ajax-l\">\n							<div class=\"nivoSlider itemx2\">\n								<iframe width=\"560\" height=\"315\" src=\"//www.youtube-nocookie.com/embed/NYH69MXIsn4\" frameborder=\"0\" allowfullscreen></iframe>\n							</div>\n							<!-- ready -->\n								<div class=\"item\"><!-- cocina id1 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id1.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-1.jpg\" alt=\"cort-coc1\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id1 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id1.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-1.jpg\" alt=\"cort-com1\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id1 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id1.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-1.jpg\" alt=\"cort-ofi1\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id1 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id1.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-1.jpg\" alt=\"cort-rec1\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id1 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id1.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-1.jpg\" alt=\"cort-sal1\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- cocina id4 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id4.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-4.jpg\" alt=\"cort-coc4\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id6 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id6.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-6.jpg\" alt=\"cort-com6\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id3 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id3.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-3.jpg\" alt=\"cort-sal3\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id3 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id3.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-3.jpg\" alt=\"cort-rec3\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id3 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id3.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-3.jpg\" alt=\"cort-ofi3\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- cocina id3 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id3.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-3.jpg\" alt=\"cort-coc3\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id6 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id6.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-6.jpg\" alt=\"cort-sal6\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id4 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id4.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-4.jpg\" alt=\"cort-com4\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id4 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id4.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-4.jpg\" alt=\"cort-rec4\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id2 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id2.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-2.jpg\" alt=\"cort-sal2\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id2 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id2.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-2.jpg\" alt=\"cort-ofi2\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id2 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id2.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-2.jpg\" alt=\"cort-rec2\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id4 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id4.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-4.jpg\" alt=\"cort-sal4\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- cocina id2 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id2.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-2.jpg\" alt=\"cort-coc2\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id3 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id3.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-3.jpg\" alt=\"cort-com3\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id7 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id7.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-7.jpg\" alt=\"cort-sal7\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id5 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id5.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-5.jpg\" alt=\"cort-ofi5\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- cocina id6 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id6.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-6.jpg\" alt=\"cort-coc6\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id6 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id6.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-6.jpg\" alt=\"cort-rec6\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id2 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id2.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-2.jpg\" alt=\"cort-com2\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id4 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id4.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-4.jpg\" alt=\"cort-ofi4\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- cocina id5 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id5.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-5.jpg\" alt=\"cort-coc5\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id7 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id7.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-7.jpg\" alt=\"cort-rec7\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- sala id5 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - SALA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/sala/sala_id5.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/sala-400x250/sala-5.jpg\" alt=\"cort-sal5\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id7 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id7.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-7.jpg\" alt=\"cort-ofi7\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id7 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id7.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-7.jpg\" alt=\"cort-com7\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- cocina id7 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COCINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/cocina/cocina_id7.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/cocina-400x250/cocina-7.jpg\" alt=\"cort-coc7\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- oficina id6 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - OFICINA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/oficina/oficina_id6.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/oficina-400x250/oficina-6.jpg\" alt=\"cort-ofi6\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id5 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id5.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-5.jpg\" alt=\"cort-rec5\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- recamara id8 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - RECAMARA</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/recamara/recamara_id8.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/recamara-400x250/recamara-8.jpg\" alt=\"cort-rec8\">\n										</div>\n									</div>\n								</div>\n								<div class=\"item\"><!-- comendor id5 -->\n									<div class=\"image\">\n										<div>\n											<div class=\"mask\">\n												<div>\n													<div class=\"name\">CORTINAS - COMEDOR</div>\n													<div class=\"actions\">\n														<a href=\"../../productos-gallery/comedor/comedor_id5.html\" class=\"desc_view ajax_right icon-search\"></a>\n													</div>\n											  	</div>\n											</div>\n											<img src=\"../../productos/comedor-400x250/comedor-5.jpg\" alt=\"cort-com5\">\n										</div>\n									</div>\n								</div>\n							<!-- end ready -->\n						</div>\n					</div>\n				</div>\n				<div id=\"ajax\">\n					<div>\n						<div id=\"slider\" class=\"flexslider\">\n						  	<ul class=\"slides\">\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-1.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-1.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-2.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-2.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-3.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-3.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-4.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-4.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-5.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-5.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-6.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-6.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-7.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-7.jpg\"></a>\n								</li>\n						  	</ul>\n						</div>\n						<div id=\"carousel\" class=\"flexslider\">\n						  	<ul class=\"slides\">\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-1.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-1.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-2.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-2.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-3.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-3.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-4.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-4.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-5.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-5.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-6.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-6.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/sala-400x250/sala-7.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/sala-800x500/sala-7.jpg\"></a>\n								</li>\n						  	</ul>\n						</div>\n\n						<div class=\"product-info\">\n\n							<ul class=\"breadcrumb\">\n								<li><a href=\"../../\">Inicio</a></li>\n								<li class=\"\">Caortinas para Sala</li>\n								<li class=\"active\">Sala 1</li>\n							</ul>\n\n							<div class=\"row\">\n								<div class=\"col-md-12\">\n									<!--<a class=\"close\" href=\"#\">&#61453;</a>-->\n									<div class=\"page-header\">\n										<h1>CORTINAS PARA SALA</h1>\n									</div>\n								</div>\n							</div>\n							<!--\n							<p class=\"desc\">\n								La persiana enrollable es confiable, precisa y con entradas reducidas de luz.\n							</p>\n							<p class=\"desc\">\n								Existe gran variedad de telas, colores y texturas, para diferentes necesidades.\n							</p>\n							<p class=\"desc\">\n								Telas que nos bloquea la luz hacia el interior dándonos obscuridad, recomendada en habitaciones, salas de proyecciones, en áreas que se necesita bloquear el sol.\n							</p>\n							<p class=\"desc\">\n								Esto nos permite que este producto tenga aceptación en cualquier lugar casa, oficinas, empresa, institución etc.\n							</p>\n							<p class=\"desc\">\n								Este producto se puede motorizar ya sea con un sistema alámbrico, esto quiere decir que con un apagador se puede manejar la cortina o inalámbrico, se manejaría con un pequeño control remoto, como el del televisor.\n							</p>-->",
+			"<ul class=\"slides\">\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-2.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-2.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-3.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-3.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-4.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-4.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-5.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-5.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-6.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-6.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-7.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-7.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-1.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-1.jpg\"></a>\n								</li>\n						  	</ul>\n						</div>\n						<div id=\"carousel\" class=\"flexslider\">\n						  	<ul class=\"slides\">\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-2.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-2.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-3.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-3.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-4.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-4.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-5.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-5.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-6.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-6.jpg\"></a>\n								</li>\n								<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-7.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-7.jpg\"></a>\n								</li>\n							  	<li class=\"gallery_image\">\n									<a title=\"Dress\" href=\"../../productos/oficina-400x250/oficina-1.jpg\"><img alt=\"Dress\" title=\"Dress\" src=\"../../productos/oficina-800x500/oficina-1.jpg\"></a>\n								</li>\n						  	</ul>\n						</div>\n\n						<div class=\"product-info\">\n\n							<ul class=\"breadcrumb\">\n								<li><a href=\"../../\">Inicio</a></li>\n								<li class=\"\">Caortinas para Oficina</li>\n								<li class=\"active\">Oficina 2</li>\n							</ul>\n\n							<div class=\"row\">\n								<div class=\"col-md-12\">\n									<!--<a class=\"close\" href=\"#\">&#61453;</a>-->\n									<div class=\"page-header\">\n										<h1>CORTINAS PARA OFICINA</h1>\n									</div>\n								</div>\n							</div>\n							<!--\n							<p class=\"desc\">\n								La persiana enrollable es confiable, precisa y con entradas reducidas de luz.\n							</p>\n							<p class=\"desc\">\n								Existe gran variedad de telas, colores y texturas, para diferentes necesidades.\n							</p>\n							<p class=\"desc\">\n								Telas que nos bloquea la luz hacia el interior dándonos obscuridad, recomendada en habitaciones, salas de proyecciones, en áreas que se necesita bloquear el sol.\n							</p>\n							<p class=\"desc\">\n								Esto nos permite que este producto tenga aceptación en cualquier lugar casa, oficinas, empresa, institución etc.\n							</p>\n							<p class=\"desc\">\n								Este producto se puede motorizar ya sea con un sistema alámbrico, esto quiere decir que con un apagador se puede manejar la cortina o inalámbrico, se manejaría con un pequeño control remoto, como el del televisor.\n							</p>-->",
+			"<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"cocina_id1.html\" class=\"ajax_right\">Cocina 1</a></li>\n											<li class=\"active\"><a href=\"cocina_id2.html\" class=\"ajax_right\">Cocina 2</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id3.html\" class=\"ajax_right\">Cocina 3</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id4.html\" class=\"ajax_right\">Cocina 4</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id5.html\" class=\"ajax_right\">Cocina 5</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id6.html\" class=\"ajax_right\">Cocina 6</a></li>\n											<li class=\"\"><a href=\"../cocina/cocina_id7.html\" class=\"ajax_right\">Cocina 7</a></li>\n										</ul>\n									</li>\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Comedor</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"../comedor/comedor_id1.html\" class=\"ajax_right\">Comedor 1</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id2.html\" class=\"ajax_right\">Comedor 2</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id3.html\" class=\"ajax_right\">Comedor 3</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id4.html\" class=\"ajax_right\">Comedor 4</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id5.html\" class=\"ajax_right\">Comedor 5</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id6.html\" class=\"ajax_right\">Comedor 6</a></li>\n											<li class=\"\"><a href=\"../comedor/comedor_id7.html\" class=\"ajax_right\">Comedor 7</a></li>\n										</ul>\n									</li>\n									<li class=\"dropdown-submenu\">\n										<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Cortinas para Oficina</a>\n										<ul class=\"dropdown-menu\">\n											<li class=\"\"><a href=\"oficina_id1.html\" class=\"ajax_right\">Oficina 1</a></li>\n											<li class=\"\"><a href=\"oficina_id2.html\" class=\"ajax_right\">Oficina 2</a></li>\n											<li class=\"\"><a href=\"oficina_id3.html\" class=\"ajax_right\">Oficina 3</a></li>\n											<li class=\"\"><a href=\"oficina_id4.html\" class=\"ajax_right\">Oficina 4</a></li>\n											<li class=\"\"><a href=\"oficina_id5.html\" class=\"ajax_right\">Oficina 5</a></li>\n											<li class=\"\"><a href=\"oficina_id6.html\" class=\"ajax_right\">Oficina 6</a></li>\n											<li class=\"\"><a href=\"oficina_id7.html\" class=\"ajax_right\">Oficina 7</a></li>",
+			"<div class=\"fullscreen_block hided page-container\">",
+			"Periférico Paseo de la Republica 3169 Colonia Las Américas<br/>\n                Morelia, Michoacán, C.P. 58270\n                Tel. 01-(443)-500-53-00",
+			"not_found",
+			"rgb(213,123,27)",
+			"#08416B",
+			"/result\"",
+			"isDecimalKP",
+			"'",
+			"-round",
+			"_round",
+			"orderBy"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				0,
+				2,
+				1,
+				3
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.100200400802,
+			0.899799599198,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 146.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"process_login.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/MAMP/htdocs/cascaron-master/cascaron.sublime-project"
+			],
+			[
+				"dkh",
+				"~/Documents/projects/dkh_crm.sublime-project"
+			],
+			[
+				"VEX",
+				"~/Documents/projects/vex_crm.sublime-project"
+			],
+			[
+				"dkh_",
+				"~/Documents/projects/dkh_crm.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true
+}
