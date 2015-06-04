@@ -7,8 +7,10 @@ Finch.route('/', {
         section="index";
         addStylesMethods.addStyleIndex();
         SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+        is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        var header_button;
         //This code will be not used it's only example, remove it later
         SUK.loadTemplate(tempsNames.tmp_section_content_home, domEl.div_recurrent);
         SUK.loadTemplate(tempsNames.tmp_slider_home, domEl.div_content_section_slider_home);
@@ -25,6 +27,7 @@ Finch.route('/', {
 Finch.route('/concesionarias', {
     setup: function(bindings) {
         section="concesionaries";
+        is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
 
@@ -40,6 +43,7 @@ Finch.route('/catalogos', {
         section="catalog";
         addStylesMethods.addStyleCatalogs();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
         //This code will be not used it's only example, remove it later
@@ -60,6 +64,7 @@ Finch.route('/contactanos', {
     setup: function(bindings) {
         section="contact";
         addStylesMethods.addStyleContact();
+        is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
         //This code will be not used it's only example, remove it later

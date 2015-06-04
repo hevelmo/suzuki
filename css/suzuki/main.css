@@ -1816,8 +1816,8 @@ a:hover, a:focus {
         width:inherit;
         width:100%;
         display:block;
-        padding:0
-   ; }
+        padding:0;
+    }
     .error404_wrapper .error404_content {
         width:auto;
         padding:15px;
@@ -2243,7 +2243,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
 #model-test-drive-flag:hover {
     margin-top:0;
 }
-.header_panel {
+.header-panel {
     display:none;
     overflow:hidden;
     padding-top:95px;
@@ -2253,7 +2253,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     box-shadow:0 0 3px rgba(0, 0, 0, 0.4);
     z-index:100;
 }
-.header_panel.header_panel_active {
+.header-panel.header_panel_active {
     display: block;
     position: fixed;
     top: 0px;
@@ -2680,7 +2680,7 @@ padding: 0 0 15px;
     right:0;
     top:0;
     width:240px;
-    height:305px;
+    height:100%;
     background-color:#003145;
     -moz-box-shadow:inset 2px 0 0 rgba(1, 1, 1, 0.3);
     -webkit-box-shadow:inset 2px 0 0 rgba(1, 1, 1, 0.3);

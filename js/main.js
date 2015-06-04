@@ -11,16 +11,10 @@ $(document).ready(function() {
       // Uncomment to see how change() will cancel the animation
        setTimeout(function() { favicon.change("img/favicon.ico") }, 10000);
     }
-    // Load title <title>NAME</titla>
-    $("head title").prepend("Suzuki Autos Guadalajara");
-    //$("head").prepend('<div id="content-add-styles"></div>');
-
     $("#header-panel").resize(function(){
         var _this = $(this);
         $('#header-spacer').stop().animate({height: _this.height()}, 300);
     });
-
-    //$('.item.et-section').addClass('et-page-current');
 
 
 
@@ -33,6 +27,7 @@ $(document).ready(function() {
         $(this).parent('.catalog_car').addClass('active');
         pages.move_to( slide );
     });*/
+
 
     /* ------------------------------------------------------ *\
      [METHOS Control] Serialize Form
@@ -78,7 +73,7 @@ $(document).ready(function() {
 
     //This group of events will not be used, they are only example, remove later
 
-    // CLIXK INDEX
+    // CLICK INDEX
     $(domEl.div_recurrent_body).on('click', domEl.button_return_index, actionMenuBarsMethods.clickReturnIndex);
     // CLICK GROUP
     $(domEl.div_recurrent_body).on('click', domEl.button_go_group, actionMenuBarsMethods.clixkGoGroup);
@@ -90,20 +85,7 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_go_contact, actionMenuBarsMethods.clickGoContactUs);
 
     // HEADER PANEL
-    $(domEl.div_recurrent_body).on('click', domEl.header_models_button, function() {
-        var clickGeneral, clickThis, currentDisplay, newDisplay;
-
-        clickGeneral = $('expand-header').parents('.header-wrapper .expand-header').children('.header_panel .current-sections-wrapper');
-        clickThis = $(this).parents('.header-wrapper .expand-header').children('.header_panel .current-sections-wrapper');
-
-        currentDisplay = clickThis.css('display');
-        newDisplay = (currentDisplay === 'none') ? 'block' : 'none';
-
-        console.log(currentDisplay);
-
-        clickGeneral.css('display','none');
-        clickThis.css('display', newDisplay);
-    });
+    $(domEl.div_recurrent_body).on('click', 'a.expand-header', openPanelMenuMethods.clickPanel_general);
     // CLICK MODEL
     $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
     // CLICK FINNANCING
@@ -117,8 +99,6 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_close_financing_panel_menu, closePanelMenuMethods.closePanelFinancing);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_owners_panel_menu, closePanelMenuMethods.closePanelOwners);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_before_buy_panel_menu, closePanelMenuMethods.closePanelBeforeBuy);
-
-    //$(domEl.div_recurrent).on('change', domEl.select_lan_demo, demoMethods.changeLan);
 
     //Specifications Slider controls and functionality
     //$('a.specifications-controls').on('click', function( e ){
@@ -177,5 +157,8 @@ $(document).ready(function() {
         }, 900 );
     });
     display_versions_comparative();
+
+
+    // IS MOBILE
 
 });

@@ -19,15 +19,13 @@ domEl = {
 	"div_content_section_model_promo":"div#content-section-model-promo",
 	"div_content_section_slider_home":"div#content-section-slider-home",
 	"div_content_social_bar":"div#content-social-bar",
-	"div_header_panel":"div.header_panel",
+	"div_header_panel":"div.header-panel",
 	"div_hidden_inputs_session":"div#hidden-inputs-session",
 	"div_hidden_inputs_temporal":"div#hidden-inputs-temporal",
 	"div_recurrent":"div#content-temporal-interactive",
 	"div_recurrent_body":"body#recurrent-body",
 	"div_recurrent_head":"head#recurrent-head",
 	"div_recurrent_panel_menu":"div#header-sections-wrapper",
-	"h1_demo_hello":"h1#demo-hello",
-	"h3_demo_date":"h3#demo-date",
 	"header_before_buy_button":"a#header-before-buy-button",
 	"header_financing_button":"a#header-financing-button",
 	"header_models_button":"a#header-models-button",
@@ -37,7 +35,10 @@ domEl = {
 	"link_content_add_styles_contact":"#content-add-styles-contact",
 	"link_content_add_styles_home":"#content-add-styles-home",
 	"link_content_add_styles_models_home":"#content-add-styles-models-home",
-	"select_lan_demo":"select#lan-demo"
+	"suk_animate_header_spacer":"#header-spacer",
+	"suk_catalog_cars_wrapper":".catalog_cars_wrapper",
+	"suk_resize_header_panel":"#header-panel",
+	"suk_switch_catalog":"a.switch-catalog"
 };
 tempsNames = {
 	"tmp_content_link_style":"tmp_content_link_style",

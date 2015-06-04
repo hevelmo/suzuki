@@ -17,8 +17,13 @@ function domEl() {
         'div_content_social_bar' => 'div#content-social-bar',
         // PHONE
         'div_content_phone_call' => 'div#phone-call',
+        // RESIZE ANIMATE
+        'suk_resize_header_panel' => '#header-panel',
+        'suk_animate_header_spacer' => '#header-spacer',
+
+
         // PANEL MENU
-        'div_header_panel' => 'div.header_panel',
+        'div_header_panel' => 'div.header-panel',
         'div_recurrent_panel_menu' => 'div#header-sections-wrapper',
         'button_close_model_panel_menu' => 'a#close-models-panel',
         'button_close_financing_panel_menu' => 'a#close-financing-panel',
@@ -32,6 +37,9 @@ function domEl() {
         'button_go_concesionaries' => 'a#go-concesionaries',
         // CLICK CATALOGS
         'button_go_catalogs' => 'a#go-catalogs',
+        // CATALOG CARS WRAPPER
+        'suk_catalog_cars_wrapper' => '.catalog_cars_wrapper',
+        'suk_switch_catalog' => 'a.switch-catalog',
         // CLICK CONTACT US
         'button_go_contact' => 'a#go-contact',
         // BUTONS CONTROL PANEL MENU
@@ -53,12 +61,6 @@ function domEl() {
         // CONTROLS SLIDER
         'button_specifications_controls' => 'a.specifications-controls',
         // CONTENT SECTION FORM CONTACT
-        'div_content_section_form_contact' => 'div#content-section-form-contact',
-
-    	//DEMO ELEMENTS
-    	//they will not be used in the ral project, romove it later and compile 'phpobjectjs'
-    	'select_lan_demo' => 'select#lan-demo',
-    	'h1_demo_hello' => 'h1#demo-hello',
-    	'h3_demo_date' => 'h3#demo-date'
+        'div_content_section_form_contact' => 'div#content-section-form-contact'
     );
 }

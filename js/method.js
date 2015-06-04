@@ -10,8 +10,8 @@
 \* ------------------------------------------------------ */
 //var variable;
 var sections;
-var header_section = '';
-var bar_offset = { marginLeft:0, width:0 };
+var height = 0;
+
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
  function nameFunction (arg) {
@@ -55,43 +55,6 @@ function resetAlert () {
   Could exist some group of general methods*/
 
 /* ------------------------------------------------------ *\
- [Methods] Header Panel
-\* ------------------------------------------------------ */
-
-var headerPanelMethods = {
-    switchHeaderPanelSections : function() {
-        bar_offset =  { marginLeft:0, width:0 };
-        var panel_section, header_button = null, height = 0;
-        switch ( panel_section ) {
-            case 'models':
-                header_button = $(domEl.header_models_button);
-                height = 325;
-                bar_offset = { marginLeft:-331, width:124 };
-            break;
-            case 'financing':
-                header_button = $(domEl.header_financing_button);
-                height = 555;
-                bar_offset = { marginLeft:-62, width:182 };
-            break;
-            case 'owners':
-                header_button = $(domEl.header_owners_button);
-                height = 300;
-                bar_offset = { marginLeft:121, width:136 };
-            break;
-            case 'before-buy':
-                header_button = $(domEl.header_before_buy_button);
-                height = 300;
-                bar_offset = { marginLeft:258, width:221 };
-            break;
-            default:
-                header_section = '';
-                panel_section = '';
-            break;
-        }
-    }
-}
-
-/* ------------------------------------------------------ *\
  [Methods] Home
 \* ------------------------------------------------------ */
 //This group of methods will be not used it's only example, remove it later
@@ -124,37 +87,45 @@ var catalogMethods = {
 }
 var actionMenuBarsMethods = {
     removeCleanPanelMenu : function () {
-        $(domEl.action_model_expand_header).removeClass('active');
-        $(domEl.action_financing_expand_header).removeClass('active');
-        $(domEl.action_owners_expand_header).removeClass('active');
-        $(domEl.action_before_buy_expand_header).removeClass('active');
-        $(domEl.div_header_panel).addClass('header_panel_active');
+        $('#header-spacer').css('height','0px');
+        $('.header_section').css({
+            'display':'none',
+            'opacity':'0'
+        });
+        if ($(this).hasClass('active')) {
+            $('a.expand-header').removeClass('active');
+            $(domEl.div_header_panel).removeClass('header_panel_active');
+        } else {
+            $('a.expand-header').removeClass('active');
+            $(domEl.div_header_panel).addClass('header_panel_active');
+            $(this).addClass('active');
+        }
         SUK.setHTML(domEl.div_recurrent_panel_menu, '');
     },
     clickReturnIndex : function (event) {
-        Finch.navigate('/');
         actionMenuBarsMethods.removeCleanPanelMenu();
+        Finch.navigate('/');
         console.log('Click index');
     },
     clixkGoGroup : function (event) {
-        Finch.navigate('/group');
         actionMenuBarsMethods.removeCleanPanelMenu();
+        Finch.navigate('/group');
         console.log('Click group');
     },
     clickGoConcesinary : function (event) {
-        Finch.navigate('/concesionaries');
         actionMenuBarsMethods.removeCleanPanelMenu();
-        console.log('Click concesionaries');
+        Finch.navigate('/concesionarias');
+        console.log('Click concesionarias');
     },
     clickGoCatalogs : function (event) {
+        actionMenuBarsMethods.removeCleanPanelMenu();
         Finch.navigate('/catalogos');
         $('.et-section').addClass('et-page-current');
-        actionMenuBarsMethods.removeCleanPanelMenu();
         console.log('Click catalogos');
     },
     clickGoContactUs : function (event) {
-        Finch.navigate('/contactanos');
         actionMenuBarsMethods.removeCleanPanelMenu();
+        Finch.navigate('/contactanos');
         console.log('Click contactanos');
     }
 }
@@ -258,52 +229,96 @@ var addDelegatMethods = {
     }
 }
 
+/* ------------------------------------------------------ *\
+ [Methods] Header Panel
+\* ------------------------------------------------------ */
+
 var openPanelMenuMethods = {
-    openTempModelsPanel : function () {
+
+    clickPanel_general : function (event) {
+
+        openPanelMenuMethods.animatePanelMenu();
+        if ($(this).hasClass('active')) {
+            $('a.expand-header').removeClass('active');
+            $(domEl.div_header_panel).removeClass('header_panel_active');
+        } else {
+            $('a.expand-header').removeClass('active');
+            $(domEl.div_header_panel).addClass('header_panel_active');
+            $(this).addClass('active');
+        }
     },
     clickModelsPanel : function (event) {
-        openPanelMenuMethods.animatePanelMenu();
-        $(domEl.action_model_expand_header).addClass('active');
-        $(domEl.action_financing_expand_header).removeClass('active');
-        $(domEl.action_owners_expand_header).removeClass('active');
-        $(domEl.action_before_buy_expand_header).removeClass('active');
-        $(domEl.div_header_panel).addClass('header_panel_active');
-        $('#header-spacer').css('height','325px');
-        SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu);
+        if ($(this).hasClass('active')) {
+            $('#header-spacer').css('height','325px');
+            $('.header_section').css({
+                'display':'block',
+                'opacity':'1'
+            });
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu);
+        } else {
+            $('#header-spacer').css('height','0px');
+            $('.header_section').css({
+                'display':'none',
+                'opacity':'0'
+            });
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+        }
     },
     clickFinnacingPanel : function (event) {
-        openPanelMenuMethods.animatePanelMenu();
-        $(domEl.action_model_expand_header).removeClass('active');
-        $(domEl.action_financing_expand_header).addClass('active');
-        $(domEl.action_owners_expand_header).removeClass('active');
-        $(domEl.action_before_buy_expand_header).removeClass('active');
-        $(domEl.div_header_panel).addClass('header_panel_active');
-        $('#header-spacer').css('height','426px');
-        SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_panel_menu);
+        if ($(this).hasClass('active')) {
+            $('#header-spacer').css('height','426px');
+            $('.header_section').css({
+                'display':'block',
+                'opacity':'1'
+            });
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_panel_menu);
+        } else {
+            $('#header-spacer').css('height','0px');
+            $('.header_section').css({
+                'display':'none',
+                'opacity':'0'
+            });
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+        }
     },
     clickOwnersPanel : function (event) {
-        openPanelMenuMethods.animatePanelMenu();
-        $(domEl.action_model_expand_header).removeClass('active');
-        $(domEl.action_financing_expand_header).removeClass('active');
-        $(domEl.action_owners_expand_header).addClass('active');
-        $(domEl.action_before_buy_expand_header).removeClass('active');
-        $(domEl.div_header_panel).addClass('header_panel_active');
-        $('#header-spacer').css('height','340px');
-        SUK.loadTemplate(tempsNames.tmp_panel_menu_owners, domEl.div_recurrent_panel_menu);
+        if ($(this).hasClass('active')) {
+            $('#header-spacer').css('height','340px');
+            $('.header_section').css({
+                'display':'block',
+                'opacity':'1'
+            });
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_owners, domEl.div_recurrent_panel_menu);
+        } else {
+            $('#header-spacer').css('height','0px');
+            $('.header_section').css({
+                'display':'none',
+                'opacity':'0'
+            });
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+        }
     },
     clickBeforeByPanel : function (event) {
-        openPanelMenuMethods.animatePanelMenu();
-        $(domEl.action_model_expand_header).removeClass('active');
-        $(domEl.action_financing_expand_header).removeClass('active');
-        $(domEl.action_owners_expand_header).removeClass('active');
-        $(domEl.action_before_buy_expand_header).addClass('active');
-        $(domEl.div_header_panel).addClass('header_panel_active');
-        $('#header-spacer').css('height','419px');
-        SUK.loadTemplate(tempsNames.tmp_panel_menu_before_buy, domEl.div_recurrent_panel_menu);
+        if ($(this).hasClass('active')) {
+            $('#header-spacer').css('height','419px');
+            $('.header_section').css({
+                'display':'block',
+                'opacity':'1'
+            });
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_before_buy, domEl.div_recurrent_panel_menu);
+        } else {
+            $('#header-spacer').css('height','0px');
+            $('.header_section').css({
+                'display':'none',
+                'opacity':'0'
+            });
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+        }
     },
     animatePanelMenu : function () {
         $(domEl.div_recurrent_panel_menu).stop().hide().fadeIn();
-    }
+    },
+
 }
 var closePanelMenuMethods = {
     cleanHeight : function () {
@@ -334,145 +349,107 @@ var closePanelMenuMethods = {
         closePanelMenuMethods.cleanHeight();
     }
 }
-/*var demoMethods = {
-    changeLan : function (event) {
-        var lan, date, newDate;
-        lan = PRO.getValue($(this));
-        date = $(domEl.h3_demo_date).data('date');
-        newDate = PRO.momentToRoman(date, lan);
-        $(domEl.h3_demo_date).text(newDate);
-    }
-}*/
 
-var returMehods = {
+// IS MOBILE
+var is_mobileMethods = {
+    is_mobile : function () {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            // tasks to do if it is a Mobile Device
+            $('body').append('<div id="mobile-menu">');
+            $('#mobile-menu').append('<div>');
+            $('#mobile-menu').append('<ul><li><a href="/autos/concesionarias">Concesionarias</a></li><li><a href="#">Modelos</a></li><li><a href="/autos/promociones">Promociones</a></li><li><a href="#">Financiamiento</a></li><li><a href="#">Mi Suzuki</a></li><li><a href="#">Comprar un Suzuki</a></li><li><a href="#">Agendar prueba de manejo</a></li></ul>');
+
+            $(domEl.div_recurrent_body).on('click', "#header-mobile i", function () {
+                $(this).toggleClass("header-mobile-icon-active");
+                openCloseMenu();
+            });
+
+            if (window.addEventListener){
+                window.addEventListener('orientationchange', checkMenu, false);
+            } else if (window.attachEvent){
+                window.attachEvent('orientationchange', checkMenu);
+            }
+
+            $(domEl.div_recurrent_body).on('click', "#mobile-menu a", function (e) {
+                var idx = $(this).parent().index();
+                var link = "";
+                switch (idx) {
+                    case 1:
+                        link = "#header-models-button";
+                        break;
+                    case 3:
+                        link = "#header-financing-button";
+                        break;
+                    case 4:
+                        link = "#header-owners-button";
+                        break;
+                    case 5:
+                        link = "#header-before-buy-button";
+                        break;
+                    case 6:
+                        link = "#header-test-drive-button";
+                        break;
+                }
+                openCloseMenu();
+                $(link).trigger("click");
+                $("#header-mobile i").removeClass("header-mobile-icon-active");
+            });
+
+            $(domEl.div_recurrent_body).on('click', "#footer-content .row-1 .footer-column", function () {
+                $(".footer-column .links").slideUp();
+                $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
+                if ($(this).find(".links").css("display") != "block") {
+                    $(this).find(".links").slideDown();
+                    $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+                }
+            });
+
+            function openCloseMenu () {
+                $("body").toggleClass("open-body");
+                $("#mobile-menu").toggleClass("open-mobile-menu");
+                checkMenu();
+            }
+
+            function checkMenu() {
+                if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
+                    $("body").css("overflow", "hidden");
+                }
+                else {
+                    $("body").css("overflow", "visible");
+                }
+            }
+
+            $("body").on("click", ".header-column", function () {
+                if (!$(this).hasClass("header-column-open")) {
+                    $('html, body').animate({scrollTop: '0px'}, 400);
+                    $(".header-links-list").addClass("header-links-open");
+                    $(this).siblings().hide();
+                    $(this).addClass("header-column-open");
+                    $(this).find("ul").fadeIn();
+                }
+            });
+
+            $("body").on("click", ".back-list-arrow", function () {
+                var header_column_open = $(".header-column-open");
+                $(".header-links-list").removeClass("header-links-open");
+                header_column_open.removeClass("header-column-open");
+                $(".links-list").hide();
+                $(".header-column").fadeIn();
+            });
+            console.log('You are using a mobile device!');
+        } else {
+            $('body #mobile-menu').remove();
+            console.log('You are not using a mobile device!');
+        }
+    }
+}
+
+var returMethods = {
     clickGoIndex : function () {
         Finch.navigate('/');
     }
 }
 
-var openMenuMethods = {
-    clickOpenMenu : function () {
-        $('nav').toggleClass('open-menu');
-    }
-}
-var closeMenuMethods = {
-    clickClose : function () {
-        $('nav').removeClass('open-menu');
-    }
-}
-
-var contactMethods_gdl = {
-    clickSend: function(event) {
-        var form_con_gdl, dataForm_contact_gdl;
-
-        dataForm_contact_gdl = $('#form_jag_contact_gdl').serializeFormJSON();
-
-        console.log(urlsApi.sendMailContact_gdl_JAG, dataForm_contact_gdl);
-
-        form_con_gdl = JAG.postalService(urlsApi.sendMailContact_gdl_JAG, dataForm_contact_gdl);
-
-        form_con_gdl.success(function(data){
-            console.log("Correo Enviado...");
-            console.log(data);
-
-            JAG.resetForm('#form_jag_contact_gdl');
-
-            Finch.navigate('/');
-            console.log(Finch);
-
-        });
-        form_con_gdl.error(function(data){
-            console.log("Correo no Enviado...");
-            console.log(data);
-            JAG.resetForm('#form_jag_contact_gdl');
-            //JAG.setValue('#').val('');
-        });
-    }
-}
-var contactMethods_country = {
-    clickSend: function(event) {
-        var form_con_country, dataForm_contact_country;
-
-        dataForm_contact_country = $('#form_jag_contact_country').serializeFormJSON();
-
-        console.log(urlsApi.sendMailContact_country_JAG, dataForm_contact_country);
-
-        form_con_country = JAG.postalService(urlsApi.sendMailContact_country_JAG, dataForm_contact_country);
-
-        form_con_country.success(function(data){
-            console.log("Correo Enviado...");
-            console.log(data);
-
-            JAG.resetForm('#form_jag_contact_country');
-
-            Finch.navigate('/');
-            console.log(Finch);
-
-        });
-        form_con_country.error(function(data){
-            console.log("Correo no Enviado...");
-            console.log(data);
-            JAG.resetForm('#form_jag_contact_country');
-            //JAG.setValue('#').val('');
-        });
-    }
-}
-var serviceMethods_gdl = {
-    clickSend: function(event) {
-        var form_ser_gdl, dataForm_service_gdl;
-
-        dataForm_service_gdl = $('#form_jag_service_gdl').serializeFormJSON();
-
-        console.log(urlsApi.sendMailService_gdl_JAG, dataForm_service_gdl);
-
-        form_ser_gdl = JAG.postalService(urlsApi.sendMailService_gdl_JAG, dataForm_service_gdl);
-
-        form_ser_gdl.success(function(data){
-            console.log("Correo Enviado...");
-            console.log(data);
-
-            JAG.resetForm('#form_jag_service_gdl');
-
-            Finch.navigate('/');
-            console.log(Finch);
-
-        });
-        form_ser_gdl.error(function(data){
-            console.log("Correo no Enviado...");
-            console.log(data);
-            JAG.resetForm('#form_jag_service_gdl');
-            //JAG.setValue('#').val('');
-        });
-    }
-}
-var serviceMethods_country = {
-    clickSend: function(event) {
-        var form_ser_country, dataForm_service_country;
-
-        dataForm_service_country = $('#form_jag_service_country').serializeFormJSON();
-
-        console.log(urlsApi.sendMailService_country_JAG, dataForm_service_country);
-
-        form_ser_country = JAG.postalService(urlsApi.sendMailService_country_JAG, dataForm_service_country);
-
-        form_ser_country.success(function(data){
-            console.log("Correo Enviado...");
-            console.log(data);
-
-            JAG.resetForm('#form_jag_service_country');
-
-            Finch.navigate('/');
-            console.log(Finch);
-
-        });
-        form_ser_country.error(function(data){
-            console.log("Correo no Enviado...");
-            console.log(data);
-            JAG.resetForm('#form_jag_service_country');
-            //JAG.setValue('#').val('');
-        });
-    }
-}
 
 /* ------------------------------------------------------ *\
  [Methods] inputVal
@@ -484,14 +461,6 @@ var inputValMetdods = {
     }
 }
 
-// LAB
-
-var initLABMethods = {
-    initLAB : function () {
-
-
-    }
-}
 
 // Meta
 /*
