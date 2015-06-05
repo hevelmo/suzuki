@@ -20,8 +20,6 @@ function domEl() {
         // RESIZE ANIMATE
         'suk_resize_header_panel' => '#header-panel',
         'suk_animate_header_spacer' => '#header-spacer',
-
-
         // PANEL MENU
         'div_header_panel' => 'div.header-panel',
         'div_recurrent_panel_menu' => 'div#header-sections-wrapper',

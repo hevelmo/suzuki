@@ -109,7 +109,7 @@ var actionMenuBarsMethods = {
     },
     clixkGoGroup : function (event) {
         actionMenuBarsMethods.removeCleanPanelMenu();
-        Finch.navigate('/group');
+        Finch.navigate('/grupo');
         console.log('Click group');
     },
     clickGoConcesinary : function (event) {
@@ -234,9 +234,7 @@ var addDelegatMethods = {
 \* ------------------------------------------------------ */
 
 var openPanelMenuMethods = {
-
     clickPanel_general : function (event) {
-
         openPanelMenuMethods.animatePanelMenu();
         if ($(this).hasClass('active')) {
             $('a.expand-header').removeClass('active');

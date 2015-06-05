@@ -10,8 +10,6 @@ Finch.route('/', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
-        var header_button;
-        //This code will be not used it's only example, remove it later
         SUK.loadTemplate(tempsNames.tmp_section_content_home, domEl.div_recurrent);
         SUK.loadTemplate(tempsNames.tmp_slider_home, domEl.div_content_section_slider_home);
         SUK.loadTemplate(tempsNames.tmp_model_promo, domEl.div_content_section_model_promo);
@@ -30,7 +28,6 @@ Finch.route('/concesionarias', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
-
     },
     unload: function(bindings) {
         //It's always necessary, when an url is left, to clean the html content
@@ -46,7 +43,6 @@ Finch.route('/catalogos', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
-        //This code will be not used it's only example, remove it later
         SUK.loadTemplate(tempsNames.tmp_section_content_catalogs, domEl.div_recurrent);
         catalogMethods.pageTransitionCatalog();
         addDelegatMethods.transitions();
@@ -67,12 +63,23 @@ Finch.route('/contactanos', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
-        //This code will be not used it's only example, remove it later
         SUK.loadTemplate(tempsNames.tmp_section_content_contact_us, domEl.div_recurrent);
         SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
     },
     unload: function(bindings) {
         addStylesMethods.cleanAttrContact();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');    }
+});
+Finch.route('/grupo', {
+    setup: function(bindings) {
+        section="group";
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+    },
+    unload: function(bindings) {
         //It's always necessary, when an url is left, to clean the html content
         //of the recurrent div, where all the templates are inserted
         SUK.setHTML(domEl.div_recurrent, '');    }

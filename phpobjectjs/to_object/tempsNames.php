@@ -4,7 +4,6 @@ function tempsNames() {
     return array(
     	//It will not be used in the ral project, romove it from here and
     	//the template, from templates later and compile 'phpobjectjs'
-    	'tmp_demo' => 'tmp_demo',
         'tmp_content_models_menu' => 'tmp_content_models_menu',
     	'tmp_panel_menu_models' => 'tmp_panel_menu_models',
     	'tmp_panel_menu_financing' => 'tmp_panel_menu_financing',
