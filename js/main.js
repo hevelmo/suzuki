@@ -100,8 +100,14 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_close_owners_panel_menu, closePanelMenuMethods.closePanelOwners);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_before_buy_panel_menu, closePanelMenuMethods.closePanelBeforeBuy);
 
+    // MOBILE MENU
+    $(domEl.div_recurrent_body).on('click', "#header-mobile i", is_mobileMethods.clickHeaderMobile);
+    $(domEl.div_recurrent_body).on('click', "#mobile-menu a", is_mobileMethods.clickMobileMenuLink);
+    $(domEl.div_recurrent_body).on('click', "#footer-content .row-1 .footer-column", is_mobileMethods.clickFooterContent);
+    $(domEl.div_recurrent_body).on('click', ".header-column", is_mobileMethods.clickHeaderColumn);
+    $(domEl.div_recurrent_body).on('click', ".back-list-arrow", is_mobileMethods.clickBackListArrow);
+
     //Specifications Slider controls and functionality
-    //$('a.specifications-controls').on('click', function( e ){
     var specifications_i = 0;
     var specifications_total =  $('.specifications-wrapper .specification').length - 1;
     $(domEl.div_recurrent).on('click', domEl.button_specifications_controls, function( e ){
@@ -157,8 +163,4 @@ $(document).ready(function() {
         }, 900 );
     });
     display_versions_comparative();
-
-
-    // IS MOBILE
-
 });

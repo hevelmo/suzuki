@@ -2064,6 +2064,14 @@ table.suzuki-grid tbody tr td.light p {
         height: 65px;
         background-size: 100%;
     }
+    #catalog-ciaz .car_model {
+        /*background-position:-515px 0*/
+        background-position: 0 0;
+        background: url("../img/template/common/header/suzuki_ciaz.png") no-repeat;
+        width: 105px;
+        height: 65px;
+        background-size: 100%;
+    }
     #model-section-arrow {
         display:none !important
     }

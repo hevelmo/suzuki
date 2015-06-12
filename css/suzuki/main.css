@@ -3695,7 +3695,7 @@ padding: 0 0 15px;
     #header-prueba-manejo .panel_tabs_nav ul .active a, #header-financiamiento .panel_tabs_nav ul .active a {
         padding:10px 0;
         width:auto;
-        height:13px;
+        height:auto;
         border-left:0;
         background-color:#003f87 !important;
         color:#fff !important;

@@ -19,6 +19,9 @@ function tempsNames() {
         'tmp_section_content_catalogs' => 'tmp_section_content_catalogs',
         'tmp_social_bar' => 'tmp_social_bar',
         'tmp_section_content_contact_us' => 'tmp_section_content_contact_us',
-        'tmp_form_contact' => 'tmp_form_contact'
+        'tmp_form_contact' => 'tmp_form_contact',
+
+        // MOBILE MENU
+        'tmp_mobile_menu' => 'tmp_mobile_menu'
     );
 }

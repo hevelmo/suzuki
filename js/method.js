@@ -60,24 +60,28 @@ function resetAlert () {
 //This group of methods will be not used it's only example, remove it later
 var addStylesMethods = {
     cleanAttrHome : function () {
-        $(domEl.link_content_add_styles_home).attr('href','');
-        $(domEl.link_content_add_styles_models_home).attr('href','');
+        $('head .link-home').remove();
     },
     cleanAttrCatalog : function () {
-        $(domEl.link_content_add_styles_catalog).attr('href','');
+        $('head .link-catalog').remove();
     },
     cleanAttrContact : function () {
-        $(domEl.link_content_add_styles_contact).attr('href','');
+        $('head .link-contact').remove();
     },
     addStyleIndex : function () {
-        $(domEl.link_content_add_styles_home).attr('href','css/sections/home.css');
-        $(domEl.link_content_add_styles_models_home).attr('href','css/sections/models-home.css');
+        linkIndexAttributes = [
+            ['link', {'id': 'content-add-styles-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/home.css'}, '', 0],
+            ['link', {'id': 'content-add-styles-models-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/models-home.css'}, '', 0]
+        ];
+        SUK.appendMulti('head', linkIndexAttributes);
     },
     addStyleCatalogs : function () {
-        $(domEl.link_content_add_styles_catalog).attr('href','css/sections/models.css');
+        linkCatalogsAttributes = {'id': 'content-add-styles-catalog', 'rel': 'stylesheet', 'class': 'link-catalog', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
     },
     addStyleContact : function () {
-        $(domEl.link_content_add_styles_contact).attr('href', 'css/sections/contact.css');
+        linkContactAttributes = {'id': 'content-add-styles-contact', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/sections/contact.css'}
+        SUK.appendOne('head', 'link', linkContactAttributes, '', 0);
     }
 }
 var catalogMethods = {
@@ -104,27 +108,32 @@ var actionMenuBarsMethods = {
     },
     clickReturnIndex : function (event) {
         actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/');
         console.log('Click index');
     },
     clixkGoGroup : function (event) {
         actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/grupo');
         console.log('Click group');
     },
     clickGoConcesinary : function (event) {
         actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/concesionarias');
         console.log('Click concesionarias');
     },
     clickGoCatalogs : function (event) {
         actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/catalogos');
         $('.et-section').addClass('et-page-current');
         console.log('Click catalogos');
     },
     clickGoContactUs : function (event) {
         actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/contactanos');
         console.log('Click contactanos');
     }
@@ -348,95 +357,89 @@ var closePanelMenuMethods = {
     }
 }
 
-// IS MOBILE
+/* ------------------------------------------------------ *\
+ [Methods] IS MOBILE
+\* ------------------------------------------------------ */
 var is_mobileMethods = {
+    openCloseMenu : function() {
+        $("body").toggleClass("open-body");
+        $("#mobile-menu").toggleClass("open-mobile-menu");
+        is_mobileMethods.checkMenu();
+    },
+    checkMenu : function() {
+        if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
+            $("body").css("overflow", "hidden");
+        }
+        else {
+            $("body").css("overflow", "visible");
+        }
+    },
+    adEventListener : function() {
+        if (window.addEventListener){
+            window.addEventListener('orientationchange', is_mobileMethods.checkMenu, false);
+        } else if (window.attachEvent){
+            window.attachEvent('orientationchange', is_mobileMethods.checkMenu);
+        }
+    },
+    clickHeaderMobile : function(event) {
+        $(this).toggleClass("header-mobile-icon-active");
+        is_mobileMethods.openCloseMenu();
+    },
+    clickMobileMenuLink : function(event) {
+        var idx = $(this).parent().index();
+        var link = "";
+        switch (idx) {
+            case 1:
+                link = "#header-models-button";
+                break;
+            case 2:
+                link = "#header-financing-button";
+                break;
+            case 3:
+                link = "#header-owners-button";
+                break;
+            case 4:
+                link = "#header-before-buy-button";
+                break;
+            case 5:
+                link = "#header-test-drive-button";
+                break;
+        }
+        is_mobileMethods.openCloseMenu();
+        $(link).trigger("click");
+        $("#header-mobile i").removeClass("header-mobile-icon-active");
+    },
+    clickFooterContent : function(event) {
+        $(".footer-column .links").slideUp();
+        $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
+        if ($(this).find(".links").css("display") != "block") {
+            $(this).find(".links").slideDown();
+            $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+        }
+    },
+    clickHeaderColumn : function(event) {
+        if (!$(this).hasClass("header-column-open")) {
+            $('html, body').animate({scrollTop: '0px'}, 400);
+            $(".header-links-list").addClass("header-links-open");
+            $(this).siblings().hide();
+            $(this).addClass("header-column-open");
+            $(this).find("ul").fadeIn();
+        }
+    },
+    clickBackListArrow : function(event) {
+        var header_column_open = $(".header-column-open");
+        $(".header-links-list").removeClass("header-links-open");
+        header_column_open.removeClass("header-column-open");
+        $(".links-list").hide();
+        $(".header-column").fadeIn();
+    },
     is_mobile : function () {
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             // tasks to do if it is a Mobile Device
-            $('body').append('<div id="mobile-menu">');
-            $('#mobile-menu').append('<div>');
-            $('#mobile-menu').append('<ul><li><a href="/autos/concesionarias">Concesionarias</a></li><li><a href="#">Modelos</a></li><li><a href="/autos/promociones">Promociones</a></li><li><a href="#">Financiamiento</a></li><li><a href="#">Mi Suzuki</a></li><li><a href="#">Comprar un Suzuki</a></li><li><a href="#">Agendar prueba de manejo</a></li></ul>');
-
-            $(domEl.div_recurrent_body).on('click', "#header-mobile i", function () {
-                $(this).toggleClass("header-mobile-icon-active");
-                openCloseMenu();
-            });
-
-            if (window.addEventListener){
-                window.addEventListener('orientationchange', checkMenu, false);
-            } else if (window.attachEvent){
-                window.attachEvent('orientationchange', checkMenu);
-            }
-
-            $(domEl.div_recurrent_body).on('click', "#mobile-menu a", function (e) {
-                var idx = $(this).parent().index();
-                var link = "";
-                switch (idx) {
-                    case 1:
-                        link = "#header-models-button";
-                        break;
-                    case 3:
-                        link = "#header-financing-button";
-                        break;
-                    case 4:
-                        link = "#header-owners-button";
-                        break;
-                    case 5:
-                        link = "#header-before-buy-button";
-                        break;
-                    case 6:
-                        link = "#header-test-drive-button";
-                        break;
-                }
-                openCloseMenu();
-                $(link).trigger("click");
-                $("#header-mobile i").removeClass("header-mobile-icon-active");
-            });
-
-            $(domEl.div_recurrent_body).on('click', "#footer-content .row-1 .footer-column", function () {
-                $(".footer-column .links").slideUp();
-                $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
-                if ($(this).find(".links").css("display") != "block") {
-                    $(this).find(".links").slideDown();
-                    $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
-                }
-            });
-
-            function openCloseMenu () {
-                $("body").toggleClass("open-body");
-                $("#mobile-menu").toggleClass("open-mobile-menu");
-                checkMenu();
-            }
-
-            function checkMenu() {
-                if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
-                    $("body").css("overflow", "hidden");
-                }
-                else {
-                    $("body").css("overflow", "visible");
-                }
-            }
-
-            $("body").on("click", ".header-column", function () {
-                if (!$(this).hasClass("header-column-open")) {
-                    $('html, body').animate({scrollTop: '0px'}, 400);
-                    $(".header-links-list").addClass("header-links-open");
-                    $(this).siblings().hide();
-                    $(this).addClass("header-column-open");
-                    $(this).find("ul").fadeIn();
-                }
-            });
-
-            $("body").on("click", ".back-list-arrow", function () {
-                var header_column_open = $(".header-column-open");
-                $(".header-links-list").removeClass("header-links-open");
-                header_column_open.removeClass("header-column-open");
-                $(".links-list").hide();
-                $(".header-column").fadeIn();
-            });
+            SUK.loadTemplate(tempsNames.tmp_mobile_menu, '#mobile-menu');
+            is_mobileMethods.adEventListener();
             console.log('You are using a mobile device!');
         } else {
-            $('body #mobile-menu').remove();
             console.log('You are not using a mobile device!');
         }
     }
@@ -458,21 +461,3 @@ var inputValMetdods = {
         return /\d/.test(String.fromCharCode(event.keyCode));
     }
 }
-
-
-// Meta
-/*
-var addMetaMethod = {
-    addMeta : function () {
-        var head = $("head");
-        var tags = [
-
-        ];
-
-        for (var i = tags.length; i >= 0; i--) {
-            head.append(tags[i]);
-        };
-
-    }
-}
-*/
