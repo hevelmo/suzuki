@@ -20,3 +20,10 @@ a#header-owners-button,
 a#header-before-buy-button {
 	cursor: pointer;
 }
+
+input[type='text'].buddy#contact_name,
+input[type='text'].buddy#contact_lastname,
+input[type='email'].email#contact_email,
+textarea#contact_message {
+	width: 100%;
+}

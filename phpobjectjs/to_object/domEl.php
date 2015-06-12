@@ -35,6 +35,10 @@ function domEl() {
         'button_go_concesionaries' => 'a#go-concesionaries',
         // CLICK CATALOGS
         'button_go_catalogs' => 'a#go-catalogs',
+        // CLICK PRIVACY NOTICE
+        'button_go_privacy_notice' => 'a#go-privacy-notice',
+        // CLICK LEGAL TERMS
+        'button_go_legal_terms' => 'a#go-legal-terms',
         // CATALOG CARS WRAPPER
         'suk_catalog_cars_wrapper' => '.catalog_cars_wrapper',
         'suk_switch_catalog' => 'a.switch-catalog',

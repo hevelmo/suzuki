@@ -397,8 +397,8 @@
 }
 .catalog_switch_menu .catalog_cars_wrapper .catalog_car a {
     display:block;
-    height:26px;
-    line-height:26px;
+    height:40px;
+    line-height: 26px;
     padding:6px 0 6px 68px
 }
 .catalog_switch_menu .catalog_cars_wrapper .catalog_car a span {

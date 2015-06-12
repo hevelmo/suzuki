@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 
 
-    $('.catalog_cars_wrapper').delegate('a.switch-catalog', 'click', addDelegatMethods.delegate);
+    $(domEl.div_recurrent).delegate('click', '.catalog_cars_wrapper a.switch-catalog', addDelegatMethods.delegate);
     /*$('.catalog_cars_wrapper').delegate('a.switch-catalog', 'click', function( e ){
         e.preventDefault();
         var car_key = $(this).data('key');
@@ -83,6 +83,10 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_go_catalogs, actionMenuBarsMethods.clickGoCatalogs);
     // CLICK CONTACT US
     $(domEl.div_recurrent_body).on('click', domEl.button_go_contact, actionMenuBarsMethods.clickGoContactUs);
+    // CLICK PRIVACY NOTICE
+    $(domEl.div_recurrent_body).on('click', domEl.button_go_privacy_notice, actionMenuBarsMethods.clickGoPrivacy);
+    // CLICK LEGAL TERMS
+    $(domEl.div_recurrent_body).on('click', domEl.button_go_legal_terms, actionMenuBarsMethods.clickGoLegalTerms);
 
     // HEADER PANEL
     $(domEl.div_recurrent_body).on('click', 'a.expand-header', openPanelMenuMethods.clickPanel_general);

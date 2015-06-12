@@ -12,6 +12,8 @@ domEl = {
 	"button_go_concesionaries":"a#go-concesionaries",
 	"button_go_contact":"a#go-contact",
 	"button_go_group":"a#go-group",
+	"button_go_legal_terms":"a#go-legal-terms",
+	"button_go_privacy_notice":"a#go-privacy-notice",
 	"button_return_index":"a#return-index",
 	"button_specifications_controls":"a.specifications-controls",
 	"div_content_phone_call":"div#phone-call",
@@ -56,6 +58,8 @@ tempsNames = {
 	"tmp_section_content_contact_us":"tmp_section_content_contact_us",
 	"tmp_section_content_group":"tmp_section_content_group",
 	"tmp_section_content_home":"tmp_section_content_home",
+	"tmp_section_content_legal_terms":"tmp_section_content_legal_terms",
+	"tmp_section_content_privacy_notice":"tmp_section_content_privacy_notice",
 	"tmp_slider_home":"tmp_slider_home",
 	"tmp_social_bar":"tmp_social_bar"
 };

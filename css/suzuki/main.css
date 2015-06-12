@@ -2286,7 +2286,7 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
     line-height:16px;
     float:left;
     padding:0 15px 30px 0;
-    width:270px;
+    width:285px;
     position:relative;
 }
 .header-section-content.models .models-wrapper .model a {
@@ -4326,10 +4326,11 @@ body {
     display:block;
 }
 #footer-wrapper #footer-content .footer-row p {
-    line-height:140%;
-    margin:0;
-    font-weight:700;
-    color:#777;
+    line-height: 140%;
+    margin: 0 10px;
+    font-weight: 700;
+    color: #777;
+    word-break: break-word;
 }
 #footer-wrapper #footer-content .footer-row .footer-copyright, #footer-wrapper #footer-content .footer-row .footer-legals {
     float:left;
@@ -4559,7 +4560,7 @@ body {
     #footer-wrapper #footer-content .footer-row {
         margin:0 !important;
         padding:20px 0 !important;
-        text-align:center;
+        text-align: left;
     }
 }
 

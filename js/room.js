@@ -55,7 +55,6 @@ Finch.route('/catalogos', {
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
-
 Finch.route('/contactanos', {
     setup: function(bindings) {
         section="contact";
@@ -76,14 +75,51 @@ Finch.route('/contactanos', {
 Finch.route('/grupo', {
     setup: function(bindings) {
         section="group";
+        addStylesMethods.addStyleGroup();
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_section_content_group, domEl.div_recurrent);
     },
     unload: function(bindings) {
+        addStylesMethods.cleanAttrGroup();
         //It's always necessary, when an url is left, to clean the html content
         //of the recurrent div, where all the templates are inserted
         SUK.setHTML(domEl.div_recurrent, '');    }
+});
+
+Finch.route('/aviso-de-privacidad', {
+    setup: function(bindings) {
+        section="privacy";
+        addStylesMethods.addStyleLegals();
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_section_content_privacy_notice, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        addStylesMethods.cleanAttrLegals();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+
+Finch.route('/terminos-legales', {
+    setup: function(bindings) {
+        section="legals";
+        addStylesMethods.addStyleLegals();
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_section_content_legal_terms, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        addStylesMethods.cleanAttrLegals();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
 });
 
 Finch.listen();

@@ -17,6 +17,8 @@ function tempsNames() {
         'tmp_section_content_concesionaries' => 'tmp_section_content_concesionaries',
         'tmp_section_content_group' => 'tmp_section_content_group',
         'tmp_section_content_catalogs' => 'tmp_section_content_catalogs',
+        'tmp_section_content_privacy_notice' => 'tmp_section_content_privacy_notice',
+        'tmp_section_content_legal_terms' => 'tmp_section_content_legal_terms',
         'tmp_social_bar' => 'tmp_social_bar',
         'tmp_section_content_contact_us' => 'tmp_section_content_contact_us',
         'tmp_form_contact' => 'tmp_form_contact',

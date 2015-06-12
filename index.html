@@ -130,8 +130,8 @@
                         <div class="footer-column column-a">
                             <div class="footer-title">Comprar un Suzuki <i class="fa fa-plus" style="font-size: 15px; margin: 5px 20px;" id="panel-before-buy"></i></div>
                             <ul class="links" id="links-before-buy">
-                                <li><a href="#modelos" onclick="$.openPanel( 'models' );return false;"><span>Modelos</span></a></li>
-                                <li><a href="catalogo.html"><span>Catálogos</span></a></li>
+                                <li><a id="header-models-button"><span>Modelos</span></a></li>
+                                <li><a id="go-catalogs"><span>Catálogos</span></a></li>
                                 <!--<li><a href="#prueba-de-manejo"  onclick=" var modelo = get_car_by_url(); $.openPanel('test-drive', modelo ); return false;"><span>Agenda prueba de manejo</span></a></li>-->
                             </ul>
                             <div class="clearfix"></div>
@@ -139,8 +139,8 @@
                         <div class="footer-column column-b">
                             <div class="footer-title">Redes sociales <i class="fa fa-plus" style="font-size: 15px; margin: 5px 20px;" id="panel-social-networks"></i></div>
                             <ul class="links social"  id="links-social-networks">
-                                <li><a onclick="ga('send', 'event', 'Social', 'Liga_externa', 'Footer_Facebook');"  target="_blank" href="https://www.facebook.com/SuzukiGuadalajaraLopezMateosYAvVallarta"><span>Facebook</span></a></li>
-                                <li><a onclick="ga('send', 'event', 'Social', 'Liga_externa', 'Footer_Twitter');"   target="_blank" href="https://twitter.com/Suzuki_Gdl"><span>Twitter</span></a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/SuzukiGuadalajaraLopezMateosYAvVallarta"><span>Facebook</span></a></li>
+                                <li><a target="_blank" href="https://twitter.com/Suzuki_Gdl"><span>Twitter</span></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -206,31 +206,47 @@
                     </div>
                     <div class="footer-row first row-1">
                         <div class="footer-column column-a">
-                            <div class="footer-title"><a href="http://www.suzukivallarta.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Av. Vallarta</a></div>
-                            Av. Vallarta No. 5300.<br/>
-                            Col. Jardines Vallarta. Zapopan, Jal.<br/>
-                            Tel. 01(33)3777-1989
+                            <div class="footer-title">
+                                <a href="http://www.suzukivallarta.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Av. Vallarta</a>
+                            </div>
+                            <p>
+                                Av. Vallarta No. 5300.<br/>
+                                Col. Jardines Vallarta. Zapopan, Jal.<br/>
+                                Tel. 01(33)3777-1989
+                            </p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="footer-column column-c">
-                            <div class="footer-title"><a href="http://www.suzuki-lm.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Av. López Mateos</a></div>
-                            Av. López Mateos No. 5654<br/>
-                            Col. Arboledas. Zapopan, Jal.<br/>
-                            Tel. 01(33)3884-8200
+                            <div class="footer-title">
+                                <a href="http://www.suzuki-lm.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Av. López Mateos</a>
+                            </div>
+                            <p>
+                                Av. López Mateos No. 5654<br/>
+                                Col. Arboledas. Zapopan, Jal.<br/>
+                                Tel. 01(33)3884-8200
+                            </p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="footer-column column-c">
-                            <div class="footer-title"><a href="http://www.suzukicolima.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Colima</a></div>
-                            Av. Felipe Sevilla No. 536<br/>
-                            Col. Lomas de Circunvalación. Colima, Colima.<br/>
-                            Tel. 01(31)2316-3263
+                            <div class="footer-title">
+                                <a href="http://www.suzukicolima.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Colima</a>
+                            </div>
+                            <p>
+                                Av. Felipe Sevilla No. 536<br/>
+                                Col. Lomas de Circunvalación. Colima, Colima.<br/>
+                                Tel. 01(31)2316-3263
+                            </p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="footer-column column-c">
-                            <div class="footer-title"><a href="http://www.suzukimorelia.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Morelia</a></div>
-                            Periférico Paseo de la Republica 3169 Colonia Las Américas<br/>
-                            Morelia, Michoacán, C.P. 58270
-                            Tel. 01-(443)-500-53-00
+                            <div class="footer-title">
+                                <a href="http://www.suzukimorelia.com.mx" target="_blank" style="color: #fff; font-weight: 900; font-size: 16px;">Morelia</a>
+                            </div>
+                            <p>
+                                Periférico Paseo de la Republica 3169 Colonia Las Américas<br/>
+                                Morelia, Michoacán, C.P. 58270 <br>
+                                Tel. 01-(443)-500-53-00
+                            </p>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -240,8 +256,8 @@
                         </div>
                         <div class="footer-legals">
                             <ul class="links">
-                                <li><a href="legales.html"><span>Términos legales</span></a></li>
-                                <li><a href="aviso-privacidad.html"><span>Aviso de privacidad</span></a></li>
+                                <li><a id="go-legal-terms"><span>Términos legales</span></a></li>
+                                <li><a id="go-privacy-notice"><span>Aviso de privacidad</span></a></li>
                                 <li class="last"><a target="_blank" href="http://www.globalsuzuki.com/"><span>Suzuki Global</span></a></li>
                             </ul>
                         </div>
@@ -262,7 +278,7 @@
 	    <script src='lib/jquery-ui.js'></script>
 	    <script src='lib/underscore.js'></script>
 	    <script src="lib/handlebars.runtime.js"></script>
-	    <script src='templates/templates.js'></script>
+	    <script src='templates/min/templates.min.js'></script>
 	    <script src='lib/moment.js'></script>
 	    <script src='lib/accounting.js'></script>
 	    <!--<script src='lib/min/bootstrap-datetimepicker.min.js'></script>-->
@@ -289,17 +305,16 @@
         <script src="lib/plugins/jquery.chosen/chosen.jquery.js?_nc=20140313A"></script>
 
         <script src="" id="content-add-lib"></script>
-        <!--<script src="lib/sections/contact/contact.js?_nc=20140313A"></script>-->
 
 	    <!--
+        -->
 	    <script src='js/min/core.min.js'></script>
-	    -->
+        <!--
 	    <script src='js/objects.js'></script>
 	    <script src='js/method.js'></script>
 	    <script src='js/model.js'></script>
 	    <script src='js/room.js'></script>
 	    <script src='js/main.js'></script>
-	    <!--
 	    -->
 	</body>
 </html>

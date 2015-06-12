@@ -62,11 +62,17 @@ var addStylesMethods = {
     cleanAttrHome : function () {
         $('head .link-home').remove();
     },
+    cleanAttrGroup : function () {
+        $('head .link-group').remove();
+    },
     cleanAttrCatalog : function () {
         $('head .link-catalog').remove();
     },
     cleanAttrContact : function () {
         $('head .link-contact').remove();
+    },
+    cleanAttrLegals : function () {
+        $('head .link-legals').remove();
     },
     addStyleIndex : function () {
         linkIndexAttributes = [
@@ -75,6 +81,10 @@ var addStylesMethods = {
         ];
         SUK.appendMulti('head', linkIndexAttributes);
     },
+    addStyleGroup : function () {
+        linkCatalogsAttributes = {'id': 'content-add-styles-group', 'rel': 'stylesheet', 'class': 'link-group', 'href': 'css/sections/warranty.css'}
+        SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
+    },
     addStyleCatalogs : function () {
         linkCatalogsAttributes = {'id': 'content-add-styles-catalog', 'rel': 'stylesheet', 'class': 'link-catalog', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
@@ -82,6 +92,10 @@ var addStylesMethods = {
     addStyleContact : function () {
         linkContactAttributes = {'id': 'content-add-styles-contact', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/sections/contact.css'}
         SUK.appendOne('head', 'link', linkContactAttributes, '', 0);
+    },
+    addStyleLegals : function () {
+        linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
+        SUK.appendOne('head', 'link', linkLegalsAttributes, '', 0);
     }
 }
 var catalogMethods = {
@@ -136,6 +150,18 @@ var actionMenuBarsMethods = {
         $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/contactanos');
         console.log('Click contactanos');
+    },
+    clickGoPrivacy : function (event) {
+        actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        Finch.navigate('/aviso-de-privacidad');
+        console.log('Click aviso de privacidad');
+    },
+    clickGoLegalTerms : function (event) {
+        actionMenuBarsMethods.removeCleanPanelMenu();
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        Finch.navigate('/terminos-legales');
+        console.log('Click Terminos Legales');
     }
 }
 
@@ -362,76 +388,109 @@ var closePanelMenuMethods = {
 \* ------------------------------------------------------ */
 var is_mobileMethods = {
     openCloseMenu : function() {
-        $("body").toggleClass("open-body");
-        $("#mobile-menu").toggleClass("open-mobile-menu");
-        is_mobileMethods.checkMenu();
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $("body").toggleClass("open-body");
+            $("#mobile-menu").toggleClass("open-mobile-menu");
+            is_mobileMethods.checkMenu();
+        } else {
+            console.log('You are not using a mobile device!');
+        }
     },
     checkMenu : function() {
-        if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
-            $("body").css("overflow", "hidden");
-        }
-        else {
-            $("body").css("overflow", "visible");
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
+                $("body").css("overflow", "hidden");
+            }
+            else {
+                $("body").css("overflow", "visible");
+            }
+        } else {
+            console.log('You are not using a mobile device!');
         }
     },
     adEventListener : function() {
-        if (window.addEventListener){
-            window.addEventListener('orientationchange', is_mobileMethods.checkMenu, false);
-        } else if (window.attachEvent){
-            window.attachEvent('orientationchange', is_mobileMethods.checkMenu);
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            if (window.addEventListener){
+                window.addEventListener('orientationchange', is_mobileMethods.checkMenu, false);
+            } else if (window.attachEvent){
+                window.attachEvent('orientationchange', is_mobileMethods.checkMenu);
+            }
+        } else {
+            console.log('You are not using a mobile device!');
         }
     },
     clickHeaderMobile : function(event) {
-        $(this).toggleClass("header-mobile-icon-active");
-        is_mobileMethods.openCloseMenu();
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $(this).toggleClass("header-mobile-icon-active");
+            is_mobileMethods.openCloseMenu();
+        } else {
+            console.log('You are not using a mobile device!');
+        }
     },
     clickMobileMenuLink : function(event) {
-        var idx = $(this).parent().index();
-        var link = "";
-        switch (idx) {
-            case 1:
-                link = "#header-models-button";
-                break;
-            case 2:
-                link = "#header-financing-button";
-                break;
-            case 3:
-                link = "#header-owners-button";
-                break;
-            case 4:
-                link = "#header-before-buy-button";
-                break;
-            case 5:
-                link = "#header-test-drive-button";
-                break;
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            var idx = $(this).parent().index();
+            var link = "";
+            switch (idx) {
+                case 1:
+                    link = "#header-models-button";
+                    break;
+                case 2:
+                    link = "#header-financing-button";
+                    break;
+                case 3:
+                    link = "#header-owners-button";
+                    break;
+                case 4:
+                    link = "#header-before-buy-button";
+                    break;
+                case 5:
+                    link = "#header-test-drive-button";
+                    break;
+            }
+            is_mobileMethods.openCloseMenu();
+            $(link).trigger("click");
+            $("#header-mobile i").removeClass("header-mobile-icon-active");
+        } else {
+            console.log('You are not using a mobile device!');
         }
-        is_mobileMethods.openCloseMenu();
-        $(link).trigger("click");
-        $("#header-mobile i").removeClass("header-mobile-icon-active");
     },
     clickFooterContent : function(event) {
-        $(".footer-column .links").slideUp();
-        $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
-        if ($(this).find(".links").css("display") != "block") {
-            $(this).find(".links").slideDown();
-            $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $(".footer-column .links").slideUp();
+            $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
+            if ($(this).find(".links").css("display") != "block") {
+                $(this).find(".links").slideDown();
+                $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+            }
+        } else {
+            console.log('You are not using a mobile device!');
         }
     },
     clickHeaderColumn : function(event) {
-        if (!$(this).hasClass("header-column-open")) {
-            $('html, body').animate({scrollTop: '0px'}, 400);
-            $(".header-links-list").addClass("header-links-open");
-            $(this).siblings().hide();
-            $(this).addClass("header-column-open");
-            $(this).find("ul").fadeIn();
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            if (!$(this).hasClass("header-column-open")) {
+                $('html, body').animate({scrollTop: '0px'}, 400);
+                $(".header-links-list").addClass("header-links-open");
+                $(this).siblings().hide();
+                $(this).addClass("header-column-open");
+                $(this).find("ul").fadeIn();
+            }
+        } else {
+            console.log('You are not using a mobile device!');
         }
     },
     clickBackListArrow : function(event) {
-        var header_column_open = $(".header-column-open");
-        $(".header-links-list").removeClass("header-links-open");
-        header_column_open.removeClass("header-column-open");
-        $(".links-list").hide();
-        $(".header-column").fadeIn();
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            var header_column_open = $(".header-column-open");
+            $(".header-links-list").removeClass("header-links-open");
+            header_column_open.removeClass("header-column-open");
+            $(".links-list").hide();
+            $(".header-column").fadeIn();
+        } else {
+            console.log('You are not using a mobile device!');
+        }
+
     },
     is_mobile : function () {
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
