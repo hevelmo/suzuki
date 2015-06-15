@@ -25,6 +25,7 @@ function validateEmail(email) {
     //return re.test(email);
     return true;
 }
+
 /* ------------------------------------------------------ *\
  [functions] resetAlert
 \* ------------------------------------------------------ */
@@ -53,7 +54,6 @@ function resetAlert () {
   and the porformance of  each section.
   Depending on the complexity of the url, could be more than one group of methods.
   Could exist some group of general methods*/
-
 /* ------------------------------------------------------ *\
  [Methods] Home
 \* ------------------------------------------------------ */
@@ -90,8 +90,11 @@ var addStylesMethods = {
         SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
     },
     addStyleContact : function () {
-        linkContactAttributes = {'id': 'content-add-styles-contact', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/sections/contact.css'}
-        SUK.appendOne('head', 'link', linkContactAttributes, '', 0);
+        linkContactAttributes = [
+            ['link', {'id': 'content-add-styles-contact', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/sections/contact.css'}, '', 0],
+            ['link', {'id': 'content-add-styles-contact-shosen', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/plugins/jquery.chosen/chosen.css'}, '', 0]
+        ];
+        SUK.appendMulti('head', linkContactAttributes);
     },
     addStyleLegals : function () {
         linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
@@ -164,7 +167,6 @@ var actionMenuBarsMethods = {
         console.log('Click Terminos Legales');
     }
 }
-
 var addDelegatMethods = {
     transitions : function () {
     },
@@ -263,11 +265,9 @@ var addDelegatMethods = {
         pages.move_to( slide );
     }
 }
-
 /* ------------------------------------------------------ *\
  [Methods] Header Panel
 \* ------------------------------------------------------ */
-
 var openPanelMenuMethods = {
     clickPanel_general : function (event) {
         openPanelMenuMethods.animatePanelMenu();
@@ -351,7 +351,6 @@ var openPanelMenuMethods = {
     animatePanelMenu : function () {
         $(domEl.div_recurrent_panel_menu).stop().hide().fadeIn();
     },
-
 }
 var closePanelMenuMethods = {
     cleanHeight : function () {
@@ -382,7 +381,6 @@ var closePanelMenuMethods = {
         closePanelMenuMethods.cleanHeight();
     }
 }
-
 /* ------------------------------------------------------ *\
  [Methods] IS MOBILE
 \* ------------------------------------------------------ */
@@ -503,20 +501,138 @@ var is_mobileMethods = {
         }
     }
 }
-
 var returMethods = {
     clickGoIndex : function () {
         Finch.navigate('/');
     }
 }
-
-
 /* ------------------------------------------------------ *\
  [Methods] inputVal
 \* ------------------------------------------------------ */
-
 var inputValMetdods = {
     isIntegerKP: function (event) {
         return /\d/.test(String.fromCharCode(event.keyCode));
+    }
+}
+/* ------------------------------------------------------ *\
+ [Methods] VALIDATE
+\* ------------------------------------------------------ */
+var validations_regexp = {
+    address : new RegExp( /^[a-zá-úüñ,#0-9. -]{2,}$/i ),
+    date    : new RegExp( /^(\d{4})-(\d{1,2})-(\d{1,2})$/ ),
+    email   : new RegExp( /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ),
+    name    : new RegExp( /^[a-zá-úüñ. ]{2,}$/i ),
+    phone   : new RegExp( /^[0-9\s\-]{7,13}$/ )
+}
+var validation_messages = {
+    date            : 'Debe ser aaaa-mm-dd',
+    date_tomorrow   : 'Sólo a partir de mañana',
+    email           : 'Verifica tu correo',
+    general         : 'Campo no válido',
+    not_config      : 'Tipo desconocido',
+    not_null        : 'No puede ser nulo',
+    phone           : 'Verifica que tu número sea de 10 dígitos',
+    required        : 'Campo requerido'
+}
+var validateMethods = {
+    validate : function(value, rules, required, custom_message) {
+        var r = { valid : false, message : '' },
+        null_value = value == undefined || value === '' ,
+        ii, rule;
+        required = required === true ? true: false;
+        if( required ){
+            if( null_value ){
+                r.message = validation_messages.required;
+            }
+        }else{
+            if( null_value ){
+                r.valid = true;
+            }
+        }
+        if( !r.valid && r.message === '' ){
+            ii = rules.length;
+            while( ii-- ){
+                rule = rules[ii];
+                switch( rule ){
+                    case 'email':
+                        if( !validations_regexp.email.test( value ) ){
+                            r.message = validation_messages.email;
+                        }
+                        break;
+                    case 'name':
+                        if( !validations_regexp.name.exec( value ) ){
+                            r.message = validation_messages.general;
+                        }
+                        break;
+                    case 'address':
+                        if( !validations_regexp.address.exec( value ) ){
+                            r.message = validation_messages.general;
+                        }
+                        break;
+                    case 'car_key':
+                        if(  !is_model_name( value ) ){
+                            r.message = validation_messages.general;
+                        }
+                        break;
+                    case 'date':
+                        if( !validations_regexp.date.exec( value ) ){
+                            r.message = validation_messages.date;
+                        }
+                        break;
+                    case 'phone':
+                        if( !validations_regexp.phone.exec( value ) ){
+                            r.message = validation_messages.phone;
+                        }
+                        break;
+                    default:
+                        r.message = validations_regexp.not_config;
+                        break;
+                }
+            }
+            if( r.message === '' ){
+                r.valid = true;
+            }
+        }
+        if( custom_message && !r.valid ){
+            r.message = custom_message;
+        }
+        return r;
+    },
+    //Display Input errors
+    error_bubble : function( $label, show, message ){
+        var $p = $label.parent().children('p.invalid-message');
+        if( show ){
+            if( message ){
+                $p.html( message + '<span>&nbsp;</span>' ).stop().hide().fadeIn();
+            }else{
+                $p.stop().hide().fadeIn();
+            }
+        }else{
+            $p.hide();
+        }
+    },
+    validate_input : function(event) {
+        var target = $(event.target);
+        console.log(target);
+        if( target.is('input') || target.is('textarea') ){
+            var valid_data = target.data('validation-data');
+            var val_data    = valid_data.split('|'),
+                required    = val_data.indexOf('required');
+            if( required >= 0 ){
+                val_data.splice(required, 1);
+            }
+            var value = target.val(),
+                validation = validateMethods.validate( value, val_data, ( required >= 0 )  );
+            validateMethods.error_bubble( target, !validation.valid, validation.message );
+            return validation.valid;
+        }else{
+            var is_valid = !( target.val() === null );
+            validateMethods.error_bubble( target, !is_valid, validation_messages.required );
+            return is_valid;
+        }
+    }
+}
+var formContactMethods = {
+    sendContactForm : function(event) {
     }
 }

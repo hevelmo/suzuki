@@ -64,7 +64,8 @@ Finch.route('/contactanos', {
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_section_content_contact_us, domEl.div_recurrent);
         SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
-        $('.selectpicker').selectpicker();
+        //$('.selectpicker').selectpicker();
+        $('.seleccionar').chosen();
     },
     unload: function(bindings) {
         addStylesMethods.cleanAttrContact();

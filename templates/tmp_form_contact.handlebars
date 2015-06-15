@@ -1,6 +1,6 @@
 <div class="contact_content">
     <div id="form-wrapper" >
-        <form id="contactos" name="contactos" method="post" action="contacto.php">
+        <form id="contactos">
             <!-- Alerta -->
             <div class="contact_alert"><span>Los siguientes campos son erróneos:</span></div>
 
@@ -9,14 +9,14 @@
                 <input type="hidden" name="concesionaria" id="contact_concesionaria" value="Suzuki Guadalajara">
                 <div class="contact_element a">
                     <fieldset>
-                        <label for="contact_name">Nombre</label>
+                        <label for="contact_name"><span style="color: red;" class="fa fa-asterisk"></span> Nombre</label>
                         <input name="name" id="contact_name" type="text" class="icon buddy" value="" data-validation-data="required|name" placeholder="Nombre">
                         <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
                 <div class="contact_element b">
                     <fieldset>
-                        <label for="contact_lastname">Apellido</label>
+                        <label for="contact_lastname"><span style="color: red;" class="fa fa-asterisk"></span> Apellido</label>
                         <input name="lastname" id="contact_lastname" type="text" class="icon buddy" value="" data-validation-data="required|name" placeholder="Apellidos Paterno y Materno">
                         <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
@@ -30,7 +30,7 @@
             <div class="contact_elements">
                 <div class="contact_element a">
                     <fieldset>
-                        <label for="contact_email">Correo electrónico</label>
+                        <label for="contact_email"><span style="color: red;" class="fa fa-asterisk"></span> Correo electrónico</label>
                         <input name="email"  id="contact_email" type="email" class="icon email" value="" data-validation-data="required|email" placeholder="Correo electrónico">
                         <p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
@@ -38,7 +38,7 @@
                 <!--
                 <div class="contact_element b">
                     <fieldset>
-                        <label for="contact_city">Ciudad</label>
+                        <label for="contact_city"><span style="color: red;" class="fa fa-asterisk"></span> Ciudad</label>
                         <input id="contact_city" type="text" value="" data-validation-data="required|address" placeholder="Ciudad">
                         <p class="invalid-message" id="error_ciudad">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
@@ -48,7 +48,7 @@
                 <!--
                 <div class="contact_element a">
                     <fieldset>
-                        <label for="contact_delegation">Delegación o municipio</label>
+                        <label for="contact_delegation"><span style="color: red;" class="fa fa-asterisk"></span> Delegación o municipio</label>
                         <input id="contact_delegation" type="text" value="" data-validation-data="required|address" placeholder="Delegación o municipio">
                         <p class="invalid-message" id="error_delegacion">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
@@ -61,8 +61,8 @@
 
                 <div class="contact_element b">
                     <fieldset>
-                        <label for="contact_department">Departamento</label>
-                        <select name="departamento" id="contact_department" type="dropdown" class="seleccionar form-control selectpicker" style="width: 256px;">
+                        <label for="contact_department"><span style="color: red;" class="fa fa-asterisk"></span> Departamento</label>
+                        <select name="departamento" id="contact_department" type="dropdown" class="seleccionar" style="width: 256px;">
                             <option label="Selecccionar" selected="selected" value="">Selecciona Departamento</option>
                             <option value="ventas"          >Ventas</option>
                             <option value="servicio"        >Servicio</option>
@@ -76,7 +76,7 @@
 
                 <div class="contact_element a">
                     <fieldset>
-                        <label for="contact_car_key">Auto</label>
+                        <label for="contact_car_key"><span style="color: red;" class="fa fa-asterisk"></span> Auto</label>
                         <select name="car" id="contact_car_key" type="dropdown" class="seleccionar form-control selectpicker" style="width: 256px;" >
                             <option label="Selecccionar" selected="selected" value="">Selecciona Modelo</option>
                             <option value="swift-sport"     >Swift Sport</option>
@@ -94,8 +94,8 @@
             <div class="contact_elements">
                 <div class="contact_element ab">
                     <fieldset>
-                        <label for="contact_message">Mensaje:</label>
-                        <textarea name="message" class="escribir2" id="contact_message"></textarea>
+                        <label for="contact_message"><span style="color: red;" class="fa fa-asterisk"></span> Mensaje:</label>
+                        <textarea name="message" class="escribir2" id="contact_message" data-validation-data="required|address"></textarea>
                         <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
 
@@ -110,7 +110,8 @@
         </form>
         <div class="contact_elements">
             <div class="contact_element ab">
-                <input type="submit" class="enviar button blue" value="Enviar" />
+                <!--<input type="submit" class="enviar button blue" value="Enviar" />-->
+                <button id="suk_contact_submit" class="enviar button blue">Enviar</button>
                 <p id="revisa_aviso">
                     Tus datos están a salvo.<br/>
                     Para mayor información revisa nuestro <a href="aviso-privacidad.html">Aviso de privacidad</a>
