@@ -50,6 +50,9 @@ function showMeTheMoney(model_key){
         case 's-cross':
             value = 249900.00;
             break;
+        case 'ciaz':
+            value = 194900.00;
+            break;
         default:
             break;
     }
@@ -599,7 +602,8 @@ var validation_messages = {
     not_config      : 'Tipo desconocido',
     not_null        : 'No puede ser nulo',
     phone           : 'Verifica que tu número sea de 10 dígitos',
-    required        : 'Campo requerido'
+    required        : 'Campo requerido',
+    empty           : 'Campo vacío'
 }
 var validateMethods = {
     validate : function(value, rules, required, custom_message) {
@@ -702,44 +706,86 @@ var validateMethods = {
 var formContactMethods = {
     addDataFormContact: function() {
         var dataFormContact;
-        dataFormContact = $('#frm-contact').serializeFormJSON();
+        dataFormContact = $('#form-contact').serializeFormJSON();
         return SUK.postalService(urlsApi.sendContact, dataFormContact);
     },
+    fillingControl: function() {
+        var validFieldItems, dataFormContact, isFull, isNoEmpty;
+        validFieldItems = [
+            'suk_gdl_contact_name', 'suk_gdl_contact_lastname',
+            'suk_gdl_contact_email', 'suk_gdl_contact_department',
+            'suk_gdl_contact_car', 'suk_gdl_contact_message',
+            'suk_gdl_contact_news'
+        ];
+
+        dataFormContact = $('#form-contact').serializeFormJSON();
+        isFull = SUK.validFormFull(dataFormContact, validFieldItems);
+        //$('#suk_contact_submit').attr('disabled', !isFull);
+        //console.log($('#form-contact').serializeFormJSON());
+    },
+    refreshForm : function() {
+        SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
+        $('.seleccionar').chosen();
+    },
+    resetForm : function() {
+        SUK.resetForm('#form-contact');
+        //$('#suk_contact_submit').attr('disabled', true);
+    },
+    reset_pre_loader: function() {
+        SUK.setHTML('#pre-loader', '');
+    },
+    finchNavigateReturn: function() {
+        Finch.navigate('/');
+    },
     sendContactForm : function(event) {
+        formContactMethods.fillingControl();
         var $contact_message    = $('#contact_message'),
-        $contact_car_key    = $('#contact_car_key '),
-        $contact_department = $('#contact_department'),
-        $contact_email      = $('#contact_email'),
-        $contact_name       = $('#contact_name '),
-        $contact_lastname   = $('#contact_lastname '),
-        $contact_newsletter = $('#contact-newsletter');
-        var form_errors = 0;
-        if( !validateMethods.validate_input( $contact_message ) ){
-            form_errors++;
-            $contact_message.focus();
-        }
-        if( !validateMethods.validate_input( $contact_car_key ) ){
-            form_errors++;
-            $contact_car_key.focus();
-        }
-        if( !validateMethods.validate_input( $contact_department ) ){
-            form_errors++;
-            $contact_department.focus();
-        }
-        if( !validateMethods.validate_input( $contact_email ) ){
-            form_errors++;
-            $contact_email.focus();
-        }
-        if( !validateMethods.validate_input( $contact_name ) ){
-            form_errors++;
-            $contact_name.focus();
-        }
-        if( !validateMethods.validate_input( $contact_lastname ) ){
-            form_errors++;
-            $contact_lastname.focus();
+            $contact_car_key    = $('#contact_car_key'),
+            $contact_department = $('#contact_department'),
+            $contact_email      = $('#contact_email'),
+            $contact_name       = $('#contact_name'),
+            $contact_lastname   = $('#contact_lastname'),
+            $contact_newsletter = $('#contact-newsletter');
+        val_department = SUK.getValue('#contact_department');
+        val_auto = SUK.getValue('#contact_car_key');
+        val_news = SUK.getValue('#contact-newsletter');
+        SUK.setValue('#contact_depto', val_department);
+        SUK.setValue('#contact_auto', val_auto);
+        SUK.setValue('#contact_image_modelo', 'suzuki_'+val_auto+'.png');
+        if (val_news == 'on') {
+            val_subscription = 'Activado';
+            SUK.setValue('#contact_subscription', val_subscription);
+        } else {
+            val_subscription = 'Desactivado';
+            SUK.setValue('#contact_subscription', val_subscription);
         }
 
-        if( form_errors == 0 ){
+        var form_errors = 0;
+        if( validateMethods.validate_input( $contact_message ) ){
+            form_errors++;
+            $contact_message.focusout();
+        }
+        if( validateMethods.validate_input( $contact_car_key ) ){
+            form_errors++;
+            $contact_car_key.focusout();
+        }
+        if( validateMethods.validate_input( $contact_department ) ){
+            form_errors++;
+            $contact_department.focusout();
+        }
+        if( validateMethods.validate_input( $contact_email ) ){
+            form_errors++;
+            $contact_email.focusout();
+        }
+        if( validateMethods.validate_input( $contact_name ) ){
+            form_errors++;
+            $contact_name.focusout();
+        }
+        if( validateMethods.validate_input( $contact_lastname ) ){
+            form_errors++;
+            $contact_lastname.focusout();
+        }
+        if( form_errors != 0 ){
             var data = {
                 car_key     : $contact_car_key.val(),
                 department  : $contact_department.val(),
@@ -748,41 +794,53 @@ var formContactMethods = {
                 name        : $contact_name.val(),
                 lastname    : $contact_lastname.val(),
                 newsletter  : $('#contact-newsletter:checked').length,
-                source      : 'Contact'
+                source      : 'Contacto'
             };
+            //console.log(data);
             var con_news = $('#contact-newsletter:checked').length;
             var departamento = $contact_department.val();
             var precio_actual = showMeTheMoney($contact_car_key.val());
             var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
             var news_val    = con_news ? 600 : 0;
-            var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
-            console.log(precio_actual);
+            var car_val     = departamento === 'ventas' ? precio_actual*0.03 : 0;
+            //console.log(departamento, precio_actual, news_srt, news_val, car_val);
+
 
             var contactPromise = formContactMethods.addDataFormContact();
 
             contactPromise.success(function (data) {
-
                 setTimeout(function() {
-                    console.log('Espera');
+                    $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
+                    //console.log('Espera');
                     setTimeout(function () {
+                        formContactMethods.reset_pre_loader();
+                        $('#pre-loader').append("<span class='msg_by_model label label-default animation-fadeIn'><i class='fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico'></i> Enviado Mensaje</span>");
                         setTimeout(function () {
-                            console.log("Correo Enviado...");
-                            $('#form-wrapper').fadeOut( 300 , function(){
-                                var correo = $("#contact_email").val();
-                                $('#email-from').text(correo);
-                                setTimeout(function () {
-                                    $('.form-thanks').fadeIn();
-                                }, 1800);
-                            });
-                            console.log(data);
+                            //console.log("Correo Enviado...");
+                            formContactMethods.reset_pre_loader();
                             setTimeout(function () {
+                                $('#pre-loader').append("<span class='msg_by_model label label-success animation-fadeIn'><i class='fa fa-check fa-lg fa-fw msg-fa-ico'></i> Correo Enviado...</span>");
+                                $('#form-wrapper').fadeOut( 300 , function(){
+                                    var correo = $("#contact_email").val();
+                                    $('#email-from').text(correo);
+                                    setTimeout(function () {
+                                        $('.form-thanks').fadeIn();
+                                    }, 1800);
+                                });
+                                //console.log(data);
                                 setTimeout(function () {
-                                    $('#form-wrapper').fadeIn( 300 , function(){
-                                        var correo = $("#contact_email").val();
-                                        $('#email-from').text(correo);
-                                        $('.form-thanks').fadeOut();
-                                    });
-                                    //Finch.navigate('/');
+                                    formContactMethods.reset_pre_loader();
+                                    formContactMethods.resetForm();
+                                    setTimeout(function () {
+                                        $('#form-wrapper').fadeIn( 300 , function(){
+                                            var correo = $("#contact_email").val();
+                                            $('#email-from').text(correo);
+                                            $('.form-thanks').fadeOut();
+                                        });
+                                        setTimeout(function () {
+                                            formContactMethods.finchNavigateReturn();
+                                        }, 2000);
+                                    }, 3400);
                                 }, 1800);
                             }, 5900);
                         }, 3400);
@@ -790,8 +848,26 @@ var formContactMethods = {
                 }, 500);
             });
             contactPromise.error(function (data) {
-                console.log(data);
+                setTimeout(function () {
+                    $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
+                    //console.log('Espera');
+                    setTimeout(function () {
+                        formContactMethods.reset_pre_loader();
+                        $('#pre-loader').append("<span class='msg_by_model label label-warning animation-fadeIn'><i class='fa fa-info-circle fa-lg fa-fw msg-fa-ico'></i> Se requiere llenar los campos</span>");
+                        setTimeout(function () {
+                            //console.log("Correo no Enviado...");
+                            formContactMethods.reset_pre_loader();
+                            $('#pre-loader').append("<span class='msg_by_model label label-danger animation-fadeIn'><i class='fa fa-times fa-lg fa-fw msg-fa-ico'></i> Correo no Enviado...</span>");
+                            //console.log(data);
+                            setTimeout(function () {
+                                formContactMethods.reset_pre_loader();
+                                formContactMethods.resetForm();
+                            }, 1600);
+                        }, 900);
+                    }, 2000);
+                }, 500);
             });
+
         }
     }
 }

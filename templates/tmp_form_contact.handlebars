@@ -6,11 +6,10 @@
 
             <!-- Formulario -->
             <div class="contact_elements">
-                <input type="hidden" name="concesionaria" id="contact_concesionaria" value="Suzuki Guadalajara">
                 <div class="contact_element a">
                     <fieldset>
                         <label for="contact_name"><span style="color: red;" class="fa fa-asterisk"></span> Nombre</label>
-                        <input name="suk_gdl_contact_name" id="contact_name" type="text" class="icon buddy" value="" data-validation-data="required|name" placeholder="Nombre">
+                        <input type="text" name="suk_gdl_contact_name" value="" class="icon buddy" id="contact_name" placeholder="Nombre" data-validation-data="required|name">
                         <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
@@ -21,12 +20,8 @@
                         <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
-
-
                 <div class="clearfix"></div>
-
             </div>
-
             <div class="contact_elements">
                 <div class="contact_element a">
                     <fieldset>
@@ -35,57 +30,35 @@
                         <p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
-                <!--
-                <div class="contact_element b">
-                    <fieldset>
-                        <label for="contact_city"><span style="color: red;" class="fa fa-asterisk"></span> Ciudad</label>
-                        <input id="contact_city" type="text" value="" data-validation-data="required|address" placeholder="Ciudad">
-                        <p class="invalid-message" id="error_ciudad">Este campo es obligatorio<span>&nbsp;</span></p>
-                    </fieldset>
-                </div>
-                -->
-
-                <!--
-                <div class="contact_element a">
-                    <fieldset>
-                        <label for="contact_delegation"><span style="color: red;" class="fa fa-asterisk"></span> Delegación o municipio</label>
-                        <input id="contact_delegation" type="text" value="" data-validation-data="required|address" placeholder="Delegación o municipio">
-                        <p class="invalid-message" id="error_delegacion">Este campo es obligatorio<span>&nbsp;</span></p>
-                    </fieldset>
-                </div>
-                -->
-
             </div>
-
             <div class="contact_elements">
-
                 <div class="contact_element b">
                     <fieldset>
                         <label for="contact_department"><span style="color: red;" class="fa fa-asterisk"></span> Departamento</label>
-                        <select name="suk_gdl_contact_department" id="contact_department" type="dropdown" class="seleccionar" style="width: 256px;">
-                            <option label="Selecccionar" selected="selected" value="">Selecciona Departamento</option>
-                            <option value="ventas"          >Ventas</option>
-                            <option value="servicio"        >Servicio</option>
-                            <option value="refacciones"     >Refacciones / Accesorios</option>
-                            <option value="mercadotecnia"   >Mercadotecnia</option>
-                            <option value="otros"           >Otros</option>
+                        <select name="suk_gdl_contact_department" id="contact_department" type="dropdown" class="seleccionar" style="width: 256px;" data-validation-data="required">
+                            <option label="Selecccionar" selected="selected" disabled="disabled" value="">Selecciona Departamento</option>
+                            <option value="ventas">Ventas</option>
+                            <option value="servicio">Servicio</option>
+                            <option value="refacciones">Refacciones / Accesorios</option>
+                            <option value="mercadotecnia">Mercadotecnia</option>
+                            <option value="otros">Otros</option>
                         </select>
                         <p class="invalid-message" id="error_departamento">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
-
                 <div class="contact_element a">
                     <fieldset>
                         <label for="contact_car_key"><span style="color: red;" class="fa fa-asterisk"></span> Auto</label>
-                        <select name="suk_gdl_contact_car" id="contact_car_key" type="dropdown" class="seleccionar" style="width: 256px;">
-                            <option label="Selecccionar" selected="selected" value="">Selecciona Modelo</option>
-                            <option value="swift-sport"     >Swift Sport</option>
-                            <option value="swift"           >Swift</option>
-                            <!--<option value="sx4-crossover"   >SX4 Crossover</option>
-                            <option value="sx4-sedan"       >SX4 Sedán</option>-->
-                            <option value="kizashi"         >Kizashi</option>
-                            <option value="grand-vitara"    >Grand Vitara</option>
-                            <option value="s-cross"         >S-Cross</option>
+                        <select name="suk_gdl_contact_car" id="contact_car_key" type="dropdown" class="seleccionar" style="width: 256px;" data-validation-data="required">
+                            <option label="Selecccionar" selected="selected" disabled="disabled" value="">Selecciona Modelo</option>
+                            <option value="swift-sport">Swift Sport</option>
+                            <option value="swift">Swift</option>
+                            <!--<option value="sx4-crossover">SX4 Crossover</option>
+                            <option value="sx4-sedan">SX4 Sedán</option>-->
+                            <option value="kizashi">Kizashi</option>
+                            <option value="grand-vitara">Grand Vitara</option>
+                            <option value="s-cross">S-Cross</option>
+                            <option value="ciaz">Ciaz</option>
                         </select>
                         <p class="invalid-message" id="error_auto">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
@@ -105,13 +78,17 @@
                         </label>
                     </fieldset>
                     <input type="hidden" name="suk_gdl_contact_concesionary" id="contact_concesionaria" value="Suzuki Guadalajara">
+                    <input type="hidden" name="suk_gdl_contact_depto" id="contact_depto" value="">
+                    <input type="hidden" name="suk_gdl_contact_auto" id="contact_auto" value="">
+                    <input type="hidden" name="suk_gdl_contact_image_modelo" id="contact_image_modelo" value="">
+                    <input type="hidden" name="suk_gdl_contact_subscription" id="contact_subscription" value="">
                 </div>
             </div>
         </form>
         <div class="contact_elements">
             <div class="contact_element ab">
-                <!--<input type="submit" class="enviar button blue" value="Enviar" />-->
                 <button id="suk_contact_submit" class="enviar button blue">Enviar</button>
+                <div id="pre-loader"></div>
                 <p id="revisa_aviso">
                     Tus datos están a salvo.<br/>
                     Para mayor información revisa nuestro <a id="go-privacy-notice">Aviso de privacidad</a>

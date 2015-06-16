@@ -59,25 +59,7 @@ $app->configureMode('development', function () use ($app) {
 //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
 $app->run();
 //Functions
-    // Contacto
-    /*function sendContactoSEMPREMByModel() {
-        $property = requestBody();
-        $sem_con_sp_bm_name = $property->sem_premium_by_model_contact_name;
-        $sem_con_sp_bm_email = $property->sem_premium_by_model_contact_email;
-        $sem_con_sp_bm_phone = $property->sem_premium_by_model_contact_phone;
-        $sem_con_sp_bm_message = $property->sem_premium_by_model_contact_message;
-        $sem_con_sp_bm_sen_email = $property->sem_premium_by_model_contact_send_email;
-        $sem_con_sp_bm_concessionary = $property->sem_premium_by_model_contact_concessionary;
-        $sem_con_sp_bm_logo_seminuevos = $property->sem_premium_by_model_contact_logo_seminuevos;
-        $sem_con_sp_bm_logo_agencia = $property->sem_premium_by_model_contact_logo_agencia;
-        $sem_con_sp_bm_marc = $property->sem_premium_by_model_contact_marc;
-        $sem_con_sp_bm_model = $property->sem_premium_by_model_contact_model;
-        $sem_con_sp_bm_picture = $property->sem_premium_by_model_contact_picture;
-
-        sem_premium_bymodel_contacto($sem_con_sp_bm_name, $sem_con_sp_bm_email, $sem_con_sp_bm_phone, $sem_con_sp_bm_message, $sem_con_sp_bm_sen_email, $sem_con_sp_bm_concessionary, $sem_con_sp_bm_logo_seminuevos, $sem_con_sp_bm_logo_agencia, $sem_con_sp_bm_marc, $sem_con_sp_bm_model, $sem_con_sp_bm_picture);
-
-        echo changeArrayIntoJSON("campa", array('process'=>'ok'));
-    }*/
+    // CONTACTO SUZUKI
     function sendContact() {
         $property = requestBody();
         $send_suk_gdl_contact_name = $property->suk_gdl_contact_name;
@@ -88,48 +70,56 @@ $app->run();
         $send_suk_gdl_contact_message = $property->suk_gdl_contact_message;
         $send_suk_gdl_contact_news = $property->suk_gdl_contact_news;
         $send_suk_gdl_contact_concesionary = $property->suk_gdl_contact_concesionary;
+        $send_suk_gdl_contact_depto = $property->suk_gdl_contact_depto;
+        $send_suk_gdl_contact_auto = $property->suk_gdl_contact_auto;
+        $send_suk_gdl_contact_image_modelo = $property->suk_gdl_contact_image_modelo;
+        $send_suk_gdl_contact_subscription = $property->suk_gdl_contact_subscription;
 
         if ($send_suk_gdl_contact_department == "ventas") {
-            $suk_gdl_contact_depto = "Ventas";
+            $send_suk_gdl_contact_depto = "Ventas";
         } else if ($send_suk_gdl_contact_department == "servicio") {
-            $suk_gdl_contact_depto = "Servicio";
+            $send_suk_gdl_contact_depto = "Servicio";
         } else if ($send_suk_gdl_contact_department == "refacciones") {
-            $suk_gdl_contact_depto = "Refacciones / Accesorios";
+            $send_suk_gdl_contact_depto = "Refacciones / Accesorios";
         } else if ($send_suk_gdl_contact_department == "mercadotecnia") {
-            $suk_gdl_contact_depto = "Mercadotecnia";
+            $send_suk_gdl_contact_depto = "Mercadotecnia";
         } else {
-            $suk_gdl_contact_depto = "Otros";
+            $send_suk_gdl_contact_depto = "Otros";
         }
         if ($send_suk_gdl_contact_car =="swift-sport") {
-            $suk_gdl_contact_auto = "Swift Sport";
-            $suk_gdl_contact_image_modelo = "suzuki_swift-sport.png";
+            $send_suk_gdl_contact_auto = "Swift Sport";
+            $send_suk_gdl_contact_image_modelo = "suzuki_swift-sport.png";
         } else if ($send_suk_gdl_contact_car =="swift") {
-            $suk_gdl_contact_auto = "Swift";
-            $suk_gdl_contact_image_modelo = "suzuki_swift.png";
+            $send_suk_gdl_contact_auto = "Swift";
+            $send_suk_gdl_contact_image_modelo = "suzuki_swift.png";
         } else if ($send_suk_gdl_contact_car =="sx4-crossover") {
-            $suk_gdl_contact_auto = "SX4 Crossover";
-            $suk_gdl_contact_image_modelo = "suzuki_sx4-crossover.png";
+            $send_suk_gdl_contact_auto = "SX4 Crossover";
+            $send_suk_gdl_contact_image_modelo = "suzuki_sx4-crossover.png";
         } else if ($send_suk_gdl_contact_car =="sx4-sedan") {
-            $suk_gdl_contact_auto = "SX4 Sedán";
-            $suk_gdl_contact_image_modelo = "suzuki_sx4-sedan.png";
+            $send_suk_gdl_contact_auto = "SX4 Sedán";
+            $send_suk_gdl_contact_image_modelo = "suzuki_sx4-sedan.png";
         } else if ($send_suk_gdl_contact_car =="kizashi") {
-            $suk_gdl_contact_auto = "Kizashi";
-            $suk_gdl_contact_image_modelo = "suzuki_kizashi.png";
+            $send_suk_gdl_contact_auto = "Kizashi";
+            $send_suk_gdl_contact_image_modelo = "suzuki_kizashi.png";
         } else if ($send_suk_gdl_contact_car =="grand-vitara") {
-            $suk_gdl_contact_auto = "Grand Vitara";
-            $suk_gdl_contact_image_modelo = "suzuki_grand-vitara.png";
+            $send_suk_gdl_contact_auto = "Grand Vitara";
+            $send_suk_gdl_contact_image_modelo = "suzuki_grand-vitara.png";
         } else if ($send_suk_gdl_contact_car =="s-cross") {
-            $suk_gdl_contact_auto = "S-Cross";
-            $suk_gdl_contact_image_modelo = "suzuki_s-cross.png";
+            $send_suk_gdl_contact_auto = "S-Cross";
+            $send_suk_gdl_contact_image_modelo = "suzuki_s-cross.png";
+        } else if ($send_suk_gdl_contact_car =="ciaz") {
+            $send_suk_gdl_contact_auto = "Ciaz";
+            $send_suk_gdl_contact_image_modelo = "suzuki_ciaz.png";
         }
 
+
         if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news == "on") {
-            $send_suk_gdl_contact_susbcription = "Activado";
-            send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_susbcription);
+            $send_suk_gdl_contact_subscription = "Activado";
+            send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_subscription);
         } else {
-            $send_suk_gdl_contact_susbcription = "Desactivado";
+            $send_suk_gdl_contact_subscription = "Desactivado";
         }
-        send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $suk_gdl_contact_auto, $suk_gdl_contact_mage_modelo, $send_suk_gdl_contact_susbcription);
+        send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok'));
     }
@@ -330,12 +320,12 @@ function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_las
                     </body>
                 </html>
             ',
-            'subject' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department.'\n\n',
+            'subject' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department,
             'from_email' => $send_suk_gdl_contact_email,
             'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
             'to' => array(
                 array(
-                    'email' => 'hevelmo060683@gmail.com',
+                    'email' => 'heriberto@medigraf.com.mx',
                     'name' => 'contacto',
                     'type' => 'to'
                 )/*,
@@ -388,7 +378,7 @@ function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_las
         throw $e;
     }
 }
-function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $suk_gdl_contact_auto, $suk_gdl_contact_mage_modelo, $send_suk_gdl_contact_susbcription) {
+function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription) {
     try {
         $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
         $message = array(
@@ -427,7 +417,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
                                     <tr>
                                         <td colspan="3" height="78" bgcolor="#CA272C" width="11">
                                             <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
-                                                '.$suk_gdl_contact_depto.'
+                                                '.$send_suk_gdl_contact_depto.'
                                             </p>
                                         </td>
                                     </tr>
@@ -443,7 +433,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
                                                             <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
                                                         </td>
                                                         <td height="0" valign="top">
-                                                            <img src="http://suzukigdl.com.mx/images/template/common/header/'.$suk_gdl_contact_mage_modelo.'" alt="Modelo">
+                                                            <img src="http://suzukigdl.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_contact_image_modelo.'" alt="'.$send_suk_gdl_contact_auto.'">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -453,7 +443,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
                                                             </strong>
                                                         </td>
                                                         <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_auto.'</span><br>
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_auto.'</span><br>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -463,7 +453,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
                                                             </strong>
                                                         </td>
                                                         <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_depto.'</span><br>
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_depto.'</span><br>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -513,7 +503,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
                                                             </strong>
                                                         </td>
                                                         <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_susbcription.'</span>
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_subscription.'</span>
                                                         </td>
                                                         <br>
                                                         <br>
@@ -577,10 +567,10 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
             ',
             'subject' => 'Contacto - Noticias y promociones - Suzuki Guadalajara',
             'from_email' => $send_suk_gdl_contact_email,
-            'from_name' => $send_suk_gdl_contact_lastname . ' ' . $send_suk_gdl_contact_name,
+            'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
             'to' => array(
                 array(
-                    'email' => 'hevelmo060683@gmail.com',
+                    'email' => 'heriberto@medigraf.com.mx',
                     'name' => 'contacto',
                     'type' => 'to'
                 )/*,

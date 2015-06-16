@@ -32,9 +32,6 @@ function urlsApi() {
         // DELETE
         //'del_tab_id' => $root . '/' . $del . '/' . $tab . '/',
 
-        //TEST
-        //They will not be used in the ral project, romove it later form here and from api and compile 'phpobjectjs'
-        //'get_test' => $root . '/' . 'get/test',
         'sendContact' => $root . 'post/contacto'
     );
 }

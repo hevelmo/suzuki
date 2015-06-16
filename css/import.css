@@ -16,3 +16,10 @@
 /*@import url(sections/contact.css);*/
 
 @import url(styles/main.css);
+@import url(styles/style_animation.css);
+
+#pre-loader {
+	position: relative;
+	top: -25px;
+	left: 100px;
+}
