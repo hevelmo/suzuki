@@ -73,6 +73,10 @@ $(document).ready(function() {
 
     //This group of events will not be used, they are only example, remove later
 
+    // GENERAL CLICK RADIO & CHECKBOX
+    $(domEl.div_recurrent).on('change', ":checkbox", changeInputsMethods.clickChangeCheckbox);
+    $(domEl.div_recurrent).on('click', ".label-radio", changeInputsMethods.clcikChangeRadio);
+
     // CLICK INDEX
     $(domEl.div_recurrent_body).on('click', domEl.button_return_index, actionMenuBarsMethods.clickReturnIndex);
     // CLICK GROUP
@@ -83,14 +87,16 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_go_catalogs, actionMenuBarsMethods.clickGoCatalogs);
     // CLICK CONTACT US
     $(domEl.div_recurrent_body).on('click', domEl.button_go_contact, actionMenuBarsMethods.clickGoContactUs);
-
     // FORM CONTACT
     $(domEl.div_recurrent).on('focusout', '#contact_name', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_lastname', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_email', validateMethods.validate_input);
-    $(domEl.div_recurrent).on('change', '#contact_department', validateMethods.validate_input);
-    $(domEl.div_recurrent).on('change', '#contact_car_key', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#contact_department', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#contact_car_key', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_message', validateMethods.validate_input);
+    // SEND FORM CONTACT
+    $(domEl.div_recurrent).on('click', '#suk_contact_submit', formContactMethods.sendContactForm);
+
     // CLICK PRIVACY NOTICE
     $(domEl.div_recurrent_body).on('click', domEl.button_go_privacy_notice, actionMenuBarsMethods.clickGoPrivacy);
     // CLICK LEGAL TERMS

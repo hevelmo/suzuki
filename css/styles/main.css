@@ -27,3 +27,31 @@ input[type='email'].email#contact_email,
 textarea#contact_message {
 	width: 100%;
 }*/
+.chosen-container {
+	height:40px;
+}
+
+.chosen-container a.chosen-single {
+	height:40px;
+	border:1px solid #ccc;
+	box-shadow:none;
+	background:#fff;
+	border-radius:0;
+	line-height:40px;
+}
+
+.chosen-container a.chosen-single>div>b {
+	background-position:2px 10px;
+}
+
+.chosen-container.chosen-container-active a.chosen-single {
+	background:#fff;
+}
+
+.chosen-container.chosen-container-active a.chosen-single>div>b {
+	background-position:-16px 10px;
+}
+
+.chosen-container#quote_states_chosen .chosen-drop ul.chosen-results {
+	max-height:150px;
+}

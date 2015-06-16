@@ -64,6 +64,5 @@ tempsNames = {
 	"tmp_social_bar":"tmp_social_bar"
 };
 urlsApi = {
-	"get_test":"api/v1//get/test",
-	"post_test":"api/v1//post/test"
+	"sendContact":"api/v1/post/contacto"
 };

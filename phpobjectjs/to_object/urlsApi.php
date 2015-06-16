@@ -34,7 +34,7 @@ function urlsApi() {
 
         //TEST
         //They will not be used in the ral project, romove it later form here and from api and compile 'phpobjectjs'
-        'get_test' => $root . '/' . 'get/test',
-        'post_test' => $root . '/' . 'post/test'
+        //'get_test' => $root . '/' . 'get/test',
+        'sendContact' => $root . 'post/contacto'
     );
 }

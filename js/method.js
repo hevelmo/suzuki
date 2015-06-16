@@ -26,6 +26,36 @@ function validateEmail(email) {
     return true;
 }
 
+function showMeTheMoney(model_key){
+    var value = 0;
+    switch (model_key){
+        case 'swift-sport':
+            value = 259000.00;
+            break;
+        case 'swift':
+            value = 169000.00;
+            break;
+        case 'sx4-crossover':
+            value = 238000.00;
+            break;
+        case 'sx4-sedan':
+            value = 219000.00;
+            break;
+        case 'kizashi':
+            value = 319500.00;
+            break;
+        case 'grand-vitara':
+            value = 322000.00;
+            break;
+        case 's-cross':
+            value = 249900.00;
+            break;
+        default:
+            break;
+    }
+    return value;
+}
+
 /* ------------------------------------------------------ *\
  [functions] resetAlert
 \* ------------------------------------------------------ */
@@ -515,6 +545,43 @@ var inputValMetdods = {
     }
 }
 /* ------------------------------------------------------ *\
+ [Methods] INPUTS RADIO, CHECKBOX
+\* ------------------------------------------------------ */
+var changeInputsMethods = {
+    clickChangeCheckbox : function(event) {
+        if ($(".label-checkbox").length) {
+            $('.label-checkbox input:checked').each(function(){
+                $(this).parent('label').addClass('checkbox-checked');
+            });
+        }
+        if ($(this).is(':checked')) {
+            $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
+            $(this).parent('.label-checkbox').addClass('checkbox-checked');
+            $(this).val('on');
+        } else {
+            $(this).parent('label').find(':checkbox').attr('checked', false);
+            $(this).parent('label').removeClass('checkbox-checked');
+            $(this).val('');
+        }
+    },
+    clcikChangeRadio : function(event) {
+        if ($(".label-radio").length) {
+            $('.label-radio input:checked').each(function(){
+                //$(this).parent('label').addClass('radio-checked');
+            });
+        }
+        if ($(this).hasClass('radio-checked')) {
+            $(this).find(':radio').attr('checked', true);
+            $(this).addClass("radio-checked");
+        } else {
+            $(".label-radio").removeClass("radio-checked");
+            $(".label-radio").find(':radio').attr('checked', false);
+            $(this).find(':radio').attr('checked', true);
+            $(this).addClass("radio-checked");
+        }
+    }
+}
+/* ------------------------------------------------------ *\
  [Methods] VALIDATE
 \* ------------------------------------------------------ */
 var validations_regexp = {
@@ -613,7 +680,7 @@ var validateMethods = {
     },
     validate_input : function(event) {
         var target = $(event.target);
-        console.log(target);
+        //console.log(target);
         if( target.is('input') || target.is('textarea') ){
             var valid_data = target.data('validation-data');
             var val_data    = valid_data.split('|'),
@@ -633,6 +700,98 @@ var validateMethods = {
     }
 }
 var formContactMethods = {
+    addDataFormContact: function() {
+        var dataFormContact;
+        dataFormContact = $('#frm-contact').serializeFormJSON();
+        return SUK.postalService(urlsApi.sendContact, dataFormContact);
+    },
     sendContactForm : function(event) {
+        var $contact_message    = $('#contact_message'),
+        $contact_car_key    = $('#contact_car_key '),
+        $contact_department = $('#contact_department'),
+        $contact_email      = $('#contact_email'),
+        $contact_name       = $('#contact_name '),
+        $contact_lastname   = $('#contact_lastname '),
+        $contact_newsletter = $('#contact-newsletter');
+        var form_errors = 0;
+        if( !validateMethods.validate_input( $contact_message ) ){
+            form_errors++;
+            $contact_message.focus();
+        }
+        if( !validateMethods.validate_input( $contact_car_key ) ){
+            form_errors++;
+            $contact_car_key.focus();
+        }
+        if( !validateMethods.validate_input( $contact_department ) ){
+            form_errors++;
+            $contact_department.focus();
+        }
+        if( !validateMethods.validate_input( $contact_email ) ){
+            form_errors++;
+            $contact_email.focus();
+        }
+        if( !validateMethods.validate_input( $contact_name ) ){
+            form_errors++;
+            $contact_name.focus();
+        }
+        if( !validateMethods.validate_input( $contact_lastname ) ){
+            form_errors++;
+            $contact_lastname.focus();
+        }
+
+        if( form_errors == 0 ){
+            var data = {
+                car_key     : $contact_car_key.val(),
+                department  : $contact_department.val(),
+                email       : $contact_email.val(),
+                message     : $contact_message.val(),
+                name        : $contact_name.val(),
+                lastname    : $contact_lastname.val(),
+                newsletter  : $('#contact-newsletter:checked').length,
+                source      : 'Contact'
+            };
+            var con_news = $('#contact-newsletter:checked').length;
+            var departamento = $contact_department.val();
+            var precio_actual = showMeTheMoney($contact_car_key.val());
+            var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
+            var news_val    = con_news ? 600 : 0;
+            var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
+            console.log(precio_actual);
+
+            var contactPromise = formContactMethods.addDataFormContact();
+
+            contactPromise.success(function (data) {
+
+                setTimeout(function() {
+                    console.log('Espera');
+                    setTimeout(function () {
+                        setTimeout(function () {
+                            console.log("Correo Enviado...");
+                            $('#form-wrapper').fadeOut( 300 , function(){
+                                var correo = $("#contact_email").val();
+                                $('#email-from').text(correo);
+                                setTimeout(function () {
+                                    $('.form-thanks').fadeIn();
+                                }, 1800);
+                            });
+                            console.log(data);
+                            setTimeout(function () {
+                                setTimeout(function () {
+                                    $('#form-wrapper').fadeIn( 300 , function(){
+                                        var correo = $("#contact_email").val();
+                                        $('#email-from').text(correo);
+                                        $('.form-thanks').fadeOut();
+                                    });
+                                    //Finch.navigate('/');
+                                }, 1800);
+                            }, 5900);
+                        }, 3400);
+                    }, 2000);
+                }, 500);
+            });
+            contactPromise.error(function (data) {
+                console.log(data);
+            });
+        }
     }
 }

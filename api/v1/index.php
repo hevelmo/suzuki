@@ -1,8 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-//include '../../incorporate/db_connect.php';
-//include '../../incorporate/functions.php';
+include '../../incorporate/db_connect.php';
+include '../../incorporate/functions.php';
 include '../../incorporate/queryintojson.php';
 include '../Mandrill.php';
 
@@ -45,14 +45,9 @@ $app->configureMode('development', function () use ($app) {
  */
 //$app->get('/get_test', 'get_hi');
 // POST route
-    // app => Contacto GDL Jaguar
-        $app->post('/contacto/gdl', 'sendContactogdlJAG');
-    // app => Contacto Country Jaguar
-        $app->post('/contacto/country', 'sendContactoCountryJAG');
-    // app => Servicio GDL Jaguar
-        $app->post('/servicio/gdl', 'sendServiciogdlJAG');
-    // app => Servicio Country Jaguar
-        $app->post('/servicio/country', 'sendServicioCountryJAG');
+    // app => Contacto
+        $app->post('/post/contacto', 'sendContact');
+
 // INSERT
 //$app->post('/new/table', /*'mw1',*/ 'addTable');
 // UPDATE
@@ -62,72 +57,81 @@ $app->configureMode('development', function () use ($app) {
 //$app->get('/get/table', /*'mw1',*/ 'getTable');
 // DELETE
 //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
-//TEST
-/*$app->get('/get/test', 'getTest');
-$app->post('/post/test', 'postTest');*/
 $app->run();
-//TEST
-/*function get_hi() {
-    echo changeArrayIntoJSON('text', array('process'=>'cadena'));
-}
-function getTest() {
-    $today = date('o-m-d H:i:s');
-    $array = array('date' => $today);
-    echo changeArrayIntoJSON('propa', $array);
-}
-function postTest() {
-    $array = array('process' => 'ok');
-    echo changeArrayIntoJSON('propa', $array);
-    echo "string";
-}*/
 //Functions
-    // Contacto GDL Jaguar
-    function sendContactogdlJAG() {
+    // Contacto
+    /*function sendContactoSEMPREMByModel() {
         $property = requestBody();
-        $jag_congdlname = $property->jag_contact_gdl_name;
-        $jag_congdlemail = $property->jag_contact_gdl_email;
-        $jag_congdlmessage = $property->jag_contact_gdl_message;
-        $jag_congdlconcesionarie = $property->jag_contact_gdl_concessionary;
+        $sem_con_sp_bm_name = $property->sem_premium_by_model_contact_name;
+        $sem_con_sp_bm_email = $property->sem_premium_by_model_contact_email;
+        $sem_con_sp_bm_phone = $property->sem_premium_by_model_contact_phone;
+        $sem_con_sp_bm_message = $property->sem_premium_by_model_contact_message;
+        $sem_con_sp_bm_sen_email = $property->sem_premium_by_model_contact_send_email;
+        $sem_con_sp_bm_concessionary = $property->sem_premium_by_model_contact_concessionary;
+        $sem_con_sp_bm_logo_seminuevos = $property->sem_premium_by_model_contact_logo_seminuevos;
+        $sem_con_sp_bm_logo_agencia = $property->sem_premium_by_model_contact_logo_agencia;
+        $sem_con_sp_bm_marc = $property->sem_premium_by_model_contact_marc;
+        $sem_con_sp_bm_model = $property->sem_premium_by_model_contact_model;
+        $sem_con_sp_bm_picture = $property->sem_premium_by_model_contact_picture;
 
-        jag_contacto_gdl($jag_congdlname, $jag_congdlemail, $jag_congdlmessage, $jag_congdlconcesionarie);
+        sem_premium_bymodel_contacto($sem_con_sp_bm_name, $sem_con_sp_bm_email, $sem_con_sp_bm_phone, $sem_con_sp_bm_message, $sem_con_sp_bm_sen_email, $sem_con_sp_bm_concessionary, $sem_con_sp_bm_logo_seminuevos, $sem_con_sp_bm_logo_agencia, $sem_con_sp_bm_marc, $sem_con_sp_bm_model, $sem_con_sp_bm_picture);
 
-        echo changeArrayIntoJSON("jag", array('process'=>'ok'));
-    }
-    // Contacto Conuntry Jaguar
-    function sendContactocountryJAG() {
+        echo changeArrayIntoJSON("campa", array('process'=>'ok'));
+    }*/
+    function sendContact() {
         $property = requestBody();
-        $jag_concountryname = $property->jag_contact_country_name;
-        $jag_concountryemail = $property->jag_contact_country_email;
-        $jag_concountrymessage = $property->jag_contact_country_message;
-        $jag_concountryconcesionarie = $property->jag_contact_country_concessionary;
+        $send_suk_gdl_contact_name = $property->suk_gdl_contact_name;
+        $send_suk_gdl_contact_lastname = $property->suk_gdl_contact_lastname;
+        $send_suk_gdl_contact_email = $property->suk_gdl_contact_email;
+        $send_suk_gdl_contact_department = $property->suk_gdl_contact_department;
+        $send_suk_gdl_contact_car = $property->suk_gdl_contact_car;
+        $send_suk_gdl_contact_message = $property->suk_gdl_contact_message;
+        $send_suk_gdl_contact_news = $property->suk_gdl_contact_news;
+        $send_suk_gdl_contact_concesionary = $property->suk_gdl_contact_concesionary;
 
-        jag_contacto_country($jag_concountryname, $jag_concountryemail, $jag_concountrymessage, $jag_concountryconcesionarie);
+        if ($send_suk_gdl_contact_department == "ventas") {
+            $suk_gdl_contact_depto = "Ventas";
+        } else if ($send_suk_gdl_contact_department == "servicio") {
+            $suk_gdl_contact_depto = "Servicio";
+        } else if ($send_suk_gdl_contact_department == "refacciones") {
+            $suk_gdl_contact_depto = "Refacciones / Accesorios";
+        } else if ($send_suk_gdl_contact_department == "mercadotecnia") {
+            $suk_gdl_contact_depto = "Mercadotecnia";
+        } else {
+            $suk_gdl_contact_depto = "Otros";
+        }
+        if ($send_suk_gdl_contact_car =="swift-sport") {
+            $suk_gdl_contact_auto = "Swift Sport";
+            $suk_gdl_contact_image_modelo = "suzuki_swift-sport.png";
+        } else if ($send_suk_gdl_contact_car =="swift") {
+            $suk_gdl_contact_auto = "Swift";
+            $suk_gdl_contact_image_modelo = "suzuki_swift.png";
+        } else if ($send_suk_gdl_contact_car =="sx4-crossover") {
+            $suk_gdl_contact_auto = "SX4 Crossover";
+            $suk_gdl_contact_image_modelo = "suzuki_sx4-crossover.png";
+        } else if ($send_suk_gdl_contact_car =="sx4-sedan") {
+            $suk_gdl_contact_auto = "SX4 Sedán";
+            $suk_gdl_contact_image_modelo = "suzuki_sx4-sedan.png";
+        } else if ($send_suk_gdl_contact_car =="kizashi") {
+            $suk_gdl_contact_auto = "Kizashi";
+            $suk_gdl_contact_image_modelo = "suzuki_kizashi.png";
+        } else if ($send_suk_gdl_contact_car =="grand-vitara") {
+            $suk_gdl_contact_auto = "Grand Vitara";
+            $suk_gdl_contact_image_modelo = "suzuki_grand-vitara.png";
+        } else if ($send_suk_gdl_contact_car =="s-cross") {
+            $suk_gdl_contact_auto = "S-Cross";
+            $suk_gdl_contact_image_modelo = "suzuki_s-cross.png";
+        }
 
-        echo changeArrayIntoJSON("jag", array('process'=>'ok'));
-    }
-    // Servicio GDL Jaguar
-    function sendServiciogdlJAG() {
-        $property = requestBody();
-        $jag_sergdlname = $property->jag_sertact_gdl_name;
-        $jag_sergdlemail = $property->jag_sertact_gdl_email;
-        $jag_sergdlmessage = $property->jag_sertact_gdl_message;
-        $jag_sergdlconcesionarie = $property->jag_sertact_gdl_concessionary;
+        if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news == "on") {
+            $send_suk_gdl_contact_susbcription = "Activado";
+            send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_susbcription);
+        } else {
+            $send_suk_gdl_contact_susbcription = "Desactivado";
+        }
+        send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $suk_gdl_contact_auto, $suk_gdl_contact_mage_modelo, $send_suk_gdl_contact_susbcription);
 
-        jag_servicio_gdl($jag_sergdlname, $jag_sergdlemail, $jag_sergdlmessage, $jag_sergdlconcesionarie);
-
-        echo changeArrayIntoJSON("jag", array('process'=>'ok'));
-    }
-    // Servicio Conuntry Jaguar
-    function sendServiciocountryJAG() {
-        $property = requestBody();
-        $jag_sercountryname = $property->jag_sertact_country_name;
-        $jag_sercountryemail = $property->jag_sertact_country_email;
-        $jag_sercountrymessage = $property->jag_sertact_country_message;
-        $jag_sercountryconcesionarie = $property->jag_sertact_country_concessionary;
-
-        jag_servicio_country($jag_sercountryname, $jag_sercountryemail, $jag_sercountrymessage, $jag_sercountryconcesionarie);
-
-        echo changeArrayIntoJSON("jag", array('process'=>'ok'));
+        echo changeArrayIntoJSON("sukpa", array('process'=>'ok'));
     }
 /*
   ----------------------------------------------------------------------------
@@ -205,132 +209,103 @@ function postTest() {
         Notification Methods
   ----------------------------------------------------------------------------
 */
-function jag_contacto_gdl($jag_congdlname, $jag_congdlemail, $jag_congdlmessage, $jag_congdlconcesionarie) {
+function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary) {
     try {
-        $mandrill = new Mandrill('vipel7XhxNiqPkblHbw0qg');
+        $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
         $message = array(
             'html' => '
                 <html>
                     <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-jaguar.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-ProximaNova.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-avenir.css" />
-                    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-                    <style>
-                        html{width: 100%;}
-                        * {
-                            margin: 0 auto;
-                            padding: 0;
-                        }
-                        body{
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            -moz-osx-font-smoothing: grayscale;
-                            -webkit-font-smoothing: antialiased;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        .ExternalClass {
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        *:before, *:after {
-                            -webkit-box-sizing: border-box;
-                            -moz-box-sizing: border-box;
-                            box-sizing: border-box;
-                        }
-                    </style>
                     </head>
 
                     <body>
 
-                        <div style="background-color: rgba(12, 18, 28, 0.2); padding: 20px;border-bottom: 0px" width="600">
+                        <div>
                             <table align="center" border="0" cellpadding="0" cellspacing="0">
                                 <tbody>
                                     <tr>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                         </td>
-                                        <td style="background-color: rgba(255, 255, 255, 1); border: 1px solid rgba(255, 255, 255, 1); border-bottom: 0px" width="600">
-                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                        <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
                                                 <tbody>
                                                     <tr>
-                                                        <td height="15" width="100">
-                                                            <a style="display: inline-block; vertical-align: middle; border: 0; padding-right: 15px;" href="http://jaguar.medigraf.com.mx" target="_blank" rel="noreferrer">
-                                                                <img src="http://jaguar.medigraf.com.mx/img/logo_jaguar.png" style="display: block; border: 0"  border="0" width="75">
+                                                        <td height="52" width="102">
+                                                            <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
+                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
                                                             </a>
-                                                            <p style="display: inline-block; vertical-align: middle; color:#0000;font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                                '.$jag_congdlconcesionarie.'
-                                                            </p>
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" height="78" width="11" style="background-color: rgba(72, 72, 72, 0.6)">
-                                            <p style="display: block; color:#ffffff;font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                Contacto Jaguar
+                                        <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                            <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                Noticias y promociones
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-left.png" border="0" class="CToWUd">
+                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
                                         </td>
                                         <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
-                                            <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                            <table style="padding:35px 60px 35px" border="0" cellpadding="0" cellspacing="0" width="600">
                                                 <tbody>
                                                     <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                        <td height="11" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
                                                                 Nombre(s):
                                                             </strong>
                                                         </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_congdlname.'</span><br>
+                                                        <td height="11" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_contact_name .' '. $send_suk_gdl_contact_lastname.'</span><br>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                        <td height="11" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
                                                                 Correo Electrónico:
                                                             </strong>
                                                         </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_congdlemail.'</span><br>
+                                                        <td height="11" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_contact_email.'</span><br>
                                                         </td>
-                                                        <br>
-                                                        <br>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="11" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                Concesionaria:
+                                                            </strong>
+                                                        </td>
+                                                        <td height="11" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$suk_gdl_contact_concesionary.'</span><br>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+                                            <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
                                                 <tbody>
                                                     <tr>
-                                                        <td height="20" width="600" valign="top">
-                                                            <span style="font-family: ProximaNovaRegular,Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 12px; padding: 15px; text-align: justify; display: block; word-break: break-all;">'.$jag_congdlmessage.'</span>
+                                                        <td height="14" width="15">
+                                                            <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
                                                         </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
+                                                        <td width="125px">
+                                                            <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                            </p>
+
+                                                        </td>
                                                         <td>
-                                                            <p style="color: #000000; font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                &nbsp;© 2015 / '.$jag_congdlconcesionarie.'
+                                                            <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                &nbsp;© 2015 Suzuki / Guadalajara
                                                             </p>
                                                         </td>
                                                     </tr>
@@ -338,15 +313,15 @@ function jag_contacto_gdl($jag_congdlname, $jag_congdlemail, $jag_congdlmessage,
                                             </table>
                                         </td>
                                         <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-right.png" border="0" class="CToWUd">
+                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                         </td>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -355,15 +330,15 @@ function jag_contacto_gdl($jag_congdlname, $jag_congdlemail, $jag_congdlmessage,
                     </body>
                 </html>
             ',
-            'subject' => $jag_congdlconcesionarie,
-            'from_email' => $jag_congdlemail,
-            'from_name' => $jag_congdlname,
+            'subject' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department.'\n\n',
+            'from_email' => $send_suk_gdl_contact_email,
+            'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
             'to' => array(
                 array(
-                    'email' => 'heriberto@medigraf.com.mx',
-                    'name' => $jag_congdlconcesionarie,
+                    'email' => 'hevelmo060683@gmail.com',
+                    'name' => 'contacto',
                     'type' => 'to'
-                ),
+                )/*,
                 array(
                     'email' => 'arivera@jaguardgl.com',
                     //'email' => 'hevelmo060683@gmail.com',
@@ -375,7 +350,7 @@ function jag_contacto_gdl($jag_congdlname, $jag_congdlemail, $jag_congdlmessage,
                     //'email' => 'cold_space@hotmail.com',
                     'name' => $jag_congdlconcesionarie,
                     'type' => 'bcc'
-                )
+                )*/
             ),
             'headers' => array('Reply-To' => 'arivera@jaguardgl.com'),
             //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
@@ -413,132 +388,169 @@ function jag_contacto_gdl($jag_congdlname, $jag_congdlemail, $jag_congdlmessage,
         throw $e;
     }
 }
-function jag_contacto_country($jag_concountryname, $jag_concountryemail, $jag_concountrymessage, $jag_concountryconcesionarie) {
+function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $suk_gdl_contact_auto, $suk_gdl_contact_mage_modelo, $send_suk_gdl_contact_susbcription) {
     try {
-        $mandrill = new Mandrill('vipel7XhxNiqPkblHbw0qg');
+        $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
         $message = array(
             'html' => '
                 <html>
                     <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-jaguar.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-ProximaNova.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-avenir.css" />
-                    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-                    <style>
-                        html{width: 100%;}
-                        * {
-                            margin: 0 auto;
-                            padding: 0;
-                        }
-                        body{
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            -moz-osx-font-smoothing: grayscale;
-                            -webkit-font-smoothing: antialiased;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        .ExternalClass {
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        *:before, *:after {
-                            -webkit-box-sizing: border-box;
-                            -moz-box-sizing: border-box;
-                            box-sizing: border-box;
-                        }
-                    </style>
                     </head>
 
                     <body>
 
-                        <div style="background-color: rgba(12, 18, 28, 0.2); padding: 20px;border-bottom: 0px" width="600">
+                        <div>
                             <table align="center" border="0" cellpadding="0" cellspacing="0">
                                 <tbody>
                                     <tr>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                         </td>
-                                        <td style="background-color: rgba(255, 255, 255, 1); border: 1px solid rgba(255, 255, 255, 1); border-bottom: 0px" width="600">
-                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                        <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
                                                 <tbody>
                                                     <tr>
-                                                        <td height="15" width="100">
-                                                            <a style="display: inline-block; vertical-align: middle; border: 0; padding-right: 15px;" href="http://jaguar.medigraf.com.mx" target="_blank" rel="noreferrer">
-                                                                <img src="http://jaguar.medigraf.com.mx/img/logo_jaguar.png" style="display: block; border: 0"  border="0" width="75">
+                                                        <td height="52" width="102">
+                                                            <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
+                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
                                                             </a>
-                                                            <p style="display: inline-block; vertical-align: middle; color:#0000;font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                                '.$jag_concountryconcesionarie.'
-                                                            </p>
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" height="78" width="11" style="background-color: rgba(72, 72, 72, 0.6)">
-                                            <p style="display: block; color:#ffffff;font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                Contacto
+                                        <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                            <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                '.$suk_gdl_contact_depto.'
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-left.png" border="0" class="CToWUd">
+                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
                                         </td>
                                         <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
                                             <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
                                                 <tbody>
                                                     <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                        <td height="0" valign="top">
+                                                            <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
+                                                        </td>
+                                                        <td height="0" valign="top">
+                                                            <img src="http://suzukigdl.com.mx/images/template/common/header/'.$suk_gdl_contact_mage_modelo.'" alt="Modelo">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                Modelo:
+                                                            </strong>
+                                                        </td>
+                                                        <td height="20" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_auto.'</span><br>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                Departamento:
+                                                            </strong>
+                                                        </td>
+                                                        <td height="20" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_depto.'</span><br>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
                                                                 Nombre(s):
                                                             </strong>
                                                         </td>
                                                         <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_concountryname.'</span><br>
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_name.'</span><br>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                Apellido(s):
+                                                            </strong>
+                                                        </td>
+                                                        <td height="20" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_lastname.'</span><br>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
                                                                 Correo Electrónico:
                                                             </strong>
                                                         </td>
                                                         <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_concountryemail.'</span><br>
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_email.'</span><br>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                Concesionaria:
+                                                            </strong>
+                                                        </td>
+                                                        <td height="20" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_concesionary.'</span><br>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                Desea recibir noticias:
+                                                            </strong>
+                                                        </td>
+                                                        <td height="20" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_susbcription.'</span>
                                                         </td>
                                                         <br>
                                                         <br>
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+                                            <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
                                                 <tbody>
                                                     <tr>
-                                                        <td height="20" width="600" valign="top">
-                                                            <span style="font-family: ProximaNovaRegular,Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 12px; padding: 15px; text-align: justify; display: block; word-break: break-all;">'.$jag_concountrymessage.'</span>
+                                                        <td colspan="2" height="20" valign="top" width="250">
+                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: center; padding: 0; display: block">
+                                                                Mensaje de contacto
+                                                            </strong>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20" valign="top">
+                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0; text-align: justify">'.$send_suk_gdl_contact_message.'</span>
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+                                            <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
                                                 <tbody>
                                                     <tr>
+                                                        <td height="14" width="15">
+                                                            <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                        </td>
+                                                        <td width="125px">
+                                                            <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                            </p>
+
+                                                        </td>
                                                         <td>
-                                                            <p style="color: #000000; font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                &nbsp;© 2015 / '.$jag_concountryconcesionarie.'
+                                                            <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                &nbsp;© 2015 Suzuki / Guadalajara
                                                             </p>
                                                         </td>
                                                     </tr>
@@ -546,15 +558,15 @@ function jag_contacto_country($jag_concountryname, $jag_concountryemail, $jag_co
                                             </table>
                                         </td>
                                         <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-right.png" border="0" class="CToWUd">
+                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                         </td>
                                         <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -563,444 +575,27 @@ function jag_contacto_country($jag_concountryname, $jag_concountryemail, $jag_co
                     </body>
                 </html>
             ',
-            'subject' => $jag_concountryconcesionarie,
-            'from_email' => $jag_concountryemail,
-            'from_name' => $jag_concountryname,
+            'subject' => 'Contacto - Noticias y promociones - Suzuki Guadalajara',
+            'from_email' => $send_suk_gdl_contact_email,
+            'from_name' => $send_suk_gdl_contact_lastname . ' ' . $send_suk_gdl_contact_name,
             'to' => array(
                 array(
-                    'email' => 'heriberto@medigraf.com.mx',
-                    'name' => $jag_concountryconcesionarie,
+                    'email' => 'hevelmo060683@gmail.com',
+                    'name' => 'contacto',
                     'type' => 'to'
-                ),
+                )/*,
                 array(
                     'email' => 'arivera@jaguardgl.com',
                     //'email' => 'hevelmo060683@gmail.com',
-                    'name' => $jag_concountryconcesionarie,
+                    'name' => $jag_congdlconcesionarie,
                     'type' => 'cc'
                 ),
                 array(
                     'email' => 'arivera@guadalajara.jlr.com.mx',
                     //'email' => 'cold_space@hotmail.com',
-                    'name' => $jag_concountryconcesionarie,
+                    'name' => $jag_congdlconcesionarie,
                     'type' => 'bcc'
-                )
-            ),
-            'headers' => array('Reply-To' => 'arivera@jaguardgl.com'),
-            //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
-            'important' => false,
-            'track_opens' => true,
-            'track_clicks' => true,
-            'auto_text' => null,
-            'auto_html' => null,
-            'inline_css' => null,
-            'url_strip_qs' => null,
-            'preserve_recipients' => null,
-            'view_content_link' => null,
-            'bcc_address' => null,
-            'tracking_domain' => null,
-            'signing_domain' => null,
-            'return_path_domain' => null,
-            'merge' => true,
-
-            'tags' => array('orden-new-notificacion'),
-            'google_analytics_domains' => array('jaguar.com'),
-            'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-            'metadata' => array('website' => 'www.jaguar.com'),
-
-        );
-        $async = false;
-        $ip_pool = 'Main Pool';
-        $send_at = '';
-        $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
-        //print_r($result);
-
-    } catch(Mandrill_Error $e) {
-        // Mandrill errors are thrown as exceptions
-        echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
-        // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
-        throw $e;
-    }
-}
-
-function jag_servicio_gdl($jag_sergdlname, $jag_sergdlemail, $jag_sergdlmessage, $jag_sergdlconcesionarie) {
-    try {
-        $mandrill = new Mandrill('vipel7XhxNiqPkblHbw0qg');
-        $message = array(
-            'html' => '
-                <html>
-                    <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-jaguar.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-ProximaNova.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-avenir.css" />
-                    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-                    <style>
-                        html{width: 100%;}
-                        * {
-                            margin: 0 auto;
-                            padding: 0;
-                        }
-                        body{
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            -moz-osx-font-smoothing: grayscale;
-                            -webkit-font-smoothing: antialiased;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        .ExternalClass {
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        *:before, *:after {
-                            -webkit-box-sizing: border-box;
-                            -moz-box-sizing: border-box;
-                            box-sizing: border-box;
-                        }
-                    </style>
-                    </head>
-
-                    <body>
-
-                        <div style="background-color: rgba(12, 18, 28, 0.2); padding: 20px;border-bottom: 0px" width="600">
-                            <table align="center" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                        <td style="background-color: rgba(255, 255, 255, 1); border: 1px solid rgba(255, 255, 255, 1); border-bottom: 0px" width="600">
-                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="15" width="100">
-                                                            <a style="display: inline-block; vertical-align: middle; border: 0; padding-right: 15px;" href="http://jaguar.medigraf.com.mx" target="_blank" rel="noreferrer">
-                                                                <img src="http://jaguar.medigraf.com.mx/img/logo_jaguar.png" style="display: block; border: 0"  border="0" width="75">
-                                                            </a>
-                                                            <p style="display: inline-block; vertical-align: middle; color:#0000;font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                                '.$jag_sergdlconcesionarie.'
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" height="78" width="11" style="background-color: rgba(72, 72, 72, 0.6)">
-                                            <p style="display: block; color:#ffffff;font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                Servicio
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-left.png" border="0" class="CToWUd">
-                                        </td>
-                                        <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
-                                            <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Nombre(s):
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_sergdlname.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Correo Electrónico:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_sergdlemail.'</span><br>
-                                                        </td>
-                                                        <br>
-                                                        <br>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="20" width="600" valign="top">
-                                                            <span style="font-family: ProximaNovaRegular,Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 12px; padding: 15px; text-align: justify; display: block; word-break: break-all;">'.$jag_sergdlmessage.'</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <p style="color: #000000; font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                &nbsp;© 2015 / '.$jag_sergdlconcesionarie.'
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-right.png" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </body>
-                </html>
-            ',
-            'subject' => $jag_sergdlconcesionarie,
-            'from_email' => $jag_sergdlemail,
-            'from_name' => $jag_sergdlname,
-            'to' => array(
-                array(
-                    'email' => 'heriberto@medigraf.com.mx',
-                    'name' => $jag_sergdlconcesionarie,
-                    'type' => 'to'
-                ),
-                array(
-                    'email' => 'arivera@jaguardgl.com',
-                    //'email' => 'hevelmo060683@gmail.com',
-                    'name' => $jag_sergdlconcesionarie,
-                    'type' => 'cc'
-                ),
-                array(
-                    'email' => 'arivera@guadalajara.jlr.com.mx',
-                    //'email' => 'cold_space@hotmail.com',
-                    'name' => $jag_sergdlconcesionarie,
-                    'type' => 'bcc'
-                )
-            ),
-            'headers' => array('Reply-To' => 'arivera@jaguardgl.com'),
-            //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
-            'important' => false,
-            'track_opens' => true,
-            'track_clicks' => true,
-            'auto_text' => null,
-            'auto_html' => null,
-            'inline_css' => null,
-            'url_strip_qs' => null,
-            'preserve_recipients' => null,
-            'view_content_link' => null,
-            'bcc_address' => null,
-            'tracking_domain' => null,
-            'signing_domain' => null,
-            'return_path_domain' => null,
-            'merge' => true,
-
-            'tags' => array('orden-new-notificacion'),
-            'google_analytics_domains' => array('jaguar.com'),
-            'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-            'metadata' => array('website' => 'www.jaguar.com'),
-
-        );
-        $async = false;
-        $ip_pool = 'Main Pool';
-        $send_at = '';
-        $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
-        //print_r($result);
-
-    } catch(Mandrill_Error $e) {
-        // Mandrill errors are thrown as exceptions
-        echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
-        // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
-        throw $e;
-    }
-}
-function jag_servicio_country($jag_sercountryname, $jag_sercountryemail, $jag_sercountrymessage, $jag_sercountryconcesionarie) {
-    try {
-        $mandrill = new Mandrill('vipel7XhxNiqPkblHbw0qg');
-        $message = array(
-            'html' => '
-                <html>
-                    <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-jaguar.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-ProximaNova.css" />
-                    <link type="text/css" rel="stylesheet" href="http://jaguar.medigraf.com.mx/css/webfont/font-avenir.css" />
-                    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-                    <style>
-                        html{width: 100%;}
-                        * {
-                            margin: 0 auto;
-                            padding: 0;
-                        }
-                        body{
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            -moz-osx-font-smoothing: grayscale;
-                            -webkit-font-smoothing: antialiased;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        .ExternalClass {
-                            font-family: "ProximaNovaRegular","Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                            background: rgba(225, 223, 223, 1) !important;
-                            color: #777;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-transform: uppercase;
-                        }
-                        *:before, *:after {
-                            -webkit-box-sizing: border-box;
-                            -moz-box-sizing: border-box;
-                            box-sizing: border-box;
-                        }
-                    </style>
-                    </head>
-
-                    <body>
-
-                        <div style="background-color: rgba(12, 18, 28, 0.2); padding: 20px;border-bottom: 0px" width="600">
-                            <table align="center" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                        <td style="background-color: rgba(255, 255, 255, 1); border: 1px solid rgba(255, 255, 255, 1); border-bottom: 0px" width="600">
-                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="15" width="100">
-                                                            <a style="display: inline-block; vertical-align: middle; border: 0; padding-right: 15px;" href="http://jaguar.medigraf.com.mx" target="_blank" rel="noreferrer">
-                                                                <img src="http://jaguar.medigraf.com.mx/img/logo_jaguar.png" style="display: block; border: 0"  border="0" width="75">
-                                                            </a>
-                                                            <p style="display: inline-block; vertical-align: middle; color:#0000;font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                                '.$jag_sercountryconcesionarie.'
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" height="78" width="11" style="background-color: rgba(72, 72, 72, 0.6)">
-                                            <p style="display: block; color:#ffffff;font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:24px;text-align:center;padding:0;text-transform: uppercase;">
-                                                Servicio de Mantenimiento
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-left.png" border="0" class="CToWUd">
-                                        </td>
-                                        <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
-                                            <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Nombre(s):
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_sercountryname.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="150">
-                                                            <strong style="color: #0059a9; font-family: ProximaNovaSemibold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Correo Electrónico:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: ProximaNovaRegular,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$jag_sercountryemail.'</span><br>
-                                                        </td>
-                                                        <br>
-                                                        <br>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="20" width="600" valign="top">
-                                                            <span style="font-family: ProximaNovaRegular,Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 12px; padding: 15px; text-align: justify; display: block; word-break: break-all;">'.$jag_sercountrymessage.'</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 15px 20px 15px;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <p style="color: #000000; font-family: jaguarbold,Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                &nbsp;© 2015 / '.$jag_sercountryconcesionarie.'
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://jaguar.medigraf.com.mx/img/shadow-right.png" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://jaguar.medigraf.com.mx/img/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </body>
-                </html>
-            ',
-            'subject' => $jag_sercountryconcesionarie,
-            'from_email' => $jag_sercountryemail,
-            'from_name' => $jag_sercountryname,
-            'to' => array(
-                array(
-                    'email' => 'heriberto@medigraf.com.mx',
-                    'name' => $jag_sercountryconcesionarie,
-                    'type' => 'to'
-                ),
-                array(
-                    'email' => 'arivera@jaguardgl.com',
-                    //'email' => 'hevelmo060683@gmail.com',
-                    'name' => $jag_sercountryconcesionarie,
-                    'type' => 'cc'
-                ),
-                array(
-                    'email' => 'arivera@guadalajara.jlr.com.mx',
-                    //'email' => 'cold_space@hotmail.com',
-                    'name' => $jag_sercountryconcesionarie,
-                    'type' => 'bcc'
-                )
+                )*/
             ),
             'headers' => array('Reply-To' => 'arivera@jaguardgl.com'),
             //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),

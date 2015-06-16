@@ -3,7 +3,7 @@
 @import url(plugins/jquery.fancybox/jquery.fancybox.css);
 @import url(plugins/jquery.fancybox/jquery.fancybox-thumbs.css);
 @import url(plugins/jquery.fancybox/jquery.fancybox-buttons.css);
-/*@import url(plugins/jquery.chosen/chosen.css);*/
+@import url(plugins/jquery.chosen/chosen.css);
 @import url(libs/datepicker.css);
 @import url(suzuki/main.css);
 @import url(webfonts/fontawesome/font-awesome.css);
