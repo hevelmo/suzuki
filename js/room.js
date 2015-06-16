@@ -120,5 +120,157 @@ Finch.route('/terminos-legales', {
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
+Finch.route('/swift-sport', {
+    setup: function(bindings) {
+        section="swift-sport";
+        addStylesMethods.addStyleModel_swift_sport();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_swift_sport, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_swift_sport();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+Finch.route('/swift', {
+    setup: function(bindings) {
+        section="swift";
+        addStylesMethods.addStyleModel_swift();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_swift, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_swift();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+/*Finch.route('/sx4-crossover', {
+    setup: function(bindings) {
+        section="sx4-crossover";
+        addStylesMethods.addStyleModel_sx4_crossover();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_sx4_crossover, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_sx4_crossover();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+Finch.route('/sx4-sedan', {
+    setup: function(bindings) {
+        section="sx4-sedan";
+        addStylesMethods.addStyleModel_sx4_sedan();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_sx4_sedan, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_sx4_sedan();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});*/
+Finch.route('/kizashi', {
+    setup: function(bindings) {
+        section="kizashi";
+        addStylesMethods.addStyleModel_kizashi();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_kizashi, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_kizashi();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+Finch.route('/grand-vitara', {
+    setup: function(bindings) {
+        section="grand-vitara";
+        addStylesMethods.addStyleModel_grand_vitara();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_grand_vitara, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_grand_vitara();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+Finch.route('/s-cross', {
+    setup: function(bindings) {
+        section="s-cross";
+        addStylesMethods.addStyleModel_s_cross();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_s_cross, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_s_cross();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+Finch.route('/ciaz', {
+    setup: function(bindings) {
+        section="ciaz";
+        addStylesMethods.addStyleModel_ciaz();
+        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
+        is_mobileMethods.is_mobile();
+    },
+    load: function(bindings) {
+        SUK.loadTemplate(tempsNames.model_ciaz, domEl.div_recurrent);
+    },
+    unload: function(bindings) {
+        SUK.setHTML( domEl.div_content_social_bar, '');
+        addStylesMethods.cleanAttrModel_ciaz();
+        //It's always necessary, when an url is left, to clean the html content
+        //of the recurrent div, where all the templates are inserted
+        SUK.setHTML(domEl.div_recurrent, '');
+    }
+});
+Finch.navigate('/swift-sport');
+Finch.navigate('/swift');
+Finch.navigate('/sx4-crossover');
+Finch.navigate('/sx4-sedan');
+Finch.navigate('/kizashi');
+Finch.navigate('/grand-vitara');
+Finch.navigate('/s-cross');
+Finch.navigate('/ciaz');
 
 Finch.listen();

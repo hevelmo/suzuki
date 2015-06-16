@@ -107,6 +107,30 @@ var addStylesMethods = {
     cleanAttrLegals : function () {
         $('head .link-legals').remove();
     },
+    cleanAttrModel_swift_sport : function () {
+        $('head .link-swift-sport').remove();
+    },
+    cleanAttrModel_swift : function () {
+        $('head .link-swift').remove();
+    },
+    cleanAttrModel_sx4_crossover : function () {
+        $('head .link-sx4-crossover').remove();
+    },
+    cleanAttrModel_sx4_sedan : function () {
+        $('head .link-sx4-sedan').remove();
+    },
+    cleanAttrModel_kizashi : function () {
+        $('head .link-kizashi').remove();
+    },
+    cleanAttrModel_grand_vitara : function () {
+        $('head .link-grand-vitara').remove();
+    },
+    cleanAttrModel_s_cross : function () {
+        $('head .link-s-cross').remove();
+    },
+    cleanAttrModel_ciaz : function () {
+        $('head .link-ciaz').remove();
+    },
     addStyleIndex : function () {
         linkIndexAttributes = [
             ['link', {'id': 'content-add-styles-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/home.css'}, '', 0],
@@ -132,6 +156,38 @@ var addStylesMethods = {
     addStyleLegals : function () {
         linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
         SUK.appendOne('head', 'link', linkLegalsAttributes, '', 0);
+    },
+    addStyleModel_swift_sport : function () {
+        link_swift_sport_Attributes = {'id': 'content-add-styles-swift-sport', 'rel': 'stylesheet', 'class': 'link-swift-sport', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_swift_sport_Attributes, '', 0);
+    },
+    addStyleModel_swift : function () {
+        link_swift_Attributes = {'id': 'content-add-styles-swift', 'rel': 'stylesheet', 'class': 'link-swift', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_swift_Attributes, '', 0);
+    },
+    addStyleModel_sx4_crossover : function () {
+        link_sx4_crossover_Attributes = {'id': 'content-add-styles-sx4-crossover', 'rel': 'stylesheet', 'class': 'link-sx4-crossover', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_sx4_crossover_Attributes, '', 0);
+    },
+    addStyleModel_sx4_sedan : function () {
+        link_sx4_sedan_Attributes = {'id': 'content-add-styles-sx4-sedan', 'rel': 'stylesheet', 'class': 'link-sx4-sedan', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_sx4_sedan_Attributes, '', 0);
+    },
+    addStyleModel_kizashi : function () {
+        link_kizashi_Attributes = {'id': 'content-add-styles-kizashi', 'rel': 'stylesheet', 'class': 'link-kizashi', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_kizashi_Attributes, '', 0);
+    },
+    addStyleModel_grand_vitara : function () {
+        link_grand_vitara_Attributes = {'id': 'content-add-styles-grand-vitara', 'rel': 'stylesheet', 'class': 'link-grand-vitara', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_grand_vitara_Attributes, '', 0);
+    },
+    addStyleModel_s_cross : function () {
+        link_s_cross_Attributes = {'id': 'content-add-styles-s-cross', 'rel': 'stylesheet', 'class': 'link-s-cross', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_s_cross_Attributes, '', 0);
+    },
+    addStyleModel_ciaz : function () {
+        link_ciaz_Attributes = {'id': 'content-add-styles-ciaz', 'rel': 'stylesheet', 'class': 'link-ciaz', 'href': 'css/sections/models.css'}
+        SUK.appendOne('head', 'link', link_ciaz_Attributes, '', 0);
     }
 }
 var catalogMethods = {
@@ -412,6 +468,48 @@ var closePanelMenuMethods = {
         $(domEl.div_header_panel).removeClass('header_panel_active');
         SUK.setHTML(domEl.div_recurrent_panel_menu, '');
         closePanelMenuMethods.cleanHeight();
+    }
+}
+var panelMenuModelsByModel = {
+    clickGoSwiftSport : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/swift-sport');
+    },
+    clickGoSwift : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/swift');
+    },
+    clickGoSx4Crossover : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/sx4-crossover');
+    },
+    clickGoSx4Sedan : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/sx4-sedan');
+    },
+    clickGoKizashi : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/kizashi');
+    },
+    clickGoGrandVitara : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/grand-vitara');
+    },
+    clickGoSCross : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/s-cross');
+    },
+    clickGoCiaz : function (event) {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+        closePanelMenuMethods.closePanelModels();
+        Finch.navigate('/ciaz');
     }
 }
 /* ------------------------------------------------------ *\
@@ -802,7 +900,7 @@ var formContactMethods = {
             var precio_actual = showMeTheMoney($contact_car_key.val());
             var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
             var news_val    = con_news ? 600 : 0;
-            var car_val     = departamento === 'ventas' ? precio_actual*0.03 : 0;
+            var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
             //console.log(departamento, precio_actual, news_srt, news_val, car_val);
 
 

@@ -23,6 +23,16 @@ function tempsNames() {
         'tmp_section_content_contact_us' => 'tmp_section_content_contact_us',
         'tmp_form_contact' => 'tmp_form_contact',
 
+        // MODELS
+        'model_swift_sport' => 'tmp_section_content_model_swift_sport',
+        'model_swift' => 'tmp_section_content_model_swift',
+        'model_sx4_crossover' => 'tmp_section_content_model_sx4_crossover',
+        'model_sx4_sedan' => 'tmp_section_content_model_sx4_sedan',
+        'model_kizashi' => 'tmp_section_content_model_kizashi',
+        'model_grand_vitara' => 'tmp_section_content_model_grand_vitara',
+        'model_s_cross' => 'tmp_section_content_model_s_cross',
+        'model_ciaz' => 'tmp_section_content_model_ciaz',
+
         // MOBILE MENU
         'tmp_mobile_menu' => 'tmp_mobile_menu'
     );

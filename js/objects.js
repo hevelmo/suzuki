@@ -43,6 +43,14 @@ domEl = {
 	"suk_switch_catalog":"a.switch-catalog"
 };
 tempsNames = {
+	"model_ciaz":"tmp_section_content_model_ciaz",
+	"model_grand_vitara":"tmp_section_content_model_grand_vitara",
+	"model_kizashi":"tmp_section_content_model_kizashi",
+	"model_s_cross":"tmp_section_content_model_s_cross",
+	"model_swift":"tmp_section_content_model_swift",
+	"model_swift_sport":"tmp_section_content_model_swift_sport",
+	"model_sx4_crossover":"tmp_section_content_model_sx4_crossover",
+	"model_sx4_sedan":"tmp_section_content_model_sx4_sedan",
 	"tmp_content_link_style":"tmp_content_link_style",
 	"tmp_content_models_menu":"tmp_content_models_menu",
 	"tmp_form_contact":"tmp_form_contact",
