@@ -56,6 +56,7 @@ tempsNames = {
 	"tmp_form_contact":"tmp_form_contact",
 	"tmp_mobile_menu":"tmp_mobile_menu",
 	"tmp_model_promo":"tmp_model_promo",
+	"tmp_models_menu":"tmp_models_menu",
 	"tmp_panel_menu_before_buy":"tmp_panel_menu_before_buy",
 	"tmp_panel_menu_financing":"tmp_panel_menu_financing",
 	"tmp_panel_menu_models":"tmp_panel_menu_models",

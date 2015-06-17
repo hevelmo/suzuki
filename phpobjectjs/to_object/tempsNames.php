@@ -33,6 +33,9 @@ function tempsNames() {
         'model_s_cross' => 'tmp_section_content_model_s_cross',
         'model_ciaz' => 'tmp_section_content_model_ciaz',
 
+        // MODELS MENU
+        'tmp_models_menu' => 'tmp_models_menu',
+
         // MOBILE MENU
         'tmp_mobile_menu' => 'tmp_mobile_menu'
     );

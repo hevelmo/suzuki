@@ -17,7 +17,16 @@ a#go-contact,
 a#header-models-button,
 a#header-financing-button,
 a#header-owners-button,
-a#header-before-buy-button {
+a#header-before-buy-button,
+/* CLICK PANEL MENU MODELS BY MODEL*/
+#go-model-swift-sport,
+#go-model-swift,
+#go-model-sx4-crossover,
+#go-model-sx4-sedan,
+#go-model-kizashi,
+#go-model-grand-vitara,
+#go-model-s-cross,
+#go-model-ciaz {
 	cursor: pointer;
 }
 

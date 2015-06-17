@@ -128,7 +128,9 @@ Finch.route('/swift-sport', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_swift_sport, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -146,7 +148,9 @@ Finch.route('/swift', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_swift, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -164,7 +168,9 @@ Finch.route('/swift', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_sx4_crossover, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -182,7 +188,9 @@ Finch.route('/sx4-sedan', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_sx4_sedan, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -200,7 +208,9 @@ Finch.route('/kizashi', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_kizashi, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -218,7 +228,9 @@ Finch.route('/grand-vitara', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_grand_vitara, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -236,7 +248,9 @@ Finch.route('/s-cross', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_s_cross, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -254,7 +268,9 @@ Finch.route('/ciaz', {
         is_mobileMethods.is_mobile();
     },
     load: function(bindings) {
+        SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
         SUK.loadTemplate(tempsNames.model_ciaz, domEl.div_recurrent);
+        modelsMenuMethods.changeNameModel();
     },
     unload: function(bindings) {
         SUK.setHTML( domEl.div_content_social_bar, '');
@@ -264,13 +280,5 @@ Finch.route('/ciaz', {
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
-Finch.navigate('/swift-sport');
-Finch.navigate('/swift');
-Finch.navigate('/sx4-crossover');
-Finch.navigate('/sx4-sedan');
-Finch.navigate('/kizashi');
-Finch.navigate('/grand-vitara');
-Finch.navigate('/s-cross');
-Finch.navigate('/ciaz');
 
 Finch.listen();

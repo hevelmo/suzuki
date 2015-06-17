@@ -513,6 +513,103 @@ var panelMenuModelsByModel = {
     }
 }
 /* ------------------------------------------------------ *\
+ [Methods] MODELS MENU
+\* ------------------------------------------------------ */
+var current_menu = '',
+        scroll_current_section = -1,
+        sections_positions = [],
+        yy = 0,
+        arrow_section = [ 0, -403, -239, -102, 53, 214 ],
+        //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
+        section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
+        section_timer,
+        selected_concessionaire = -1;
+function switch_arrow( ){
+    var ii = 0, arrow_y = 49,
+        i_m = sections_positions.length,
+        gtx,
+        yyy = get_scroll_top(),
+        $cars_menu_li =  $('ul.models-menu li'),
+        $arrow =  $('#model-section-arrow'),
+        $td_flag =  $('#model-test-drive-flag'),
+        $gotoup =   $('#back-to-top-button'),
+        arrow_top = parseInt( $arrow.css('top') );
+
+    if( yyy > 0 ){
+        if( arrow_top != arrow_y ){
+            $gotoup.stop().hide().fadeIn();
+            $td_flag.stop().animate({top: 0});
+        }
+
+    }else{
+        scroll_current_section = -1;
+        $td_flag.stop().animate({top: -95});
+        $gotoup.stop().show().fadeOut();
+        $arrow.stop().css({top:0}).hide();
+        return;
+    }
+
+
+    while( ii < i_m ){
+        if( yyy < sections_positions[ ii ] ){
+            break;
+        }
+        ii++;
+    }
+    if( ii != scroll_current_section ){
+        scroll_current_section = ii;
+        window.clearTimeout( section_timer );
+        section_timer = setTimeout(function(){
+            var url = document.location + '/' + section_names[ii];
+            ga('send', 'pageview', url );
+        }, 2000);
+
+        $cars_menu_li.removeClass('current');
+        $cars_menu_li.eq( ii - 1).addClass('current');
+
+        if( arrow_section [ ii ] ){
+            gtx = arrow_section [ ii ];
+        }else{
+            gtx = 415;
+        }
+        if( arrow_top != arrow_y ){
+            $arrow.show();
+            $arrow.stop().delay(100).css({marginLeft:gtx,top:arrow_y -10,opacity:0}).animate({top:arrow_y,opacity:1 },300);
+        }else{
+            $arrow.stop().animate({marginLeft:gtx});
+        }
+    }
+}
+var modelsMenuMethods = {
+    changeNameModel : function () {
+        if (section === 'swift-sport') {
+            $('#change-model').addClass('swift-sport');
+        } else if (section === 'swift') {
+            $('#change-model').addClass('swift');
+        } else if (section === 'sx4-crossover') {
+            $('#change-model').addClass('sx4-crossover');
+        } else if (section === 'sx4-sedan') {
+            $('#change-model').addClass('sx4-sedan');
+        } else if (section === 'kizashi') {
+            $('#change-model').addClass('kizashi');
+        } else if (section === 'grand-vitara') {
+            $('#change-model').addClass('grand-vitara');
+        } else if (section === 's-cross') {
+            $('#change-model').addClass('s-cross');
+        } else if (section === 'ciaz') {
+            $('#change-model').addClass('ciaz');
+        }
+    },
+    scrollSwitchMethod : function() {
+        $(window).scroll(function(){
+            if( header_section == '' ){
+                switch_menus( get_scroll_top() < 10 ? 'regular' : 'cars'  );
+                switch_arrow();
+            }
+        });
+    }
+}
+/* ------------------------------------------------------ *\
  [Methods] IS MOBILE
 \* ------------------------------------------------------ */
 var is_mobileMethods = {
