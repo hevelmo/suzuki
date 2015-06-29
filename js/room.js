@@ -126,6 +126,8 @@ Finch.route('/swift-sport', {
         addStylesMethods.addStyleModel_swift_sport();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -146,6 +148,8 @@ Finch.route('/swift', {
         addStylesMethods.addStyleModel_swift();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -166,6 +170,8 @@ Finch.route('/swift', {
         addStylesMethods.addStyleModel_sx4_crossover();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -186,6 +192,8 @@ Finch.route('/sx4-sedan', {
         addStylesMethods.addStyleModel_sx4_sedan();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -206,6 +214,8 @@ Finch.route('/kizashi', {
         addStylesMethods.addStyleModel_kizashi();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -226,6 +236,8 @@ Finch.route('/grand-vitara', {
         addStylesMethods.addStyleModel_grand_vitara();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -246,6 +258,8 @@ Finch.route('/s-cross', {
         addStylesMethods.addStyleModel_s_cross();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -266,6 +280,8 @@ Finch.route('/ciaz', {
         addStylesMethods.addStyleModel_ciaz();
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
+        modelsMenuMethods.addModelSectionArrow();
+        modelsMenuMethods.switch_menus(bindings.menu);
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');

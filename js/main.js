@@ -50,6 +50,7 @@ $(document).ready(function() {
         return o;
     };
 
+
     /* ------------------------------------------------------ *\
      [METHOS Control] Currency Format
     \* ------------------------------------------------------ */
@@ -175,7 +176,7 @@ $(document).ready(function() {
             $div = $(this);
             if( display_vct_class == $div.data('display-table') ){
                 $div.fadeOut().fadeIn(1000);
-                modifyHeight("#comparative-space-wrapper .suzuki-table .body .row");
+                //modifyHeight("#comparative-space-wrapper .suzuki-table .body .row");
             }else{
                 $div.hide();
             }
