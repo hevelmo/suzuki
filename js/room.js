@@ -127,7 +127,7 @@ Finch.route('/swift-sport', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -149,7 +149,7 @@ Finch.route('/swift', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -171,7 +171,7 @@ Finch.route('/swift', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -193,7 +193,7 @@ Finch.route('/sx4-sedan', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -215,7 +215,7 @@ Finch.route('/kizashi', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -237,7 +237,7 @@ Finch.route('/grand-vitara', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -259,7 +259,7 @@ Finch.route('/s-cross', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -281,7 +281,7 @@ Finch.route('/ciaz', {
         SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
         is_mobileMethods.is_mobile();
         modelsMenuMethods.addModelSectionArrow();
-        modelsMenuMethods.switch_menus(bindings.menu);
+        //modelsMenuMethods.scrollSwitchMethod();
     },
     load: function(bindings) {
         SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');

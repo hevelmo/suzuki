@@ -12,6 +12,7 @@
 var sections;
 var height = 0;
 var current_menu = '';
+var header_section = '';
 
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
@@ -58,6 +59,18 @@ function showMeTheMoney(model_key){
             break;
     }
     return value;
+}
+function modifyHeight(selector){
+    $(selector).each(function (index, Element) {
+        var cell_array = new Array(2);
+        var cell_height = 0;
+        $(this).find(".cell").each(function (index, Element) {
+            var val_cell = ($(this).height.length > 0) ? $(this).height() : 0;
+            cell_array[index] = val_cell;
+        });
+        cell_height = Math.max.apply( Math, cell_array );
+        $(this).find(".cell").css("height", cell_height);
+    });
 }
 
 /* ------------------------------------------------------ *\
@@ -517,15 +530,15 @@ var panelMenuModelsByModel = {
  [Methods] MODELS MENU
 \* ------------------------------------------------------ */
 var current_menu = '',
-        scroll_current_section = -1,
-        sections_positions = [],
-        yy = 0,
-        arrow_section = [ 0, -403, -239, -102, 53, 214 ],
-        //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
-        section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
-        section_timer,
-        selected_concessionaire = -1;
-function switch_arrow( ){
+    scroll_current_section = -1,
+    sections_positions = [],
+    yy = 0,
+    arrow_section = [ 0, -403, -239, -102, 53, 214 ],
+    //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
+    section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
+    section_timer,
+    selected_concessionaire = -1;
+function switch_arrow(){
     var ii = 0, arrow_y = 49,
         i_m = sections_positions.length,
         gtx,
@@ -603,7 +616,6 @@ $.animate_arrow = function( $arrow ){
 }
 var modelsMenuMethods = {
     addModelSectionArrow : function () {
-        var menu;
         arrow = {'id': 'model-section-arrow'}
         flag = {'id': 'model-test-drive-flag'}
         SUK.appendOne(domEl.div_recurrent_body, 'div', arrow, '', 1);
@@ -613,20 +625,6 @@ var modelsMenuMethods = {
             'top':'0px'
         });
         $('#model-test-drive-flag').css('top','-95px');*/
-    },
-    switch_menus : function(menu) {
-        if( current_menu != menu ){
-            current_menu = menu;
-            var new_h = ( menu == 'cars')? 50 : 95;
-            $('#header-zone').stop().animate({height:new_h });
-            if( menu == 'cars'){
-                $('#regular-header').stop().animate({marginTop: -95 });
-                $('#logo-wrapper').stop().animate({top: -95 });
-            }else{
-                $('#regular-header').stop().animate({marginTop: 0 });
-                $('#logo-wrapper').stop().animate({top: 0 });
-            }
-        }
     },
     car_next_step : function() {
         if( $('.car-next-step').length > 0 ){
@@ -640,30 +638,47 @@ var modelsMenuMethods = {
         }
     },
     changeNameModel : function () {
+        var menu;
         if (section === 'swift-sport') {
             $('#change-model').addClass('swift-sport');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 'swift') {
             $('#change-model').addClass('swift');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 'sx4-crossover') {
             $('#change-model').addClass('sx4-crossover');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 'sx4-sedan') {
             $('#change-model').addClass('sx4-sedan');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 'kizashi') {
             $('#change-model').addClass('kizashi');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 'grand-vitara') {
             $('#change-model').addClass('grand-vitara');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 's-cross') {
             $('#change-model').addClass('s-cross');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         } else if (section === 'ciaz') {
             $('#change-model').addClass('ciaz');
             modelsMenuMethods.car_next_step();
+            //switch_arrow();
+            //switch_menus(menu);
         }
     },
     scrollSwitchMethod : function() {
@@ -964,6 +979,35 @@ var validateMethods = {
         }
     }
 }
+var formTestDriveMethods = {
+    init_datepicker: function() {
+        $('#step-2-date').datepicker({
+            minDate: '+1d',
+            //maxDate: '+1m',
+            minLength: 0,
+            delay: 0,
+            dateFormat: 'yy-mm-dd'
+        });
+    },
+    addDataFormTestDrive: function() {
+        var dataFormTestDrive;
+        dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
+        return SUK.postalService(urlsApi.sendTestDrive, dataFormTestDrive);
+    },
+    fillingControl: function() {
+        var validFieldItems, dataFormTestDrive, isFull, isNoEmpty;
+        validFieldItems = [];
+        dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
+        isFull = SUK.validFormFull(dataFormTestDrive, validFieldItems);
+        //$('#suk_test_drive_submit').attr('disabled', !siFull);
+        //console.log($('#form-test-drive')serializeFormJSON());
+    },
+    refreshForm: function() {},
+    resetForm: function() {},
+    reset_pre_loader: function() {},
+    finchNavigateReturn: function() {},
+    sendTestDriveForm: function(event) {}
+}
 var formContactMethods = {
     addDataFormContact: function() {
         var dataFormContact;
@@ -1070,6 +1114,7 @@ var formContactMethods = {
             var contactPromise = formContactMethods.addDataFormContact();
 
             contactPromise.success(function (data) {
+                ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
                 setTimeout(function() {
                     $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
                     //console.log('Espera');
