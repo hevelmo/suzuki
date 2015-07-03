@@ -11,8 +11,18 @@
 //var variable;
 var sections;
 var height = 0;
-var current_menu = '';
 var header_section = '';
+var current_menu = '',
+    scroll_current_section = -1,
+    sections_positions = [],
+    yy = 0,
+    arrow_section = [ 0, -403, -239, -102, 53, 214 ],
+    //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
+    section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
+    section_timer,
+    selected_concessionaire = -1;
+var td_id_flag ='<div id="model-section-arrow"><span>&nbsp;</span></div><div id="model-test-drive-flag"><a href="#prueba-de-manejo" id="model-test-drive-flag-link"><span>Prueba de Manejo</span></a></div>';
+var patch_bar ='<div class="menu-patch" id="patch">&nbsp;</div>';
 
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
@@ -108,42 +118,81 @@ function resetAlert () {
 var addStylesMethods = {
     cleanAttrHome : function () {
         $('head .link-home').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrGroup : function () {
         $('head .link-group').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrCatalog : function () {
         $('head .link-catalog').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrContact : function () {
         $('head .link-contact').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrLegals : function () {
         $('head .link-legals').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_swift_sport : function () {
         $('head .link-swift-sport').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_swift : function () {
         $('head .link-swift').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_sx4_crossover : function () {
         $('head .link-sx4-crossover').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_sx4_sedan : function () {
         $('head .link-sx4-sedan').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_kizashi : function () {
         $('head .link-kizashi').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_grand_vitara : function () {
         $('head .link-grand-vitara').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_s_cross : function () {
         $('head .link-s-cross').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     cleanAttrModel_ciaz : function () {
         $('head .link-ciaz').remove();
+        $('#patch').remove();
+        $('#model-section-arrow').remove();
+        $('#model-test-drive-flag').remove();
     },
     addStyleIndex : function () {
         linkIndexAttributes = [
@@ -151,14 +200,17 @@ var addStylesMethods = {
             ['link', {'id': 'content-add-styles-models-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/models-home.css'}, '', 0]
         ];
         SUK.appendMulti('head', linkIndexAttributes);
+        $('body').prepend( patch_bar );
     },
     addStyleGroup : function () {
         linkCatalogsAttributes = {'id': 'content-add-styles-group', 'rel': 'stylesheet', 'class': 'link-group', 'href': 'css/sections/warranty.css'}
         SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
+        $('body').prepend( patch_bar );
     },
     addStyleCatalogs : function () {
         linkCatalogsAttributes = {'id': 'content-add-styles-catalog', 'rel': 'stylesheet', 'class': 'link-catalog', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
+        $('body').prepend( patch_bar );
     },
     addStyleContact : function () {
         linkContactAttributes = [
@@ -166,42 +218,60 @@ var addStylesMethods = {
             ['link', {'id': 'content-add-styles-contact-shosen', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/plugins/jquery.chosen/chosen.css'}, '', 0]
         ];
         SUK.appendMulti('head', linkContactAttributes);
+        $('body').prepend( patch_bar );
     },
     addStyleLegals : function () {
         linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
         SUK.appendOne('head', 'link', linkLegalsAttributes, '', 0);
+        $('body').prepend( patch_bar );
     },
     addStyleModel_swift_sport : function () {
         link_swift_sport_Attributes = {'id': 'content-add-styles-swift-sport', 'rel': 'stylesheet', 'class': 'link-swift-sport', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_swift_sport_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_swift : function () {
         link_swift_Attributes = {'id': 'content-add-styles-swift', 'rel': 'stylesheet', 'class': 'link-swift', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_swift_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_sx4_crossover : function () {
         link_sx4_crossover_Attributes = {'id': 'content-add-styles-sx4-crossover', 'rel': 'stylesheet', 'class': 'link-sx4-crossover', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_sx4_crossover_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_sx4_sedan : function () {
         link_sx4_sedan_Attributes = {'id': 'content-add-styles-sx4-sedan', 'rel': 'stylesheet', 'class': 'link-sx4-sedan', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_sx4_sedan_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_kizashi : function () {
         link_kizashi_Attributes = {'id': 'content-add-styles-kizashi', 'rel': 'stylesheet', 'class': 'link-kizashi', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_kizashi_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_grand_vitara : function () {
         link_grand_vitara_Attributes = {'id': 'content-add-styles-grand-vitara', 'rel': 'stylesheet', 'class': 'link-grand-vitara', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_grand_vitara_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_s_cross : function () {
         link_s_cross_Attributes = {'id': 'content-add-styles-s-cross', 'rel': 'stylesheet', 'class': 'link-s-cross', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_s_cross_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     },
     addStyleModel_ciaz : function () {
         link_ciaz_Attributes = {'id': 'content-add-styles-ciaz', 'rel': 'stylesheet', 'class': 'link-ciaz', 'href': 'css/sections/models.css'}
         SUK.appendOne('head', 'link', link_ciaz_Attributes, '', 0);
+        $('body').prepend( patch_bar );
+        $('body').prepend( td_id_flag );
     }
 }
 var catalogMethods = {
@@ -529,16 +599,126 @@ var panelMenuModelsByModel = {
 /* ------------------------------------------------------ *\
  [Methods] MODELS MENU
 \* ------------------------------------------------------ */
-var current_menu = '',
-    scroll_current_section = -1,
-    sections_positions = [],
-    yy = 0,
-    arrow_section = [ 0, -403, -239, -102, 53, 214 ],
-    //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
-    section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
-    section_timer,
-    selected_concessionaire = -1;
-function switch_arrow(){
+//animates all transitions (needs an "a" element whit "name attrubute")
+$.scroll_to = function( target_name ){
+    var target, dest, header_height = $('#header-wrapper').height();
+    if( target_name != 'top' ){
+        target = $( 'a[name="' + target_name + '"]' );
+        dest = target.offset().top - header_height - 35;
+        /*if (IS_MOBILE) {
+            dest += 75;
+        }*/
+    }else{
+        dest = 0;
+    }
+    $('html,body').stop().animate({ scrollTop : dest}, 800 , 'easeOutSine');
+};
+//First Arrow animation
+$.animate_arrow = function( $arrow ){
+    $arrow.css( { marginTop:-82,opacity:1}).animate({marginTop:-20,opacity:0}, 1000, function(){
+        $.animate_arrow( $(this) );
+    });
+}
+var modelsMenuMethods = {
+    addModelSectionArrow : function () {
+        /*arrow = {'id': 'model-section-arrow'}
+        flag = {'id': 'model-test-drive-flag'}
+        SUK.appendOne(domEl.div_recurrent_body, 'div', arrow, '', 1);
+        SUK.appendOne(domEl.div_recurrent_body, 'div', flag, '', 1);*/
+        /*$('#model-section-arrow').css({
+            'display':'none',
+            'top':'0px'
+        });
+        $('#model-test-drive-flag').css('top','-95px');*/
+
+    },
+    car_next_step : function() {
+        if( $('.car-next-step').length > 0 ){
+            var $arrow1 = $('.car-next-step').children('a'),
+                $arrow2 =$arrow1.clone();
+            $('.car-next-step').append( $arrow2 ).delegate('a','mousedown mouseup click', function( e ){
+                e.preventDefault();
+                $.scroll_to('caracteristicas');
+            });
+            $.animate_arrow( $arrow2 )
+        }
+    },
+    changeNameModel : function () {
+        var menu;
+        if (section === 'swift-sport') {
+            $('#change-model').addClass('swift-sport');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+        } else if (section === 'swift') {
+            $('#change-model').addClass('swift');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+        } else if (section === 'sx4-crossover') {
+            $('#change-model').addClass('sx4-crossover');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+
+        } else if (section === 'sx4-sedan') {
+            $('#change-model').addClass('sx4-sedan');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+
+        } else if (section === 'kizashi') {
+            $('#change-model').addClass('kizashi');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+
+        } else if (section === 'grand-vitara') {
+            $('#change-model').addClass('grand-vitara');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+        } else if (section === 's-cross') {
+            $('#change-model').addClass('s-cross');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+        } else if (section === 'ciaz') {
+            $('#change-model').addClass('ciaz');
+            modelsMenuMethods.car_next_step();
+            $('#model-section-arrow').hide();
+            $('#back-to-top-button').hide();
+        }
+    },
+    scrollSwitchMethod : function() {
+        $(window).scroll(function(){
+            if( header_section == '' ){
+                switch_menus( get_scroll_top() < 10 ? 'regular' : 'cars'  );
+                switch_arrow();
+            }
+        });
+    },
+    // NAV MODEL SCROLL
+    switch_arrow : function() {
+
+    }
+}
+function switch_menus( menu ){
+    if( current_menu != menu ){
+        current_menu = menu;
+        var new_h = ( menu == 'cars')? 50 : 95;
+        $('#header-zone').stop().animate({height:new_h });
+        if( menu == 'cars'){
+            $('#regular-header').stop().animate({marginTop: -95 });
+            $('#logo-wrapper').stop().animate({top: -95 });
+        }else{
+            $('#regular-header').stop().animate({marginTop: 0 });
+            $('#logo-wrapper').stop().animate({top: 0 });
+        }
+    }
+}
+
+function switch_arrow( ){
     var ii = 0, arrow_y = 49,
         i_m = sections_positions.length,
         gtx,
@@ -592,102 +772,6 @@ function switch_arrow(){
         }else{
             $arrow.stop().animate({marginLeft:gtx});
         }
-    }
-}
-function switch_menus( menu ){
-    if( current_menu != menu ){
-        current_menu = menu;
-        var new_h = ( menu == 'cars')? 50 : 95;
-        $('#header-zone').stop().animate({height:new_h });
-        if( menu == 'cars'){
-            $('#regular-header').stop().animate({marginTop: -95 });
-            $('#logo-wrapper').stop().animate({top: -95 });
-        }else{
-            $('#regular-header').stop().animate({marginTop: 0 });
-            $('#logo-wrapper').stop().animate({top: 0 });
-        }
-    }
-}
-//First Arrow animation
-$.animate_arrow = function( $arrow ){
-    $arrow.css( { marginTop:-82,opacity:1}).animate({marginTop:-20,opacity:0}, 1000, function(){
-        $.animate_arrow( $(this) );
-    });
-}
-var modelsMenuMethods = {
-    addModelSectionArrow : function () {
-        arrow = {'id': 'model-section-arrow'}
-        flag = {'id': 'model-test-drive-flag'}
-        SUK.appendOne(domEl.div_recurrent_body, 'div', arrow, '', 1);
-        SUK.appendOne(domEl.div_recurrent_body, 'div', flag, '', 1);
-        /*$('#model-section-arrow').css({
-            'display':'none',
-            'top':'0px'
-        });
-        $('#model-test-drive-flag').css('top','-95px');*/
-    },
-    car_next_step : function() {
-        if( $('.car-next-step').length > 0 ){
-            var $arrow1 = $('.car-next-step').children('a'),
-                $arrow2 =$arrow1.clone();
-            $('.car-next-step').append( $arrow2 ).delegate('a','mousedown mouseup click', function( e ){
-                e.preventDefault();
-                $.scroll_to('caracteristicas');
-            });
-            $.animate_arrow( $arrow2 )
-        }
-    },
-    changeNameModel : function () {
-        var menu;
-        if (section === 'swift-sport') {
-            $('#change-model').addClass('swift-sport');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 'swift') {
-            $('#change-model').addClass('swift');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 'sx4-crossover') {
-            $('#change-model').addClass('sx4-crossover');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 'sx4-sedan') {
-            $('#change-model').addClass('sx4-sedan');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 'kizashi') {
-            $('#change-model').addClass('kizashi');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 'grand-vitara') {
-            $('#change-model').addClass('grand-vitara');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 's-cross') {
-            $('#change-model').addClass('s-cross');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        } else if (section === 'ciaz') {
-            $('#change-model').addClass('ciaz');
-            modelsMenuMethods.car_next_step();
-            //switch_arrow();
-            //switch_menus(menu);
-        }
-    },
-    scrollSwitchMethod : function() {
-        $(window).scroll(function(){
-            if( header_section == '' ){
-                switch_menus( get_scroll_top() < 10 ? 'regular' : 'cars'  );
-                switch_arrow();
-            }
-        });
     }
 }
 /* ------------------------------------------------------ *\

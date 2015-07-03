@@ -135,6 +135,12 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', ".header-column", is_mobileMethods.clickHeaderColumn);
     $(domEl.div_recurrent_body).on('click', ".back-list-arrow", is_mobileMethods.clickBackListArrow);
 
+
+    $(domEl.div_recurrent_body).on('click', '#model-test-drive-flag-link', function( e ){
+        e.preventDefault();
+        $.scroll_to( 'prueba-de-manejo' );
+    });
+
     //Specifications Slider controls and functionality
     var specifications_i = 0;
     var specifications_total =  $('.specifications-wrapper .specification').length - 1;
