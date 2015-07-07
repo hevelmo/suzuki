@@ -23,6 +23,7 @@ var current_menu = '',
     selected_concessionaire = -1;
 var td_id_flag ='<div id="model-section-arrow"><span>&nbsp;</span></div><div id="model-test-drive-flag"><a href="#prueba-de-manejo" id="model-test-drive-flag-link"><span>Prueba de Manejo</span></a></div>';
 var patch_bar ='<div class="menu-patch" id="patch">&nbsp;</div>';
+var current_car;
 
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
@@ -70,6 +71,10 @@ function showMeTheMoney(model_key){
     }
     return value;
 }
+function insta_drive_gaq(){
+    var precio_actual = showMeTheMoney( current_car );
+    ga('send', 'event', 'Instant Drive', 'Confirmacion', current_car, precio_actual * 0.071 );
+}
 function modifyHeight(selector){
     $(selector).each(function (index, Element) {
         var cell_array = new Array(2);
@@ -82,7 +87,103 @@ function modifyHeight(selector){
         $(this).find(".cell").css("height", cell_height);
     });
 }
+function switch_menus( menu ){
+    if( current_menu != menu ){
+        current_menu = menu;
+        var new_h = ( menu == 'cars')? 50 : 95;
+        $('#header-zone').stop().animate({height:new_h });
+        if( menu == 'cars'){
+            $('#regular-header').stop().animate({marginTop: -95 });
+            $('#logo-wrapper').stop().animate({top: -95 });
+        }else{
+            $('#regular-header').stop().animate({marginTop: 0 });
+            $('#logo-wrapper').stop().animate({top: 0 });
+        }
+    }
+}
+function switch_arrow( ){
+    var ii = 0, arrow_y = 49,
+        i_m = sections_positions.length,
+        gtx,
+        yyy = get_scroll_top(),
+        $cars_menu_li =  $('ul.models-menu li'),
+        $arrow =  $('#model-section-arrow'),
+        $td_flag =  $('#model-test-drive-flag'),
+        $gotoup =   $('#back-to-top-button'),
+        arrow_top = parseInt( $arrow.css('top') );
 
+    if( yyy > 0 ){
+        if( arrow_top != arrow_y ){
+            $gotoup.stop().hide().fadeIn();
+            $td_flag.stop().animate({top: 0});
+        }
+
+    }else{
+        scroll_current_section = -1;
+        $td_flag.stop().animate({top: -95});
+        $gotoup.stop().show().fadeOut();
+        $arrow.stop().css({top:0}).hide();
+        return;
+    }
+
+
+    while( ii < i_m ){
+        if( yyy < sections_positions[ ii ] ){
+            break;
+        }
+        ii++;
+    }
+    if( ii != scroll_current_section ){
+        scroll_current_section = ii;
+        /*window.clearTimeout( section_timer );
+        section_timer = setTimeout(function(){
+            var url = document.location + '/' + section_names[ii];
+            ga('send', 'pageview', url );
+        }, 2000);*/
+
+        $cars_menu_li.removeClass('current');
+        $cars_menu_li.eq( ii - 1).addClass('current');
+
+        if( arrow_section [ ii ] ){
+            gtx = arrow_section [ ii ];
+        }else{
+            gtx = 415;
+        }
+        if( arrow_top != arrow_y ){
+            $arrow.show();
+            $arrow.stop().delay(100).css({marginLeft:gtx,top:arrow_y -10,opacity:0}).animate({top:arrow_y,opacity:1 },300);
+        }else{
+            $arrow.stop().animate({marginLeft:gtx});
+        }
+    }
+}
+//animates all transitions (needs an "a" element whit "name attrubute")
+$.scroll_to = function( target_name ){
+    var target, dest, header_height = $('#header-wrapper').height();
+    if( target_name != 'top' ){
+        target = $( 'a[name="' + target_name + '"]' );
+        dest = target.offset().top - header_height - 35;
+        /*if (IS_MOBILE) {
+            dest += 75;
+        }*/
+    }else{
+        dest = 0;
+    }
+    $('html,body').stop().animate({ scrollTop : dest}, 800 , 'easeOutSine');
+};
+//First Arrow animation
+$.animate_arrow = function( $arrow ){
+    $arrow.css( { marginTop:-82,opacity:1}).animate({marginTop:-20,opacity:0}, 1000, function(){
+        $.animate_arrow( $(this) );
+    });
+}
+$.adjust_spaces = function(){
+    $('a.section-separator').each( function( ii ){
+        yy =  $(this).offset().top - 200 ;
+        yy = ( yy > 0 )? yy : 0;
+        sections_positions[ ii ] = parseInt( yy );
+    });
+}
 /* ------------------------------------------------------ *\
  [functions] resetAlert
 \* ------------------------------------------------------ */
@@ -599,39 +700,7 @@ var panelMenuModelsByModel = {
 /* ------------------------------------------------------ *\
  [Methods] MODELS MENU
 \* ------------------------------------------------------ */
-//animates all transitions (needs an "a" element whit "name attrubute")
-$.scroll_to = function( target_name ){
-    var target, dest, header_height = $('#header-wrapper').height();
-    if( target_name != 'top' ){
-        target = $( 'a[name="' + target_name + '"]' );
-        dest = target.offset().top - header_height - 35;
-        /*if (IS_MOBILE) {
-            dest += 75;
-        }*/
-    }else{
-        dest = 0;
-    }
-    $('html,body').stop().animate({ scrollTop : dest}, 800 , 'easeOutSine');
-};
-//First Arrow animation
-$.animate_arrow = function( $arrow ){
-    $arrow.css( { marginTop:-82,opacity:1}).animate({marginTop:-20,opacity:0}, 1000, function(){
-        $.animate_arrow( $(this) );
-    });
-}
 var modelsMenuMethods = {
-    addModelSectionArrow : function () {
-        /*arrow = {'id': 'model-section-arrow'}
-        flag = {'id': 'model-test-drive-flag'}
-        SUK.appendOne(domEl.div_recurrent_body, 'div', arrow, '', 1);
-        SUK.appendOne(domEl.div_recurrent_body, 'div', flag, '', 1);*/
-        /*$('#model-section-arrow').css({
-            'display':'none',
-            'top':'0px'
-        });
-        $('#model-test-drive-flag').css('top','-95px');*/
-
-    },
     car_next_step : function() {
         if( $('.car-next-step').length > 0 ){
             var $arrow1 = $('.car-next-step').children('a'),
@@ -645,135 +714,123 @@ var modelsMenuMethods = {
     },
     changeNameModel : function () {
         var menu;
-        if (section === 'swift-sport') {
-            $('#change-model').addClass('swift-sport');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-        } else if (section === 'swift') {
-            $('#change-model').addClass('swift');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-        } else if (section === 'sx4-crossover') {
-            $('#change-model').addClass('sx4-crossover');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-
-        } else if (section === 'sx4-sedan') {
-            $('#change-model').addClass('sx4-sedan');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-
-        } else if (section === 'kizashi') {
-            $('#change-model').addClass('kizashi');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-
-        } else if (section === 'grand-vitara') {
-            $('#change-model').addClass('grand-vitara');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-        } else if (section === 's-cross') {
-            $('#change-model').addClass('s-cross');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
-        } else if (section === 'ciaz') {
-            $('#change-model').addClass('ciaz');
-            modelsMenuMethods.car_next_step();
-            $('#model-section-arrow').hide();
-            $('#back-to-top-button').hide();
+        switch (section) {
+            case 'swift-sport':
+                $('#change-model').addClass('swift-sport');
+                $('.car').addClass('swift-sport');
+                $('.secondary-title').append('Swift Sport');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 'swift':
+                $('#change-model').addClass('swift');
+                $('.car').addClass('swift');
+                $('.secondary-title').append('Swift');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 'sx4-crossover':
+                $('#change-model').addClass('sx4-crossover');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 'sx4-sedan':
+                $('#change-model').addClass('sx4-sedan');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 'kizashi':
+                $('#change-model').addClass('kizashi');
+                $('.car').addClass('kizashi');
+                $('.secondary-title').append('Kizashi');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 'grand-vitara':
+                $('#change-model').addClass('grand-vitara');
+                $('.car').addClass('grand-vitara');
+                $('.secondary-title').append('Grand Vitara');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 's-cross':
+                $('#change-model').addClass('s-cross');
+                $('.car').addClass('s-cross');
+                $('.secondary-title').append('S-Cross');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            case 'ciaz':
+                $('#change-model').addClass('ciaz');
+                $('.car').addClass('ciaz');
+                $('.secondary-title').append('Ciaz');
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;
+            default:
+            break;
         }
     },
     scrollSwitchMethod : function() {
+        $('#step-2-date').datepicker({
+            minDate: '+1d',
+            maxDate: '+1m',
+            minLength: 0,
+            delay: 0,
+            dateFormat: 'yy-mm-dd'
+        });
+        $(window).resize(function() {
+            $.adjust_spaces();
+        });
+
+        $(document).resize(function() {
+            $.adjust_spaces();
+        });
+
         $(window).scroll(function(){
             if( header_section == '' ){
                 switch_menus( get_scroll_top() < 10 ? 'regular' : 'cars'  );
                 switch_arrow();
             }
         });
-    },
-    // NAV MODEL SCROLL
-    switch_arrow : function() {
 
-    }
-}
-function switch_menus( menu ){
-    if( current_menu != menu ){
-        current_menu = menu;
-        var new_h = ( menu == 'cars')? 50 : 95;
-        $('#header-zone').stop().animate({height:new_h });
-        if( menu == 'cars'){
-            $('#regular-header').stop().animate({marginTop: -95 });
-            $('#logo-wrapper').stop().animate({top: -95 });
-        }else{
-            $('#regular-header').stop().animate({marginTop: 0 });
-            $('#logo-wrapper').stop().animate({top: 0 });
-        }
+        $.adjust_spaces();
+        $(window).trigger('scroll');
     }
 }
 
-function switch_arrow( ){
-    var ii = 0, arrow_y = 49,
-        i_m = sections_positions.length,
-        gtx,
-        yyy = get_scroll_top(),
-        $cars_menu_li =  $('ul.models-menu li'),
-        $arrow =  $('#model-section-arrow'),
-        $td_flag =  $('#model-test-drive-flag'),
-        $gotoup =   $('#back-to-top-button'),
-        arrow_top = parseInt( $arrow.css('top') );
-
-    if( yyy > 0 ){
-        if( arrow_top != arrow_y ){
-            $gotoup.stop().hide().fadeIn();
-            $td_flag.stop().animate({top: 0});
-        }
-
-    }else{
-        scroll_current_section = -1;
-        $td_flag.stop().animate({top: -95});
-        $gotoup.stop().show().fadeOut();
-        $arrow.stop().css({top:0}).hide();
-        return;
-    }
-
-
-    while( ii < i_m ){
-        if( yyy < sections_positions[ ii ] ){
-            break;
-        }
-        ii++;
-    }
-    if( ii != scroll_current_section ){
-        scroll_current_section = ii;
-        window.clearTimeout( section_timer );
-        section_timer = setTimeout(function(){
-            var url = document.location + '/' + section_names[ii];
-            ga('send', 'pageview', url );
-        }, 2000);
-
-        $cars_menu_li.removeClass('current');
-        $cars_menu_li.eq( ii - 1).addClass('current');
-
-        if( arrow_section [ ii ] ){
-            gtx = arrow_section [ ii ];
-        }else{
-            gtx = 415;
-        }
-        if( arrow_top != arrow_y ){
-            $arrow.show();
-            $arrow.stop().delay(100).css({marginLeft:gtx,top:arrow_y -10,opacity:0}).animate({top:arrow_y,opacity:1 },300);
-        }else{
-            $arrow.stop().animate({marginLeft:gtx});
-        }
-    }
-}
 /* ------------------------------------------------------ *\
  [Methods] IS MOBILE
 \* ------------------------------------------------------ */

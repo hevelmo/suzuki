@@ -33,6 +33,11 @@ function tempsNames() {
         'model_s_cross' => 'tmp_section_content_model_s_cross',
         'model_ciaz' => 'tmp_section_content_model_ciaz',
 
+        // INSTANT DRIVE
+        'tmp_instant_drive_section' => 'tmp_instant_drive_section',
+        // TEST DRIVE
+        'tmp_test_drive_model' => 'tmp_test_drive_model',
+
         // MODELS MENU
         'tmp_models_menu' => 'tmp_models_menu',
 

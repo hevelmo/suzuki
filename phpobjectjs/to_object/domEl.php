@@ -63,6 +63,10 @@ function domEl() {
         // CONTROLS SLIDER
         'button_specifications_controls' => 'a.specifications-controls',
         // CONTENT SECTION FORM CONTACT
-        'div_content_section_form_contact' => 'div#content-section-form-contact'
+        'div_content_section_form_contact' => 'div#content-section-form-contact',
+        // INSTANT DRIVE CONTANT
+        'div_recurrent_instant_drive_section' => 'div#instant-drive-section',
+        // TEST DRIVE CONTENT
+        'div_recurrent_test_drive_section' => 'div#content-test-drive-section'
     );
 }

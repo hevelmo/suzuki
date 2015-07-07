@@ -27,7 +27,9 @@ domEl = {
 	"div_recurrent":"div#content-temporal-interactive",
 	"div_recurrent_body":"body#recurrent-body",
 	"div_recurrent_head":"head#recurrent-head",
+	"div_recurrent_instant_drive_section":"div#instant-drive-section",
 	"div_recurrent_panel_menu":"div#header-sections-wrapper",
+	"div_recurrent_test_drive_section":"div#content-test-drive-section",
 	"header_before_buy_button":"a#header-before-buy-button",
 	"header_financing_button":"a#header-financing-button",
 	"header_models_button":"a#header-models-button",
@@ -54,6 +56,7 @@ tempsNames = {
 	"tmp_content_link_style":"tmp_content_link_style",
 	"tmp_content_models_menu":"tmp_content_models_menu",
 	"tmp_form_contact":"tmp_form_contact",
+	"tmp_instant_drive_section":"tmp_instant_drive_section",
 	"tmp_mobile_menu":"tmp_mobile_menu",
 	"tmp_model_promo":"tmp_model_promo",
 	"tmp_models_menu":"tmp_models_menu",
@@ -70,7 +73,8 @@ tempsNames = {
 	"tmp_section_content_legal_terms":"tmp_section_content_legal_terms",
 	"tmp_section_content_privacy_notice":"tmp_section_content_privacy_notice",
 	"tmp_slider_home":"tmp_slider_home",
-	"tmp_social_bar":"tmp_social_bar"
+	"tmp_social_bar":"tmp_social_bar",
+	"tmp_test_drive_model":"tmp_test_drive_model"
 };
 urlsApi = {
 	"sendContact":"api/v1/post/contacto"
