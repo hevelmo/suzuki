@@ -157,6 +157,20 @@ function switch_arrow( ){
         }
     }
 }
+function funding_core( total_pay, months ){
+    var atc = months < 54 ? .1560 : .1676;
+    var atc_month = atc / 12;
+    var form_partial_1 = 1 - ( Math.pow( ( 1 + atc_month ) , -months ) );
+    var form_partial_2 = form_partial_1 / atc_month;
+    var form_partial_3 = total_pay / form_partial_2;
+    return form_partial_3.toFixed( 2 );
+}
+function goto_step( step, disable  ){
+    var ii, $divinput;
+    slide_tabs( step, disable );
+    if( step == 3 ){
+    }
+}
 //animates all transitions (needs an "a" element whit "name attrubute")
 $.scroll_to = function( target_name ){
     var target, dest, header_height = $('#header-wrapper').height();
@@ -698,6 +712,14 @@ var panelMenuModelsByModel = {
     }
 }
 /* ------------------------------------------------------ *\
+ [Methods] PANEL TABS NAV
+\* ------------------------------------------------------ */
+var panelTabsMethods = {
+    panelTabsNav : function (event) {
+
+    }
+}
+/* ------------------------------------------------------ *\
  [Methods] MODELS MENU
 \* ------------------------------------------------------ */
 var modelsMenuMethods = {
@@ -830,7 +852,6 @@ var modelsMenuMethods = {
         $(window).trigger('scroll');
     }
 }
-
 /* ------------------------------------------------------ *\
  [Methods] IS MOBILE
 \* ------------------------------------------------------ */
