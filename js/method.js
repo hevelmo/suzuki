@@ -164,48 +164,57 @@
             }
         }
     }
-//animates all transitions (needs an "a" element whit "name attrubute")
-$.scroll_to = function( target_name ){
-    var target, dest, header_height = $('#header-wrapper').height();
-    if( target_name != 'top' ){
-        target = $( 'a[name="' + target_name + '"]' );
-        dest = target.offset().top - header_height - 35;
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            dest += 75;
+/* ------------------------------------------------------ *\
+ [functions] scroll_to
+\* ------------------------------------------------------ */
+    //animates all transitions (needs an "a" element whit "name attrubute")
+    $.scroll_to = function( target_name ){
+        var target, dest, header_height = $('#header-wrapper').height();
+        if( target_name != 'top' ){
+            target = $( 'a[name="' + target_name + '"]' );
+            dest = target.offset().top - header_height - 35;
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                dest += 75;
+            }
+        }else{
+            dest = 0;
         }
-    }else{
-        dest = 0;
+        $('html,body').stop().animate({ scrollTop : dest}, 800 , 'easeOutSine');
+    };
+/* ------------------------------------------------------ *\
+ [functions] animate_arrow
+\* ------------------------------------------------------ */
+    //First Arrow animation
+    $.animate_arrow = function( $arrow ){
+        $arrow.css( { marginTop:-82,opacity:1}).animate({marginTop:-20,opacity:0}, 1000, function(){
+            $.animate_arrow( $(this) );
+        });
     }
-    $('html,body').stop().animate({ scrollTop : dest}, 800 , 'easeOutSine');
-};
-//First Arrow animation
-$.animate_arrow = function( $arrow ){
-    $arrow.css( { marginTop:-82,opacity:1}).animate({marginTop:-20,opacity:0}, 1000, function(){
-        $.animate_arrow( $(this) );
-    });
-}
-$.adjust_spaces = function(){
-    $('a.section-separator').each( function( ii ){
-        yy =  $(this).offset().top - 200 ;
-        yy = ( yy > 0 )? yy : 0;
-        sections_positions[ ii ] = parseInt( yy );
-    });
-}
+/* ------------------------------------------------------ *\
+ [functions] adjust_spaces
+\* ------------------------------------------------------ */
+    $.adjust_spaces = function(){
+        $('a.section-separator').each( function( ii ){
+            yy =  $(this).offset().top - 200 ;
+            yy = ( yy > 0 )? yy : 0;
+            sections_positions[ ii ] = parseInt( yy );
+        });
+    }
 /* ------------------------------------------------------ *\
  [functions] resetAlert
 \* ------------------------------------------------------ */
-//It performs whit alertify libary an css
-function resetAlert () {
-    alertify.set({
-        labels : {
-            ok     : "OK",
-            cancel : "Cancel"
-        },
-        delay : 5000,
-        buttonReverse : false,
-        buttonFocus   : "ok"
-    });
-}
+    //It performs whit alertify libary an css
+    function resetAlert () {
+        alertify.set({
+            labels : {
+                ok     : "OK",
+                cancel : "Cancel"
+            },
+            delay : 5000,
+            buttonReverse : false,
+            buttonFocus   : "ok"
+        });
+    }
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
  var Method = {
@@ -1604,7 +1613,7 @@ var formContactMethods = {
 
         dataFormContact = $('#form-contact').serializeFormJSON();
         isFull = SUK.validFormFull(dataFormContact, validFieldItems);
-        //$('#suk_contact_submit').attr('disabled', !isFull);
+        $('#suk_contact_submit').attr('disabled', !isFull);
         //console.log($('#form-contact').serializeFormJSON());
     },
     refreshForm : function() {
