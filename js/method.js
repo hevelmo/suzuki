@@ -8,23 +8,21 @@
 /* ------------------------------------------------------ *\
  [Variables] 'Zone'
 \* ------------------------------------------------------ */
-//var variable;
-var sections;
-var height = 0;
-var header_section = '';
-var current_menu = '',
-    scroll_current_section = -1,
-    sections_positions = [],
-    yy = 0,
-    arrow_section = [ 0, -403, -239, -102, 53, 214 ],
-    //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
-    section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
-    section_timer,
-    selected_concessionaire = -1;
-var td_id_flag ='<div id="model-section-arrow"><span>&nbsp;</span></div><div id="model-test-drive-flag"><a href="#prueba-de-manejo" id="model-test-drive-flag-link"><span>Prueba de Manejo</span></a></div>';
-var patch_bar ='<div class="menu-patch" id="patch">&nbsp;</div>';
-var current_car;
-
+    var sections;
+    var height = 0;
+    var header_section = '';
+    var current_menu = '',
+        scroll_current_section = -1,
+        sections_positions = [],
+        yy = 0,
+        arrow_section = [ 0, -403, -239, -102, 53, 214 ],
+        //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
+        section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
+        section_timer,
+        selected_concessionaire = -1;
+    var td_id_flag ='<div id="model-section-arrow"><span>&nbsp;</span></div><div id="model-test-drive-flag"><a href="#prueba-de-manejo" id="model-test-drive-flag-link"><span>Prueba de Manejo</span></a></div>';
+    var patch_bar ='<div class="menu-patch" id="patch">&nbsp;</div>';
+    var current_car;
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
  function nameFunction (arg) {
@@ -33,130 +31,139 @@ var current_car;
 /* ------------------------------------------------------ *\
  [functions] validateEmail
 \* ------------------------------------------------------ */
-function validateEmail(email) {
-    var re = /^(([^<>()[\]\\., ;:\s@\"] + (\.[^<>()[\]\\., ;:\s@\"] + )*)|(\". + \"))@((\[[0-9] {1, 3}\.[0-9] {1, 3}\.[0-9] {1, 3}\.[0-9] {1, 3}\])|(([a-zA-Z\-0-9] + \.) + [a-zA-Z] {2, }))$/;
-    //return re.test(email);
-    return true;
-}
-
-function showMeTheMoney(model_key){
-    var value = 0;
-    switch (model_key){
-        case 'swift-sport':
-            value = 259000.00;
-            break;
-        case 'swift':
-            value = 169000.00;
-            break;
-        case 'sx4-crossover':
-            value = 238000.00;
-            break;
-        case 'sx4-sedan':
-            value = 219000.00;
-            break;
-        case 'kizashi':
-            value = 319500.00;
-            break;
-        case 'grand-vitara':
-            value = 322000.00;
-            break;
-        case 's-cross':
-            value = 249900.00;
-            break;
-        case 'ciaz':
-            value = 194900.00;
-            break;
-        default:
-            break;
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\., ;:\s@\"] + (\.[^<>()[\]\\., ;:\s@\"] + )*)|(\". + \"))@((\[[0-9] {1, 3}\.[0-9] {1, 3}\.[0-9] {1, 3}\.[0-9] {1, 3}\])|(([a-zA-Z\-0-9] + \.) + [a-zA-Z] {2, }))$/;
+        //return re.test(email);
+        return true;
     }
-    return value;
-}
-function insta_drive_gaq(){
-    var precio_actual = showMeTheMoney( current_car );
-    ga('send', 'event', 'Instant Drive', 'Confirmacion', current_car, precio_actual * 0.071 );
-}
-function modifyHeight(selector){
-    $(selector).each(function (index, Element) {
-        var cell_array = new Array(2);
-        var cell_height = 0;
-        $(this).find(".cell").each(function (index, Element) {
-            var val_cell = ($(this).height.length > 0) ? $(this).height() : 0;
-            cell_array[index] = val_cell;
+/* ------------------------------------------------------ *\
+ [functions] showMeTheMoney
+\* ------------------------------------------------------ */
+    function showMeTheMoney(model_key){
+        var value = 0;
+        switch (model_key){
+            case 'swift-sport':
+                value = 259000.00;
+                break;
+            case 'swift':
+                value = 169000.00;
+                break;
+            case 'sx4-crossover':
+                value = 238000.00;
+                break;
+            case 'sx4-sedan':
+                value = 219000.00;
+                break;
+            case 'kizashi':
+                value = 319500.00;
+                break;
+            case 'grand-vitara':
+                value = 322000.00;
+                break;
+            case 's-cross':
+                value = 249900.00;
+                break;
+            case 'ciaz':
+                value = 194900.00;
+                break;
+            default:
+                break;
+        }
+        return value;
+    }
+/* ------------------------------------------------------ *\
+ [functions] insta_drive_gaq
+\* ------------------------------------------------------ */
+    function insta_drive_gaq(){
+        var precio_actual = showMeTheMoney( current_car );
+        ga('send', 'event', 'Instant Drive', 'Confirmacion', current_car, precio_actual * 0.071 );
+    }
+/* ------------------------------------------------------ *\
+ [functions] modifyHeight
+\* ------------------------------------------------------ */
+    function modifyHeight(selector){
+        $(selector).each(function (index, Element) {
+            var cell_array = new Array(2);
+            var cell_height = 0;
+            $(this).find(".cell").each(function (index, Element) {
+                var val_cell = ($(this).height.length > 0) ? $(this).height() : 0;
+                cell_array[index] = val_cell;
+            });
+            cell_height = Math.max.apply( Math, cell_array );
+            $(this).find(".cell").css("height", cell_height);
         });
-        cell_height = Math.max.apply( Math, cell_array );
-        $(this).find(".cell").css("height", cell_height);
-    });
-}
-function switch_menus( menu ){
-    if( current_menu != menu ){
-        current_menu = menu;
-        var new_h = ( menu == 'cars')? 50 : 95;
-        $('#header-zone').stop().animate({height:new_h });
-        if( menu == 'cars'){
-            $('#regular-header').stop().animate({marginTop: -95 });
-            $('#logo-wrapper').stop().animate({top: -95 });
+    }
+/* ------------------------------------------------------ *\
+ [functions] switch_menus
+\* ------------------------------------------------------ */
+    function switch_menus( menu ){
+        if( current_menu != menu ){
+            current_menu = menu;
+            var new_h = ( menu == 'cars')? 50 : 95;
+            $('#header-zone').stop().animate({height:new_h });
+            if( menu == 'cars'){
+                $('#regular-header').stop().animate({marginTop: -95 });
+                $('#logo-wrapper').stop().animate({top: -95 });
+            }else{
+                $('#regular-header').stop().animate({marginTop: 0 });
+                $('#logo-wrapper').stop().animate({top: 0 });
+            }
+        }
+    }
+/* ------------------------------------------------------ *\
+ [functions] switch_arrow
+\* ------------------------------------------------------ */
+    function switch_arrow( ){
+        var ii = 0, arrow_y = 49,
+            i_m = sections_positions.length,
+            gtx,
+            yyy = get_scroll_top(),
+            $cars_menu_li =  $('ul.models-menu li'),
+            $arrow =  $('#model-section-arrow'),
+            $td_flag =  $('#model-test-drive-flag'),
+            $gotoup =   $('#back-to-top-button'),
+            arrow_top = parseInt( $arrow.css('top') );
+        if( yyy > 0 ){
+            if( arrow_top != arrow_y ){
+                $gotoup.stop().hide().fadeIn();
+                $td_flag.stop().animate({top: 0});
+            }
         }else{
-            $('#regular-header').stop().animate({marginTop: 0 });
-            $('#logo-wrapper').stop().animate({top: 0 });
+            scroll_current_section = -1;
+            $td_flag.stop().animate({top: -95});
+            $gotoup.stop().show().fadeOut();
+            $arrow.stop().css({top:0}).hide();
+            return;
+        }
+        while( ii < i_m ){
+            if( yyy < sections_positions[ ii ] ){
+                break;
+            }
+            ii++;
+        }
+        if( ii != scroll_current_section ){
+            scroll_current_section = ii;
+            /*window.clearTimeout( section_timer );
+            section_timer = setTimeout(function(){
+                var url = document.location + '/' + section_names[ii];
+                ga('send', 'pageview', url );
+            }, 2000);*/
+            $cars_menu_li.removeClass('current');
+            $cars_menu_li.eq( ii - 1).addClass('current');
+
+            if( arrow_section [ ii ] ){
+                gtx = arrow_section [ ii ];
+            }else{
+                gtx = 415;
+            }
+            if( arrow_top != arrow_y ){
+                $arrow.show();
+                $arrow.stop().delay(100).css({marginLeft:gtx,top:arrow_y -10,opacity:0}).animate({top:arrow_y,opacity:1 },300);
+            }else{
+                $arrow.stop().animate({marginLeft:gtx});
+            }
         }
     }
-}
-function switch_arrow( ){
-    var ii = 0, arrow_y = 49,
-        i_m = sections_positions.length,
-        gtx,
-        yyy = get_scroll_top(),
-        $cars_menu_li =  $('ul.models-menu li'),
-        $arrow =  $('#model-section-arrow'),
-        $td_flag =  $('#model-test-drive-flag'),
-        $gotoup =   $('#back-to-top-button'),
-        arrow_top = parseInt( $arrow.css('top') );
-
-    if( yyy > 0 ){
-        if( arrow_top != arrow_y ){
-            $gotoup.stop().hide().fadeIn();
-            $td_flag.stop().animate({top: 0});
-        }
-
-    }else{
-        scroll_current_section = -1;
-        $td_flag.stop().animate({top: -95});
-        $gotoup.stop().show().fadeOut();
-        $arrow.stop().css({top:0}).hide();
-        return;
-    }
-
-
-    while( ii < i_m ){
-        if( yyy < sections_positions[ ii ] ){
-            break;
-        }
-        ii++;
-    }
-    if( ii != scroll_current_section ){
-        scroll_current_section = ii;
-        /*window.clearTimeout( section_timer );
-        section_timer = setTimeout(function(){
-            var url = document.location + '/' + section_names[ii];
-            ga('send', 'pageview', url );
-        }, 2000);*/
-
-        $cars_menu_li.removeClass('current');
-        $cars_menu_li.eq( ii - 1).addClass('current');
-
-        if( arrow_section [ ii ] ){
-            gtx = arrow_section [ ii ];
-        }else{
-            gtx = 415;
-        }
-        if( arrow_top != arrow_y ){
-            $arrow.show();
-            $arrow.stop().delay(100).css({marginLeft:gtx,top:arrow_y -10,opacity:0}).animate({top:arrow_y,opacity:1 },300);
-        }else{
-            $arrow.stop().animate({marginLeft:gtx});
-        }
-    }
-}
 //animates all transitions (needs an "a" element whit "name attrubute")
 $.scroll_to = function( target_name ){
     var target, dest, header_height = $('#header-wrapper').height();
