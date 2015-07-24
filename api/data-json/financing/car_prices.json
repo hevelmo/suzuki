@@ -1,0 +1,170 @@
+{
+	"sukpa": [
+		{
+			"suk_Models": [
+				{
+					"suk_Model_Id": "1",
+					"suk_Model_Name": "Swift Sport",
+					"suk_Model_Key": "swift-sport",
+					"suk_Model_Versions": [
+						{
+							"suk_Model_Versions_Name": "",
+							"suk_Model_Versions_Key": "swift-sport",
+							"suk_Model_Versions_Year": "2014",
+							"suk_Model_Versions_Price": "259000.00"
+						}
+					]					
+				},
+				{
+					"suk_Model_Id": "2",
+					"suk_Model_Name": "Swift",
+					"suk_Model_Key": "swift",
+					"suk_Model_Versions": [
+						{
+							"suk_Model_Versions_Name": "GA",
+							"suk_Model_Versions_Key": "ga",
+							"suk_Model_Versions_Year": "2014",
+							"suk_Model_Versions_Price": "174000.00"
+						},
+						{
+							"suk_Model_Versions_Name": "GLS TM",
+							"suk_Model_Versions_Key": "gls-tm",
+							"suk_Model_Versions_Year": "2014",
+							"suk_Model_Versions_Price": "199000.00"
+						},
+						{
+							"suk_Model_Versions_Name": "GLS TA",
+							"suk_Model_Versions_Key": "gls-ta",
+							"suk_Model_Versions_Year": "2014",
+							"suk_Model_Versions_Price": "214000.00"
+						},
+						{
+							"suk_Model_Versions_Name": "GLX TM",
+							"suk_Model_Versions_Key": "glx-tm",
+							"suk_Model_Versions_Year": "2014",
+							"suk_Model_Versions_Price": "224000.00"
+						},
+						{
+							"suk_Model_Versions_Name": "GLX TA",
+							"suk_Model_Versions_Key": "glx-ta",
+							"suk_Model_Versions_Year": "2014",
+							"suk_Model_Versions_Price": "239000.00"
+						}
+					]
+				},
+		        {
+		            "suk_Model_Id": "5",
+		            "suk_Model_Name": "Kizashi",
+		            "suk_Model_Key": "kizashi",
+		            "suk_Model_Versions": [
+		                {
+		                    "suk_Model_Versions_Name": "CVT GLS",
+		                    "suk_Model_Versions_Key": "kizashi",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "319500.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "CVT GLX",
+		                    "suk_Model_Versions_Key": "kizashi",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "369500.00"
+		                }
+		            ]
+		        },
+		        {
+		            "suk_Model_Id": "6",
+		            "suk_Model_Name": "Grand Vitara",
+		            "suk_Model_Key": "grand-vitara",
+		            "suk_Model_Versions": [
+		                {
+		                    "suk_Model_Versions_Name": "GL",
+		                    "suk_Model_Versions_Key": "gl",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "322000.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "Special",
+		                    "suk_Model_Versions_Key": "special",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "342000.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLS",
+		                    "suk_Model_Versions_Key": "gls",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "352000.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLS 4X4",
+		                    "suk_Model_Versions_Key": "gls-4x4",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "382000.00"
+		                }
+		            ]
+		        },
+		        {
+		            "suk_Model_Id": "7",
+		            "suk_Model_Name": "S-Cross",
+		            "suk_Model_Key": "s-cross",
+		            "suk_Model_Versions": [
+		                {
+		                    "suk_Model_Versions_Name": "GL / TM ",
+		                    "suk_Model_Versions_Key": "gl-tm",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "249900.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLX / CVT",
+		                    "suk_Model_Versions_Key": "glx-cvt",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "319900.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GL / CVT ",
+		                    "suk_Model_Versions_Key": "gl-cvt",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "269900.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLX / ALL GRIP",
+		                    "suk_Model_Versions_Key": "glx-all",
+		                    "suk_Model_Versions_Year": "2014",
+		                    "suk_Model_Versions_Price": "339900.00"
+		                }
+		            ]
+		        },
+		        {
+		            "suk_Model_Id": "8",
+		            "suk_Model_Name": "Ciaz",
+		            "suk_Model_Key": "ciaz",
+		            "suk_Model_Versions": [
+		                {
+		                    "suk_Model_Versions_Name": "GLS TM",
+		                    "suk_Model_Versions_Key": "gls-tm",
+		                    "suk_Model_Versions_Year": "2016",
+		                    "suk_Model_Versions_Price": "199990.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLS TA",
+		                    "suk_Model_Versions_Key": "gls-ta",
+		                    "suk_Model_Versions_Year": "2016",
+		                    "suk_Model_Versions_Price": "224990.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLX TM",
+		                    "suk_Model_Versions_Key": "glx-tm",
+		                    "suk_Model_Versions_Year": "2016",
+		                    "suk_Model_Versions_Price": "229990.00"
+		                },
+		                {
+		                    "suk_Model_Versions_Name": "GLX TA",
+		                    "suk_Model_Versions_Key": "glx-ta",
+		                    "suk_Model_Versions_Year": "2016",
+		                    "suk_Model_Versions_Price": "244990.00"
+		                }
+		            ]
+		        }
+			]
+		}
+	]
+}

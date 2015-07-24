@@ -53,12 +53,37 @@ $app->configureMode('development', function () use ($app) {
 // UPDATE
 //$app->post('/set/table/:idTable', /*'mw1',*/ 'setTable');
 // GET route
+    // app => getModels
+        $app->get('/add/car_main_model/:car_main_model', 'addCarMainModel');
+        $app->get('/add/concesionaries', 'addConcesionaries');
+        $app->get('/add/modelos', 'addModels');
+        $app->get('/add/gama_modelos', 'addGamaModels');
 // SELECT
 //$app->get('/get/table', /*'mw1',*/ 'getTable');
 // DELETE
 //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
 $app->run();
 //Functions
+    // GET CAR MAIN MODELS
+    function addCarMainModel($car_main_model) {
+        $json = file_get_contents('../data-json/cars/cars_main.json');
+        echo $json;
+    }
+    // GET MODELS
+    function addModels() {
+        $json = file_get_contents('../data-json/financing/car_prices.json');
+        echo $json;
+    }
+    // GET CONCESIONARIES
+    function addConcesionaries() {
+        $json = file_get_contents('../data-json/concessionaires/all.json');
+        echo $json;
+    }
+    // GET GAMA MODELS
+    function addGamaModels() {
+        $json = file_get_contents('../data-json/models_gama/models_gama.json');
+        echo $json;
+    }
     // CONTACTO SUZUKI
     function sendContact() {
         $property = requestBody();

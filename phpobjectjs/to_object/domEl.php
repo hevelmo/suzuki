@@ -24,9 +24,22 @@ function domEl() {
         'div_header_panel' => 'div.header-panel',
         'div_recurrent_panel_menu' => 'div#header-sections-wrapper',
         'button_close_model_panel_menu' => 'a#close-models-panel',
+
+        // MODELS GAMA
+        'model_gama_class' => 'a.gama-model',
+        'model_gama_id' => '#go-model-',
+
         'button_close_financing_panel_menu' => 'a#close-financing-panel',
         'button_close_owners_panel_menu' => 'a#close-owners-panel',
         'button_close_before_buy_panel_menu' => 'a#close-before-buy-panel',
+        // MODELS HEADER
+        'models_header_recurrent' => '#content-models-header',
+        'div_recurrent_full_size_section_model' => '#full-size-section-model',
+        'div_recurrent_features_section_model' => '#features-section-model',
+        'div_recurrent_galery_section_model' => '#galery-section-model',
+        'div_recurrent_prices_section_model' => '#prices-section-model',
+        'div_recurrent_accesories_section_model' => '#accesories-section-model',
+        'div_recurrent_test_drive_section_model' => '#test-drive-section-model',
         // CLICK INDEX
         'button_return_index' => 'a#return-index',
         // CLICK GRUPO

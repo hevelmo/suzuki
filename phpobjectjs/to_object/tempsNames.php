@@ -24,6 +24,9 @@ function tempsNames() {
         'tmp_form_contact' => 'tmp_form_contact',
 
         // MODELS
+        'section_recurrent_car_main' => 'tmp_section_content_car_main',
+        'section_recurrent_full_size' => 'tmp_section_content_full_size',
+
         'model_swift_sport' => 'tmp_section_content_model_swift_sport',
         'model_swift' => 'tmp_section_content_model_swift',
         'model_sx4_crossover' => 'tmp_section_content_model_sx4_crossover',

@@ -1,0 +1,24 @@
+{
+	"sukpa": [
+		{
+			"suk_cars_main": [
+				{
+					"suk_car_id": "1",
+					"suk_car_main_background": "swift-sport.png",
+					"suk_title": "Swift Sport 2015",
+					"suk_slogan": "Experimenta agilidad.",
+					"suk_description": "Dise\u00f1o deportivo, movilidad veloz. La combinaci\u00f3n perfecta de un auto deportivo y uno urbano.",
+					"suk_id_key": "swift-sport"
+				},
+				{
+					"suk_car_id": "2",
+					"suk_car_main_background": "swift.png",
+					"suk_title": "Swift 2015",
+					"suk_slogan": "Experimenta desaf\u00edo. Acepta el reto.",
+					"suk_description": "Aerodin\u00e1mico y divertido para ti que buscas dise\u00f1o y agilidad en un solo auto.",
+					"suk_id_key": "swift"
+				}
+			]
+		}
+	]
+}

@@ -157,29 +157,15 @@ function switch_arrow( ){
         }
     }
 }
-function funding_core( total_pay, months ){
-    var atc = months < 54 ? .1560 : .1676;
-    var atc_month = atc / 12;
-    var form_partial_1 = 1 - ( Math.pow( ( 1 + atc_month ) , -months ) );
-    var form_partial_2 = form_partial_1 / atc_month;
-    var form_partial_3 = total_pay / form_partial_2;
-    return form_partial_3.toFixed( 2 );
-}
-function goto_step( step, disable  ){
-    var ii, $divinput;
-    slide_tabs( step, disable );
-    if( step == 3 ){
-    }
-}
 //animates all transitions (needs an "a" element whit "name attrubute")
 $.scroll_to = function( target_name ){
     var target, dest, header_height = $('#header-wrapper').height();
     if( target_name != 'top' ){
         target = $( 'a[name="' + target_name + '"]' );
         dest = target.offset().top - header_height - 35;
-        /*if (IS_MOBILE) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             dest += 75;
-        }*/
+        }
     }else{
         dest = 0;
     }
@@ -570,12 +556,14 @@ var openPanelMenuMethods = {
     },
     clickModelsPanel : function (event) {
         if ($(this).hasClass('active')) {
+            var sukModelData;
             $('#header-spacer').css('height','325px');
             $('.header_section').css({
                 'display':'block',
                 'opacity':'1'
             });
-            SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu);
+            sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos)
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu, sukModelData);
         } else {
             $('#header-spacer').css('height','0px');
             $('.header_section').css({
@@ -670,55 +658,465 @@ var closePanelMenuMethods = {
     }
 }
 var panelMenuModelsByModel = {
-    clickGoSwiftSport : function (event) {
+    // ACTION CAR MODELS
+    clickGoCarMain : function (event) {
+        var car_main_model;
         $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/swift-sport');
-    },
-    clickGoSwift : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/swift');
-    },
-    clickGoSx4Crossover : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/sx4-crossover');
-    },
-    clickGoSx4Sedan : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/sx4-sedan');
-    },
-    clickGoKizashi : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/kizashi');
-    },
-    clickGoGrandVitara : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/grand-vitara');
-    },
-    clickGoSCross : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/s-cross');
-    },
-    clickGoCiaz : function (event) {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
-        Finch.navigate('/ciaz');
+
+        car_main_model = $(this).data('gama-model');
+        console.log(car_main_model);
+        Finch.navigate('/'+ car_main_model);
     }
+    /*
+        ,
+        clickGoSwiftSport : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/swift-sport');
+        },
+        clickGoSwift : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/swift');
+        },
+        clickGoSx4Crossover : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/sx4-crossover');
+        },
+        clickGoSx4Sedan : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/sx4-sedan');
+        },
+        clickGoKizashi : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/kizashi');
+        },
+        clickGoGrandVitara : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/grand-vitara');
+        },
+        clickGoSCross : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/s-cross');
+        },
+        clickGoCiaz : function (event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            closePanelMenuMethods.closePanelModels();
+            Finch.navigate('/ciaz');
+        }
+    */
 }
 /* ------------------------------------------------------ *\
- [Methods] PANEL TABS NAV
+ [Methods] FINANCING
 \* ------------------------------------------------------ */
-var panelTabsMethods = {
-    panelTabsNav : function (event) {
+// start header listener action
+//Adds javascript actions to header section
+$.start_header_listeners = function( section, options ){
+    if( options === undefined || options === null  ){
+        options = {};
+    }
+    switch( section ){
+        case 'financing':
+            var car_d = null,
+                funding_data = {
+                    engagement  : 0,
+                    months      : 0,
+                    price       : 0
+                };
+            var conce_d = null;
 
+            var default_data = {
+                car_version : 0,
+                key         : ''
+
+            };
+
+            fuh_data = $.extend( {}, default_data, options );
+
+            function goto_step( step, disable  ){
+                var ii, $divinput;
+                slide_tabs( step, disable );
+                if( step == 3 ){
+                }
+            }
+
+            //Tabs
+            $panelTabsNav   = $('li.step-nav-tabs.funding');
+            $panelTabs      = $('.step-nav-tab.funding');
+
+            $panelTabsNav.children('a').on('click', function( e ){
+                e.preventDefault();
+                if( !$(this).parent().is('.disabled') ){
+                    goto_step( $(this).data('number') )
+                }
+            });
+            $.funding_adjust_calc = function(  ){
+                var f_amount        = funding_data.price * ( funding_data.engagement / 100 ),
+                    total_pay       =  funding_data.price -  f_amount,
+                    //total_pay       =  funding_data.price -  f_amount,
+                    f_monthly_pay   = funding_core( total_pay, funding_data.months  );
+                $('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) );
+                $('#fr_car_engagement').val(moneyFormat( f_amount ));
+                $('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' );
+                $('#fr_car_months').val(funding_data.months + ' meses');
+                $('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) );
+                $('#fr_car_price').val(moneyFormat(  funding_data.price ));
+                $('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) );
+                $('#fr_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
+            }
+            $.funding_select_version = function( ii ){
+                var $elements;
+                $elements               = $('#funding-versions-tabs li a');
+                $elements.removeClass('active');
+                $elements.eq( ii ).addClass('active');
+                funding_data.engagement = $("#car_engagement_slider").slider( 'value' ) ;
+                funding_data.months     = $("#car_months_slider").slider( 'value');
+                funding_data.price      = car_d.versions[ ii ].price;
+                fuh_data.car_version    = car_d.versions[ ii ].key;
+                $.funding_adjust_calc();
+            }
+            $.funding_select_car = function( k ){
+                var car_data    = get_car_data( k ),
+                    $icons      = $('#car_select_preview .car_thumb_160 .car, #fu_adjust_car .car_thumb_60 .car, #funding_result_data .car_thumb_60 .car, #funding-resume-car .car_thumb_60 .car'),
+                    $car_texts  = $('#car_select_name h3, #step-nav-tab h3, #fu_adjust_car h3, #funding_result_data h3, #funding-resume-car h3'),
+                    $input_car_text = $('#fr_model_car');
+
+                fuh_data.key = k;
+                var anio = '2015';
+                if(car_data.key == 'ciaz'){
+                    anio = '2016';
+                }
+                fuh_data.name = car_data.name + ' ' + anio;
+
+                $("#car_engagement_slider").slider({value: 20}) ;
+                $("#car_months_slider").slider({value: 6});
+
+                $car_texts.text( fuh_data.name );
+                $input_car_text.val( fuh_data.name );
+                $icons.removeClass();
+                $icons.addClass('car ' + fuh_data.key );
+                var i0 = cars_prices.length, versions = null, i1, i2, tab_data;
+                while( i0-- ){
+                    if( cars_prices[i0].key == fuh_data.key ){
+                        car_d = cars_prices[i0];
+                        versions = car_d.versions;
+                        var i1 = 0, i2 = versions.length, tabs_data = {versions:[]};
+                        if( i2 > 1 ){
+                            $('#funding-versions').show();
+                        }else{
+                            $('#funding-versions').hide();
+                        }
+                        while( i1 < i2 ){
+                            tab_data = {
+                                i       : i1,
+                                name    : versions[i1].name
+                            }
+                            tabs_data.versions.push( tab_data );
+                            i1++;
+                        }
+                        var html = Mustache.render( funding_tab, tabs_data );
+                        $("#funding-versions-tabs").html( html );
+                        $.funding_select_version( 0 );
+                        break;
+                    }
+                }
+            };
+
+
+            $.send_funding = function(){
+                var extended =  $('input[name="hfu_drive"]:checked').val(),
+                    $model_car   = $('#fr_model_car'),
+                    $car_price   = $('#fr_car_price'),
+                    $car_engagement   = $('#fr_car_engagement'),
+                    $fr_car_monthly_payment   = $('#fr_car_monthly_payment'),
+                    $fr_car_months   = $('#fr_car_months'),
+                    $name   = $('#hfu_name'),
+                    $lastname  = $('#hfu_lastname'),
+                    $email  = $('#hfu_email'),
+                    /*$state  = $('#hfu_state_chzn_chzn'),
+                    $concessionaire  = $('#hfu_concessionaire_chzn'),*/
+                    $tel    = $('#hfu_tel'),
+                    form_errors = 0;
+
+                if( !$.validate_input( $email ) ){
+                    form_errors++;
+                    $name.focus();
+                }
+                if( !$.validate_input( $name ) ){
+                    form_errors++;
+                    $name.focus();
+                }
+                if( !$.validate_input( $lastname ) ){
+                    form_errors++;
+                    $name.focus();
+                }
+                /*if( !$.validate_input( $state ) ){
+                    form_errors++;
+                    $name.focus();
+                }
+                if( !$.validate_input( $state ) ){
+                    form_errors++;
+                    $name.focus();
+                }*/
+                if( !$.validate_input( $concessionaire ) ){
+                    form_errors++;
+                    $name.focus();
+                }
+                if( extended > 0 ){
+
+                    if( !$.validate_input( $tel ) ){
+                        form_errors++;
+                        $tel.focus();
+                    }
+
+                } else{
+
+                    if( conce_d == null ){
+                        console.log(conce_d);
+                        form_errors++;
+                        /*$.error_bubble( $('#tdcss'), true);*/
+                        /*
+                         if(  ){
+
+                         chzn-container
+                         $('#tdcss, #tdcss #tdcs').css({
+                         width: 'auto!important'
+                         });
+
+                         }*/
+                        /*$('#tdcs .chzn-container a').trigger('click').focus();*/
+                    } else {
+                        /*$.error_bubble( $('#tdcss'), false );*/
+                    }
+                    $.error_bubble( $tel, false );
+                    //
+                }
+                if( form_errors == 0){
+                    var data = {
+                        car_key     : fuh_data.key,
+                        car_version : fuh_data.car_version,
+                        email       : $email.val(),
+                        engagement  : funding_data.engagement,
+                        months      : funding_data.months,
+                        name        : $name.val(),
+                        /*lastname    : $lastname.val(),
+                        state       : $state.val(),*/
+                        concessionaire       : $concessionaire.val(),
+                        newsletter  : ('#funding-newsletter:checked').length,
+                        source      : 'Funding'
+                    }
+
+
+                    $('#funding_resume_email').html( data.email );
+                    $('#header-financiamiento li.step-nav-tabs').addClass( 'disabled' );
+                    data.concessionaire_key = conce_d.key;
+
+                    if( extended > 0 ){
+                        data.phone = $tel.val();
+                        $('#funding_resume_concessionaire').text( conce_d.name).attr({href:'/concesionarias/suzuki-'+conce_d.key});
+                        ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Header_' + fuh_data.key, 0.012 * funding_data.price );
+                    }else{
+                        ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Header_' + fuh_data.key, 0.012 * funding_data.price );
+                    }
+                    var service_url = 'services/request/financing.json';
+                    $.ajax({
+                        cache       : false,
+                        data        : data,
+                        dataType    : 'json',
+                        type        : 'post',
+                        success     : function( data ){
+                            if( data.status == 'ok' ){
+                                $('#funding_form').hide();
+                                $('#funding_resume').fadeIn();
+
+                            }else{
+                                alert( data.message );
+                            }
+
+                        },
+                        url     : service_url
+                    });
+
+
+
+                }
+
+            };
+
+
+            $('#hfu_name').on('focusout', function(){
+                var $input = $(this);
+                $.validate_input( $input );
+            });
+            $('#hfu_lastname').on('focusout', function(){
+                var $input = $(this);
+                $.validate_input( $input );
+            });
+            $('#hfu_email').on('focusout', function(){
+                var $input = $(this);
+                $.validate_input( $input );
+            });
+            /*$('#tdcs select#hfu_state_chzn_chzn').delegate('select, change', function( e ){
+                var $input = $(this);
+                $.validate_input( $input );
+            });
+            $('#tdcs select#hfu_concessionaire_chzn').delegate('select, change', function( e ){
+                var $input = $(this);
+                $.validate_input( $input );
+            });*/
+            $('#hfu_tel').on('focusout', function(){
+                var $input = $(this);
+                $.validate_input( $input );
+            });
+            $('input[name="hfu_drive"]').on('change, click', function( e ){
+                if( $(this).val() > "No deseas manejarlo" ){
+                    $('.funding-hidden-inputs').show();
+                }else{
+                    $('.funding-hidden-inputs').hide();
+                }
+            });
+            $('input[name="funding-newsletter"]').on('change, click', function( e ){
+                if( $('input[name="funding-newsletter"]').is(':checked') ){
+                    $('input[name="funding-newsletter"]').val('on');
+                }else{
+                    $('input[name="funding-newsletter"]').val('off');
+                }
+            });
+            $('#drive_no').trigger('click');
+            $('#tdr_end').on('click', function(){
+                $.openPanel('');
+            });
+            /*$('#tdcs').concessionaire_selector({
+                callback: function( data ){
+                    conce_d = {
+                        key: this.id,
+                        name: this.name
+                    };
+                    $.error_bubble( $('#tdcss'), false, 'Elije tu concesionaria' );
+                }
+            });
+            $('#tdcs').delegate('select','change',function(){
+                if( $('#tdcs select').length > 0 ){
+                    if( $('#tdcs select').length > 1 ){
+                        $('#error_state').css({marginLeft:0});
+                    }
+                    console.log($('#tdcs select'));
+                    console.log($('#error_state'));
+                }
+
+            })
+            $('#tdcs').delegate('select','change',function(){
+                if( $('#tdcs select').length > 0 ){
+                    if( $('#tdcs select').length > 1 ){
+                        $('#error_concessionaire').css({marginLeft:250});
+                    }
+                    console.log($('#tdcs select'));
+                    console.log($('#error_concessionaire'));
+                }
+
+            })*/
+
+            $("#car_engagement_slider").slider({
+                change  : function( event, ui ) {
+                    funding_data.engagement = ui.value;
+                    $.funding_adjust_calc();
+                },
+                max     : 80,
+                min     : 20,
+                slide   : function( event, ui ) {
+                    funding_data.engagement = ui.value;
+                    $.funding_adjust_calc();
+                    $(this).parent().children(".star").html(ui.value+"%");
+                },
+                step    : 5,
+                value   : 20
+
+            });
+            $("#car_months_slider").slider({
+                change  : function( event, ui ) {
+                    funding_data.months = ui.value;
+                    $.funding_adjust_calc();
+                },
+                max     : 60,
+                min     : 6,
+                slide   : function( event, ui ) {
+                    funding_data.months = ui.value;
+                    $.funding_adjust_calc();
+                    $(this).parent().children(".star").html(ui.value);
+                },
+                step    : 6,
+                value   : 6
+
+            });
+
+
+            current_tab = -1;
+            $('#funding-versions-tabs').delegate('a','click', function( e ){
+                e.preventDefault();
+                $.funding_select_version( parseInt( $(this).data('version') ) );
+            });
+            $('#car_select_list').delegate('a','click', function( e ){
+                e.preventDefault();
+                $.funding_select_car( $(this).data('key') );
+                if (IS_MOBILE) {
+                    $("#car_select_list").hide();
+                    $("#car_select_name, #car_select_preview").fadeIn();
+                }
+            });
+            if( fuh_data.key == '' ){
+                $('#car_select_list a').eq(0).trigger('click');
+                if (IS_MOBILE) {
+                    $("#car_select_name, #car_select_preview").hide();
+                    $("#car_select_list").fadeIn();
+                }
+                goto_step( 1, true );
+            }else{
+                $.funding_select_car( fuh_data.key );
+                goto_step( 2, true );
+            }
+            $("#change-car-test").on('click', function( e ){
+                e.preventDefault();
+                $("#car_select_name, #car_select_preview").hide();
+                $("#car_select_list").fadeIn();
+            });
+            $('a.funding-goto').on('click', function( e ){
+                e.preventDefault();
+                if (IS_MOBILE) {
+                    if ($(this).data('step') == "1") {
+                        $("#car_select_name, #car_select_preview").hide();
+                        $("#car_select_list").fadeIn();
+                    }
+                }
+                goto_step( $(this).data('step') );
+            });
+            if (IS_MOBILE) {
+                $("#fake-calculate").on('click', function( e ){
+                    e.preventDefault();
+                    $("#header-financiamiento .option-2, #fake-calculate").hide();
+                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").css("display", "block");
+                });
+                $("#modify-calc").on('click', function( e ){
+                    e.preventDefault();
+                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").hide();
+                    $("#header-financiamiento .option-2, #fake-calculate").css("display", "block");
+                });
+            }
+            break;
+        default:
+            break;
+    }
+};
+var startMethods = {
+    start : function() {
     }
 }
+
 /* ------------------------------------------------------ *\
  [Methods] MODELS MENU
 \* ------------------------------------------------------ */
@@ -735,8 +1133,19 @@ var modelsMenuMethods = {
         }
     },
     changeNameModel : function () {
-        var menu;
+        var menu, car_main_model;
         switch (section) {
+            /*case car_main_model:
+                $('#change-model').addClass(car_main_model);
+                $('.car').addClass(car_main_model);
+                $('.secondary-title').append(car_main_model);
+                modelsMenuMethods.car_next_step();
+                $('#model-section-arrow').hide();
+                $('#back-to-top-button').hide();
+                modelsMenuMethods.scrollSwitchMethod();
+                switch_menus( menu );
+                switch_arrow( );
+            break;*/
             case 'swift-sport':
                 $('#change-model').addClass('swift-sport');
                 $('.car').addClass('swift-sport');
@@ -852,6 +1261,7 @@ var modelsMenuMethods = {
         $(window).trigger('scroll');
     }
 }
+
 /* ------------------------------------------------------ *\
  [Methods] IS MOBILE
 \* ------------------------------------------------------ */

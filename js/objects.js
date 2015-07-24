@@ -25,11 +25,17 @@ domEl = {
 	"div_hidden_inputs_session":"div#hidden-inputs-session",
 	"div_hidden_inputs_temporal":"div#hidden-inputs-temporal",
 	"div_recurrent":"div#content-temporal-interactive",
+	"div_recurrent_accesories_section_model":"#accesories-section-model",
 	"div_recurrent_body":"body#recurrent-body",
+	"div_recurrent_features_section_model":"#features-section-model",
+	"div_recurrent_full_size_section_model":"#full-size-section-model",
+	"div_recurrent_galery_section_model":"#galery-section-model",
 	"div_recurrent_head":"head#recurrent-head",
 	"div_recurrent_instant_drive_section":"div#instant-drive-section",
 	"div_recurrent_panel_menu":"div#header-sections-wrapper",
+	"div_recurrent_prices_section_model":"#prices-section-model",
 	"div_recurrent_test_drive_section":"div#content-test-drive-section",
+	"div_recurrent_test_drive_section_model":"#test-drive-section-model",
 	"header_before_buy_button":"a#header-before-buy-button",
 	"header_financing_button":"a#header-financing-button",
 	"header_models_button":"a#header-models-button",
@@ -39,6 +45,9 @@ domEl = {
 	"link_content_add_styles_contact":"#content-add-styles-contact",
 	"link_content_add_styles_home":"#content-add-styles-home",
 	"link_content_add_styles_models_home":"#content-add-styles-models-home",
+	"model_gama_class":"a.gama-model",
+	"model_gama_id":"#go-model-",
+	"models_header_recurrent":"#content-models-header",
 	"suk_animate_header_spacer":"#header-spacer",
 	"suk_catalog_cars_wrapper":".catalog_cars_wrapper",
 	"suk_resize_header_panel":"#header-panel",
@@ -53,6 +62,8 @@ tempsNames = {
 	"model_swift_sport":"tmp_section_content_model_swift_sport",
 	"model_sx4_crossover":"tmp_section_content_model_sx4_crossover",
 	"model_sx4_sedan":"tmp_section_content_model_sx4_sedan",
+	"section_recurrent_car_main":"tmp_section_content_car_main",
+	"section_recurrent_full_size":"tmp_section_content_full_size",
 	"tmp_content_link_style":"tmp_content_link_style",
 	"tmp_content_models_menu":"tmp_content_models_menu",
 	"tmp_form_contact":"tmp_form_contact",
@@ -77,5 +88,9 @@ tempsNames = {
 	"tmp_test_drive_model":"tmp_test_drive_model"
 };
 urlsApi = {
-	"sendContact":"api/v1/post/contacto"
+	"addCarMainModel":"api/v1/add/car_main_model/",
+	"addConcesionaries":"api/v1/add/concesionaries",
+	"addGamaModelos":"api/v1/add/gama_modelos",
+	"addModelos":"api/v1/add/models",
+	"sendContact":"api/v1post/contacto"
 };

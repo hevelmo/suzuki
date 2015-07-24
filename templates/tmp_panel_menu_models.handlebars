@@ -7,26 +7,29 @@
 		<div class="header-section-content models">
     		<div class="header-title">Gama de Modelos</div>
 		    <div class="models-wrapper">
-		        <div class="model swift-sport">
-		            <a id="go-model-swift-sport">
+		    {{#each sukpa}}
+		        <div class="model {{suk_gama_key}}">
+		            <a class="gama-model" id="go-model-{{suk_gama_key}}" data-gama-model="{{suk_gama_key}}">
 		                <div class="car-preview">
 		                    <span>&nbsp;</span>
 		                </div>
 		                <div class="car-info">
 		                    <div class="title">
-		                        Swift Sport&nbsp;&nbsp;
+		                        {{suk_gama_nombre}}
 		                    </div>
 		                    <div class="slogan">
-		                        Experimenta agilidad.
+		                        {{suk_gama_slogan}}
 		                    </div>
 		                    <div class="info">
-		                        Rendimiento: 15.70 km/lt.
+		                        {{suk_gama_info}}
 		                    </div>
 		                </div>
 		                <i></i>
 		                <div class="clearfix"></div>
 		            </a>
 		        </div>
+		    {{/each}}
+		        {{!--
 		        <div class="model swift">
 		            <a id="go-model-swift">
 		                <div class="car-preview">
@@ -167,6 +170,7 @@
 		                <div class="clearfix"></div>
 		            </a>
 		        </div>
+		        --}}
 		        <div class="clearfix"></div>
 		        <div class="note">
 		            <p>* El valor de rendimiento de combustible combinado para este modelo, convenido con las autoridades
