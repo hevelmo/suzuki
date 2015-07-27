@@ -397,7 +397,7 @@
     }
 /* ------------------------------------------------------ *\
  [Methods] catalog
-\* ------------------------------------------------------ */    
+\* ------------------------------------------------------ */
     var catalogMethods = {
         pageTransitionCatalog : function () {
             $('.item.et-section').addClass('et-page-current');
@@ -752,17 +752,6 @@
         changeNameModel : function () {
             var menu, car_main_model;
             switch (section) {
-                /*case car_main_model:
-                    $('#change-model').addClass(car_main_model);
-                    $('.car').addClass(car_main_model);
-                    $('.secondary-title').append(car_main_model);
-                    modelsMenuMethods.car_next_step();
-                    $('#model-section-arrow').hide();
-                    $('#back-to-top-button').hide();
-                    modelsMenuMethods.scrollSwitchMethod();
-                    switch_menus( menu );
-                    switch_arrow( );
-                break;*/
                 case 'swift-sport':
                     $('#change-model').addClass('swift-sport');
                     $('.car').addClass('swift-sport');
@@ -876,6 +865,412 @@
 
             $.adjust_spaces();
             $(window).trigger('scroll');
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] inputVal
+\* ------------------------------------------------------ */
+    var inputValMetdods = {
+        isIntegerKP: function (event) {
+            return /\d/.test(String.fromCharCode(event.keyCode));
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] validations_regexp
+\* ------------------------------------------------------ */
+    var validations_regexp = {
+        address : new RegExp( /^[a-zá-úüñ,#0-9. -]{2,}$/i ),
+        date    : new RegExp( /^(\d{4})-(\d{1,2})-(\d{1,2})$/ ),
+        email   : new RegExp( /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ),
+        name    : new RegExp( /^[a-zá-úüñ. ]{2,}$/i ),
+        phone   : new RegExp( /^[0-9\s\-]{7,13}$/ )
+    }
+/* ------------------------------------------------------ *\
+ [Methods] validation_messages
+\* ------------------------------------------------------ */
+    var validation_messages = {
+        date            : 'Debe ser aaaa-mm-dd',
+        date_tomorrow   : 'Sólo a partir de mañana',
+        email           : 'Verifica tu correo',
+        general         : 'Campo no válido',
+        not_config      : 'Tipo desconocido',
+        not_null        : 'No puede ser nulo',
+        phone           : 'Verifica que tu número sea de 10 dígitos',
+        required        : 'Campo requerido',
+        empty           : 'Campo vacío'
+    }
+/* ------------------------------------------------------ *\
+ [Methods] validate
+\* ------------------------------------------------------ */
+    var validateMethods = {
+        validate : function(value, rules, required, custom_message) {
+            var r = { valid : false, message : '' },
+            null_value = value == undefined || value === '' ,
+            ii, rule;
+            required = required === true ? true: false;
+            if( required ){
+                if( null_value ){
+                    r.message = validation_messages.required;
+                }
+            }else{
+                if( null_value ){
+                    r.valid = true;
+                }
+            }
+            if( !r.valid && r.message === '' ){
+                ii = rules.length;
+                while( ii-- ){
+                    rule = rules[ii];
+                    switch( rule ){
+                        case 'email':
+                            if( !validations_regexp.email.test( value ) ){
+                                r.message = validation_messages.email;
+                            }
+                            break;
+                        case 'name':
+                            if( !validations_regexp.name.exec( value ) ){
+                                r.message = validation_messages.general;
+                            }
+                            break;
+                        case 'address':
+                            if( !validations_regexp.address.exec( value ) ){
+                                r.message = validation_messages.general;
+                            }
+                            break;
+                        case 'car_key':
+                            if(  !is_model_name( value ) ){
+                                r.message = validation_messages.general;
+                            }
+                            break;
+                        case 'date':
+                            if( !validations_regexp.date.exec( value ) ){
+                                r.message = validation_messages.date;
+                            }
+                            break;
+                        case 'phone':
+                            if( !validations_regexp.phone.exec( value ) ){
+                                r.message = validation_messages.phone;
+                            }
+                            break;
+                        default:
+                            r.message = validations_regexp.not_config;
+                            break;
+                    }
+                }
+                if( r.message === '' ){
+                    r.valid = true;
+                }
+            }
+            if( custom_message && !r.valid ){
+                r.message = custom_message;
+            }
+            return r;
+        },
+        //Display Input errors
+        error_bubble : function( $label, show, message ){
+            var $p = $label.parent().children('p.invalid-message');
+            if( show ){
+                if( message ){
+                    $p.html( message + '<span>&nbsp;</span>' ).stop().hide().fadeIn();
+                }else{
+                    $p.stop().hide().fadeIn();
+                }
+            }else{
+                $p.hide();
+            }
+        },
+        validate_input : function(event) {
+            var target = $(event.target);
+            //console.log(target);
+            if( target.is('input') || target.is('textarea') ){
+                var valid_data = target.data('validation-data');
+                var val_data    = valid_data.split('|'),
+                    required    = val_data.indexOf('required');
+                if( required >= 0 ){
+                    val_data.splice(required, 1);
+                }
+                var value = target.val(),
+                    validation = validateMethods.validate( value, val_data, ( required >= 0 )  );
+                validateMethods.error_bubble( target, !validation.valid, validation.message );
+                return validation.valid;
+            }else{
+                var is_valid = !( target.val() === null );
+                validateMethods.error_bubble( target, !is_valid, validation_messages.required );
+                return is_valid;
+            }
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] formTestDrive
+\* ------------------------------------------------------ */
+    var formTestDriveMethods = {
+        init_datepicker: function() {
+            $('#step-2-date').datepicker({
+                minDate: '+1d',
+                //maxDate: '+1m',
+                minLength: 0,
+                delay: 0,
+                dateFormat: 'yy-mm-dd'
+            });
+        },
+        addDataFormTestDrive: function() {
+            var dataFormTestDrive;
+            dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
+            return SUK.postalService(urlsApi.sendTestDrive, dataFormTestDrive);
+        },
+        fillingControl: function() {
+            var validFieldItems, dataFormTestDrive, isFull, isNoEmpty;
+            validFieldItems = [];
+            dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
+            isFull = SUK.validFormFull(dataFormTestDrive, validFieldItems);
+            //$('#suk_test_drive_submit').attr('disabled', !siFull);
+            //console.log($('#form-test-drive')serializeFormJSON());
+        },
+        refreshForm: function() {},
+        resetForm: function() {},
+        reset_pre_loader: function() {},
+        finchNavigateReturn: function() {},
+        sendTestDriveForm: function(event) {}
+    }
+/* ------------------------------------------------------ *\
+ [Methods] formContact
+\* ------------------------------------------------------ */
+    var formContactMethods = {
+        addDataFormContact: function() {
+            var dataFormContact;
+            dataFormContact = $('#form-contact').serializeFormJSON();
+            return SUK.postalService(urlsApi.sendContact, dataFormContact);
+        },
+        fillingControl: function() {
+            var validFieldItems, dataFormContact, isFull, isNoEmpty;
+            validFieldItems = [
+                'suk_gdl_contact_name', 'suk_gdl_contact_lastname',
+                'suk_gdl_contact_email', 'suk_gdl_contact_department',
+                'suk_gdl_contact_car', 'suk_gdl_contact_message',
+                'suk_gdl_contact_news'
+            ];
+
+            dataFormContact = $('#form-contact').serializeFormJSON();
+
+            isFull = SUK.validFormFull(dataFormContact, validFieldItems);
+            $('#suk_contact_submit').attr('disabled', !isFull);
+
+            /*isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
+            $('#suk_contact_submit').attr('disabled', isEmpty);*/
+
+            console.log(dataFormContact);
+        },
+        refreshForm : function() {
+            SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
+            $('.seleccionar').chosen();
+            $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
+            $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
+            $('span.clean_car_key_chosen').val('Seleccionar');
+            $('span.clean_department_chosen').val('Seleccionar');
+            $('#contact-newsletter').attr('checked', true);
+            $('#suk_contact_submit').attr('disabled', true);
+            console.log('entra form-contact');
+        },
+        resetForm : function() {
+            SUK.resetForm('#form-contact');
+            $('.seleccionar').chosen();
+            $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
+            $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
+            $('span.clean_car_key_chosen').val('Seleccionar');
+            $('span.clean_department_chosen').val('Seleccionar');
+            $('#contact-newsletter').attr('checked', true);
+            $('#suk_contact_submit').attr('disabled', true);
+            console.log('refresca todo');
+        },
+        reset_pre_loader: function() {
+            SUK.setHTML('.form-loader', '');
+        },
+        finchNavigateReturn: function() {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/');
+        },
+        validate_fields_keyup: function() {
+            formContactMethods.fillingControl();
+        },
+        validate_fields_change: function() {
+            formContactMethods.fillingControl();
+        },
+        /*validate_fields_checked: function() {
+            formContactMethods.fillingControl();
+        },*/
+        sendContactForm : function(event) {
+            formContactMethods.fillingControl();
+            var $contact_message    = $('#contact_message'),
+                $contact_car_key    = $('#contact_car_key'),
+                $contact_department = $('#contact_department'),
+                $contact_email      = $('#contact_email'),
+                $contact_name       = $('#contact_name'),
+                $contact_lastname   = $('#contact_lastname'),
+                $contact_newsletter = $('#contact-newsletter');
+            val_department = SUK.getValue('#contact_department');
+            val_auto = SUK.getValue('#contact_car_key');
+            val_news = SUK.getValue('#contact-newsletter');
+            SUK.setValue('#contact_depto', val_department);
+            SUK.setValue('#contact_auto', val_auto);
+            SUK.setValue('#contact_image_modelo', 'suzuki_'+val_auto+'.png');
+            if (val_news === 'on') {
+                val_subscription = 'Activado';
+                SUK.setValue('#contact_subscription', val_subscription);
+            } else if (val_news === 'off') {
+                val_subscription = 'Desactivado';
+                SUK.setValue('#contact_subscription', val_subscription);
+            }
+
+            var form_errors = 0;
+            if( validateMethods.validate_input( $contact_message ) ){
+                form_errors++;
+                $contact_message.focusout();
+            }
+            if( validateMethods.validate_input( $contact_car_key ) ){
+                form_errors++;
+                $contact_car_key.focusout();
+            }
+            if( validateMethods.validate_input( $contact_department ) ){
+                form_errors++;
+                $contact_department.focusout();
+            }
+            if( validateMethods.validate_input( $contact_email ) ){
+                form_errors++;
+                $contact_email.focusout();
+            }
+            if( validateMethods.validate_input( $contact_name ) ){
+                form_errors++;
+                $contact_name.focusout();
+            }
+            if( validateMethods.validate_input( $contact_lastname ) ){
+                form_errors++;
+                $contact_lastname.focusout();
+            }
+            if( form_errors != 0 ){
+                var data = {
+                    car_key     : $contact_car_key.val(),
+                    department  : $contact_department.val(),
+                    email       : $contact_email.val(),
+                    message     : $contact_message.val(),
+                    name        : $contact_name.val(),
+                    lastname    : $contact_lastname.val(),
+                    newsletter  : $('#contact-newsletter:checked').length,
+                    source      : 'Contacto'
+                };
+                //console.log(data);
+                var con_news = $('#contact-newsletter:checked').length;
+                var departamento = $contact_department.val();
+                var precio_actual = showMeTheMoney($contact_car_key.val());
+                var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
+                var news_val    = con_news ? 600 : 0;
+                var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
+                //console.log(departamento, precio_actual, news_srt, news_val, car_val);
+
+
+                var contactPromise = formContactMethods.addDataFormContact();
+
+                contactPromise.success(function (data) {
+                    //ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
+                    setTimeout(function() {
+                        setTimeout(function () {
+                            $('.form-message-suklm-loader').fadeIn();
+                          }, 1800);
+                        //console.log('Espera');
+                        setTimeout(function () {
+                            setTimeout(function () {
+                              $('.form-message-suklm-loader').fadeOut();
+                            }, 1800);
+                            setTimeout(function () {
+                                //console.log("Correo Enviado...");
+                                setTimeout(function () {
+                                    $('#form-wrapper').fadeOut( 300 , function(){
+                                        var correo = $("#contact_email").val();
+                                        $('#email-from').text(correo);
+                                        setTimeout(function () {
+                                            $('.form-thanks').fadeIn();
+                                        }, 1800);
+                                    });
+                                    //console.log(data);
+                                    setTimeout(function () {
+                                        formContactMethods.reset_pre_loader();
+                                        formContactMethods.resetForm();
+                                        setTimeout(function () {
+                                            $('#form-wrapper').fadeIn( 300 , function(){
+                                                var correo = $("#contact_email").val();
+                                                $('#email-from').text(correo);
+                                                $('.form-thanks').fadeOut();
+                                            });
+                                            setTimeout(function () {
+                                                formContactMethods.finchNavigateReturn();
+                                            }, 2000);
+                                        }, 3400);
+                                    }, 1800);
+                                }, 5900);
+                            }, 3400);
+                        }, 2000);
+                    }, 500);
+                });
+                contactPromise.error(function (data) {
+                    setTimeout(function () {
+                        $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
+                        //console.log('Espera');
+                        setTimeout(function () {
+                            formContactMethods.reset_pre_loader();
+                            $('#pre-loader').append("<span class='msg_by_model label label-warning animation-fadeIn'><i class='fa fa-info-circle fa-lg fa-fw msg-fa-ico'></i> Se requiere llenar los campos</span>");
+                            setTimeout(function () {
+                                //console.log("Correo no Enviado...");
+                                formContactMethods.reset_pre_loader();
+                                $('#pre-loader').append("<span class='msg_by_model label label-danger animation-fadeIn'><i class='fa fa-times fa-lg fa-fw msg-fa-ico'></i> Correo no Enviado...</span>");
+                                //console.log(data);
+                                setTimeout(function () {
+                                    formContactMethods.reset_pre_loader();
+                                    formContactMethods.resetForm();
+                                }, 1600);
+                            }, 900);
+                        }, 2000);
+                    }, 500);
+                });
+
+            }
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] INPUTS RADIO, CHECKBOX
+\* ------------------------------------------------------ */
+    var changeInputsMethods = {
+        clickChangeCheckbox : function(event) {
+            if ($(".label-checkbox").length) {
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('checkbox-checked');
+                });
+            }
+            if ($(this).is(':checked')) {
+                $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
+                $(this).parent('.label-checkbox').addClass('checkbox-checked');
+                $(this).val('on');
+                $('#contact_subscription').val('Activado');
+            } else {
+                $(this).parent('label').find(':checkbox').attr('checked', false);
+                $(this).parent('label').removeClass('checkbox-checked');
+                $(this).val('off');
+                $('#contact_subscription').val('Desactivado');
+            }
+        },
+        clcikChangeRadio : function(event) {
+            if ($(".label-radio").length) {
+                $('.label-radio input:checked').each(function(){
+                    //$(this).parent('label').addClass('radio-checked');
+                });
+            }
+            if ($(this).hasClass('radio-checked')) {
+                $(this).find(':radio').attr('checked', true);
+                $(this).addClass("radio-checked");
+            } else {
+                $(".label-radio").removeClass("radio-checked");
+                $(".label-radio").find(':radio').attr('checked', false);
+                $(this).find(':radio').attr('checked', true);
+                $(this).addClass("radio-checked");
+            }
         }
     }
 /* ------------------------------------------------------ *\
@@ -1003,397 +1398,3 @@
             Finch.navigate('/');
         }
     }
-/* ------------------------------------------------------ *\
- [Methods] inputVal
-\* ------------------------------------------------------ */
-    var inputValMetdods = {
-        isIntegerKP: function (event) {
-            return /\d/.test(String.fromCharCode(event.keyCode));
-        }
-    }
-/* ------------------------------------------------------ *\
- [Methods] INPUTS RADIO, CHECKBOX
-\* ------------------------------------------------------ */
-    var changeInputsMethods = {
-        clickChangeCheckbox : function(event) {
-            if ($(".label-checkbox").length) {
-                $('.label-checkbox input:checked').each(function(){
-                    $(this).parent('label').addClass('checkbox-checked');
-                });
-            }
-            if ($(this).is(':checked')) {
-                $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
-                $(this).parent('.label-checkbox').addClass('checkbox-checked');
-                $(this).val('on');
-                $('#contact_subscription').val('Activado');
-            } else {
-                $(this).parent('label').find(':checkbox').attr('checked', false);
-                $(this).parent('label').removeClass('checkbox-checked');
-                $(this).val('off');
-                $('#contact_subscription').val('Desactivado');
-            }
-        },
-        clcikChangeRadio : function(event) {
-            if ($(".label-radio").length) {
-                $('.label-radio input:checked').each(function(){
-                    //$(this).parent('label').addClass('radio-checked');
-                });
-            }
-            if ($(this).hasClass('radio-checked')) {
-                $(this).find(':radio').attr('checked', true);
-                $(this).addClass("radio-checked");
-            } else {
-                $(".label-radio").removeClass("radio-checked");
-                $(".label-radio").find(':radio').attr('checked', false);
-                $(this).find(':radio').attr('checked', true);
-                $(this).addClass("radio-checked");
-            }
-        }
-    }
-/* ------------------------------------------------------ *\
- [Methods] VALIDATE
-\* ------------------------------------------------------ */
-var validations_regexp = {
-    address : new RegExp( /^[a-zá-úüñ,#0-9. -]{2,}$/i ),
-    date    : new RegExp( /^(\d{4})-(\d{1,2})-(\d{1,2})$/ ),
-    email   : new RegExp( /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ),
-    name    : new RegExp( /^[a-zá-úüñ. ]{2,}$/i ),
-    phone   : new RegExp( /^[0-9\s\-]{7,13}$/ )
-}
-var validation_messages = {
-    date            : 'Debe ser aaaa-mm-dd',
-    date_tomorrow   : 'Sólo a partir de mañana',
-    email           : 'Verifica tu correo',
-    general         : 'Campo no válido',
-    not_config      : 'Tipo desconocido',
-    not_null        : 'No puede ser nulo',
-    phone           : 'Verifica que tu número sea de 10 dígitos',
-    required        : 'Campo requerido',
-    empty           : 'Campo vacío'
-}
-var validateMethods = {
-    validate : function(value, rules, required, custom_message) {
-        var r = { valid : false, message : '' },
-        null_value = value == undefined || value === '' ,
-        ii, rule;
-        required = required === true ? true: false;
-        if( required ){
-            if( null_value ){
-                r.message = validation_messages.required;
-            }
-        }else{
-            if( null_value ){
-                r.valid = true;
-            }
-        }
-        if( !r.valid && r.message === '' ){
-            ii = rules.length;
-            while( ii-- ){
-                rule = rules[ii];
-                switch( rule ){
-                    case 'email':
-                        if( !validations_regexp.email.test( value ) ){
-                            r.message = validation_messages.email;
-                        }
-                        break;
-                    case 'name':
-                        if( !validations_regexp.name.exec( value ) ){
-                            r.message = validation_messages.general;
-                        }
-                        break;
-                    case 'address':
-                        if( !validations_regexp.address.exec( value ) ){
-                            r.message = validation_messages.general;
-                        }
-                        break;
-                    case 'car_key':
-                        if(  !is_model_name( value ) ){
-                            r.message = validation_messages.general;
-                        }
-                        break;
-                    case 'date':
-                        if( !validations_regexp.date.exec( value ) ){
-                            r.message = validation_messages.date;
-                        }
-                        break;
-                    case 'phone':
-                        if( !validations_regexp.phone.exec( value ) ){
-                            r.message = validation_messages.phone;
-                        }
-                        break;
-                    default:
-                        r.message = validations_regexp.not_config;
-                        break;
-                }
-            }
-            if( r.message === '' ){
-                r.valid = true;
-            }
-        }
-        if( custom_message && !r.valid ){
-            r.message = custom_message;
-        }
-        return r;
-    },
-    //Display Input errors
-    error_bubble : function( $label, show, message ){
-        var $p = $label.parent().children('p.invalid-message');
-        if( show ){
-            if( message ){
-                $p.html( message + '<span>&nbsp;</span>' ).stop().hide().fadeIn();
-            }else{
-                $p.stop().hide().fadeIn();
-            }
-        }else{
-            $p.hide();
-        }
-    },
-    validate_input : function(event) {
-        var target = $(event.target);
-        //console.log(target);
-        if( target.is('input') || target.is('textarea') ){
-            var valid_data = target.data('validation-data');
-            var val_data    = valid_data.split('|'),
-                required    = val_data.indexOf('required');
-            if( required >= 0 ){
-                val_data.splice(required, 1);
-            }
-            var value = target.val(),
-                validation = validateMethods.validate( value, val_data, ( required >= 0 )  );
-            validateMethods.error_bubble( target, !validation.valid, validation.message );
-            return validation.valid;
-        }else{
-            var is_valid = !( target.val() === null );
-            validateMethods.error_bubble( target, !is_valid, validation_messages.required );
-            return is_valid;
-        }
-    }
-}
-var formTestDriveMethods = {
-    init_datepicker: function() {
-        $('#step-2-date').datepicker({
-            minDate: '+1d',
-            //maxDate: '+1m',
-            minLength: 0,
-            delay: 0,
-            dateFormat: 'yy-mm-dd'
-        });
-    },
-    addDataFormTestDrive: function() {
-        var dataFormTestDrive;
-        dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
-        return SUK.postalService(urlsApi.sendTestDrive, dataFormTestDrive);
-    },
-    fillingControl: function() {
-        var validFieldItems, dataFormTestDrive, isFull, isNoEmpty;
-        validFieldItems = [];
-        dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
-        isFull = SUK.validFormFull(dataFormTestDrive, validFieldItems);
-        //$('#suk_test_drive_submit').attr('disabled', !siFull);
-        //console.log($('#form-test-drive')serializeFormJSON());
-    },
-    refreshForm: function() {},
-    resetForm: function() {},
-    reset_pre_loader: function() {},
-    finchNavigateReturn: function() {},
-    sendTestDriveForm: function(event) {}
-}
-var formContactMethods = {
-    addDataFormContact: function() {
-        var dataFormContact;
-        dataFormContact = $('#form-contact').serializeFormJSON();
-        return SUK.postalService(urlsApi.sendContact, dataFormContact);
-    },
-    fillingControl: function() {
-        var validFieldItems, dataFormContact, isFull, isNoEmpty;
-        validFieldItems = [
-            'suk_gdl_contact_name', 'suk_gdl_contact_lastname',
-            'suk_gdl_contact_email', 'suk_gdl_contact_department',
-            'suk_gdl_contact_car', 'suk_gdl_contact_message',
-            'suk_gdl_contact_news'
-        ];
-
-        dataFormContact = $('#form-contact').serializeFormJSON();
-        
-        isFull = SUK.validFormFull(dataFormContact, validFieldItems);
-        $('#suk_contact_submit').attr('disabled', !isFull);
-
-        /*isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
-        $('#suk_contact_submit').attr('disabled', isEmpty);*/
-
-        console.log(dataFormContact);
-    },
-    refreshForm : function() {
-        SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
-        $('.seleccionar').chosen();
-        $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
-        $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
-        $('span.clean_car_key_chosen').val('Seleccionar');
-        $('span.clean_department_chosen').val('Seleccionar');
-        $('#contact-newsletter').attr('checked', true);
-        $('#suk_contact_submit').attr('disabled', true);
-        console.log('entra form-contact');
-    },
-    resetForm : function() {
-        SUK.resetForm('#form-contact');
-        $('.seleccionar').chosen();
-        $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
-        $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
-        $('span.clean_car_key_chosen').val('Seleccionar');
-        $('span.clean_department_chosen').val('Seleccionar');
-        $('#contact-newsletter').attr('checked', true);
-        $('#suk_contact_submit').attr('disabled', true);
-        console.log('refresca todo');
-    },
-    reset_pre_loader: function() {
-        SUK.setHTML('.form-loader', '');
-    },
-    finchNavigateReturn: function() {
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/');
-    },
-    validate_fields_keyup: function() {
-        formContactMethods.fillingControl();
-    },
-    validate_fields_change: function() {
-        formContactMethods.fillingControl();
-    },
-    /*validate_fields_checked: function() {
-        formContactMethods.fillingControl();
-    },*/
-    sendContactForm : function(event) {
-        formContactMethods.fillingControl();
-        var $contact_message    = $('#contact_message'),
-            $contact_car_key    = $('#contact_car_key'),
-            $contact_department = $('#contact_department'),
-            $contact_email      = $('#contact_email'),
-            $contact_name       = $('#contact_name'),
-            $contact_lastname   = $('#contact_lastname'),
-            $contact_newsletter = $('#contact-newsletter');
-        val_department = SUK.getValue('#contact_department');
-        val_auto = SUK.getValue('#contact_car_key');
-        val_news = SUK.getValue('#contact-newsletter');
-        SUK.setValue('#contact_depto', val_department);
-        SUK.setValue('#contact_auto', val_auto);
-        SUK.setValue('#contact_image_modelo', 'suzuki_'+val_auto+'.png');
-        if (val_news === 'on') {
-            val_subscription = 'Activado';
-            SUK.setValue('#contact_subscription', val_subscription);
-        } else if (val_news === 'off') {
-            val_subscription = 'Desactivado';
-            SUK.setValue('#contact_subscription', val_subscription);
-        }
-
-        var form_errors = 0;
-        if( validateMethods.validate_input( $contact_message ) ){
-            form_errors++;
-            $contact_message.focusout();
-        }
-        if( validateMethods.validate_input( $contact_car_key ) ){
-            form_errors++;
-            $contact_car_key.focusout();
-        }
-        if( validateMethods.validate_input( $contact_department ) ){
-            form_errors++;
-            $contact_department.focusout();
-        }
-        if( validateMethods.validate_input( $contact_email ) ){
-            form_errors++;
-            $contact_email.focusout();
-        }
-        if( validateMethods.validate_input( $contact_name ) ){
-            form_errors++;
-            $contact_name.focusout();
-        }
-        if( validateMethods.validate_input( $contact_lastname ) ){
-            form_errors++;
-            $contact_lastname.focusout();
-        }
-        if( form_errors != 0 ){
-            var data = {
-                car_key     : $contact_car_key.val(),
-                department  : $contact_department.val(),
-                email       : $contact_email.val(),
-                message     : $contact_message.val(),
-                name        : $contact_name.val(),
-                lastname    : $contact_lastname.val(),
-                newsletter  : $('#contact-newsletter:checked').length,
-                source      : 'Contacto'
-            };
-            //console.log(data);
-            var con_news = $('#contact-newsletter:checked').length;
-            var departamento = $contact_department.val();
-            var precio_actual = showMeTheMoney($contact_car_key.val());
-            var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
-            var news_val    = con_news ? 600 : 0;
-            var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
-            //console.log(departamento, precio_actual, news_srt, news_val, car_val);
-
-
-            var contactPromise = formContactMethods.addDataFormContact();
-
-            contactPromise.success(function (data) {
-                //ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
-                setTimeout(function() {
-                    setTimeout(function () {
-                        $('.form-message-suklm-loader').fadeIn();
-                      }, 1800);
-                    //console.log('Espera');
-                    setTimeout(function () {
-                        setTimeout(function () {
-                          $('.form-message-suklm-loader').fadeOut();
-                        }, 1800);
-                        setTimeout(function () {
-                            //console.log("Correo Enviado...");
-                            setTimeout(function () {
-                                $('#form-wrapper').fadeOut( 300 , function(){
-                                    var correo = $("#contact_email").val();
-                                    $('#email-from').text(correo);
-                                    setTimeout(function () {
-                                        $('.form-thanks').fadeIn();
-                                    }, 1800);
-                                });
-                                //console.log(data);
-                                setTimeout(function () {
-                                    formContactMethods.reset_pre_loader();
-                                    formContactMethods.resetForm();
-                                    setTimeout(function () {
-                                        $('#form-wrapper').fadeIn( 300 , function(){
-                                            var correo = $("#contact_email").val();
-                                            $('#email-from').text(correo);
-                                            $('.form-thanks').fadeOut();
-                                        });
-                                        setTimeout(function () {
-                                            formContactMethods.finchNavigateReturn();
-                                        }, 2000);
-                                    }, 3400);
-                                }, 1800);
-                            }, 5900);
-                        }, 3400);
-                    }, 2000);
-                }, 500);
-            });
-            contactPromise.error(function (data) {
-                setTimeout(function () {
-                    $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
-                    //console.log('Espera');
-                    setTimeout(function () {
-                        formContactMethods.reset_pre_loader();
-                        $('#pre-loader').append("<span class='msg_by_model label label-warning animation-fadeIn'><i class='fa fa-info-circle fa-lg fa-fw msg-fa-ico'></i> Se requiere llenar los campos</span>");
-                        setTimeout(function () {
-                            //console.log("Correo no Enviado...");
-                            formContactMethods.reset_pre_loader();
-                            $('#pre-loader').append("<span class='msg_by_model label label-danger animation-fadeIn'><i class='fa fa-times fa-lg fa-fw msg-fa-ico'></i> Correo no Enviado...</span>");
-                            //console.log(data);
-                            setTimeout(function () {
-                                formContactMethods.reset_pre_loader();
-                                formContactMethods.resetForm();
-                            }, 1600);
-                        }, 900);
-                    }, 2000);
-                }, 500);
-            });
-
-        }
-    }
-}
