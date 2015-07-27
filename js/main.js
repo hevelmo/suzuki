@@ -96,8 +96,8 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('focusout', '#contact_name', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_lastname', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_email', validateMethods.validate_input);
-    $(domEl.div_recurrent).on('focusout', '#contact_department', validateMethods.validate_input);
-    $(domEl.div_recurrent).on('focusout', '#contact_car_key', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('change', '#contact_department', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('change', '#contact_car_key', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_message', validateMethods.validate_input);
     // SEND FORM CONTACT
     $(domEl.div_recurrent).on('keyup', '.validate_input', formContactMethods.validate_fields_keyup);
@@ -125,7 +125,7 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#go-model-grand-vitara', panelMenuModelsByModel.clickGoGrandVitara);
     $(domEl.div_recurrent_body).on('click', '#go-model-s-cross', panelMenuModelsByModel.clickGoSCross);
     $(domEl.div_recurrent_body).on('click', '#go-model-ciaz', panelMenuModelsByModel.clickGoCiaz);
-    
+
     // CLICK FINNANCING
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
     // CLICK OWNERS

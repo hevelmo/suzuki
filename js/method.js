@@ -23,6 +23,7 @@
     var td_id_flag ='<div id="model-section-arrow"><span>&nbsp;</span></div><div id="model-test-drive-flag"><a href="#prueba-de-manejo" id="model-test-drive-flag-link"><span>Prueba de Manejo</span></a></div>';
     var patch_bar ='<div class="menu-patch" id="patch">&nbsp;</div>';
     var current_car;
+    var $display_tables = $('.display-tables'), display_vct_class = 'prices';
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
  function nameFunction (arg) {
@@ -198,6 +199,21 @@
             yy =  $(this).offset().top - 200 ;
             yy = ( yy > 0 )? yy : 0;
             sections_positions[ ii ] = parseInt( yy );
+        });
+    }
+/* ------------------------------------------------------ *\
+ [functions] display_versions_comparative
+\* ------------------------------------------------------ */
+    function display_versions_comparative(){
+        var $div;
+        $display_tables.each(function(){
+            $div = $(this);
+            if( display_vct_class == $div.data('display-table') ){
+                $div.fadeOut().fadeIn(1000);
+                modifyHeight("#comparative-space-wrapper .suzuki-table .body .row");
+            }else{
+                $div.hide();
+            }
         });
     }
 /* ------------------------------------------------------ *\
@@ -394,6 +410,7 @@
 
             link_swift_Attributes = {'id': 'content-add-styles-swift', 'rel': 'stylesheet', 'class': 'link-swift', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_swift_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
@@ -415,6 +432,7 @@
 
             link_sx4_crossover_Attributes = {'id': 'content-add-styles-sx4-crossover', 'rel': 'stylesheet', 'class': 'link-sx4-crossover', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_sx4_crossover_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
@@ -436,6 +454,7 @@
 
             link_sx4_sedan_Attributes = {'id': 'content-add-styles-sx4-sedan', 'rel': 'stylesheet', 'class': 'link-sx4-sedan', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_sx4_sedan_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
@@ -457,6 +476,7 @@
 
             link_kizashi_Attributes = {'id': 'content-add-styles-kizashi', 'rel': 'stylesheet', 'class': 'link-kizashi', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_kizashi_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
@@ -478,6 +498,7 @@
 
             link_grand_vitara_Attributes = {'id': 'content-add-styles-grand-vitara', 'rel': 'stylesheet', 'class': 'link-grand-vitara', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_grand_vitara_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
@@ -499,6 +520,7 @@
 
             link_s_cross_Attributes = {'id': 'content-add-styles-s-cross', 'rel': 'stylesheet', 'class': 'link-s-cross', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_s_cross_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
@@ -520,6 +542,7 @@
 
             link_ciaz_Attributes = {'id': 'content-add-styles-ciaz', 'rel': 'stylesheet', 'class': 'link-ciaz', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_ciaz_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         }
@@ -870,7 +893,7 @@
         car_next_step : function() {
             if( $('.car-next-step').length > 0 ){
                 var $arrow1 = $('.car-next-step').children('a'),
-                    $arrow2 =$arrow1.clone();
+                    $arrow2 = $arrow1.clone();
                 $('.car-next-step').append( $arrow2 ).delegate('a','mousedown mouseup click', function( e ){
                     e.preventDefault();
                     $.scroll_to('caracteristicas');
@@ -891,6 +914,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_swift_sport_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'swift-sport'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_sport_Attributes);
                 break;
                 case 'swift':
                     $('#change-model').addClass('swift');
@@ -902,6 +931,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_swift_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'swift'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_Attributes);
                 break;
                 case 'sx4-crossover':
                     $('#change-model').addClass('sx4-crossover');
@@ -911,6 +946,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_sx4_crossover_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'sx4-crossover'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_crossover_Attributes);
                 break;
                 case 'sx4-sedan':
                     $('#change-model').addClass('sx4-sedan');
@@ -920,6 +961,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_sx4_sedan_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'sx4-sedan'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_sedan_Attributes);
                 break;
                 case 'kizashi':
                     $('#change-model').addClass('kizashi');
@@ -931,6 +978,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_kizashi_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'kizashi'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_kizashi_Attributes);
                 break;
                 case 'grand-vitara':
                     $('#change-model').addClass('grand-vitara');
@@ -942,6 +995,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_grand_vitara_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'grand-vitara'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_grand_vitara_Attributes);
                 break;
                 case 's-cross':
                     $('#change-model').addClass('s-cross');
@@ -953,6 +1012,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_s_cross_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'s-cross'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_s_cross_Attributes);
                 break;
                 case 'ciaz':
                     $('#change-model').addClass('ciaz');
@@ -964,6 +1029,12 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+
+                    input_hidden_test_drive_ciaz_Attributes = [
+                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'ciaz'}, '', 0],
+                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                    ];
+                    SUK.appendMulti('#test_drive', input_hidden_test_drive_ciaz_Attributes);
                 break;
                 default:
                 break;
@@ -1181,34 +1252,34 @@
 
             dataFormContact = $('#form-contact').serializeFormJSON();
 
-            isFull = SUK.validFormFull(dataFormContact, validFieldItems);
-            $('#suk_contact_submit').attr('disabled', !isFull);
+            /*isFull = SUK.validFormFull(dataFormContact, validFieldItems);
+            $('#suk_contact_submit').attr('disabled', !isFull);*/
 
             /*isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
             $('#suk_contact_submit').attr('disabled', isEmpty);*/
 
-            console.log(dataFormContact);
+            console.log($('#form-contact').serializeFormJSON());
         },
         refreshForm : function() {
             SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
             $('.seleccionar').chosen();
-            $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
+            /*$('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
             $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
             $('span.clean_car_key_chosen').val('Seleccionar');
             $('span.clean_department_chosen').val('Seleccionar');
             $('#contact-newsletter').attr('checked', true);
-            $('#suk_contact_submit').attr('disabled', true);
+            $('#suk_contact_submit').attr('disabled', true);*/
             console.log('entra form-contact');
         },
         resetForm : function() {
             SUK.resetForm('#form-contact');
             $('.seleccionar').chosen();
-            $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
+            /*$('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
             $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
             $('span.clean_car_key_chosen').val('Seleccionar');
             $('span.clean_department_chosen').val('Seleccionar');
             $('#contact-newsletter').attr('checked', true);
-            $('#suk_contact_submit').attr('disabled', true);
+            $('#suk_contact_submit').attr('disabled', true);*/
             console.log('refresca todo');
         },
         reset_pre_loader: function() {
@@ -1225,7 +1296,7 @@
             formContactMethods.fillingControl();
         },
         /*validate_fields_checked: function() {
-            formContactMethods.fillingControl();
+            //formContactMethods.fillingControl();
         },*/
         sendContactForm : function(event) {
             formContactMethods.fillingControl();
@@ -1245,10 +1316,15 @@
             if (val_news === 'on') {
                 val_subscription = 'Activado';
                 SUK.setValue('#contact_subscription', val_subscription);
+                console.log(val_news);
             } else if (val_news === 'off') {
                 val_subscription = 'Desactivado';
                 SUK.setValue('#contact_subscription', val_subscription);
+                console.log(val_news);
             }
+
+            $contact_department.chosen();
+            $contact_car_key.chosen();
 
             var form_errors = 0;
             if( validateMethods.validate_input( $contact_message ) ){
@@ -1257,11 +1333,11 @@
             }
             if( validateMethods.validate_input( $contact_car_key ) ){
                 form_errors++;
-                $contact_car_key.focusout();
+                $contact_car_key.change();
             }
             if( validateMethods.validate_input( $contact_department ) ){
                 form_errors++;
-                $contact_department.focusout();
+                $contact_department.change();
             }
             if( validateMethods.validate_input( $contact_email ) ){
                 form_errors++;
@@ -1284,21 +1360,21 @@
                     name        : $contact_name.val(),
                     lastname    : $contact_lastname.val(),
                     newsletter  : $('#contact-newsletter:checked').length,
+                    //newsletter  : $contact_newsletter.is(':checked').length,
                     source      : 'Contacto'
                 };
-                //console.log(data);
-                var con_news = $('#contact-newsletter:checked').length;
-                var departamento = $contact_department.val();
-                var precio_actual = showMeTheMoney($contact_car_key.val());
-                var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
-                var news_val    = con_news ? 600 : 0;
-                var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
-                //console.log(departamento, precio_actual, news_srt, news_val, car_val);
-
-
                 var contactPromise = formContactMethods.addDataFormContact();
 
                 contactPromise.success(function (data) {
+                    console.log(data);
+                    var con_news = $('#contact-newsletter:checked').length;
+                    //var con_news = $contact_newsletter.is(':checked').length;
+                    var departamento = $contact_department.val();
+                    var precio_actual = showMeTheMoney($contact_car_key.val());
+                    var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
+                    var news_val    = con_news ? 600 : 0;
+                    var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
+                    console.log(departamento, precio_actual, news_srt, news_val, car_val);
                     //ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
                     setTimeout(function() {
                         setTimeout(function () {

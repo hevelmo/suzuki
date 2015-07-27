@@ -31,9 +31,12 @@
                                 <div id="step-2-form">
                                     <form id="test_drive">
                                         <p id="step-2-p-date">
-                                            <span style="color: red; font-size: 12px;">Los campos marcados con <span class="fa fa-asterisk"></span> son requeridos</span>
-                                            <input type="hidden" name="step-2-concesionaria" id="test_drive_concesionaria" value="López Mateos Guadalajara">
-                                            <input type="hidden" name="step-2-modelo" id="test_drive_modelo" value="ciaz">
+                                            <span style="color: red; font-size: 12px;">
+                                                Los campos marcados con
+                                                <span class="fa fa-asterisk"></span>
+                                                son requeridos
+                                            </span>
+
                                             <p id="step-2-p-contact">
                                                 Para mejorar tu experiencia nos gustaría conocerte.<br>Proporciónanos los siguientes datos para poder comunicarnos contigo.
                                             </p>
@@ -41,38 +44,67 @@
 
                                         <div id="mail-cel-step-2">
                                             <fieldset>
-                                                <label for="step-2-date">
-                                                    <span style="color: red; font-size: 12px;">
-                                                        <span class="fa fa-asterisk"></span>
-                                                    </span>
-                                                    Selecciona fecha
-                                                </label>
-                                                <input type="text" value="" name="step-2-date" id="step-2-date" placeholder="YYYY-MM-DD" data-validation-data="required|date">
+                                                <label for="step-2-date"><span style="color: red; font-size: 12px;"><span class="fa fa-asterisk"></span></span> Selecciona fecha</label>
+                                                <input
+                                                    type="text"
+                                                    value=""
+                                                    name="step-2-date"
+                                                    id="step-2-date"
+                                                    placeholder="YYYY-MM-DD"
+                                                    data-validation-data="required|date">
                                                 <p class="invalid-message">Este campo es obligatorio<span>&nbsp;</span></p>
                                             </fieldset>
                                             <fieldset>
                                                 <label for="step-2-name"><span style="color: red; font-size: 12px;"><span class="fa fa-asterisk"></span></span> Nombre</label>
-                                                <input type="text" value="" name="step-2-name" id="step-2-name" placeholder="Nombre" data-validation-data="required|name">
+                                                <input
+                                                    type="text"
+                                                    value=""
+                                                    name="step-2-name"
+                                                    id="step-2-name"
+                                                    placeholder="Nombre"
+                                                    data-validation-data="required|name">
                                                 <p class="invalid-message">Este campo es obligatorio<span>&nbsp;</span></p>
                                             </fieldset>
                                             <fieldset>
                                                 <label for="step-2-lastname"><span style="color: red; font-size: 12px;"><span class="fa fa-asterisk"></span></span> Apellido</label>
-                                                <input type="text" value="" name="step-2-lastname" id="step-2-lastname" placeholder="Apellidos Paterno y Materno" data-validation-data="required|name">
+                                                <input
+                                                    type="text"
+                                                    value=""
+                                                    name="step-2-lastname"
+                                                    id="step-2-lastname"
+                                                    placeholder="Apellidos Paterno y Materno"
+                                                    data-validation-data="required|name">
                                                 <p class="invalid-message">Este campo es obligatorio<span>&nbsp;</span></p>
                                             </fieldset>
                                             <fieldset>
                                                 <label for="step-2-email"><span style="color: red; font-size: 12px;"><span class="fa fa-asterisk"></span></span> Correo electrónico</label>
-                                                <input type="email" name="step-2-email" id="step-2-email" placeholder="Correo electrónico" data-validation-data="required|email" />
+                                                <input
+                                                    type="email"
+                                                    name="step-2-email"
+                                                    id="step-2-email"
+                                                    placeholder="Correo electrónico"
+                                                    data-validation-data="required|email" />
                                                 <p class="invalid-message">Este campo es obligatorio<span>&nbsp;</span></p>
                                             </fieldset>
                                             <fieldset>
                                                 <label for="step-2-tel"><span style="color: red; font-size: 12px;"><span class="fa fa-asterisk"></span></span> Número de celular</label>
-                                                <input type="tel" value="" name="step-2-tel" id="step-2-tel" maxlength="13" placeholder="Número de celular" data-validation-data="required|phone"/>
+                                                <input
+                                                    type="tel"
+                                                    value=""
+                                                    name="step-2-tel"
+                                                    id="step-2-tel"
+                                                    maxlength="13"
+                                                    placeholder="Número de celular"
+                                                    data-validation-data="required|phone"/>
                                                 <p class="invalid-message">Este campo es obligatorio<span>&nbsp;</span></p>
                                             </fieldset>
                                             <fieldset class="fieldset-radio-checkbox" style="clear: both;">
                                                 <label for="chk-newsletter" class="label-checkbox">
-                                                    <input type="checkbox" id="chk-newsletter" name="chk-newsletter" value=""> Deseo recibir noticias y promociones.
+                                                    <input
+                                                        type="checkbox"
+                                                        id="chk-newsletter"
+                                                        name="chk-newsletter"
+                                                        value=""> Deseo recibir noticias y promociones.
                                                 </label>
                                             </fieldset>
                                             <input type="submit" class="enviar button blue" id="" value="Agendar prueba de manejo">
