@@ -51,7 +51,9 @@ domEl = {
 	"suk_animate_header_spacer":"#header-spacer",
 	"suk_catalog_cars_wrapper":".catalog_cars_wrapper",
 	"suk_resize_header_panel":"#header-panel",
-	"suk_switch_catalog":"a.switch-catalog"
+	"suk_switch_catalog":"a.switch-catalog",
+	"validate_change":".validate_change",
+	"validate_input":".validate_input"
 };
 tempsNames = {
 	"model_ciaz":"tmp_section_content_model_ciaz",
@@ -88,9 +90,8 @@ tempsNames = {
 	"tmp_test_drive_model":"tmp_test_drive_model"
 };
 urlsApi = {
-	"addCarMainModel":"api/v1/add/car_main_model/",
 	"addConcesionaries":"api/v1/add/concesionaries",
 	"addGamaModelos":"api/v1/add/gama_modelos",
 	"addModelos":"api/v1/add/models",
-	"sendContact":"api/v1post/contacto"
+	"sendContact":"api/v1/post/contacto"
 };

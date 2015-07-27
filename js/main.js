@@ -100,7 +100,12 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('focusout', '#contact_car_key', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_message', validateMethods.validate_input);
     // SEND FORM CONTACT
+    $(domEl.div_recurrent).on('keyup', '.validate_input', formContactMethods.validate_fields_keyup);
+    $(domEl.div_recurrent).on('change', '.validate_select', formContactMethods.validate_fields_change);
+    //$(domEl.div_recurrent).on('change', '.validate_checked', formContactMethods.validate_fields_checked);
     $(domEl.div_recurrent).on('click', '#suk_contact_submit', formContactMethods.sendContactForm);
+
+
 
     // CLICK PRIVACY NOTICE
     $(domEl.div_recurrent_body).on('click', domEl.button_go_privacy_notice, actionMenuBarsMethods.clickGoPrivacy);
@@ -112,8 +117,6 @@ $(document).ready(function() {
     // CLICK MODEL
     $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
     // CLICK BY MODEL
-    $(domEl.div_recurrent_body).on('click', domEl.model_gama_class, panelMenuModelsByModel.clickGoCarMain);
-    /*
     $(domEl.div_recurrent_body).on('click', '#go-model-swift-sport', panelMenuModelsByModel.clickGoSwiftSport);
     $(domEl.div_recurrent_body).on('click', '#go-model-swift', panelMenuModelsByModel.clickGoSwift);
     $(domEl.div_recurrent_body).on('click', '#go-model-sx4-crossover', panelMenuModelsByModel.clickGoSx4Crossover);
@@ -122,7 +125,7 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#go-model-grand-vitara', panelMenuModelsByModel.clickGoGrandVitara);
     $(domEl.div_recurrent_body).on('click', '#go-model-s-cross', panelMenuModelsByModel.clickGoSCross);
     $(domEl.div_recurrent_body).on('click', '#go-model-ciaz', panelMenuModelsByModel.clickGoCiaz);
-    */
+    
     // CLICK FINNANCING
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
     // CLICK OWNERS

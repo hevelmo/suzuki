@@ -9,14 +9,28 @@
                 <div class="contact_element a">
                     <fieldset>
                         <label for="contact_name"><span style="color: red;" class="fa fa-asterisk"></span> Nombre</label>
-                        <input type="text" name="suk_gdl_contact_name" value="" class="icon buddy" id="contact_name" placeholder="Nombre" data-validation-data="required|name">
+                        <input 
+                            type="text"
+                            name="suk_gdl_contact_name" 
+                            value="" 
+                            class="icon buddy validate_input" 
+                            id="contact_name" 
+                            placeholder="Nombre" 
+                            data-validation-data="required|name">
                         <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
                 <div class="contact_element b">
                     <fieldset>
                         <label for="contact_lastname"><span style="color: red;" class="fa fa-asterisk"></span> Apellido</label>
-                        <input name="suk_gdl_contact_lastname" id="contact_lastname" type="text" class="icon buddy" value="" data-validation-data="required|name" placeholder="Apellidos Paterno y Materno">
+                        <input 
+                            name="suk_gdl_contact_lastname" 
+                            id="contact_lastname" 
+                            type="text" 
+                            class="icon buddy validate_input" 
+                            value="" 
+                            placeholder="Apellidos Paterno y Materno"
+                            data-validation-data="required|name">
                         <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
@@ -26,7 +40,14 @@
                 <div class="contact_element a">
                     <fieldset>
                         <label for="contact_email"><span style="color: red;" class="fa fa-asterisk"></span> Correo electrónico</label>
-                        <input name="suk_gdl_contact_email"  id="contact_email" type="email" class="icon email" value="" data-validation-data="required|email" placeholder="Correo electrónico">
+                        <input 
+                            name="suk_gdl_contact_email" 
+                            id="contact_email" 
+                            type="email" 
+                            class="icon email validate_input" 
+                            value="" 
+                            placeholder="Correo electrónico"
+                            data-validation-data="required|email">
                         <p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
                 </div>
@@ -35,7 +56,7 @@
                 <div class="contact_element b">
                     <fieldset>
                         <label for="contact_department"><span style="color: red;" class="fa fa-asterisk"></span> Departamento</label>
-                        <select name="suk_gdl_contact_department" id="contact_department" type="dropdown" class="seleccionar" style="width: 256px;" data-validation-data="required">
+                        <select name="suk_gdl_contact_department" id="contact_department" type="dropdown" class="seleccionar validate_select" style="width: 256px;" data-validation-data="required">
                             <option label="Selecccionar" selected="selected" disabled="disabled" value="">Selecciona Departamento</option>
                             <option value="ventas">Ventas</option>
                             <option value="servicio">Servicio</option>
@@ -49,7 +70,7 @@
                 <div class="contact_element a">
                     <fieldset>
                         <label for="contact_car_key"><span style="color: red;" class="fa fa-asterisk"></span> Auto</label>
-                        <select name="suk_gdl_contact_car" id="contact_car_key" type="dropdown" class="seleccionar" style="width: 256px;" data-validation-data="required">
+                        <select name="suk_gdl_contact_car" id="contact_car_key" type="dropdown" class="seleccionar validate_select" style="width: 256px;" data-validation-data="required">
                             <option label="Selecccionar" selected="selected" disabled="disabled" value="">Selecciona Modelo</option>
                             <option value="swift-sport">Swift Sport</option>
                             <option value="swift">Swift</option>
@@ -68,13 +89,23 @@
                 <div class="contact_element ab">
                     <fieldset>
                         <label for="contact_message"><span style="color: red;" class="fa fa-asterisk"></span> Mensaje:</label>
-                        <textarea name="suk_gdl_contact_message" class="escribir2" id="contact_message" data-validation-data="required|address"></textarea>
+                        <textarea 
+                            name="suk_gdl_contact_message" 
+                            class="escribir2 validate_input" 
+                            id="contact_message" 
+                            data-validation-data="required|address"></textarea>
                         <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
                     </fieldset>
 
                     <fieldset class="fieldset-radio-checkbox">
                         <label for="contact-newsletter" class="label-checkbox checkbox-checked">
-                            <input name="suk_gdl_contact_news" type="checkbox" id="contact-newsletter" checked="checked" value="on"> Deseo recibir noticias y promociones.
+                            <input 
+                                name="suk_gdl_contact_news" 
+                                type="checkbox" 
+                                id="contact-newsletter" 
+                                checked="checked" 
+                                value="on"
+                                class="validate_checked"> Deseo recibir noticias y promociones.
                         </label>
                     </fieldset>
                     <input type="hidden" name="suk_gdl_contact_concesionary" id="contact_concesionaria" value="Suzuki Guadalajara">
@@ -88,7 +119,6 @@
         <div class="contact_elements">
             <div class="contact_element ab">
                 <button id="suk_contact_submit" class="enviar button blue">Enviar</button>
-                <div id="pre-loader"></div>
                 <p id="revisa_aviso">
                     Tus datos están a salvo.<br/>
                     Para mayor información revisa nuestro <a id="go-privacy-notice">Aviso de privacidad</a>
@@ -102,5 +132,17 @@
         <hr>
         <p class="agradecimiento_titulo3">¡No olvides seguir nuestras noticias y ofertas en las redes sociales!</p>
         <div class="arrow"><img src="img/sections/contact/arrow.png"></div>
+    </div>
+    <div class="form-error" style="display: none">
+        <p class="agradecimiento_titulo">Hubo un error</p>
+        <hr>
+        <p class="agradecimiento_titulo2">Intentalo nuevamente</p>
+    </div>
+    <div class="form-loader" style="display: none;">
+        <div class="loader">
+            <div class="loader-wrap">
+                <div class="loader-item"></div>
+            </div>
+        </div>
     </div>
 </div>

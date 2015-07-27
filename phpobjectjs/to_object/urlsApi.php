@@ -32,11 +32,11 @@ function urlsApi() {
         // DELETE
         //'del_tab_id' => $root . '/' . $del . '/' . $tab . '/',
 
-        'addCarMainModel' => $root . '/add/car_main_model/',
+        //'addCarMainModel' => $root . '/add/car_main_model/',
         'addConcesionaries' => $root . '/add/concesionaries',
         'addModelos' => $root . '/add/models',
         'addGamaModelos' => $root . '/add/gama_modelos',
 
-        'sendContact' => $root . 'post/contacto'
+        'sendContact' => $root . '/post/contacto'
     );
 }

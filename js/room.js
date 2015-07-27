@@ -16,10 +16,8 @@ Finch.route('/', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        addStylesMethods.cleanAttrHome();
+        cleanStyleMethods.cleanAttrHome();
         SUK.setHTML(domEl.div_content_phone_call, '');
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -32,8 +30,6 @@ Finch.route('/concesionarias', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -51,10 +47,8 @@ Finch.route('/catalogos', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        addStylesMethods.cleanAttrCatalog();
+        cleanStyleMethods.cleanAttrCatalog();
         SUK.setHTML( domEl.div_content_social_bar, '');
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -70,9 +64,7 @@ Finch.route('/contactanos', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        addStylesMethods.cleanAttrContact();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrContact();
         SUK.setHTML(domEl.div_recurrent, '');    }
 });
 Finch.route('/grupo', {
@@ -86,9 +78,7 @@ Finch.route('/grupo', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        addStylesMethods.cleanAttrGroup();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrGroup();
         SUK.setHTML(domEl.div_recurrent, '');    }
 });
 
@@ -103,9 +93,7 @@ Finch.route('/aviso-de-privacidad', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        addStylesMethods.cleanAttrLegals();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrLegals();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -121,38 +109,12 @@ Finch.route('/terminos-legales', {
     },
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
-        addStylesMethods.cleanAttrLegals();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrLegals();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
-Finch.route('/:car_main_model', {
-    setup: function(bindings) {
-        section="car_main_model";
-        addStylesMethods.addStyleModel_swift_sport();
-        SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
-        is_mobileMethods.is_mobile();
-        console.log(section);
-    },
-    load: function(bindings) {
-        var carMainData;
-        SUK.loadTemplate(tempsNames.tmp_models_menu, domEl.models_header_recurrent);
-        SUK.loadTemplate(tempsNames.section_recurrent_car_main, domEl.div_recurrent);
 
-        carMainData = SUK.getInternalJSON(urlsApi.addCarMainModel + bindings.car_main_model);
-        SUK.loadTemplate(tempsNames.section_recurrent_full_size, domEl.div_recurrent_full_size_section_model, carMainData);
-
-        modelsMenuMethods.changeNameModel();
-    },
-    unload: function(bindings) {
-        SUK.setHTML(domEl.div_recurrent, '');
-        SUK.setHTML(domEl.models_header_recurrent, '');
-        SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_swift_sport();
-    }
-});
-/*Finch.route('/swift-sport', {
+Finch.route('/swift-sport', {
     setup: function(bindings) {
         section="swift-sport";
         addStylesMethods.addStyleModel_swift_sport();
@@ -168,9 +130,7 @@ Finch.route('/:car_main_model', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_swift_sport();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_swift_sport();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -190,9 +150,7 @@ Finch.route('/swift', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_swift();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_swift();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -212,9 +170,7 @@ Finch.route('/swift', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_sx4_crossover();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_sx4_crossover();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -234,12 +190,10 @@ Finch.route('/sx4-sedan', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_sx4_sedan();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_sx4_sedan();
         SUK.setHTML(domEl.div_recurrent, '');
     }
-});
+});*/
 Finch.route('/kizashi', {
     setup: function(bindings) {
         section="kizashi";
@@ -256,9 +210,7 @@ Finch.route('/kizashi', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_kizashi();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_kizashi();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -278,9 +230,7 @@ Finch.route('/grand-vitara', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_grand_vitara();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_grand_vitara();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -300,9 +250,7 @@ Finch.route('/s-cross', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_s_cross();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_s_cross();
         SUK.setHTML(domEl.div_recurrent, '');
     }
 });
@@ -322,11 +270,9 @@ Finch.route('/ciaz', {
     unload: function(bindings) {
         SUK.setHTML(domEl.models_header_recurrent, '');
         SUK.setHTML( domEl.div_content_social_bar, '');
-        addStylesMethods.cleanAttrModel_ciaz();
-        //It's always necessary, when an url is left, to clean the html content
-        //of the recurrent div, where all the templates are inserted
+        cleanStyleMethods.cleanAttrModel_ciaz();
         SUK.setHTML(domEl.div_recurrent, '');
     }
-});*/
+});
 
 Finch.listen();

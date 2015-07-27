@@ -54,7 +54,7 @@ $app->configureMode('development', function () use ($app) {
 //$app->post('/set/table/:idTable', /*'mw1',*/ 'setTable');
 // GET route
     // app => getModels
-        $app->get('/add/car_main_model/:car_main_model', 'addCarMainModel');
+        //$app->get('/add/car_main_model/:car_main_model', 'addCarMainModel');
         $app->get('/add/concesionaries', 'addConcesionaries');
         $app->get('/add/modelos', 'addModels');
         $app->get('/add/gama_modelos', 'addGamaModels');
@@ -138,10 +138,10 @@ $app->run();
         }
 
 
-        if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news == "on") {
+        if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news === "on") {
             $send_suk_gdl_contact_subscription = "Activado";
             send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_subscription);
-        } else {
+        } else if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news === "off") {
             $send_suk_gdl_contact_subscription = "Desactivado";
         }
         send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription);
@@ -350,7 +350,7 @@ function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_las
             'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
             'to' => array(
                 array(
-                    'email' => 'heriberto@medigraf.com.mx',
+                    'email' => 'hevelmo060683@gmail.com',
                     'name' => 'contacto',
                     'type' => 'to'
                 )/*,
@@ -367,7 +367,7 @@ function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_las
                     'type' => 'bcc'
                 )*/
             ),
-            'headers' => array('Reply-To' => 'arivera@jaguardgl.com'),
+            'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
             //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
             'important' => false,
             'track_opens' => true,
@@ -595,7 +595,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
             'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
             'to' => array(
                 array(
-                    'email' => 'heriberto@medigraf.com.mx',
+                    'email' => 'hevelmo060683@gmail.com',
                     'name' => 'contacto',
                     'type' => 'to'
                 )/*,
@@ -612,7 +612,7 @@ function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname
                     'type' => 'bcc'
                 )*/
             ),
-            'headers' => array('Reply-To' => 'arivera@jaguardgl.com'),
+            'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
             //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
             'important' => false,
             'track_opens' => true,

@@ -57,6 +57,9 @@ function domEl() {
         'suk_switch_catalog' => 'a.switch-catalog',
         // CLICK CONTACT US
         'button_go_contact' => 'a#go-contact',
+        // VALIDATE INPUNT, TEXTAREA, SELECT CONTACT
+        'validate_input' => '.validate_input',
+        'validate_change' => '.validate_change',
         // BUTONS CONTROL PANEL MENU
         // BUTONS OPEN PANEL MENU
         'action_model_expand_header' => 'a.model.expand-header',

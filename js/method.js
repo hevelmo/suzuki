@@ -229,463 +229,470 @@
   Depending on the complexity of the url, could be more than one group of methods.
   Could exist some group of general methods*/
 /* ------------------------------------------------------ *\
- [Methods] Home
+ [Methods] cleanStyle
 \* ------------------------------------------------------ */
-//This group of methods will be not used it's only example, remove it later
-var addStylesMethods = {
-    cleanAttrHome : function () {
-        $('head .link-home').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrGroup : function () {
-        $('head .link-group').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrCatalog : function () {
-        $('head .link-catalog').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrContact : function () {
-        $('head .link-contact').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrLegals : function () {
-        $('head .link-legals').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_swift_sport : function () {
-        $('head .link-swift-sport').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_swift : function () {
-        $('head .link-swift').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_sx4_crossover : function () {
-        $('head .link-sx4-crossover').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_sx4_sedan : function () {
-        $('head .link-sx4-sedan').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_kizashi : function () {
-        $('head .link-kizashi').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_grand_vitara : function () {
-        $('head .link-grand-vitara').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_s_cross : function () {
-        $('head .link-s-cross').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    cleanAttrModel_ciaz : function () {
-        $('head .link-ciaz').remove();
-        $('#patch').remove();
-        $('#model-section-arrow').remove();
-        $('#model-test-drive-flag').remove();
-    },
-    addStyleIndex : function () {
-        linkIndexAttributes = [
-            ['link', {'id': 'content-add-styles-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/home.css'}, '', 0],
-            ['link', {'id': 'content-add-styles-models-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/models-home.css'}, '', 0]
-        ];
-        SUK.appendMulti('head', linkIndexAttributes);
-        $('body').prepend( patch_bar );
-    },
-    addStyleGroup : function () {
-        linkCatalogsAttributes = {'id': 'content-add-styles-group', 'rel': 'stylesheet', 'class': 'link-group', 'href': 'css/sections/warranty.css'}
-        SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
-        $('body').prepend( patch_bar );
-    },
-    addStyleCatalogs : function () {
-        linkCatalogsAttributes = {'id': 'content-add-styles-catalog', 'rel': 'stylesheet', 'class': 'link-catalog', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
-        $('body').prepend( patch_bar );
-    },
-    addStyleContact : function () {
-        linkContactAttributes = [
-            ['link', {'id': 'content-add-styles-contact', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/sections/contact.css'}, '', 0],
-            ['link', {'id': 'content-add-styles-contact-shosen', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/plugins/jquery.chosen/chosen.css'}, '', 0]
-        ];
-        SUK.appendMulti('head', linkContactAttributes);
-        $('body').prepend( patch_bar );
-    },
-    addStyleLegals : function () {
-        linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
-        SUK.appendOne('head', 'link', linkLegalsAttributes, '', 0);
-        $('body').prepend( patch_bar );
-    },
-    addStyleModel_swift_sport : function () {
-        link_swift_sport_Attributes = {'id': 'content-add-styles-swift-sport', 'rel': 'stylesheet', 'class': 'link-swift-sport', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_swift_sport_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_swift : function () {
-        link_swift_Attributes = {'id': 'content-add-styles-swift', 'rel': 'stylesheet', 'class': 'link-swift', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_swift_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_sx4_crossover : function () {
-        link_sx4_crossover_Attributes = {'id': 'content-add-styles-sx4-crossover', 'rel': 'stylesheet', 'class': 'link-sx4-crossover', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_sx4_crossover_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_sx4_sedan : function () {
-        link_sx4_sedan_Attributes = {'id': 'content-add-styles-sx4-sedan', 'rel': 'stylesheet', 'class': 'link-sx4-sedan', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_sx4_sedan_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_kizashi : function () {
-        link_kizashi_Attributes = {'id': 'content-add-styles-kizashi', 'rel': 'stylesheet', 'class': 'link-kizashi', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_kizashi_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_grand_vitara : function () {
-        link_grand_vitara_Attributes = {'id': 'content-add-styles-grand-vitara', 'rel': 'stylesheet', 'class': 'link-grand-vitara', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_grand_vitara_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_s_cross : function () {
-        link_s_cross_Attributes = {'id': 'content-add-styles-s-cross', 'rel': 'stylesheet', 'class': 'link-s-cross', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_s_cross_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    },
-    addStyleModel_ciaz : function () {
-        link_ciaz_Attributes = {'id': 'content-add-styles-ciaz', 'rel': 'stylesheet', 'class': 'link-ciaz', 'href': 'css/sections/models.css'}
-        SUK.appendOne('head', 'link', link_ciaz_Attributes, '', 0);
-        $('body').prepend( patch_bar );
-        $('body').prepend( td_id_flag );
-    }
-}
-var catalogMethods = {
-    pageTransitionCatalog : function () {
-        $('.item.et-section').addClass('et-page-current');
-    }
-}
-var actionMenuBarsMethods = {
-    removeCleanPanelMenu : function () {
-        $('#header-spacer').css('height','0px');
-        $('.header_section').css({
-            'display':'none',
-            'opacity':'0'
-        });
-        if ($(this).hasClass('active')) {
-            $('a.expand-header').removeClass('active');
-            $(domEl.div_header_panel).removeClass('header_panel_active');
-        } else {
-            $('a.expand-header').removeClass('active');
-            $(domEl.div_header_panel).addClass('header_panel_active');
-            $(this).addClass('active');
+    var cleanStyleMethods = {
+        cleanAttrHome : function () {
+            $('head .link-home').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrGroup : function () {
+            $('head .link-group').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrCatalog : function () {
+            $('head .link-catalog').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrContact : function () {
+            $('head .link-contact').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrLegals : function () {
+            $('head .link-legals').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_swift_sport : function () {
+            $('head .link-swift-sport').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_swift : function () {
+            $('head .link-swift').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_sx4_crossover : function () {
+            $('head .link-sx4-crossover').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_sx4_sedan : function () {
+            $('head .link-sx4-sedan').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_kizashi : function () {
+            $('head .link-kizashi').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_grand_vitara : function () {
+            $('head .link-grand-vitara').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_s_cross : function () {
+            $('head .link-s-cross').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrModel_ciaz : function () {
+            $('head .link-ciaz').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
         }
-        SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-    },
-    clickReturnIndex : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/');
-        console.log('Click index');
-    },
-    clixkGoGroup : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/grupo');
-        console.log('Click group');
-    },
-    clickGoConcesinary : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/concesionarias');
-        console.log('Click concesionarias');
-    },
-    clickGoCatalogs : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/catalogos');
-        $('.et-section').addClass('et-page-current');
-        console.log('Click catalogos');
-    },
-    clickGoContactUs : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/contactanos');
-        console.log('Click contactanos');
-    },
-    clickGoPrivacy : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/aviso-de-privacidad');
-        console.log('Click aviso de privacidad');
-    },
-    clickGoLegalTerms : function (event) {
-        actionMenuBarsMethods.removeCleanPanelMenu();
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        Finch.navigate('/terminos-legales');
-        console.log('Click Terminos Legales');
     }
-}
-var addDelegatMethods = {
-    transitions : function () {
-    },
-    delegate : function (event) {
-
-        var PageTransition = ( function( options ) {
-            var prev_slide = 'prev_slide';
-            var next_slide = 'next_slide';
-            var wrapper = options.wrapper;
-
-            this.transitions = {
-                'next': {
-                    'init': options.next_in_transition,
-                    'end': options.next_out_transition
-                },
-                'prev': {
-                    'init': options.prev_in_transition,
-                    'end': options.prev_out_transition
-                }
-            }
-
-            this.pages  = $(options.wrapper).children('.et-section');
-            this.current_page = this.pages[ (options.init_page ) ];
-            $( this.current_page ).addClass('et-page-current');
-            $( this.current_page ).prevAll('.et-section').addClass('after');
-            $( this.current_page ).nextAll('.et-section').addClass('after');
-        });
-
-        PageTransition.prototype.move_to = function( div ){
-            var current_page = this.current_page;
-            var next_page = div;
-
-            if( ! $(next_page).hasClass('et-page-current') ){
-
-                if( $(next_page).hasClass( 'after' ) ) {
-                    direction = 'next';
-                } else if( $(next_page).hasClass( 'before' ) ) {
-                    direction = 'prev';
-                }
-
-                if( ! Modernizr.csstransitions) {
-
-                    $('.et-section').removeClass('before after');
-                    $( current_page ).removeClass().addClass('item et-section et-page-current');
-                    $( next_page ).addClass('et-page-current').stop().animate({
-                        bottom: 0
-                    }, 600, 'linear', function(){
-                        $( current_page ).removeClass().addClass('item et-section');
-                        $( next_page ).prevAll('.et-section').addClass('before');
-                        $( next_page ).nextAll('.et-section').addClass('after');
-                    });
-
-                    this.current_page = next_page;
-
-                } else {
-
-                    in_transition = ( direction == 'next' ) ? this.transitions.next.init : this.transitions.prev.init;
-                    out_transition = ( direction == 'next' ) ? this.transitions.next.end : this.transitions.prev.end;
-
-                    $('.et-section').removeClass('before after');
-
-                    $( current_page ).removeClass().addClass('item et-section et-page-current '+'pt-page-'+out_transition);
-                    $( next_page ).addClass('et-page-current '+'pt-page-'+in_transition).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-                        $( current_page ).removeClass().addClass('item et-section');
-                        $( next_page ).prevAll('.et-section').addClass('before');
-                        $( next_page ).nextAll('.et-section').addClass('after');
-                    });
-                    this.current_page = next_page;
-                }
-            }
-        };
-
-
-        var pages = new PageTransition({
-            wrapper:             document.getElementById('catalog-wrapper'),
-            init_page:           init_slide_load,
-
-            prev_in_transition:  'moveFromTop',
-            prev_out_transition: 'moveToBottom ontop',
-
-            next_in_transition:  'moveFromBottom',
-            next_out_transition: 'moveToTop ontop'
-        });
-
-        var init_slide_load = location.hash.slice(1);
-        $('.catalog_cars_wrapper').find('.catalog_car').each(function( index ) {
-            if( $(this).hasClass(init_slide_load) )
-                init_slide_load = index;
-        });
-
-        event.preventDefault();
-        var car_key = $(this).data('key');
-        var slide = $("#catalog-"+ car_key);
-        $('.catalog_car').removeClass('active');
-        $(this).parent('.catalog_car').addClass('active');
-        pages.move_to( slide );
-    }
-}
 /* ------------------------------------------------------ *\
- [Methods] Header Panel
+ [Methods] addStyle
 \* ------------------------------------------------------ */
-var openPanelMenuMethods = {
-    clickPanel_general : function (event) {
-        openPanelMenuMethods.animatePanelMenu();
-        if ($(this).hasClass('active')) {
-            $('a.expand-header').removeClass('active');
-            $(domEl.div_header_panel).removeClass('header_panel_active');
-        } else {
-            $('a.expand-header').removeClass('active');
-            $(domEl.div_header_panel).addClass('header_panel_active');
-            $(this).addClass('active');
+    var addStylesMethods = {
+        addStyleIndex : function () {
+            linkIndexAttributes = [
+                ['link', {'id': 'content-add-styles-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/home.css'}, '', 0],
+                ['link', {'id': 'content-add-styles-models-home', 'rel': 'stylesheet', 'class': 'link-home', 'href': 'css/sections/models-home.css'}, '', 0]
+            ];
+            SUK.appendMulti('head', linkIndexAttributes);
+            $('body').prepend( patch_bar );
+        },
+        addStyleGroup : function () {
+            linkCatalogsAttributes = {'id': 'content-add-styles-group', 'rel': 'stylesheet', 'class': 'link-group', 'href': 'css/sections/warranty.css'}
+            SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
+            $('body').prepend( patch_bar );
+        },
+        addStyleCatalogs : function () {
+            linkCatalogsAttributes = {'id': 'content-add-styles-catalog', 'rel': 'stylesheet', 'class': 'link-catalog', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', linkCatalogsAttributes, '', 0);
+            $('body').prepend( patch_bar );
+        },
+        addStyleContact : function () {
+            linkContactAttributes = [
+                ['link', {'id': 'content-add-styles-contact', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/sections/contact.css'}, '', 0],
+                ['link', {'id': 'content-add-styles-contact-shosen', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/plugins/jquery.chosen/chosen.css'}, '', 0]
+            ];
+            SUK.appendMulti('head', linkContactAttributes);
+            $('body').prepend( patch_bar );
+        },
+        addStyleLegals : function () {
+            linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
+            SUK.appendOne('head', 'link', linkLegalsAttributes, '', 0);
+            $('body').prepend( patch_bar );
+        },
+        addStyleModel_swift_sport : function () {
+            link_swift_sport_Attributes = {'id': 'content-add-styles-swift-sport', 'rel': 'stylesheet', 'class': 'link-swift-sport', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_swift_sport_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_swift : function () {
+            link_swift_Attributes = {'id': 'content-add-styles-swift', 'rel': 'stylesheet', 'class': 'link-swift', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_swift_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_sx4_crossover : function () {
+            link_sx4_crossover_Attributes = {'id': 'content-add-styles-sx4-crossover', 'rel': 'stylesheet', 'class': 'link-sx4-crossover', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_sx4_crossover_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_sx4_sedan : function () {
+            link_sx4_sedan_Attributes = {'id': 'content-add-styles-sx4-sedan', 'rel': 'stylesheet', 'class': 'link-sx4-sedan', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_sx4_sedan_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_kizashi : function () {
+            link_kizashi_Attributes = {'id': 'content-add-styles-kizashi', 'rel': 'stylesheet', 'class': 'link-kizashi', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_kizashi_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_grand_vitara : function () {
+            link_grand_vitara_Attributes = {'id': 'content-add-styles-grand-vitara', 'rel': 'stylesheet', 'class': 'link-grand-vitara', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_grand_vitara_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_s_cross : function () {
+            link_s_cross_Attributes = {'id': 'content-add-styles-s-cross', 'rel': 'stylesheet', 'class': 'link-s-cross', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_s_cross_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
+        },
+        addStyleModel_ciaz : function () {
+            link_ciaz_Attributes = {'id': 'content-add-styles-ciaz', 'rel': 'stylesheet', 'class': 'link-ciaz', 'href': 'css/sections/models.css'}
+            SUK.appendOne('head', 'link', link_ciaz_Attributes, '', 0);
+            $('body').prepend( patch_bar );
+            $('body').prepend( td_id_flag );
         }
-    },
-    clickModelsPanel : function (event) {
-        if ($(this).hasClass('active')) {
-            var sukModelData;
-            $('#header-spacer').css('height','325px');
-            $('.header_section').css({
-                'display':'block',
-                'opacity':'1'
-            });
-            sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos)
-            SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu, sukModelData);
-        } else {
-            $('#header-spacer').css('height','0px');
-            $('.header_section').css({
-                'display':'none',
-                'opacity':'0'
-            });
-            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        }
-    },
-    clickFinnacingPanel : function (event) {
-        if ($(this).hasClass('active')) {
-            $('#header-spacer').css('height','426px');
-            $('.header_section').css({
-                'display':'block',
-                'opacity':'1'
-            });
-            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_panel_menu);
-        } else {
-            $('#header-spacer').css('height','0px');
-            $('.header_section').css({
-                'display':'none',
-                'opacity':'0'
-            });
-            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        }
-    },
-    clickOwnersPanel : function (event) {
-        if ($(this).hasClass('active')) {
-            $('#header-spacer').css('height','340px');
-            $('.header_section').css({
-                'display':'block',
-                'opacity':'1'
-            });
-            SUK.loadTemplate(tempsNames.tmp_panel_menu_owners, domEl.div_recurrent_panel_menu);
-        } else {
-            $('#header-spacer').css('height','0px');
-            $('.header_section').css({
-                'display':'none',
-                'opacity':'0'
-            });
-            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        }
-    },
-    clickBeforeByPanel : function (event) {
-        if ($(this).hasClass('active')) {
-            $('#header-spacer').css('height','419px');
-            $('.header_section').css({
-                'display':'block',
-                'opacity':'1'
-            });
-            SUK.loadTemplate(tempsNames.tmp_panel_menu_before_buy, domEl.div_recurrent_panel_menu);
-        } else {
-            $('#header-spacer').css('height','0px');
-            $('.header_section').css({
-                'display':'none',
-                'opacity':'0'
-            });
-            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        }
-    },
-    animatePanelMenu : function () {
-        $(domEl.div_recurrent_panel_menu).stop().hide().fadeIn();
-    },
-}
-var closePanelMenuMethods = {
-    cleanHeight : function () {
-        $('#header-spacer').css('height','0px');
-    },
-    closePanelModels : function (event) {
-        $(domEl.action_model_expand_header).removeClass('active');
-        $(domEl.div_header_panel).removeClass('header_panel_active');
-        SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        closePanelMenuMethods.cleanHeight();
-    },
-    closePanelFinancing : function (event) {
-        $(domEl.action_financing_expand_header).removeClass('active');
-        $(domEl.div_header_panel).removeClass('header_panel_active');
-        SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        closePanelMenuMethods.cleanHeight();
-    },
-    closePanelOwners : function (event) {
-        $(domEl.action_owners_expand_header).removeClass('active');
-        $(domEl.div_header_panel).removeClass('header_panel_active');
-        SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        closePanelMenuMethods.cleanHeight();
-    },
-    closePanelBeforeBuy : function (event) {
-        $(domEl.action_before_buy_expand_header).removeClass('active');
-        $(domEl.div_header_panel).removeClass('header_panel_active');
-        SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-        closePanelMenuMethods.cleanHeight();
     }
-}
-var panelMenuModelsByModel = {
-    // ACTION CAR MODELS
-    clickGoCarMain : function (event) {
-        var car_main_model;
-        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-        closePanelMenuMethods.closePanelModels();
+/* ------------------------------------------------------ *\
+ [Methods] catalog
+\* ------------------------------------------------------ */    
+    var catalogMethods = {
+        pageTransitionCatalog : function () {
+            $('.item.et-section').addClass('et-page-current');
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] actionMenuBars
+\* ------------------------------------------------------ */
+    var actionMenuBarsMethods = {
+        removeCleanPanelMenu : function () {
+            $('#header-spacer').css('height','0px');
+            $('.header_section').css({
+                'display':'none',
+                'opacity':'0'
+            });
+            if ($(this).hasClass('active')) {
+                $('a.expand-header').removeClass('active');
+                $(domEl.div_header_panel).removeClass('header_panel_active');
+            } else {
+                $('a.expand-header').removeClass('active');
+                $(domEl.div_header_panel).addClass('header_panel_active');
+                $(this).addClass('active');
+            }
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+        },
+        clickReturnIndex : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/');
+            console.log('Click index');
+        },
+        clixkGoGroup : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/grupo');
+            console.log('Click group');
+        },
+        clickGoConcesinary : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/concesionarias');
+            console.log('Click concesionarias');
+        },
+        clickGoCatalogs : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/catalogos');
+            $('.et-section').addClass('et-page-current');
+            console.log('Click catalogos');
+        },
+        clickGoContactUs : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/contactanos');
+            console.log('Click contactanos');
+        },
+        clickGoPrivacy : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/aviso-de-privacidad');
+            console.log('Click aviso de privacidad');
+        },
+        clickGoLegalTerms : function (event) {
+            actionMenuBarsMethods.removeCleanPanelMenu();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/terminos-legales');
+            console.log('Click Terminos Legales');
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] addDelegate
+\* ------------------------------------------------------ */
+    var addDelegatMethods = {
+        transitions : function () {
+        },
+        delegate : function (event) {
 
-        car_main_model = $(this).data('gama-model');
-        console.log(car_main_model);
-        Finch.navigate('/'+ car_main_model);
+            var PageTransition = ( function( options ) {
+                var prev_slide = 'prev_slide';
+                var next_slide = 'next_slide';
+                var wrapper = options.wrapper;
+
+                this.transitions = {
+                    'next': {
+                        'init': options.next_in_transition,
+                        'end': options.next_out_transition
+                    },
+                    'prev': {
+                        'init': options.prev_in_transition,
+                        'end': options.prev_out_transition
+                    }
+                }
+
+                this.pages  = $(options.wrapper).children('.et-section');
+                this.current_page = this.pages[ (options.init_page ) ];
+                $( this.current_page ).addClass('et-page-current');
+                $( this.current_page ).prevAll('.et-section').addClass('after');
+                $( this.current_page ).nextAll('.et-section').addClass('after');
+            });
+
+            PageTransition.prototype.move_to = function( div ){
+                var current_page = this.current_page;
+                var next_page = div;
+
+                if( ! $(next_page).hasClass('et-page-current') ){
+
+                    if( $(next_page).hasClass( 'after' ) ) {
+                        direction = 'next';
+                    } else if( $(next_page).hasClass( 'before' ) ) {
+                        direction = 'prev';
+                    }
+
+                    if( ! Modernizr.csstransitions) {
+
+                        $('.et-section').removeClass('before after');
+                        $( current_page ).removeClass().addClass('item et-section et-page-current');
+                        $( next_page ).addClass('et-page-current').stop().animate({
+                            bottom: 0
+                        }, 600, 'linear', function(){
+                            $( current_page ).removeClass().addClass('item et-section');
+                            $( next_page ).prevAll('.et-section').addClass('before');
+                            $( next_page ).nextAll('.et-section').addClass('after');
+                        });
+
+                        this.current_page = next_page;
+
+                    } else {
+
+                        in_transition = ( direction == 'next' ) ? this.transitions.next.init : this.transitions.prev.init;
+                        out_transition = ( direction == 'next' ) ? this.transitions.next.end : this.transitions.prev.end;
+
+                        $('.et-section').removeClass('before after');
+
+                        $( current_page ).removeClass().addClass('item et-section et-page-current '+'pt-page-'+out_transition);
+                        $( next_page ).addClass('et-page-current '+'pt-page-'+in_transition).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+                            $( current_page ).removeClass().addClass('item et-section');
+                            $( next_page ).prevAll('.et-section').addClass('before');
+                            $( next_page ).nextAll('.et-section').addClass('after');
+                        });
+                        this.current_page = next_page;
+                    }
+                }
+            };
+
+
+            var pages = new PageTransition({
+                wrapper:             document.getElementById('catalog-wrapper'),
+                init_page:           init_slide_load,
+
+                prev_in_transition:  'moveFromTop',
+                prev_out_transition: 'moveToBottom ontop',
+
+                next_in_transition:  'moveFromBottom',
+                next_out_transition: 'moveToTop ontop'
+            });
+
+            var init_slide_load = location.hash.slice(1);
+            $('.catalog_cars_wrapper').find('.catalog_car').each(function( index ) {
+                if( $(this).hasClass(init_slide_load) )
+                    init_slide_load = index;
+            });
+
+            event.preventDefault();
+            var car_key = $(this).data('key');
+            var slide = $("#catalog-"+ car_key);
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            pages.move_to( slide );
+        }
     }
-    /*
-        ,
+/* ------------------------------------------------------ *\
+ [Methods] openPanelMenu
+\* ------------------------------------------------------ */
+    var openPanelMenuMethods = {
+        clickPanel_general : function (event) {
+            openPanelMenuMethods.animatePanelMenu();
+            if ($(this).hasClass('active')) {
+                $('a.expand-header').removeClass('active');
+                $(domEl.div_header_panel).removeClass('header_panel_active');
+            } else {
+                $('a.expand-header').removeClass('active');
+                $(domEl.div_header_panel).addClass('header_panel_active');
+                $(this).addClass('active');
+            }
+        },
+        clickModelsPanel : function (event) {
+            if ($(this).hasClass('active')) {
+                var sukModelData;
+                $('#header-spacer').css('height','325px');
+                $('.header_section').css({
+                    'display':'block',
+                    'opacity':'1'
+                });
+                sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos)
+                SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu, sukModelData);
+            } else {
+                $('#header-spacer').css('height','0px');
+                $('.header_section').css({
+                    'display':'none',
+                    'opacity':'0'
+                });
+                SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            }
+        },
+        clickFinnacingPanel : function (event) {
+            if ($(this).hasClass('active')) {
+                $('#header-spacer').css('height','426px');
+                $('.header_section').css({
+                    'display':'block',
+                    'opacity':'1'
+                });
+                SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_panel_menu);
+            } else {
+                $('#header-spacer').css('height','0px');
+                $('.header_section').css({
+                    'display':'none',
+                    'opacity':'0'
+                });
+                SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            }
+        },
+        clickOwnersPanel : function (event) {
+            if ($(this).hasClass('active')) {
+                $('#header-spacer').css('height','340px');
+                $('.header_section').css({
+                    'display':'block',
+                    'opacity':'1'
+                });
+                SUK.loadTemplate(tempsNames.tmp_panel_menu_owners, domEl.div_recurrent_panel_menu);
+            } else {
+                $('#header-spacer').css('height','0px');
+                $('.header_section').css({
+                    'display':'none',
+                    'opacity':'0'
+                });
+                SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            }
+        },
+        clickBeforeByPanel : function (event) {
+            if ($(this).hasClass('active')) {
+                $('#header-spacer').css('height','419px');
+                $('.header_section').css({
+                    'display':'block',
+                    'opacity':'1'
+                });
+                SUK.loadTemplate(tempsNames.tmp_panel_menu_before_buy, domEl.div_recurrent_panel_menu);
+            } else {
+                $('#header-spacer').css('height','0px');
+                $('.header_section').css({
+                    'display':'none',
+                    'opacity':'0'
+                });
+                SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            }
+        },
+        animatePanelMenu : function () {
+            $(domEl.div_recurrent_panel_menu).stop().hide().fadeIn();
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] closePanelMenu
+\* ------------------------------------------------------ */
+    var closePanelMenuMethods = {
+        cleanHeight : function () {
+            $('#header-spacer').css('height','0px');
+        },
+        closePanelModels : function (event) {
+            $(domEl.action_model_expand_header).removeClass('active');
+            $(domEl.div_header_panel).removeClass('header_panel_active');
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            closePanelMenuMethods.cleanHeight();
+        },
+        closePanelFinancing : function (event) {
+            $(domEl.action_financing_expand_header).removeClass('active');
+            $(domEl.div_header_panel).removeClass('header_panel_active');
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            closePanelMenuMethods.cleanHeight();
+        },
+        closePanelOwners : function (event) {
+            $(domEl.action_owners_expand_header).removeClass('active');
+            $(domEl.div_header_panel).removeClass('header_panel_active');
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            closePanelMenuMethods.cleanHeight();
+        },
+        closePanelBeforeBuy : function (event) {
+            $(domEl.action_before_buy_expand_header).removeClass('active');
+            $(domEl.div_header_panel).removeClass('header_panel_active');
+            SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            closePanelMenuMethods.cleanHeight();
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] panelMenuModels
+\* ------------------------------------------------------ */
+    var panelMenuModelsByModel = {
         clickGoSwiftSport : function (event) {
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             closePanelMenuMethods.closePanelModels();
@@ -726,728 +733,323 @@ var panelMenuModelsByModel = {
             closePanelMenuMethods.closePanelModels();
             Finch.navigate('/ciaz');
         }
-    */
-}
+    }
 /* ------------------------------------------------------ *\
- [Methods] FINANCING
+ [Methods] modelsMenu
 \* ------------------------------------------------------ */
-// start header listener action
-//Adds javascript actions to header section
-$.start_header_listeners = function( section, options ){
-    if( options === undefined || options === null  ){
-        options = {};
-    }
-    switch( section ){
-        case 'financing':
-            var car_d = null,
-                funding_data = {
-                    engagement  : 0,
-                    months      : 0,
-                    price       : 0
-                };
-            var conce_d = null;
-
-            var default_data = {
-                car_version : 0,
-                key         : ''
-
-            };
-
-            fuh_data = $.extend( {}, default_data, options );
-
-            function goto_step( step, disable  ){
-                var ii, $divinput;
-                slide_tabs( step, disable );
-                if( step == 3 ){
-                }
-            }
-
-            //Tabs
-            $panelTabsNav   = $('li.step-nav-tabs.funding');
-            $panelTabs      = $('.step-nav-tab.funding');
-
-            $panelTabsNav.children('a').on('click', function( e ){
-                e.preventDefault();
-                if( !$(this).parent().is('.disabled') ){
-                    goto_step( $(this).data('number') )
-                }
-            });
-            $.funding_adjust_calc = function(  ){
-                var f_amount        = funding_data.price * ( funding_data.engagement / 100 ),
-                    total_pay       =  funding_data.price -  f_amount,
-                    //total_pay       =  funding_data.price -  f_amount,
-                    f_monthly_pay   = funding_core( total_pay, funding_data.months  );
-                $('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) );
-                $('#fr_car_engagement').val(moneyFormat( f_amount ));
-                $('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' );
-                $('#fr_car_months').val(funding_data.months + ' meses');
-                $('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) );
-                $('#fr_car_price').val(moneyFormat(  funding_data.price ));
-                $('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) );
-                $('#fr_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
-            }
-            $.funding_select_version = function( ii ){
-                var $elements;
-                $elements               = $('#funding-versions-tabs li a');
-                $elements.removeClass('active');
-                $elements.eq( ii ).addClass('active');
-                funding_data.engagement = $("#car_engagement_slider").slider( 'value' ) ;
-                funding_data.months     = $("#car_months_slider").slider( 'value');
-                funding_data.price      = car_d.versions[ ii ].price;
-                fuh_data.car_version    = car_d.versions[ ii ].key;
-                $.funding_adjust_calc();
-            }
-            $.funding_select_car = function( k ){
-                var car_data    = get_car_data( k ),
-                    $icons      = $('#car_select_preview .car_thumb_160 .car, #fu_adjust_car .car_thumb_60 .car, #funding_result_data .car_thumb_60 .car, #funding-resume-car .car_thumb_60 .car'),
-                    $car_texts  = $('#car_select_name h3, #step-nav-tab h3, #fu_adjust_car h3, #funding_result_data h3, #funding-resume-car h3'),
-                    $input_car_text = $('#fr_model_car');
-
-                fuh_data.key = k;
-                var anio = '2015';
-                if(car_data.key == 'ciaz'){
-                    anio = '2016';
-                }
-                fuh_data.name = car_data.name + ' ' + anio;
-
-                $("#car_engagement_slider").slider({value: 20}) ;
-                $("#car_months_slider").slider({value: 6});
-
-                $car_texts.text( fuh_data.name );
-                $input_car_text.val( fuh_data.name );
-                $icons.removeClass();
-                $icons.addClass('car ' + fuh_data.key );
-                var i0 = cars_prices.length, versions = null, i1, i2, tab_data;
-                while( i0-- ){
-                    if( cars_prices[i0].key == fuh_data.key ){
-                        car_d = cars_prices[i0];
-                        versions = car_d.versions;
-                        var i1 = 0, i2 = versions.length, tabs_data = {versions:[]};
-                        if( i2 > 1 ){
-                            $('#funding-versions').show();
-                        }else{
-                            $('#funding-versions').hide();
-                        }
-                        while( i1 < i2 ){
-                            tab_data = {
-                                i       : i1,
-                                name    : versions[i1].name
-                            }
-                            tabs_data.versions.push( tab_data );
-                            i1++;
-                        }
-                        var html = Mustache.render( funding_tab, tabs_data );
-                        $("#funding-versions-tabs").html( html );
-                        $.funding_select_version( 0 );
-                        break;
-                    }
-                }
-            };
-
-
-            $.send_funding = function(){
-                var extended =  $('input[name="hfu_drive"]:checked').val(),
-                    $model_car   = $('#fr_model_car'),
-                    $car_price   = $('#fr_car_price'),
-                    $car_engagement   = $('#fr_car_engagement'),
-                    $fr_car_monthly_payment   = $('#fr_car_monthly_payment'),
-                    $fr_car_months   = $('#fr_car_months'),
-                    $name   = $('#hfu_name'),
-                    $lastname  = $('#hfu_lastname'),
-                    $email  = $('#hfu_email'),
-                    /*$state  = $('#hfu_state_chzn_chzn'),
-                    $concessionaire  = $('#hfu_concessionaire_chzn'),*/
-                    $tel    = $('#hfu_tel'),
-                    form_errors = 0;
-
-                if( !$.validate_input( $email ) ){
-                    form_errors++;
-                    $name.focus();
-                }
-                if( !$.validate_input( $name ) ){
-                    form_errors++;
-                    $name.focus();
-                }
-                if( !$.validate_input( $lastname ) ){
-                    form_errors++;
-                    $name.focus();
-                }
-                /*if( !$.validate_input( $state ) ){
-                    form_errors++;
-                    $name.focus();
-                }
-                if( !$.validate_input( $state ) ){
-                    form_errors++;
-                    $name.focus();
-                }*/
-                if( !$.validate_input( $concessionaire ) ){
-                    form_errors++;
-                    $name.focus();
-                }
-                if( extended > 0 ){
-
-                    if( !$.validate_input( $tel ) ){
-                        form_errors++;
-                        $tel.focus();
-                    }
-
-                } else{
-
-                    if( conce_d == null ){
-                        console.log(conce_d);
-                        form_errors++;
-                        /*$.error_bubble( $('#tdcss'), true);*/
-                        /*
-                         if(  ){
-
-                         chzn-container
-                         $('#tdcss, #tdcss #tdcs').css({
-                         width: 'auto!important'
-                         });
-
-                         }*/
-                        /*$('#tdcs .chzn-container a').trigger('click').focus();*/
-                    } else {
-                        /*$.error_bubble( $('#tdcss'), false );*/
-                    }
-                    $.error_bubble( $tel, false );
-                    //
-                }
-                if( form_errors == 0){
-                    var data = {
-                        car_key     : fuh_data.key,
-                        car_version : fuh_data.car_version,
-                        email       : $email.val(),
-                        engagement  : funding_data.engagement,
-                        months      : funding_data.months,
-                        name        : $name.val(),
-                        /*lastname    : $lastname.val(),
-                        state       : $state.val(),*/
-                        concessionaire       : $concessionaire.val(),
-                        newsletter  : ('#funding-newsletter:checked').length,
-                        source      : 'Funding'
-                    }
-
-
-                    $('#funding_resume_email').html( data.email );
-                    $('#header-financiamiento li.step-nav-tabs').addClass( 'disabled' );
-                    data.concessionaire_key = conce_d.key;
-
-                    if( extended > 0 ){
-                        data.phone = $tel.val();
-                        $('#funding_resume_concessionaire').text( conce_d.name).attr({href:'/concesionarias/suzuki-'+conce_d.key});
-                        ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Header_' + fuh_data.key, 0.012 * funding_data.price );
-                    }else{
-                        ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Header_' + fuh_data.key, 0.012 * funding_data.price );
-                    }
-                    var service_url = 'services/request/financing.json';
-                    $.ajax({
-                        cache       : false,
-                        data        : data,
-                        dataType    : 'json',
-                        type        : 'post',
-                        success     : function( data ){
-                            if( data.status == 'ok' ){
-                                $('#funding_form').hide();
-                                $('#funding_resume').fadeIn();
-
-                            }else{
-                                alert( data.message );
-                            }
-
-                        },
-                        url     : service_url
-                    });
-
-
-
-                }
-
-            };
-
-
-            $('#hfu_name').on('focusout', function(){
-                var $input = $(this);
-                $.validate_input( $input );
-            });
-            $('#hfu_lastname').on('focusout', function(){
-                var $input = $(this);
-                $.validate_input( $input );
-            });
-            $('#hfu_email').on('focusout', function(){
-                var $input = $(this);
-                $.validate_input( $input );
-            });
-            /*$('#tdcs select#hfu_state_chzn_chzn').delegate('select, change', function( e ){
-                var $input = $(this);
-                $.validate_input( $input );
-            });
-            $('#tdcs select#hfu_concessionaire_chzn').delegate('select, change', function( e ){
-                var $input = $(this);
-                $.validate_input( $input );
-            });*/
-            $('#hfu_tel').on('focusout', function(){
-                var $input = $(this);
-                $.validate_input( $input );
-            });
-            $('input[name="hfu_drive"]').on('change, click', function( e ){
-                if( $(this).val() > "No deseas manejarlo" ){
-                    $('.funding-hidden-inputs').show();
-                }else{
-                    $('.funding-hidden-inputs').hide();
-                }
-            });
-            $('input[name="funding-newsletter"]').on('change, click', function( e ){
-                if( $('input[name="funding-newsletter"]').is(':checked') ){
-                    $('input[name="funding-newsletter"]').val('on');
-                }else{
-                    $('input[name="funding-newsletter"]').val('off');
-                }
-            });
-            $('#drive_no').trigger('click');
-            $('#tdr_end').on('click', function(){
-                $.openPanel('');
-            });
-            /*$('#tdcs').concessionaire_selector({
-                callback: function( data ){
-                    conce_d = {
-                        key: this.id,
-                        name: this.name
-                    };
-                    $.error_bubble( $('#tdcss'), false, 'Elije tu concesionaria' );
-                }
-            });
-            $('#tdcs').delegate('select','change',function(){
-                if( $('#tdcs select').length > 0 ){
-                    if( $('#tdcs select').length > 1 ){
-                        $('#error_state').css({marginLeft:0});
-                    }
-                    console.log($('#tdcs select'));
-                    console.log($('#error_state'));
-                }
-
-            })
-            $('#tdcs').delegate('select','change',function(){
-                if( $('#tdcs select').length > 0 ){
-                    if( $('#tdcs select').length > 1 ){
-                        $('#error_concessionaire').css({marginLeft:250});
-                    }
-                    console.log($('#tdcs select'));
-                    console.log($('#error_concessionaire'));
-                }
-
-            })*/
-
-            $("#car_engagement_slider").slider({
-                change  : function( event, ui ) {
-                    funding_data.engagement = ui.value;
-                    $.funding_adjust_calc();
-                },
-                max     : 80,
-                min     : 20,
-                slide   : function( event, ui ) {
-                    funding_data.engagement = ui.value;
-                    $.funding_adjust_calc();
-                    $(this).parent().children(".star").html(ui.value+"%");
-                },
-                step    : 5,
-                value   : 20
-
-            });
-            $("#car_months_slider").slider({
-                change  : function( event, ui ) {
-                    funding_data.months = ui.value;
-                    $.funding_adjust_calc();
-                },
-                max     : 60,
-                min     : 6,
-                slide   : function( event, ui ) {
-                    funding_data.months = ui.value;
-                    $.funding_adjust_calc();
-                    $(this).parent().children(".star").html(ui.value);
-                },
-                step    : 6,
-                value   : 6
-
-            });
-
-
-            current_tab = -1;
-            $('#funding-versions-tabs').delegate('a','click', function( e ){
-                e.preventDefault();
-                $.funding_select_version( parseInt( $(this).data('version') ) );
-            });
-            $('#car_select_list').delegate('a','click', function( e ){
-                e.preventDefault();
-                $.funding_select_car( $(this).data('key') );
-                if (IS_MOBILE) {
-                    $("#car_select_list").hide();
-                    $("#car_select_name, #car_select_preview").fadeIn();
-                }
-            });
-            if( fuh_data.key == '' ){
-                $('#car_select_list a').eq(0).trigger('click');
-                if (IS_MOBILE) {
-                    $("#car_select_name, #car_select_preview").hide();
-                    $("#car_select_list").fadeIn();
-                }
-                goto_step( 1, true );
-            }else{
-                $.funding_select_car( fuh_data.key );
-                goto_step( 2, true );
-            }
-            $("#change-car-test").on('click', function( e ){
-                e.preventDefault();
-                $("#car_select_name, #car_select_preview").hide();
-                $("#car_select_list").fadeIn();
-            });
-            $('a.funding-goto').on('click', function( e ){
-                e.preventDefault();
-                if (IS_MOBILE) {
-                    if ($(this).data('step') == "1") {
-                        $("#car_select_name, #car_select_preview").hide();
-                        $("#car_select_list").fadeIn();
-                    }
-                }
-                goto_step( $(this).data('step') );
-            });
-            if (IS_MOBILE) {
-                $("#fake-calculate").on('click', function( e ){
+    var modelsMenuMethods = {
+        car_next_step : function() {
+            if( $('.car-next-step').length > 0 ){
+                var $arrow1 = $('.car-next-step').children('a'),
+                    $arrow2 =$arrow1.clone();
+                $('.car-next-step').append( $arrow2 ).delegate('a','mousedown mouseup click', function( e ){
                     e.preventDefault();
-                    $("#header-financiamiento .option-2, #fake-calculate").hide();
-                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").css("display", "block");
+                    $.scroll_to('caracteristicas');
                 });
-                $("#modify-calc").on('click', function( e ){
-                    e.preventDefault();
-                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").hide();
-                    $("#header-financiamiento .option-2, #fake-calculate").css("display", "block");
-                });
+                $.animate_arrow( $arrow2 )
             }
-            break;
-        default:
-            break;
-    }
-};
-var startMethods = {
-    start : function() {
-    }
-}
-
-/* ------------------------------------------------------ *\
- [Methods] MODELS MENU
-\* ------------------------------------------------------ */
-var modelsMenuMethods = {
-    car_next_step : function() {
-        if( $('.car-next-step').length > 0 ){
-            var $arrow1 = $('.car-next-step').children('a'),
-                $arrow2 =$arrow1.clone();
-            $('.car-next-step').append( $arrow2 ).delegate('a','mousedown mouseup click', function( e ){
-                e.preventDefault();
-                $.scroll_to('caracteristicas');
+        },
+        changeNameModel : function () {
+            var menu, car_main_model;
+            switch (section) {
+                /*case car_main_model:
+                    $('#change-model').addClass(car_main_model);
+                    $('.car').addClass(car_main_model);
+                    $('.secondary-title').append(car_main_model);
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;*/
+                case 'swift-sport':
+                    $('#change-model').addClass('swift-sport');
+                    $('.car').addClass('swift-sport');
+                    $('.secondary-title').append('Swift Sport');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 'swift':
+                    $('#change-model').addClass('swift');
+                    $('.car').addClass('swift');
+                    $('.secondary-title').append('Swift');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 'sx4-crossover':
+                    $('#change-model').addClass('sx4-crossover');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 'sx4-sedan':
+                    $('#change-model').addClass('sx4-sedan');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 'kizashi':
+                    $('#change-model').addClass('kizashi');
+                    $('.car').addClass('kizashi');
+                    $('.secondary-title').append('Kizashi');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 'grand-vitara':
+                    $('#change-model').addClass('grand-vitara');
+                    $('.car').addClass('grand-vitara');
+                    $('.secondary-title').append('Grand Vitara');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 's-cross':
+                    $('#change-model').addClass('s-cross');
+                    $('.car').addClass('s-cross');
+                    $('.secondary-title').append('S-Cross');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                case 'ciaz':
+                    $('#change-model').addClass('ciaz');
+                    $('.car').addClass('ciaz');
+                    $('.secondary-title').append('Ciaz');
+                    modelsMenuMethods.car_next_step();
+                    $('#model-section-arrow').hide();
+                    $('#back-to-top-button').hide();
+                    modelsMenuMethods.scrollSwitchMethod();
+                    switch_menus( menu );
+                    switch_arrow( );
+                break;
+                default:
+                break;
+            }
+        },
+        scrollSwitchMethod : function() {
+            $('#step-2-date').datepicker({
+                minDate: '+1d',
+                maxDate: '+1m',
+                minLength: 0,
+                delay: 0,
+                dateFormat: 'yy-mm-dd'
             });
-            $.animate_arrow( $arrow2 )
-        }
-    },
-    changeNameModel : function () {
-        var menu, car_main_model;
-        switch (section) {
-            /*case car_main_model:
-                $('#change-model').addClass(car_main_model);
-                $('.car').addClass(car_main_model);
-                $('.secondary-title').append(car_main_model);
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;*/
-            case 'swift-sport':
-                $('#change-model').addClass('swift-sport');
-                $('.car').addClass('swift-sport');
-                $('.secondary-title').append('Swift Sport');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 'swift':
-                $('#change-model').addClass('swift');
-                $('.car').addClass('swift');
-                $('.secondary-title').append('Swift');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 'sx4-crossover':
-                $('#change-model').addClass('sx4-crossover');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 'sx4-sedan':
-                $('#change-model').addClass('sx4-sedan');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 'kizashi':
-                $('#change-model').addClass('kizashi');
-                $('.car').addClass('kizashi');
-                $('.secondary-title').append('Kizashi');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 'grand-vitara':
-                $('#change-model').addClass('grand-vitara');
-                $('.car').addClass('grand-vitara');
-                $('.secondary-title').append('Grand Vitara');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 's-cross':
-                $('#change-model').addClass('s-cross');
-                $('.car').addClass('s-cross');
-                $('.secondary-title').append('S-Cross');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            case 'ciaz':
-                $('#change-model').addClass('ciaz');
-                $('.car').addClass('ciaz');
-                $('.secondary-title').append('Ciaz');
-                modelsMenuMethods.car_next_step();
-                $('#model-section-arrow').hide();
-                $('#back-to-top-button').hide();
-                modelsMenuMethods.scrollSwitchMethod();
-                switch_menus( menu );
-                switch_arrow( );
-            break;
-            default:
-            break;
-        }
-    },
-    scrollSwitchMethod : function() {
-        $('#step-2-date').datepicker({
-            minDate: '+1d',
-            maxDate: '+1m',
-            minLength: 0,
-            delay: 0,
-            dateFormat: 'yy-mm-dd'
-        });
-        $(window).resize(function() {
+            $(window).resize(function() {
+                $.adjust_spaces();
+            });
+
+            $(document).resize(function() {
+                $.adjust_spaces();
+            });
+
+            $(window).scroll(function(){
+                if( header_section == '' ){
+                    switch_menus( get_scroll_top() < 10 ? 'regular' : 'cars'  );
+                    switch_arrow();
+                }
+            });
+
             $.adjust_spaces();
-        });
-
-        $(document).resize(function() {
-            $.adjust_spaces();
-        });
-
-        $(window).scroll(function(){
-            if( header_section == '' ){
-                switch_menus( get_scroll_top() < 10 ? 'regular' : 'cars'  );
-                switch_arrow();
-            }
-        });
-
-        $.adjust_spaces();
-        $(window).trigger('scroll');
+            $(window).trigger('scroll');
+        }
     }
-}
-
 /* ------------------------------------------------------ *\
  [Methods] IS MOBILE
 \* ------------------------------------------------------ */
-var is_mobileMethods = {
-    openCloseMenu : function() {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $("body").toggleClass("open-body");
-            $("#mobile-menu").toggleClass("open-mobile-menu");
-            is_mobileMethods.checkMenu();
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    checkMenu : function() {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
-                $("body").css("overflow", "hidden");
+    var is_mobileMethods = {
+        openCloseMenu : function() {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                $("body").toggleClass("open-body");
+                $("#mobile-menu").toggleClass("open-mobile-menu");
+                is_mobileMethods.checkMenu();
+            } else {
+                console.log('You are not using a mobile device!');
             }
-            else {
-                $("body").css("overflow", "visible");
+        },
+        checkMenu : function() {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                if ($("#mobile-menu").hasClass("open-mobile-menu") && window.orientation == 0) {
+                    $("body").css("overflow", "hidden");
+                }
+                else {
+                    $("body").css("overflow", "visible");
+                }
+            } else {
+                console.log('You are not using a mobile device!');
             }
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    adEventListener : function() {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            if (window.addEventListener){
-                window.addEventListener('orientationchange', is_mobileMethods.checkMenu, false);
-            } else if (window.attachEvent){
-                window.attachEvent('orientationchange', is_mobileMethods.checkMenu);
+        },
+        adEventListener : function() {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                if (window.addEventListener){
+                    window.addEventListener('orientationchange', is_mobileMethods.checkMenu, false);
+                } else if (window.attachEvent){
+                    window.attachEvent('orientationchange', is_mobileMethods.checkMenu);
+                }
+            } else {
+                console.log('You are not using a mobile device!');
             }
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    clickHeaderMobile : function(event) {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $(this).toggleClass("header-mobile-icon-active");
-            is_mobileMethods.openCloseMenu();
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    clickMobileMenuLink : function(event) {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            var idx = $(this).parent().index();
-            var link = "";
-            switch (idx) {
-                case 1:
-                    link = "#header-models-button";
-                    break;
-                case 2:
-                    link = "#header-financing-button";
-                    break;
-                case 3:
-                    link = "#header-owners-button";
-                    break;
-                case 4:
-                    link = "#header-before-buy-button";
-                    break;
-                case 5:
-                    link = "#header-test-drive-button";
-                    break;
+        },
+        clickHeaderMobile : function(event) {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                $(this).toggleClass("header-mobile-icon-active");
+                is_mobileMethods.openCloseMenu();
+            } else {
+                console.log('You are not using a mobile device!');
             }
-            is_mobileMethods.openCloseMenu();
-            $(link).trigger("click");
-            $("#header-mobile i").removeClass("header-mobile-icon-active");
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    clickFooterContent : function(event) {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $(".footer-column .links").slideUp();
-            $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
-            if ($(this).find(".links").css("display") != "block") {
-                $(this).find(".links").slideDown();
-                $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+        },
+        clickMobileMenuLink : function(event) {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                var idx = $(this).parent().index();
+                var link = "";
+                switch (idx) {
+                    case 1:
+                        link = "#header-models-button";
+                        break;
+                    case 2:
+                        link = "#header-financing-button";
+                        break;
+                    case 3:
+                        link = "#header-owners-button";
+                        break;
+                    case 4:
+                        link = "#header-before-buy-button";
+                        break;
+                    case 5:
+                        link = "#header-test-drive-button";
+                        break;
+                }
+                is_mobileMethods.openCloseMenu();
+                $(link).trigger("click");
+                $("#header-mobile i").removeClass("header-mobile-icon-active");
+            } else {
+                console.log('You are not using a mobile device!');
             }
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    clickHeaderColumn : function(event) {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            if (!$(this).hasClass("header-column-open")) {
-                $('html, body').animate({scrollTop: '0px'}, 400);
-                $(".header-links-list").addClass("header-links-open");
-                $(this).siblings().hide();
-                $(this).addClass("header-column-open");
-                $(this).find("ul").fadeIn();
+        },
+        clickFooterContent : function(event) {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                $(".footer-column .links").slideUp();
+                $(".footer-column i").removeClass("fa-minus").addClass("fa-plus");
+                if ($(this).find(".links").css("display") != "block") {
+                    $(this).find(".links").slideDown();
+                    $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+                }
+            } else {
+                console.log('You are not using a mobile device!');
             }
-        } else {
-            console.log('You are not using a mobile device!');
-        }
-    },
-    clickBackListArrow : function(event) {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            var header_column_open = $(".header-column-open");
-            $(".header-links-list").removeClass("header-links-open");
-            header_column_open.removeClass("header-column-open");
-            $(".links-list").hide();
-            $(".header-column").fadeIn();
-        } else {
-            console.log('You are not using a mobile device!');
-        }
+        },
+        clickHeaderColumn : function(event) {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                if (!$(this).hasClass("header-column-open")) {
+                    $('html, body').animate({scrollTop: '0px'}, 400);
+                    $(".header-links-list").addClass("header-links-open");
+                    $(this).siblings().hide();
+                    $(this).addClass("header-column-open");
+                    $(this).find("ul").fadeIn();
+                }
+            } else {
+                console.log('You are not using a mobile device!');
+            }
+        },
+        clickBackListArrow : function(event) {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                var header_column_open = $(".header-column-open");
+                $(".header-links-list").removeClass("header-links-open");
+                header_column_open.removeClass("header-column-open");
+                $(".links-list").hide();
+                $(".header-column").fadeIn();
+            } else {
+                console.log('You are not using a mobile device!');
+            }
 
-    },
-    is_mobile : function () {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            // tasks to do if it is a Mobile Device
-            SUK.loadTemplate(tempsNames.tmp_mobile_menu, '#mobile-menu');
-            is_mobileMethods.adEventListener();
-            console.log('You are using a mobile device!');
-        } else {
-            console.log('You are not using a mobile device!');
+        },
+        is_mobile : function () {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                // tasks to do if it is a Mobile Device
+                SUK.loadTemplate(tempsNames.tmp_mobile_menu, '#mobile-menu');
+                is_mobileMethods.adEventListener();
+                console.log('You are using a mobile device!');
+            } else {
+                console.log('You are not using a mobile device!');
+            }
         }
     }
-}
-var returMethods = {
-    clickGoIndex : function () {
-        Finch.navigate('/');
+    var returMethods = {
+        clickGoIndex : function () {
+            Finch.navigate('/');
+        }
     }
-}
 /* ------------------------------------------------------ *\
  [Methods] inputVal
 \* ------------------------------------------------------ */
-var inputValMetdods = {
-    isIntegerKP: function (event) {
-        return /\d/.test(String.fromCharCode(event.keyCode));
+    var inputValMetdods = {
+        isIntegerKP: function (event) {
+            return /\d/.test(String.fromCharCode(event.keyCode));
+        }
     }
-}
 /* ------------------------------------------------------ *\
  [Methods] INPUTS RADIO, CHECKBOX
 \* ------------------------------------------------------ */
-var changeInputsMethods = {
-    clickChangeCheckbox : function(event) {
-        if ($(".label-checkbox").length) {
-            $('.label-checkbox input:checked').each(function(){
-                $(this).parent('label').addClass('checkbox-checked');
-            });
-        }
-        if ($(this).is(':checked')) {
-            $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
-            $(this).parent('.label-checkbox').addClass('checkbox-checked');
-            $(this).val('on');
-        } else {
-            $(this).parent('label').find(':checkbox').attr('checked', false);
-            $(this).parent('label').removeClass('checkbox-checked');
-            $(this).val('');
-        }
-    },
-    clcikChangeRadio : function(event) {
-        if ($(".label-radio").length) {
-            $('.label-radio input:checked').each(function(){
-                //$(this).parent('label').addClass('radio-checked');
-            });
-        }
-        if ($(this).hasClass('radio-checked')) {
-            $(this).find(':radio').attr('checked', true);
-            $(this).addClass("radio-checked");
-        } else {
-            $(".label-radio").removeClass("radio-checked");
-            $(".label-radio").find(':radio').attr('checked', false);
-            $(this).find(':radio').attr('checked', true);
-            $(this).addClass("radio-checked");
+    var changeInputsMethods = {
+        clickChangeCheckbox : function(event) {
+            if ($(".label-checkbox").length) {
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('checkbox-checked');
+                });
+            }
+            if ($(this).is(':checked')) {
+                $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
+                $(this).parent('.label-checkbox').addClass('checkbox-checked');
+                $(this).val('on');
+                $('#contact_subscription').val('Activado');
+            } else {
+                $(this).parent('label').find(':checkbox').attr('checked', false);
+                $(this).parent('label').removeClass('checkbox-checked');
+                $(this).val('off');
+                $('#contact_subscription').val('Desactivado');
+            }
+        },
+        clcikChangeRadio : function(event) {
+            if ($(".label-radio").length) {
+                $('.label-radio input:checked').each(function(){
+                    //$(this).parent('label').addClass('radio-checked');
+                });
+            }
+            if ($(this).hasClass('radio-checked')) {
+                $(this).find(':radio').attr('checked', true);
+                $(this).addClass("radio-checked");
+            } else {
+                $(".label-radio").removeClass("radio-checked");
+                $(".label-radio").find(':radio').attr('checked', false);
+                $(this).find(':radio').attr('checked', true);
+                $(this).addClass("radio-checked");
+            }
         }
     }
-}
 /* ------------------------------------------------------ *\
  [Methods] VALIDATE
 \* ------------------------------------------------------ */
@@ -1612,24 +1214,53 @@ var formContactMethods = {
         ];
 
         dataFormContact = $('#form-contact').serializeFormJSON();
+        
         isFull = SUK.validFormFull(dataFormContact, validFieldItems);
         $('#suk_contact_submit').attr('disabled', !isFull);
-        //console.log($('#form-contact').serializeFormJSON());
+
+        /*isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
+        $('#suk_contact_submit').attr('disabled', isEmpty);*/
+
+        console.log(dataFormContact);
     },
     refreshForm : function() {
         SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
         $('.seleccionar').chosen();
+        $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
+        $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
+        $('span.clean_car_key_chosen').val('Seleccionar');
+        $('span.clean_department_chosen').val('Seleccionar');
+        $('#contact-newsletter').attr('checked', true);
+        $('#suk_contact_submit').attr('disabled', true);
+        console.log('entra form-contact');
     },
     resetForm : function() {
         SUK.resetForm('#form-contact');
-        //$('#suk_contact_submit').attr('disabled', true);
+        $('.seleccionar').chosen();
+        $('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
+        $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
+        $('span.clean_car_key_chosen').val('Seleccionar');
+        $('span.clean_department_chosen').val('Seleccionar');
+        $('#contact-newsletter').attr('checked', true);
+        $('#suk_contact_submit').attr('disabled', true);
+        console.log('refresca todo');
     },
     reset_pre_loader: function() {
-        SUK.setHTML('#pre-loader', '');
+        SUK.setHTML('.form-loader', '');
     },
     finchNavigateReturn: function() {
+        $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
         Finch.navigate('/');
     },
+    validate_fields_keyup: function() {
+        formContactMethods.fillingControl();
+    },
+    validate_fields_change: function() {
+        formContactMethods.fillingControl();
+    },
+    /*validate_fields_checked: function() {
+        formContactMethods.fillingControl();
+    },*/
     sendContactForm : function(event) {
         formContactMethods.fillingControl();
         var $contact_message    = $('#contact_message'),
@@ -1645,10 +1276,10 @@ var formContactMethods = {
         SUK.setValue('#contact_depto', val_department);
         SUK.setValue('#contact_auto', val_auto);
         SUK.setValue('#contact_image_modelo', 'suzuki_'+val_auto+'.png');
-        if (val_news == 'on') {
+        if (val_news === 'on') {
             val_subscription = 'Activado';
             SUK.setValue('#contact_subscription', val_subscription);
-        } else {
+        } else if (val_news === 'off') {
             val_subscription = 'Desactivado';
             SUK.setValue('#contact_subscription', val_subscription);
         }
@@ -1702,18 +1333,19 @@ var formContactMethods = {
             var contactPromise = formContactMethods.addDataFormContact();
 
             contactPromise.success(function (data) {
-                ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
+                //ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
                 setTimeout(function() {
-                    $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
+                    setTimeout(function () {
+                        $('.form-message-suklm-loader').fadeIn();
+                      }, 1800);
                     //console.log('Espera');
                     setTimeout(function () {
-                        formContactMethods.reset_pre_loader();
-                        $('#pre-loader').append("<span class='msg_by_model label label-default animation-fadeIn'><i class='fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico'></i> Enviado Mensaje</span>");
+                        setTimeout(function () {
+                          $('.form-message-suklm-loader').fadeOut();
+                        }, 1800);
                         setTimeout(function () {
                             //console.log("Correo Enviado...");
-                            formContactMethods.reset_pre_loader();
                             setTimeout(function () {
-                                $('#pre-loader').append("<span class='msg_by_model label label-success animation-fadeIn'><i class='fa fa-check fa-lg fa-fw msg-fa-ico'></i> Correo Enviado...</span>");
                                 $('#form-wrapper').fadeOut( 300 , function(){
                                     var correo = $("#contact_email").val();
                                     $('#email-from').text(correo);
