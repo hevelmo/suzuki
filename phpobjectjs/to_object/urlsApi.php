@@ -37,6 +37,7 @@ function urlsApi() {
         'addModelos' => $root . '/add/models',
         'addGamaModelos' => $root . '/add/gama_modelos',
 
-        'sendContact' => $root . '/post/contacto'
+        'sendContact' => $root . '/post/contacto',
+        'sendTestDriveModel' => $root . '/post/model/test-drive'
     );
 }

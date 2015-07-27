@@ -14,32 +14,27 @@ setlocale(LC_MONETARY, 'en_US');
  *
  * [Initial V 1.0]
  *
- */
-require '../Slim/Slim.php';
-\Slim\Slim::registerAutoloader();
-$app = new \Slim\Slim(array(
-    'mode' => 'development',
-    'cookies.httponly' => true
-));
-
-
+*/
+    require '../Slim/Slim.php';
+    \Slim\Slim::registerAutoloader();
+    $app = new \Slim\Slim(array(
+        'mode' => 'development',
+        'cookies.httponly' => true
+    ));
 // Only invoked if mode is "production"
-$app->configureMode('production', function () use ($app) {
-    $app->config(array(
-        'log.enable' => true,
-        'debug' => false
-    ));
-});
-
+    $app->configureMode('production', function () use ($app) {
+        $app->config(array(
+            'log.enable' => true,
+            'debug' => false
+        ));
+    });
 // Only invoked if mode is "development"
-$app->configureMode('development', function () use ($app) {
-    $app->config(array(
-        'log.enable' => false,
-        'debug' => true
-    ));
-});
-
-
+    $app->configureMode('development', function () use ($app) {
+        $app->config(array(
+            'log.enable' => false,
+            'debug' => true
+        ));
+    });
 /**
  * [Routes Deep V 1.0]
  */
@@ -47,6 +42,8 @@ $app->configureMode('development', function () use ($app) {
 // POST route
     // app => Contacto
         $app->post('/post/contacto', 'sendContact');
+    // app => Test Drive by Model
+        $app->post('/post/model/test-drive', 'sendTestDriveModel');
 
 // INSERT
 //$app->post('/new/table', /*'mw1',*/ 'addTable');
@@ -64,11 +61,6 @@ $app->configureMode('development', function () use ($app) {
 //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
 $app->run();
 //Functions
-    // GET CAR MAIN MODELS
-    function addCarMainModel($car_main_model) {
-        $json = file_get_contents('../data-json/cars/cars_main.json');
-        echo $json;
-    }
     // GET MODELS
     function addModels() {
         $json = file_get_contents('../data-json/financing/car_prices.json');
@@ -83,6 +75,15 @@ $app->run();
     function addGamaModels() {
         $json = file_get_contents('../data-json/models_gama/models_gama.json');
         echo $json;
+    }
+    // TEST DRIVE BY MODEL SUZUKI
+    function sendTestDriveModel() {
+        $property = requestBody();
+        $send_suk_gdl_contact_name = $property->suk_gdl_contact_name;
+
+        send_test_drive($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription);
+
+        echo changeArrayIntoJSON("sukpa", array('process'=>'ok'));
     }
     // CONTACTO SUZUKI
     function sendContact() {
@@ -141,7 +142,7 @@ $app->run();
         if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news === "on") {
             $send_suk_gdl_contact_subscription = "Activado";
             send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_subscription);
-        } else if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news === "off") {
+        } else {
             $send_suk_gdl_contact_subscription = "Desactivado";
         }
         send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription);
@@ -224,427 +225,431 @@ $app->run();
         Notification Methods
   ----------------------------------------------------------------------------
 */
-function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary) {
-    try {
-        $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
-        $message = array(
-            'html' => '
-                <html>
-                    <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-                    </head>
+// SEND CONTACT
+    function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary) {
+        try {
+            $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
+            $message = array(
+                'html' => '
+                    <html>
+                        <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+                        </head>
 
-                    <body>
+                        <body>
 
-                        <div>
-                            <table align="center" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                        <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
-                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="52" width="102">
-                                                            <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
-                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" height="78" bgcolor="#CA272C" width="11">
-                                            <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
-                                                Noticias y promociones
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
-                                        </td>
-                                        <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
-                                            <table style="padding:35px 60px 35px" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="11" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Nombre(s):
-                                                            </strong>
-                                                        </td>
-                                                        <td height="11" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_contact_name .' '. $send_suk_gdl_contact_lastname.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="11" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Correo Electrónico:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="11" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_contact_email.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="11" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Concesionaria:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="11" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$suk_gdl_contact_concesionary.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="14" width="15">
-                                                            <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
-                                                        </td>
-                                                        <td width="125px">
-                                                            <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
-                                                                <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
-                                                            </p>
+                            <div>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                            <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                                <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="52" width="102">
+                                                                <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                                <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                    Noticias y promociones
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                            </td>
+                                            <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
+                                                <table style="padding:35px 60px 35px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Nombre(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_contact_name .' '. $send_suk_gdl_contact_lastname.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Correo Electrónico:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_contact_email.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Concesionaria:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$suk_gdl_contact_concesionary.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="14" width="15">
+                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                            </td>
+                                                            <td width="125px">
+                                                                <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                    <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                                </p>
 
-                                                        </td>
-                                                        <td>
-                                                            <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                &nbsp;© 2015 Suzuki / Guadalajara
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </body>
-                </html>
-            ',
-            'subject' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department,
-            'from_email' => $send_suk_gdl_contact_email,
-            'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
-            'to' => array(
-                array(
-                    'email' => 'hevelmo060683@gmail.com',
-                    'name' => 'contacto',
-                    'type' => 'to'
-                )/*,
-                array(
-                    'email' => 'arivera@jaguardgl.com',
-                    //'email' => 'hevelmo060683@gmail.com',
-                    'name' => $jag_congdlconcesionarie,
-                    'type' => 'cc'
+                                                            </td>
+                                                            <td>
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                    &nbsp;© 2015 Suzuki / Guadalajara
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </body>
+                    </html>
+                ',
+                'subject' => 'Contacto - Noticias y promociones - Suzuki Guadalajara',
+                'from_email' => $send_suk_gdl_contact_email,
+                'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
+                'to' => array(
+                    array(
+                        'email' => 'hevelmo060683@gmail.com',
+                        'name' => 'contacto',
+                        'type' => 'to'
+                    )/*,
+                    array(
+                        'email' => 'arivera@jaguardgl.com',
+                        //'email' => 'hevelmo060683@gmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'cc'
+                    ),
+                    array(
+                        'email' => 'arivera@guadalajara.jlr.com.mx',
+                        //'email' => 'cold_space@hotmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'bcc'
+                    )*/
                 ),
-                array(
-                    'email' => 'arivera@guadalajara.jlr.com.mx',
-                    //'email' => 'cold_space@hotmail.com',
-                    'name' => $jag_congdlconcesionarie,
-                    'type' => 'bcc'
-                )*/
-            ),
-            'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
-            //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
-            'important' => false,
-            'track_opens' => true,
-            'track_clicks' => true,
-            'auto_text' => null,
-            'auto_html' => null,
-            'inline_css' => null,
-            'url_strip_qs' => null,
-            'preserve_recipients' => null,
-            'view_content_link' => null,
-            'bcc_address' => null,
-            'tracking_domain' => null,
-            'signing_domain' => null,
-            'return_path_domain' => null,
-            'merge' => true,
+                'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
+                //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
+                'important' => false,
+                'track_opens' => true,
+                'track_clicks' => true,
+                'auto_text' => null,
+                'auto_html' => null,
+                'inline_css' => null,
+                'url_strip_qs' => null,
+                'preserve_recipients' => null,
+                'view_content_link' => null,
+                'bcc_address' => null,
+                'tracking_domain' => null,
+                'signing_domain' => null,
+                'return_path_domain' => null,
+                'merge' => true,
 
-            'tags' => array('orden-new-notificacion'),
-            'google_analytics_domains' => array('jaguar.com'),
-            'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-            'metadata' => array('website' => 'www.jaguar.com'),
+                'tags' => array('orden-new-notificacion'),
+                'google_analytics_domains' => array('jaguar.com'),
+                'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
+                'metadata' => array('website' => 'www.jaguar.com'),
 
-        );
-        $async = false;
-        $ip_pool = 'Main Pool';
-        $send_at = '';
-        $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
-        //print_r($result);
+            );
+            $async = false;
+            $ip_pool = 'Main Pool';
+            $send_at = '';
+            $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
+            //print_r($result);
 
-    } catch(Mandrill_Error $e) {
-        // Mandrill errors are thrown as exceptions
-        echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
-        // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
-        throw $e;
+        } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+            throw $e;
+        }
     }
-}
-function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription) {
-    try {
-        $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
-        $message = array(
-            'html' => '
-                <html>
-                    <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-                    </head>
+    function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription) {
+        try {
+            $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
+            $message = array(
+                'html' => '
+                    <html>
+                        <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+                        </head>
 
-                    <body>
+                        <body>
 
-                        <div>
-                            <table align="center" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                        <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
-                                            <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="52" width="102">
-                                                            <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
-                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" height="78" bgcolor="#CA272C" width="11">
-                                            <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
-                                                '.$send_suk_gdl_contact_depto.'
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
-                                        </td>
-                                        <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
-                                            <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="0" valign="top">
-                                                            <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
-                                                        </td>
-                                                        <td height="0" valign="top">
-                                                            <img src="http://suzukigdl.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_contact_image_modelo.'" alt="'.$send_suk_gdl_contact_auto.'">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Modelo:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_auto.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Departamento:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_depto.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Nombre(s):
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_name.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Apellido(s):
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_lastname.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Correo Electrónico:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_email.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Concesionaria:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_concesionary.'</span><br>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
-                                                                Desea recibir noticias:
-                                                            </strong>
-                                                        </td>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_subscription.'</span>
-                                                        </td>
-                                                        <br>
-                                                        <br>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
-                                                <tbody>
-                                                    <tr>
-                                                        <td colspan="2" height="20" valign="top" width="250">
-                                                            <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: center; padding: 0; display: block">
-                                                                Mensaje de contacto
-                                                            </strong>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="20" valign="top">
-                                                            <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0; text-align: justify">'.$send_suk_gdl_contact_message.'</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
-                                                <tbody>
-                                                    <tr>
-                                                        <td height="14" width="15">
-                                                            <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
-                                                        </td>
-                                                        <td width="125px">
-                                                            <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
-                                                                <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
-                                                            </p>
+                            <div>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                            <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                                <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="52" width="102">
+                                                                <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                                <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                    '.$send_suk_gdl_contact_depto.'
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                            </td>
+                                            <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
+                                                <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="0" valign="top">
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
+                                                            </td>
+                                                            <td height="0" valign="top">
+                                                                <img src="http://suzukigdl.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_contact_image_modelo.'" alt="'.$send_suk_gdl_contact_auto.'">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Modelo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_auto.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Departamento:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_depto.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Nombre(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_name.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Apellido(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_lastname.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Correo Electrónico:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_email.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Concesionaria:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$suk_gdl_contact_concesionary.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Desea recibir noticias:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_contact_subscription.'</span>
+                                                            </td>
+                                                            <br>
+                                                            <br>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="2" height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: center; padding: 0; display: block">
+                                                                    Mensaje de contacto
+                                                                </strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0; text-align: justify; word-break: break-all; display: block;">
+                                                                '.$send_suk_gdl_contact_message.'
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="14" width="15">
+                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                            </td>
+                                                            <td width="125px">
+                                                                <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                    <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                                </p>
 
-                                                        </td>
-                                                        <td>
-                                                            <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                &nbsp;© 2015 Suzuki / Guadalajara
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td height="11" valign="top" width="11">
-                                            <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                        <td width="11">
-                                            <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </body>
-                </html>
-            ',
-            'subject' => 'Contacto - Noticias y promociones - Suzuki Guadalajara',
-            'from_email' => $send_suk_gdl_contact_email,
-            'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
-            'to' => array(
-                array(
-                    'email' => 'hevelmo060683@gmail.com',
-                    'name' => 'contacto',
-                    'type' => 'to'
-                )/*,
-                array(
-                    'email' => 'arivera@jaguardgl.com',
-                    //'email' => 'hevelmo060683@gmail.com',
-                    'name' => $jag_congdlconcesionarie,
-                    'type' => 'cc'
+                                                            </td>
+                                                            <td>
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                    &nbsp;© 2015 Suzuki / Guadalajara
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </body>
+                    </html>
+
+                ',
+                'subject' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department,
+                'from_email' => $send_suk_gdl_contact_email,
+                'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
+                'to' => array(
+                    array(
+                        'email' => 'hevelmo060683@gmail.com',
+                        'name' => 'contacto',
+                        'type' => 'to'
+                    )/*,
+                    array(
+                        'email' => 'arivera@jaguardgl.com',
+                        //'email' => 'hevelmo060683@gmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'cc'
+                    ),
+                    array(
+                        'email' => 'arivera@guadalajara.jlr.com.mx',
+                        //'email' => 'cold_space@hotmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'bcc'
+                    )*/
                 ),
-                array(
-                    'email' => 'arivera@guadalajara.jlr.com.mx',
-                    //'email' => 'cold_space@hotmail.com',
-                    'name' => $jag_congdlconcesionarie,
-                    'type' => 'bcc'
-                )*/
-            ),
-            'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
-            //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
-            'important' => false,
-            'track_opens' => true,
-            'track_clicks' => true,
-            'auto_text' => null,
-            'auto_html' => null,
-            'inline_css' => null,
-            'url_strip_qs' => null,
-            'preserve_recipients' => null,
-            'view_content_link' => null,
-            'bcc_address' => null,
-            'tracking_domain' => null,
-            'signing_domain' => null,
-            'return_path_domain' => null,
-            'merge' => true,
+                'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
+                //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
+                'important' => false,
+                'track_opens' => true,
+                'track_clicks' => true,
+                'auto_text' => null,
+                'auto_html' => null,
+                'inline_css' => null,
+                'url_strip_qs' => null,
+                'preserve_recipients' => null,
+                'view_content_link' => null,
+                'bcc_address' => null,
+                'tracking_domain' => null,
+                'signing_domain' => null,
+                'return_path_domain' => null,
+                'merge' => true,
 
-            'tags' => array('orden-new-notificacion'),
-            'google_analytics_domains' => array('jaguar.com'),
-            'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-            'metadata' => array('website' => 'www.jaguar.com'),
+                'tags' => array('orden-new-notificacion'),
+                'google_analytics_domains' => array('jaguar.com'),
+                'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
+                'metadata' => array('website' => 'www.jaguar.com'),
 
-        );
-        $async = false;
-        $ip_pool = 'Main Pool';
-        $send_at = '';
-        $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
-        //print_r($result);
+            );
+            $async = false;
+            $ip_pool = 'Main Pool';
+            $send_at = '';
+            $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
+            //print_r($result);
 
-    } catch(Mandrill_Error $e) {
-        // Mandrill errors are thrown as exceptions
-        echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
-        // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
-        throw $e;
+        } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+            throw $e;
+        }
     }
-}

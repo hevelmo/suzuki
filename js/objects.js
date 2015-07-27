@@ -93,5 +93,6 @@ urlsApi = {
 	"addConcesionaries":"api/v1/add/concesionaries",
 	"addGamaModelos":"api/v1/add/gama_modelos",
 	"addModelos":"api/v1/add/models",
-	"sendContact":"api/v1/post/contacto"
+	"sendContact":"api/v1/post/contacto",
+	"sendTestDriveModel":"api/v1/post/model/test-drive"
 };

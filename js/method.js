@@ -579,44 +579,44 @@
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/');
-            console.log('Click index');
+            //console.log('Click index');
         },
         clixkGoGroup : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/grupo');
-            console.log('Click group');
+            //console.log('Click group');
         },
         clickGoConcesinary : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/concesionarias');
-            console.log('Click concesionarias');
+            //console.log('Click concesionarias');
         },
         clickGoCatalogs : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/catalogos');
             $('.et-section').addClass('et-page-current');
-            console.log('Click catalogos');
+            //console.log('Click catalogos');
         },
         clickGoContactUs : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/contactanos');
-            console.log('Click contactanos');
+            //console.log('Click contactanos');
         },
         clickGoPrivacy : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/aviso-de-privacidad');
-            console.log('Click aviso de privacidad');
+            //console.log('Click aviso de privacidad');
         },
         clickGoLegalTerms : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/terminos-legales');
-            console.log('Click Terminos Legales');
+            //console.log('Click Terminos Legales');
         }
     }
 /* ------------------------------------------------------ *\
@@ -916,10 +916,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_swift_sport_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'swift-sport'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'swift-sport'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_sport_Attributes);
+                    console.log(input_hidden_test_drive_swift_sport_Attributes);
                 break;
                 case 'swift':
                     $('#change-model').addClass('swift');
@@ -933,10 +936,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_swift_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'swift'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'swift'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_Attributes);
+                    console.log(input_hidden_test_drive_swift_Attributes);
                 break;
                 case 'sx4-crossover':
                     $('#change-model').addClass('sx4-crossover');
@@ -948,10 +954,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_sx4_crossover_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'sx4-crossover'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'sx4-crossover'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_crossover_Attributes);
+                    console.log(input_hidden_test_drive_sx4_crossover_Attributes);
                 break;
                 case 'sx4-sedan':
                     $('#change-model').addClass('sx4-sedan');
@@ -963,10 +972,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_sx4_sedan_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'sx4-sedan'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'sx4-sedan'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_sedan_Attributes);
+                    console.log(input_hidden_test_drive_sx4_sedan_Attributes);
                 break;
                 case 'kizashi':
                     $('#change-model').addClass('kizashi');
@@ -980,10 +992,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_kizashi_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'kizashi'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'kizashi'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_kizashi_Attributes);
+                    console.log(input_hidden_test_drive_kizashi_Attributes);
                 break;
                 case 'grand-vitara':
                     $('#change-model').addClass('grand-vitara');
@@ -997,10 +1012,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_grand_vitara_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'grand-vitara'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'grand-vitara'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_grand_vitara_Attributes);
+                    console.log(input_hidden_test_drive_grand_vitara_Attributes);
                 break;
                 case 's-cross':
                     $('#change-model').addClass('s-cross');
@@ -1014,10 +1032,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_s_cross_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'s-cross'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'s-cross'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_s_cross_Attributes);
+                    console.log(input_hidden_test_drive_s_cross_Attributes);
                 break;
                 case 'ciaz':
                     $('#change-model').addClass('ciaz');
@@ -1031,17 +1052,20 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_ciaz_Attributes = [
-                        ['input', {'id':'test_drive_modelo', 'type':'hidden', 'name':'step-2-modelo', 'content':'ciaz'}, '', 0],
-                        ['input', {'id':'test_drive_concesionaria', 'type':'hidden', 'name':'step-2-concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'ciaz'}, '', 0],
+                        ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_ciaz_Attributes);
+                    console.log(input_hidden_test_drive_ciaz_Attributes);
                 break;
                 default:
                 break;
             }
         },
         scrollSwitchMethod : function() {
-            $('#step-2-date').datepicker({
+            $('#suk_gdl_test_drive_date').datepicker({
                 minDate: '+1d',
                 maxDate: '+1m',
                 minLength: 0,
@@ -1205,31 +1229,67 @@
 \* ------------------------------------------------------ */
     var formTestDriveMethods = {
         init_datepicker: function() {
-            $('#step-2-date').datepicker({
+            $('#test_drive_model_date').datepicker({
                 minDate: '+1d',
-                //maxDate: '+1m',
+                maxDate: '+1m',
                 minLength: 0,
                 delay: 0,
                 dateFormat: 'yy-mm-dd'
             });
         },
         addDataFormTestDrive: function() {
-            var dataFormTestDrive;
-            dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
-            return SUK.postalService(urlsApi.sendTestDrive, dataFormTestDrive);
+            var dataFormTestDriveModel;
+            dataFormTestDriveModel = $('#form-test-drive').serializeFormJSON();
+
+            dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] = (dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] == 'on')
+                ? dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] : 'off';
+
+            console.log(dataFormTestDriveModel);
+            console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
+
+            return SUK.postalService(urlsApi.sendTestDriveModel, dataFormTestDriveModel);
         },
         fillingControl: function() {
-            var validFieldItems, dataFormTestDrive, isFull, isNoEmpty;
-            validFieldItems = [];
-            dataFormTestDrive = $('#form-test-drive').serializeFormJSON();
-            isFull = SUK.validFormFull(dataFormTestDrive, validFieldItems);
-            //$('#suk_test_drive_submit').attr('disabled', !siFull);
-            //console.log($('#form-test-drive')serializeFormJSON());
+            var validFieldItems, dataFormTestDriveModel, isFull, isNoEmpty;
+            validFieldItems = [
+                'suk_gdl_test_drive_model_date',
+                'suk_gdl_test_drive_model_name',
+                'suk_gdl_test_drive_model_lastname',
+                'suk_gdl_test_drive_model_email',
+                'suk_gdl_test_drive_model_tel'
+            ];
+            dataFormTestDriveModel = $('#form-test-drive').serializeFormJSON();
+
+            isFull = SUK.validFormFull(dataFormTestDriveModel, validFieldItems);
+            $('#suk_test_dirve_model_submit').attr('disabled', !isFull);
+
+            isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
+            $('#suk_test_dirve_model_submit').attr('disabled', isEmpty);
+
+            console.log($('#form-test-drive').serializeFormJSON());
         },
-        refreshForm: function() {},
-        resetForm: function() {},
-        reset_pre_loader: function() {},
-        finchNavigateReturn: function() {},
+        refreshForm: function() {
+            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
+            formTestDriveMethods.init_datepicker();
+            $('#suk_test_dirve_model_submit').attr('disabled', true);
+            console.log('entra form-contact');
+        },
+        resetForm: function() {
+            SUK.resetForm('#form-test-drive');
+            formTestDriveMethods.init_datepicker();
+            $('#suk_test_dirve_model_submit').attr('disabled', true);
+            console.log('entra form-contact');
+        },
+        reset_pre_loader: function() {
+            SUK.setHTML('.form-loader', '');
+        },
+        finchNavigateReturn: function() {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/');
+        },
+        validate_fields_keyup: function() {
+            formTestDriveMethods.fillingControl();
+        },
         sendTestDriveForm: function(event) {}
     }
 /* ------------------------------------------------------ *\
@@ -1239,6 +1299,13 @@
         addDataFormContact: function() {
             var dataFormContact;
             dataFormContact = $('#form-contact').serializeFormJSON();
+
+            dataFormContact['suk_gdl_contact_news'] = (dataFormContact['suk_gdl_contact_news'] == 'on')
+                ? dataFormContact['suk_gdl_contact_news'] : 'off';
+
+            //console.log(dataFormContact);
+            //console.log(dataFormContact['suk_gdl_contact_news']);
+
             return SUK.postalService(urlsApi.sendContact, dataFormContact);
         },
         fillingControl: function() {
@@ -1246,41 +1313,32 @@
             validFieldItems = [
                 'suk_gdl_contact_name', 'suk_gdl_contact_lastname',
                 'suk_gdl_contact_email', 'suk_gdl_contact_department',
-                'suk_gdl_contact_car', 'suk_gdl_contact_message',
-                'suk_gdl_contact_news'
+                'suk_gdl_contact_car', 'suk_gdl_contact_message'
             ];
 
             dataFormContact = $('#form-contact').serializeFormJSON();
 
-            /*isFull = SUK.validFormFull(dataFormContact, validFieldItems);
-            $('#suk_contact_submit').attr('disabled', !isFull);*/
+            isFull = SUK.validFormFull(dataFormContact, validFieldItems);
+            $('#suk_contact_submit').attr('disabled', !isFull);
 
-            /*isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
-            $('#suk_contact_submit').attr('disabled', isEmpty);*/
+            isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
+            $('#suk_contact_submit').attr('disabled', isEmpty);
 
-            console.log($('#form-contact').serializeFormJSON());
+            //console.log($('#form-contact').serializeFormJSON());
         },
         refreshForm : function() {
             SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
             $('.seleccionar').chosen();
-            /*$('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
-            $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
-            $('span.clean_car_key_chosen').val('Seleccionar');
-            $('span.clean_department_chosen').val('Seleccionar');
             $('#contact-newsletter').attr('checked', true);
-            $('#suk_contact_submit').attr('disabled', true);*/
-            console.log('entra form-contact');
+            $('#suk_contact_submit').attr('disabled', true);
+            //console.log('entra form-contact');
         },
         resetForm : function() {
             SUK.resetForm('#form-contact');
             $('.seleccionar').chosen();
-            /*$('#contact_department_chosen a.chosen-single span').addClass('clean_department_chosen');
-            $('#contact_car_key_chosen a.chosen-single span').addClass('clean_car_key_chosen');
-            $('span.clean_car_key_chosen').val('Seleccionar');
-            $('span.clean_department_chosen').val('Seleccionar');
             $('#contact-newsletter').attr('checked', true);
-            $('#suk_contact_submit').attr('disabled', true);*/
-            console.log('refresca todo');
+            $('#suk_contact_submit').attr('disabled', true);
+            //console.log('refresca todo');
         },
         reset_pre_loader: function() {
             SUK.setHTML('.form-loader', '');
@@ -1295,9 +1353,6 @@
         validate_fields_change: function() {
             formContactMethods.fillingControl();
         },
-        /*validate_fields_checked: function() {
-            //formContactMethods.fillingControl();
-        },*/
         sendContactForm : function(event) {
             formContactMethods.fillingControl();
             var $contact_message    = $('#contact_message'),
@@ -1307,20 +1362,23 @@
                 $contact_name       = $('#contact_name'),
                 $contact_lastname   = $('#contact_lastname'),
                 $contact_newsletter = $('#contact-newsletter');
+
             val_department = SUK.getValue('#contact_department');
             val_auto = SUK.getValue('#contact_car_key');
             val_news = SUK.getValue('#contact-newsletter');
+
             SUK.setValue('#contact_depto', val_department);
             SUK.setValue('#contact_auto', val_auto);
             SUK.setValue('#contact_image_modelo', 'suzuki_'+val_auto+'.png');
+
             if (val_news === 'on') {
                 val_subscription = 'Activado';
                 SUK.setValue('#contact_subscription', val_subscription);
-                console.log(val_news);
-            } else if (val_news === 'off') {
+                //console.log(val_subscription);
+            } else {
                 val_subscription = 'Desactivado';
                 SUK.setValue('#contact_subscription', val_subscription);
-                console.log(val_news);
+                //console.log(val_subscription);
             }
 
             $contact_department.chosen();
@@ -1366,7 +1424,7 @@
                 var contactPromise = formContactMethods.addDataFormContact();
 
                 contactPromise.success(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     var con_news = $('#contact-newsletter:checked').length;
                     //var con_news = $contact_newsletter.is(':checked').length;
                     var departamento = $contact_department.val();
@@ -1374,17 +1432,23 @@
                     var news_srt    = con_news ? 'Envio_con_Newsletter' : 'Envio_Sin_Newsletter';
                     var news_val    = con_news ? 600 : 0;
                     var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
-                    console.log(departamento, precio_actual, news_srt, news_val, car_val);
+                    //console.log(departamento, precio_actual, news_srt, news_val, car_val);
                     //ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
                     setTimeout(function() {
-                        setTimeout(function () {
-                            $('.form-message-suklm-loader').fadeIn();
-                          }, 1800);
+                        //setTimeout(function () {
+                            //$('#form-wrapper').fadeIn( 300 , function(){
+                                //$('.form-loader').fadeOut();
+                            //});
+                        //}, 800);
                         //console.log('Espera');
                         setTimeout(function () {
-                            setTimeout(function () {
-                              $('.form-message-suklm-loader').fadeOut();
-                            }, 1800);
+                            //setTimeout(function () {
+                                $('#form-wrapper').fadeOut( 300 , function(){
+                                    setTimeout(function () {
+                                        $('.form-loader').fadeIn();
+                                    }, 300);
+                                });
+                            //}, 1800);
                             setTimeout(function () {
                                 //console.log("Correo Enviado...");
                                 setTimeout(function () {
@@ -1410,29 +1474,50 @@
                                             }, 2000);
                                         }, 3400);
                                     }, 1800);
-                                }, 5900);
-                            }, 3400);
-                        }, 2000);
+                                }, 1800);
+                            }, 1400);
+                        }, 300);
                     }, 500);
                 });
                 contactPromise.error(function (data) {
-                    setTimeout(function () {
-                        $('#pre-loader').append('<i class="fa fa-spinner fa-pulse fa-lg fa-fw msg-fa-ico"></i>');
+                    setTimeout(function() {
+                        //setTimeout(function () {
+                            //$('#form-wrapper').fadeIn( 300 , function(){
+                                //$('.form-loader').fadeOut();
+                            //});
+                        //}, 1800);
                         //console.log('Espera');
                         setTimeout(function () {
-                            formContactMethods.reset_pre_loader();
-                            $('#pre-loader').append("<span class='msg_by_model label label-warning animation-fadeIn'><i class='fa fa-info-circle fa-lg fa-fw msg-fa-ico'></i> Se requiere llenar los campos</span>");
+                            //setTimeout(function () {
+                                $('#form-wrapper').fadeOut( 300 , function(){
+                                    setTimeout(function () {
+                                        $('.form-loader').fadeIn();
+                                    }, 1000);
+                                });
+                            //}, 1800);
                             setTimeout(function () {
-                                //console.log("Correo no Enviado...");
-                                formContactMethods.reset_pre_loader();
-                                $('#pre-loader').append("<span class='msg_by_model label label-danger animation-fadeIn'><i class='fa fa-times fa-lg fa-fw msg-fa-ico'></i> Correo no Enviado...</span>");
-                                //console.log(data);
+                                //console.log("Correo Enviado...");
                                 setTimeout(function () {
-                                    formContactMethods.reset_pre_loader();
-                                    formContactMethods.resetForm();
-                                }, 1600);
-                            }, 900);
-                        }, 2000);
+                                    $('#form-wrapper').fadeOut( 300 , function(){
+                                        setTimeout(function () {
+                                            $('.form-error').fadeIn();
+                                        }, 1800);
+                                    });
+                                    //console.log(data);
+                                    setTimeout(function () {
+                                        formContactMethods.resetForm();
+                                        setTimeout(function () {
+                                            $('#form-wrapper').fadeIn( 300 , function(){
+                                                $('.form-error').fadeOut();
+                                            });
+                                            setTimeout(function () {
+                                                formContactMethods.resetForm();
+                                            }, 2000);
+                                        }, 3400);
+                                    }, 1800);
+                                }, 5900);
+                            }, 3400);
+                        }, 1800);
                     }, 500);
                 });
 
@@ -1488,7 +1573,7 @@
                 $("#mobile-menu").toggleClass("open-mobile-menu");
                 is_mobileMethods.checkMenu();
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         checkMenu : function() {
@@ -1500,7 +1585,7 @@
                     $("body").css("overflow", "visible");
                 }
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         adEventListener : function() {
@@ -1511,7 +1596,7 @@
                     window.attachEvent('orientationchange', is_mobileMethods.checkMenu);
                 }
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         clickHeaderMobile : function(event) {
@@ -1519,7 +1604,7 @@
                 $(this).toggleClass("header-mobile-icon-active");
                 is_mobileMethods.openCloseMenu();
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         clickMobileMenuLink : function(event) {
@@ -1547,7 +1632,7 @@
                 $(link).trigger("click");
                 $("#header-mobile i").removeClass("header-mobile-icon-active");
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         clickFooterContent : function(event) {
@@ -1559,7 +1644,7 @@
                     $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
                 }
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         clickHeaderColumn : function(event) {
@@ -1572,7 +1657,7 @@
                     $(this).find("ul").fadeIn();
                 }
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         },
         clickBackListArrow : function(event) {
@@ -1583,7 +1668,7 @@
                 $(".links-list").hide();
                 $(".header-column").fadeIn();
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
 
         },
@@ -1592,9 +1677,9 @@
                 // tasks to do if it is a Mobile Device
                 SUK.loadTemplate(tempsNames.tmp_mobile_menu, '#mobile-menu');
                 is_mobileMethods.adEventListener();
-                console.log('You are using a mobile device!');
+                //console.log('You are using a mobile device!');
             } else {
-                console.log('You are not using a mobile device!');
+                //console.log('You are not using a mobile device!');
             }
         }
     }
