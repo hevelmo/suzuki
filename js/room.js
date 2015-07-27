@@ -284,4 +284,15 @@
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
+    Finch.route('/agendar-prueba-de-manejo', {
+        setup: function(bindings) {
+            section="test_drive";
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+        },
+        load: function(bindings) {
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
 Finch.listen();

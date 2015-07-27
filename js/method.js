@@ -264,48 +264,56 @@
         },
         cleanAttrModel_swift_sport : function () {
             $('head .link-swift-sport').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_swift : function () {
             $('head .link-swift').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_sx4_crossover : function () {
             $('head .link-sx4-crossover').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_sx4_sedan : function () {
             $('head .link-sx4-sedan').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_kizashi : function () {
             $('head .link-kizashi').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_grand_vitara : function () {
             $('head .link-grand-vitara').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_s_cross : function () {
             $('head .link-s-cross').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
         cleanAttrModel_ciaz : function () {
             $('head .link-ciaz').remove();
+            $('head #meta-model').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
@@ -347,48 +355,169 @@
             $('body').prepend( patch_bar );
         },
         addStyleModel_swift_sport : function () {
+            seo_elements_swift_sport_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'autos.suzuki.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Diseño deportivo, movilidad veloz. La combinación perfecta de un auto deportivo y uno urbano. '}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'Swift Sport'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/swift-sport/exterior/04.png'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $254,000 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_swift_sport_elements);
+
             link_swift_sport_Attributes = {'id': 'content-add-styles-swift-sport', 'rel': 'stylesheet', 'class': 'link-swift-sport', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_swift_sport_Attributes, '', 0);
+
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_swift : function () {
+            seo_elements_swift_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'autos.suzuki.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Aerodinámico y divertido para ti que buscas diseño y agilidad en un solo auto. '}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'Swift'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/swift/exterior/06.png.jpeg'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $174,000 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_swift_elements);
+
             link_swift_Attributes = {'id': 'content-add-styles-swift', 'rel': 'stylesheet', 'class': 'link-swift', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_swift_Attributes, '', 0);
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_sx4_crossover : function () {
+            seo_elements_sx4_crossover_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Gdl'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Gdl'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'suzukigdl.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Ágil y liviano, siente la vida cuando todo marcha en cuatro ruedas.'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'SX4 Crossover'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/sx4-crossover/exterior/foto-05.png'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $238,000 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratiss'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_sx4_crossover_elements);
+
             link_sx4_crossover_Attributes = {'id': 'content-add-styles-sx4-crossover', 'rel': 'stylesheet', 'class': 'link-sx4-crossover', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_sx4_crossover_Attributes, '', 0);
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_sx4_sedan : function () {
+            seo_elements_sx4_sedan_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Gdl'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Gdl'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'suzukigdl.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Fusión de confort y desempeño. El tamaño perfecto. '}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'SX4 Sedán'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/sx4-sedan/exterior/foto-05.png'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $219,000 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_sx4_sedan_elements);
+
             link_sx4_sedan_Attributes = {'id': 'content-add-styles-sx4-sedan', 'rel': 'stylesheet', 'class': 'link-sx4-sedan', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_sx4_sedan_Attributes, '', 0);
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_kizashi : function () {
+            seo_elements_kizashi_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'autos.suzuki.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'&quot;Algo grande está por venir&quot;. Imponente diseño con finos acabados que roban miradas. '}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'Kizashi'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/kizashi/exterior/foto-10.png'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $354,500 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_kizashi_elements);
+
             link_kizashi_Attributes = {'id': 'content-add-styles-kizashi', 'rel': 'stylesheet', 'class': 'link-kizashi', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_kizashi_Attributes, '', 0);
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_grand_vitara : function () {
+            seo_elements_grand_vitara_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'autos.suzuki.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Seguridad, control y poder. El balance perfecto en una SUV.'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'Grand Vitara'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/grand-vitara/exterior/07.png'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $312,000 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_grand_vitara_elements);
+
             link_grand_vitara_Attributes = {'id': 'content-add-styles-grand-vitara', 'rel': 'stylesheet', 'class': 'link-grand-vitara', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_grand_vitara_Attributes, '', 0);
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_s_cross : function () {
+            seo_elements_s_cross_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'autos.suzuki.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Fuerza, elegancia  y confort en cualquier condición.'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'S-Cross'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'img/sections/models/gallery/s-cross/exterior/foto-05.png'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $239,900 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_s_cross_elements);
+
             link_s_cross_Attributes = {'id': 'content-add-styles-s-cross', 'rel': 'stylesheet', 'class': 'link-s-cross', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_s_cross_Attributes, '', 0);
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
         },
         addStyleModel_ciaz : function () {
+            seo_elements_ciaz_elements = [
+                ['meta', {'id':'meta-model', 'name':'twitter:card', 'content':'product'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:site', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:creator', 'content':'@Suzuki_Mex'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:domain', 'content':'autos.suzuki.com.mx'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:description', 'content':'Diseño perfecto con el equipamiento ideal. La revolución sedán está aquí.'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:title', 'content':'Ciaz'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:image', 'content':'images/sections/models/gallery/ciaz/exterior/foto-07.jpg'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label1', 'content':'Varios colores, modelos y accesorios disponibles'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data1', 'content':'Hazlo tuyo desde $199,990 MXN'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:label2', 'content':'Disponible en línea o en tu concesionaria'}, '', 0],
+                ['meta', {'id':'meta-model', 'name':'twitter:data2', 'content':'Prueba de manejo gratis'}, '', 0]
+            ];
+            SUK.appendMulti('head', seo_elements_ciaz_elements);
+
             link_ciaz_Attributes = {'id': 'content-add-styles-ciaz', 'rel': 'stylesheet', 'class': 'link-ciaz', 'href': 'css/sections/models.css'}
             SUK.appendOne('head', 'link', link_ciaz_Attributes, '', 0);
             $('body').prepend( patch_bar );
