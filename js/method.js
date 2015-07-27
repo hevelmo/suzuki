@@ -1271,6 +1271,7 @@
         refreshForm: function() {
             SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
             formTestDriveMethods.init_datepicker();
+            modelsMenuMethods.changeNameModel();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
             console.log('entra form-contact');
         },

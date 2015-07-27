@@ -128,8 +128,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, domEl.models_header_recurrent);
             SUK.loadTemplate(tempsNames.model_swift_sport, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -150,8 +148,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_swift, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -172,8 +168,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_sx4_crossover, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -194,8 +188,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_sx4_sedan, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -216,8 +208,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_kizashi, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -238,8 +228,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_grand_vitara, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -260,8 +248,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_s_cross, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {
@@ -282,8 +268,6 @@
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
             SUK.loadTemplate(tempsNames.model_ciaz, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
-            modelsMenuMethods.changeNameModel();
             formTestDriveMethods.refreshForm();
         },
         unload: function(bindings) {

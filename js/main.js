@@ -102,8 +102,10 @@ $(document).ready(function() {
     // SEND FORM CONTACT
     $(domEl.div_recurrent).on('keyup', '.validate_input', formContactMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('change', '.validate_select', formContactMethods.validate_fields_change);
-    //$(domEl.div_recurrent).on('change', '.validate_checked', formContactMethods.validate_fields_checked);
     $(domEl.div_recurrent).on('click', '#suk_contact_submit', formContactMethods.sendContactForm);
+    // SEND FORM TEST DRIVE MODEL
+    $(domEl.div_recurrent).on('keyup', '.validate_input', formTestDriveMethods.validate_fields_keyup);
+    $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendContactForm);
 
 
 
