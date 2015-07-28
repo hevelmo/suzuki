@@ -922,7 +922,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_sport_Attributes);
-                    console.log(input_hidden_test_drive_swift_sport_Attributes);
+                    //console.log(input_hidden_test_drive_swift_sport_Attributes);
                 break;
                 case 'swift':
                     $('#change-model').addClass('swift');
@@ -942,7 +942,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_Attributes);
-                    console.log(input_hidden_test_drive_swift_Attributes);
+                    //console.log(input_hidden_test_drive_swift_Attributes);
                 break;
                 case 'sx4-crossover':
                     $('#change-model').addClass('sx4-crossover');
@@ -960,7 +960,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_crossover_Attributes);
-                    console.log(input_hidden_test_drive_sx4_crossover_Attributes);
+                    //console.log(input_hidden_test_drive_sx4_crossover_Attributes);
                 break;
                 case 'sx4-sedan':
                     $('#change-model').addClass('sx4-sedan');
@@ -978,7 +978,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_sedan_Attributes);
-                    console.log(input_hidden_test_drive_sx4_sedan_Attributes);
+                    //console.log(input_hidden_test_drive_sx4_sedan_Attributes);
                 break;
                 case 'kizashi':
                     $('#change-model').addClass('kizashi');
@@ -998,7 +998,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_kizashi_Attributes);
-                    console.log(input_hidden_test_drive_kizashi_Attributes);
+                    //console.log(input_hidden_test_drive_kizashi_Attributes);
                 break;
                 case 'grand-vitara':
                     $('#change-model').addClass('grand-vitara');
@@ -1018,7 +1018,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_grand_vitara_Attributes);
-                    console.log(input_hidden_test_drive_grand_vitara_Attributes);
+                    //console.log(input_hidden_test_drive_grand_vitara_Attributes);
                 break;
                 case 's-cross':
                     $('#change-model').addClass('s-cross');
@@ -1038,7 +1038,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_s_cross_Attributes);
-                    console.log(input_hidden_test_drive_s_cross_Attributes);
+                    //console.log(input_hidden_test_drive_s_cross_Attributes);
                 break;
                 case 'ciaz':
                     $('#change-model').addClass('ciaz');
@@ -1058,7 +1058,7 @@
                         ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#test_drive', input_hidden_test_drive_ciaz_Attributes);
-                    console.log(input_hidden_test_drive_ciaz_Attributes);
+                    //console.log(input_hidden_test_drive_ciaz_Attributes);
                 break;
                 default:
                 break;
@@ -1244,8 +1244,8 @@
             dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] = (dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] == 'on')
                 ? dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] : 'off';
 
-            console.log(dataFormTestDriveModel);
-            console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
+            //console.log(dataFormTestDriveModel);
+            //console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
 
             return SUK.postalService(urlsApi.sendTestDriveModel, dataFormTestDriveModel);
         },
@@ -1273,13 +1273,13 @@
             formTestDriveMethods.init_datepicker();
             modelsMenuMethods.changeNameModel();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            console.log('entra form-contact');
+            //console.log('entra form-contact');
         },
         resetForm: function() {
             SUK.resetForm('#form-test-drive');
             formTestDriveMethods.init_datepicker();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            console.log('entra form-contact');
+            //console.log('entra form-contact');
         },
         reset_pre_loader: function() {
             SUK.setHTML('.form-loader', '');
@@ -1291,7 +1291,9 @@
         validate_fields_keyup: function() {
             formTestDriveMethods.fillingControl();
         },
-        sendTestDriveForm: function(event) {}
+        sendTestDriveForm: function(event) {
+            formTestDriveMethods.fillingControl();
+        }
     }
 /* ------------------------------------------------------ *\
  [Methods] formContact

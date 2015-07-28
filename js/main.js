@@ -82,15 +82,15 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('change', ":checkbox", changeInputsMethods.clickChangeCheckbox);
     $(domEl.div_recurrent).on('click', ".label-radio", changeInputsMethods.clcikChangeRadio);
 
-    // CLICK INDEX
+    // EVENT CLICK GO INDEX
     $(domEl.div_recurrent_body).on('click', domEl.button_return_index, actionMenuBarsMethods.clickReturnIndex);
-    // CLICK GROUP
+    // EVENT CLICK GO GROUP
     $(domEl.div_recurrent_body).on('click', domEl.button_go_group, actionMenuBarsMethods.clixkGoGroup);
-    // CLICK CONCESONARIES
+    // EVENT CLICK GO CONCESONARIES
     $(domEl.div_recurrent_body).on('click', domEl.button_go_concesionaries, actionMenuBarsMethods.clickGoConcesinary);
-    // CLICK CATALOGS
+    // EVENT CLICK GO CATALOGS
     $(domEl.div_recurrent_body).on('click', domEl.button_go_catalogs, actionMenuBarsMethods.clickGoCatalogs);
-    // CLICK CONTACT US
+    // EVENT CLICK GO CONTACT US
     $(domEl.div_recurrent_body).on('click', domEl.button_go_contact, actionMenuBarsMethods.clickGoContactUs);
     // FORM CONTACT
     $(domEl.div_recurrent).on('focusout', '#contact_name', validateMethods.validate_input);
@@ -103,22 +103,26 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('keyup', '.validate_input', formContactMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('change', '.validate_select', formContactMethods.validate_fields_change);
     $(domEl.div_recurrent).on('click', '#suk_contact_submit', formContactMethods.sendContactForm);
+    // FORM TEST DRIVE MODEL
+    $(domEl.div_recurrent).on('focusout', '#test_drive_model_date', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#test_drive_model_name', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#test_drive_model_lastname', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#test_drive_model_email', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#test_drive_model_tel', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('keypress', '#test_drive_model_tel', inputValMetdods.isIntegerKP);
     // SEND FORM TEST DRIVE MODEL
     $(domEl.div_recurrent).on('keyup', '.validate_input', formTestDriveMethods.validate_fields_keyup);
-    $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendContactForm);
-
-
-
-    // CLICK PRIVACY NOTICE
+    $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);
+    // EVENT CLICK GO PRIVACY NOTICE
     $(domEl.div_recurrent_body).on('click', domEl.button_go_privacy_notice, actionMenuBarsMethods.clickGoPrivacy);
-    // CLICK LEGAL TERMS
+    // EVENT CLICK GO LEGAL TERMS
     $(domEl.div_recurrent_body).on('click', domEl.button_go_legal_terms, actionMenuBarsMethods.clickGoLegalTerms);
 
     // HEADER PANEL
     $(domEl.div_recurrent_body).on('click', 'a.expand-header', openPanelMenuMethods.clickPanel_general);
-    // CLICK MODEL
+    // EVENT CLICK GO MODEL
     $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
-    // CLICK BY MODEL
+    // EVENT CLICK GO BY MODEL
     $(domEl.div_recurrent_body).on('click', '#go-model-swift-sport', panelMenuModelsByModel.clickGoSwiftSport);
     $(domEl.div_recurrent_body).on('click', '#go-model-swift', panelMenuModelsByModel.clickGoSwift);
     $(domEl.div_recurrent_body).on('click', '#go-model-sx4-crossover', panelMenuModelsByModel.clickGoSx4Crossover);
@@ -127,14 +131,13 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#go-model-grand-vitara', panelMenuModelsByModel.clickGoGrandVitara);
     $(domEl.div_recurrent_body).on('click', '#go-model-s-cross', panelMenuModelsByModel.clickGoSCross);
     $(domEl.div_recurrent_body).on('click', '#go-model-ciaz', panelMenuModelsByModel.clickGoCiaz);
-
-    // CLICK FINNANCING
+    // EVENT CLICK GO FINNANCING
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
-    // CLICK OWNERS
+    // EVENT CLICK GO OWNERS
     $(domEl.div_recurrent_body).on('click', domEl.header_owners_button, openPanelMenuMethods.clickOwnersPanel);
-    // CLICK BEFORE BYU
+    // EVENT CLICK GO BEFORE BYU
     $(domEl.div_recurrent_body).on('click', domEl.header_before_buy_button, openPanelMenuMethods.clickBeforeByPanel);
-    // CLICK CLOSE PANEL
+    // EVENT CLICK GO CLOSE PANEL
     $(domEl.div_recurrent_body).on('click', domEl.button_close_model_panel_menu, closePanelMenuMethods.closePanelModels);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_financing_panel_menu, closePanelMenuMethods.closePanelFinancing);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_owners_panel_menu, closePanelMenuMethods.closePanelOwners);
