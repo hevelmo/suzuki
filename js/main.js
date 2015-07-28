@@ -5,30 +5,11 @@
 */
 
 $(document).ready(function() {
-    // Add favicon
-    window.onload = function() {
-      favicon.change("img/favicon.ico");
-      // Uncomment to see how change() will cancel the animation
-       setTimeout(function() { favicon.change("img/favicon.ico") }, 10000);
-    }
     $("#header-panel").resize(function(){
         var _this = $(this);
         $('#header-spacer').stop().animate({height: _this.height()}, 300);
     });
-
-
-
     $(domEl.div_recurrent).delegate('click', '.catalog_cars_wrapper a.switch-catalog', addDelegatMethods.delegate);
-    /*$('.catalog_cars_wrapper').delegate('a.switch-catalog', 'click', function( e ){
-        e.preventDefault();
-        var car_key = $(this).data('key');
-        var slide = $("#catalog-"+ car_key);
-        $('.catalog_car').removeClass('active');
-        $(this).parent('.catalog_car').addClass('active');
-        pages.move_to( slide );
-    });*/
-
-
     /* ------------------------------------------------------ *\
      [METHOS Control] Serialize Form
     \* ------------------------------------------------------ */
@@ -100,24 +81,25 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('change', '#contact_car_key', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#contact_message', validateMethods.validate_input);
     // SEND FORM CONTACT
-    $(domEl.div_recurrent).on('keyup', '.validate_input', formContactMethods.validate_fields_keyup);
-    $(domEl.div_recurrent).on('change', '.validate_select', formContactMethods.validate_fields_change);
+    $(domEl.div_recurrent).on('keyup', '.con_validate_input', formContactMethods.validate_fields_keyup);
+    $(domEl.div_recurrent).on('change', '.con_validate_select', formContactMethods.validate_fields_change);
     $(domEl.div_recurrent).on('click', '#suk_contact_submit', formContactMethods.sendContactForm);
     // FORM TEST DRIVE MODEL
-    $(domEl.div_recurrent).on('focusout', '#test_drive_model_date', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('change', '#test_drive_model_date', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#test_drive_model_name', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#test_drive_model_lastname', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#test_drive_model_email', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#test_drive_model_tel', validateMethods.validate_input);
     $(domEl.div_recurrent).on('keypress', '#test_drive_model_tel', inputValMetdods.isIntegerKP);
     // SEND FORM TEST DRIVE MODEL
-    $(domEl.div_recurrent).on('keyup', '.validate_input', formTestDriveMethods.validate_fields_keyup);
+    $(domEl.div_recurrent).on('keyup', '.tdm_validate_input', formTestDriveMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);
+    // FINISH SEND TEST DRIVE MODEL
+    $(domEl.div_recurrent).on('click', '#step-2-end', formTestDriveMethods.finchNavigateReturn);
     // EVENT CLICK GO PRIVACY NOTICE
     $(domEl.div_recurrent_body).on('click', domEl.button_go_privacy_notice, actionMenuBarsMethods.clickGoPrivacy);
     // EVENT CLICK GO LEGAL TERMS
     $(domEl.div_recurrent_body).on('click', domEl.button_go_legal_terms, actionMenuBarsMethods.clickGoLegalTerms);
-
     // HEADER PANEL
     $(domEl.div_recurrent_body).on('click', 'a.expand-header', openPanelMenuMethods.clickPanel_general);
     // EVENT CLICK GO MODEL
@@ -142,20 +124,21 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_close_financing_panel_menu, closePanelMenuMethods.closePanelFinancing);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_owners_panel_menu, closePanelMenuMethods.closePanelOwners);
     $(domEl.div_recurrent_body).on('click', domEl.button_close_before_buy_panel_menu, closePanelMenuMethods.closePanelBeforeBuy);
-
     // MOBILE MENU
     $(domEl.div_recurrent_body).on('click', "#header-mobile i", is_mobileMethods.clickHeaderMobile);
     $(domEl.div_recurrent_body).on('click', "#mobile-menu a", is_mobileMethods.clickMobileMenuLink);
     $(domEl.div_recurrent_body).on('click', "#footer-content .row-1 .footer-column", is_mobileMethods.clickFooterContent);
     $(domEl.div_recurrent_body).on('click', ".header-column", is_mobileMethods.clickHeaderColumn);
     $(domEl.div_recurrent_body).on('click', ".back-list-arrow", is_mobileMethods.clickBackListArrow);
-
-
-    $(domEl.div_recurrent_body).on('click', '#model-test-drive-flag-link', function( e ){
-        e.preventDefault();
-        $.scroll_to( 'prueba-de-manejo' );
-    });
-
+    // EVENTS CLIK BLOCK BY MODEL
+    $(domEl.div_recurrent_body).on('click', '#model-test-drive-flag-link', modelsMenuMethods.preventDefault_flag_link);
+    $(domEl.div_recurrent_body).on('click', '#prueba-de-manejo', modelsMenuMethods.preventDefault_test_drive);
+    $(domEl.div_recurrent_body).on('click', '#accesorios', modelsMenuMethods.preventDefault_accesories);
+    $(domEl.div_recurrent_body).on('click', '#galeria', modelsMenuMethods.preventDefault_galery);
+    $(domEl.div_recurrent_body).on('click', '#precios', modelsMenuMethods.preventDefault_prices);
+    $(domEl.div_recurrent_body).on('click', '#caracteristicas', modelsMenuMethods.preventDefault_characterics);
+    $(domEl.div_recurrent_body).on('click', '.top', modelsMenuMethods.preventDefault_class_top);
+    $(domEl.div_recurrent_body).on('click', '#top', modelsMenuMethods.preventDefault_id_top);
     //Specifications Slider controls and functionality
     var specifications_i = 0;
     var specifications_total =  $('.specifications-wrapper .specification').length - 1;

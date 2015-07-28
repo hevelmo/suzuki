@@ -30,6 +30,25 @@
  }
 \* ------------------------------------------------------ */
 /* ------------------------------------------------------ *\
+ [functions] analytics_test_drive
+\* ------------------------------------------------------ */
+    analytics_test_drive = function( title, value ){
+        try{
+            value = parseInt( value, 10 );
+            if( !value ){ value = 0; }
+            //ga('send', 'event', 'Prueba de Manejo', 'Confirmacion', title, value );
+            console.log("ga('send', 'event', 'Prueba de Manejo', 'Confirmacion', "+title, value+")");
+        }catch ( e ){
+            console.log('Ocurrió un error con el evento de GA');
+        }
+        //fb_pixel( '6016795700971', '0.01');
+    }
+    /*function insta_drive_gaq(){
+        var precio_actual = showMeTheMoney( current_car );
+        //ga('send', 'event', 'Instant Drive', 'Confirmacion', current_car, precio_actual * 0.071 );
+        console.log("ga('send', 'event', 'Instant Drive', 'Confirmacion', "+current_car, precio_actual * 0.071+")");
+    }*/
+/* ------------------------------------------------------ *\
  [functions] validateEmail
 \* ------------------------------------------------------ */
     function validateEmail(email) {
@@ -100,7 +119,7 @@
     function switch_menus( menu ){
         if( current_menu != menu ){
             current_menu = menu;
-            var new_h = ( menu == 'cars')? 50 : 95;
+            var new_h = ( menu == 'cars') ? 50 : 95;
             $('#header-zone').stop().animate({height:new_h });
             if( menu == 'cars'){
                 $('#regular-header').stop().animate({marginTop: -95 });
@@ -244,6 +263,39 @@
   and the porformance of  each section.
   Depending on the complexity of the url, could be more than one group of methods.
   Could exist some group of general methods*/
+/* ------------------------------------------------------ *\
+    [Metodos] Favicon
+\* ------------------------------------------------------ */
+    var favicon = {
+        load_favicon: function() {
+            favicon.change("img/favicon.ico");
+        },
+        change: function(iconURL, optionalDocTitle) {
+            if (arguments.length == 2) {
+              document.title =  optionamDocTitle;
+            }
+            this.addLink(iconURL, "shortcur icon");
+        },
+        addLink: function(iconURL, relValue) {
+            var link = document.createElement("link");
+            link.type = "image/x-icon";
+            link.rel = relValue;
+            link.href = iconURL;
+            this.removeLinkIfExists(relValue);
+            this.docHead.appendChild(link);
+        },
+        removeLinkIfExists: function(relValue) {
+            var links = this.docHead.getElementsByTagName("link");
+            for (var i=0; i<links .length; i++) {
+              var link = links[i];
+              if (link.type=="image/x-icon" && link.rel==relValue) {
+                this.docHead.removeChild(link);
+                return; // Assuming only one match at most.
+              }
+            }
+        },
+        docHead:document.getElementsByTagName("head")[0]
+    }
 /* ------------------------------------------------------ *\
  [Methods] cleanStyle
 \* ------------------------------------------------------ */
@@ -890,6 +942,38 @@
  [Methods] modelsMenu
 \* ------------------------------------------------------ */
     var modelsMenuMethods = {
+        preventDefault_flag_link: function(event) {
+            event.preventDefault();
+            $.scroll_to( 'prueba-de-manejo' );
+        },
+        preventDefault_test_drive: function(event) {
+            event.preventDefault();
+            $.scroll_to( 'prueba-de-manejo' );
+        },
+        preventDefault_accesories:  function(event) {
+            event.preventDefault();
+            $.scroll_to( 'accesorios' );
+        },
+        preventDefault_galery:  function(event) {
+            event.preventDefault();
+            $.scroll_to( 'galeria' );
+        },
+        preventDefault_prices:  function(event) {
+            event.preventDefault();
+            $.scroll_to( 'precios' );
+        },
+        preventDefault_characterics:  function(event) {
+            event.preventDefault();
+            $.scroll_to( 'caracteristicas' );
+        },
+        preventDefault_class_top:  function(event) {
+            event.preventDefault();
+            $.scroll_to( 'inicio' );
+        },
+        preventDefault_id_top:  function(event) {
+            event.preventDefault();
+            $.scroll_to( 'inicio' );
+        },
         car_next_step : function() {
             if( $('.car-next-step').length > 0 ){
                 var $arrow1 = $('.car-next-step').children('a'),
@@ -907,7 +991,7 @@
                 case 'swift-sport':
                     $('#change-model').addClass('swift-sport');
                     $('.car').addClass('swift-sport');
-                    $('.secondary-title').append('Swift Sport');
+                    $('.secondary-title.thumb-name').append('Swift Sport');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
                     $('#back-to-top-button').hide();
@@ -916,18 +1000,19 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_swift_sport_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'swift-sport'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'swift-sport'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_sport_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_swift_sport_Attributes);
                     //console.log(input_hidden_test_drive_swift_sport_Attributes);
                 break;
                 case 'swift':
                     $('#change-model').addClass('swift');
                     $('.car').addClass('swift');
-                    $('.secondary-title').append('Swift');
+                    $('.secondary-title.thumb-name').append('Swift');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
                     $('#back-to-top-button').hide();
@@ -936,12 +1021,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_swift_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'swift'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'swift'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_swift_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_swift_Attributes);
                     //console.log(input_hidden_test_drive_swift_Attributes);
                 break;
                 case 'sx4-crossover':
@@ -954,12 +1040,13 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_sx4_crossover_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'sx4-crossover'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'sx4-crossover'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_crossover_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_sx4_crossover_Attributes);
                     //console.log(input_hidden_test_drive_sx4_crossover_Attributes);
                 break;
                 case 'sx4-sedan':
@@ -972,18 +1059,19 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_sx4_sedan_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'sx4-sedan'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'sx4-sedan'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_sx4_sedan_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_sx4_sedan_Attributes);
                     //console.log(input_hidden_test_drive_sx4_sedan_Attributes);
                 break;
                 case 'kizashi':
                     $('#change-model').addClass('kizashi');
                     $('.car').addClass('kizashi');
-                    $('.secondary-title').append('Kizashi');
+                    $('.secondary-title.thumb-name').append('Kizashi');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
                     $('#back-to-top-button').hide();
@@ -992,18 +1080,19 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_kizashi_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'kizashi'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'kizashi'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_kizashi_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_kizashi_Attributes);
                     //console.log(input_hidden_test_drive_kizashi_Attributes);
                 break;
                 case 'grand-vitara':
                     $('#change-model').addClass('grand-vitara');
                     $('.car').addClass('grand-vitara');
-                    $('.secondary-title').append('Grand Vitara');
+                    $('.secondary-title.thumb-name').append('Grand Vitara');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
                     $('#back-to-top-button').hide();
@@ -1012,18 +1101,19 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_grand_vitara_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'grand-vitara'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'grand-vitara'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_grand_vitara_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_grand_vitara_Attributes);
                     //console.log(input_hidden_test_drive_grand_vitara_Attributes);
                 break;
                 case 's-cross':
                     $('#change-model').addClass('s-cross');
                     $('.car').addClass('s-cross');
-                    $('.secondary-title').append('S-Cross');
+                    $('.secondary-title.thumb-name').append('S-Cross');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
                     $('#back-to-top-button').hide();
@@ -1032,18 +1122,19 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_s_cross_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'s-cross'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'s-cross'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_s_cross_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_s_cross_Attributes);
                     //console.log(input_hidden_test_drive_s_cross_Attributes);
                 break;
                 case 'ciaz':
                     $('#change-model').addClass('ciaz');
                     $('.car').addClass('ciaz');
-                    $('.secondary-title').append('Ciaz');
+                    $('.secondary-title.thumb-name').append('Ciaz');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
                     $('#back-to-top-button').hide();
@@ -1052,15 +1143,17 @@
                     switch_arrow( );
 
                     input_hidden_test_drive_ciaz_Attributes = [
-                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'content':'ciaz'}, '', 0],
+                        ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'ciaz'}, '', 0],
                         ['input', {'id':'test_drive_model_concesionaria', 'type':'hidden', 'name':'suk_gdl_test_drive_model_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0],
                         ['input', {'id':'test_drive_model_image_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_image_modelo', 'value':''}, '', 0],
-                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_subscription', 'value':''}, '', 0]
+                        ['input', {'id':'test_drive_model_subscription', 'type':'hidden', 'name':'suk_gdl_test_drive_model_subscription', 'value':''}, '', 0],
+                        ['input', {'id':'test_drive_model_auto', 'type':'hidden', 'name':'suk_gdl_test_drive_model_auto', 'value':''}, '', 0]
                     ];
-                    SUK.appendMulti('#test_drive', input_hidden_test_drive_ciaz_Attributes);
+                    SUK.appendMulti('#fields_hidden', input_hidden_test_drive_ciaz_Attributes);
                     //console.log(input_hidden_test_drive_ciaz_Attributes);
                 break;
                 default:
+                    $('')
                 break;
             }
         },
@@ -1239,13 +1332,13 @@
         },
         addDataFormTestDrive: function() {
             var dataFormTestDriveModel;
-            dataFormTestDriveModel = $('#form-test-drive').serializeFormJSON();
+            dataFormTestDriveModel = $('#test_drive').serializeFormJSON();
 
             dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] = (dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] == 'on')
                 ? dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] : 'off';
 
-            //console.log(dataFormTestDriveModel);
-            //console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
+            console.log(dataFormTestDriveModel);
+            console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
 
             return SUK.postalService(urlsApi.sendTestDriveModel, dataFormTestDriveModel);
         },
@@ -1258,33 +1351,33 @@
                 'suk_gdl_test_drive_model_email',
                 'suk_gdl_test_drive_model_tel'
             ];
-            dataFormTestDriveModel = $('#form-test-drive').serializeFormJSON();
+            dataFormTestDriveModel = $('#test_drive').serializeFormJSON();
 
             isFull = SUK.validFormFull(dataFormTestDriveModel, validFieldItems);
             $('#suk_test_dirve_model_submit').attr('disabled', !isFull);
 
-            isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
-            $('#suk_test_dirve_model_submit').attr('disabled', isEmpty);
+            /*isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
+            $('#suk_test_dirve_model_submit').attr('disabled', isEmpty);*/
 
-            console.log($('#form-test-drive').serializeFormJSON());
+            console.log($('#test_drive').serializeFormJSON());
         },
         refreshForm: function() {
             SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
             formTestDriveMethods.init_datepicker();
             modelsMenuMethods.changeNameModel();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            //console.log('entra form-contact');
+            console.log('entra form-contact');
         },
         resetForm: function() {
-            SUK.resetForm('#form-test-drive');
+            SUK.resetForm('#test_drive');
             formTestDriveMethods.init_datepicker();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            //console.log('entra form-contact');
+            console.log('entra form-contact');
         },
         reset_pre_loader: function() {
             SUK.setHTML('.form-loader', '');
         },
-        finchNavigateReturn: function() {
+        finchNavigateReturn: function(event) {
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/');
         },
@@ -1293,6 +1386,92 @@
         },
         sendTestDriveForm: function(event) {
             formTestDriveMethods.fillingControl();
+            var $test_drive_model_date           = $('#test_drive_model_date'),
+                $test_drive_model_name           = $('#test_drive_model_name'),
+                $test_drive_model_lastname       = $('#test_drive_model_lastname'),
+                $test_drive_model_email          = $('#test_drive_model_email'),
+                $test_drive_model_tel            = $('#test_drive_model_tel');
+
+            val_news = SUK.getValue('#test_drive_model_newsletter');
+            val_auto = SUK.getValue('#test_drive_model_modelo');
+            current_car = SUK.getValue('#test_drive_model_modelo');
+            selected_concessionaire = SUK.getValue('#test_drive_model_concesionaria');
+
+            SUK.setValue('#test_drive_model_image_modelo', 'suzuki_'+val_auto+'.png');
+
+            if (val_news === 'on') {
+                val_subscription = 'Activado';
+                SUK.setValue('#test_drive_model_subscription', val_subscription);
+                console.log(val_subscription);
+            } else {
+                val_subscription = 'Desactivado';
+                SUK.setValue('#test_drive_model_subscription', val_subscription);
+                console.log(val_subscription);
+            }
+            var form_errors = 0;
+            if( validateMethods.validate_input( $test_drive_model_date ) ){
+                form_errors++;
+                $test_drive_model_date.change();
+            }
+            if( validateMethods.validate_input( $test_drive_model_name ) ){
+                form_errors++;
+                $test_drive_model_name.focusout();
+            }
+            if( validateMethods.validate_input( $test_drive_model_lastname ) ){
+                form_errors++;
+                $test_drive_model_lastname.focusout();
+            }
+            if( validateMethods.validate_input( $test_drive_model_email ) ){
+                form_errors++;
+                $test_drive_model_email.focusout();
+            }
+            if( validateMethods.validate_input( $test_drive_model_tel ) ){
+                form_errors++;
+                $test_drive_model_tel.focusout();
+            }
+            if ( form_errors != 0 ) {
+                var data = {
+                    car_key         : current_car,
+                    concessionaire  : selected_concessionaire,
+                    date            : $test_drive_model_date.val(),
+                    email           : $test_drive_model_email.val(),
+                    name            : $test_drive_model_name.val(),
+                    lastname        : $test_drive_model_lastname.val(),
+                    newsletter      : $('#test_drive_model_newsletter:checked').length,
+                    phone           : $test_drive_model_tel.val(),
+                    source          : 'Model ' + current_car
+                }
+                var precio_actual = showMeTheMoney(current_car);
+                analytics_test_drive( 'Modelos: ' + current_car , 0.071 * precio_actual);
+                var cd = selected_concessionaire;
+
+                $('#step-2-concessionaire-final').html( cd );
+                $('#step-2-mail-final').html( data.email );
+
+                $('#step-2-form').fadeOut( 300 , function(){
+                    setTimeout(function () {
+                        $('.form-loader').fadeIn();
+                        var testDriveModelPromise = formTestDriveMethods.addDataFormTestDrive();
+
+                        testDriveModelPromise.success(function (data) {
+                            console.log('Datos Enviados');
+                        });
+                        testDriveModelPromise.error(function (data) {
+                            console.log('Datos No Enviados');
+                        });
+                    }, 1000);
+                    setTimeout(function () {
+                        $('.form-loader').fadeOut();
+                        $('#step-2-form').hide();
+                        $('#step-2-final').hide().fadeIn();
+                    }, 3000);
+                });
+
+                //console.log(data);
+                //console.log(precio_actual);
+                //console.log(cd);
+
+            }
         }
     }
 /* ------------------------------------------------------ *\
@@ -1324,10 +1503,10 @@
             isFull = SUK.validFormFull(dataFormContact, validFieldItems);
             $('#suk_contact_submit').attr('disabled', !isFull);
 
-            isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
-            $('#suk_contact_submit').attr('disabled', isEmpty);
+            /*isEmpty = SUK.validFormEmpty(dataFormContact, validFieldItems);
+            $('#suk_contact_submit').attr('disabled', isEmpty);*/
 
-            //console.log($('#form-contact').serializeFormJSON());
+            console.log($('#form-contact').serializeFormJSON());
         },
         refreshForm : function() {
             SUK.loadTemplate(tempsNames.tmp_form_contact, domEl.div_content_section_form_contact);
@@ -1542,11 +1721,13 @@
                 $(this).parent('.label-checkbox').addClass('checkbox-checked');
                 $(this).val('on');
                 $('#contact_subscription').val('Activado');
+                $('#test_drive_model_subscription').val('Activado');
             } else {
                 $(this).parent('label').find(':checkbox').attr('checked', false);
                 $(this).parent('label').removeClass('checkbox-checked');
                 $(this).val('off');
                 $('#contact_subscription').val('Desactivado');
+                $('#test_drive_model_subscription').val('Desactivado');
             }
         },
         clcikChangeRadio : function(event) {

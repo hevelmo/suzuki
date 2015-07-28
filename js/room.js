@@ -3,6 +3,8 @@
 \* ----------------------------------- */
     Finch.route('/', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="index";
             addStylesMethods.addStyleIndex();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
@@ -22,6 +24,8 @@
     });
     Finch.route('/concesionarias', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="concesionaries";
             //ga('send', 'pageview', '/concesionarias');
             is_mobileMethods.is_mobile();
@@ -35,6 +39,8 @@
     });
     Finch.route('/catalogos', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="catalog";
             //ga('send', 'pageview', '/catalogos');
             addStylesMethods.addStyleCatalogs();
@@ -56,6 +62,8 @@
     });
     Finch.route('/contactanos', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="contact";
             //ga('send', 'pageview', '/contactanos');
             addStylesMethods.addStyleContact();
@@ -72,6 +80,8 @@
     });
     Finch.route('/grupo', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="group";
             //ga('send', 'pageview', '/grupo');
             addStylesMethods.addStyleGroup();
@@ -87,6 +97,8 @@
     });
     Finch.route('/aviso-de-privacidad', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="privacy";
             //ga('send', 'pageview', '/aviso-de-privacidad');
             addStylesMethods.addStyleLegals();
@@ -103,6 +115,8 @@
     });
     Finch.route('/terminos-legales', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="legals";
             //ga('send', 'pageview', '/terminos-legales');
             addStylesMethods.addStyleLegals();
@@ -119,6 +133,8 @@
     });
     Finch.route('/swift-sport', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="swift-sport";
             //ga('send', 'pageview', '/swift-sport');
             addStylesMethods.addStyleModel_swift_sport();
@@ -139,6 +155,8 @@
     });
     Finch.route('/swift', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="swift";
             //ga('send', 'pageview', '/swift');
             addStylesMethods.addStyleModel_swift();
@@ -159,6 +177,8 @@
     });
     /*Finch.route('/sx4-crossover', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="sx4-crossover";
             //ga('send', 'pageview', '/sx4-crossover');
             addStylesMethods.addStyleModel_sx4_crossover();
@@ -179,6 +199,8 @@
     });
     Finch.route('/sx4-sedan', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="sx4-sedan";
             //ga('send', 'pageview', '/sx4-sedan');
             addStylesMethods.addStyleModel_sx4_sedan();
@@ -199,6 +221,8 @@
     });*/
     Finch.route('/kizashi', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="kizashi";
             //ga('send', 'pageview', '/kizashi');
             addStylesMethods.addStyleModel_kizashi();
@@ -219,6 +243,8 @@
     });
     Finch.route('/grand-vitara', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="grand-vitara";
             //ga('send', 'pageview', '/grand-vitara');
             addStylesMethods.addStyleModel_grand_vitara();
@@ -239,6 +265,8 @@
     });
     Finch.route('/s-cross', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="s-cross";
             //ga('send', 'pageview', '/s-cross');
             addStylesMethods.addStyleModel_s_cross();
@@ -259,6 +287,8 @@
     });
     Finch.route('/ciaz', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="ciaz";
             //ga('send', 'pageview', '/ciaz');
             addStylesMethods.addStyleModel_ciaz();
@@ -279,6 +309,8 @@
     });
     Finch.route('/agendar-prueba-de-manejo', {
         setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
             section="test_drive";
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
         },

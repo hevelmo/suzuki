@@ -18,3 +18,92 @@
 @import url(styles/main.css);
 @import url(styles/style_animation.css);
 
+
+.loader-wrap {
+    top: -11%;
+    left: -40%;
+}
+.loader {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	margin: -5px;
+	width: 77%;
+	height: 363px;
+	z-index: 1000;
+	background-color: rgba(255, 255, 255, 0.78);
+}
+.loader-wrap {
+    position: absolute;
+	top: -10%;
+	left: -15%;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: translate(414%,261%);
+    -ms-transform: translate(414%,261%);
+    -o-transform: translate(414%,261%);
+    transform: translate(414%,261%);
+}
+.loader-item {
+  border: 2px solid rgba(23, 22, 23, 0.25);
+  border-bottom-color: #e1251b;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-transition: all .9s ease-in-out;
+  -o-transition: all .9s ease-in-out;
+  transition: all .9s ease-in-out;
+  /*-webkit-font-smoothing: antialiased!important;
+  -webkit-animation: spin 1.7s linear infinite;
+  -o-animation: spin 1.7s linear infinite;
+  animation: spin 1.7s linear infinite;*/
+}
+.loader-wrap:before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/loader-logo-suzuki-02.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+.loader-wrap:after {
+    position: fixed;
+    content: 'PROCESANDO';
+    color: #000;
+    left: -14px;
+    right: 0;
+    top: -25px;
+}
+.loader-item {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+.loader-item {
+  -webkit-animation: spin 1s infinite steps(8);
+  animation: spin 1s infinite steps(8);
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
