@@ -6,6 +6,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="index";
+            detectNavigatorMethods.IE10();
             addStylesMethods.addStyleIndex();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -27,6 +28,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="concesionaries";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/concesionarias');
             is_mobileMethods.is_mobile();
         },
@@ -42,6 +44,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="catalog";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/catalogos');
             addStylesMethods.addStyleCatalogs();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -65,6 +68,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="contact";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/contactanos');
             addStylesMethods.addStyleContact();
             is_mobileMethods.is_mobile();
@@ -83,6 +87,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="group";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/grupo');
             addStylesMethods.addStyleGroup();
             is_mobileMethods.is_mobile();
@@ -100,6 +105,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="privacy";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/aviso-de-privacidad');
             addStylesMethods.addStyleLegals();
             is_mobileMethods.is_mobile();
@@ -118,6 +124,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="legals";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/terminos-legales');
             addStylesMethods.addStyleLegals();
             is_mobileMethods.is_mobile();
@@ -136,6 +143,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="swift-sport";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/swift-sport');
             addStylesMethods.addStyleModel_swift_sport();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -158,6 +166,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="swift";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/swift');
             addStylesMethods.addStyleModel_swift();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -180,6 +189,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="sx4-crossover";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/sx4-crossover');
             addStylesMethods.addStyleModel_sx4_crossover();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -202,6 +212,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="sx4-sedan";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/sx4-sedan');
             addStylesMethods.addStyleModel_sx4_sedan();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -224,6 +235,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="kizashi";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/kizashi');
             addStylesMethods.addStyleModel_kizashi();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -246,6 +258,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="grand-vitara";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/grand-vitara');
             addStylesMethods.addStyleModel_grand_vitara();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -268,6 +281,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="s-cross";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/s-cross');
             addStylesMethods.addStyleModel_s_cross();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -290,6 +304,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="ciaz";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/ciaz');
             addStylesMethods.addStyleModel_ciaz();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
@@ -312,6 +327,7 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="test_drive_selection";
+            detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);

@@ -378,6 +378,20 @@
         },
         docHead:document.getElementsByTagName("head")[0]
     }
+
+/* ------------------------------------------------------ *\
+ [Methods] detectNavigatorMethods
+\* ------------------------------------------------------ */
+    var detectNavigatorMethods = {
+        IE10 : function() {
+            //Detectar si es IE10
+            var doc = document.documentElement;
+            doc.setAttribute('data-useragent', navigator.appVersion.match(/MSIE ([\d.]+)/));
+            if($('html').attr('data-useragent') == 'MSIE 10.0,10.0'){
+                $("body").addClass('IE10');
+            }
+        }
+    }
 /* ------------------------------------------------------ *\
  [Methods] cleanStyle
 \* ------------------------------------------------------ */
@@ -1828,15 +1842,14 @@
             $panelTabs      = $('.step-nav-tab.funding');
 
             $panelTabsNav.children('a').on('click', financingMethods.preventDefault_panelTabsNav);
-            //console.log($panelTabsNav);
 
-            //console.log(car_d);
-            //console.log(funding_data);
-            //console.log(conce_d);
-            //console.log(default_data);
-            //console.log(fuh_data);
-            //console.log($panelTabsNav);
-            //console.log($panelTabs);
+            /*console.log(car_d);
+            console.log(funding_data);
+            console.log(conce_d);
+            console.log(default_data);
+            console.log(fuh_data);
+            console.log($panelTabsNav);
+            console.log($panelTabs);*/
 
             $.funding_adjust_calc = function(  ){
                 // Funding Adjust calc
@@ -1897,12 +1910,12 @@
                 $input_car_text.val( fuh_data.name );
                 $icons.removeClass();
                 $icons.addClass('car ' + fuh_data.key );
-                var i0 = cars_prices.length, versions = null, i1, i2, tab_data;
+                var i0 = cars_prices, versions = null, i1, i2, tab_data;
                 while( i0-- ){
                     if( cars_prices[i0].key == fuh_data.key ){
                         car_d = cars_prices[i0];
                         versions = car_d.versions;
-                        var i1 = 0, i2 = versions.length, tabs_data = {versions:[]};
+                        var i1 = 0, i2 = versions, tabs_data = {versions:[]};
                         if( i2 > 1 ){
                             $('#funding-versions').show();
                         }else{
