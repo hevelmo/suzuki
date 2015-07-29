@@ -96,6 +96,8 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);
     // FINISH SEND TEST DRIVE MODEL
     $(domEl.div_recurrent).on('click', '#step-2-end', formTestDriveMethods.finchNavigateReturn);
+    // FORM NEWSLETTER
+    $(domEl.div_recurrent_body).on('focusout', '.news_validate_input', validateMethods.validate_input);
     // EVENT CLICK GO PRIVACY NOTICE
     $(domEl.div_recurrent_body).on('click', domEl.button_go_privacy_notice, actionMenuBarsMethods.clickGoPrivacy);
     // EVENT CLICK GO LEGAL TERMS
@@ -115,6 +117,7 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#go-model-ciaz', panelMenuModelsByModel.clickGoCiaz);
     // EVENT CLICK GO FINNANCING
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
+
     // EVENT CLICK GO OWNERS
     $(domEl.div_recurrent_body).on('click', domEl.header_owners_button, openPanelMenuMethods.clickOwnersPanel);
     // EVENT CLICK GO BEFORE BYU

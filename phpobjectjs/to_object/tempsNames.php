@@ -24,9 +24,6 @@ function tempsNames() {
         'tmp_form_contact' => 'tmp_form_contact',
 
         // MODELS
-        'section_recurrent_car_main' => 'tmp_section_content_car_main',
-        'section_recurrent_full_size' => 'tmp_section_content_full_size',
-
         'model_swift_sport' => 'tmp_section_content_model_swift_sport',
         'model_swift' => 'tmp_section_content_model_swift',
         'model_sx4_crossover' => 'tmp_section_content_model_sx4_crossover',
@@ -40,6 +37,8 @@ function tempsNames() {
         'tmp_instant_drive_section' => 'tmp_instant_drive_section',
         // TEST DRIVE
         'tmp_test_drive_model' => 'tmp_test_drive_model',
+        // TEST DRIVE SELECTION
+        'tmp_section_content_test_drive_selection' => 'tmp_section_content_test_drive_selection',
 
         // MODELS MENU
         'tmp_models_menu' => 'tmp_models_menu',

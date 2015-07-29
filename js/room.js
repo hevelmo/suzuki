@@ -311,12 +311,22 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-            section="test_drive";
+            section="test_drive_selection";
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
         },
         unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });

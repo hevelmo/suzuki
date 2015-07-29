@@ -24,6 +24,18 @@
     var patch_bar ='<div class="menu-patch" id="patch">&nbsp;</div>';
     var current_car;
     var $display_tables = $('.display-tables'), display_vct_class = 'prices';
+    var cars_prices = null;
+    var $panelTabsNav = null, $panelTabs = null, current_tab = -1, fuh_data = null;
+    var cars_data = [
+        { key: 'swift-sport'    , name: 'Swift Sport'   },
+        { key: 'swift'          , name: 'Swift'         },
+        { key: 'sx4-crossover'  , name: 'SX4 Crossover' },
+        { key: 'sx4-sedan'      , name: 'SX4 Sedán'     },
+        { key: 'kizashi'        , name: 'Kizashi'       },
+        { key: 'grand-vitara'   , name: 'Grand Vitara'  },
+        { key: 's-cross'        , name: 'S-Cross'       },
+        { key: 'ciaz'           , name: 'Ciaz'          }
+    ];
 /* ------------------------------------------------------ *\
  [functions] 'Zone'
  function nameFunction (arg) {
@@ -251,6 +263,76 @@
         });
     }
 /* ------------------------------------------------------ *\
+ [functions] slide_tabs
+\* ------------------------------------------------------ */
+    //Add change tabs controls for test drive and founding
+    function slide_tabs( ii, disable ){
+        ii = parseInt( ii ) - 1;
+        if( ii != current_tab ){
+            current_tab = ii;
+            $panelTabsNav.removeClass('active');
+            $panelTabsNav.each(function( i ){
+                var $item = $(this);
+                if( i < ii ){
+                    $item.removeClass('disabled');
+                }
+                if( disable ){
+                    if( i > ii ){
+                        $item.addClass('disabled');
+                    }
+                }
+
+            });
+            $panelTabsNav.eq( ii).removeClass('disabled').addClass('active');
+            $panelTabs.removeClass('active');
+            $panelTabs.eq( ii ).addClass('active').css({opacity:0}).animate({opacity:1});
+        }
+    }
+/* ------------------------------------------------------ *\
+ [functions] slide_tabs
+\* ------------------------------------------------------ */
+    function goto_step( step, disable  ){
+        var ii, $divinput;
+        slide_tabs( step, disable );
+        if( step == 3 ){
+        }
+    }
+/* ------------------------------------------------------ *\
+ [functions] funding_core
+\* ------------------------------------------------------ */
+    function funding_core( total_pay, months ){
+        var atc = months < 54 ? .1560 : .1676;
+        var atc_month = atc / 12;
+        var form_partial_1 = 1 - ( Math.pow( ( 1 + atc_month ) , -months ) );
+        var form_partial_2 = form_partial_1 / atc_month;
+        var form_partial_3 = total_pay / form_partial_2;
+        return form_partial_3.toFixed( 2 );
+    }
+/* ------------------------------------------------------ *\
+ [functions] get_car_data
+\* ------------------------------------------------------ */
+    function get_car_data( k ){
+        var ii = cars_data.length;
+        while( ii-- ){
+            if( cars_data[ii].key == k ){
+                return cars_data[ii];
+            }
+        }
+        return null;
+    }
+/* ------------------------------------------------------ *\
+ [functions] is_model_name
+\* ------------------------------------------------------ */
+    function is_model_name( str ){
+        var ii = cars_data.length;
+        while( ii-- ){
+            if( cars_data[ii].key == str ){
+                return true;
+            }
+        }
+        return false;
+    }
+/* ------------------------------------------------------ *\
  [functions] 'Zone'
  var Method = {
  function_name : function(event) {}
@@ -320,6 +402,12 @@
         },
         cleanAttrContact : function () {
             $('head .link-contact').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrTestDriveSelection : function () {
+            $('head .link-test-drive-selection').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
@@ -415,6 +503,11 @@
                 ['link', {'id': 'content-add-styles-contact-shosen', 'rel': 'stylesheet', 'class': 'link-contact', 'href': 'css/plugins/jquery.chosen/chosen.css'}, '', 0]
             ];
             SUK.appendMulti('head', linkContactAttributes);
+            $('body').prepend( patch_bar );
+        },
+        addStyleTestDriveSelection : function () {
+            linkTestDriveSelectionAttributes = {'id': 'content-add-styles-test-drive-selection', 'rel': 'stylesheet', 'class': 'link-test-drive-selection', 'href': 'css/sections/test-drive-selection.css'}
+            SUK.appendOne('head', 'link', linkTestDriveSelectionAttributes, '', 0);
             $('body').prepend( patch_bar );
         },
         addStyleLegals : function () {
@@ -807,7 +900,7 @@
             }
         },
         clickFinnacingPanel : function (event) {
-            if ($(this).hasClass('active')) {
+            /*if ($(this).hasClass('active')) {
                 $('#header-spacer').css('height','426px');
                 $('.header_section').css({
                     'display':'block',
@@ -821,7 +914,9 @@
                     'opacity':'0'
                 });
                 SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-            }
+            }*/
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/agendar-prueba-de-manejo');
         },
         clickOwnersPanel : function (event) {
             if ($(this).hasClass('active')) {
@@ -1337,8 +1432,8 @@
             dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] = (dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] == 'on')
                 ? dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] : 'off';
 
-            console.log(dataFormTestDriveModel);
-            console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
+            //console.log(dataFormTestDriveModel);
+            //console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
 
             return SUK.postalService(urlsApi.sendTestDriveModel, dataFormTestDriveModel);
         },
@@ -1359,20 +1454,20 @@
             /*isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
             $('#suk_test_dirve_model_submit').attr('disabled', isEmpty);*/
 
-            console.log($('#test_drive').serializeFormJSON());
+            //console.log($('#test_drive').serializeFormJSON());
         },
         refreshForm: function() {
             SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
             formTestDriveMethods.init_datepicker();
             modelsMenuMethods.changeNameModel();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            console.log('entra form-contact');
+            //console.log('entra form-contact');
         },
         resetForm: function() {
             SUK.resetForm('#test_drive');
             formTestDriveMethods.init_datepicker();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            console.log('entra form-contact');
+            //console.log('entra form-contact');
         },
         reset_pre_loader: function() {
             SUK.setHTML('.form-loader', '');
@@ -1402,11 +1497,11 @@
             if (val_news === 'on') {
                 val_subscription = 'Activado';
                 SUK.setValue('#test_drive_model_subscription', val_subscription);
-                console.log(val_subscription);
+                //console.log(val_subscription);
             } else {
                 val_subscription = 'Desactivado';
                 SUK.setValue('#test_drive_model_subscription', val_subscription);
-                console.log(val_subscription);
+                //console.log(val_subscription);
             }
             var form_errors = 0;
             if( validateMethods.validate_input( $test_drive_model_date ) ){
@@ -1454,10 +1549,10 @@
                         var testDriveModelPromise = formTestDriveMethods.addDataFormTestDrive();
 
                         testDriveModelPromise.success(function (data) {
-                            console.log('Datos Enviados');
+                            //console.log('Datos Enviados');
                         });
                         testDriveModelPromise.error(function (data) {
-                            console.log('Datos No Enviados');
+                            //console.log('Datos No Enviados');
                         });
                     }, 1000);
                     setTimeout(function () {
@@ -1704,6 +1799,224 @@
                 });
 
             }
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] financing
+\* ------------------------------------------------------ */
+    var financingMethods = {
+        financing: function (options) {
+            var car_d = null,
+                funding_data = {
+                    engagement  : 0,
+                    months      : 0,
+                    price       : 0
+                };
+            var conce_d = null;
+
+            var default_data = {
+                car_version : 0,
+                key         : ''
+
+            };
+            if( options === undefined || options === null  ){
+                options = {};
+            }
+            fuh_data = $.extend( {}, default_data, options );
+            //Tabs
+            $panelTabsNav   = $('li.step-nav-tabs.funding');
+            $panelTabs      = $('.step-nav-tab.funding');
+
+            $panelTabsNav.children('a').on('click', financingMethods.preventDefault_panelTabsNav);
+            //console.log($panelTabsNav);
+
+            //console.log(car_d);
+            //console.log(funding_data);
+            //console.log(conce_d);
+            //console.log(default_data);
+            //console.log(fuh_data);
+            //console.log($panelTabsNav);
+            //console.log($panelTabs);
+
+            $.funding_adjust_calc = function(  ){
+                // Funding Adjust calc
+                var f_amount        = funding_data.price * ( funding_data.engagement / 100 ),
+                    total_pay       =  funding_data.price -  f_amount,
+                    f_monthly_pay   = funding_core( total_pay, funding_data.months  );
+                $('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) );
+                $('#fr_car_engagement').val(moneyFormat( f_amount ));
+                $('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' );
+                $('#fr_car_months').val(funding_data.months + ' meses');
+                $('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) );
+                $('#fr_car_price').val(moneyFormat(  funding_data.price ));
+                $('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) );
+                $('#fr_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
+
+                /*console.log($('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) ));
+                console.log($('#fr_car_engagement').val(moneyFormat( f_amount )));
+                console.log($('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' ));
+                console.log($('#fr_car_months').val(funding_data.months + ' meses'));
+                console.log($('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) ));
+                console.log($('#fr_car_price').val(moneyFormat(  funding_data.price )));
+                console.log($('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) ));
+                console.log($('#fr_car_monthly_payment').val(moneyFormat(  f_monthly_pay )));
+                console.log(f_amount);
+                console.log(total_pay);*/
+            }
+
+            $.funding_select_version = function( ii ){
+                var $elements;
+                $elements               = $('#funding-versions-tabs li a');
+                $elements.removeClass('active');
+                $elements.eq( ii ).addClass('active');
+                funding_data.engagement = $("#car_engagement_slider").slider( 'value' ) ;
+                funding_data.months     = $("#car_months_slider").slider( 'value');
+                funding_data.price      = car_d.versions[ ii ].price;
+                fuh_data.car_version    = car_d.versions[ ii ].key;
+                $.funding_adjust_calc();
+                console.log($.funding_adjust_calc());
+            }
+
+            $.funding_select_car = function( k ){
+                var car_data    = get_car_data( k ),
+                    $icons      = $('#car_select_preview .car_thumb_160 .car, #fu_adjust_car .car_thumb_60 .car, #funding_result_data .car_thumb_60 .car, #funding-resume-car .car_thumb_60 .car'),
+                    $car_texts  = $('#car_select_name h3, #step-nav-tab h3, #fu_adjust_car h3, #funding_result_data h3, #funding-resume-car h3'),
+                    $input_car_text = $('#fr_model_car');
+
+                fuh_data.key = k;
+                var anio = '2015';
+                if(car_data.key == 'ciaz'){
+                    anio = '2016';
+                }
+                fuh_data.name = car_data.name + ' ' + anio;
+
+                $("#car_engagement_slider").slider({value: 20}) ;
+                $("#car_months_slider").slider({value: 6});
+
+                $car_texts.text( fuh_data.name );
+                $input_car_text.val( fuh_data.name );
+                $icons.removeClass();
+                $icons.addClass('car ' + fuh_data.key );
+                var i0 = cars_prices.length, versions = null, i1, i2, tab_data;
+                while( i0-- ){
+                    if( cars_prices[i0].key == fuh_data.key ){
+                        car_d = cars_prices[i0];
+                        versions = car_d.versions;
+                        var i1 = 0, i2 = versions.length, tabs_data = {versions:[]};
+                        if( i2 > 1 ){
+                            $('#funding-versions').show();
+                        }else{
+                            $('#funding-versions').hide();
+                        }
+                        while( i1 < i2 ){
+                            tab_data = {
+                                i       : i1,
+                                name    : versions[i1].name
+                            }
+                            tabs_data.versions.push( tab_data );
+                            i1++;
+                        }
+
+                        $("#funding-versions-tabs").html( funding_tab, tabs_data );
+                        console.log($("#funding-versions-tabs").html( funding_tab, tabs_data ));
+                        $.funding_select_version( 0 );
+                        break;
+                    }
+                }
+            };
+            $("#car_engagement_slider").slider({
+                change  : function( event, ui ) {
+                    funding_data.engagement = ui.value;
+                    $.funding_adjust_calc();
+                },
+                max     : 80,
+                min     : 20,
+                slide   : function( event, ui ) {
+                    funding_data.engagement = ui.value;
+                    $.funding_adjust_calc();
+                    $(this).parent().children(".star").html(ui.value+"%");
+                },
+                step    : 5,
+                value   : 20
+
+            });
+            $("#car_months_slider").slider({
+                change  : function( event, ui ) {
+                    funding_data.months = ui.value;
+                    $.funding_adjust_calc();
+                },
+                max     : 60,
+                min     : 6,
+                slide   : function( event, ui ) {
+                    funding_data.months = ui.value;
+                    $.funding_adjust_calc();
+                    $(this).parent().children(".star").html(ui.value);
+                },
+                step    : 6,
+                value   : 6
+
+            });
+
+
+            current_tab = -1;
+            $('#funding-versions-tabs').delegate('a','click', function( e ){
+                e.preventDefault();
+                $.funding_select_version( parseInt( $(this).data('version') ) );
+            });
+            $('#car_select_list').delegate('a','click', function( e ){
+                e.preventDefault();
+                $.funding_select_car( $(this).data('key') );
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    $("#car_select_list").hide();
+                    $("#car_select_name, #car_select_preview").fadeIn();
+                }
+            });
+            if( fuh_data.key == '' ){
+                $('#car_select_list a').eq(0).trigger('click');
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    $("#car_select_name, #car_select_preview").hide();
+                    $("#car_select_list").fadeIn();
+                }
+                goto_step( 1, true );
+            }else{
+                $.funding_select_car( fuh_data.key );
+                goto_step( 2, true );
+            }
+            $("#change-car-test").on('click', function( e ){
+                e.preventDefault();
+                $("#car_select_name, #car_select_preview").hide();
+                $("#car_select_list").fadeIn();
+            });
+            $('a.funding-goto').on('click', function( e ){
+                e.preventDefault();
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    if ($(this).data('step') == "1") {
+                        $("#car_select_name, #car_select_preview").hide();
+                        $("#car_select_list").fadeIn();
+                    }
+                }
+                goto_step( $(this).data('step') );
+            });
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $("#fake-calculate").on('click', function( e ){
+                    e.preventDefault();
+                    $("#header-financiamiento .option-2, #fake-calculate").hide();
+                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").css("display", "block");
+                });
+                $("#modify-calc").on('click', function( e ){
+                    e.preventDefault();
+                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").hide();
+                    $("#header-financiamiento .option-2, #fake-calculate").css("display", "block");
+                });
+            }
+        },
+        preventDefault_panelTabsNav: function(event) {
+            event.preventDefault();
+            if( !$(this).parent().is('.disabled') ){
+                goto_step( $(this).data('number') );
+                //console.log($(this).data('number'));
+            }
+            //console.log('click');
         }
     }
 /* ------------------------------------------------------ *\
