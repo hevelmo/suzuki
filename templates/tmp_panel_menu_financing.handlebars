@@ -156,75 +156,7 @@
                             </div>
                         </div>
                         <div class="results result-2">
-                            <div id="funding_form_form">
-                                <form id="financia" name="financia" method="post" action="financia.php">
-                                   <p>Nos gustaría enviarte una cotización por correo electrónico</p>
-                                   <p><span style="color: red; font-size: 12px;">Los campos marcados con * son requeridos</span></p>
-                                  <input type="hidden" class="fr_data" name="fr_model_car" id="fr_model_car" value="">
-                                   <input type="hidden" class="fr_price" name="fr_car_price" id="fr_car_price" value="">
-                                   <input type="hidden" class="fr_engagement" name="fr_car_engagement" id="fr_car_engagement" value="">
-                                   <input type="hidden" class="fr_monthly_payment" name="fr_car_monthly_payment" id="fr_car_monthly_payment" value="">
-                                   <input type="hidden" class="fr_months" name="fr_car_months" id="fr_car_months" value="">
-                                   <input type="hidden" class="fr_concesionaria" name="porra" id="fr_concesionaria" value="Suzuki Guadalajara">
-                                   <div id="mail_cel">
-                                        <fieldset>
-                                            <label for="hfu_name"><span style="color: red; font-size: 19px; position: relative; top: 7px;">*</span> Nombre</label>
-                                            <input type="text" id="hfu_name" name="hfu_name" placeholder="Nombre" data-validation-data="required|name">
-                                            <p class="invalid-message" id="error_name">Este campo es obligatorio<span>&nbsp;</span></p>
-                                        </fieldset>
-                                        <fieldset>
-                                            <label for="hfu_lastname"><span style="color: red; font-size: 19px; position: relative; top: 7px;">*</span> Apellido</label>
-                                            <input type="text" id="hfu_lastname" name="hfu_lastname" placeholder="Apellidos Paterno y Materno" data-validation-data="required|name">
-                                            <p class="invalid-message" id="error_lastname">Este campo es obligatorio<span>&nbsp;</span></p>
-                                        </fieldset>
-                                        <fieldset>
-                                            <label for="hfu_email"><span style="color: red; font-size: 19px; position: relative; top: 7px;">*</span> Correo electrónico</label>
-                                            <input type="email" id="hfu_email" name="hfu_email" class="input icon email" placeholder="Correo electrónico" data-validation-data="required|email">
-                                            <p class="invalid-message" id="error_mail">Este campo es obligatorio<span>&nbsp;</span></p>
-                                        </fieldset>
-                                    </div>
-                                    <div id="estado-consecionaria" style="display: none;">
-                                        <fieldset id="financing-drop" name="financing-drop">
-                                            <label style="display: none;"><span style="color: red; font-size: 19px; position: relative; top: 7px;">*</span> Estado</label>
-                                            <div id="tdcss">
-                                                <div id="tdcs"></div>
-                                            </div>
-                                            <p class="invalid-message" id="error_state">Este campo es obligatorio<span>&nbsp;</span></p>
-                                        <p class="invalid-message" id="error_concessionaire">Este campo es obligatorio<span>&nbsp;</span></p>
-                                        </fieldset>
-                                    </div>
-                                    <div class="funding-hidden-inputs-none">
-                                        <fieldset>
-                                            <label for="hfu_tel"><span style="color: red; font-size: 19px; position: relative; top: 7px;">*</span> Número de celular</label>
-                                            <input type="tel" id="hfu_tel" name="hfu_tel" maxlength="13" placeholder="Número de celular" data-validation-data="phone|required">
-                                            <p class="invalid-message" id="error_phone">Este campo es obligatorio<span>&nbsp;</span></p>
-                                        </fieldset>
-                                    </div>
-            						<div id="drive-inputs">
-                                        <p>¿Te gustaría manejarlo?</p>
-                                        <fieldset class="fieldset-radio-checkbox">
-                                            <label for="drive_yes" class="label-radio">Sí
-                                                <input type="radio" id="drive_yes" name="hfu_drive" value="Sí deseas manejarlo">
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="fieldset-radio-checkbox">
-                                            <label for="drive_no" class="label-radio">No
-                                                <input type="radio" id="drive_no" name="hfu_drive" value="No deseas manejarlo">
-                                            </label>
-                                        </fieldset>
-                                    </div>
-                                    <fieldset class="fieldset-radio-checkbox" id="checkbox-news">
-                                        <label for="funding-newsletter" class="label-checkbox">
-                                            <input type="checkbox" id="funding-newsletter" name="funding-newsletter" value=""> Deseo recibir noticias y promociones.
-                                        </label>
-                                    </fieldset>
-                                    <input type="submit" class="enviar button blue" value="Enviar">
-                                    <p id="revisa_aviso">
-                                        Tus datos están a salvo.<br>
-                                        Para mayor información revisa nuestro <a href="/aviso-privacidad">Aviso de privacidad</a>
-                                    </p>
-                                </form>
-                            </div>
+                            <div id="content_funding_general_form"></div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -237,7 +169,7 @@
                             </p>
                             <div class="funding-hidden-inputs">
                                 Te hemos asignado un asesor Suzuki de la concesionaria
-                                <a id="funding_resume_concessionaire">Suzuki Polanco</a>
+                                <a id="funding_resume_concessionaire"></a>
                                 quien se pondrá en contacto contigo para confirmar tus datos y resolver cualquier duda
                                 que puedas tener.
                             </div>

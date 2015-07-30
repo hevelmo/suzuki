@@ -40,6 +40,8 @@ function tempsNames() {
         // TEST DRIVE SELECTION
         'tmp_section_content_test_drive_selection' => 'tmp_section_content_test_drive_selection',
         'tmp_funding_version_tabs' => 'tmp_funding_version_tabs',
+        // FINANCING GENERAL
+        'tmp_form_financing_general' => 'tmp_form_financing_general',
 
         // MODELS MENU
         'tmp_models_menu' => 'tmp_models_menu',

@@ -1287,8 +1287,18 @@
                     SUK.appendMulti('#fields_hidden', input_hidden_test_drive_ciaz_Attributes);
                     //console.log(input_hidden_test_drive_ciaz_Attributes);
                 break;
+                case 'financing':
+                    hidden_elements_funding_general_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_data', 'name':'suk_gdl_financing_general_model_car', 'id':'financing_general_model_car', 'value':'Swift Sport 2015'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_price', 'name':'suk_gdl_financing_general_car_price', 'id':'financing_general_car_price', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_engagement', 'name':'suk_gdl_financing_general_car_engagement', 'id':'financing_general_car_engagement', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_monthly_payment', 'name':'suk_gdl_financing_general_car_monthly_payment', 'id':'financing_general_car_monthly_payment', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_months', 'name':'suk_gdl_financing_general_car_months', 'id':'financing_general_car_months', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_concesionaria', 'name':'suk_gdl_financing_general_concesionarie', 'id':'financing_general_concesionaria', 'value':'Suzuki Autos Guadalajara'}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_general_elements);
+                break;
                 default:
-                    $('')
                 break;
             }
         },
@@ -1842,6 +1852,56 @@
         }
     }
 /* ------------------------------------------------------ *\
+ [Methods] formFinancing General Models
+\* ------------------------------------------------------ */
+    var formFinancingGeneral = {
+        addDataFormFinancingGeneral: function() {
+            var dataFormFinancingGeneral;
+            dataFormFinancingGeneral = $('#financing_general').serializeFormJSON();
+
+            dataFormFinancingGeneral['suk_gdl_financing_general_newsletter'] = (dataFormFinancingGeneral['suk_gdl_financing_general_newsletter'] == 'on')
+                ? dataFormFinancingGeneral['suk_gdl_financing_general_newsletter'] : 'off';
+
+            console.log(dataFormFinancingGeneral);
+            console.log(dataFormFinancingGeneral['suk_gdl_financing_general_newsletter']);
+
+            return SUK.postalService(urlsApi.sendFinancingGeneral, dataFormFinancingGeneral);
+        },
+        fillingControl: function() {
+            var validFieldItems, dataFormFinancingGeneralModel, isFull, isNoEmpty;
+            validFieldItems = [
+                'suk_gdl_financing_general_name',
+                'suk_gdl_financing_general_lastname',
+                'suk_gdl_financing_general_email'
+            ];
+            dataFormFinancingGeneralModel = $('#financing_general').serializeFormJSON();
+
+            isFull = SUK.validFormFull(dataFormFinancingGeneralModel, validFieldItems);
+            $('#suk_financing_general_submit').attr('disabled', !isFull);
+
+            /*isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
+            $('#suk_financing_general_submit').attr('disabled', isEmpty);*/
+
+            console.log($('#financing_general').serializeFormJSON());
+        },
+        refreshFrom: function() {
+            SUK.loadTemplate(tempsNames.tmp_form_financing_general, domEl.div_recurrent_funding_general_form);
+            modelsMenuMethods.changeNameModel();
+            $('#suk_financing_general_submit').attr('disabled', true);
+            console.log('entra form-financing-general');
+        },
+        resetAlert: function() {
+            SUK.resetForm('#financing_general');
+            $('#suk_financing_general_submit').attr('disabled', true);
+            console.log('refresh form-financing-general');
+        },
+        finchNavigateReturn: function(event) {},
+        validate_fields_input: function() {},
+        validate_fields_radio: function() {},
+        validate_fields_check: function() {},
+        sendFinancingGeneralForm: function(event) {}
+    }
+/* ------------------------------------------------------ *\
  [Methods] INPUTS RADIO, CHECKBOX
 \* ------------------------------------------------------ */
     var changeInputsMethods = {
@@ -2078,7 +2138,7 @@
                 financingTextMethods.getModelsByKey();
                 $.funding_select_car( data_key );
 
-                console.log(data_key);
+                //console.log(data_key);
 
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     $("#car_select_list").hide();
@@ -2100,7 +2160,7 @@
                 event.preventDefault();
                 $("#car_select_name, #car_select_preview").hide();
                 $("#car_select_list").fadeIn();
-                console.log('click plan');
+                //console.log('click plan');
             });
             $('a.funding-goto').on('click', function( event ){
                 event.preventDefault();
@@ -2134,33 +2194,21 @@
             //console.log('click');
         }
     }
-
     $.funding_adjust_calc = function(  ){
         // Funding Adjust calc
         var f_amount        = funding_data.price * ( funding_data.engagement / 100 ),
             total_pay       =  funding_data.price -  f_amount,
             f_monthly_pay   = funding_core( total_pay, funding_data.months  );
         $('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) );
-        $('#fr_car_engagement').val(moneyFormat( f_amount ));
         $('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' );
-        $('#fr_car_months').val(funding_data.months + ' meses');
         $('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) );
-        $('#fr_car_price').val(moneyFormat(  funding_data.price ));
         $('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) );
-        $('#fr_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
-
-        /*console.log($('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) ));
-        console.log($('#fr_car_engagement').val(moneyFormat( f_amount )));
-        console.log($('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' ));
-        console.log($('#fr_car_months').val(funding_data.months + ' meses'));
-        console.log($('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) ));
-        console.log($('#fr_car_price').val(moneyFormat(  funding_data.price )));
-        console.log($('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) ));
-        console.log($('#fr_car_monthly_payment').val(moneyFormat(  f_monthly_pay )));
-        console.log(f_amount);
-        console.log(total_pay);*/
+        // INPUTS HIDDEN
+        $('#financing_general_car_engagement').val(moneyFormat( f_amount ));
+        $('#financing_general_car_months').val(funding_data.months + ' meses');
+        $('#financing_general_car_price').val(moneyFormat(  funding_data.price ));
+        $('#financing_general_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
     }
-
     $.funding_select_version = function( ii ){
         var $elements;
         $elements               = $('#funding-versions-tabs li a');
@@ -2168,22 +2216,21 @@
         $elements.eq( ii ).addClass('active');
         funding_data.engagement = $("#car_engagement_slider").slider( 'value' ) ;
         funding_data.months     = $("#car_months_slider").slider( 'value');
-        console.log(car_d);
+        //console.log(car_d);
         funding_data.price      = car_d.versions[ ii ].price;
-        console.log(car_d.versions[ ii ].price);
+        //console.log(car_d.versions[ ii ].price);
         fuh_data.car_version    = car_d.versions[ ii ].key;
-        console.log(car_d.versions[ ii ].key);
+        //console.log(car_d.versions[ ii ].key);
         $.funding_adjust_calc();
     }
-
     $.funding_select_car = function( k ){
         var car_data    = get_car_data( k ),
             $icons      = $('#car_select_preview .car_thumb_160 .car, #fu_adjust_car .car_thumb_60 .car, #funding_result_data .car_thumb_60 .car, #funding-resume-car .car_thumb_60 .car'),
             $car_texts  = $('#car_select_name h3, #step-nav-tab h3, #fu_adjust_car h3, #funding_result_data h3, #funding-resume-car h3'),
-            $input_car_text = $('#fr_model_car');
+            $input_car_text = $('#financing_general_model_car');
 
         cars_prices = financingTextMethods.getModelsByKey(k);
-        console.log(cars_prices);
+        //console.log(cars_prices);
 
         fuh_data.key = k;
         var anio = '2015';
@@ -2191,7 +2238,6 @@
             anio = '2016';
         }
         fuh_data.name = car_data.name + ' ' + anio;
-
         $("#car_engagement_slider").slider({value: 20}) ;
         $("#car_months_slider").slider({value: 6});
 
@@ -2206,127 +2252,111 @@
             'sukpa': cars_prices
         }
         SUK.loadTemplate(tempsNames.tmp_funding_version_tabs, domEl.div_recurrent_funding_version_tabs, sukCarPricesData);
-        console.log(sukCarPricesData);
+        //console.log(sukCarPricesData);
         while( i0-- ){
-            console.log(i0);
+            //console.log(i0);
             if( cars_prices[i0].key == fuh_data.key ){
-                console.log('si entro');
+                //console.log('si entro');
                 car_d = cars_prices[i0];
                 versions = car_d.versions;
                 var i1 = 0, i2 = versions.length, tabs_data = {versions:[]};
                 if( i2 > 1 ){
                     $('#funding-versions').show();
                 }else{
-                    console.log('');
+                    //console.log('');
                     $('#funding-versions').hide();
                 }
                 while( i1 < i2 ){
                     tab_data = {
-                        i       : i1,
+                        id       : i1,
                         name    : versions[i1].name
                     }
                     tabs_data.versions.push( tab_data );
                     i1++;
-                    console.log(tabs_data.versions.push( tab_data ));
+                    //console.log(tabs_data.versions.push( tab_data ));
                 }
                 $.funding_select_version( 0 );
                 break;
             }
         }
-
     };
-
-
-    /*$.ajax({
-        url : 'api/data-json/financing/car_prices.json',
-        success : function(data){
-            cars_prices = data;
-            console.log(cars_prices);
-        }
-    });*/
-
-
-
 /* ------------------------------------------------------ *\
- [Methods] financing_test
+ [Methods] financing API JS
 \* ------------------------------------------------------ */
-var financingTextMethods = {
-    getModels: function() {
-        var modelsData;
-        modelsData = SUK.getInternalJSON('api/data-json/financing/car_prices.json');
-        modelsData = modelsData.sukpa[0].suk_Models;
-        return modelsData;
-    },
-    getModelsById: function(id) {
-        var modelsData, modelsIds, modelsDataNew;
-        id = +id;
-        modelsData = financingTextMethods.getModels();
-        modelsIds = SUK.filterArrayObjByKey(modelsData, 'id', 0, 0);
-
-        //Change all string elements into integer
-        for(var idx = 0; idx < modelsIds.length; idx++) {
-            modelsIds[idx] = +modelsIds[idx];
-        }
-        //Search if this Models exits in the current model
-        modelsIdxCurrent = _.indexOf(modelsIds, id);
-        //console.log(modelsIds);
-        //console.log(id);
-        modelsDataNew = (modelsIdxCurrent >= 0) ? [modelsData[modelsIdxCurrent]] : [];
-        //console.log(modelsIdxCurrent);
-        return modelsDataNew;
-    },
-    getModelsByKey: function(key) {
-        var modelsData, modelsKeys, modelsDataNew;
-        key = ''+key;
-        modelsData = financingTextMethods.getModels();
-        modelsKeys = SUK.filterArrayObjByKey(modelsData, 'key', 0, 0);
-
-        //Change all string elements into integer
-        for(var idx = 0; idx < modelsKeys.length; idx++) {
-            modelsKeys[idx] = ''+modelsKeys[idx];
-        }
-        //Search if this Models exits in the current model
-        modelsIdxCurrent = _.indexOf(modelsKeys, key);
-        console.log(modelsKeys);
-        console.log(key);
-        modelsDataNew = (modelsIdxCurrent >= 0) ? [modelsData[modelsIdxCurrent]] : [];
-        console.log(modelsIdxCurrent);
-        return modelsDataNew;
-    },
-    getVersionsByModelId: function(id) {
-        var modelsData, versionData;
-        id = +id;
-        modelsData = financingTextMethods.getModelsById(id);
-        //console.log(modelsData);
-        versionData = (modelsData.length) ? modelsData[0].versions : [];
-        return versionData;
-    },
-    getVersionsByModelIdByVerisonId: function(modelId, versionId) {
-        var versionData, newVersionData, versionsIds;
-        modelId = +modelId;
-        versionId = +versionId;
-
-        versionData = financingTextMethods.getVersionsByModelId(modelId);
-        //
-        if (versionData.length) {
-            versionsIds = SUK.filterArrayObjByKey(versionData, 'id', 0, 0);
+    var financingTextMethods = {
+        getModels: function() {
+            var modelsData;
+            modelsData = SUK.getInternalJSON('api/data-json/financing/car_prices.json');
+            modelsData = modelsData.sukpa[0].suk_Models;
+            return modelsData;
+        },
+        getModelsById: function(id) {
+            var modelsData, modelsIds, modelsDataNew;
+            id = +id;
+            modelsData = financingTextMethods.getModels();
+            modelsIds = SUK.filterArrayObjByKey(modelsData, 'id', 0, 0);
 
             //Change all string elements into integer
-            for(var idx = 0; idx < versionsIds.length; idx++) {
-                versionsIds[idx] = +versionsIds[idx];
+            for(var idx = 0; idx < modelsIds.length; idx++) {
+                modelsIds[idx] = +modelsIds[idx];
             }
             //Search if this Models exits in the current model
-            versionsIdxCurrent = _.indexOf(versionsIds, versionId);
-            newVersionData = (versionsIdxCurrent >= 0) ? [versionData[versionsIdxCurrent]] : [];
-        } else {
-            newVersionData = [];
+            modelsIdxCurrent = _.indexOf(modelsIds, id);
+            //console.log(modelsIds);
+            //console.log(id);
+            modelsDataNew = (modelsIdxCurrent >= 0) ? [modelsData[modelsIdxCurrent]] : [];
+            //console.log(modelsIdxCurrent);
+            return modelsDataNew;
+        },
+        getModelsByKey: function(key) {
+            var modelsData, modelsKeys, modelsDataNew;
+            key = ''+key;
+            modelsData = financingTextMethods.getModels();
+            modelsKeys = SUK.filterArrayObjByKey(modelsData, 'key', 0, 0);
+
+            //Change all string elements into integer
+            for(var idx = 0; idx < modelsKeys.length; idx++) {
+                modelsKeys[idx] = ''+modelsKeys[idx];
+            }
+            //Search if this Models exits in the current model
+            modelsIdxCurrent = _.indexOf(modelsKeys, key);
+            //console.log(modelsKeys);
+            //console.log(key);
+            modelsDataNew = (modelsIdxCurrent >= 0) ? [modelsData[modelsIdxCurrent]] : [];
+            //console.log(modelsIdxCurrent);
+            return modelsDataNew;
+        },
+        getVersionsByModelId: function(id) {
+            var modelsData, versionData;
+            id = +id;
+            modelsData = financingTextMethods.getModelsById(id);
+            //console.log(modelsData);
+            versionData = (modelsData.length) ? modelsData[0].versions : [];
+            return versionData;
+        },
+        getVersionsByModelIdByVerisonId: function(modelId, versionId) {
+            var versionData, newVersionData, versionsIds;
+            modelId = +modelId;
+            versionId = +versionId;
+
+            versionData = financingTextMethods.getVersionsByModelId(modelId);
+            //
+            if (versionData.length) {
+                versionsIds = SUK.filterArrayObjByKey(versionData, 'id', 0, 0);
+
+                //Change all string elements into integer
+                for(var idx = 0; idx < versionsIds.length; idx++) {
+                    versionsIds[idx] = +versionsIds[idx];
+                }
+                //Search if this Models exits in the current model
+                versionsIdxCurrent = _.indexOf(versionsIds, versionId);
+                newVersionData = (versionsIdxCurrent >= 0) ? [versionData[versionsIdxCurrent]] : [];
+            } else {
+                newVersionData = [];
+            }
+            return newVersionData;
         }
-        return newVersionData;
-    },
-    // EVENTS
-
-
-}
-
-
-
+    }
+/* ------------------------------------------------------ *\
+ [Methods] ''
+\* ------------------------------------------------------ */

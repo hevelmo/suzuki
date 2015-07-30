@@ -8,7 +8,7 @@
 					"key": "swift-sport",
 					"versions": [
 						{
-							"id": "1",
+							"id": "0",
 							"name": "",
 							"key": "swift-sport",
 							"year": "2014",
@@ -22,35 +22,35 @@
 					"key": "swift",
 					"versions": [
 						{
-							"id": "1",
+							"id": "0",
 							"name": "GA",
 							"key": "ga",
 							"year": "2014",
 							"price": "174000.00"
 						},
 						{
-							"id": "2",
+							"id": "1",
 							"name": "GLS TM",
 							"key": "gls-tm",
 							"year": "2014",
 							"price": "199000.00"
 						},
 						{
-							"id": "3",
+							"id": "2",
 							"name": "GLS TA",
 							"key": "gls-ta",
 							"year": "2014",
 							"price": "214000.00"
 						},
 						{
-							"id": "4",
+							"id": "3",
 							"name": "GLX TM",
 							"key": "glx-tm",
 							"year": "2014",
 							"price": "224000.00"
 						},
 						{
-							"id": "5",
+							"id": "4",
 							"name": "GLX TA",
 							"key": "glx-ta",
 							"year": "2014",
@@ -64,14 +64,14 @@
 		            "key": "kizashi",
 		            "versions": [
 		                {
-		                    "id": "1",
+		                    "id": "0",
 		                    "name": "CVT GLS",
 		                    "key": "kizashi",
 		                    "year": "2014",
 		                    "price": "319500.00"
 		                },
 		                {
-		                    "id": "2",
+		                    "id": "1",
 		                    "name": "CVT GLX",
 		                    "key": "kizashi",
 		                    "year": "2014",
@@ -85,28 +85,28 @@
 		            "key": "grand-vitara",
 		            "versions": [
 		                {
-		                    "id": "1",
+		                    "id": "0",
 		                    "name": "GL",
 		                    "key": "gl",
 		                    "year": "2014",
 		                    "price": "322000.00"
 		                },
 		                {
-		                    "id": "2",
+		                    "id": "1",
 		                    "name": "Special",
 		                    "key": "special",
 		                    "year": "2014",
 		                    "price": "342000.00"
 		                },
 		                {
-		                    "id": "3",
+		                    "id": "2",
 		                    "name": "GLS",
 		                    "key": "gls",
 		                    "year": "2014",
 		                    "price": "352000.00"
 		                },
 		                {
-		                    "id": "4",
+		                    "id": "3",
 		                    "name": "GLS 4X4",
 		                    "key": "gls-4x4",
 		                    "year": "2014",
@@ -120,28 +120,28 @@
 		            "key": "s-cross",
 		            "versions": [
 		                {
-		                    "id": "1",
+		                    "id": "0",
 		                    "name": "GL / TM ",
 		                    "key": "gl-tm",
 		                    "year": "2014",
 		                    "price": "249900.00"
 		                },
 		                {
-		                    "id": "2",
+		                    "id": "1",
 		                    "name": "GLX / CVT",
 		                    "key": "glx-cvt",
 		                    "year": "2014",
 		                    "price": "319900.00"
 		                },
 		                {
-		                    "id": "3",
+		                    "id": "2",
 		                    "name": "GL / CVT ",
 		                    "key": "gl-cvt",
 		                    "year": "2014",
 		                    "price": "269900.00"
 		                },
 		                {
-		                    "id": "4",
+		                    "id": "3",
 		                    "name": "GLX / ALL GRIP",
 		                    "key": "glx-all",
 		                    "year": "2014",
@@ -155,28 +155,28 @@
 		            "key": "ciaz",
 		            "versions": [
 		                {
-		                    "id": "1",
+		                    "id": "0",
 		                    "name": "GLS TM",
 		                    "key": "gls-tm",
 		                    "year": "2016",
 		                    "price": "199990.00"
 		                },
 		                {
-		                    "id": "2",
+		                    "id": "1",
 		                    "name": "GLS TA",
 		                    "key": "gls-ta",
 		                    "year": "2016",
 		                    "price": "224990.00"
 		                },
 		                {
-		                    "id": "3",
+		                    "id": "2",
 		                    "name": "GLX TM",
 		                    "key": "glx-tm",
 		                    "year": "2016",
 		                    "price": "229990.00"
 		                },
 		                {
-		                    "id": "4",
+		                    "id": "3",
 		                    "name": "GLX TA",
 		                    "key": "glx-ta",
 		                    "year": "2016",

@@ -37,6 +37,7 @@ function urlsApi() {
         'addGamaModelos' => $root . '/add/gama_modelos',
 
         'sendContact' => $root . '/post/contacto',
-        'sendTestDriveModel' => $root . '/post/model/test-drive'
+        'sendTestDriveModel' => $root . '/post/model/test-drive',
+        'sendFinancingGeneral' => $root . '/post/financiamiento'
     );
 }
