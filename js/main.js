@@ -91,6 +91,15 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('focusout', '#test_drive_model_email', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#test_drive_model_tel', validateMethods.validate_input);
     $(domEl.div_recurrent).on('keypress', '#test_drive_model_tel', inputValMetdods.isIntegerKP);
+    // FORM FINANCING GENERAL
+    $(domEl.div_recurrent).on('focusout', '#financing_general_name', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#financing_general_lastname', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#financing_general_email', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#financing_general_tel', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('keypress', '#financing_general_tel', inputValMetdods.isIntegerKP);
+    // SEND FORM FINANCING GENERAL
+    $(domEl.div_recurrent).on('keyup', '.fg_validate_input', formFinancingGeneral.validate_fields_keyup);
+    $(domEl.div_recurrent).on('click', '#suk_financing_general_submit', formFinancingGeneral.sendFinancingGeneralForm);
     // SEND FORM TEST DRIVE MODEL
     $(domEl.div_recurrent).on('keyup', '.tdm_validate_input', formTestDriveMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);

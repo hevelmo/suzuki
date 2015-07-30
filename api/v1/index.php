@@ -44,7 +44,8 @@ setlocale(LC_MONETARY, 'en_US');
         $app->post('/post/contacto', 'sendContact');
     // app => Test Drive by Model
         $app->post('/post/model/test-drive', 'sendTestDriveModel');
-
+    // app => Financing General
+        $app->post('/post/financiamiento', 'sendFinancingGeneral');
 // INSERT
 //$app->post('/new/table', /*'mw1',*/ 'addTable');
 // UPDATE
@@ -61,7 +62,7 @@ setlocale(LC_MONETARY, 'en_US');
 //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
 $app->run();
 //Functions
-    // GET MODELS
+    // GET MODELS PRICES
     function addModelos() {
         $json = file_get_contents('../data-json/financing/car_prices.json');
         echo $json;
@@ -90,6 +91,8 @@ $app->run();
         $send_suk_gdl_test_drive_model_image_modelo = $property->suk_gdl_test_drive_model_image_modelo;
         $send_suk_gdl_test_drive_model_subscription = $property->suk_gdl_test_drive_model_subscription;
         $send_suk_gdl_test_drive_model_auto = $property->suk_gdl_test_drive_model_auto;
+
+        $send_suk_gdl_test_drive_model_url = "suzukigdl";
 
         if ($send_suk_gdl_test_drive_model_modelo =="swift-sport") {
             $send_suk_gdl_test_drive_model_auto = "Swift Sport";
@@ -128,7 +131,7 @@ $app->run();
         //var_dump($send_suk_gdl_test_drive_model_date, $send_suk_gdl_test_drive_model_name, $send_suk_gdl_test_drive_model_lastname, $send_suk_gdl_test_drive_model_email, $send_suk_gdl_test_drive_model_tel, $send_suk_gdl_test_drive_model_newsletter, $send_suk_gdl_test_drive_model_modelo, $send_suk_gdl_test_drive_model_concesionaria, $send_suk_gdl_test_drive_model_image_modelo, $send_suk_gdl_test_drive_model_subscription, $send_suk_gdl_test_drive_model_auto);
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok'));
     }
-    // CONTACTO SUZUKI
+    // CONTACT SUZUKI
     function sendContact() {
         $property = requestBody();
         $send_suk_gdl_contact_name = $property->suk_gdl_contact_name;
@@ -143,6 +146,8 @@ $app->run();
         $send_suk_gdl_contact_auto = $property->suk_gdl_contact_auto;
         $send_suk_gdl_contact_image_modelo = $property->suk_gdl_contact_image_modelo;
         $send_suk_gdl_contact_subscription = $property->suk_gdl_contact_subscription;
+
+        $send_suk_gdl_contact_url = "suzukigdl";
 
         if ($send_suk_gdl_contact_department == "ventas") {
             $send_suk_gdl_contact_depto = "Ventas";
@@ -184,13 +189,45 @@ $app->run();
 
         if (isset($send_suk_gdl_contact_news) && $send_suk_gdl_contact_news === "on") {
             $send_suk_gdl_contact_subscription = "Activado";
-            send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_subscription);
+            send_news_contact($send_suk_gdl_contact_url, $send_suk_gdl_test_drive_model_url, $send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_subscription);
         } else {
             $send_suk_gdl_contact_subscription = "Desactivado";
         }
-        send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription);
+        send_contact($send_suk_gdl_contact_url, $send_suk_gdl_test_drive_model_url, $send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $send_suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok'));
+    }
+    // FINANCING SUZUKI
+    function sendFinancingGeneral() {
+        $property = requestBody();
+        $send_suk_gdl_financing_general_car_engagement = $property->suk_gdl_financing_general_car_engagement;
+        $send_suk_gdl_financing_general_car_monthly_payment = $property->suk_gdl_financing_general_car_monthly_payment;
+        $send_suk_gdl_financing_general_car_months = $property->suk_gdl_financing_general_car_months;
+        $send_suk_gdl_financing_general_car_price = $property->suk_gdl_financing_general_car_price;
+        $send_suk_gdl_financing_general_concesionarie = $property->suk_gdl_financing_general_concesionarie;
+        $send_suk_gdl_financing_general_drive = $property->suk_gdl_financing_general_drive;
+        $send_suk_gdl_financing_general_email = $property->suk_gdl_financing_general_email;
+        $send_suk_gdl_financing_general_image_model = $property->suk_gdl_financing_general_image_model;
+        $send_suk_gdl_financing_general_lastname = $property->suk_gdl_financing_general_lastname;
+        $send_suk_gdl_financing_general_model_car = $property->suk_gdl_financing_general_model_car;
+        $send_suk_gdl_financing_general_model_key = $property->suk_gdl_financing_general_model_key;
+        $send_suk_gdl_financing_general_name = $property->suk_gdl_financing_general_name;
+        $send_suk_gdl_financing_general_newsletter = $property->suk_gdl_financing_general_newsletter;
+        $send_suk_gdl_financing_general_subscription = $property->suk_gdl_financing_general_subscription;
+        $send_suk_gdl_financing_general_tel = $property->suk_gdl_financing_general_tel;
+        $send_suk_gdl_financing_general_model_car_verison = $property->suk_gdl_financing_general_model_car_verison;
+
+        $send_suk_gdl_financing_general_url = "suzukigdl";
+
+        if (isset($send_suk_gdl_financing_general_newsletter) && $send_suk_gdl_financing_general_newsletter === "on") {
+            $send_suk_gdl_financing_general_subscription = "Activado";
+            send_news_financing_general($send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_subscription);
+        } else {
+            $send_suk_gdl_financing_general_subscription = "Desactivado";
+        }
+        send_financing_general($send_suk_gdl_financing_general_drive, $send_suk_gdl_financing_general_model_car_verison, $send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_car_engagement, $send_suk_gdl_financing_general_car_monthly_payment, $send_suk_gdl_financing_general_car_months, $send_suk_gdl_financing_general_car_price, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_tel, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_image_model, $send_suk_gdl_financing_general_subscription);
+
+        echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
 /*
   ----------------------------------------------------------------------------
@@ -268,8 +305,8 @@ $app->run();
         Notification Methods
   ----------------------------------------------------------------------------
 */
-// SEND TEST DRIVE MODEL NEWS
-    function send_news_test_drive_model($send_suk_gdl_test_drive_model_date, $send_suk_gdl_test_drive_model_name, $send_suk_gdl_test_drive_model_lastname, $send_suk_gdl_test_drive_model_email, $send_suk_gdl_test_drive_model_tel, $send_suk_gdl_test_drive_model_newsletter, $send_suk_gdl_test_drive_model_modelo, $send_suk_gdl_test_drive_model_concesionaria, $send_suk_gdl_test_drive_model_subscription) {
+// SEND FINANCING GENENRAL NEWS
+    function send_news_financing_general($send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_subscription) {
         try {
             $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
             $message = array(
@@ -286,15 +323,15 @@ $app->run();
                                     <tbody>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                             <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
                                                 <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
                                                     <tbody>
                                                         <tr>
                                                             <td height="52" width="102">
-                                                                <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
-                                                                    <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_financing_general_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -302,7 +339,488 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                                <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                    Financiamiento Noticias y promociones
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                            </td>
+                                            <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
+                                                <table style="padding:35px 60px 35px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Nombre(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_name .'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Appelido(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_lastname.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Correo Electrónico:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_email.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="11" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Concesionaria:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="11" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_concesionarie.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="14" width="15">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/footer-logo.png" border="0">
+                                                            </td>
+                                                            <td width="125px">
+                                                                <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_financing_general_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_financing_general_url.'.com.mx</a>
+                                                                </p>
+
+                                                            </td>
+                                                            <td>
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                    &nbsp;© 2015 Suzuki / '.$send_suk_gdl_financing_general_concesionarie.'
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </body>
+                    </html>
+                ',
+                'subject' => 'Financiamiento Newsletter - '.$send_suk_gdl_financing_general_concesionarie.'.',
+                'from_email' => $send_suk_gdl_financing_general_email,
+                'from_name' => $send_suk_gdl_financing_general_name . ' ' . $send_suk_gdl_financing_general_lastname,
+                'to' => array(
+                    array(
+                        'email' => 'hevelmo060683@gmail.com',
+                        'name' => 'contacto',
+                        'type' => 'to'
+                    )/*,
+                    array(
+                        'email' => 'arivera@jaguardgl.com',
+                        //'email' => 'hevelmo060683@gmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'cc'
+                    ),
+                    array(
+                        'email' => 'arivera@guadalajara.jlr.com.mx',
+                        //'email' => 'cold_space@hotmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'bcc'
+                    )*/
+                ),
+                'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
+                //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
+                'important' => false,
+                'track_opens' => true,
+                'track_clicks' => true,
+                'auto_text' => null,
+                'auto_html' => null,
+                'inline_css' => null,
+                'url_strip_qs' => null,
+                'preserve_recipients' => null,
+                'view_content_link' => null,
+                'bcc_address' => null,
+                'tracking_domain' => null,
+                'signing_domain' => null,
+                'return_path_domain' => null,
+                'merge' => true,
+
+                'tags' => array('orden-new-notificacion'),
+                'google_analytics_domains' => array($send_suk_gdl_financing_general_url.'.com.mx'),
+                'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_financing_general_url.'.com.mx'),
+
+            );
+            $async = false;
+            $ip_pool = 'Main Pool';
+            $send_at = '';
+            $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
+            //print_r($result);
+
+        } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+            throw $e;
+        }
+    }
+// SEND FINANCING GENERAL
+    function send_financing_general($send_suk_gdl_financing_general_drive, $send_suk_gdl_financing_general_model_car_verison, $send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_car_engagement, $send_suk_gdl_financing_general_car_monthly_payment, $send_suk_gdl_financing_general_car_months, $send_suk_gdl_financing_general_car_price, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_tel, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_image_model, $send_suk_gdl_financing_general_subscription) {
+        try {
+            $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
+            $message = array(
+                'html' => '
+                    <html>
+                        <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+                        </head>
+
+                        <body>
+
+                            <div>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                            <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                                <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="52" width="102">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_financing_general_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                                <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                    Solicitud de financiamiento '.$send_suk_gdl_financing_general_concesionarie.'
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                            </td>
+                                            <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
+                                                <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="0" valign="top">
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
+                                                            </td>
+                                                            <td height="0" valign="top">
+                                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_financing_general_image_model.'" alt="'.$send_suk_gdl_financing_general_model_car.'">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Modelo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_model_car.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Versión:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_model_car_verison.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Precio:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_price.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Enganche:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_engagement.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Mensualidad:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_months.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Plazos:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_monthly_payment.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Nombre(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_name.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Apellidos(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_lastname.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Correo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_email.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Telefono:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_tel.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Concesionaria:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_concesionarie.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Desea realizar prueba de manejo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_drive.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Desea recibir noticias:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_subscription.'</span>
+                                                            </td>
+                                                            <br>
+                                                            <br>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="14" width="15">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/footer-logo.png" border="0">
+                                                            </td>
+                                                            <td width="125px">
+                                                                <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_financing_general_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_financing_general_url.'.com.mx</a>
+                                                                </p>
+
+                                                            </td>
+                                                            <td>
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                    &nbsp;© 2015 Suzuki / '.$send_suk_gdl_financing_general_concesionarie.'
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </body>
+                    </html>
+
+                ',
+                'subject' => 'Financiamiento - Solicitud de la pagina de internet '.$send_suk_gdl_financing_general_concesionarie.' para cotizar.',
+                'from_email' => $send_suk_gdl_financing_general_email,
+                'from_name' => $send_suk_gdl_financing_general_name . ' ' . $send_suk_gdl_financing_general_lastname,
+                'to' => array(
+                    array(
+                        'email' => 'hevelmo060683@gmail.com',
+                        'name' => 'contacto',
+                        'type' => 'to'
+                    )/*,
+                    array(
+                        'email' => 'arivera@jaguardgl.com',
+                        //'email' => 'hevelmo060683@gmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'cc'
+                    ),
+                    array(
+                        'email' => 'arivera@guadalajara.jlr.com.mx',
+                        //'email' => 'cold_space@hotmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'bcc'
+                    )*/
+                ),
+                'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
+                //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
+                'important' => false,
+                'track_opens' => true,
+                'track_clicks' => true,
+                'auto_text' => null,
+                'auto_html' => null,
+                'inline_css' => null,
+                'url_strip_qs' => null,
+                'preserve_recipients' => null,
+                'view_content_link' => null,
+                'bcc_address' => null,
+                'tracking_domain' => null,
+                'signing_domain' => null,
+                'return_path_domain' => null,
+                'merge' => true,
+
+                'tags' => array('orden-new-notificacion'),
+                'google_analytics_domains' => array($send_suk_gdl_financing_general_url.'.com.mx'),
+                'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_financing_general_url.'.com.mx'),
+
+            );
+            $async = false;
+            $ip_pool = 'Main Pool';
+            $send_at = '';
+            $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
+            //print_r($result);
+
+        } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+            throw $e;
+        }
+    }
+// SEND TEST DRIVE MODEL NEWS
+    function send_news_test_drive_model($send_suk_gdl_test_drive_model_url, $send_suk_gdl_test_drive_model_date, $send_suk_gdl_test_drive_model_name, $send_suk_gdl_test_drive_model_lastname, $send_suk_gdl_test_drive_model_email, $send_suk_gdl_test_drive_model_tel, $send_suk_gdl_test_drive_model_newsletter, $send_suk_gdl_test_drive_model_modelo, $send_suk_gdl_test_drive_model_concesionaria, $send_suk_gdl_test_drive_model_subscription) {
+        try {
+            $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
+            $message = array(
+                'html' => '
+                    <html>
+                        <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+                        </head>
+
+                        <body>
+
+                            <div>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                            <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                                <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="52" width="102">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                         </tr>
                                         <tr>
@@ -314,7 +832,7 @@ $app->run();
                                         </tr>
                                         <tr>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
                                             </td>
                                             <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
                                                 <table style="padding:35px 60px 35px" border="0" cellpadding="0" cellspacing="0" width="600">
@@ -355,11 +873,11 @@ $app->run();
                                                     <tbody>
                                                         <tr>
                                                             <td height="14" width="15">
-                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/footer-logo.png" border="0">
                                                             </td>
                                                             <td width="125px">
                                                                 <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
-                                                                    <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_test_drive_model_url.'.com.mx</a>
                                                                 </p>
 
                                                             </td>
@@ -373,15 +891,15 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -430,9 +948,9 @@ $app->run();
                 'merge' => true,
 
                 'tags' => array('orden-new-notificacion'),
-                'google_analytics_domains' => array('jaguar.com'),
+                'google_analytics_domains' => array($send_suk_gdl_test_drive_model_url.'.com.mx'),
                 'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-                'metadata' => array('website' => 'www.jaguar.com'),
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_test_drive_model_url.'.com.mx'),
 
             );
             $async = false;
@@ -449,7 +967,7 @@ $app->run();
         }
     }
 // SEND TEST DRIVE MODEL
-    function send_test_drive_model($send_suk_gdl_test_drive_model_date, $send_suk_gdl_test_drive_model_name, $send_suk_gdl_test_drive_model_lastname, $send_suk_gdl_test_drive_model_email, $send_suk_gdl_test_drive_model_tel, $send_suk_gdl_test_drive_model_newsletter, $send_suk_gdl_test_drive_model_modelo, $send_suk_gdl_test_drive_model_concesionaria, $send_suk_gdl_test_drive_model_image_modelo, $send_suk_gdl_test_drive_model_auto, $send_suk_gdl_test_drive_model_subscription) {
+    function send_test_drive_model($send_suk_gdl_test_drive_model_url, $send_suk_gdl_test_drive_model_date, $send_suk_gdl_test_drive_model_name, $send_suk_gdl_test_drive_model_lastname, $send_suk_gdl_test_drive_model_email, $send_suk_gdl_test_drive_model_tel, $send_suk_gdl_test_drive_model_newsletter, $send_suk_gdl_test_drive_model_modelo, $send_suk_gdl_test_drive_model_concesionaria, $send_suk_gdl_test_drive_model_image_modelo, $send_suk_gdl_test_drive_model_auto, $send_suk_gdl_test_drive_model_subscription) {
         try {
             $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
             $message = array(
@@ -466,15 +984,15 @@ $app->run();
                                     <tbody>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                             <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
                                                 <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
                                                     <tbody>
                                                         <tr>
                                                             <td height="52" width="102">
-                                                                <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
-                                                                    <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -482,7 +1000,7 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                         </tr>
                                         <tr>
@@ -494,7 +1012,7 @@ $app->run();
                                         </tr>
                                         <tr>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
                                             </td>
                                             <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
                                                 <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
@@ -504,7 +1022,7 @@ $app->run();
                                                                 <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
                                                             </td>
                                                             <td height="0" valign="top">
-                                                                <img src="http://suzukigdl.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_test_drive_model_image_modelo.'" alt="'.$send_suk_gdl_test_drive_model_auto.'">
+                                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_test_drive_model_image_modelo.'" alt="'.$send_suk_gdl_test_drive_model_auto.'">
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -595,11 +1113,11 @@ $app->run();
                                                     <tbody>
                                                         <tr>
                                                             <td height="14" width="15">
-                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/footer-logo.png" border="0">
                                                             </td>
                                                             <td width="125px">
                                                                 <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
-                                                                    <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_test_drive_model_url.'.com.mx</a>
                                                                 </p>
 
                                                             </td>
@@ -613,15 +1131,15 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_test_drive_model_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -671,9 +1189,9 @@ $app->run();
                 'merge' => true,
 
                 'tags' => array('orden-new-notificacion'),
-                'google_analytics_domains' => array('jaguar.com'),
+                'google_analytics_domains' => array($send_suk_gdl_test_drive_model_url.'.com.mx'),
                 'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-                'metadata' => array('website' => 'www.jaguar.com'),
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_test_drive_model_url.'.com.mx'),
 
             );
             $async = false;
@@ -690,7 +1208,7 @@ $app->run();
         }
     }
 // SEND CONTACT NEWS
-    function send_news_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary) {
+    function send_news_contact($send_suk_gdl_contact_url, $send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary) {
         try {
             $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
             $message = array(
@@ -707,15 +1225,15 @@ $app->run();
                                     <tbody>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                             <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
                                                 <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
                                                     <tbody>
                                                         <tr>
                                                             <td height="52" width="102">
-                                                                <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
-                                                                    <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_contact_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -723,7 +1241,7 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                         </tr>
                                         <tr>
@@ -735,7 +1253,7 @@ $app->run();
                                         </tr>
                                         <tr>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
                                             </td>
                                             <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
                                                 <table style="padding:35px 60px 35px" border="0" cellpadding="0" cellspacing="0" width="600">
@@ -776,17 +1294,17 @@ $app->run();
                                                     <tbody>
                                                         <tr>
                                                             <td height="14" width="15">
-                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/footer-logo.png" border="0">
                                                             </td>
                                                             <td width="125px">
                                                                 <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
-                                                                    <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_contact_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_contact_url.'.com.mx</a>
                                                                 </p>
 
                                                             </td>
                                                             <td>
                                                                 <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                    &nbsp;© 2015 Suzuki / Guadalajara
+                                                                    &nbsp;© 2015 Suzuki / '.$suk_gdl_contact_concesionary.'
                                                                 </p>
                                                             </td>
                                                         </tr>
@@ -794,15 +1312,15 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -811,7 +1329,7 @@ $app->run();
                         </body>
                     </html>
                 ',
-                'subject' => 'Contacto - Noticias y promociones - Suzuki Guadalajara',
+                'subject' => 'Contacto - Noticias y promociones - '.$suk_gdl_contact_concesionary,
                 'from_email' => $send_suk_gdl_contact_email,
                 'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
                 'to' => array(
@@ -851,9 +1369,9 @@ $app->run();
                 'merge' => true,
 
                 'tags' => array('orden-new-notificacion'),
-                'google_analytics_domains' => array('jaguar.com'),
+                'google_analytics_domains' => array($send_suk_gdl_contact_url.'.com.mx'),
                 'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-                'metadata' => array('website' => 'www.jaguar.com'),
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_contact_url.'.com.mx'),
 
             );
             $async = false;
@@ -870,7 +1388,7 @@ $app->run();
         }
     }
 // SEND CONTACT
-    function send_contact($send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription) {
+    function send_contact($send_suk_gdl_contact_url, $send_suk_gdl_contact_name, $send_suk_gdl_contact_lastname, $send_suk_gdl_contact_email, $send_suk_gdl_contact_department, $send_suk_gdl_contact_depto, $send_suk_gdl_contact_car, $send_suk_gdl_contact_message, $send_suk_gdl_contact_news, $suk_gdl_contact_concesionary, $send_suk_gdl_contact_auto, $send_suk_gdl_contact_image_modelo, $send_suk_gdl_contact_subscription) {
         try {
             $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
             $message = array(
@@ -887,15 +1405,15 @@ $app->run();
                                     <tbody>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                             <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
                                                 <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
                                                     <tbody>
                                                         <tr>
                                                             <td height="52" width="102">
-                                                                <a style="display: block; border: 0" href="http://suzukigdl.com.mx" target="_blank" rel="noreferrer">
-                                                                    <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_contact_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -903,7 +1421,7 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
                                             </td>
                                         </tr>
                                         <tr>
@@ -915,7 +1433,7 @@ $app->run();
                                         </tr>
                                         <tr>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
                                             </td>
                                             <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
                                                 <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
@@ -925,7 +1443,7 @@ $app->run();
                                                                 <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
                                                             </td>
                                                             <td height="0" valign="top">
-                                                                <img src="http://suzukigdl.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_contact_image_modelo.'" alt="'.$send_suk_gdl_contact_auto.'">
+                                                                <img src="http://'.$send_suk_gdl_contact_url.'.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_contact_image_modelo.'" alt="'.$send_suk_gdl_contact_auto.'">
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1024,17 +1542,17 @@ $app->run();
                                                     <tbody>
                                                         <tr>
                                                             <td height="14" width="15">
-                                                                <img style="display: block; border: 0" src="http://suzukigdl.com.mx/images/footer-logo.png" border="0">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/footer-logo.png" border="0">
                                                             </td>
                                                             <td width="125px">
                                                                 <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
-                                                                    <a style="color: #0059a9" href="http://suzukigdl.com.mx/" target="_blank" rel="noreferrer">suzukigdl.com.mx</a>
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_contact_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_contact_url.'.com.mx</a>
                                                                 </p>
 
                                                             </td>
                                                             <td>
                                                                 <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
-                                                                    &nbsp;© 2015 Suzuki / Guadalajara
+                                                                    &nbsp;© 2015 Suzuki / '.$suk_gdl_contact_concesionary.'
                                                                 </p>
                                                             </td>
                                                         </tr>
@@ -1042,15 +1560,15 @@ $app->run();
                                                 </table>
                                             </td>
                                             <td height="11" valign="top" width="11">
-                                                <img style="display:block;border:0" src="http://suzukigdl.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                             <td width="11">
-                                                <img src="http://suzukigdl.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                                <img src="http://'.$send_suk_gdl_contact_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1100,9 +1618,9 @@ $app->run();
                 'merge' => true,
 
                 'tags' => array('orden-new-notificacion'),
-                'google_analytics_domains' => array('jaguar.com'),
+                'google_analytics_domains' => array($send_suk_gdl_contact_url.'.com.mx'),
                 'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
-                'metadata' => array('website' => 'www.jaguar.com'),
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_contact_url.'.com.mx'),
 
             );
             $async = false;

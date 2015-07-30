@@ -66,14 +66,14 @@
 		                {
 		                    "id": "0",
 		                    "name": "CVT GLS",
-		                    "key": "kizashi",
+		                    "key": "cvt-gls",
 		                    "year": "2014",
 		                    "price": "319500.00"
 		                },
 		                {
 		                    "id": "1",
 		                    "name": "CVT GLX",
-		                    "key": "kizashi",
+		                    "key": "cvt-glx",
 		                    "year": "2014",
 		                    "price": "369500.00"
 		                }
