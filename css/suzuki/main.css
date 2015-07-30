@@ -1,8 +1,8 @@
-﻿
-@import url("../webfonts/suzuki-webfontkit/stylesheet.css");
+﻿@import url("../webfonts/suzuki-webfontkit/stylesheet.css");
 @import url("../webfonts/fontawesome/font-awesome.css");
 
-.hide{display:none!important}.show{display:block!important}
+.hide{display:none!important}
+.show{display:block!important}
 
 body {
     font-family:"Lato";
@@ -79,28 +79,14 @@ a:active {
 }
 .button:hover {
     text-decoration:none;
-    border:1px solid #bfbfbf;
-    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.3);
+    border:1px solid #d8d8d8;
     color:#3f3f3f;
-    background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDg5IDM1IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9ImhhdDAiIGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iNTAlIiB5MT0iMTAwJSIgeDI9IjUwJSIgeTI9Ii0xLjQyMTA4NTQ3MTUyMDJlLTE0JSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMWYxZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogICA8L2xpbmVhckdyYWRpZW50PgoKPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijg5IiBoZWlnaHQ9IjM1IiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
-    background-image:-moz-linear-gradient(bottom, #e5e5e5 0%, #f1f1f1 100%);
-    background-image:-o-linear-gradient(bottom, #e5e5e5 0%, #f1f1f1 100%);
-    background-image:-webkit-linear-gradient(bottom, #e5e5e5 0%, #f1f1f1 100%);
-    background-image:linear-gradient(to top, #e5e5e5 0%, #f1f1f1 100%);
+    background-color:#ededed;
 }
 .button:active {
     border:1px solid #d8d8d8;
-    -moz-box-shadow:inset 0 0 3px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow:inset 0 0 3px rgba(0, 0, 0, 0.25);
-    box-shadow:inset 0 0 3px rgba(0, 0, 0, 0.25);
     text-decoration:none;
-    background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDg5IDM1IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9ImhhdDAiIGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iNTAlIiB5MT0iMTAwJSIgeDI9IjUwJSIgeTI9Ii0xLjQyMTA4NTQ3MTUyMDJlLTE0JSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmMWYxZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICA8L2xpbmVhckdyYWRpZW50PgoKPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijg5IiBoZWlnaHQ9IjM1IiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
-    background-image:-moz-linear-gradient(bottom, #f1f1f1 0%, #e5e5e5 100%);
-    background-image:-o-linear-gradient(bottom, #f1f1f1 0%, #e5e5e5 100%);
-    background-image:-webkit-linear-gradient(bottom, #f1f1f1 0%, #e5e5e5 100%);
-    background-image:linear-gradient(to top, #f1f1f1 0%, #e5e5e5 100%);
+    background-color:#e0e0e0;
 }
 .disabled-button, button[disabled=disabled], button:disabled {
     border:1px solid #e5e5e5;
@@ -3904,13 +3890,13 @@ padding: 0 0 15px;
     #car_select_preview .car_thumb_160 .car {
         width:145px;
         height:78px;
-        background-size:920px 80px;
+        background-size:1170px 80px;
     }
     #car_select_preview .car_thumb_160 .swift-sport {
         background-position:-3px 0;
     }
     #car_select_preview .car_thumb_160 .swift {
-        background-position:-158px 0;
+        background-position:-149px 0;
     }
     #car_select_preview .car_thumb_160 .sx4-crossover {
         background-position:-308px 0;
@@ -3919,10 +3905,16 @@ padding: 0 0 15px;
         background-position:-464px 0;
     }
     #car_select_preview .car_thumb_160 .kizashi {
-        background-position:-618px 0;
+        background-position:-588px 0;
     }
     #car_select_preview .car_thumb_160 .grand-vitara {
-        background-position:-770px 0;
+        background-position:-735px 0;
+    }
+    #car_select_preview .car_thumb_160 .ciaz {
+        background-position:-1016px -1px !important;
+    }
+    #car_select_preview .car_thumb_160 .s-cross {
+        background-position:-875px -0px;
     }
     #td_concessionaire_car, #fu_adjust_car {
         float:none;

@@ -3834,34 +3834,43 @@ font-family: 'Suzuki-HeadlineRegular';display:inline-block;}
         left:0;
         top:20px;
     }
+
     #car_select_preview .car_thumb_160 .car {
-        width: 145px;
-        height: 78px;
-        background-size: 1170px 80px;
+        width:145px;
+        height:78px;
+        background-size:1170px 80px;
     }
+
     #car_select_preview .car_thumb_160 .swift-sport {
-        background-position: -3px 0;
+        background-position:-3px 0;
     }
+
     #car_select_preview .car_thumb_160 .swift {
-        background-position: -149px 0;
+        background-position:-149px 0;
     }
-    /*#car_select_preview .car_thumb_160 .sx4-crossover {
+
+    #car_select_preview .car_thumb_160 .sx4-crossover {
         background-position:-308px 0;
     }
+
     #car_select_preview .car_thumb_160 .sx4-sedan {
         background-position:-464px 0;
-    }*/
+    }
+
     #car_select_preview .car_thumb_160 .kizashi {
-        background-position: -588px 0;
+        background-position:-588px 0;
     }
+
     #car_select_preview .car_thumb_160 .grand-vitara {
-        background-position: -735px 0;
+        background-position:-735px 0;
     }
-    #car_select_preview .car_thumb_160 .s-cross {
-        background-position: -875px -0px;
-    }
+
     #car_select_preview .car_thumb_160 .ciaz {
-        background-position: -1016px -1px !important;
+        background-position:-1016px -1px !important;
+    }
+
+    #car_select_preview .car_thumb_160 .s-cross {
+        background-position:-875px -0px;
     }
     #td_concessionaire_car, #fu_adjust_car {
         float:none;

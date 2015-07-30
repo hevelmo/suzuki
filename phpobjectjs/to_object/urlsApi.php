@@ -33,7 +33,7 @@ function urlsApi() {
         //'del_tab_id' => $root . '/' . $del . '/' . $tab . '/',
 
         'addConcesionaries' => $root . '/add/concesionaries',
-        'addModelos' => $root . '/add/models',
+        'addModelos' => $root . '/add/modelos',
         'addGamaModelos' => $root . '/add/gama_modelos',
 
         'sendContact' => $root . '/post/contacto',

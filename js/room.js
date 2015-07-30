@@ -322,11 +322,11 @@
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
-    Finch.route('/agendar-prueba-de-manejo', {
+    Finch.route('/financiamiento', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-            section="test_drive_selection";
+            section="financing";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
@@ -338,6 +338,11 @@
             SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
+            //sukCarPricesData = SUK.getInternalJSON(urlsApi.addModelos);
+            //SUK.loadTemplate(tempsNames.tmp_funding_version_tabs, domEl.div_recurrent_funding_version_tabs, sukCarPricesData);
+
+            //data = financingTextMethods.getModelsByKey('swift-sport');
+            //console.log(data);
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');

@@ -39,6 +39,7 @@ function tempsNames() {
         'tmp_test_drive_model' => 'tmp_test_drive_model',
         // TEST DRIVE SELECTION
         'tmp_section_content_test_drive_selection' => 'tmp_section_content_test_drive_selection',
+        'tmp_funding_version_tabs' => 'tmp_funding_version_tabs',
 
         // MODELS MENU
         'tmp_models_menu' => 'tmp_models_menu',

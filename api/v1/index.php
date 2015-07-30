@@ -53,7 +53,7 @@ setlocale(LC_MONETARY, 'en_US');
     // app => getModels
         //$app->get('/add/car_main_model/:car_main_model', 'addCarMainModel');
         $app->get('/add/concesionaries', 'addConcesionaries');
-        $app->get('/add/modelos', 'addModels');
+        $app->get('/add/modelos', 'addModelos');
         $app->get('/add/gama_modelos', 'addGamaModels');
 // SELECT
 //$app->get('/get/table', /*'mw1',*/ 'getTable');
@@ -62,7 +62,7 @@ setlocale(LC_MONETARY, 'en_US');
 $app->run();
 //Functions
     // GET MODELS
-    function addModels() {
+    function addModelos() {
         $json = file_get_contents('../data-json/financing/car_prices.json');
         echo $json;
     }

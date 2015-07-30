@@ -85,6 +85,8 @@ function domEl() {
         // TEST DRIVE CONTENT
         'div_recurrent_test_drive_section' => 'div#content-test-drive-section',
         // CONTENT TEST DRIVE SELECTION
-        'div_recurrent_test_drive_selection_section' => 'div#content-section-form-test-drive-selection'
+        'div_recurrent_test_drive_selection_section' => 'div#content-section-form-test-drive-selection',
+        // FUNDING VERSION TABS
+        'div_recurrent_funding_version_tabs' => '#funding-versions-tabs'
     );
 }

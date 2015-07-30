@@ -1461,46 +1461,54 @@ table.suzuki-grid tbody tr td.light p {
         margin:0 0 25px
     }
     .model-section .car-main .car-main-title .car-main-image {
-        display: block;
-        width: 287px;
-        height: 132px;
-        background-size: 1985px 132px !important;
-        margin: 0 auto;
-        background:url("../img/template/common/header/cars-sprite-160.png") no-repeat;
-        background-repeat: no-repeat;
+        display:block;
+        width:287px;
+        height:132px;
+        background-size:1985px 132px !important;
+        margin:0 auto;
+        background-image:url("../../images/template/common/header/cars-sprite-160.png");
+        background-repeat:no-repeat;
     }
+
     .model-section .car-main .car-main-title #car-image-swift-sport {
-        background-position: 13px -6px;
-        width: 263px !important;
-        height: 150px !important;
+        background-position:13px -6px;
+        width:263px !important;
+        height:150px !important;
     }
+
     .model-section .car-main .car-main-title #car-image-swift {
-        background-position: -237px -7px;
-        width: 263px !important;
-        height: 149px;
+        background-position:-237px -7px;
+        width:263px !important;
+        height:149px;
     }
+
     .model-section .car-main .car-main-title #car-image-sx4-crossover {
-        background-position:-358px 0
+        background-position:-358px 0;
     }
+
     .model-section .car-main .car-main-title #car-image-sx4-sedan {
-        background-position:-541px 0
+        background-position:-541px 0;
     }
+
     .model-section .car-main .car-main-title #car-image-kizashi {
-        background-position: -990px 3px;
-        width: 260px;
-        height: 140px;
+        background-position:-990px 3px;
+        width:260px;
+        height:140px;
     }
+
     .model-section .car-main .car-main-title #car-image-grand-vitara {
-        background-position: -1235px 0;
-        width: 257px;
-        height: 132px;
+        background-position:-1235px 0;
+        width:257px;
+        height:132px;
     }
+
     .model-section .car-main .car-main-title #car-image-s-cross {
-        background-position: -1489px 0;
-        width: 237px;
+        background-position:-1489px 0;
+        width:237px;
     }
+
     .model-section .car-main .car-main-title #car-image-ciaz {
-        background-position: -1718px 0 !important;
+        background-position:-1718px 0 !important;
     }
     .model-section .specifications-wrapper {
         height:auto

@@ -29,6 +29,7 @@ domEl = {
 	"div_recurrent_body":"body#recurrent-body",
 	"div_recurrent_features_section_model":"#features-section-model",
 	"div_recurrent_full_size_section_model":"#full-size-section-model",
+	"div_recurrent_funding_version_tabs":"#funding-versions-tabs",
 	"div_recurrent_galery_section_model":"#galery-section-model",
 	"div_recurrent_head":"head#recurrent-head",
 	"div_recurrent_instant_drive_section":"div#instant-drive-section",
@@ -68,6 +69,7 @@ tempsNames = {
 	"tmp_content_link_style":"tmp_content_link_style",
 	"tmp_content_models_menu":"tmp_content_models_menu",
 	"tmp_form_contact":"tmp_form_contact",
+	"tmp_funding_version_tabs":"tmp_funding_version_tabs",
 	"tmp_instant_drive_section":"tmp_instant_drive_section",
 	"tmp_mobile_menu":"tmp_mobile_menu",
 	"tmp_model_promo":"tmp_model_promo",
@@ -92,7 +94,7 @@ tempsNames = {
 urlsApi = {
 	"addConcesionaries":"api/v1/add/concesionaries",
 	"addGamaModelos":"api/v1/add/gama_modelos",
-	"addModelos":"api/v1/add/models",
+	"addModelos":"api/v1/add/modelos",
 	"sendContact":"api/v1/post/contacto",
 	"sendTestDriveModel":"api/v1/post/model/test-drive"
 };
