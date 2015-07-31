@@ -2897,6 +2897,17 @@ padding: 0 0 15px;
     line-height:100%;
     cursor:inherit;
 }
+
+.test-panel-tabs ul li.bg-button-fuinancing {
+    background: url("../../img/template/models/top-bg.png") left top repeat-x;
+    height: 44px;
+}
+.test-panel-tabs ul li.bg-button-fuinancing a {
+    background-color: transparent;
+}
+.test-panel-tabs ul li.bg-button-fuinancing.active:hover {
+    background: #ba1f16;
+}
 .panel_tabs_nav ul li a.active, .test-panel-tabs ul li a.active {
     color:#fff;
     background:#005aab;

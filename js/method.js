@@ -11,12 +11,13 @@
     var sections;
     var height = 0;
     var header_section = '';
+    var init_hash = window.location.hash;
     var current_menu = '',
         scroll_current_section = -1,
         sections_positions = [],
         yy = 0,
         arrow_section = [ 0, -403, -239, -102, 53, 214 ],
-        //hash_section = [ "", "1", "2", "3", "4", "5", "6" ],
+        //hash_section = [ "", "1", "2", "3", "4", "5", "6", "7" ],
         section_names = [ "", "home", "caracteristicas", "galeria", "versiones_precios", "accesorios", "prueba" ],
         section_timer,
         selected_concessionaire = -1;
@@ -39,7 +40,6 @@
         key         : ''
 
     };
-
     var cars_data = [
         { key: 'swift-sport'    , name: 'Swift Sport'   },
         { key: 'swift'          , name: 'Swift'         },
@@ -212,8 +212,10 @@
 
             if( arrow_section [ ii ] ){
                 gtx = arrow_section [ ii ];
+                //console.log(gtx);
             }else{
                 gtx = 415;
+                //console.log(gtx);
             }
             if( arrow_top != arrow_y ){
                 $arrow.show();
@@ -372,6 +374,27 @@
   and the porformance of  each section.
   Depending on the complexity of the url, could be more than one group of methods.
   Could exist some group of general methods*/
+
+var initHashMethos = {
+    init_hash: function() {
+        //Auto animates if a hash param exists
+        if( init_hash ){
+            init_hash = init_hash.split('#').join('');
+            if( $('a[name="'+init_hash+'"]').length > 0){
+
+                setTimeout(function(){
+                    $.scroll_to( init_hash );
+                }, 1000);
+            }else if(init_hash == 'prueba-de-manejo'){
+                //alert(init_hash);
+                //$.openPanel('test-drive');
+            }else if(init_hash == 'modelos'){
+                $.openPanel('models');
+            }
+        }
+    }
+}
+
 /* ------------------------------------------------------ *\
     [Metodos] Favicon
 \* ------------------------------------------------------ */
@@ -1081,6 +1104,10 @@
             event.preventDefault();
             $.scroll_to( 'prueba-de-manejo' );
         },
+        preventDefault_quotation: function(event) {
+            event.preventDefault();
+            $.scroll_to( 'cotizalo' );
+        },
         preventDefault_test_drive: function(event) {
             event.preventDefault();
             $.scroll_to( 'prueba-de-manejo' );
@@ -1301,6 +1328,25 @@
                         ['input', {'type':'hidden', 'class':'fr_subscription', 'name':'suk_gdl_financing_general_subscription', 'id':'financing_general_subscription', 'value':''}, '', 0]
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_general_elements);
+                break;
+                case 'financing_swift_sport':
+                    $('#promocion-financing_by_model').addClass('swift-sport-bg');
+                    $('.description_title').append(' Swift Sport 2015');
+                break;
+                case 'financing_swift':
+                    $('.description_title').append(' Swift 2015');
+                break;
+                case 'financing_kizashi':
+                    $('.description_title').append(' Kizashi');
+                break;
+                case 'financing_grand_vitara':
+                    $('.description_title').append(' Grand Vitara 2015');
+                break;
+                case 'financing_scross':
+                    $('.description_title').append(' S-Cross 2015');
+                break;
+                case 'financing_ciaz':
+                    $('.description_title').append(' Ciaz 2016');
                 break;
                 default:
                 break;
@@ -1875,9 +1921,9 @@
             dataFormFinancingGeneral['suk_gdl_financing_general_drive'] = (dataFormFinancingGeneral['suk_gdl_financing_general_drive'] == 'Sí deseas manejarlo')
                 ? dataFormFinancingGeneral['suk_gdl_financing_general_drive'] : 'No deseas manejarlo';
 
-            console.log(dataFormFinancingGeneral);
-            console.log(dataFormFinancingGeneral['suk_gdl_financing_general_newsletter']);
-            console.log(dataFormFinancingGeneral['suk_gdl_financing_general_drive']);
+            //console.log(dataFormFinancingGeneral);
+            //console.log(dataFormFinancingGeneral['suk_gdl_financing_general_newsletter']);
+            //console.log(dataFormFinancingGeneral['suk_gdl_financing_general_drive']);
 
             return SUK.postalService(urlsApi.sendFinancingGeneral, dataFormFinancingGeneral);
         },
@@ -1897,18 +1943,18 @@
             /*isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
             $('#suk_financing_general_submit').attr('disabled', isEmpty);*/
 
-            console.log(dataFormFinancingGeneralModel);
+            //console.log(dataFormFinancingGeneralModel);
         },
         refreshFrom: function() {
             SUK.loadTemplate(tempsNames.tmp_form_financing_general, domEl.div_recurrent_funding_general_form);
             modelsMenuMethods.changeNameModel();
             $('#suk_financing_general_submit').attr('disabled', true);
-            console.log('entra form-financing-general');
+            //console.log('entra form-financing-general');
         },
         resetAlert: function() {
             SUK.resetForm('#financing-general');
             $('#suk_financing_general_submit').attr('disabled', true);
-            console.log('refresh form-financing-general');
+            //console.log('refresh form-financing-general');
         },
         finchNavigateReturn: function(event) {
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
@@ -1934,18 +1980,18 @@
 
             fu_car_version = fuh_data.car_version;
             SUK.setValue('#financing_general_model_car_verison', fu_car_version);
-            console.log(fu_car_version);
+            //console.log(fu_car_version);
 
             SUK.setValue('#financing_general_image_model', 'suzuki_'+val_auto+'.png');
 
             if (val_news === 'on') {
                 val_subscription = 'Activado';
                 SUK.setValue('#financing_general_subscription', val_subscription);
-                console.log(val_subscription);
+                //console.log(val_subscription);
             } else {
                 val_subscription = 'Desactivado';
                 SUK.setValue('#financing_general_subscription', val_subscription);
-                console.log(val_subscription);
+                //console.log(val_subscription);
             }
             var form_errors = 0;
             if( validateMethods.validate_input( $financing_general_name ) ){
@@ -1979,7 +2025,7 @@
                     newsletter      : ('#financing_general_newsletter:checked').length,
                     source          : 'Financiamiento'
                 };
-                console.log(data);
+                //console.log(data);
                 var price_cal = 0.012 * funding_data.price,
                     price_total = moneyFormat( price_cal );
 
@@ -1989,10 +2035,10 @@
                 if ($('input[name="suk_gdl_financing_general_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
                     //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
-                    console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
+                    //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
                     //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
-                    console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
+                    //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
                     setTimeout(function () {
@@ -2000,11 +2046,11 @@
                         var financingGeneralPromise = formFinancingGeneral.addDataFormFinancingGeneral();
 
                         financingGeneralPromise.success(function (data) {
-                            console.log('Datos Enviados');
+                            //console.log('Datos Enviados');
                         });
                         financingGeneralPromise.error(function (data) {
                             //formFinancingGeneral.resetForm();
-                            console.log('Datos No Enviados');
+                            //console.log('Datos No Enviados');
                         });
                     }, 100);
                     setTimeout(function () {
@@ -2016,7 +2062,7 @@
 
             }
 
-            console.log('entra evento');
+            //console.log('entra evento');
         }
     }
 /* ------------------------------------------------------ *\
@@ -2178,11 +2224,6 @@
             } else {
                 //console.log('You are not using a mobile device!');
             }
-        }
-    }
-    var returMethods = {
-        clickGoIndex : function () {
-            Finch.navigate('/');
         }
     }
 /* ------------------------------------------------------ *\
@@ -2480,3 +2521,34 @@
 /* ------------------------------------------------------ *\
  [Methods] ''
 \* ------------------------------------------------------ */
+    var returMethods = {
+        clickGoIndex : function () {
+            Finch.navigate('/');
+        }
+    }
+    var financingByModelsMethods = {
+        clickGoFinancingSwiftSport : function(envent) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/financiamiento/swift-sport');
+        },
+        clickGoFinancingSwift : function(envent) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/financiamiento/swift');
+        },
+        clickGoFinancingKizashi : function(envent) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/financiamiento/kizashi');
+        },
+        clickGoFinancingGrandVitara : function(envent) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/financiamiento/grand-vitara');
+        },
+        clickGoFinancingSCross : function(envent) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/financiamiento/s-cross');
+        },
+        clickGoFinancingCiaz : function(envent) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/financiamiento/ciaz');
+        }
+    }

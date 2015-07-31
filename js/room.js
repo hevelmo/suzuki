@@ -148,6 +148,7 @@
             addStylesMethods.addStyleModel_swift_sport();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, domEl.models_header_recurrent);
@@ -171,6 +172,7 @@
             addStylesMethods.addStyleModel_swift();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -194,6 +196,7 @@
             addStylesMethods.addStyleModel_sx4_crossover();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -217,6 +220,7 @@
             addStylesMethods.addStyleModel_sx4_sedan();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -240,6 +244,7 @@
             addStylesMethods.addStyleModel_kizashi();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -263,6 +268,7 @@
             addStylesMethods.addStyleModel_grand_vitara();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -286,6 +292,7 @@
             addStylesMethods.addStyleModel_s_cross();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -309,6 +316,7 @@
             addStylesMethods.addStyleModel_ciaz();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
+            initHashMethos.init_hash();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_models_menu, '#content-models-header');
@@ -327,6 +335,156 @@
             // Add favicon
             window.onload = favicon.load_favicon();
             section="financing";
+            detectNavigatorMethods.IE10();
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
+            formFinancingGeneral.refreshFrom();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/financiamiento/swift-sport', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            section="financing_swift_sport";
+            detectNavigatorMethods.IE10();
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
+            formFinancingGeneral.refreshFrom();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/financiamiento/swift', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            section="financing_swift";
+            detectNavigatorMethods.IE10();
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
+            formFinancingGeneral.refreshFrom();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/financiamiento/kizashi', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            section="financing_kizashi";
+            detectNavigatorMethods.IE10();
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
+            formFinancingGeneral.refreshFrom();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/financiamiento/grand-vitara', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            section="financing_grand_vitara";
+            detectNavigatorMethods.IE10();
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
+            formFinancingGeneral.refreshFrom();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/financiamiento/s-cross', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            section="financing_scross";
+            detectNavigatorMethods.IE10();
+            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            addStylesMethods.addStyleTestDriveSelection();
+            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
+
+            financingMethods.financing();
+            formFinancingGeneral.refreshFrom();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            SUK.setHTML(domEl.div_content_phone_call, '');
+            cleanStyleMethods.cleanAttrTestDriveSelection();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/financiamiento/ciaz', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            section="financing_ciaz";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();

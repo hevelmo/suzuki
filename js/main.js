@@ -9,6 +9,11 @@ $(document).ready(function() {
         var _this = $(this);
         $('#header-spacer').stop().animate({height: _this.height()}, 300);
     });
+    // Detectamos cuando el usuario desplace la pantalla
+    /*window.onscroll = function (){
+        var sv = $(document).scrollTop();
+        //console.log(+sv);
+    }*/
     $(domEl.div_recurrent).delegate('click', '.catalog_cars_wrapper a.switch-catalog', addDelegatMethods.delegate);
     /* ------------------------------------------------------ *\
      [METHOS Control] Serialize Form
@@ -113,8 +118,10 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_go_legal_terms, actionMenuBarsMethods.clickGoLegalTerms);
     // HEADER PANEL
     $(domEl.div_recurrent_body).on('click', 'a.expand-header', openPanelMenuMethods.clickPanel_general);
+    $('#footer-wrapper').on('click', domEl.header_models_button, openPanelMenuMethods.clickPanel_general);
     // EVENT CLICK GO MODEL
     $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
+    $('#footer-wrapper').on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
     // EVENT CLICK GO BY MODEL
     $(domEl.div_recurrent_body).on('click', '#go-model-swift-sport', panelMenuModelsByModel.clickGoSwiftSport);
     $(domEl.div_recurrent_body).on('click', '#go-model-swift', panelMenuModelsByModel.clickGoSwift);
@@ -124,10 +131,15 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#go-model-grand-vitara', panelMenuModelsByModel.clickGoGrandVitara);
     $(domEl.div_recurrent_body).on('click', '#go-model-s-cross', panelMenuModelsByModel.clickGoSCross);
     $(domEl.div_recurrent_body).on('click', '#go-model-ciaz', panelMenuModelsByModel.clickGoCiaz);
-    // EVENT CLICK GO FINNANCING
+    // EVENT CLICK GO FINANCING
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
-    //
-
+    // EVENT CLICK GO FINANCING BY MODELS
+    $(domEl.div_recurrent).on('click', '#go-financing-swift-sport', financingByModelsMethods.clickGoFinancingSwiftSport);
+    $(domEl.div_recurrent).on('click', '#go-financing-swift', financingByModelsMethods.clickGoFinancingSwift);
+    $(domEl.div_recurrent).on('click', '#go-financing-kizashi', financingByModelsMethods.clickGoFinancingKizashi);
+    $(domEl.div_recurrent).on('click', '#go-financing-grand-vitara', financingByModelsMethods.clickGoFinancingGrandVitara);
+    $(domEl.div_recurrent).on('click', '#go-financing-s-cross', financingByModelsMethods.clickGoFinancingSCross);
+    $(domEl.div_recurrent).on('click', '#go-financing-ciaz', financingByModelsMethods.clickGoFinancingCiaz);
     // EVENT CLICK GO OWNERS
     $(domEl.div_recurrent_body).on('click', domEl.header_owners_button, openPanelMenuMethods.clickOwnersPanel);
     // EVENT CLICK GO BEFORE BYU
@@ -150,6 +162,7 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#galeria', modelsMenuMethods.preventDefault_galery);
     $(domEl.div_recurrent_body).on('click', '#precios', modelsMenuMethods.preventDefault_prices);
     $(domEl.div_recurrent_body).on('click', '#caracteristicas', modelsMenuMethods.preventDefault_characterics);
+    $(domEl.div_recurrent_body).on('click', '#cotizalo', modelsMenuMethods.preventDefault_quotation);
     $(domEl.div_recurrent_body).on('click', '.top', modelsMenuMethods.preventDefault_class_top);
     $(domEl.div_recurrent_body).on('click', '#top', modelsMenuMethods.preventDefault_id_top);
     //Specifications Slider controls and functionality

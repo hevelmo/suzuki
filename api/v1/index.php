@@ -226,9 +226,12 @@ $app->run();
             $send_suk_gdl_financing_general_subscription = "Desactivado";
         }
         send_financing_general($send_suk_gdl_financing_general_drive, $send_suk_gdl_financing_general_model_car_verison, $send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_car_engagement, $send_suk_gdl_financing_general_car_monthly_payment, $send_suk_gdl_financing_general_car_months, $send_suk_gdl_financing_general_car_price, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_tel, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_image_model, $send_suk_gdl_financing_general_subscription);
+        send_financing_general_confirm($send_suk_gdl_financing_general_drive, $send_suk_gdl_financing_general_model_car_verison, $send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_car_engagement, $send_suk_gdl_financing_general_car_monthly_payment, $send_suk_gdl_financing_general_car_months, $send_suk_gdl_financing_general_car_price, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_tel, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_image_model, $send_suk_gdl_financing_general_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
+    // FINANCING BY MODELS
+
 /*
   ----------------------------------------------------------------------------
   General Helper Methods
@@ -735,6 +738,297 @@ $app->run();
                     array(
                         'email' => 'hevelmo060683@gmail.com',
                         'name' => 'contacto',
+                        'type' => 'to'
+                    )/*,
+                    array(
+                        'email' => 'arivera@jaguardgl.com',
+                        //'email' => 'hevelmo060683@gmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'cc'
+                    ),
+                    array(
+                        'email' => 'arivera@guadalajara.jlr.com.mx',
+                        //'email' => 'cold_space@hotmail.com',
+                        'name' => $jag_congdlconcesionarie,
+                        'type' => 'bcc'
+                    )*/
+                ),
+                'headers' => array('Reply-To' => 'hevelmo060683@gmail.com'),
+                //'headers' => array('Reply-To' => 'arivera@guadalajara.jlr.com.mx'),
+                'important' => false,
+                'track_opens' => true,
+                'track_clicks' => true,
+                'auto_text' => null,
+                'auto_html' => null,
+                'inline_css' => null,
+                'url_strip_qs' => null,
+                'preserve_recipients' => null,
+                'view_content_link' => null,
+                'bcc_address' => null,
+                'tracking_domain' => null,
+                'signing_domain' => null,
+                'return_path_domain' => null,
+                'merge' => true,
+
+                'tags' => array('orden-new-notificacion'),
+                'google_analytics_domains' => array($send_suk_gdl_financing_general_url.'.com.mx'),
+                'google_analytics_campaign' => 'contacto.hevelmo060683@gmail.com',
+                'metadata' => array('website' => 'http://'.$send_suk_gdl_financing_general_url.'.com.mx'),
+
+            );
+            $async = false;
+            $ip_pool = 'Main Pool';
+            $send_at = '';
+            $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at);
+            //print_r($result);
+
+        } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+            throw $e;
+        }
+    }
+// SEND FINANCING GENERAL CONFIRM
+    function send_financing_general_confirm($send_suk_gdl_financing_general_drive, $send_suk_gdl_financing_general_model_car_verison, $send_suk_gdl_financing_general_url, $send_suk_gdl_financing_general_car_engagement, $send_suk_gdl_financing_general_car_monthly_payment, $send_suk_gdl_financing_general_car_months, $send_suk_gdl_financing_general_car_price, $send_suk_gdl_financing_general_name, $send_suk_gdl_financing_general_lastname, $send_suk_gdl_financing_general_email, $send_suk_gdl_financing_general_tel, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_newsletter, $send_suk_gdl_financing_general_concesionarie, $send_suk_gdl_financing_general_model_car, $send_suk_gdl_financing_general_image_model, $send_suk_gdl_financing_general_subscription) {
+        try {
+            $mandrill = new Mandrill('-M2qid9ztNaYfJvoZWPOHQ');
+            $message = array(
+                'html' => '
+                    <html>
+                        <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+                        </head>
+
+                        <body>
+
+                            <div>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                            <td style="background-color: #fff; border: 1px solid #EBE9EA; border-bottom: 0px" width="576">
+                                                <table style="padding: 13px 17px 17px" border="0" cellpadding="0" cellspacing="0" width="576">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="52" width="102">
+                                                                <a style="display: block; border: 0" href="http://'.$send_suk_gdl_financing_general_url.'.com.mx" target="_blank" rel="noreferrer">
+                                                                    <img style="display: block; border: 0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/template/common/header/horizontal_logo.png" border="0">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display: block; border: 0" border="0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="78" bgcolor="#CA272C" width="11">
+                                                <p style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:24px;text-align:center;padding:0">
+                                                    Solicitud de financiamiento '.$send_suk_gdl_financing_general_concesionarie.'
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/shadow-left.png" border="0" class="CToWUd">
+                                            </td>
+                                            <td rowspan="2" style="border:1px solid #ebe9ea;border-top:0" bgcolor="#ffffff">
+                                                <table style="padding:15px 60px 15px" border="0" cellpadding="0" cellspacing="0" width="600">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="0" valign="top">
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 13px; text-align: left; padding: 0"></p>
+                                                            </td>
+                                                            <td height="0" valign="top">
+                                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.medigraf.com.mx/img/template/common/header/'.$send_suk_gdl_financing_general_image_model.'" alt="'.$send_suk_gdl_financing_general_model_car.'">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Modelo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_model_car.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Versión:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_model_car_verison.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Precio:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_price.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Enganche:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_engagement.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Mensualidad:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_months.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Plazos:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_car_monthly_payment.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Nombre(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_name.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Apellidos(s):
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_lastname.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Correo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_email.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Telefono:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_tel.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Concesionaria:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_concesionarie.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Desea realizar prueba de manejo:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_drive.'</span><br>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20" valign="top" width="250">
+                                                                <strong style="color: #0059a9; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 900; text-align: right; padding: 0">
+                                                                    Desea recibir noticias:
+                                                                </strong>
+                                                            </td>
+                                                            <td height="20" valign="top">
+                                                                <span style="margin-left: 15px; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 400; text-align: right; padding: 0">'.$send_suk_gdl_financing_general_subscription.'</span>
+                                                            </td>
+                                                            <br>
+                                                            <br>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table style="padding:20px 0 20px 0;border-top:1px solid #ccc" align="center" border="0" cellpadding="0" cellspacing="0" width="543">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="14" width="15">
+                                                                <img style="display: block; border: 0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/footer-logo.png" border="0">
+                                                            </td>
+                                                            <td width="125px">
+                                                                <p style="color: #ffffff; font-family: Lato, Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: right; padding: 0">
+                                                                    <a style="color: #0059a9" href="http://'.$send_suk_gdl_financing_general_url.'.com.mx/" target="_blank" rel="noreferrer">'.$send_suk_gdl_financing_general_url.'.com.mx</a>
+                                                                </p>
+
+                                                            </td>
+                                                            <td>
+                                                                <p style="color: #000000; font-family: Lato, Arial, sans-serif; font-size: 11px; text-align: right; padding: 0">
+                                                                    &nbsp;© 2015 Suzuki / '.$send_suk_gdl_financing_general_concesionarie.'
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td height="11" valign="top" width="11">
+                                                <img style="display:block;border:0" src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/shadow-right.png" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                            <td width="11">
+                                                <img src="http://'.$send_suk_gdl_financing_general_url.'.com.mx/images/spacer.png" style="display:block;border:0" border="0" class="CToWUd">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </body>
+                    </html>
+
+                ',
+                'subject' => 'Financiamiento - Solicitud cotización '.$send_suk_gdl_financing_general_model_car,
+                'from_email' => $send_suk_gdl_financing_general_email,
+                'from_name' => $send_suk_gdl_financing_general_name . ' ' . $send_suk_gdl_financing_general_lastname,
+                'to' => array(
+                    array(
+                        'email' => $send_suk_gdl_financing_general_email,
+                        'name' => 'Financiamiento',
                         'type' => 'to'
                     )/*,
                     array(
