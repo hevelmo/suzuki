@@ -112,8 +112,8 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('keyup', '.fg_validate_input', formFinancingGeneral.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_financing_general_submit', formFinancingGeneral.sendFinancingGeneralForm);
     // SEND FORM FINANCING BY MODEL
-    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModels.validate_fields_keyup);
-    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit', formFinancingByModels.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelSwiftSport.validate_fields_keyup);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit', formFinancingByModelSwiftSport.sendFinancingByModelForm);
     // SEND FORM TEST DRIVE MODEL
     $(domEl.div_recurrent).on('keyup', '.tdm_validate_input', formTestDriveMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);

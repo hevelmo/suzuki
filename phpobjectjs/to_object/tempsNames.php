@@ -45,8 +45,9 @@ function tempsNames() {
         // FINANCING BY MODEL
         'tmp_financing_by_model' => 'tmp_financing_by_model',
         /*
-        'tmp_form_financing_by_model' => 'tmp_form_financing_by_model',
         */
+        'tmp_form_financing_by_model' => 'tmp_form_financing_by_model',
+        'tmp_financing_select_list_by_model' => 'tmp_financing_select_list_by_model',
         'tmp_financing_swift_sport' => 'tmp_financing_swift_sport',
         'tmp_financing_swift' => 'tmp_financing_swift',
         'tmp_financing_kizashi' => 'tmp_financing_kizashi',

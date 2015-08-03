@@ -241,40 +241,6 @@ $app->run();
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
     // FINANCING BY MODELS
-    /*
-    function sendFinancingByModel($model) {
-        $property = requestBody();
-        $send_suk_gdl_financing_by_model_car_engagement = $property->suk_gdl_financing_by_model_car_engagement;
-        $send_suk_gdl_financing_by_model_car_monthly_payment = $property->suk_gdl_financing_by_model_car_monthly_payment;
-        $send_suk_gdl_financing_by_model_car_months = $property->suk_gdl_financing_by_model_car_months;
-        $send_suk_gdl_financing_by_model_car_price = $property->suk_gdl_financing_by_model_car_price;
-        $send_suk_gdl_financing_by_model_concesionarie = $property->suk_gdl_financing_by_model_concesionarie;
-        $send_suk_gdl_financing_by_model_drive = $property->suk_gdl_financing_by_model_drive;
-        $send_suk_gdl_financing_by_model_email = $property->suk_gdl_financing_by_model_email;
-        $send_suk_gdl_financing_by_model_image_model = $property->suk_gdl_financing_by_model_image_model;
-        $send_suk_gdl_financing_by_model_lastname = $property->suk_gdl_financing_by_model_lastname;
-        $send_suk_gdl_financing_by_model_model_car = $property->suk_gdl_financing_by_model_model_car;
-        $send_suk_gdl_financing_by_model_model_key = $property->suk_gdl_financing_by_model_model_key;
-        $send_suk_gdl_financing_by_model_name = $property->suk_gdl_financing_by_model_name;
-        $send_suk_gdl_financing_by_model_newsletter = $property->suk_gdl_financing_by_model_newsletter;
-        $send_suk_gdl_financing_by_model_subscription = $property->suk_gdl_financing_by_model_subscription;
-        $send_suk_gdl_financing_by_model_tel = $property->suk_gdl_financing_by_model_tel;
-        $send_suk_gdl_financing_by_model_model_car_verison = $property->suk_gdl_financing_by_model_model_car_verison;
-
-        $send_suk_gdl_financing_by_model_url = "suzukigdl";
-
-        if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
-            $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
-        } else {
-            $send_suk_gdl_financing_by_model_subscription = "Desactivado";
-        }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-
-        echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
-    }
-    */
     function sendFinancingByModelSwiftSport() {
         $property = requestBody();
         $send_suk_gdl_financing_by_model_car_engagement = $property->suk_gdl_financing_by_model_car_engagement;
@@ -298,12 +264,12 @@ $app->run();
 
         if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
             $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
+            send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
         } else {
             $send_suk_gdl_financing_by_model_subscription = "Desactivado";
         }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
@@ -330,12 +296,12 @@ $app->run();
 
         if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
             $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
+            send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
         } else {
             $send_suk_gdl_financing_by_model_subscription = "Desactivado";
         }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
@@ -362,12 +328,12 @@ $app->run();
 
         if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
             $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
+            send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
         } else {
             $send_suk_gdl_financing_by_model_subscription = "Desactivado";
         }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
@@ -394,12 +360,12 @@ $app->run();
 
         if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
             $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
+            send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
         } else {
             $send_suk_gdl_financing_by_model_subscription = "Desactivado";
         }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
@@ -426,12 +392,12 @@ $app->run();
 
         if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
             $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
+            send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
         } else {
             $send_suk_gdl_financing_by_model_subscription = "Desactivado";
         }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
@@ -458,12 +424,12 @@ $app->run();
 
         if (isset($send_suk_gdl_financing_by_model_newsletter) && $send_suk_gdl_financing_by_model_newsletter === "on") {
             $send_suk_gdl_financing_by_model_subscription = "Activado";
-            //send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
+            send_news_financing_by_model($send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_subscription);
         } else {
             $send_suk_gdl_financing_by_model_subscription = "Desactivado";
         }
-        //send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
-        //send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
+        send_financing_by_model_confirm($send_suk_gdl_financing_by_model_drive, $send_suk_gdl_financing_by_model_model_car_verison, $send_suk_gdl_financing_by_model_url, $send_suk_gdl_financing_by_model_car_engagement, $send_suk_gdl_financing_by_model_car_monthly_payment, $send_suk_gdl_financing_by_model_car_months, $send_suk_gdl_financing_by_model_car_price, $send_suk_gdl_financing_by_model_name, $send_suk_gdl_financing_by_model_lastname, $send_suk_gdl_financing_by_model_email, $send_suk_gdl_financing_by_model_tel, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_newsletter, $send_suk_gdl_financing_by_model_concesionarie, $send_suk_gdl_financing_by_model_model_car, $send_suk_gdl_financing_by_model_image_model, $send_suk_gdl_financing_by_model_subscription);
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
@@ -2216,7 +2182,7 @@ $app->run();
                 'to' => array(
                     array(
                         'email' => 'hevelmo060683@gmail.com',
-                        'name' => 'contacto',
+                        'name' => 'Prueba de manejo - Noticias y promociones - '.$send_suk_gdl_test_drive_model_concesionaria,
                         'type' => 'to'
                     )/*,
                     array(
@@ -2457,7 +2423,7 @@ $app->run();
                 'to' => array(
                     array(
                         'email' => 'hevelmo060683@gmail.com',
-                        'name' => 'contacto',
+                        'name' => 'Agendar prueba de manejo '.$send_suk_gdl_test_drive_model_auto,
                         'type' => 'to'
                     )/*,
                     array(
@@ -2637,7 +2603,7 @@ $app->run();
                 'to' => array(
                     array(
                         'email' => 'hevelmo060683@gmail.com',
-                        'name' => 'contacto',
+                        'name' => 'Contacto - Noticias y promociones - '.$suk_gdl_contact_concesionary,
                         'type' => 'to'
                     )/*,
                     array(
@@ -2886,7 +2852,7 @@ $app->run();
                 'to' => array(
                     array(
                         'email' => 'hevelmo060683@gmail.com',
-                        'name' => 'contacto',
+                        'name' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department,
                         'type' => 'to'
                     )/*,
                     array(

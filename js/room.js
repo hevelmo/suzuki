@@ -30,12 +30,15 @@
             section="concesionaries";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/concesionarias');
+            addStylesMethods.addStyleConcessionaries();
             is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_concesionaries, domEl.div_recurrent);
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
+            cleanStyleMethods.cleanAttrConcessionaries();
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
@@ -347,33 +350,6 @@
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
-    /*
-    Finch.route('/financiamiento/:model', {
-        setup: function(bindings) {
-            // Add favicon
-            window.onload = favicon.load_favicon();
-            section="financing_by_model";
-            detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
-            addStylesMethods.addStyleTestDriveSelection();
-            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
-            is_mobileMethods.is_mobile();
-        },
-        load: function(bindings) {
-            SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
-            SUK.loadTemplate(tempsNames.tmp_financing_by_model, domEl.div_recurrent_test_drive_selection_section);
-
-            financingMethods.financing();
-            formFinancingByModels.refreshFrom();
-        },
-        unload: function(bindings) {
-            SUK.setHTML(domEl.models_header_recurrent, '');
-            SUK.setHTML(domEl.div_content_phone_call, '');
-            cleanStyleMethods.cleanAttrTestDriveSelection();
-            SUK.setHTML(domEl.div_recurrent, '');
-        }
-    });
-    */
     Finch.route('/financiamiento/swift-sport', {
         setup: function(bindings) {
             // Add favicon
@@ -387,10 +363,11 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+
             SUK.loadTemplate(tempsNames.tmp_financing_swift_sport, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
-            formFinancingByModels.refreshFrom();
+            formFinancingByModelSwiftSport.refreshFrom();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -412,10 +389,11 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+
             SUK.loadTemplate(tempsNames.tmp_financing_swift, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
-            formFinancingByModels.refreshFrom();
+            formFinancingByModelSwift.refreshFrom();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -437,10 +415,11 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+
             SUK.loadTemplate(tempsNames.tmp_financing_kizashi, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
-            formFinancingByModels.refreshFrom();
+            formFinancingByModelKizashi.refreshFrom();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -462,10 +441,11 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+
             SUK.loadTemplate(tempsNames.tmp_financing_grand_vitara, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
-            formFinancingByModels.refreshFrom();
+            formFinancingByModelGrandVitara.refreshFrom();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -487,10 +467,11 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+
             SUK.loadTemplate(tempsNames.tmp_financing_scross, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
-            formFinancingByModels.refreshFrom();
+            formFinancingByModelSCross.refreshFrom();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -512,10 +493,11 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+
             SUK.loadTemplate(tempsNames.tmp_financing_ciaz, domEl.div_recurrent_test_drive_selection_section);
 
             financingMethods.financing();
-            formFinancingByModels.refreshFrom();
+            formFinancingByModelCiaz.refreshFrom();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
