@@ -38,6 +38,15 @@ function urlsApi() {
 
         'sendContact' => $root . '/post/contacto',
         'sendTestDriveModel' => $root . '/post/model/test-drive',
-        'sendFinancingGeneral' => $root . '/post/financiamiento'
+        'sendFinancingGeneral' => $root . '/post/financiamiento',
+        /*
+        'sendFinancingByModel' => $root . '/post/financiamiento/',
+        */
+        'sendFinancingByModelSwiftSport' => $root . '/post/financiamiento/swift-sport',
+        'sendFinancingByModelSwift' => $root . '/post/financiamiento/swift',
+        'sendFinancingByModelKizashi' => $root . '/post/financiamiento/kizashi',
+        'sendFinancingByModelGrandVitara' => $root . '/post/financiamiento/grand-vitara',
+        'sendFinancingByModelSCross' => $root . '/post/financiamiento/s-cross',
+        'sendFinancingByModelCiaz' => $root . '/post/financiamiento/ciaz'
     );
 }

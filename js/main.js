@@ -102,9 +102,18 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('focusout', '#financing_general_email', validateMethods.validate_input);
     $(domEl.div_recurrent).on('focusout', '#financing_general_tel', validateMethods.validate_input);
     $(domEl.div_recurrent).on('keypress', '#financing_general_tel', inputValMetdods.isIntegerKP);
+    // FORM FINANCING BY MODEL
+    $(domEl.div_recurrent).on('focusout', '#financing_by_model_name', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#financing_by_model_lastname', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#financing_by_model_email', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('focusout', '#financing_by_model_tel', validateMethods.validate_input);
+    $(domEl.div_recurrent).on('keypress', '#financing_by_model_tel', inputValMetdods.isIntegerKP);
     // SEND FORM FINANCING GENERAL
     $(domEl.div_recurrent).on('keyup', '.fg_validate_input', formFinancingGeneral.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_financing_general_submit', formFinancingGeneral.sendFinancingGeneralForm);
+    // SEND FORM FINANCING BY MODEL
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModels.validate_fields_keyup);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit', formFinancingByModels.sendFinancingByModelForm);
     // SEND FORM TEST DRIVE MODEL
     $(domEl.div_recurrent).on('keyup', '.tdm_validate_input', formTestDriveMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);
@@ -133,6 +142,7 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#go-model-ciaz', panelMenuModelsByModel.clickGoCiaz);
     // EVENT CLICK GO FINANCING
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
+    $(domEl.div_recurrent).on('click', '#tdr_end', formFinancingGeneral.finchNavigateReturn);
     // EVENT CLICK GO FINANCING BY MODELS
     $(domEl.div_recurrent).on('click', '#go-financing-swift-sport', financingByModelsMethods.clickGoFinancingSwiftSport);
     $(domEl.div_recurrent).on('click', '#go-financing-swift', financingByModelsMethods.clickGoFinancingSwift);
@@ -162,7 +172,6 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#galeria', modelsMenuMethods.preventDefault_galery);
     $(domEl.div_recurrent_body).on('click', '#precios', modelsMenuMethods.preventDefault_prices);
     $(domEl.div_recurrent_body).on('click', '#caracteristicas', modelsMenuMethods.preventDefault_characterics);
-    $(domEl.div_recurrent_body).on('click', '#cotizalo', modelsMenuMethods.preventDefault_quotation);
     $(domEl.div_recurrent_body).on('click', '.top', modelsMenuMethods.preventDefault_class_top);
     $(domEl.div_recurrent_body).on('click', '#top', modelsMenuMethods.preventDefault_id_top);
     //Specifications Slider controls and functionality

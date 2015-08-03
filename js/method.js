@@ -374,27 +374,6 @@
   and the porformance of  each section.
   Depending on the complexity of the url, could be more than one group of methods.
   Could exist some group of general methods*/
-
-var initHashMethos = {
-    init_hash: function() {
-        //Auto animates if a hash param exists
-        if( init_hash ){
-            init_hash = init_hash.split('#').join('');
-            if( $('a[name="'+init_hash+'"]').length > 0){
-
-                setTimeout(function(){
-                    $.scroll_to( init_hash );
-                }, 1000);
-            }else if(init_hash == 'prueba-de-manejo'){
-                //alert(init_hash);
-                //$.openPanel('test-drive');
-            }else if(init_hash == 'modelos'){
-                $.openPanel('models');
-            }
-        }
-    }
-}
-
 /* ------------------------------------------------------ *\
     [Metodos] Favicon
 \* ------------------------------------------------------ */
@@ -1104,10 +1083,6 @@ var initHashMethos = {
             event.preventDefault();
             $.scroll_to( 'prueba-de-manejo' );
         },
-        preventDefault_quotation: function(event) {
-            event.preventDefault();
-            $.scroll_to( 'cotizalo' );
-        },
         preventDefault_test_drive: function(event) {
             event.preventDefault();
             $.scroll_to( 'prueba-de-manejo' );
@@ -1332,21 +1307,104 @@ var initHashMethos = {
                 case 'financing_swift_sport':
                     $('#promocion-financing_by_model').addClass('swift-sport-bg');
                     $('.description_title').append(' Swift Sport 2015');
+                    hidden_elements_funding_by_model_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Swift Sport 2015'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'swift-sport'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-car-version', 'name':'suk_gdl_financing_by_model_model_car_verison', 'id':'financing_by_model_model_car_verison', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_price', 'name':'suk_gdl_financing_by_model_car_price', 'id':'financing_by_model_car_price', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_engagement', 'name':'suk_gdl_financing_by_model_car_engagement', 'id':'financing_by_model_car_engagement', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_monthly_payment', 'name':'suk_gdl_financing_by_model_car_monthly_payment', 'id':'financing_by_model_car_monthly_payment', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_months', 'name':'suk_gdl_financing_by_model_car_months', 'id':'financing_by_model_car_months', 'value':'0 meses'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_concesionarie', 'name':'suk_gdl_financing_by_model_concesionarie', 'id':'financing_by_model_concesionarie', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_image_model', 'name':'suk_gdl_financing_by_model_image_model', 'id':'financing_by_model_image_model', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_subscription', 'name':'suk_gdl_financing_by_model_subscription', 'id':'financing_by_model_subscription', 'value':''}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
                 case 'financing_swift':
+                    $('#promocion-financing_by_model').addClass('swift-bg');
                     $('.description_title').append(' Swift 2015');
+                    hidden_elements_funding_by_model_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Swift 2015'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'swift'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-car-version', 'name':'suk_gdl_financing_by_model_model_car_verison', 'id':'financing_by_model_model_car_verison', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_price', 'name':'suk_gdl_financing_by_model_car_price', 'id':'financing_by_model_car_price', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_engagement', 'name':'suk_gdl_financing_by_model_car_engagement', 'id':'financing_by_model_car_engagement', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_monthly_payment', 'name':'suk_gdl_financing_by_model_car_monthly_payment', 'id':'financing_by_model_car_monthly_payment', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_months', 'name':'suk_gdl_financing_by_model_car_months', 'id':'financing_by_model_car_months', 'value':'0 meses'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_concesionarie', 'name':'suk_gdl_financing_by_model_concesionarie', 'id':'financing_by_model_concesionarie', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_image_model', 'name':'suk_gdl_financing_by_model_image_model', 'id':'financing_by_model_image_model', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_subscription', 'name':'suk_gdl_financing_by_model_subscription', 'id':'financing_by_model_subscription', 'value':''}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
                 case 'financing_kizashi':
+                    $('#promocion-financing_by_model').addClass('kizashi-bg');
                     $('.description_title').append(' Kizashi');
+                    hidden_elements_funding_by_model_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Kizashi 2015'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'kizashi'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-car-version', 'name':'suk_gdl_financing_by_model_model_car_verison', 'id':'financing_by_model_model_car_verison', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_price', 'name':'suk_gdl_financing_by_model_car_price', 'id':'financing_by_model_car_price', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_engagement', 'name':'suk_gdl_financing_by_model_car_engagement', 'id':'financing_by_model_car_engagement', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_monthly_payment', 'name':'suk_gdl_financing_by_model_car_monthly_payment', 'id':'financing_by_model_car_monthly_payment', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_months', 'name':'suk_gdl_financing_by_model_car_months', 'id':'financing_by_model_car_months', 'value':'0 meses'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_concesionarie', 'name':'suk_gdl_financing_by_model_concesionarie', 'id':'financing_by_model_concesionarie', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_image_model', 'name':'suk_gdl_financing_by_model_image_model', 'id':'financing_by_model_image_model', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_subscription', 'name':'suk_gdl_financing_by_model_subscription', 'id':'financing_by_model_subscription', 'value':''}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
                 case 'financing_grand_vitara':
+                    $('#promocion-financing_by_model').addClass('grand-vitara-bg');
                     $('.description_title').append(' Grand Vitara 2015');
+                    hidden_elements_funding_by_model_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Grand Vitara 2015'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'grand-vitara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-car-version', 'name':'suk_gdl_financing_by_model_model_car_verison', 'id':'financing_by_model_model_car_verison', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_price', 'name':'suk_gdl_financing_by_model_car_price', 'id':'financing_by_model_car_price', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_engagement', 'name':'suk_gdl_financing_by_model_car_engagement', 'id':'financing_by_model_car_engagement', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_monthly_payment', 'name':'suk_gdl_financing_by_model_car_monthly_payment', 'id':'financing_by_model_car_monthly_payment', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_months', 'name':'suk_gdl_financing_by_model_car_months', 'id':'financing_by_model_car_months', 'value':'0 meses'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_concesionarie', 'name':'suk_gdl_financing_by_model_concesionarie', 'id':'financing_by_model_concesionarie', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_image_model', 'name':'suk_gdl_financing_by_model_image_model', 'id':'financing_by_model_image_model', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_subscription', 'name':'suk_gdl_financing_by_model_subscription', 'id':'financing_by_model_subscription', 'value':''}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
                 case 'financing_scross':
+                    $('#promocion-financing_by_model').addClass('s-cross-bg');
                     $('.description_title').append(' S-Cross 2015');
+                    hidden_elements_funding_by_model_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'S-Cross 2015'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'s-cross'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-car-version', 'name':'suk_gdl_financing_by_model_model_car_verison', 'id':'financing_by_model_model_car_verison', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_price', 'name':'suk_gdl_financing_by_model_car_price', 'id':'financing_by_model_car_price', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_engagement', 'name':'suk_gdl_financing_by_model_car_engagement', 'id':'financing_by_model_car_engagement', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_monthly_payment', 'name':'suk_gdl_financing_by_model_car_monthly_payment', 'id':'financing_by_model_car_monthly_payment', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_months', 'name':'suk_gdl_financing_by_model_car_months', 'id':'financing_by_model_car_months', 'value':'0 meses'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_concesionarie', 'name':'suk_gdl_financing_by_model_concesionarie', 'id':'financing_by_model_concesionarie', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_image_model', 'name':'suk_gdl_financing_by_model_image_model', 'id':'financing_by_model_image_model', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_subscription', 'name':'suk_gdl_financing_by_model_subscription', 'id':'financing_by_model_subscription', 'value':''}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
                 case 'financing_ciaz':
+                    $('#promocion-financing_by_model').addClass('ciaz-bg');
                     $('.description_title').append(' Ciaz 2016');
+                    hidden_elements_funding_by_model_elements = [
+                        ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Ciaz 2016'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'ciaz'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_data-car-version', 'name':'suk_gdl_financing_by_model_model_car_verison', 'id':'financing_by_model_model_car_verison', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_price', 'name':'suk_gdl_financing_by_model_car_price', 'id':'financing_by_model_car_price', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_engagement', 'name':'suk_gdl_financing_by_model_car_engagement', 'id':'financing_by_model_car_engagement', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_monthly_payment', 'name':'suk_gdl_financing_by_model_car_monthly_payment', 'id':'financing_by_model_car_monthly_payment', 'value':'$ 0.00'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_months', 'name':'suk_gdl_financing_by_model_car_months', 'id':'financing_by_model_car_months', 'value':'0 meses'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_concesionarie', 'name':'suk_gdl_financing_by_model_concesionarie', 'id':'financing_by_model_concesionarie', 'value':'Suzuki Autos Guadalajara'}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_image_model', 'name':'suk_gdl_financing_by_model_image_model', 'id':'financing_by_model_image_model', 'value':''}, '', 0],
+                        ['input', {'type':'hidden', 'class':'fr_bm_subscription', 'name':'suk_gdl_financing_by_model_subscription', 'id':'financing_by_model_subscription', 'value':''}, '', 0]
+                    ];
+                    SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
                 default:
                 break;
@@ -1940,7 +1998,7 @@ var initHashMethos = {
             isFull = SUK.validFormFull(dataFormFinancingGeneralModel, validFieldItems);
             $('#suk_financing_general_submit').attr('disabled', !isFull);
 
-            /*isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
+            /*isEmpty = SUK.validFormEmpty(dataFormFinancingGeneralModel, validFieldItems);
             $('#suk_financing_general_submit').attr('disabled', isEmpty);*/
 
             //console.log(dataFormFinancingGeneralModel);
@@ -1951,7 +2009,7 @@ var initHashMethos = {
             $('#suk_financing_general_submit').attr('disabled', true);
             //console.log('entra form-financing-general');
         },
-        resetAlert: function() {
+        resetForm: function() {
             SUK.resetForm('#financing-general');
             $('#suk_financing_general_submit').attr('disabled', true);
             //console.log('refresh form-financing-general');
@@ -2046,10 +2104,11 @@ var initHashMethos = {
                         var financingGeneralPromise = formFinancingGeneral.addDataFormFinancingGeneral();
 
                         financingGeneralPromise.success(function (data) {
+                            formFinancingGeneral.resetForm();
                             //console.log('Datos Enviados');
                         });
                         financingGeneralPromise.error(function (data) {
-                            //formFinancingGeneral.resetForm();
+                            formFinancingGeneral.resetForm();
                             //console.log('Datos No Enviados');
                         });
                     }, 100);
@@ -2063,6 +2122,165 @@ var initHashMethos = {
             }
 
             //console.log('entra evento');
+        }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] formFinancing By Models
+\* ------------------------------------------------------ */
+    var formFinancingByModels = {
+        addDataFormFinancingByModels: function() {
+            var dataFormFinancingByModel;
+            dataFormFinancingByModel = $('#financing-by-model').serializeFormJSON();
+
+            // CHECKBOX
+            dataFormFinancingByModel['suk_gdl_financing_by_model_newsletter'] = (dataFormFinancingByModel['suk_gdl_financing_by_model_newsletter'] == 'on')
+                ? dataFormFinancingByModel['suk_gdl_financing_by_model_newsletter'] : 'off';
+
+            // RADIO
+            dataFormFinancingByModel['suk_gdl_financing_by_model_drive'] = (dataFormFinancingByModel['suk_gdl_financing_by_model_drive'] == 'Sí deseas manejarlo')
+                ? dataFormFinancingByModel['suk_gdl_financing_by_model_drive'] : 'No deseas manejarlo';
+
+            console.log(dataFormFinancingByModel);
+            console.log(dataFormFinancingByModel['suk_gdl_financing_by_model_newsletter']);
+            console.log(dataFormFinancingByModel['suk_gdl_financing_by_model_drive']);
+
+            return SUK.postalService(urlsApi.sendFinancingByModelSwiftSport, dataFormFinancingByModel);
+        },
+        fillingControl: function() {
+            var validFieldItems, dataFormFinancingByModelModel, isFull, isNoEmpty;
+            validFieldItems = [
+                'suk_gdl_financing_by_model_name',
+                'suk_gdl_financing_by_model_lastname',
+                'suk_gdl_financing_by_model_email',
+                'suk_gdl_financing_by_model_tel'
+            ];
+            dataFormFinancingByModelModel = $('#financing-by-model').serializeFormJSON();
+
+            isFull = SUK.validFormFull(dataFormFinancingByModelModel, validFieldItems);
+            $('#suk_financing_by_model_submit').attr('disabled', !isFull);
+
+            /*isEmpty = SUK.validFormEmpty(dataFormFinancingByModelModel, validFieldItems);
+            $('#suk_financing_by_model_submit').attr('disabled', isEmpty);*/
+
+            //console.log(dataFormFinancingByModelModel);
+        },
+        refreshFrom: function() {
+            SUK.loadTemplate(tempsNames.tmp_form_financing_by_model, domEl.div_recurrent_funding_by_model_form);
+            modelsMenuMethods.changeNameModel();
+            $('#suk_financing_by_model_submit').attr('disabled', true);
+            console.log('entra');
+        },
+        resetForm: function() {
+            SUK.resetForm('#financing-by-model');
+            $('#suk_financing_by_model_submit').attr('disabled', true);
+            console.log('refresh');
+        },
+        finchNavigateReturn: function(event) {
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/');
+        },
+        validate_fields_keyup: function() {
+            formFinancingByModels.fillingControl();
+        },
+        sendFinancingByModelForm: function(event) {
+            formFinancingByModels.fillingControl();
+            var $financing_by_model_name     = $('#financing_by_model_name'),
+                $financing_by_model_lastname = $('#financing_by_model_lastname'),
+                $financing_by_model_email    = $('#financing_by_model_email'),
+                $financing_by_model_tel      = $('#financing_by_model_tel');
+            var $financing_by_model_car_price            = $('#financing_by_model_car_price'),
+                $financing_by_model_car_engagement       = $('#financing_by_model_car_engagement'),
+                $financing_by_model_car_monthly_payment  = $('#financing_by_model_car_monthly_payment'),
+                $financing_by_model_car_months           = $('#financing_by_model_car_months');
+            val_news = SUK.getValue('#financing_by_model_newsletter');
+            val_auto = SUK.getValue('#financing_by_model_model_key');
+            current_car = SUK.getValue('#financing_by_model_model_key');
+            selected_concessionaire = SUK.getValue('#financing_by_model_concesionarie');
+
+            fu_car_version = fuh_data.car_version;
+            SUK.setValue('#financing_by_model_model_car_verison', fu_car_version);
+            console.log(fu_car_version);
+
+            SUK.setValue('#financing_by_model_image_model', 'suzuki_'+val_auto+'.png');
+
+            if (val_news === 'on') {
+                val_subscription = 'Activado';
+                SUK.setValue('#financing_by_model_subscription', val_subscription);
+                console.log(val_subscription);
+            } else {
+                val_subscription = 'Desactivado';
+                SUK.setValue('#financing_by_model_subscription', val_subscription);
+                console.log(val_subscription);
+            }
+            var form_errors = 0;
+            if( validateMethods.validate_input( $financing_by_model_name ) ){
+                form_errors++;
+                $financing_by_model_name.focusout();
+            }
+            if( validateMethods.validate_input( $financing_by_model_lastname ) ){
+                form_errors++;
+                $financing_by_model_lastname.focusout();
+            }
+            if( validateMethods.validate_input( $financing_by_model_email ) ){
+                form_errors++;
+                $financing_by_model_email.focusout();
+            }
+            if( validateMethods.validate_input( $financing_by_model_tel ) ){
+                form_errors++;
+                $financing_by_model_tel.focusout();
+            }
+            if( form_errors != 0){
+                var data = {
+                    car_key         : fuh_data.key,
+                    car_version     : fu_car_version,
+                    email           : $financing_by_model_email.val(),
+                    price           : $financing_by_model_car_price.val(),
+                    engagement      : $financing_by_model_car_engagement.val(),
+                    monthly_payment : $financing_by_model_car_monthly_payment.val(),
+                    months          : $financing_by_model_car_months.val(),
+                    name            : $financing_by_model_name.val(),
+                    lastname        : $financing_by_model_lastname.val(),
+                    concessionaire  : selected_concessionaire,
+                    newsletter      : ('#financing_by_model_newsletter:checked').length,
+                    source          : 'Financiamiento'
+                };
+                console.log(data);
+                var price_cal = 0.012 * funding_data.price,
+                    price_total = moneyFormat( price_cal );
+
+                $('#funding_resume_email').html( data.email );
+                $('#header-financiamiento li.step-nav-tabs').addClass( 'disabled' );
+
+                if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
+                    $('#funding_resume_concessionaire').text( selected_concessionaire );
+                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
+                } else {
+                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
+                }
+                $('#funding_form').fadeOut( 300 , function(){
+                    setTimeout(function () {
+                        $('.form-loader').fadeIn();
+                        var financingByModelPromise = formFinancingByModels.addDataFormFinancingByModels();
+
+                        financingByModelPromise.success(function (data) {
+                            formFinancingByModels.resetForm();
+                            console.log('Datos Enviados');
+                        });
+                        financingByModelPromise.error(function (data) {
+                            formFinancingByModels.resetForm();
+                            console.log('Datos No Enviados');
+                        });
+                    }, 100);
+                    setTimeout(function () {
+                        $('.form-loader').fadeOut();
+                        $('#funding_form').hide();
+                        $('#funding_resume').fadeIn();
+                    }, 3000);
+                });
+            }
+            console.log('entra evento');
         }
     }
 /* ------------------------------------------------------ *\
@@ -2231,16 +2449,13 @@ var initHashMethos = {
 \* ------------------------------------------------------ */
     var financingMethods = {
         financing: function (options, event) {
-
             if( options === undefined || options === null  ){
                 options = {};
             }
             fuh_data = $.extend( {}, default_data, options );
-
             //Tabs
             $panelTabsNav   = $('li.step-nav-tabs.funding');
             $panelTabs      = $('.step-nav-tab.funding');
-
             $panelTabsNav.children('a').on('click', financingMethods.preventDefault_panelTabsNav);
             /*console.log(car_d);
             console.log(funding_data);
@@ -2249,7 +2464,6 @@ var initHashMethos = {
             console.log(fuh_data);
             console.log($panelTabsNav);
             console.log($panelTabs);*/
-
             $("#car_engagement_slider").slider({
                 change  : function( event, ui ) {
                     funding_data.engagement = ui.value;
@@ -2264,7 +2478,6 @@ var initHashMethos = {
                 },
                 step    : 5,
                 value   : 20
-
             });
             $("#car_months_slider").slider({
                 change  : function( event, ui ) {
@@ -2280,30 +2493,10 @@ var initHashMethos = {
                 },
                 step    : 6,
                 value   : 6
-
             });
             current_tab = -1;
-            $('#funding-versions-tabs').delegate('a','click', function( event ){
-                event.preventDefault();
-                var data_version = parseInt( $(this).data('version') );
-
-                financingTextMethods.getVersionsByModelId();
-                $.funding_select_version( data_version );
-            });
-            $('#car_select_list').delegate('a','click', function( event ){
-                event.preventDefault();
-                var data_key = $(this).data('key');
-
-                financingTextMethods.getModelsByKey();
-                $.funding_select_car( data_key );
-
-                //console.log(data_key);
-
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    $("#car_select_list").hide();
-                    $("#car_select_name, #car_select_preview").fadeIn();
-                }
-            });
+            $('#funding-versions-tabs').delegate('a','click', financingMethods.preventDefault_fundingVersionTabs);
+            $('#car_select_list').delegate('a','click', financingMethods.preventDefault_carSlectList);
             if( fuh_data.key == '' ){
                 $('#car_select_list a').eq(0).trigger('click');
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -2315,33 +2508,11 @@ var initHashMethos = {
                 $.funding_select_car( fuh_data.key );
                 goto_step_financing( 2, true );
             }
-            $("#change-car-test").on('click', function( event ){
-                event.preventDefault();
-                $("#car_select_name, #car_select_preview").hide();
-                $("#car_select_list").fadeIn();
-                //console.log('click plan');
-            });
-            $('a.funding-goto').on('click', function( event ){
-                event.preventDefault();
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    if ($(this).data('step') == "1") {
-                        $("#car_select_name, #car_select_preview").hide();
-                        $("#car_select_list").fadeIn();
-                    }
-                }
-                goto_step_financing( $(this).data('step') );
-            });
+            $("#change-car-test").on('click', financingMethods.preventDefault_changeCarTest);
+            $('a.funding-goto').on('click', financingMethods.preventDefault_aFundingGoto);
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $("#fake-calculate").on('click', function( event ){
-                    event.preventDefault();
-                    $("#header-financiamiento .option-2, #fake-calculate").hide();
-                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").css("display", "block");
-                });
-                $("#modify-calc").on('click', function( event ){
-                    event.preventDefault();
-                    $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").hide();
-                    $("#header-financiamiento .option-2, #fake-calculate").css("display", "block");
-                });
+                $("#fake-calculate").on('click', financingMethods.preventDefault_fakeCaculate);
+                $("#modify-calc").on('click', financingMethods.preventDefault_modifyCalc);
             }
         },
         preventDefault_panelTabsNav: function(event) {
@@ -2351,6 +2522,57 @@ var initHashMethos = {
                 //console.log($(this).data('number'));
             }
             //console.log('click');
+        },
+        preventDefault_fundingVersionTabs: function(event) {
+            event.preventDefault();
+            var data_version = parseInt( $(this).data('version') );
+
+            financingTextMethods.getVersionsByModelId();
+            $.funding_select_version( data_version );
+            //console.log(data_version);
+        },
+        preventDefault_carSlectList: function(event) {
+            event.preventDefault();
+            var data_key = $(this).data('key');
+
+            financingTextMethods.getModelsByKey();
+            $.funding_select_car( data_key );
+
+            //console.log(data_key);
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $("#car_select_list").hide();
+                $("#car_select_name, #car_select_preview").fadeIn();
+            }
+        },
+        preventDefault_changeCarTest: function(event) {
+            event.preventDefault();
+            $("#car_select_name, #car_select_preview").hide();
+            $("#car_select_list").fadeIn();
+            //console.log('click plan');
+        },
+        preventDefault_aFundingGoto: function(event) {
+            event.preventDefault();
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                if ($(this).data('step') == "1") {
+                    $("#car_select_name, #car_select_preview").hide();
+                    $("#car_select_list").fadeIn();
+                }
+            }
+            goto_step_financing( $(this).data('step') );
+            //console.log('click Goto');
+        },
+        preventDefault_fakeCaculate: function(event) {
+            event.preventDefault();
+            $("#header-financiamiento .option-2, #fake-calculate").hide();
+            $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").css("display", "block");
+            //console.log('click calculate');
+        },
+        preventDefault_modifyCalc: function(event) {
+            event.preventDefault();
+            $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").hide();
+            $("#header-financiamiento .option-2, #fake-calculate").css("display", "block");
+            //console.log('click modify calc');
         }
     }
     $.funding_adjust_calc = function(  ){
@@ -2362,11 +2584,16 @@ var initHashMethos = {
         $('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' );
         $('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) );
         $('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) );
-        // INPUTS HIDDEN
+        // INPUTS HIDDEN FINANCING GENERAL
         $('#financing_general_car_engagement').val(moneyFormat( f_amount ));
         $('#financing_general_car_months').val(funding_data.months + ' meses');
         $('#financing_general_car_price').val(moneyFormat(  funding_data.price ));
         $('#financing_general_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
+        // INPUTS HIDDEN FINANCING BY MODEL
+        $('#financing_by_model_car_engagement').val(moneyFormat( f_amount ));
+        $('#financing_by_model_car_months').val(funding_data.months + ' meses');
+        $('#financing_by_model_car_price').val(moneyFormat(  funding_data.price ));
+        $('#financing_by_model_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
     }
     $.funding_select_version = function( ii ){
         var $elements;
@@ -2519,7 +2746,7 @@ var initHashMethos = {
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] ''
+ [Methods] 'CLICK GO ACTIONS'
 \* ------------------------------------------------------ */
     var returMethods = {
         clickGoIndex : function () {

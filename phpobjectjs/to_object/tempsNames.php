@@ -42,6 +42,17 @@ function tempsNames() {
         'tmp_funding_version_tabs' => 'tmp_funding_version_tabs',
         // FINANCING GENERAL
         'tmp_form_financing_general' => 'tmp_form_financing_general',
+        // FINANCING BY MODEL
+        'tmp_financing_by_model' => 'tmp_financing_by_model',
+        /*
+        'tmp_form_financing_by_model' => 'tmp_form_financing_by_model',
+        */
+        'tmp_financing_swift_sport' => 'tmp_financing_swift_sport',
+        'tmp_financing_swift' => 'tmp_financing_swift',
+        'tmp_financing_kizashi' => 'tmp_financing_kizashi',
+        'tmp_financing_grand_vitara' => 'tmp_financing_grand_vitara',
+        'tmp_financing_scross' => 'tmp_financing_scross',
+        'tmp_financing_ciaz'=> 'tmp_financing_ciaz',
 
         // MODELS MENU
         'tmp_models_menu' => 'tmp_models_menu',

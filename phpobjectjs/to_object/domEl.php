@@ -89,7 +89,8 @@ function domEl() {
         // FUNDING VERSION TABS
         'div_recurrent_funding_version_tabs' => '#funding-versions-tabs',
         // FINANCING GENERAL FORM
-        'div_recurrent_funding_general_form' => '#content_funding_general_form'
+        'div_recurrent_funding_general_form' => '#content_funding_general_form',
+        'div_recurrent_funding_by_model_form' => '#content_funding_by_model_form'
 
     );
 }

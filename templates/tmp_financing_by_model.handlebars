@@ -1,0 +1,206 @@
+
+<div class="header-section-content test-drive">
+    <div id="header-financiamiento" >
+        <!--<h3>Financiamiento</h3>
+        <p>En tres sencillos pasos podrás obtener una cotización y un asesor listo para ayudarte.</p>-->
+        <div  class="panel_tabs_nav">
+            <ul>
+                <li class="step-nav-tabs funding disabled">
+                    <a href="#" data-number="1">
+                        <span>1</span> Selecciona un Suzuki
+                    </a>
+                </li>
+                <li class="step-nav-tabs funding disabled">
+                    <a href="#" data-number="2">
+                        <span>2</span> Opciones de Financiamiento
+                    </a>
+                </li>
+                <li class="step-nav-tabs funding disabled">
+                 <a href="#" data-number="3">
+                        <span>3</span> Tu cotización
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="panel_tabs_container">
+            <div class="panel_tabs">
+                <div class="tab step-nav-tab funding" id="tab-1">
+                    <div id="car_select_list" class="select_list">
+                        <ul>
+                            <li class="swift-sport">
+                                <a href="#" data-key="swift-sport">Swift Sport<i>&#59234;</i></a>
+                            </li>
+                            <li class="swift">
+                                <a href="#" data-key="swift">Swift<i>&#59234;</i></a>
+                            </li>
+                            <!--<li class="sx4-crossover">
+                                <a href="#" data-key="sx4-crossover">SX4 Crossover<i>&#59234;</i></a>
+                            </li>
+                            <li class="sx4-sedan">
+                                <a href="#" data-key="sx4-sedan">SX4 Sedán<i>&#59234;</i></a>
+                            </li>-->
+                            <li class="kizashi">
+                                <a href="#" data-key="kizashi">Kizashi<i>&#59234;</i></a>
+                            </li>
+                            <li class="grand-vitara">
+                                <a href="#" data-key="grand-vitara">Grand Vitara<i>&#59234;</i></a>
+                            </li>
+                            <li class="s-cross">
+                                <a href="#" data-key="s-cross">S-Cross<i>&#59234;</i></a>
+                            </li>
+                            <li class="ciaz">
+                                <a href="#" data-key="ciaz">Ciaz<i>&#59234;</i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="car_select_name">
+                        <h3 class="secondary-title"></h3>
+                        <a href="#" id="change-car-test">Cambiar auto</a>
+                        <a class="funding-goto button blue" data-step="2" href="#">Elige tu plan</a>
+                        <!--<a class="funding-goto button blue" data-step="2" href="#" onclick="ga('send', 'event', 'Financiamiento', 'Paso_2', 'Header_Opciones');">Elige tu plan</a>-->
+                    </div>
+                    <div id="car_select_preview">
+                        <div class="car_thumb_160">
+                            <div class="car"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab step-nav-tab funding" id="tab-2">
+                    <div class="options option-1 model_car">
+                        <div id="fu_adjust_car">
+                            <div class="car_thumb_60">
+                                <div class="car"></div>
+                            </div>
+                            <h3 class="secondary-title "></h3>
+                            <!--<a class="funding-goto button graylight" data-step="1" href="#">Cambiar auto</a>-->
+                            <!--<a class="funding-goto button graylight" data-step="1" href="#" onclick="ga('send', 'event', 'Financiamiento', 'Paso_1', 'Header_Selecciona_Suzuki');">Cambiar auto</a>-->
+                        </div>
+                    </div>
+                    <div class="options option-2">
+                        <div id="funding-versions">
+                            <h4>Versión a cotizar</h4>
+                            <ul id="funding-versions-tabs" class="stick_buttons"></ul>
+                        </div>
+                        <div class="form_calcs">
+                            <form id="ranges_calc">
+                                <div class="rangeslider">
+                                    <label for="car_engagement_slider">¿Cuánto te gustaría dar de enganche?</label>
+                                    <div class="slider">
+                                        <span class="star">20%</span>
+                                        <div id="car_engagement_slider"></div>
+                                        <span class="end">80%</span>
+                                    </div>
+                                </div>
+                                <div class="rangeslider">
+                                    <label for="car_months_slider">Plazo en que te gustaría pagarlo (meses)</label>
+                                    <div class="slider">
+
+                                        <span class="star">6</span>
+                                        <div id="car_months_slider"></div>
+                                        <span class="end">60</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="options option-3">
+                        <div class="funding-live-results">
+                            <div class="result">
+                                <h4>Precio del modelo</h4>
+                                <span id="live-price"></span>
+                            </div>
+                            <div class="result">
+                                <h4>Enganche</h4>
+                                <span id="live-engagement"></span>
+                            </div>
+                            <div class="result">
+                                <h4>Plazo elegido</h4>
+                                <span id="live-months"></span>
+                            </div>
+                        </div>
+                        <div class="funding-live-calc">
+                            <a href="#" id="fake-calculate" class="button blue">Calcular</a>
+                            <a href="#" id="modify-calc" class="button">Modificar cotización</a>
+                            <a class="funding-goto button blue" data-step="3" href="#">Siguiente</a>
+                            <!--<a class="funding-goto button blue" data-step="3" onclick="ga('send', 'event', 'Financiamiento', 'Paso_3', 'Header_Cotizacion');" href="#">Siguiente</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab step-nav-tab funding" id="tab-3">
+                    <div id="funding_form" >
+                        <div class="results result-1">
+                            <div class="form_car" id="funding_result_car">
+
+                                <div id="funding_result_data">
+                                    <div class="car_thumb_60">
+                                        <div class="car swift-sport"></div>
+                                    </div>
+                                    <h3 class="secondary-title ">Swift Sport</h3>
+                                    <!--<a class="funding-goto button graylight" data-step="1" href="#">Cambiar auto</a>-->
+                                    <!--<a class="funding-goto button graylight" data-step="1" href="#" onclick="ga('send', 'event', 'Financiamiento', 'Paso_1', 'Header_Selecciona_Suzuki');">Cambiar auto</a>-->
+                                </div>
+                                <div class="result">
+                                    <h4>Precio del modelo</h4>
+                                    <p id="funding_result_price"></p>
+                                    <h4>Enganche</h4>
+                                    <p id="funding_result_engagement"></p>
+                                    <h4>Mensualidades</h4>
+                                    <p id="funding_result_monthly_payment"></p>
+                                    <h4>Plazo</h4>
+                                    <p id="funding_result_months"></p>
+                                </div>
+                                <div class="result-goback">
+                                    <a href="#" class="funding-goto button" data-step="2">Modificar cotización</a>
+                                    <!--<a href="#" class="funding-goto button" data-step="2" onclick="ga('send', 'event', 'Financiamiento', 'Paso_2', 'Header_Opciones');">Modificar cotización</a>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="results result-2">
+                            <div id="content_funding_by_model_form"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="funding_resume">
+                        <div id="resume-message">
+                            <h4 class="secondary-title">Gracias</h4>
+                            <p>
+                                Tu cotización ha sido enviada a tu correo electrónico:
+                                <span id="funding_resume_email"></span>
+                            </p>
+                            <div class="funding-hidden-inputs">
+                                Te hemos asignado un asesor Suzuki de la concesionaria
+                                <a id="funding_resume_concessionaire"></a>
+                                quien se pondrá en contacto contigo para confirmar tus datos y resolver cualquier duda
+                                que puedas tener.
+                            </div>
+                        </div>
+                        <div class="resume">
+                            <h4>Precio del modelo</h4>
+                            <p id="funding_resume_price"></p>
+                            <h4>Enganche</h4>
+                            <p id="funding_resume_engagement"></p>
+                            <h4>Mensualidades</h4>
+                            <p id="funding_resume_monthly_payment"></p>
+                            <h4>Plazo</h4>
+                            <p id="funding_resume_months"></p>
+                        </div>
+                        <div id="funding-resume-car">
+                            <div class="car_thumb_60">
+                                <div class="car"></div>
+                            </div>
+                            <h3 class="secondary-title "></h3>
+                            <a id="tdr_end" class="button blue">Finalizar</a>
+                        </div>
+                    </div>
+                    <div id="financing-loader" class="form-loader" style="display: none;">
+                        <div class="loader">
+                            <div class="loader-wrap">
+                                <div class="loader-item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

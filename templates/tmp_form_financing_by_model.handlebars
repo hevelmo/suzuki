@@ -1,0 +1,115 @@
+<div id="funding_form_form">
+    <form id="financing-by-model">
+        <p>Nos gustaría enviarte una cotización por correo electrónico</p>
+        <p><span style="color: red; font-size: 12px;">Los campos marcados con <span style="color: red;" class="fa fa-asterisk"></span> son requeridos</span></p>
+        <div id="mail_cel">
+            <fieldset>
+                <label for="financing_by_model_name">
+                    <span style="color: red;" class="fa fa-asterisk"></span> Nombre
+                </label>
+                <input
+                    type="text"
+                    id="financing_by_model_name"
+                    name="suk_gdl_financing_by_model_name"
+                    class="fbm_validate_input"
+                    placeholder="Nombre"
+                    data-validation-data="required|name">
+                <p class="invalid-message" id="error_name">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+            <fieldset>
+                <label for="financing_by_model_lastname">
+                    <span style="color: red;" class="fa fa-asterisk"></span> Apellido
+                </label>
+                <input
+                    type="text"
+                    id="financing_by_model_lastname"
+                    name="suk_gdl_financing_by_model_lastname"
+                    class="fbm_validate_input"
+                    placeholder="Apellidos Paterno y Materno"
+                    data-validation-data="required|name">
+                <p class="invalid-message" id="error_lastname">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+    		<fieldset>
+                <label for="financing_by_model_email">
+                    <span style="color: red;" class="fa fa-asterisk"></span> Correo electrónico
+                </label>
+    		   <input
+                    type="email"
+                    id="financing_by_model_email"
+                    name="suk_gdl_financing_by_model_email"
+                    class="fbm_validate_input input icon email"
+                    placeholder="Correo electrónico"
+                    data-validation-data="required|email">
+    		   <p class="invalid-message" id="error_mail">Este campo es obligatorio<span>&nbsp;</span></p>
+    		</fieldset>
+    	</div>
+    	{{!--
+            <div id="estado-consecionaria" style="display: none;">
+    			<fieldset id="financing-drop" name="financing-drop">
+    				<label style="display: none;"><span style="color: red; font-size: 19px; position: relative; top: 7px;">*</span> Estado</label>
+    				<div id="tdcss">
+    				   <div id="tdcs"></div>
+                    </div>
+    			   <p class="invalid-message" id="error_state">Este campo es obligatorio<span>&nbsp;</span></p>
+    			   <p class="invalid-message" id="error_concessionaire">Este campo es obligatorio<span>&nbsp;</span></p>
+    			</fieldset>
+    		</div>
+        --}}
+        <div class="funding-hidden-inputs-none">
+            <fieldset>
+                <label for="financing_by_model_tel">
+                    <span style="color: red;" class="fa fa-asterisk"></span> Número de celular
+                </label>
+                <input
+                    type="tel"
+                    id="financing_by_model_tel"
+                    name="suk_gdl_financing_by_model_tel"
+                    class="fbm_validate_input"
+                    maxlength="13"
+                    placeholder="Número de celular"
+                    data-validation-data="required|phone">
+                <p class="invalid-message" id="error_phone">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+    	<div id="drive-inputs">
+    		<p>¿Te gustaría manejarlo?</p>
+    		<fieldset class="fieldset-radio-checkbox">
+    			<label for="financing_by_model_drive_yes" class="label-radio">Sí
+    				<input
+    					type="radio"
+    					id="financing_by_model_drive_yes"
+    					name="suk_gdl_financing_by_model_drive"
+    					class="fg_validate_radio"
+    					value="Sí deseas manejarlo">
+    			</label>
+    		</fieldset>
+    		<fieldset class="fieldset-radio-checkbox">
+    			<label for="financing_by_model_drive_no" class="label-radio radio-checked">No
+    				<input
+    					type="radio"
+    					id="financing_by_model_drive_no"
+    					name="suk_gdl_financing_by_model_drive"
+    					class="fg_validate_radio"
+    					value="No deseas manejarlo"
+                        checked="checked">
+    			</label>
+    		</fieldset>
+    	</div>
+    	<fieldset class="fieldset-radio-checkbox" id="checkbox-news">
+    		<label for="financing_by_model_newsletter" class="label-checkbox">
+    			<input
+    				type="checkbox"
+    				id="financing_by_model_newsletter"
+    				name="suk_gdl_financing_by_model_newsletter"
+    				class="fg_validate_checkbox"
+    				value=""> Deseo recibir noticias y promociones.
+    		</label>
+    	</fieldset>
+    	<fieldset id="funding_fields_hidden"></fieldset>
+    </form>
+    <button id="suk_financing_by_model_submit" class="enviar button blue">Enviar</button>
+    <p id="revisa_aviso">
+    	Tus datos están a salvo.<br>
+    	Para mayor información revisa nuestro <a id="go-privacy-notice">Aviso de privacidad</a>
+    </p>
+</div>
