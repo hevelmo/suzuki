@@ -1,0 +1,65 @@
+{{#each sukpa}}
+    {{#if state}}
+    <li class="separator">{{state}}</li>
+    {{/if}}
+    <li class="concessionaire" data-key="{{key_name}}" id="{{id}}">
+        <div class="image">
+            <img src="img/sections/concessionaires/previews/{{img_small}}" title="{{name}}" />
+        </div>
+        <div class="address">
+            <h3><a id="go-section-concessionarie-{{key_name}}">{{name}}</a></h3>
+            <address>
+                <span class="address">{{address}}</span><br>
+                <span class="phone">{{phone}}</span>
+            </address>
+        </div>
+        <div class="clearfix"></div>
+        <i>&#59238;</i>
+    </li>
+{{/each}}
+{{!--
+<li class="concessionaire" data-key="vallarta">
+    <div class="image">
+        <img src="img/sections/concessionaires/previews/vallarta-small.jpg" title="Suzuki Vallarta" />
+    </div>
+    <div class="address">
+        <h3><a id="go_section_concessionarie_vallarta">Suzuki Vallarta</a></h3>
+        <address>
+            <span class="address">Av. Vallarta Núm. 5300 Col. Jardines  Vallarta, Zapopan, Jalisco.</span><br>
+            <span class="phone">01-(33)-3777-1989</span>
+        </address>
+    </div>
+    <div class="clearfix"></div>
+    <i>&#59238;</i>
+</li>
+<li class="separator">Colima</li>
+<li class="concessionaire" data-key="colima">
+    <div class="image">
+        <img src="img/sections/concessionaires/previews/colima-small.jpg" title="Suzuki Colima" />
+    </div>
+    <div class="address">
+        <h3><a id="go_section_concessionarie_colima">Suzuki Colima</a></h3>
+        <address>
+            <span class="address">Av. Felipe Sevilla del Río Núm. 536, Col. Lomas de Circunvalación, Colima, Colima.</span><br>
+            <span class="phone">01-(312)-316-3263</span>
+        </address>
+    </div>
+    <div class="clearfix"></div>
+    <i>&#59238;</i>
+</li>
+<li class="separator">Michoacán</li>
+<li class="concessionaire" data-key="morelia">
+    <div class="image">
+        <img src="img/sections/concessionaires/previews/morelia-small.jpg" title="Suzuki Morelia" />
+    </div>
+    <div class="address">
+        <h3><a id="go_section_concessionarie_morelia">Suzuki Morelia</a></h3>
+        <address>
+            <span class="address">Av. Camelinas Núm. 3169 Fracc. Las Américas Morelia, Michoacán.</span><br>
+            <span class="phone">01-(443)-500-53-00</span>
+        </address>
+    </div>
+    <div class="clearfix"></div>
+    <i>&#59238;</i>
+</li>
+--}}

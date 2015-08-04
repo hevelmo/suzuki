@@ -32,7 +32,7 @@ function urlsApi() {
         // DELETE
         //'del_tab_id' => $root . '/' . $del . '/' . $tab . '/',
 
-        'addConcesionaries' => $root . '/add/concesionaries',
+        'addConcesionaries' => $root . '/add/concesionarias',
         'addModelos' => $root . '/add/modelos',
         'addGamaModelos' => $root . '/add/gama_modelos',
 

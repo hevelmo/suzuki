@@ -1,0 +1,42 @@
+{
+    "status": "ok",
+    "message": "",
+    "data": {
+        "concessionaires": [
+            {
+                "key": "colima",
+                "name": "Suzuki Colima",
+                "state": "coli"
+            },
+            {
+                "key": "lopez-mateos",
+                "name": "Suzuki López Mateos",
+                "state": "jali"
+            },
+            {
+                "key": "vallarta",
+                "name": "Suzuki Vallarta",
+                "state": "jali"
+            },
+            {
+                "key": "morelia",
+                "name": "Suzuki Morelia",
+                "state": "mich"
+            }
+        ],
+        "states": [
+            {
+                "key": "coli",
+                "name": "Colima"
+            },
+            {
+                "key": "jali",
+                "name": "Jalisco"
+            },
+            {
+                "key": "mich",
+                "name": "Michoacán"
+            }
+        ]
+    }
+}

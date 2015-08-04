@@ -1,0 +1,183 @@
+<div class="header-section-content test-drive">
+    <div id="header-prueba-manejo">
+        <!--<p class="secondary-title">Prueba de manejo</p>
+        <p class="test-drive-description">En tres sencillos pasos podrás agendar tu prueba de manejo y vivir la experiencia Suzuki.</p>-->
+        <div  class="panel_tabs_nav">
+            <ul>
+                <li class="td-nav-tabs  disabled">
+                    <a href="#" data-number="1">
+                        <span>1</span> Selecciona un Suzuki
+                    </a>
+                </li>
+                <li class="td-nav-tabs disabled">
+                    <a href="#" data-number="2">
+                        <span>2</span> Selecciona tu concesionaria
+                    </a>
+                </li>
+                <li class="td-nav-tabs disabled">
+                    <a href="#" data-number="3">
+                        <span>3</span> Fecha y datos personales
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="panel_tabs_container">
+            <div class="panel_tabs">
+                <div class="tab td-tab" id="tab-1">
+                    <div id="car_select_list" class="select_list">
+                        <ul>
+                            <li class="swift-sport">
+                                <a href="#" data-key="swift-sport">Swift Sport<i>&#59234;</i></a>
+                            </li>
+                            <li class="swift">
+                                <a href="#" data-key="swift">Swift<i>&#59234;</i></a>
+                            </li>
+                            <!--<li class="sx4-crossover">
+                                <a href="#" data-key="sx4-crossover">SX4 Crossover<i>&#59234;</i></a>
+                            </li>
+                            <li class="sx4-sedan">
+                                <a href="#" data-key="sx4-sedan">SX4 Sedán<i>&#59234;</i></a>
+                            </li>-->
+                            <li class="kizashi">
+                                <a href="#" data-key="kizashi">Kizashi<i>&#59234;</i></a>
+                            </li>
+                            <li class="grand-vitara">
+                                <a href="#" data-key="grand-vitara">Grand Vitara<i>&#59234;</i></a>
+                            </li>
+                            <li class="ciaz">
+                                <a href="#" data-key="ciaz">Ciaz<i>&#59234;</i></a>
+                            </li>
+                            <li class="s-cross">
+                                <a href="#" data-key="s-cross">S-Cross<i>&#59234;</i></a>
+                            </li>
+                        </ul>
+                        </ul>
+                    </div>
+                    <div id="car_select_name">
+                        <h3 class="secondary-title"></h3>
+                        <a href="#" id="change-car-test">Cambiar auto</a>
+                        <a class="test-drive-goto button blue" data-step="2" href="#">Seleccionar concesionaria</a>
+                        <!--<a class="test-drive-goto button blue" data-step="2" href="#" onclick="ga('send', 'event', 'Prueba de Manejo', 'Paso_2', 'Header_Selecciona_Concesionaria');">Seleccionar concesionaria</a>-->
+                    </div>
+                    <div id="car_select_preview">
+                        <div class="car_thumb_160">
+                            <div class="car"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab td-tab" id="tab-2">
+                    <div id="td_concessionaire_car">
+                        <div class="car_thumb_60">
+                            <div class="car"></div>
+                        </div>
+                        <h3 class="secondary-title"></h3>
+                        <a class="test-drive-goto button graylight" data-step="1" href="#">Cambiar auto</a>
+                        <!--<a class="test-drive-goto button graylight" data-step="1" onclick="ga('send', 'event', 'Prueba de Manejo', 'Paso_1', 'Header_Selecciona_Suzuki');" href="#">Cambiar auto</a>-->
+                    </div>
+                    <div id="input_concessionaire">
+                        <div class="input">
+                            <fieldset>
+                                <input type="text" id="concessionaires_search" placeholder="Escribe tu dirección"/>
+                            </fieldset>
+                        </div>
+                        <div id="concessionaires_list" class="concessionaires-list">
+                            <div class="list"></div>
+                            <a href="#" id="resetConcessionaire" class="button">Cambiar concesionaria</a>
+                       </div>
+                    </div>
+                </div>
+                <div class="tab td-tab" id="tab-3">
+                    <div id="test_drive_form" >
+                        <div id="td_form_car">
+                            <div class="car_name_button">
+                                <h3 class="secondary-title"></h3>
+                                <a class="test-drive-goto button" data-step="1" href="#">Cambiar auto</a>
+                                <!--<a class="test-drive-goto button" data-step="1" href="#" onclick="ga('send', 'event', 'Prueba de Manejo', 'Paso_1', 'Header_Selecciona_Suzuki');">Cambiar auto</a>-->
+                            </div>
+                            <div class="car_thumb_60">
+                                <div class="car"></div>
+                            </div>
+                            <div id="form_concessionaire_selected" class="concessionaires-list">
+                                <div class="list"></div>
+                                <a href="#" class="test-drive-goto button" data-step="2">Cambiar concesionaria</a>
+                                <!--<a href="#" class="test-drive-goto button" data-step="2" onclick="ga('send', 'event', 'Prueba de Manejo', 'Paso_2', 'Header_Selecciona_Concesionaria');">Cambiar concesionaria</a>-->
+                            </div>
+                        </div>
+                        <div id="td_form_form">
+                            <form id="htd_form" name="htd_form" method="post" action="test_drive.php">
+                                <p id="p_date">¿Cuándo quieres hacer tu prueba de manejo?</p>
+                                <fieldset>
+                                    <label for="htd_date">Selecciona fecha</label>
+                                    <input type="text" id="htd_date" name="htd_date" placeholder="YYYY-MM-DD" data-validation-data="required|date" />
+                                    <p class="invalid-message" id="error-date">Este campo es obligatorio<span>&nbsp;</span></p>
+                                </fieldset>
+                                <p id="p_contact">
+                                    Un asesor Suzuki se comunicará contigo para confirmar tus datos.
+                                </p>
+                                <fieldset>
+                                    <label for="htd_name">Nombre</label>
+                                    <input type="text" id="htd_name" name="htd_name" placeholder="Nombre" data-validation-data="required|name" />
+                                    <p class="invalid-message" id="error_name">Este campo es obligatorio<span>&nbsp;</span></p>
+                                </fieldset>
+                                <fieldset>
+                                    <label for="htd_name">Apellido</label>
+                                    <input type="text" id="htd_lastname" name="htd_lastname" placeholder="Apellidos Paterno y Materno" data-validation-data="required|name" />
+                                    <p class="invalid-message" id="error_lastname">Este campo es obligatorio<span>&nbsp;</span></p>
+                                </fieldset>
+                                <div id="mail_cel">
+                                    <fieldset>
+                                        <label for="htd_email">Correo electrónico</label>
+                                        <input type="email" id="htd_email" name="htd_email" class="input icon email" placeholder="Correo electrónico" data-validation-data="required|email" />
+                                        <p class="invalid-message" id="error_mail">Este campo es obligatorio<span>&nbsp;</span></p>
+                                    </fieldset>
+                                    <fieldset>
+                                        <label for="htd_tel">Número de celular</label>
+                                        <input type="tel" id="htd_tel" name="htd_tel" maxlength="13" placeholder="Número de celular" data-validation-data="phone" />
+                                        <p class="invalid-message" id="error_phone">Este campo es obligatorio<span>&nbsp;</span></p>
+                                    </fieldset>
+                                </div>
+                                <fieldset id="fieldset-header-test" class="fieldset-radio-checkbox">
+                                    <label for="chk-newsletter" class="label-checkbox">
+                                        <input type="checkbox" id="chk-newsletter" name="chk-newsletter" name="chk-newsletter"> Deseo recibir noticias y promociones.
+                                    </label>
+                                </fieldset>
+                                <input type="submit" id="header_send_td" class="enviar button blue" value="Enviar">
+                                <p id="revisa_aviso">
+                                    Tus datos están a salvo.<br>
+                                    Para mayor información revisa nuestro <a href="/aviso-privacidad">Aviso de privacidad</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="test_drive_resume">
+                        <div id="resumenInfo">
+                            <div id="td_final_car">
+                                <h3 class="secondary-title"></h3>
+                                <div class="car_thumb_60">
+                                    <div class="car"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="resumenMsg">
+                            <h4 class="secondary-title">Gracias</h4>
+                            <p>
+                                Tu prueba de manejo ha sido agendada.
+                            </p>
+                            <p>
+                                Pronto recibirás confirmación en tu correo electrónico: <span id="tdr_email"></span>
+                            </p>
+                            <p>
+                                Te hemos asignado un asesor de la concesionaria <a id="tdr_concessionaire"></a>,
+                                quien se pondrá en contacto contigo para confirmar tus datos y resolver cualquier duda que puedas tener.
+                            </p>
+                            <a id="tdr_end" class="button blue">Finalizar</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

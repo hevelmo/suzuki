@@ -1,92 +1,100 @@
 {
 	"sukpa": [
 		{
-			"suk_Concesionaries": [
-					{
-						"suk_Id": "1",
-						"suk_Nombre": "Suzuki Vallarta",
-						"suk_Domicilio": "Av. Vallarta N\u00fam. 5300 Col. Jardines  Vallarta, Zapopan, Jalisco.",
-						"suk_Key_Nombre": "vallarta",
-						"suk_Telefono": "01-(33)-3777-1989",
-						"suk_Call": "+013337771989",
-						"suk_Estado": "Jalisco",
-						"suk_Key_Estado": "jal",
-						"suk_Emails": "coconnor@suzukivallarta.com.mx,postventa@suzukivallarta.com.mx,refacciones@suzukivallarta.com.mx,asistenteventas@suzukivallarta.com.mx",
-						"suk_Social_Media": {
-							"suk_WebSite": "http://www.suzukivallarta.com.mx",
-							"suk_Facebook": "https://www.facebook.com/SuzukiGuadalajaraLopezMateosYAvVallarta",
-							"suk_Twitter": "https://twitter.com/Suzuki_Gdl"
-						},
-						"suk_gMaps": {
-							"suk_Latitud": "20.6801",
-							"suk_Longitud": "-103.426"
-						},
-					"suk_zip": "45027"
-				},
-				{
-					"suk_Id": "2",
-					"suk_Nombre": "Suzuki L\u00f3pez Mateos",
-					"suk_Domicilio": "Av. L\u00f3pez Mateos N\u00fam. 5654 Col. Arboledas, Zapopan, Jalisco.",
-					"suk_Key_Nombre": "lopez-mateos",
-					"suk_Telefono": "01-(33)-3884-8200",
-					"suk_Call": "+013338848200",
-					"suk_Estado": "Jalisco",
-					"suk_Key_Estado": "jal",
-					"suk_Emails": "coconnor@suzukivallarta.com.mx,coordinador@suzuki-lm.com.mx,posventa@suzuki-lm.com.mx,refacciones@suzuki-lm.com.mx,asistenteventas@suzukivallarta.com.mx",
-					"suk_Social_Media": {
-						"suk_WebSite": "http://www.suzuki-lm.com.mx",
-						"suk_Facebook": "https://www.facebook.com/SuzukiGuadalajaraLopezMateosYAvVallarta",
-						"suk_Twitter": "https://twitter.com/Suzuki_Gdl"
-					},
-					"suk_gMaps": {
-						"suk_Latitud": "20.6244",
-						"suk_Longitud": "-103.421"
-					},
-					"suk_zip": "45070"
-				},
-				{
-					"suk_Id": "3",
-					"suk_Nombre": "Suzuki Colima",
-					"suk_Domicilio": "Av. Felipe Sevilla del R\u00edo N\u00fam. 536, Col. Lomas de Circunvalaci\u00f3n, Colima, Colima.",
-					"suk_Key_Nombre": "colima",
-					"suk_Telefono": "01-(312)-316-3263",
-					"suk_Call": "+013123163263",
-					"suk_Estado": "Colima",
-					"suk_Key_Estado": "col",
-					"suk_Emails": "gtecomercial@suzukicolima.com.mx",
-					"suk_Social_Media": {
-						"suk_WebSite": "http://www.suzukicolima.com.mx",
-						"suk_Facebook": "https://www.facebook.com/pages/Suzuki-Colima/415132885190230",
-						"suk_Twitter": ""
-					},
-					"suk_gMaps": {
-						"suk_Latitud": "19.2505",
-						"suk_Longitud": "-103.71"
-					},
-					"suk_zip": "28010"
-				},
-				{
-					"suk_Id": "4",
-					"suk_Nombre": "Suzuki Morelia",
-					"suk_Domicilio": "Perif\u00e9rico Paseo de la Rep\u00fablica 3169",
-					"suk_Key_Nombre": "morelia",
-					"suk_Telefono": "01-(312)-316-3263",
-					"suk_Call": "+013123163263",
-					"suk_Estado": "Michoac\u00e1n",
-					"suk_Key_Estado": "mich",
-					"suk_Emails": "rrivas@suzukimorelia.com.mx,asistventas@suzukimorelia.com.mx",
-					"suk_Social_Media": {
-						"suk_WebSite": "http://www.suzukimorelia.com.mx",
-						"suk_Facebook": "https://www.facebook.com/pages/Suzuki-Morelia/1458185144458990",
-						"suk_Twitter": "https://twitter.com/SuzukiMorelia"
-					},
-					"suk_gMaps": {
-						"suk_Latitud": "19.6887",
-						"suk_Longitud": "-101.152"
-					},
-					"suk_zip": "58270"
-				}
-			]
+			"id": "1",
+			"name": "Suzuki Vallarta",
+			"address": "Av. Vallarta N\u00fam. 5300 Col. Jardines  Vallarta, Zapopan, Jalisco.",
+			"key_name": "vallarta",
+			"phone": "01-(33)-3777-1989",
+			"call": "+013337771989",
+			"state": "Jalisco",
+			"key_state": "jal",
+			"emails": "coconnor@suzukivallarta.com.mx,postventa@suzukivallarta.com.mx,refacciones@suzukivallarta.com.mx,asistenteventas@suzukivallarta.com.mx",
+			"social_media": {
+				"id": "1",
+				"website": "http://www.suzukivallarta.com.mx",
+				"facebook": "https://www.facebook.com/SuzukiGuadalajaraLopezMateosYAvVallarta",
+				"twitter": "https://twitter.com/Suzuki_Gdl"
+			},
+			"gMaps": {
+				"latitud": "20.6801",
+				"longitud": "-103.426"
+			},
+			"zip": "45027",
+			"img_small": "vallarta-small.jpg",
+						"img_big": "vallarta-big.jpg"
+		},
+		{
+			"id": "2",
+			"name": "Suzuki L\u00f3pez Mateos",
+			"address": "Av. L\u00f3pez Mateos N\u00fam. 5654 Col. Arboledas, Zapopan, Jalisco.",
+			"key_name": "lopez-mateos",
+			"phone": "01-(33)-3884-8200",
+			"call": "+013338848200",
+			"state": "Jalisco",
+			"key_state": "jal",
+			"emails": "coconnor@suzukivallarta.com.mx,coordinador@suzuki-lm.com.mx,posventa@suzuki-lm.com.mx,refacciones@suzuki-lm.com.mx,asistenteventas@suzukivallarta.com.mx",
+			"social_media": {
+				"id": "2",
+				"website": "http://www.suzuki-lm.com.mx",
+				"facebook": "https://www.facebook.com/SuzukiGuadalajaraLopezMateosYAvVallarta",
+				"twitter": "https://twitter.com/Suzuki_Gdl"
+			},
+			"gMaps": {
+				"latitud": "20.6244",
+				"longitud": "-103.421"
+			},
+			"zip": "45070",
+			"img_small": "lopez-mateos-small.jpg",
+			"img_big": "lopez-mateos-big.jpg"
+		},
+		{
+			"id": "3",
+			"name": "Suzuki Colima",
+			"address": "Av. Felipe Sevilla del R\u00edo N\u00fam. 536, Col. Lomas de Circunvalaci\u00f3n, Colima, Colima.",
+			"key_name": "colima",
+			"phone": "01-(312)-316-3263",
+			"call": "+013123163263",
+			"state": "Colima",
+			"key_state": "col",
+			"emails": "gtecomercial@suzukicolima.com.mx",
+			"social_media": {
+				"id": "3",
+				"website": "http://www.suzukicolima.com.mx",
+				"facebook": "https://www.facebook.com/pages/Suzuki-Colima/415132885190230",
+				"twitter": ""
+			},
+			"gMaps": {
+				"latitud": "19.2505",
+				"longitud": "-103.71"
+			},
+			"zip": "28010",
+			"img_small": "colima-small.jpg",
+			"img_big": "colima-big.jpg"
+		},
+		{
+			"id": "4",
+			"name": "Suzuki Morelia",
+			"address": "Perif\u00e9rico Paseo de la Rep\u00fablica 3169",
+			"key_name": "morelia",
+			"phone": "01-(312)-316-3263",
+			"call": "+013123163263",
+			"state": "Michoac\u00e1n",
+			"key_state": "mich",
+			"emails": "rrivas@suzukimorelia.com.mx,asistventas@suzukimorelia.com.mx",
+			"social_media": {
+				"id": "4",
+				"website": "http://www.suzukimorelia.com.mx",
+				"facebook": "https://www.facebook.com/pages/Suzuki-Morelia/1458185144458990",
+				"twitter": "https://twitter.com/SuzukiMorelia"
+			},
+			"gMaps": {
+				"latitud": "19.6887",
+				"longitud": "-101.152"
+			},
+			"zip": "58270",
+			"img_small": "morelia-small.jpg",
+			"img_big": "morelia-big.jpg"
 		}
 	]
 }

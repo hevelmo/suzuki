@@ -63,7 +63,7 @@ setlocale(LC_MONETARY, 'en_US');
 // GET route
     // app => getModels
         //$app->get('/add/car_main_model/:car_main_model', 'addCarMainModel');
-        $app->get('/add/concesionaries', 'addConcesionaries');
+        $app->get('/add/concesionarias', 'addConcesionaries');
         $app->get('/add/modelos', 'addModelos');
         $app->get('/add/gama_modelos', 'addGamaModels');
 // SELECT
@@ -433,7 +433,6 @@ $app->run();
 
         echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
-
 /*
   ----------------------------------------------------------------------------
   General Helper Methods

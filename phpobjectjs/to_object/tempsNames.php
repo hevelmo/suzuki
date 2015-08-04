@@ -37,6 +37,9 @@ function tempsNames() {
         'tmp_instant_drive_section' => 'tmp_instant_drive_section',
         // TEST DRIVE
         'tmp_test_drive_model' => 'tmp_test_drive_model',
+        // TEST DRIVE GENERAL
+        'tmp_section_content_test_drive_general' => 'tmp_section_content_test_drive_general',
+        'tmp_section_test_drive_general' => 'tmp_section_test_drive_general',
         // TEST DRIVE SELECTION
         'tmp_section_content_test_drive_selection' => 'tmp_section_content_test_drive_selection',
         'tmp_funding_version_tabs' => 'tmp_funding_version_tabs',
@@ -59,6 +62,10 @@ function tempsNames() {
         'tmp_models_menu' => 'tmp_models_menu',
 
         // MOBILE MENU
-        'tmp_mobile_menu' => 'tmp_mobile_menu'
+        'tmp_mobile_menu' => 'tmp_mobile_menu',
+
+        // CONCESSIONAIRES
+        'tmp_content_concessionaires_list' => 'tmp_content_concessionaires_list',
+        'tmp_info_concessionaire_data_wrapper' => 'tmp_info_concessionaire_data_wrapper'
     );
 }

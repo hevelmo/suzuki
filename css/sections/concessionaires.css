@@ -35,7 +35,7 @@
 }
 #concessionaires #concessionaires-data .concessionaire-close-box a {
     display:block;
-    background:url("../../images/sections/concessionaires/close-button.png") right no-repeat;
+    background:url("../../img/sections/concessionaires/close-button.png") right no-repeat;
     height:30px;
     width:30px
 }
@@ -62,7 +62,7 @@
     display:none
 }
 #concessionaires #concessionaires-data .concessionaire-data-wrapper .data {
-    background:url("../../images/sections/concessionaires/concessionaire-data-address.png") left top no-repeat;
+    background:url("../../img/sections/concessionaires/concessionaire-data-address.png") left top no-repeat;
     padding:0 0 15px 30px;
     font-size:13px;
     line-height:14px;
@@ -80,13 +80,13 @@
     margin-bottom:5px
 }
 #concessionaires #concessionaires-data .concessionaire-data-wrapper .data.phone {
-    background-image:url("../../images/sections/concessionaires/concessionaire-data-phone.png")
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-phone.png")
 }
 #concessionaires #concessionaires-data .concessionaire-data-wrapper .data.website {
-    background-image:url("../../images/sections/concessionaires/concessionaire-data-website.png")
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-website.png")
 }
 #concessionaires #concessionaires-data .concessionaire-data-wrapper .data.test-drive {
-    background-image:url("../../images/sections/concessionaires/concessionaire-data-test-drive.png")
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-test-drive.png")
 }
 #concessionaires #concessionaires-data .concessionaire-data-wrapper .data.test-drive a {
     border-bottom:1px solid #d73034;
@@ -113,7 +113,7 @@
     padding:30px 0 30px 35px
 }
 #concessionaires #concessionaires-list .content .concessionaire-search .search-box-space h3 {
-    background:url("../../images/sections/concessionaires/concessionaires-icon-marker.png") left top no-repeat;
+    background:url("../../img/sections/concessionaires/concessionaires-icon-marker.png") left top no-repeat;
     height:36px;
     line-height:36px;
     padding:0 0 0 45px;
@@ -199,14 +199,14 @@
     line-height:14px
 }
 #concessionaires #concessionaires-list .content .concessionaire-list li.concessionaire.active {
-    background:url("../../images/sections/concessionaires/hover-arror.png") 305px center no-repeat #c7effe
+    background:url("../../img/sections/concessionaires/hover-arror.png") 305px center no-repeat #c7effe
 }
 .map-concessionaire-name {
     margin:0 0 0 53px;
     width:250px
 }
 .map-concessionaire-name span {
-    background:url("../../images/sections/concessionaires/marker-active-text-bg.png") right top no-repeat;
+    background:url("../../img/sections/concessionaires/marker-active-text-bg.png") right top no-repeat;
     color:#fff;
     display:inline-table;
     font-size:14px;
@@ -472,7 +472,7 @@
 }
 #concessionaires-normal #concessionaires-data .concessionaire-close-box a {
     display:block;
-    background:url("../../images/sections/concessionaires/close-button.png") right no-repeat;
+    background:url("../../img/sections/concessionaires/close-button.png") right no-repeat;
     height:30px;
     width:30px
 }
@@ -499,7 +499,7 @@
     display:none
 }
 #concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data {
-    background:url("../../images/sections/concessionaires/concessionaire-data-address.png") left top no-repeat;
+    background:url("../../img/sections/concessionaires/concessionaire-data-address.png") left top no-repeat;
     padding:0 0 15px 30px;
     font-size:13px;
     line-height:14px;
@@ -517,13 +517,13 @@
     margin-bottom:5px
 }
 #concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.phone {
-    background-image:url("../../images/sections/concessionaires/concessionaire-data-phone.png")
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-phone.png")
 }
 #concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.website {
-    background-image:url("../../images/sections/concessionaires/concessionaire-data-website.png")
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-website.png")
 }
 #concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.test-drive {
-    background-image:url("../../images/sections/concessionaires/concessionaire-data-test-drive.png")
+    background-image:url("../../img/sections/concessionaires/concessionaire-data-test-drive.png")
 }
 #concessionaires-normal #concessionaires-data .concessionaire-data-wrapper .data.test-drive a {
     border-bottom:1px solid #d73034;
@@ -550,7 +550,7 @@
     padding:30px 0 30px 35px
 }
 #concessionaires-normal #concessionaires-list .content .concessionaire-search .search-box-space h3 {
-    background:url("../../images/sections/concessionaires/concessionaires-icon-marker.png") left top no-repeat;
+    background:url("../../img/sections/concessionaires/concessionaires-icon-marker.png") left top no-repeat;
     height:36px;
     line-height:36px;
     padding:0 0 0 45px;
@@ -636,14 +636,14 @@
     line-height:14px
 }
 #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire.active {
-    background:url("../../images/sections/concessionaires/hover-arror.png") 305px center no-repeat #c7effe
+    background:url("../../img/sections/concessionaires/hover-arror.png") 305px center no-repeat #c7effe
 }
 .map-concessionaire-name {
     margin:0 0 0 53px;
     width:250px
 }
 .map-concessionaire-name span {
-    background:url("../../images/sections/concessionaires/marker-active-text-bg.png") right top no-repeat;
+    background:url("../../img/sections/concessionaires/marker-active-text-bg.png") right top no-repeat;
     color:#fff;
     display:inline-table;
     font-size:14px;

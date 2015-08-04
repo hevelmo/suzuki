@@ -91,7 +91,11 @@ function domEl() {
         // FINANCING GENERAL FORM
         'div_recurrent_select_list_by_model' => '#content-select-list-by-model',
         'div_recurrent_funding_general_form' => '#content_funding_general_form',
-        'div_recurrent_funding_by_model_form' => '#content_funding_by_model_form'
+        'div_recurrent_funding_by_model_form' => '#content_funding_by_model_form',
+
+        // CONCESSIONAIRES
+        'div_recurrent_concessionaires_list' => '#content-concessionaires-list',
+        'div_recurrent_info_concessionaire_data_wrapper' => '#content-info-concessionaire-data-wrapper'
 
     );
 }
