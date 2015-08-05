@@ -844,7 +844,6 @@
 \* ------------------------------------------------------ */
     var catalogMethods = {
         pageTransitionCatalog : function () {
-            $('.item.et-section').addClass('et-page-current');
         }
     }
 /* ------------------------------------------------------ *\
@@ -916,8 +915,9 @@
 \* ------------------------------------------------------ */
     var addDelegatMethods = {
         transitions : function () {
+            addDelegatMethods.delegate();
         },
-        delegate : function (event) {
+        delegate : function () {
 
             var PageTransition = ( function( options ) {
                 var prev_slide = 'prev_slide';
@@ -985,8 +985,6 @@
                     }
                 }
             };
-
-
             var pages = new PageTransition({
                 wrapper:             document.getElementById('catalog-wrapper'),
                 init_page:           init_slide_load,
@@ -1003,13 +1001,14 @@
                 if( $(this).hasClass(init_slide_load) )
                     init_slide_load = index;
             });
-
-            event.preventDefault();
-            var car_key = $(this).data('key');
-            var slide = $("#catalog-"+ car_key);
-            $('.catalog_car').removeClass('active');
-            $(this).parent('.catalog_car').addClass('active');
-            pages.move_to( slide );
+            $(domEl.div_recurrent).delegate('a.switch-catalog', 'click', '.catalog_cars_wrapper', function( e ){
+                e.preventDefault();
+                var car_key = $(this).data('key');
+                var slide = $("#catalog-"+ car_key);
+                $('.catalog_car').removeClass('active');
+                $(this).parent('.catalog_car').addClass('active');
+                pages.move_to( slide );
+            });
         }
     }
 /* ------------------------------------------------------ *\
@@ -1181,6 +1180,38 @@
         }
     }
 /* ------------------------------------------------------ *\
+ [Functions] display_versions_comparative
+\* ------------------------------------------------------ */
+    var $display_tables = $('.display-tables'), display_vct_class = 'prices';
+    function display_versions_comparative(){
+        var $div;
+        $display_tables.each(function(){
+            $div = $(this);
+            if( display_vct_class == $div.data('display-table') ){
+                $div.fadeOut().fadeIn(1000);
+                modifyHeight("#comparative-space-wrapper .suzuki-table .body .row");
+            }else{
+                $div.hide();
+            }
+        });
+    }
+/* ------------------------------------------------------ *\
+ [Methods] FancyBox
+\* ------------------------------------------------------ */
+    var fancyBoxMethods = {
+        onClickGalery: function(event) {
+            event.preventDefault();
+            var url = $(this).attr('href').trim();
+            $('a.fancybox-thumbs').each(function(){
+                var u = $(this).attr('href');
+                if( u.trim() == url ){
+                    $(this).trigger('click');
+                    return false;
+                }
+            });
+        }
+    }
+/* ------------------------------------------------------ *\
  [Methods] modelsMenu
 \* ------------------------------------------------------ */
     var modelsMenuMethods = {
@@ -1216,6 +1247,31 @@
             event.preventDefault();
             $.scroll_to( 'inicio' );
         },
+        preventDefaultSwapDisplayTables: function(event) {
+            e.preventDefault();
+            display_vct_class = $(this).data('display-table');
+            $.scroll_to('precios');
+            var timeout = setTimeout(function(){
+                display_versions_comparative();
+            }, 900 );
+        },
+        carComparativeCol_close: function(event) {
+            $parent = $(this).parent().parent().parent().parent().parent().parent();
+            $parent.hide();
+            $('#car-comparative-list').fadeIn();
+            //.car-comparative-col
+        },
+        carComparativeList_open: function(event) {
+            event.preventDefault();
+            var id = $(this).data('id'),
+                $element = $('#'+id);
+            $element.fadeIn();
+            $(".car-comparative-col").each(function (index, Element) {
+                //$(this).find(".row").eq(5).css("height", 60);
+            });
+            $('#car-comparative-list').hide();
+            //.car-comparative-col
+        },
         car_next_step : function() {
             if( $('.car-next-step').length > 0 ){
                 var $arrow1 = $('.car-next-step').children('a'),
@@ -1231,6 +1287,7 @@
             var car_main_model;
             switch (section) {
                 case 'swift-sport':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('swift-sport');
                     $('.car').addClass('swift-sport');
                     $('.secondary-title.thumb-name').append('Swift Sport');
@@ -1240,6 +1297,9 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
+
 
                     input_hidden_test_drive_swift_sport_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'swift-sport'}, '', 0],
@@ -1252,6 +1312,7 @@
                     //console.log(input_hidden_test_drive_swift_sport_Attributes);
                 break;
                 case 'swift':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('swift');
                     $('.car').addClass('swift');
                     $('.secondary-title.thumb-name').append('Swift');
@@ -1261,6 +1322,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_swift_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'swift'}, '', 0],
@@ -1273,6 +1336,7 @@
                     //console.log(input_hidden_test_drive_swift_Attributes);
                 break;
                 case 'sx4-crossover':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('sx4-crossover');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
@@ -1280,6 +1344,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_sx4_crossover_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'sx4-crossover'}, '', 0],
@@ -1292,6 +1358,7 @@
                     //console.log(input_hidden_test_drive_sx4_crossover_Attributes);
                 break;
                 case 'sx4-sedan':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('sx4-sedan');
                     modelsMenuMethods.car_next_step();
                     $('#model-section-arrow').hide();
@@ -1299,6 +1366,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_sx4_sedan_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'sx4-sedan'}, '', 0],
@@ -1311,6 +1380,7 @@
                     //console.log(input_hidden_test_drive_sx4_sedan_Attributes);
                 break;
                 case 'kizashi':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('kizashi');
                     $('.car').addClass('kizashi');
                     $('.secondary-title.thumb-name').append('Kizashi');
@@ -1320,6 +1390,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_kizashi_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'kizashi'}, '', 0],
@@ -1332,6 +1404,7 @@
                     //console.log(input_hidden_test_drive_kizashi_Attributes);
                 break;
                 case 'grand-vitara':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('grand-vitara');
                     $('.car').addClass('grand-vitara');
                     $('.secondary-title.thumb-name').append('Grand Vitara');
@@ -1341,6 +1414,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_grand_vitara_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'grand-vitara'}, '', 0],
@@ -1353,6 +1428,7 @@
                     //console.log(input_hidden_test_drive_grand_vitara_Attributes);
                 break;
                 case 's-cross':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('s-cross');
                     $('.car').addClass('s-cross');
                     $('.secondary-title.thumb-name').append('S-Cross');
@@ -1362,6 +1438,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_s_cross_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'s-cross'}, '', 0],
@@ -1374,6 +1452,7 @@
                     //console.log(input_hidden_test_drive_s_cross_Attributes);
                 break;
                 case 'ciaz':
+                    $("#versions-price-table").find(".pdf-download:gt(2)").css("visibility", "hidden");
                     $('#change-model').addClass('ciaz');
                     $('.car').addClass('ciaz');
                     $('.secondary-title.thumb-name').append('Ciaz');
@@ -1383,6 +1462,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
+                    display_versions_comparative();
+                    modifyHeight("#features-space-wrapper .suzuki-table .body .row");
 
                     input_hidden_test_drive_ciaz_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'ciaz'}, '', 0],
@@ -1675,13 +1756,9 @@
             }
         }
     }
-
-
-
 /* ------------------------------------------------------ *\
  [Methods] formTestDrive general
 \* ------------------------------------------------------ */
-
 /* ------------------------------------------------------ *\
  [Methods] formTestDrive
 \* ------------------------------------------------------ */
@@ -3340,9 +3417,43 @@
             } else {
                 //console.log('You are not using a mobile device!');
             }
+        },
+        is_mobile_versions_price_table: function() {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                var margin = 0;
+                var table = $("#versions-price-table");
+                var cols = parseInt((table.attr("class").split(" ")[1]).split("-")[1]);
+                var width_table = table.find(".cell").width() * (cols - 1);
+                var arrow_left = $(".arrow-prices-left");
+                var arrow_right = $(".arrow-prices-right");
+                if ($("#features-space-wrapper .suzuki-table.cols-3, #features-space-wrapper .suzuki-table.cols-2").length) {
+                    $(".arrow-prices").show();
+                }
+                $(".arrow-prices").on('click', function(){
+                    if (table.is(':animated'))
+                        return 0;
+                    var direction = $(this).index();
+                    if (direction == 0) {
+                        margin += 100;
+                    }
+                    else
+                        margin -= 100;
+                    table.stop().animate({
+                        marginLeft: margin + "%"
+                    }, 200, function () {
+                        if (parseInt(table.css("margin-left")) >= 0)
+                            arrow_left.addClass("arrow-prices-hidden");
+                        else
+                            arrow_left.removeClass("arrow-prices-hidden");
+                        if (parseInt(table.css("margin-left").replace("-", "")) >= width_table)
+                            arrow_right.addClass("arrow-prices-hidden");
+                        else
+                            arrow_right.removeClass("arrow-prices-hidden");
+                    });
+                });
+            }
         }
     }
-
 /* ------------------------------------------------------ *\
  [Methods] Test Drive General
 \* ------------------------------------------------------ */
@@ -3352,6 +3463,7 @@
                 options = {};
             }
             tdh_data = $.extend( {}, default_data, options );
+            console.log('entra prueba de manejo general');
             //Adds concessionaires items
             function td_show_concessionaires( elements ){
                 var i0 = 0, i1 = elements.length;
@@ -3362,6 +3474,7 @@
                         i0++;
                     }
                     //html = '<ul>' + html + '</ul>';
+                    console.log('td_show_concessionaires');
 
                 }else{
                     //html = concessionaires_no_found;
@@ -3565,7 +3678,6 @@
             console.log('entra test drive general');
         }
     }
-
 /* ------------------------------------------------------ *\
  [Methods] financing
 \* ------------------------------------------------------ */
@@ -3901,9 +4013,6 @@
             Finch.navigate('/financiamiento/ciaz');
         }
     }
-
-
-
 /* ------------------------------------------------------ *\
  [Methods] concessionairesMethods
 \* ------------------------------------------------------ */

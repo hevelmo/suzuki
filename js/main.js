@@ -76,6 +76,8 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_go_concesionaries, actionMenuBarsMethods.clickGoConcesinary);
     // EVENT CLICK GO CATALOGS
     $(domEl.div_recurrent_body).on('click', domEl.button_go_catalogs, actionMenuBarsMethods.clickGoCatalogs);
+
+    //$(domEl.div_recurrent).delegate('a.switch-catalog', 'click', '.catalog_cars_wrapper', addDelegatMethods.preventDefaultCatalogCarsWrapper);
     // EVENT CLICK GO CONTACT US
     $(domEl.div_recurrent_body).on('click', domEl.button_go_contact, actionMenuBarsMethods.clickGoContactUs);
     // FORM CONTACT
@@ -174,6 +176,56 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', '#caracteristicas', modelsMenuMethods.preventDefault_characterics);
     $(domEl.div_recurrent_body).on('click', '.top', modelsMenuMethods.preventDefault_class_top);
     $(domEl.div_recurrent_body).on('click', '#top', modelsMenuMethods.preventDefault_id_top);
+
+    // EVENT SWAP DISPLAY TABLES
+    $(domEl.div_recurrent).on('click', 'a.swap-display-tables', modelsMenuMethods.preventDefaultSwapDisplayTables);
+    // EVENT CAR COMPARATIVE COL CLOSE
+    $(domEl.div_recurrent).on('click', '.car-comparative-col div.close', modelsMenuMethods.carComparativeCol_close);
+    // EVENT CAR COMPARATIVE LIST OPEN
+    $(domEl.div_recurrent).on('click', '#car-comparative-list a.open', modelsMenuMethods.carComparativeList_open);
+    // FANCYBOX
+    $(domEl.div_recurrent).on('click', 'a.gallery-box-link', fancyBoxMethods.onClickGalery);
+    //Fancybox Trigger in all gallery elements
+    $('a.fancybox-thumbs').on('click mouseup', function( e ){
+        e.preventDefault();
+    }).fancybox({
+        arrows    : true,
+        autoSize    : false,
+        closeBtn  : true,
+        fitToView   : false,
+        height      : '70%',
+        helpers : {
+            overlay: {
+                locked: false
+            },
+            title : {
+                type : 'over'
+            },
+            thumbs : {
+                width  : 50,
+                height : 50
+            }
+        },
+        maxHeight   : 550,
+        maxWidth    : 1200,
+        nextEffect  : 'none',
+        nextClick   : true,
+        padding     : 0,
+        prevEffect  : 'none',
+        width       : '70%'
+    });
+    /*if(!IS_MOBILE){
+        $(".gallery-box-link").on('click mouseup', function( e ){
+            e.preventDefault();
+        }).fancybox({
+                'autoScale' : false,
+                'href' : $('.gallery-box-link.html').data('link'),
+                'type':'iframe',
+                'padding' : 0,
+                 maxWidth   : 1200,
+                 minWidth   : 920
+            });
+    }*/
     //Specifications Slider controls and functionality
     var specifications_i = 0;
     var specifications_total =  $('.specifications-wrapper .specification').length - 1;

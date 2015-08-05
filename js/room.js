@@ -5,9 +5,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="index";
             detectNavigatorMethods.IE10();
             addStylesMethods.addStyleIndex();
@@ -33,9 +31,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="concesionaries";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/concesionarias');
@@ -69,9 +65,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="catalog";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/catalogos');
@@ -97,9 +91,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="contact";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/contactanos');
@@ -120,9 +112,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="group";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/grupo');
@@ -142,9 +132,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="privacy";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/aviso-de-privacidad');
@@ -165,9 +153,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="legals";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/terminos-legales');
@@ -188,9 +174,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = 'modelos';
-
             section="swift-sport";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/swift-sport');
@@ -217,17 +201,13 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-
-            lugar = '';
-        }
+            lugar = '';        }
     });
     Finch.route('/swift', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = 'modelos';
-
             section="swift";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/swift');
@@ -254,17 +234,13 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-
-            lugar = '';
-        }
+            lugar = '';        }
     });
     Finch.route('/kizashi', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = 'modelos';
-
             section="kizashi";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/kizashi');
@@ -291,17 +267,13 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-
-            lugar = '';
-        }
+            lugar = '';        }
     });
     Finch.route('/grand-vitara', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = 'modelos';
-
             section="grand-vitara";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/grand-vitara');
@@ -328,17 +300,13 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-
-            lugar = '';
-        }
+            lugar = '';        }
     });
     Finch.route('/s-cross', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = 'modelos';
-
             section="s-cross";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/s-cross');
@@ -365,17 +333,13 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-
-            lugar = '';
-        }
+            lugar = '';        }
     });
     Finch.route('/ciaz', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = 'modelos';
-
             section="ciaz";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/ciaz');
@@ -402,17 +366,13 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-
-            lugar = '';
-        }
+            lugar = '';        }
     });
     Finch.route('/financiamiento', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -439,9 +399,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing_swift_sport";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -469,9 +427,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing_swift";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -499,9 +455,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing_kizashi";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -529,9 +483,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing_grand_vitara";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -559,9 +511,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing_scross";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -589,9 +539,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="financing_ciaz";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
@@ -619,9 +567,7 @@
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
-
             lugar = '';
-
             section="test_drive";
             detectNavigatorMethods.IE10();
             //ga('send', 'pageview', '/agendar-prueba-de-manejo');
