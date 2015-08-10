@@ -14,7 +14,13 @@ $(document).ready(function() {
         var sv = $(document).scrollTop();
         //console.log(+sv);
     }*/
-    $(domEl.div_recurrent).delegate('click', '.catalog_cars_wrapper a.switch-catalog', addDelegatMethods.delegate);
+    //$(domEl.div_recurrent).delegate('click', '.catalog_cars_wrapper a.switch-catalog', addDelegatMethods.delegate);
+    $(domEl.div_recurrent).on('click', '#data-swift-sport', catalogMethods.preventDefault_data_swift_sport);
+    $(domEl.div_recurrent).on('click', '#data-swift', catalogMethods.preventDefault_data_swift);
+    $(domEl.div_recurrent).on('click', '#data-kizashi', catalogMethods.preventDefault_data_kizashi);
+    $(domEl.div_recurrent).on('click', '#data-s-cross', catalogMethods.preventDefault_data_s_cross);
+    $(domEl.div_recurrent).on('click', '#data-grand-vitara', catalogMethods.preventDefault_data_grand_vitara);
+    $(domEl.div_recurrent).on('click', '#data-ciaz', catalogMethods.preventDefault_data_ciaz);
     /* ------------------------------------------------------ *\
      [METHOS Control] Serialize Form
     \* ------------------------------------------------------ */

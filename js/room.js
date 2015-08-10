@@ -43,16 +43,6 @@
             //SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list);
             concessionairesMethods.get_concessionaries_list();
             SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
-
-            /*concessionairesMethods.concessionaire();
-            concessionairesMethods.open_concessionaire_by_key(bindings.key, bindings.change);
-            concessionairesMethods.set_concessionaire_by_url(bindings.url);
-            concessionairesMethods.getCircle(bindings.magnitude);
-            concessionairesMethods.get_map_data(bindings.data);
-            concessionairesMethods.initialize_map();
-            concessionairesMethods.initMap();
-            concessionairesMethods.adjust_map_width();
-            concessionairesMethods.resize();*/
             //init_geo_core();
         },
         unload: function(bindings) {
@@ -76,8 +66,8 @@
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_catalogs, domEl.div_recurrent);
-            catalogMethods.pageTransitionCatalog();
-            addDelegatMethods.transitions();
+            //catalogMethods.pageTransition();
+            catalogMethods.pageTransition();
             //init_geo_core();
         },
         unload: function(bindings) {

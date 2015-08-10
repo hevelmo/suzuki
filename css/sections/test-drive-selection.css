@@ -1,5 +1,25 @@
 .promotion-contact.swift-sport-bg {
-    background: url("../../img/sections/contact/financing-swift-sport-bg.jpg") center top no-repeat;
+    background: url("../../img/template/models/financing/swift-sport-1500x200.jpg") center top no-repeat;
+    padding: 95px 0 0;
+}
+.promotion-contact.swift-bg {
+    background: url("../../img/template/models/financing/swift-1500x200.jpg") center top no-repeat;
+    padding: 95px 0 0;
+}
+.promotion-contact.kizashi-bg {
+    background: url("../../img/template/models/financing/kizashi-1500x200.jpg") center top no-repeat;
+    padding: 95px 0 0;
+}
+.promotion-contact.grand-vitara-bg {
+    background: url("../../img/template/models/financing/grand-vitara-1500x200.jpg") center top no-repeat;
+    padding: 95px 0 0;
+}
+.promotion-contact.s-cross-bg {
+    background: url("../../img/template/models/financing/s-cross-1500x200.jpg") center top no-repeat;
+    padding: 95px 0 0;
+}
+.promotion-contact.ciaz-bg {
+    background: url("../../img/template/models/financing/ciaz-1500x200.jpg") center top no-repeat;
     padding: 95px 0 0;
 }
 .promotion-contact{
