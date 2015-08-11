@@ -103,8 +103,10 @@ tempsNames = {
 	"tmp_section_content_home":"tmp_section_content_home",
 	"tmp_section_content_legal_terms":"tmp_section_content_legal_terms",
 	"tmp_section_content_privacy_notice":"tmp_section_content_privacy_notice",
+	"tmp_section_content_reasons":"tmp_section_content_reasons",
 	"tmp_section_content_test_drive_general":"tmp_section_content_test_drive_general",
 	"tmp_section_content_test_drive_selection":"tmp_section_content_test_drive_selection",
+	"tmp_section_content_warranty":"tmp_section_content_warranty",
 	"tmp_section_test_drive_general":"tmp_section_test_drive_general",
 	"tmp_slider_home":"tmp_slider_home",
 	"tmp_social_bar":"tmp_social_bar",
@@ -112,7 +114,7 @@ tempsNames = {
 };
 urlsApi = {
 	"addConcesionaries":"api/v1/add/concesionarias",
-	"addGamaModelos":"api/v1/add/gama_modelos",
+	"addGamaModelos":"api/v1/add/modelos_gama",
 	"addModelos":"api/v1/add/modelos",
 	"sendContact":"api/v1/post/contacto",
 	"sendFinancingByModelCiaz":"api/v1/post/financiamiento/ciaz",

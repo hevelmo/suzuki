@@ -19,6 +19,8 @@
 
             //concessinairesTextMethods.getConcessionaireById('1');
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -34,7 +36,7 @@
             lugar = '';
             section="concesionaries";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/concesionarias');
+            ga('send', 'pageview', '/concesionarias');
             addStylesMethods.addStyleConcessionaries();
             is_mobileMethods.is_mobile();
         },
@@ -44,6 +46,7 @@
             concessionairesMethods.get_concessionaries_list();
             SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -51,24 +54,95 @@
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
-    Finch.route('/catalogos', {
+    Finch.route('/catalogos/:model', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
             lugar = '';
             section="catalog";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/catalogos');
+            ga('send', 'pageview', '/catalogos/:model');
             addStylesMethods.addStyleCatalogs();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             changeInputsMethods.clickChangeCheckbox();
             is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
+            var model_catalog;
+            model_catalog = bindings.model;
+            switch (model_catalog) {
+                case 'swift-sport':
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        //console.log('You are using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 112}, 800 , 'easeOutSine');
+                    } else {
+                        //console.log('You are not using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 0}, 800 , 'easeOutSine');
+                    }
+                    $('#data-swift-sport').on('click', catalogMethods.preventDefault_data_swift_sport);
+                    $('#footer-data-swift-sport').on('click', catalogMethods.footer_preventDefault_data_swift_sport);
+                break;
+                case 'swift':
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        //console.log('You are using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 255}, 800 , 'easeOutSine');
+                    } else {
+                        //console.log('You are not using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 655}, 800 , 'easeOutSine');
+                    }
+                    $('#data-swift').on('click', catalogMethods.preventDefault_data_swift);
+                    $('#footer-data-swift').on('click', catalogMethods.footer_preventDefault_data_swift);
+                break;
+                case 'kizashi':
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        //console.log('You are using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 398}, 800 , 'easeOutSine');
+                    } else {
+                        //console.log('You are not using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 1310}, 800 , 'easeOutSine');
+                    }
+                    $('#data-kizashi').on('click', catalogMethods.preventDefault_data_kizashi);
+                    $('#footer-data-kizashi').on('click', catalogMethods.footer_preventDefault_data_kizashi);
+                break;
+                case 's-cross':
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        //console.log('You are using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 541}, 800 , 'easeOutSine');
+                    } else {
+                        //console.log('You are not using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 1965}, 800 , 'easeOutSine');
+                    }
+                    $('#data-s-cross').on('click', catalogMethods.preventDefault_data_s_cross);
+                    $('#footer-data-s-cross').on('click', catalogMethods.footer_preventDefault_data_s_cross);
+                break;
+                case 'grand-vitara':
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        //console.log('You are using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 668}, 800 , 'easeOutSine');
+                    } else {
+                        //console.log('You are not using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 2620}, 800 , 'easeOutSine');
+                    }
+                    $('#data-grand-vitara').on('click', catalogMethods.preventDefault_data_grand_vitara);
+                    $('#footer-data-grand-vitara').on('click', catalogMethods.footer_preventDefault_data_grand_vitara);
+                break;
+                case 'ciaz':
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        //console.log('You are using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 812}, 800 , 'easeOutSine');
+                    } else {
+                        //console.log('You are not using a mobile device!');
+                        $('html,body').stop().animate({ scrollTop : 3275}, 800 , 'easeOutSine');
+                    }
+                    $('#data-ciaz').on('click', catalogMethods.preventDefault_data_ciaz);
+                    $('#footer-data-ciaz').on('click', catalogMethods.footer_preventDefault_data_ciaz);
+                break;
+            }
             SUK.loadTemplate(tempsNames.tmp_section_content_catalogs, domEl.div_recurrent);
             //catalogMethods.pageTransition();
             catalogMethods.pageTransition();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -84,7 +158,7 @@
             lugar = '';
             section="contact";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/contactanos');
+            ga('send', 'pageview', '/contactanos');
             addStylesMethods.addStyleContact();
             is_mobileMethods.is_mobile();
         },
@@ -92,6 +166,7 @@
             SUK.loadTemplate(tempsNames.tmp_section_content_contact_us, domEl.div_recurrent);
             formContactMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -105,13 +180,14 @@
             lugar = '';
             section="group";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/grupo');
+            ga('send', 'pageview', '/grupo');
             addStylesMethods.addStyleGroup();
             is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_group, domEl.div_recurrent);
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -125,13 +201,14 @@
             lugar = '';
             section="privacy";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/aviso-de-privacidad');
+            ga('send', 'pageview', '/aviso-de-privacidad');
             addStylesMethods.addStyleLegals();
             is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_privacy_notice, domEl.div_recurrent);
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -146,17 +223,77 @@
             lugar = '';
             section="legals";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/terminos-legales');
+            ga('send', 'pageview', '/terminos-legales');
             addStylesMethods.addStyleLegals();
             is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
             SUK.loadTemplate(tempsNames.tmp_section_content_legal_terms, domEl.div_recurrent);
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
             cleanStyleMethods.cleanAttrLegals();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/razones', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            lugar = '';
+            section="reasons";
+            detectNavigatorMethods.IE10();
+            ga('send', 'pageview', '/razones');
+            addStylesMethods.addStyleReasons();
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_reasons, domEl.div_recurrent);
+            reasonsMethods.reasons();
+            //init_geo_core();
+            catalogMethods.addAttrCatalog();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            cleanStyleMethods.cleanAttrReasons();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/garantia-suzuki/:warranty', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            lugar = '';
+            section="warranty";
+            detectNavigatorMethods.IE10();
+            ga('send', 'pageview', '/garantia-suzuki/:warranty');
+            addStylesMethods.addStyleWarranty();
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            var section_warranty;
+            section_warranty = bindings.warranty;
+            switch (section_warranty) {
+                case 'ordinaria':
+                    $('.main-buttons a').on('click', warrantyMethods.main_buttons);
+                    $('a.close-warranty-button').on('click', warrantyMethods.close_warranty_button);
+                break;
+                case 'extendida':
+                    $('.main-buttons a').on('click', warrantyMethods.main_buttons);
+                    $('a.close-warranty-button').on('click', warrantyMethods.close_warranty_button);
+                break;
+            }
+            SUK.loadTemplate(tempsNames.tmp_section_content_warranty, domEl.div_recurrent);
+            warrantyMethods.warranty();
+            warrantyMethods.auto_open();
+            //init_geo_core();
+            catalogMethods.addAttrCatalog();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            cleanStyleMethods.cleanAttrWarranty();
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
@@ -167,7 +304,7 @@
             lugar = 'modelos';
             section="swift-sport";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/swift-sport');
+            ga('send', 'pageview', '/swift-sport');
             addStylesMethods.addStyleModel_swift_sport();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
@@ -180,6 +317,7 @@
             SUK.loadTemplate(tempsNames.model_swift_sport, domEl.div_recurrent);
             formTestDriveMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -200,7 +338,7 @@
             lugar = 'modelos';
             section="swift";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/swift');
+            ga('send', 'pageview', '/swift');
             addStylesMethods.addStyleModel_swift();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
@@ -213,6 +351,7 @@
             SUK.loadTemplate(tempsNames.model_swift, domEl.div_recurrent);
             formTestDriveMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -233,7 +372,7 @@
             lugar = 'modelos';
             section="kizashi";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/kizashi');
+            ga('send', 'pageview', '/kizashi');
             addStylesMethods.addStyleModel_kizashi();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
@@ -246,6 +385,7 @@
             SUK.loadTemplate(tempsNames.model_kizashi, domEl.div_recurrent);
             formTestDriveMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -266,7 +406,7 @@
             lugar = 'modelos';
             section="grand-vitara";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/grand-vitara');
+            ga('send', 'pageview', '/grand-vitara');
             addStylesMethods.addStyleModel_grand_vitara();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
@@ -279,6 +419,7 @@
             SUK.loadTemplate(tempsNames.model_grand_vitara, domEl.div_recurrent);
             formTestDriveMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -299,7 +440,7 @@
             lugar = 'modelos';
             section="s-cross";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/s-cross');
+            ga('send', 'pageview', '/s-cross');
             addStylesMethods.addStyleModel_s_cross();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
@@ -312,6 +453,7 @@
             SUK.loadTemplate(tempsNames.model_s_cross, domEl.div_recurrent);
             formTestDriveMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -332,7 +474,7 @@
             lugar = 'modelos';
             section="ciaz";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/ciaz');
+            ga('send', 'pageview', '/ciaz');
             addStylesMethods.addStyleModel_ciaz();
             SUK.loadTemplate(tempsNames.tmp_social_bar, domEl.div_content_social_bar);
             is_mobileMethods.is_mobile();
@@ -345,6 +487,7 @@
             SUK.loadTemplate(tempsNames.model_ciaz, domEl.div_recurrent);
             formTestDriveMethods.refreshForm();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -365,7 +508,7 @@
             lugar = '';
             section="financing";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -377,6 +520,7 @@
             financingMethods.financing();
             formFinancingGeneral.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -392,7 +536,7 @@
             lugar = '';
             section="financing_swift_sport";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -405,6 +549,7 @@
             financingMethods.financing();
             formFinancingByModelSwiftSport.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -420,7 +565,7 @@
             lugar = '';
             section="financing_swift";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -433,6 +578,7 @@
             financingMethods.financing();
             formFinancingByModelSwift.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -448,7 +594,7 @@
             lugar = '';
             section="financing_kizashi";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -461,6 +607,7 @@
             financingMethods.financing();
             formFinancingByModelKizashi.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -476,7 +623,7 @@
             lugar = '';
             section="financing_grand_vitara";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -489,6 +636,7 @@
             financingMethods.financing();
             formFinancingByModelGrandVitara.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -504,7 +652,7 @@
             lugar = '';
             section="financing_scross";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -517,6 +665,7 @@
             financingMethods.financing();
             formFinancingByModelSCross.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -532,7 +681,7 @@
             lugar = '';
             section="financing_ciaz";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -545,6 +694,7 @@
             financingMethods.financing();
             formFinancingByModelCiaz.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -560,7 +710,7 @@
             lugar = '';
             section="test_drive";
             detectNavigatorMethods.IE10();
-            //ga('send', 'pageview', '/agendar-prueba-de-manejo');
+            ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
             SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
@@ -572,6 +722,7 @@
             testDriveGeneralMethods.testDrivegeneral();
             //testDriveGeneralMethods.refreshFrom();
             //init_geo_core();
+            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');

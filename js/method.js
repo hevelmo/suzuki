@@ -107,17 +107,17 @@
         try{
             value = parseInt( value, 10 );
             if( !value ){ value = 0; }
-            //ga('send', 'event', 'Prueba de Manejo', 'Confirmacion', title, value );
-            console.log("ga('send', 'event', 'Prueba de Manejo', 'Confirmacion: ', " + title, value + ")");
+            ga('send', 'event', 'Prueba de Manejo', 'Confirmacion', title, value );
+            //console.log("ga('send', 'event', 'Prueba de Manejo', 'Confirmacion: ', " + title, value + ")");
         }catch ( e ){
-            console.log('Ocurrió un error con el evento de GA');
+            //console.log('Ocurrió un error con el evento de GA');
         }
         //fb_pixel( '6016795700971', '0.01');
     }
     /*function insta_drive_gaq(){
         var precio_actual = showMeTheMoney( current_car );
         //ga('send', 'event', 'Instant Drive', 'Confirmacion', current_car, precio_actual * 0.071 );
-        console.log("ga('send', 'event', 'Instant Drive', 'Confirmacion', "+current_car, precio_actual * 0.071+")");
+        //console.log("ga('send', 'event', 'Instant Drive', 'Confirmacion', "+current_car, precio_actual * 0.071+")");
     }*/
 /* ------------------------------------------------------ *\
  [functions] validateEmail
@@ -441,7 +441,7 @@
                     concessionaire_sorted = true;
                     concessionaires_order_nearest( geo_ll.latitude, geo_ll.longitude );
                     $.open_concessionaire_by_key( concessionaires_data[0].key , true );
-                    console.log(concessionaires_data);
+                    //console.log(concessionaires_data);
                 }
             }
         }
@@ -614,6 +614,18 @@
         cleanAttrModel_ciaz : function () {
             $('head .link-ciaz').remove();
             $('head #meta-model').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrWarranty : function () {
+            $('head .link-warranty').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
+        cleanAttrReasons : function () {
+            $('head .link-reasons').remove();
             $('#patch').remove();
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
@@ -839,55 +851,339 @@
 
             $('body').prepend( patch_bar );
             $('body').prepend( td_id_flag );
+        },
+        addStyleWarranty : function () {
+            linkWarrantyAttributes = {'id': 'content-add-styles-warranty', 'rel': 'stylesheet', 'class': 'link-warranty', 'href': 'css/sections/warranty.css'}
+            SUK.appendOne('head', 'link', linkWarrantyAttributes, '', 0);
+            $('body').prepend( patch_bar );
+        },
+        addStyleReasons : function () {
+            linkReasonsAttributes = {'id': 'content-add-styles-reasons', 'rel': 'stylesheet', 'class': 'link-reasons', 'href': 'css/sections/10reasons.css'}
+            SUK.appendOne('head', 'link', linkReasonsAttributes, '', 0);
+            $('body').prepend( patch_bar );
         }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] razones
+\* ------------------------------------------------------ */
+    var reasonsMethods = {
+        reasons: function() {
+            closePanelMenuMethods.closePanelBeforeBuy();
+            preload([
+                'img/sections/10reasons/prev-hover.png',
+                'img/sections/10reasons/next-hover.png',
+            ]);
+            var num_slide = 0;
+            var prev = $("#reasons-prev");
+            var next = $("#reasons-next");
+            var num = $("#count");
+            var margin_top = 0;
+            var hash = parseInt(location.hash.split("-")[1] - 1);
+            var vel = 600;
+            var height_slide = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 290 : 580;
+
+            setTimeout(function() {
+                $("#reasons-slides").css("visibility", "visible");
+            }, 200);
+
+            function moveSlide (direction, isHash) {
+                if (isHash) {
+                    vel = 0;
+                    num_slide = hash;
+                } else {
+                    vel = 600;
+                    num_slide += direction;
+                }
+                num.text(num_slide + 1);
+                margin_top = num_slide * -height_slide;
+                $("#reasons-slides").stop().animate({
+                    marginTop: margin_top
+                }, vel);
+                if (num_slide > 0){
+                    prev.removeClass("reasons-disabled");
+                } else {
+                    prev.addClass("reasons-disabled");
+                }
+                if (num_slide != 9){
+                    next.removeClass("reasons-disabled");
+                } else {
+                    next.addClass("reasons-disabled");
+                }
+                //ga('send', 'pageview', '/razon-' + num_slide );
+            }
+
+            if (hash && hash > 0 && hash <= 9) {
+                moveSlide(0 ,true);
+            }
+
+            $("#reasons-navigation div img").hover(
+                function () {
+                    if ($(this).parent().hasClass("reasons-disabled"))
+                        return 0;
+                    if ($(this).parent().index() == 0)
+                        $(this).attr("src", "img/sections/10reasons/prev-hover.png");
+                    else
+                        $(this).attr("src", "img/sections/10reasons/next-hover.png");
+                },
+                function () {
+                    if ($(this).parent().index() == 0)
+                        $(this).attr("src", "img/sections/10reasons/prev.png");
+                    else
+                        $(this).attr("src", "img/sections/10reasons/next.png");
+            });
+
+            $('#reasons-navigation').delegate('div', 'click', function(){
+                if ($(this).hasClass("reasons-disabled"))
+                    return 0;
+                if ($(this).index() == 0)
+                    moveSlide(-1, false);
+                else
+                    moveSlide(1, false);
+            });
+        }
+    }
+    function preload(arrayOfImages) {
+        $(arrayOfImages).each(function(){
+            $('<img/>')[0].src = this;
+        });
+    }
+/* ------------------------------------------------------ *\
+ [Methods] garantia
+\* ------------------------------------------------------ */
+    var warrantyMethods = {
+        warranty: function(index) {
+            $('#go-warranty-ordinary').attr('href','#/garantia-suzuki/ordinaria');
+            $('#go-warranty-extended').attr('href','#/garantia-suzuki/extendida');
+            warrantyMethods.auto_open();
+            closePanelMenuMethods.closePanelOwners();
+        },
+        auto_open: function() {
+            var auto_open = ( window.location.hash ).split('#')
+            if( auto_open.length > 0 ){
+                if( auto_open[1] == 'extendida' ){
+                    $('.main-buttons a').eq(1).trigger('click');
+
+                }else  if( auto_open[1] == 'ordinaria' ){
+                    $('.main-buttons a').eq(0).trigger('click');
+                }
+            }
+        },
+        main_buttons: function(event) {
+            event.preventDefault();
+            var index = $(this).index();
+            if( previous_index != index ){
+                if( $('.hidden-content:visible').length ){
+                    $('.hidden-content:visible').slideUp(500, function(){
+                        appears( index );
+                    });
+                }else{
+                    appears( index );
+                }
+            }else{
+                $('a.close-warranty-button').trigger('click');
+            }
+        },
+        close_warranty_button: function(event) {
+            event.preventDefault();
+            $('.hidden-content:visible').slideUp(500);
+            previous_index = -1;
+            $.scroll_to( 'top' );
+        }
+    }
+    var previous_index = -1;
+    function appears( index ){
+        $('.hidden-content').addClass('hidden');
+        $('.hidden-content').eq( index ).removeClass('hidden').stop().hide().slideDown(500);
+        previous_index = index;
+        $.scroll_to( index == 1 ? 'ordinaria': 'extendida' );
     }
 /* ------------------------------------------------------ *\
  [Methods] catalog
 \* ------------------------------------------------------ */
     var catalogMethods = {
+        addAttrCatalog: function() {
+            // EVENTS FOOTER
+            $('ul.links_catalog li a#footer-data-swift').attr('href','#/catalogos/swift');
+            $('ul.links_catalog li a#footer-data-swift-sport').attr('href','#/catalogos/swift-sport');
+            $('ul.links_catalog li a#footer-data-kizashi').attr('href','#/catalogos/kizashi');
+            $('ul.links_catalog li a#footer-data-s-cross').attr('href','#/catalogos/s-cross');
+            $('ul.links_catalog li a#footer-data-grand-vitara').attr('href','#/catalogos/grand-vitara');
+            $('ul.links_catalog li a#footer-data-ciaz').attr('href','#/catalogos/ciaz');
+            //EVENT LIST CATALOG
+            $('div.catalog_car a#data-swift').attr('href','#/catalogos/swift');
+            $('div.catalog_car a#data-swift-sport').attr('href','#/catalogos/swift-sport');
+            $('div.catalog_car a#data-kizashi').attr('href','#/catalogos/kizashi');
+            $('div.catalog_car a#data-s-cross').attr('href','#/catalogos/s-cross');
+            $('div.catalog_car a#data-grand-vitara').attr('href','#/catalogos/grand-vitara');
+            $('div.catalog_car a#data-ciaz').attr('href','#/catalogos/ciaz');
+        },
         pageTransition : function () {
             $('.catalog_car').css('cursor','pointer');
+            catalogMethods.addAttrCatalog();
+        },
+        clickGo_catalogs: function(event) {
+            Finch.navigate('/catalogos');
         },
         preventDefault_data_swift_sport: function(event) {
-            event.preventDefault();
-            $('html,body').stop().animate({ scrollTop : 0}, 800 , 'easeOutSine');
+            //event.preventDefault();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 112}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 0}, 800 , 'easeOutSine');
+            }
             $('.catalog_car').removeClass('active');
             $(this).parent('.catalog_car').addClass('active');
             //console.log('click_catalog_swift_sport');
         },
         preventDefault_data_swift: function(event) {
-            event.preventDefault();
-            $('html,body').stop().animate({ scrollTop : 655}, 800 , 'easeOutSine');
+            //event.preventDefault();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 255}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 655}, 800 , 'easeOutSine');
+            }
             $('.catalog_car').removeClass('active');
             $(this).parent('.catalog_car').addClass('active');
             //console.log('click_catalog_swift');
         },
         preventDefault_data_kizashi: function(event) {
-            event.preventDefault();
-            $('html,body').stop().animate({ scrollTop : 1310}, 800 , 'easeOutSine');
+            //event.preventDefault();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 398}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 1310}, 800 , 'easeOutSine');
+            }
             $('.catalog_car').removeClass('active');
             $(this).parent('.catalog_car').addClass('active');
             //console.log('click_catalog_kizashi');
         },
         preventDefault_data_s_cross: function(event) {
-            event.preventDefault();
-            $('html,body').stop().animate({ scrollTop : 1965}, 800 , 'easeOutSine');
+            //event.preventDefault();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 541}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 1965}, 800 , 'easeOutSine');
+            }
             $('.catalog_car').removeClass('active');
             $(this).parent('.catalog_car').addClass('active');
             //console.log('click_catalog_s_cross');
         },
         preventDefault_data_grand_vitara: function(event) {
-            event.preventDefault();
-            $('html,body').stop().animate({ scrollTop : 2620}, 800 , 'easeOutSine');
+            //event.preventDefault();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 668}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 2620}, 800 , 'easeOutSine');
+            }
             $('.catalog_car').removeClass('active');
             $(this).parent('.catalog_car').addClass('active');
             //console.log('click_catalog_grand_vitara');
         },
         preventDefault_data_ciaz: function(event) {
-            event.preventDefault();
-            $('html,body').stop().animate({ scrollTop : 3275}, 800 , 'easeOutSine');
+            //event.preventDefault();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 812}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 3275}, 800 , 'easeOutSine');
+            }
             $('.catalog_car').removeClass('active');
             $(this).parent('.catalog_car').addClass('active');
+            //console.log('click_catalog_ciaz');
+        },
+        footer_preventDefault_data_swift_sport: function(event) {
+            //event.preventDefault();
+            catalogMethods.clickGo_catalogs();
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 112}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 0}, 800 , 'easeOutSine');
+            }
+            //console.log('click_catalog_swift_sport');
+        },
+        footer_preventDefault_data_swift: function(event) {
+            //event.preventDefault();
+            catalogMethods.clickGo_catalogs();
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 255}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 655}, 800 , 'easeOutSine');
+            }
+            //console.log('click_catalog_swift');
+        },
+        footer_preventDefault_data_kizashi: function(event) {
+            //event.preventDefault();
+            catalogMethods.clickGo_catalogs();
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 398}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 1310}, 800 , 'easeOutSine');
+            }
+            //console.log('click_catalog_kizashi');
+        },
+        footer_preventDefault_data_s_cross: function(event) {
+            //event.preventDefault();
+            catalogMethods.clickGo_catalogs();
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 541}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 1965}, 800 , 'easeOutSine');
+            }
+            //console.log('click_catalog_s_cross');
+        },
+        footer_preventDefault_data_grand_vitara: function(event) {
+            //event.preventDefault();
+            catalogMethods.clickGo_catalogs();
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 668}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 2620}, 800 , 'easeOutSine');
+            }
+            //console.log('click_catalog_grand_vitara');
+        },
+        footer_preventDefault_data_ciaz: function(event) {
+            //event.preventDefault();
+            catalogMethods.clickGo_catalogs();
+            $('.catalog_car').removeClass('active');
+            $(this).parent('.catalog_car').addClass('active');
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                //console.log('You are using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 812}, 800 , 'easeOutSine');
+            } else {
+                //console.log('You are not using a mobile device!');
+                $('html,body').stop().animate({ scrollTop : 3275}, 800 , 'easeOutSine');
+            }
             //console.log('click_catalog_ciaz');
         }
     }
@@ -1091,7 +1387,7 @@
                     'display':'block',
                     'opacity':'1'
                 });
-                sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos)
+                sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos);
                 SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu, sukModelData);
             } else {
                 $('#header-spacer').css('height','0px');
@@ -1118,6 +1414,7 @@
                 });
                 SUK.setHTML(domEl.div_recurrent_panel_menu, '');
             }*/
+            closePanelMenuMethods.closePanelFinancing();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/financiamiento');
         },
@@ -1836,8 +2133,8 @@
             dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] = (dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] == 'on')
                 ? dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter'] : 'off';
 
-            console.log(dataFormTestDriveModel);
-            console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
+            //console.log(dataFormTestDriveModel);
+            //console.log(dataFormTestDriveModel['suk_gdl_test_drive_model_newsletter']);
 
             return SUK.postalService(urlsApi.sendTestDriveModel, dataFormTestDriveModel);
         },
@@ -1858,20 +2155,20 @@
             /*isEmpty = SUK.validFormEmpty(dataFormTestDriveModel, validFieldItems);
             $('#suk_test_dirve_model_submit').attr('disabled', isEmpty);*/
 
-            console.log($('#test_drive').serializeFormJSON());
+            //console.log($('#test_drive').serializeFormJSON());
         },
         refreshForm: function() {
             SUK.loadTemplate(tempsNames.tmp_test_drive_model, domEl.div_recurrent_test_drive_section);
             formTestDriveMethods.init_datepicker();
             modelsMenuMethods.changeNameModel();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            console.log('entra form-contact');
+            //console.log('entra form-contact');
         },
         resetForm: function() {
             SUK.resetForm('#test_drive');
             formTestDriveMethods.init_datepicker();
             $('#suk_test_dirve_model_submit').attr('disabled', true);
-            console.log('entra form-contact');
+            //console.log('entra form-contact');
         },
         reset_pre_loader: function() {
             SUK.setHTML('.form-loader', '');
@@ -1901,11 +2198,11 @@
             if (val_news === 'on') {
                 val_subscription = 'Activado';
                 SUK.setValue('#test_drive_model_subscription', val_subscription);
-                console.log(val_subscription);
+                //console.log(val_subscription);
             } else {
                 val_subscription = 'Desactivado';
                 SUK.setValue('#test_drive_model_subscription', val_subscription);
-                console.log(val_subscription);
+                //console.log(val_subscription);
             }
             var form_errors = 0;
             if( validateMethods.validate_input( $test_drive_model_date ) ){
@@ -1956,11 +2253,11 @@
                         var testDriveModelPromise = formTestDriveMethods.addDataFormTestDrive();
 
                         testDriveModelPromise.success(function (data) {
-                            console.log('Datos Enviados');
+                            //console.log('Datos Enviados');
                         });
                         testDriveModelPromise.error(function (data) {
                             formTestDriveMethods.resetForm();
-                            console.log('Datos No Enviados');
+                            //console.log('Datos No Enviados');
                         });
                     }, 1000);
                     setTimeout(function () {
@@ -1970,9 +2267,9 @@
                     }, 3000);
                 });
 
-                console.log(data);
-                console.log(moneyFormat(precio_actual));
-                console.log(cd);
+                //console.log(data);
+                //console.log(moneyFormat(precio_actual));
+                //console.log(cd);
 
             }
         }
@@ -2118,7 +2415,7 @@
                     var news_val    = con_news ? 600 : 0;
                     var car_val     = departamento === 'ventas' ? precio_actual * 0.03 : 0;
                     //console.log(departamento, precio_actual, news_srt, news_val, car_val);
-                    //ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
+                    ga('send', 'event', 'Contacto', news_srt, departamento, news_val + car_val );
                     setTimeout(function() {
                         //setTimeout(function () {
                             //$('#form-wrapper').fadeIn( 300 , function(){
@@ -2338,10 +2635,10 @@
 
                 if ($('input[name="suk_gdl_financing_general_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -2500,10 +2797,10 @@
 
                 if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -2657,10 +2954,10 @@
 
                 if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -2814,10 +3111,10 @@
 
                 if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -2971,10 +3268,10 @@
 
                 if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -3128,10 +3425,10 @@
 
                 if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -3285,10 +3582,10 @@
 
                 if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                     $('#funding_resume_concessionaire').text( selected_concessionaire );
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 } else {
-                    //ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                    ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
                     //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                 }
                 $('#funding_form').fadeOut( 300 , function(){
@@ -3520,7 +3817,7 @@
                 options = {};
             }
             tdh_data = $.extend( {}, default_data, options );
-            console.log('entra prueba de manejo general');
+            //console.log('entra prueba de manejo general');
             //Adds concessionaires items
             function td_show_concessionaires( elements ){
                 var i0 = 0, i1 = elements.length;
@@ -3531,7 +3828,7 @@
                         i0++;
                     }
                     //html = '<ul>' + html + '</ul>';
-                    console.log('td_show_concessionaires');
+                    //console.log('td_show_concessionaires');
 
                 }else{
                     //html = concessionaires_no_found;
@@ -3651,7 +3948,7 @@
 
             $('#concessionaires_list').delegate('.td-concessionaire-button','click',function( e ){
                 e.preventDefault();
-                //ga('send', 'event', 'Prueba de Manejo', 'Paso_3', 'Header_Fecha_Datos' );
+                ga('send', 'event', 'Prueba de Manejo', 'Paso_3', 'Header_Fecha_Datos' );
                 td_select_concessionaire( $(this).data('id') );
                 goto_step( 3 );
             });
@@ -3732,7 +4029,7 @@
                 }
                 td_show_concessionaires( elements );
             });
-            console.log('entra test drive general');
+            //console.log('entra test drive general');
         }
     }
 /* ------------------------------------------------------ *\
@@ -3748,13 +4045,13 @@
             $panelTabsNav   = $('li.step-nav-tabs.funding');
             $panelTabs      = $('.step-nav-tab.funding');
             $panelTabsNav.children('a').on('click', financingMethods.preventDefault_panelTabsNav);
-            /*console.log(car_d);
-            console.log(funding_data);
-            console.log(conce_d);
-            console.log(default_data);
-            console.log(fuh_data);
-            console.log($panelTabsNav);
-            console.log($panelTabs);*/
+            /*//console.log(car_d);
+            //console.log(funding_data);
+            //console.log(conce_d);
+            //console.log(default_data);
+            //console.log(fuh_data);
+            //console.log($panelTabsNav);
+            //console.log($panelTabs);*/
             $("#car_engagement_slider").slider({
                 change  : function( event, ui ) {
                     funding_data.engagement = ui.value;
@@ -4099,15 +4396,15 @@
             concessionairesMethods.initMap();
             concessionairesMethods.preventDefault_see_concessionaires();
 
-            console.log(concessionairesData);
+            //console.log(concessionairesData);
             return concessionairesData;
         },
         get_map_data: function( sukpa ){
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
             concessionaires = concessionairesData.sukpa;
-            console.log('5: concessionaires');
-            console.log(concessionaires);
+            //console.log('5: concessionaires');
+            //console.log(concessionaires);
             //setup all markers
             var i1;
             var icon_latLon, conce, conce_select_html,
@@ -4140,14 +4437,14 @@
 
             for( i1 in concessionaires ){
                 conce =  concessionaires[i1];
-                console.log('6: conce');
-                console.log(conce);
+                //console.log('6: conce');
+                //console.log(conce);
                 conce_select_html += '<option value="' + conce.key + '">' + conce.name + '</option>';
-                console.log('7: conce_select_html');
-                console.log(conce_select_html);
+                //console.log('7: conce_select_html');
+                //console.log(conce_select_html);
                 icon_latLon = new google.maps.LatLng( conce.latitud , conce.longitud );
-                console.log('8: icon_latLon');
-                console.log(icon_latLon);
+                //console.log('8: icon_latLon');
+                //console.log(icon_latLon);
 
 
                 var marker = new google.maps.Marker({
@@ -4164,11 +4461,11 @@
                             title_box.close();
                         }
                         var html= '<div class="map-concessionaire-name"><span>' + this.custom_data.name +'</span></div>';
-                        console.log('10: click -> this.custom_data.name');
-                        console.log(this.custom_data.name);
+                        //console.log('10: click -> this.custom_data.name');
+                        //console.log(this.custom_data.name);
                         icon_options.content = html;
-                        console.log('11: click -> html');
-                        console.log(html);
+                        //console.log('11: click -> html');
+                        //console.log(html);
                         title_box  = new InfoBox( icon_options );
                         title_box.open( map, this );
                     },
@@ -4176,7 +4473,7 @@
                 });
                 google.maps.event.addListener( marker, 'click', function() {
                     $.open_concessionaire_by_key( this.custom_data.key , true );
-                    console.log('click');
+                    //console.log('click');
                 });
                 map_markers.push( marker );
             }
@@ -4263,14 +4560,14 @@
             }else{
                 $.open_concessionaire_by_key( $(this).attr('data-key'), true );
             }
-            console.log('click dinamic list');
+            //console.log('click dinamic list');
         },
         preventDefault_concessionaires_close : function(event) {
             event.preventDefault();
             $("#concessionaires-data").removeClass('active');
             concessionaire_open = false;
             $.adjust_map_width();
-            console.log('click close');
+            //console.log('click close');
         }
     }
 /* ------------------------------------------------------ *\
@@ -4280,61 +4577,61 @@
         if( current_concessionaire == key && concessionaire_open && ! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
             return;
         }
-        console.log('1: current_concessionaire');
-        console.log(current_concessionaire);
-        console.log('2: concessionaire_open');
-        console.log(concessionaire_open);
+        //console.log('1: current_concessionaire');
+        //console.log(current_concessionaire);
+        //console.log('2: concessionaire_open');
+        //console.log(concessionaire_open);
         $('html, body').animate({scrollTop: '0px'}, 400);
         current_concessionaire = key;
         var cc = null, ic = concessionaires, cm;
         //var cc = null, ic = concessionaires.length, cm;
-        console.log(ic);
+        //console.log(ic);
         while( ic-- ){
             if( concessionaires[ic].key == current_concessionaire ){
                 cc = concessionaires[ic];
                 current_concessionaire_id = cc.id;
-                console.log('3: click -> cc');
-                console.log(cc);
+                //console.log('3: click -> cc');
+                //console.log(cc);
                 break;
             }
         }
         if( cc == null ){
             $("#concessionaires-data").removeClass('active');
-            console.log('remove class: ' + cc);
+            //console.log('remove class: ' + cc);
             return;
         }
         ic = map_markers.length;
-        console.log(ic);
-        console.log(map_markers);
-        console.log(map_markers.length);
+        //console.log(ic);
+        //console.log(map_markers);
+        //console.log(map_markers.length);
         while( ic-- ){
             cm = map_markers[ ic ];
-            console.log(map_markers[ ic ]);
+            //console.log(map_markers[ ic ]);
             if( cm.custom_data.key ==  current_concessionaire  ){
-                console.log(ic);
+                //console.log(ic);
                 cm.select_me();
-                console.log(cm.reset_me());
-                console.log('while if');
-                console.log(cm);
-                console.log(cm.custom_data);
-                console.log(cm.custom_data.key);
-                console.log(current_concessionaire);
+                //console.log(cm.reset_me());
+                //console.log('while if');
+                //console.log(cm);
+                //console.log(cm.custom_data);
+                //console.log(cm.custom_data.key);
+                //console.log(current_concessionaire);
             }else{
-                console.log(ic);
+                //console.log(ic);
                 cm.reset_me();
-                console.log(cm.reset_me());
-                console.log('while else');
-                console.log(cm);
-                console.log(cm.custom_data);
-                console.log(cm.custom_data.key);
-                console.log(current_concessionaire);
+                //console.log(cm.reset_me());
+                //console.log('while else');
+                //console.log(cm);
+                //console.log(cm.custom_data);
+                //console.log(cm.custom_data.key);
+                //console.log(current_concessionaire);
             }
         }
         if( change ){
             try{
                 window.history.pushState( null , cc.name, "/concesionarias/suzuki-" + key);
             }catch( e ){ }
-            console.log(change);
+            //console.log(change);
         }
         $("#concessionaires-data").addClass('active');
         concessionaire_open = true;
@@ -4356,13 +4653,13 @@
             }
         });
         $('#concessionaire-title').text( cc.name );
-        console.log(cc.name);
+        //console.log(cc.name);
         $('#concessionaire-address').text( cc.address );
-        console.log(cc.address);
+        //console.log(cc.address);
         $('#concessionaire-zip').text( cc.zip );
-        console.log(cc.zip);
+        //console.log(cc.zip);
         $('#concessionaire-phone').text( cc.phone );
-        console.log(cc.phone);
+        //console.log(cc.phone);
         $('#concessionaire-phone').attr({href:'call:' +  cc.phone} );
         if( cc.website != '' ){
             $('#concessionaire-website-wrapper').show();
@@ -4390,13 +4687,13 @@
     $.set_concessionaire_by_url = function( url ){
         var d = url;
         //var d = url.split('/suzuki-');
-        console.log(url);
+        //console.log(url);
         if( d < 0 ){
         //if( d.length > 1 ){
             $.open_concessionaire_by_key( d[1], false );
-            console.log('4: d');
-            console.log(d);
-            console.log(url);
+            //console.log('4: d');
+            //console.log(d);
+            //console.log(url);
         }
     }
 /* ------------------------------------------------------ *\
@@ -4419,10 +4716,10 @@
         var c_preselected, map_latLon, map_center;
         try{
             c_preselected = parseInt( $("#map_canvas").attr("data-concessionaire-preselected-id") );
-            console.log(c_preselected);
+            //console.log(c_preselected);
             if( isNaN(c_preselected) ){
                 c_preselected = 16;
-                console.log(c_preselected);
+                //console.log(c_preselected);
             }
         }catch( e ){
             c_preselected = 0;
@@ -4430,7 +4727,7 @@
         if( c_preselected > 0 ){
             concessionaire_preselected = c_preselected;
             map_latLon = ( $("#map_canvas").attr("data-lat-lon") ).split(',');
-            console.log(map_latLon);
+            //console.log(map_latLon);
             map_center = new google.maps.LatLng( map_latLon[0] , map_latLon[1] );
         }else{
             map_center = new google.maps.LatLng( 20.6244, -103.421 );

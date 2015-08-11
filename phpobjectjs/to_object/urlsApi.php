@@ -34,7 +34,7 @@ function urlsApi() {
 
         'addConcesionaries' => $root . '/add/concesionarias',
         'addModelos' => $root . '/add/modelos',
-        'addGamaModelos' => $root . '/add/gama_modelos',
+        'addGamaModelos' => $root . '/add/modelos_gama',
 
         'sendContact' => $root . '/post/contacto',
         'sendTestDriveModel' => $root . '/post/model/test-drive',
