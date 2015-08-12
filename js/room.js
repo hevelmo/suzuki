@@ -297,6 +297,30 @@
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
+    Finch.route('/modelos', {
+        setup: function(bindings) {
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            lugar = '';
+            section="models";
+            detectNavigatorMethods.IE10();
+            ga('send', 'pageview', '/modelos');
+            addStylesMethods.addStyleModels();
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            SUK.loadTemplate(tempsNames.tmp_section_content_models_selection, domEl.div_recurrent);
+            sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos);
+            SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.models_section_recurrent, sukModelData);
+            //console.log(sukModelData);
+            //init_geo_core();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            cleanStyleMethods.cleanAttrModels();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
     Finch.route('/swift-sport', {
         setup: function(bindings) {
             // Add favicon
@@ -329,7 +353,8 @@
             $('#header-zone').removeAttr( "style" );
             $('#regular-header').removeAttr( "style" );
             $('#logo-wrapper').removeAttr( "style" );
-            lugar = '';        }
+            lugar = '';
+        }
     });
     Finch.route('/swift', {
         setup: function(bindings) {

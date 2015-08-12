@@ -562,6 +562,12 @@
             $('#model-section-arrow').remove();
             $('#model-test-drive-flag').remove();
         },
+        cleanAttrModels : function () {
+            $('head .link-models').remove();
+            $('#patch').remove();
+            $('#model-section-arrow').remove();
+            $('#model-test-drive-flag').remove();
+        },
         cleanAttrModel_swift_sport : function () {
             $('head .link-swift-sport').remove();
             $('head #meta-model').remove();
@@ -674,6 +680,11 @@
         addStyleLegals : function () {
             linkLegalsAttributes = {'id': 'content-add-styles-legals', 'rel': 'stylesheet', 'class': 'link-Legals', 'href': 'css/sections/legals.css'}
             SUK.appendOne('head', 'link', linkLegalsAttributes, '', 0);
+            $('body').prepend( patch_bar );
+        },
+        addStyleModels : function () {
+            linkModelsAttributes = {'id': 'content-add-styles-models_gama', 'rel': 'stylesheet', 'class': 'link-models_gama', 'href': 'css/sections/models_gama.css'}
+            SUK.appendOne('head', 'link', linkModelsAttributes, '', 0);
             $('body').prepend( patch_bar );
         },
         addStyleModel_swift_sport : function () {
@@ -1380,7 +1391,7 @@
             }
         },
         clickModelsPanel : function (event) {
-            if ($(this).hasClass('active')) {
+            /*if ($(this).hasClass('active')) {
                 var sukModelData;
                 $('#header-spacer').css('height','325px');
                 $('.header_section').css({
@@ -1396,7 +1407,10 @@
                     'opacity':'0'
                 });
                 SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-            }
+            }*/
+            closePanelMenuMethods.closePanelFinancing();
+            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            Finch.navigate('/modelos');
         },
         clickFinnacingPanel : function (event) {
             /*if ($(this).hasClass('active')) {

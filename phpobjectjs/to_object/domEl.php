@@ -33,6 +33,7 @@ function domEl() {
         'button_close_owners_panel_menu' => 'a#close-owners-panel',
         'button_close_before_buy_panel_menu' => 'a#close-before-buy-panel',
         // MODELS HEADER
+        'models_section_recurrent' => '#content-sections-models',
         'models_header_recurrent' => '#content-models-header',
         'div_recurrent_full_size_section_model' => '#full-size-section-model',
         'div_recurrent_features_section_model' => '#features-section-model',

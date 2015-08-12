@@ -148,7 +148,7 @@ $(document).ready(function() {
     $('#footer-wrapper').on('click', domEl.header_models_button, openPanelMenuMethods.clickPanel_general);
     // EVENT CLICK GO MODEL
     $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
-    $('#footer-wrapper').on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
+    $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
     // EVENT CLICK GO BY MODEL
     $(domEl.div_recurrent_body).on('click', '#go-model-swift-sport', panelMenuModelsByModel.clickGoSwiftSport);
     $(domEl.div_recurrent_body).on('click', '#go-model-swift', panelMenuModelsByModel.clickGoSwift);
