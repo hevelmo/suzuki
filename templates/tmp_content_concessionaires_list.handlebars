@@ -2,12 +2,12 @@
     {{#if state}}
     <li class="separator">{{state}}</li>
     {{/if}}
-    <li class="concessionaire" data-key="{{key_name}}" id="{{id}}">
+    <li class="concessionaire" data-key="{{key}}" data-id="{{id}}" id="suzuki_selected_concessionaire">
         <div class="image">
             <img src="img/sections/concessionaires/previews/{{img_small}}" title="{{name}}" />
         </div>
         <div class="address">
-            <h3><a id="go-section-concessionarie-{{key_name}}">{{name}}</a></h3>
+            <h3><a id="go-section-concessionarie-{{key}}">{{name}}</a></h3>
             <address>
                 <span class="address">{{address}}</span><br>
                 <span class="phone">{{phone}}</span>

@@ -458,6 +458,139 @@
         return null;
     }
 /* ------------------------------------------------------ *\
+ [functions] init_geo_core
+\* ------------------------------------------------------ */
+    //Saves geo data preferences in local storage
+    function init_geo_core(){
+        var today = new Date(),
+            geo_timeout,
+            now_time = today.getTime(),
+            geo_data = amplify.store( "geodata" );
+        if( !geo_data ){
+            geo_data = { time: 0, ll: null };
+            amplify.store( "geo_data" , geo_data );
+        }
+
+        try{
+
+            // Creating an instance of the geolocation utility.
+            var gl = new util.geolocator();
+            // Callback. Fires to ask permissions
+            gl.onHasGeolocationAPI = function() {
+
+                geo_timeout = setTimeout( function(){
+                    clearTimeout( geo_timeout );
+                    $('body').prepend( geo_alert );
+                    var geo_listener = function(){
+                        var top = get_scroll_top();
+                        if( top > 0 ){
+                            $('#geolocation-fixed').removeClass('active');
+                        }else{
+                            $('#geolocation-fixed').addClass('disabled');
+                        }
+                    }
+                    $('#geolocalization-button').on('click', function( e ){
+                        e.preventDefault();
+                        $('#geolocation-fixed').removeClass('disable');
+                        var tomorrow = new Date();
+                        tomorrow.setDate(today.getDate()+1);
+                        var tomorrow_time = new Date( tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 0, 0, 0, 0).getTime();
+                        geo_data.time = tomorrow_time;
+                        amplify.store( "geo_data" , geo_data );
+                        $(window).off( 'scroll', geo_listener );
+                    });
+                    $(window).scroll( geo_listener );
+                    $(window).trigger('scroll');
+                }, 5000 );
+            };
+
+            // Callback. Fires if the user has *not* a geolocation API.
+            gl.onHasNotGeolocationAPI = function() {
+                clearTimeout( geo_timeout );
+                if( $('#geolocation-fixed').length ){
+                    $('#geolocation-fixed').remove();
+                }
+                //Poner código de Analytics para Decir que no existe Geolocalización.
+            };
+            // Callback. Fires if the geolocation API was not successful
+            gl.onFailedToLocate = function() {
+                clearTimeout( geo_timeout );
+                clearTimeout( geo_timeout );
+                if( $('#geolocation-fixed').length ){
+                    $('#geolocation-fixed').remove();
+                }
+                //Poner código de Analytics para Decir que no aceptó Geolocalización.
+            };
+            // Callback. Fires if the geolocation API succeeded.
+            gl.onSuccess = function( response ) {
+                clearTimeout( geo_timeout );
+                if( $('#geolocation-fixed').length ){
+                    $('#geolocation-fixed').remove();
+                }
+                HAS_GEOLOCATION = true;
+                geo_ll = {
+                    latitude    : response.coords.latitude,
+                    longitude   : response.coords.longitude
+                }
+                if( geo_select_concessionaire_callback ){
+                    geo_select_concessionaire_callback();
+                }
+
+
+
+                function check_td( res ) {
+                    if (typeof res.data != 'undefined') {
+                        // Walking over each concessionaire.
+                        var con, con_pol, inside, ii = res.data.length;
+                        while ( ii-- ) {
+                            con = res.data[ii];
+                            // This is the enclosed.
+                            con_pol = area.getPolygon( con.geometry );
+                            inside  = area.isInsideArea( ll, con_pol );
+                            if ( inside ) {
+                                HAS_INSTANTDRIVE = true;
+                            }
+                        };
+                        //We are always inside Instant Drive Area for testing
+                        //HAS_INSTANTDRIVE = true;
+                        if( HAS_INSTANTDRIVE ){
+                            if( get_car_by_url() != null ){
+                                $('#model-test-drive-flag').css({backgroundImage:'url("/images/template/models/test-drive.png")'});
+                                var $ids = $('#instant-drive-section'),
+                                    $tds =  $('#text-drive-section');
+                                $('#test-drive-open').on('click', function( e ){
+                                    e.preventDefault();
+                                    $ids.hide();
+                                    $tds.hide().fadeIn();
+                                    $.scroll_to('prueba-de-manejo')
+                                });
+                                $ids.show();
+                                $tds.hide();
+                            }
+                        }
+                    };
+                };
+                var area = new util.area(),
+                    COMPANY_ID = '5176797fb3035b047f000001',
+                    api = new util.api(),
+                    ll = new google.maps.LatLng( geo_ll.latitude, geo_ll.longitude );
+                api.concessionaireList(COMPANY_ID, check_td);
+            };
+            var is_in_id =  (window.location.pathname.split('/'))[0] == 'instantdrive';
+            if( !is_in_id ){
+                if( instant_drive_available_time() ){
+                    if( now_time > geo_data.time ){
+                        // Fine, now that we defined all our callbacks we may proceed with geolocation.
+                        gl.locate();
+                    }
+                }
+            }
+
+        }catch( error ){
+            console.warn('  No hay Instant Drive =(')
+        }
+    }
+/* ------------------------------------------------------ *\
  [functions] 'Zone'
  var Method = {
  function_name : function(event) {}
@@ -4397,23 +4530,37 @@
  [Methods] concessionairesMethods
 \* ------------------------------------------------------ */
     var concessionairesMethods = {
-        get_concessionaries_list: function() {
+        get_concessionaries_list: function(url) {
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
             SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list, concessionairesData);
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, '#content-concessionaires-list-hidden-nomobil', concessionairesData);
+
+            $('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
+            $('#concessionaires-dynamic-list li.concessionaire').each( function( ii ){
+                if( $(this).attr('data-key') == current_concessionaire ){
+                    $(this).addClass('active');
+                    var st = $('.concessionaire-list').scrollTop();
+                    var gt = $(this).offset().top - 291 + st;
+                    $('.concessionaire-list').stop().delay( 100 ).animate( { scrollTop: gt }, 600 );
+                    //console.log($(this));
+                    return false;
+                }
+            });
+            $("#concessionaires-data").addClass('active');
 
             $.open_concessionaire_by_key();
-            $.set_concessionaire_by_url();
+            $.set_concessionaire_by_url(url);
             $.adjust_map_width();
             concessionairesMethods.resize();
-            initialize_map();
-            concessionairesMethods.initMap();
+            initialize_map(url);
+            concessionairesMethods.initMap(url);
             concessionairesMethods.preventDefault_see_concessionaires();
 
             //console.log(concessionairesData);
             return concessionairesData;
         },
-        get_map_data: function( sukpa ){
+        get_map_data: function( sukpa, url ){
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
             concessionaires = concessionairesData.sukpa;
@@ -4448,7 +4595,6 @@
             };
             conce_select_html = '';
 
-
             for( i1 in concessionaires ){
                 conce =  concessionaires[i1];
                 //console.log('6: conce');
@@ -4459,7 +4605,6 @@
                 icon_latLon = new google.maps.LatLng( conce.latitud , conce.longitud );
                 //console.log('8: icon_latLon');
                 //console.log(icon_latLon);
-
 
                 var marker = new google.maps.Marker({
                     custom_data : conce,
@@ -4487,7 +4632,8 @@
                 });
                 google.maps.event.addListener( marker, 'click', function() {
                     $.open_concessionaire_by_key( this.custom_data.key , true );
-                    //console.log('click');
+                    //console.log('click pin map');
+                    console.log(this.custom_data.key);
                 });
                 map_markers.push( marker );
             }
@@ -4497,20 +4643,22 @@
             $("#concessionaire-select").on('change', function( e ){
                 var val = $(this).val();
                 $.open_concessionaire_by_key( val, true );
+                //console.log(val);
             });
-            $.set_concessionaire_by_url( window.location.pathname, false );
+            $.set_concessionaire_by_url( '', false );
+            //console.log(window.location.pathname);
             // CLICK DINAMIC LIST
-            $(domEl.div_recurrent).on('click', '#concessionaires-dynamic-list li.concessionaire, #concessionaires-dynamic-list a', concessionairesMethods.preventDefault_dinamic_list);
+            //$(domEl.div_recurrent).on('click', '#concessionaires-dynamic-list li.concessionaire, #concessionaires-dynamic-list a', concessionairesMethods.preventDefault_dinamic_list);
             try{
                 window.addEventListener('popstate', function( e ) {
-                    $.set_concessionaire_by_url( window.location.pathname  );
+                    $.set_concessionaire_by_url( url );
                 });
             }catch( e ){ }
-            // CLICK CLOS CONCESSIONAIRES
-            $(domEl.div_recurrent).on('click', 'a.concessionaire-close', concessionairesMethods.preventDefault_concessionaires_close);
+            // CLICK CLOSE CONCESSIONAIRES
+            //$(domEl.div_recurrent).on('click', 'a.concessionaire-close', concessionairesMethods.preventDefault_concessionaires_close);
         },
-        initMap: function() {
-            google.maps.event.addDomListener( window, "load", initialize_map);
+        initMap: function(url) {
+            google.maps.event.addDomListener( window, "load", initialize_map(url));
         },
         resize: function() {
             $(window).resize(function() {
@@ -4563,32 +4711,45 @@
                     $(".concessionaire-search").hide();
                     $("#concessionaires-list, .concessionaire-list").fadeIn();
                     $(".concessionaire").removeClass("active");
-                    initialize_map();
+                    //initialize_map(url);
                 });
             }
         },
         preventDefault_dinamic_list : function(event) {
             event.preventDefault();
+            var agencia = $(this).data('key');
+            var id_agencia = $(this).data('id');
             if( $(this).is('a') ){
-                $.set_concessionaire_by_url( $(this).attr('href') );
+                /*$.set_concessionaire_by_url( $(this).attr('href') );
+                console.log('if');*/
+                //console.log('if click a');
             }else{
                 $.open_concessionaire_by_key( $(this).attr('data-key'), true );
+                //console.log('else click data');
+                //console.log($(this));
             }
+            $("#concessionaires-data").addClass('active');
+
+            SUK.setValue('#hidden_id_concessionaire', id_agencia);
+            Finch.navigate('/concesionarias/suzuki-' + agencia );
             //console.log('click dinamic list');
+            $.adjust_map_width();
+            console.log(agencia);
         },
         preventDefault_concessionaires_close : function(event) {
             event.preventDefault();
             $("#concessionaires-data").removeClass('active');
             concessionaire_open = false;
             $.adjust_map_width();
-            //console.log('click close');
+            console.log('click close');
+            console.log(concessionaire_open);
         }
     }
 /* ------------------------------------------------------ *\
  [functions] $.open_concessionaire_by_key
 \* ------------------------------------------------------ */
     $.open_concessionaire_by_key = function( key , change ){
-        if( current_concessionaire == key && concessionaire_open && ! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+        if( current_concessionaire == key && concessionaire_open && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
             return;
         }
         //console.log('1: current_concessionaire');
@@ -4597,6 +4758,7 @@
         //console.log(concessionaire_open);
         $('html, body').animate({scrollTop: '0px'}, 400);
         current_concessionaire = key;
+        //console.log(current_concessionaire);
         var cc = null, ic = concessionaires, cm;
         //var cc = null, ic = concessionaires.length, cm;
         //console.log(ic);
@@ -4656,6 +4818,7 @@
             cc.lon
         );
         map.setCenter( nw );
+
         $('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
         $('#concessionaires-dynamic-list li.concessionaire').each( function( ii ){
             if( $(this).attr('data-key') == current_concessionaire ){
@@ -4663,31 +4826,35 @@
                 var st = $('.concessionaire-list').scrollTop();
                 var gt = $(this).offset().top - 291 + st;
                 $('.concessionaire-list').stop().delay( 100 ).animate( { scrollTop: gt }, 600 );
+                //console.log($(this));
                 return false;
             }
         });
         $('#concessionaire-title').text( cc.name );
-        //console.log(cc.name);
+        console.log(cc.name);
         $('#concessionaire-address').text( cc.address );
-        //console.log(cc.address);
+        console.log(cc.address);
         $('#concessionaire-zip').text( cc.zip );
-        //console.log(cc.zip);
+        console.log(cc.zip);
         $('#concessionaire-phone').text( cc.phone );
-        //console.log(cc.phone);
+        console.log(cc.phone);
         $('#concessionaire-phone').attr({href:'call:' +  cc.phone} );
         if( cc.website != '' ){
             $('#concessionaire-website-wrapper').show();
             //$('#concessionaire-website').text( cc.website );
             $('#concessionaire-website').attr({href:  cc.website } );
-        }/*else{
+            console.log(cc.website);
+        }else{
             $('#concessionaire-website-wrapper').hide();
-        }*/
+            console.log(cc.website);
+        }
+
         $('#concessionaire-image').attr({
             alt     : cc.name,
             src     : '../images/sections/concessionaires/previews/' + cc.key + '-big.jpg',
             title   : cc.name
         });
-        if (IS_MOBILE) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             $("#concessionaires-list").hide();
             $("#concessionaires-data").css({
                 //height: 'auto',
@@ -4699,15 +4866,18 @@
  [functions] $.set_concessionaire_by_url
 \* ------------------------------------------------------ */
     $.set_concessionaire_by_url = function( url ){
-        var d = url;
-        //var d = url.split('/suzuki-');
-        //console.log(url);
-        if( d < 0 ){
-        //if( d.length > 1 ){
-            $.open_concessionaire_by_key( d[1], false );
-            //console.log('4: d');
-            //console.log(d);
-            //console.log(url);
+        if ( url !== '' && url !== undefined) {
+
+            var d = url.split('suzuki-');
+            console.log(url);
+            console.log(d);
+
+            if( d.length > 1 ){
+                $.open_concessionaire_by_key( d[1], false );
+                //console.log('4: d');
+                console.log(d);
+                //console.log(url);
+            }
         }
     }
 /* ------------------------------------------------------ *\
@@ -4726,7 +4896,7 @@
 /* ------------------------------------------------------ *\
  [functions] initialize_map
 \* ------------------------------------------------------ */
-    function initialize_map(){
+    function initialize_map(url){
         var c_preselected, map_latLon, map_center;
         try{
             c_preselected = parseInt( $("#map_canvas").attr("data-concessionaire-preselected-id") );
@@ -4735,14 +4905,17 @@
                 c_preselected = 16;
                 //console.log(c_preselected);
             }
+            //console.log(c_preselected);
         }catch( e ){
             c_preselected = 0;
         }
         if( c_preselected > 0 ){
             concessionaire_preselected = c_preselected;
+            //console.log(concessionaire_preselected);
             map_latLon = ( $("#map_canvas").attr("data-lat-lon") ).split(',');
             //console.log(map_latLon);
             map_center = new google.maps.LatLng( map_latLon[0] , map_latLon[1] );
+            //console.log(map_center);
         }else{
             map_center = new google.maps.LatLng( 20.6244, -103.421 );
         }
@@ -4757,8 +4930,10 @@
         };
 
         map = new google.maps.Map( document.getElementById("map_canvas"), map_options );
-        if (!concessionaire_detail_selected)
-            concessionairesMethods.get_map_data();
+        //console.log(map_options);
+        if (!concessionaire_detail_selected) {
+            concessionairesMethods.get_map_data(url);
+        }
     }
 /* ------------------------------------------------------ *\
  [functions] $.adjust_map_width

@@ -22,6 +22,7 @@ domEl = {
 	"div_content_section_slider_home":"div#content-section-slider-home",
 	"div_content_social_bar":"div#content-social-bar",
 	"div_header_panel":"div.header-panel",
+	"div_hidden_inputs_concessionaires":"div#content-inputs-concessionaires",
 	"div_hidden_inputs_session":"div#hidden-inputs-session",
 	"div_hidden_inputs_temporal":"div#hidden-inputs-temporal",
 	"div_recurrent":"div#content-temporal-interactive",

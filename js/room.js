@@ -20,7 +20,6 @@
             //concessinairesTextMethods.getConcessionaireById('1');
             //init_geo_core();
             catalogMethods.addAttrCatalog();
-            catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
             SUK.setHTML(domEl.models_header_recurrent, '');
@@ -29,14 +28,70 @@
             SUK.setHTML(domEl.div_recurrent, '');
         }
     });
-    Finch.route('/concesionarias', {
+    Finch.route('/concesionarias/:agencie', {
+        setup: function(bindings) {
+            var $agencia;
+            $agencia = bindings.agencie;
+            // Add favicon
+            window.onload = favicon.load_favicon();
+            lugar = '';
+            // GA
+            if ( $agencia === undefined ) {
+                ga('send', 'pageview', '/concesionarias');
+            } else if ( $agencia !== undefined ) {
+                ga('send', 'pageview', '/concesionarias/suzuki-' + $agencia);
+            }
+            detectNavigatorMethods.IE10();
+            addStylesMethods.addStyleConcessionaries();
+            is_mobileMethods.is_mobile();
+        },
+        load: function(bindings) {
+            var agencia;
+            var $concessionaire;
+            $agencia = bindings.agencie;
+            SUK.loadTemplate(tempsNames.tmp_section_content_concesionaries, domEl.div_recurrent);
+            // CONCESSIONAIRES
+            //console.log('hola');
+            if ( $agencia === undefined ) {
+                section="concesionaries";
+                $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
+                //SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list);
+                concessionairesMethods.get_concessionaries_list('');
+                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
+
+                console.log($concessionaire);
+                console.log('Concesionarias principales');
+
+            } else if ( $agencia !== undefined ) {
+
+                section="concesionaries_by_agencie";
+                $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
+
+                concessionairesMethods.get_concessionaries_list($agencia);
+                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
+
+                console.log($concessionaire);
+                console.log('Concesionaria seleccionada');
+            }/* else {
+                Finch.navigate('/concesionarias');
+            }*/
+            catalogMethods.addAttrCatalog();
+            //init_geo_core();
+        },
+        unload: function(bindings) {
+            SUK.setHTML(domEl.models_header_recurrent, '');
+            cleanStyleMethods.cleanAttrConcessionaries();
+            SUK.setHTML(domEl.div_recurrent, '');
+        }
+    });
+    Finch.route('/concesionarias/suzuki-valarta', {
         setup: function(bindings) {
             // Add favicon
             window.onload = favicon.load_favicon();
             lugar = '';
             section="concesionaries";
             detectNavigatorMethods.IE10();
-            ga('send', 'pageview', '/concesionarias');
+            ga('send', 'pageview', '/concesionarias/suzuki-valarta');
             addStylesMethods.addStyleConcessionaries();
             is_mobileMethods.is_mobile();
         },
@@ -535,7 +590,6 @@
             detectNavigatorMethods.IE10();
             ga('send', 'pageview', '/agendar-prueba-de-manejo');
             addStylesMethods.addStyleTestDriveSelection();
-            SUK.loadTemplate(tempsNames.tmp_phone_call, domEl.div_content_phone_call);
             is_mobileMethods.is_mobile();
         },
         load: function(bindings) {
@@ -548,8 +602,7 @@
             catalogMethods.addAttrCatalog();
         },
         unload: function(bindings) {
-            SUK.setHTML(domEl.models_header_recurrent, '');
-            SUK.setHTML(domEl.div_content_phone_call, '');
+            SUK.setHTML(domEl.models_header_recurrent, '')
             cleanStyleMethods.cleanAttrTestDriveSelection();
             SUK.setHTML(domEl.div_recurrent, '');
         }

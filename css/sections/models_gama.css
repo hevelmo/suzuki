@@ -1,5 +1,5 @@
 .promotion-models{
-	background:url("../../img/sections/contact/contacto-bg.jpg") center top no-repeat;
+	background:url("../../img/sections/contact/todos-suzuki-1500x200.jpg") center top no-repeat;
 	padding:95px 0 0;
 }
 .promos-wrapper-models{
@@ -23,10 +23,12 @@
 .promo-content-models .description p{
 	color:#fff;
 	margin:0;
+    font-weight: bolder;
 }
 .promo-content-models .description p.description_title{
 	font-size:24px;
 	line-height:24px;
+	font-weight: 500;
 }
 #form-wrapper{
 	margin-top:31px;

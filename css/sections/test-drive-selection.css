@@ -47,10 +47,12 @@
 .promo-content-contact .description p{
 	color:#fff;
 	margin:0;
+    font-weight: bolder;
 }
 .promo-content-contact .description p.description_title{
 	font-size:24px;
 	line-height:24px;
+	font-weight: 500;
 }
 #form-wrapper{
 	margin-top:31px;

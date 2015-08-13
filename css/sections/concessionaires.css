@@ -316,7 +316,7 @@
         color:#333
     }
     .list {
-        min-height:193px;
+        /*min-height:193px;*/
         padding-top:130px
     }
     #concessionaire_select_chzn {
@@ -717,7 +717,7 @@
         position:relative
     }
     #concessionaires-normal #concessionaires-list .content .concessionaire-list li.concessionaire i {
-        display:block;
+        display:none;
         position:absolute;
         top:40%;
         right:15px;
@@ -753,8 +753,8 @@
         color:#333
     }
     .list-normal {
-        min-height:193px;
-        padding-top:130px
+        /*min-height:193px;
+        padding-top:130px*/
     }
     #concessionaire_select_chzn {
         position:absolute;

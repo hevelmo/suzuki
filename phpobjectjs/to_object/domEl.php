@@ -13,6 +13,8 @@ function domEl() {
     	//GENERAL HI DIVS
     	'div_hidden_inputs_session' => 'div#hidden-inputs-session',
     	'div_hidden_inputs_temporal' => 'div#hidden-inputs-temporal',
+        // HIDDEN CONCESSIONAIRES
+        'div_hidden_inputs_concessionaires' => 'div#content-inputs-concessionaires',
         // SOCIL BAR
         'div_content_social_bar' => 'div#content-social-bar',
         // PHONE
