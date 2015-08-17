@@ -60,26 +60,20 @@
                 section="concesionaries";
                 $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
 
-                concessionairesMethods.addContentCencessionaires();
-
                 //SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list);
-                /*concessionairesMethods.get_concessionaries_list('');
-                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);*/
+                concessionairesMethods.get_concessionaries_list('');
+                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
 
-                console.log($concessionaire);
-                console.log('Concesionarias principales');
+                console.log('Concesionarias principales : ' + $concessionaire);
 
             } else if ( $agencia !== undefined ) {
                 section="concesionaries_by_agencie";
                 $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
 
-                concessionairesByKeyMethods.addContentCencessionaires();
+                concessionairesByKeyMethods.get_concessionaries_list_by_key($agencia);
+                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
 
-                /*concessionairesByKeyMethods.get_concessionaries_list_by_key($agencia);
-                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);*/
-
-                console.log($concessionaire);
-                console.log('Concesionaria seleccionada');
+                console.log('Concesionaria seleccionada : ' + $concessionaire);
             }/* else {
                 Finch.navigate('/concesionarias');
             }*/

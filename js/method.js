@@ -4838,20 +4838,14 @@
  [Methods] concessionaires
 \* ------------------------------------------------------ */
     var concessionairesMethods = {
-        addContentCencessionaires: function() {
-            SUK.loadTemplate(tempsNames.concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
-            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
-
-            SUK.loadTemplate(tempsNames.concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
-            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
-        },
         get_concessionaries_list: function(url) {
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
-            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list, concessionairesData);
-            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, '#content-concessionaires-list-hidden-nomobil', concessionairesData);
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_mobile_list, concessionairesData);
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_nomobile_list, concessionairesData);
 
-            /*$('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
+            /*
+            $('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
             $('#concessionaires-dynamic-list li.concessionaire').each( function( ii ){
                 if( $(this).attr('data-key') == current_concessionaire ){
                     $(this).addClass('active');
@@ -4862,15 +4856,18 @@
                     return false;
                 }
             });
-            $("#concessionaires-data").addClass('active');*/
+            $("#concessionaires-data").addClass('active');
+            */
 
             $.open_concessionaire_by_key();
             $.set_concessionaire_by_url(url);
             $.adjust_map_width();
             concessionairesMethods.resize();
-            initialize_map(url);
-            concessionairesMethods.initMap(url);
+            initialize_map();
+            concessionairesMethods.initMap();
             concessionairesMethods.preventDefault_see_concessionaires();
+            /*
+            */
 
             //console.log(concessionairesData);
             return concessionairesData;
@@ -4972,8 +4969,8 @@
             // CLICK CLOSE CONCESSIONAIRES
             //$(domEl.div_recurrent).on('click', 'a.concessionaire-close', concessionairesMethods.preventDefault_concessionaires_close);
         },
-        initMap: function(url) {
-            google.maps.event.addDomListener( window, "load", initialize_map(url));
+        initMap: function() {
+            google.maps.event.addDomListener( window, "load", initialize_map);
         },
         resize: function() {
             $(window).resize(function() {
@@ -5043,13 +5040,13 @@
                 //console.log('else click data');
                 //console.log($(this));
             }
-            //$("#concessionaires-data").addClass('active');
 
             SUK.setValue('#hidden_id_concessionaire', id_agencia);
             Finch.navigate('/concesionarias/suzuki-' + agencia );
+            $("#concessionaires-data").addClass('active');
             //console.log('click dinamic list');
             $.adjust_map_width();
-            console.log(agencia);
+            //console.log(agencia);
         },
         preventDefault_concessionaires_close : function(event) {
             event.preventDefault();
@@ -5064,25 +5061,41 @@
  [Methods] concessionaires by key
 \* ------------------------------------------------------ */
     var concessionairesByKeyMethods = {
-        addContentCencessionaires: function() {
-            SUK.loadTemplate(tempsNames.concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
-            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
-
-            //div_recurrent_concessionaires_nomobile_list
-
-            SUK.loadTemplate(tempsNames.concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
-            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
-        },
         get_concessionaries_list_by_key: function(url) {
-            concessionairesByKeyMethods.urlsApijs_concessionaires_list();
+            concessionairesByKeyMethods.urlsApijs_concessionaires_list(url);
         },
-        urlsApijs_concessionaires_list: function() {
+        urlsApijs_concessionaires_list: function(url) {
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
             //concessionairesData = concessionairesData.sukpa[0];
-            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list, concessionairesData);
-            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, '#content-concessionaires-list-hidden-nomobil', concessionairesData);
-            console.log(concessionairesData);
+
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_mobile_list, concessionairesData);
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_nomobile_list, concessionairesData);
+
+            /*
+            */
+            $('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
+            $('#concessionaires-dynamic-list li.concessionaire').each( function( ii ){
+                if( $(this).attr('data-key') == current_concessionaire ){
+                    $(this).addClass('active');
+                    var st = $('.concessionaire-list').scrollTop();
+                    var gt = $(this).offset().top - 291 + st;
+                    $('.concessionaire-list').stop().delay( 100 ).animate( { scrollTop: gt }, 600 );
+                    //console.log($(this));
+                    return false;
+                }
+            });
+            $("#concessionaires-data").addClass('active');
+
+            $.open_concessionaire_by_key(url);
+            $.set_concessionaire_by_url(url);
+            $.adjust_map_width();
+            concessionairesMethods.resize();
+            initialize_map();
+            concessionairesMethods.initMap();
+            concessionairesMethods.preventDefault_see_concessionaires();
+
+            //console.log(concessionairesData);
             return concessionairesData;
         },
         urlsApijs_concessionaires_by_concessionaire: function () {
@@ -5128,6 +5141,7 @@
         //console.log(map_markers.length);
         while( ic-- ){
             cm = map_markers[ ic ];
+            console.log(cm);
             //console.log(map_markers[ ic ]);
             if( cm.custom_data.key ==  current_concessionaire  ){
                 //console.log(ic);
@@ -5215,13 +5229,13 @@
         if ( url !== '' && url !== undefined) {
 
             var d = url.split('suzuki-');
-            console.log(url);
-            console.log(d);
+            //console.log(url);
+            //console.log(d);
 
             if( d.length > 1 ){
                 $.open_concessionaire_by_key( d[1], false );
                 //console.log('4: d');
-                console.log(d);
+                //console.log(d.length);
                 //console.log(url);
             }
         }
