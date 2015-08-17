@@ -28,7 +28,14 @@ domEl = {
 	"div_recurrent":"div#content-temporal-interactive",
 	"div_recurrent_accesories_section_model":"#accesories-section-model",
 	"div_recurrent_body":"body#recurrent-body",
-	"div_recurrent_concessionaires_list":"#content-concessionaires-list",
+	"div_recurrent_concessionaires_mobile":"#content-concessionaires-list",
+	"div_recurrent_concessionaires_mobile_data":"#concessionaires-data",
+	"div_recurrent_concessionaires_mobile_list":"#concessionaires-list",
+	"div_recurrent_concessionaires_mobile_map":"#concessionaires-map",
+	"div_recurrent_concessionaires_nomobile":"#content-concessionaires-list",
+	"div_recurrent_concessionaires_nomobile_data":"#concessionaires-data",
+	"div_recurrent_concessionaires_nomobile_list":"#concessionaires-list",
+	"div_recurrent_concessionaires_nomobile_map":"#concessionaires-map",
 	"div_recurrent_features_section_model":"#features-section-model",
 	"div_recurrent_full_size_section_model":"#full-size-section-model",
 	"div_recurrent_funding_by_model_form":"#content_funding_by_model_form",
@@ -65,6 +72,8 @@ domEl = {
 	"validate_input":".validate_input"
 };
 tempsNames = {
+	"concessionaires_mobile":"tmp_section_block_concessionaires_mobile",
+	"concessionaires_normal":"tmp_section_block_concessionaires_normal",
 	"model_ciaz":"tmp_section_content_model_ciaz",
 	"model_grand_vitara":"tmp_section_content_model_grand_vitara",
 	"model_kizashi":"tmp_section_content_model_kizashi",
@@ -98,6 +107,8 @@ tempsNames = {
 	"tmp_panel_menu_models":"tmp_panel_menu_models",
 	"tmp_panel_menu_owners":"tmp_panel_menu_owners",
 	"tmp_phone_call":"tmp_phone_call",
+	"tmp_section_block_concessionaires_mobile":"tmp_section_block_concessionaires_mobile",
+	"tmp_section_block_concessionaires_normal":"tmp_section_block_concessionaires_normal",
 	"tmp_section_content_catalogs":"tmp_section_content_catalogs",
 	"tmp_section_content_concesionaries":"tmp_section_content_concesionaries",
 	"tmp_section_content_contact_us":"tmp_section_content_contact_us",

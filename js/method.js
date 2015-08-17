@@ -4838,6 +4838,13 @@
  [Methods] concessionaires
 \* ------------------------------------------------------ */
     var concessionairesMethods = {
+        addContentCencessionaires: function() {
+            SUK.loadTemplate(tempsNames.concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
+            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
+
+            SUK.loadTemplate(tempsNames.concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
+            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
+        },
         get_concessionaries_list: function(url) {
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
@@ -5057,10 +5064,19 @@
  [Methods] concessionaires by key
 \* ------------------------------------------------------ */
     var concessionairesByKeyMethods = {
-        get_concessionaries_list_by_key: function(url) {
-            concessionairesByKeyMethods.urlsApijs_concessionaires();
+        addContentCencessionaires: function() {
+            SUK.loadTemplate(tempsNames.concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
+            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_mobile, domEl.div_recurrent_concessionaires_mobile);
+
+            //div_recurrent_concessionaires_nomobile_list
+
+            SUK.loadTemplate(tempsNames.concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
+            SUK.loadTemplate(tempsNames.tmp_section_block_concessionaires_normal, domEl.div_recurrent_concessionaires_nomobile);
         },
-        urlsApijs_concessionaires: function() {
+        get_concessionaries_list_by_key: function(url) {
+            concessionairesByKeyMethods.urlsApijs_concessionaires_list();
+        },
+        urlsApijs_concessionaires_list: function() {
             var concessionairesData;
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
             //concessionairesData = concessionairesData.sukpa[0];
@@ -5069,7 +5085,11 @@
             console.log(concessionairesData);
             return concessionairesData;
         },
-        urlsApijs_concessionaires_by_concessionaire: function () {}
+        urlsApijs_concessionaires_by_concessionaire: function () {
+            var concessionairesData;
+            concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
+            concessionairesData = concessionairesData.sukpa[0];
+        }
     }
 /* ------------------------------------------------------ *\
  [functions] $.open_concessionaire_by_key

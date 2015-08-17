@@ -97,7 +97,21 @@ function domEl() {
         'div_recurrent_funding_by_model_form' => '#content_funding_by_model_form',
 
         // CONCESSIONAIRES
-        'div_recurrent_concessionaires_list' => '#content-concessionaires-list',
+        'div_recurrent_concessionaires_mobile' => '#concessionaires',
+        'div_recurrent_concessionaires_nomobile' => '#concessionaires-normal',
+
+        'div_recurrent_concessionaires_mobile' => '#content-concessionaires-list',
+
+        'div_recurrent_concessionaires_mobile_list' => '#concessionaires-list',
+        'div_recurrent_concessionaires_mobile_data' => '#concessionaires-data',
+        'div_recurrent_concessionaires_mobile_map' => '#concessionaires-map',
+
+        'div_recurrent_concessionaires_nomobile' => '#content-concessionaires-list',
+
+        'div_recurrent_concessionaires_nomobile_list' => '#concessionaires-list',
+        'div_recurrent_concessionaires_nomobile_data' => '#concessionaires-data',
+        'div_recurrent_concessionaires_nomobile_map' => '#concessionaires-map',
+
         'div_recurrent_info_concessionaire_data_wrapper' => '#content-info-concessionaire-data-wrapper'
 
     );
