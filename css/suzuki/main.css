@@ -2993,6 +2993,15 @@ padding: 0 0 15px;
     color:#003F87;
     text-decoration:none;
 }
+#car_select_list ul#select-list li.swift-sport.active a,
+#car_select_list ul#select-list li.swift.active a,
+#car_select_list ul#select-list li.kizashi.active a,
+#car_select_list ul#select-list li.s-cross.active a,
+#car_select_list ul#select-list li.grand-vitara.active a,
+#car_select_list ul#select-list li.ciaz.active a {
+    color:#003F87;
+    text-decoration:none;
+}
 #car_select_list ul li:hover a span {
     color:#003F87;
 }

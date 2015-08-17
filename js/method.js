@@ -58,7 +58,6 @@
     var default_data = {
         car_version : 0,
         key         : ''
-
     };
     var cars_data = [
         { key: 'swift-sport'    , name: 'Swift Sport'   },
@@ -369,6 +368,15 @@
         }
     }
 /* ------------------------------------------------------ *\
+ [functions] goto_step_financing_by_model
+\* ------------------------------------------------------ */
+    function goto_step_financing_by_model( step, disable  ){
+        var ii, $divinput;
+        slide_tabs( step, disable );
+        if( step == 3 ){
+        }
+    }
+/* ------------------------------------------------------ *\
  [functions] funding_core
 \* ------------------------------------------------------ */
     function funding_core( total_pay, months ){
@@ -404,7 +412,7 @@
         return false;
     }
 /* ------------------------------------------------------ *\
- [functions] get_concessionaire_data_by_id
+    [functions] get_concessionaire_data_by_id
 \* ------------------------------------------------------ */
     function get_concessionaire_data_by_id( id ){
         var ii = concessionaires_data.length, concessionaire, dx, dy;
@@ -417,7 +425,7 @@
         return false;
     }
 /* ------------------------------------------------------ *\
- [functions] concessionaires_order_nearest
+    [functions] concessionaires_order_nearest
 \* ------------------------------------------------------ */
     function concessionaires_order_nearest( latitude, longitude ){
         var ii = concessionaires_data.length, concessionaire, dx, dy;
@@ -432,7 +440,7 @@
         });
     }
 /* ------------------------------------------------------ *\
- [functions] geo_select_concessionaire_callback
+    [functions] geo_select_concessionaire_callback
 \* ------------------------------------------------------ */
     function geo_select_concessionaire_callback(){
         if( geo_ll != null ){
@@ -447,7 +455,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [functions] geo_select_concessionaire_callback
+    [functions] geo_select_concessionaire_callback
 \* ------------------------------------------------------ */
     function get_location(){
         if( HAS_GEOLOCATION ){
@@ -458,7 +466,7 @@
         return null;
     }
 /* ------------------------------------------------------ *\
- [functions] init_geo_core
+    [functions] init_geo_core
 \* ------------------------------------------------------ */
     //Saves geo data preferences in local storage
     function init_geo_core(){
@@ -637,7 +645,7 @@
         docHead:document.getElementsByTagName("head")[0]
     }
 /* ------------------------------------------------------ *\
- [Methods] detectNavigatorMethods
+    [Methods] detectNavigatorMethods
 \* ------------------------------------------------------ */
     var detectNavigatorMethods = {
         IE10 : function() {
@@ -650,7 +658,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] cleanStyle
+    [Methods] cleanStyle
 \* ------------------------------------------------------ */
     var cleanStyleMethods = {
         cleanAttrHome : function () {
@@ -771,7 +779,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] addStyle
+    [Methods] addStyle
 \* ------------------------------------------------------ */
     var addStylesMethods = {
         addStyleIndex : function () {
@@ -1008,7 +1016,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] razones
+    [Methods] razones
 \* ------------------------------------------------------ */
     var reasonsMethods = {
         reasons: function() {
@@ -1092,7 +1100,7 @@
         });
     }
 /* ------------------------------------------------------ *\
- [Methods] garantia
+    [Methods] garantia
 \* ------------------------------------------------------ */
     var warrantyMethods = {
         warranty: function(index) {
@@ -1142,7 +1150,7 @@
         $.scroll_to( index == 1 ? 'ordinaria': 'extendida' );
     }
 /* ------------------------------------------------------ *\
- [Methods] catalog
+    [Methods] catalog
 \* ------------------------------------------------------ */
     var catalogMethods = {
         addAttrCatalog: function() {
@@ -1332,7 +1340,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] actionMenuBars
+    [Methods] actionMenuBars
 \* ------------------------------------------------------ */
     var actionMenuBarsMethods = {
         removeCleanPanelMenu : function () {
@@ -1396,7 +1404,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] addDelegate
+    [Methods] addDelegate
 \* ------------------------------------------------------ */
     var addDelegatMethods = {
         transitions : function () {
@@ -1509,7 +1517,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] openPanelMenu
+    [Methods] openPanelMenu
 \* ------------------------------------------------------ */
     var openPanelMenuMethods = {
         clickPanel_general : function (event) {
@@ -1524,43 +1532,45 @@
             }
         },
         clickModelsPanel : function (event) {
-            /*if ($(this).hasClass('active')) {
+            if ($(this).hasClass('active')) {
                 var sukModelData;
                 $('#header-spacer').css('height','325px');
                 $('.header_section').css({
                     'display':'block',
                     'opacity':'1'
                 });
-                sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos);
-                SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu, sukModelData);
+                //sukModelData = SUK.getInternalJSON(urlsApi.addGamaModelos);
+                //SUK.loadTemplate(tempsNames.tmp_panel_menu_models, domEl.div_recurrent_panel_menu, sukModelData);
             } else {
                 $('#header-spacer').css('height','0px');
                 $('.header_section').css({
                     'display':'none',
                     'opacity':'0'
                 });
-                SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-            }*/
+                //SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            }
+            actionMenuBarsMethods.removeCleanPanelMenu();
             closePanelMenuMethods.closePanelFinancing();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/modelos');
         },
         clickFinnacingPanel : function (event) {
-            /*if ($(this).hasClass('active')) {
+            if ($(this).hasClass('active')) {
                 $('#header-spacer').css('height','426px');
                 $('.header_section').css({
                     'display':'block',
                     'opacity':'1'
                 });
-                SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_panel_menu);
+                //SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_panel_menu);
             } else {
                 $('#header-spacer').css('height','0px');
                 $('.header_section').css({
                     'display':'none',
                     'opacity':'0'
                 });
-                SUK.setHTML(domEl.div_recurrent_panel_menu, '');
-            }*/
+                //SUK.setHTML(domEl.div_recurrent_panel_menu, '');
+            }
+            actionMenuBarsMethods.removeCleanPanelMenu();
             closePanelMenuMethods.closePanelFinancing();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
             Finch.navigate('/financiamiento');
@@ -1604,7 +1614,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] closePanelMenu
+    [Methods] closePanelMenu
 \* ------------------------------------------------------ */
     var closePanelMenuMethods = {
         cleanHeight : function () {
@@ -1636,7 +1646,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] panelMenuModels
+    [Methods] panelMenuModels
 \* ------------------------------------------------------ */
     var panelMenuModelsByModel = {
         clickGoSwiftSport : function (event) {
@@ -1681,7 +1691,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Functions] display_versions_comparative
+    [Functions] display_versions_comparative
 \* ------------------------------------------------------ */
     var $display_tables = $('.display-tables'), display_vct_class = 'prices';
     function display_versions_comparative(){
@@ -1691,13 +1701,15 @@
             if( display_vct_class == $div.data('display-table') ){
                 $div.fadeOut().fadeIn(1000);
                 modifyHeight("#comparative-space-wrapper .suzuki-table .body .row");
+                console.log(div);
             }else{
                 $div.hide();
+                console.log(div);
             }
         });
     }
 /* ------------------------------------------------------ *\
- [Methods] FancyBox
+    [Methods] FancyBox
 \* ------------------------------------------------------ */
     var fancyBoxMethods = {
         onClickGalery: function(event) {
@@ -1713,7 +1725,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] modelsMenu
+    [Methods] modelsMenu
 \* ------------------------------------------------------ */
     var modelsMenuMethods = {
         preventDefault_flag_link: function(event) {
@@ -1823,8 +1835,8 @@
                     modelsMenuMethods.scrollSwitchMethod();
                     switch_menus( menu );
                     switch_arrow( );
-                    display_versions_comparative();
                     modifyHeight("#features-space-wrapper .suzuki-table .body .row");
+                    display_versions_comparative();
 
                     input_hidden_test_drive_swift_Attributes = [
                         ['input', {'id':'test_drive_model_modelo', 'type':'hidden', 'name':'suk_gdl_test_drive_model_modelo', 'value':'swift'}, '', 0],
@@ -1991,9 +2003,9 @@
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_general_elements);
                 break;
-                case 'financing_swift_sport':
-                    $('#promocion-financing_by_model').addClass('swift-sport-bg');
-                    $('.description_title').append(' Swift Sport 2015');
+                case 'financing-swift-sport':
+                    //$('#promocion-financing_by_model').addClass('swift-sport-bg');
+                    //$('.description_title').append(' Swift Sport 2015');
                     hidden_elements_funding_by_model_elements = [
                         ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Swift Sport 2015'}, '', 0],
                         ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'swift-sport'}, '', 0],
@@ -2008,9 +2020,9 @@
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
-                case 'financing_swift':
-                    $('#promocion-financing_by_model').addClass('swift-bg');
-                    $('.description_title').append(' Swift 2015');
+                case 'financing-swift':
+                    //$('#promocion-financing_by_model').addClass('swift-bg');
+                    //$('.description_title').append(' Swift 2015');
                     hidden_elements_funding_by_model_elements = [
                         ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Swift 2015'}, '', 0],
                         ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'swift'}, '', 0],
@@ -2025,9 +2037,9 @@
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
-                case 'financing_kizashi':
-                    $('#promocion-financing_by_model').addClass('kizashi-bg');
-                    $('.description_title').append(' Kizashi');
+                case 'financing-kizashi':
+                    //$('#promocion-financing_by_model').addClass('kizashi-bg');
+                    //$('.description_title').append(' Kizashi');
                     hidden_elements_funding_by_model_elements = [
                         ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Kizashi 2015'}, '', 0],
                         ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'kizashi'}, '', 0],
@@ -2042,9 +2054,9 @@
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
-                case 'financing_grand_vitara':
-                    $('#promocion-financing_by_model').addClass('grand-vitara-bg');
-                    $('.description_title').append(' Grand Vitara 2015');
+                case 'financing-grand-vitara':
+                    //$('#promocion-financing_by_model').addClass('grand-vitara-bg');
+                    //$('.description_title').append(' Grand Vitara 2015');
                     hidden_elements_funding_by_model_elements = [
                         ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Grand Vitara 2015'}, '', 0],
                         ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'grand-vitara'}, '', 0],
@@ -2059,9 +2071,9 @@
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
-                case 'financing_scross':
-                    $('#promocion-financing_by_model').addClass('s-cross-bg');
-                    $('.description_title').append(' S-Cross 2015');
+                case 'financing-s-cross':
+                    //$('#promocion-financing_by_model').addClass('s-cross-bg');
+                    //$('.description_title').append(' S-Cross 2015');
                     hidden_elements_funding_by_model_elements = [
                         ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'S-Cross 2015'}, '', 0],
                         ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'s-cross'}, '', 0],
@@ -2076,9 +2088,9 @@
                     ];
                     SUK.appendMulti('#funding_fields_hidden', hidden_elements_funding_by_model_elements);
                 break;
-                case 'financing_ciaz':
-                    $('#promocion-financing_by_model').addClass('ciaz-bg');
-                    $('.description_title').append(' Ciaz 2016');
+                case 'financing-ciaz':
+                    //$('#promocion-financing_by_model').addClass('ciaz-bg');
+                    //$('.description_title').append(' Ciaz 2016');
                     hidden_elements_funding_by_model_elements = [
                         ['input', {'type':'hidden', 'class':'fr_bm_data', 'name':'suk_gdl_financing_by_model_model_car', 'id':'financing_by_model_model_car', 'value':'Ciaz 2016'}, '', 0],
                         ['input', {'type':'hidden', 'class':'fr_bm_data-key', 'name':'suk_gdl_financing_by_model_model_key', 'id':'financing_by_model_model_key', 'value':'ciaz'}, '', 0],
@@ -2125,7 +2137,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] inputVal
+    [Methods] inputVal
 \* ------------------------------------------------------ */
     var inputValMetdods = {
         isIntegerKP: function (event) {
@@ -2133,7 +2145,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] validations_regexp
+    [Methods] validations_regexp
 \* ------------------------------------------------------ */
     var validations_regexp = {
         address : new RegExp( /^[a-zá-úüñ,#0-9. -]{2,}$/i ),
@@ -2143,7 +2155,7 @@
         phone   : new RegExp( /^[0-9\s\-]{7,13}$/ )
     }
 /* ------------------------------------------------------ *\
- [Methods] validation_messages
+    [Methods] validation_messages
 \* ------------------------------------------------------ */
     var validation_messages = {
         date            : 'Debe ser aaaa-mm-dd',
@@ -2157,7 +2169,7 @@
         empty           : 'Campo vacío'
     }
 /* ------------------------------------------------------ *\
- [Methods] validate
+    [Methods] validate
 \* ------------------------------------------------------ */
     var validateMethods = {
         validate : function(value, rules, required, custom_message) {
@@ -2258,10 +2270,10 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] formTestDrive general
+    [Methods] formTestDrive general
 \* ------------------------------------------------------ */
 /* ------------------------------------------------------ *\
- [Methods] formTestDrive
+    [Methods] formTestDrive
 \* ------------------------------------------------------ */
     var formTestDriveMethods = {
         init_datepicker: function() {
@@ -2422,7 +2434,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] formContact
+    [Methods] formContact
 \* ------------------------------------------------------ */
     var formContactMethods = {
         addDataFormContact: function() {
@@ -2654,7 +2666,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] formFinancing General Models
+    [Methods] formFinancing General Models
 \* ------------------------------------------------------ */
     var formFinancingGeneral = {
         addDataFormFinancingGeneral: function() {
@@ -2815,7 +2827,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] formFinancing By Models
+    [Methods] formFinancing By Models
 \* ------------------------------------------------------ */
     // SWIFT SPORT
     var formFinancingByModelSwiftSport = {
@@ -3760,7 +3772,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] INPUTS RADIO, CHECKBOX
+    [Methods] INPUTS RADIO, CHECKBOX
 \* ------------------------------------------------------ */
     var changeInputsMethods = {
         clickChangeCheckbox : function(event) {
@@ -3801,7 +3813,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] IS MOBILE
+    [Methods] IS MOBILE
 \* ------------------------------------------------------ */
     var is_mobileMethods = {
         openCloseMenu : function() {
@@ -3851,18 +3863,23 @@
                 switch (idx) {
                     case 1:
                         link = "#header-models-button";
+                        console.log('click modelos');
                         break;
                     case 2:
                         link = "#header-financing-button";
+                        console.log('click financiamiento');
                         break;
                     case 3:
                         link = "#header-owners-button";
+                        console.log('click mi suzuki');
                         break;
                     case 4:
                         link = "#header-before-buy-button";
+                        console.log('click comprar un suzuki');
                         break;
                     case 5:
                         link = "#header-test-drive-button";
+                        console.log('click prueba de manejo');
                         break;
                 }
                 is_mobileMethods.openCloseMenu();
@@ -3956,7 +3973,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] Test Drive General
+    [Methods] Test Drive General
 \* ------------------------------------------------------ */
     var testDriveGeneralMethods = {
         testDrivegeneral: function(options, event) {
@@ -4039,6 +4056,7 @@
 
 
                 tdh_data.key = k;
+                console.log(k);
                 var anio = '2015';
                 if(tdh_data.key == 'ciaz'){
                     anio = '2016';
@@ -4180,7 +4198,7 @@
         }
     }
 /* ------------------------------------------------------ *\
- [Methods] financing
+    [Methods] financing
 \* ------------------------------------------------------ */
     var financingMethods = {
         financing: function (options, event) {
@@ -4188,17 +4206,22 @@
                 options = {};
             }
             fuh_data = $.extend( {}, default_data, options );
+            //console.log('hola');
+
             //Tabs
             $panelTabsNav   = $('li.step-nav-tabs.funding');
             $panelTabs      = $('.step-nav-tab.funding');
+
             $panelTabsNav.children('a').on('click', financingMethods.preventDefault_panelTabsNav);
-            /*//console.log(car_d);
+
+            //console.log(car_d);
             //console.log(funding_data);
             //console.log(conce_d);
             //console.log(default_data);
             //console.log(fuh_data);
             //console.log($panelTabsNav);
-            //console.log($panelTabs);*/
+            //console.log($panelTabs);
+
             $("#car_engagement_slider").slider({
                 change  : function( event, ui ) {
                     funding_data.engagement = ui.value;
@@ -4229,9 +4252,13 @@
                 step    : 6,
                 value   : 6
             });
+
             current_tab = -1;
+            //console.log(current_tab);
+
             $('#funding-versions-tabs').delegate('a','click', financingMethods.preventDefault_fundingVersionTabs);
             $('#car_select_list').delegate('a','click', financingMethods.preventDefault_carSlectList);
+
             if( fuh_data.key == '' ){
                 $('#car_select_list a').eq(0).trigger('click');
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -4239,16 +4266,23 @@
                     $("#car_select_list").fadeIn();
                 }
                 goto_step_financing( 1, true );
+                //console.log(current_tab);
             }else{
                 $.funding_select_car( fuh_data.key );
                 goto_step_financing( 2, true );
+                //console.log(current_tab);
             }
+
             $("#change-car-test").on('click', financingMethods.preventDefault_changeCarTest);
             $('a.funding-goto').on('click', financingMethods.preventDefault_aFundingGoto);
+
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 $("#fake-calculate").on('click', financingMethods.preventDefault_fakeCaculate);
                 $("#modify-calc").on('click', financingMethods.preventDefault_modifyCalc);
             }
+            //console.log(fuh_data.key);
+            /*
+            */
         },
         preventDefault_panelTabsNav: function(event) {
             event.preventDefault();
@@ -4293,6 +4327,7 @@
             $("#car_select_list").fadeIn();
             //console.log('click plan');
         },
+        // ELIGE TU PLAN
         preventDefault_aFundingGoto: function(event) {
             event.preventDefault();
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -4358,11 +4393,272 @@
             $car_texts  = $('#car_select_name h3, #step-nav-tab h3, #fu_adjust_car h3, #funding_result_data h3, #funding-resume-car h3'),
             $input_car_text = $('#financing_general_model_car'),
             $input_car_key_text = $('#financing_general_model_key');
+        //console.log(fuh_data);
 
         cars_prices = financingTextMethods.getModelsByKey(k);
         //console.log(cars_prices);
 
         fuh_data.key = k;
+        //console.log(fuh_data);
+        var anio = '2015';
+        if(car_data.key == 'ciaz'){
+            anio = '2016';
+        }
+        //console.log(k);
+        fuh_data.name = car_data.name + ' ' + anio;
+        $("#car_engagement_slider").slider({value: 20}) ;
+        $("#car_months_slider").slider({value: 6});
+
+        //$bg_banner.removeClass(fuh_data.key + '-bg');
+        //$bg_banner.addClass(fuh_data.key + '-bg');
+
+        $car_texts.text( fuh_data.name );
+        $input_car_text.val( fuh_data.name );
+        $input_car_key_text.val( fuh_data.key );
+
+        $icons.removeClass();
+        $icons.addClass('car ' + fuh_data.key );
+        //console.log(cars_prices);
+        var i0 = cars_prices.length, version = null, i1, i2, tab_data;
+        //sukCarPricesData = financingTextMethods.getModels();
+        sukCarPricesData = {
+            'sukpa': cars_prices
+        }
+        SUK.loadTemplate(tempsNames.tmp_funding_version_tabs, domEl.div_recurrent_funding_version_tabs, sukCarPricesData);
+        //console.log(sukCarPricesData);
+        while( i0-- ){
+            //console.log(i0);
+            if( cars_prices[i0].key == fuh_data.key ){
+                //console.log('si entro');
+                car_d = cars_prices[i0];
+                versions = car_d.versions;
+                var i1 = 0, i2 = versions.length, tabs_data = {versions:[]};
+                if( i2 > 1 ){
+                    $('#funding-versions').show();
+                }else{
+                    //console.log('');
+                    $('#funding-versions').hide();
+                }
+                while( i1 < i2 ){
+                    tab_data = {
+                        id       : i1,
+                        name    : versions[i1].name
+                    }
+                    tabs_data.versions.push( tab_data );
+                    i1++;
+                    //console.log(tabs_data.versions.push( tab_data ));
+                }
+                $.funding_select_version( 0 );
+                break;
+            }
+        }
+    };
+/* ------------------------------------------------------ *\
+ [Methods] financing by model
+\* ------------------------------------------------------ */
+    var financingByModelMethods = {
+        financingByModel: function ( options, event ) {
+            if( options === undefined || options === null  ){
+                options = {};
+            }
+            fuh_data = $.extend( {}, default_data, options );
+            //console.log(fuh_data);
+            //Tabs
+            $panelTabsNav   = $('li.step-nav-tabs.funding');
+            $panelTabs      = $('.step-nav-tab.funding');
+            //console.log($panelTabs);
+
+            $panelTabsNav.children('a').on('click', financingByModelMethods.preventDefault_panelTabsNav);
+            //console.log($panelTabsNav);
+
+            $("#car_engagement_slider").slider({
+                change  : function( event, ui ) {
+                    funding_data.engagement = ui.value;
+                    $.funding_adjust_calc();
+                },
+                max     : 80,
+                min     : 20,
+                slide   : function( event, ui ) {
+                    funding_data.engagement = ui.value;
+                    $.funding_adjust_calc();
+                    $(this).parent().children(".star").html(ui.value+"%");
+                },
+                step    : 5,
+                value   : 20
+            });
+            $("#car_months_slider").slider({
+                change  : function( event, ui ) {
+                    funding_data.months = ui.value;
+                    $.funding_adjust_calc();
+                },
+                max     : 60,
+                min     : 6,
+                slide   : function( event, ui ) {
+                    funding_data.months = ui.value;
+                    $.funding_adjust_calc();
+                    $(this).parent().children(".star").html(ui.value);
+                },
+                step    : 6,
+                value   : 6
+            });
+            current_tab = -1;
+            //console.log(current_tab);
+
+            $('#funding-versions-tabs').delegate('a','click', financingByModelMethods.preventDefault_fundingVersionTabs);
+            $('#car_select_list').delegate('a','click', financingByModelMethods.preventDefault_carSlectList);
+            if( fuh_data.key == '' ){
+                $('#car_select_list a').eq(0).trigger('click');
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    $("#car_select_name, #car_select_preview").hide();
+                    $("#car_select_list").fadeIn();
+                }
+                goto_step_financing_by_model( 2, true );
+                $('a.funding_by_model_change_car').css('display', 'none');
+                $('.funding_by_model_step_one').addClass('disabled');
+                //console.log(current_tab);
+            }else{
+                $.funding_select_car( fuh_data.key );
+                goto_step_financing_by_model( 3, true );
+                $('a.funding_by_model_change_car').css('display', 'none');
+                $('.funding_by_model_step_one').addClass('disabled');
+                //console.log(current_tab);
+            }
+            $("#change-car-test").on('click', financingByModelMethods.preventDefault_changeCarTest);
+            $('a.funding-goto').on('click', financingByModelMethods.preventDefault_aFundingGoto);
+            $('a.funding_by_model_change_car').css('display', 'none');
+            $('.funding_by_model_step_one').addClass('disabled');
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $("#fake-calculate").on('click', financingByModelMethods.preventDefault_fakeCaculate);
+                $("#modify-calc").on('click', financingByModelMethods.preventDefault_modifyCalc);
+            }
+            //console.log(fuh_data.key);
+        },
+        // EVENTS
+        preventDefault_panelTabsNav: function(event) {
+            event.preventDefault();
+            if( !$(this).parent().is('.disabled') ){
+                goto_step_financing_by_model( $(this).data('number') );
+                //console.log($(this).data('number'));
+            }
+            $('a.funding_by_model_change_car').css('display', 'none');
+            $('.funding_by_model_step_one').addClass('disabled');
+            //console.log('click');
+        },
+        preventDefault_fundingVersionTabs: function(event) {
+            event.preventDefault();
+            var data_version = parseInt( $(this).data('version') );
+
+            financingTextMethods.getVersionsByModelId();
+            $.funding_by_model_select_version( data_version );
+            //console.log(data_version);
+        },
+        valor: function( key ) {
+            var data_key = key,
+                $bg_banner  = $('#promocion-financing_by_model');
+            //console.log(key);
+
+            $bg_banner.removeClass(key+'-bg');
+            //console.log($bg_banner);
+
+            financingTextMethods.getModelsByKey();
+
+            $.funding_by_model_select_car( data_key );
+
+            $bg_banner.addClass(key+'-bg');
+            //console.log(key+'-bg');
+
+            //console.log(data_key);
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $("#car_select_list").hide();
+                $("#car_select_name, #car_select_preview").fadeIn();
+            }
+        },
+        preventDefault_carSlectList: function(event, key) {
+            event.preventDefault();
+            financingByModelMethods.valor($(this).data('key') );
+        },
+        preventDefault_changeCarTest: function(event) {
+            event.preventDefault();
+            $("#car_select_name, #car_select_preview").hide();
+            $("#car_select_list").fadeIn();
+            //console.log('click plan');
+        },
+        preventDefault_aFundingGoto: function(event) {
+            event.preventDefault();
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                if ($(this).data('step') == "1") {
+                    $("#car_select_name, #car_select_preview").hide();
+                    $("#car_select_list").fadeIn();
+                }
+            }
+            goto_step_financing_by_model( $(this).data('step') );
+            $('a.funding_by_model_change_car').css('display', 'none');
+            $('.funding_by_model_step_one').addClass('disabled');
+            //console.log('click Goto');
+        },
+        preventDefault_fakeCaculate: function(event) {
+            event.preventDefault();
+            $("#header-financiamiento .option-2, #fake-calculate").hide();
+            $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").css("display", "block");
+            //console.log('click calculate');
+        },
+        preventDefault_modifyCalc: function(event) {
+            event.preventDefault();
+            $(".funding-live-results, #modify-calc, #header-financiamiento .funding-goto").hide();
+            $("#header-financiamiento .option-2, #fake-calculate").css("display", "block");
+            //console.log('click modify calc');
+        }
+    }
+    $.funding_by_model_adjust_calc = function(  ){
+        // Funding Adjust calc
+        var f_amount        = funding_data.price * ( funding_data.engagement / 100 ),
+            total_pay       =  funding_data.price -  f_amount,
+            f_monthly_pay   = funding_core( total_pay, funding_data.months  );
+        $('#live-engagement,#funding_result_engagement,#funding_resume_engagement').html( moneyFormat( f_amount ) );
+        $('#live-months,#funding_result_months,#funding_resume_months').html( funding_data.months + ' meses' );
+        $('#live-price,#funding_result_price,#funding_resume_price').html(  moneyFormat(  funding_data.price ) );
+        $('#funding_result_monthly_payment,#funding_resume_monthly_payment').html(  moneyFormat(  f_monthly_pay ) );
+        // INPUTS HIDDEN FINANCING GENERAL
+        $('#financing_general_car_engagement').val(moneyFormat( f_amount ));
+        $('#financing_general_car_months').val(funding_data.months + ' meses');
+        $('#financing_general_car_price').val(moneyFormat(  funding_data.price ));
+        $('#financing_general_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
+        // INPUTS HIDDEN FINANCING BY MODEL
+        $('#financing_by_model_car_engagement').val(moneyFormat( f_amount ));
+        $('#financing_by_model_car_months').val(funding_data.months + ' meses');
+        $('#financing_by_model_car_price').val(moneyFormat(  funding_data.price ));
+        $('#financing_by_model_car_monthly_payment').val(moneyFormat(  f_monthly_pay ));
+    }
+    $.funding_by_model_select_version = function( ii ){
+        var $elements;
+        $elements               = $('#funding-versions-tabs li a');
+        $elements.removeClass('active');
+        $elements.eq( ii ).addClass('active');
+        funding_data.engagement = $("#car_engagement_slider").slider( 'value' ) ;
+        funding_data.months     = $("#car_months_slider").slider( 'value');
+        //console.log(car_d);
+        funding_data.price      = car_d.versions[ ii ].price;
+        //console.log(car_d.versions[ ii ].price);
+        fuh_data.car_version    = car_d.versions[ ii ].key;
+        //console.log(car_d.versions[ ii ].key);
+        $.funding_by_model_adjust_calc();
+    }
+    $.funding_by_model_select_car = function( k ){
+        var car_data    = get_car_data( k ),
+            //$bg_banner  = $('#promocion-financing_by_model')
+            $icons      = $('#car_select_preview .car_thumb_160 .car, #fu_adjust_car .car_thumb_60 .car, #funding_result_data .car_thumb_60 .car, #funding-resume-car .car_thumb_60 .car'),
+            $car_texts  = $('#car_select_name h3, #step-nav-tab h3, #fu_adjust_car h3, #funding_result_data h3, #funding-resume-car h3'),
+            $input_car_text = $('#financing_general_model_car'),
+            $input_car_key_text = $('#financing_general_model_key');
+        //console.log(car_data);
+        //console.log(fuh_data);
+
+        cars_prices = financingTextMethods.getModelsByKey(k);
+        //console.log(cars_prices);
+
+        fuh_data.key = k;
+
         var anio = '2015';
         if(car_data.key == 'ciaz'){
             anio = '2016';
@@ -4410,7 +4706,7 @@
                     i1++;
                     //console.log(tabs_data.versions.push( tab_data ));
                 }
-                $.funding_select_version( 0 );
+                $.funding_by_model_select_version( 0 );
                 break;
             }
         }
@@ -4497,37 +4793,49 @@
 \* ------------------------------------------------------ */
     var returMethods = {
         clickGoIndex : function () {
+            actionMenuBarsMethods.removeCleanPanelMenu();
             Finch.navigate('/');
         }
     }
     var financingByModelsMethods = {
-        clickGoFinancingSwiftSport : function(envent) {
+        clickGoFinancing : function(event) {
+            var $gama_model_id = $(this).data('gama-model-id');
+            var $gama_model_key = $(this).data('gama-model-key');
+            actionMenuBarsMethods.removeCleanPanelMenu();
+
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-            Finch.navigate('/financiamiento/swift-sport');
-        },
-        clickGoFinancingSwift : function(envent) {
-            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-            Finch.navigate('/financiamiento/swift');
-        },
-        clickGoFinancingKizashi : function(envent) {
-            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-            Finch.navigate('/financiamiento/kizashi');
-        },
-        clickGoFinancingGrandVitara : function(envent) {
-            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-            Finch.navigate('/financiamiento/grand-vitara');
-        },
-        clickGoFinancingSCross : function(envent) {
-            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-            Finch.navigate('/financiamiento/s-cross');
-        },
-        clickGoFinancingCiaz : function(envent) {
-            $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
-            Finch.navigate('/financiamiento/ciaz');
+
+            SUK.setValue('#hidden_id_model_gama', $gama_model_id);
+            SUK.setValue('#hidden_key_model_gama', $gama_model_key);
+            //console.log($gama_model_key);
+            Finch.navigate('/financiamiento/' + $gama_model_key);
+            //Finch.navigate('/financiamiento/swift-sport');
         }
+        /*,
+            clickGoFinancingSwift : function(envent) {
+                $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+                Finch.navigate('/financiamiento/swift');
+            },
+            clickGoFinancingKizashi : function(envent) {
+                $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+                Finch.navigate('/financiamiento/kizashi');
+            },
+            clickGoFinancingGrandVitara : function(envent) {
+                $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+                Finch.navigate('/financiamiento/grand-vitara');
+            },
+            clickGoFinancingSCross : function(envent) {
+                $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+                Finch.navigate('/financiamiento/s-cross');
+            },
+            clickGoFinancingCiaz : function(envent) {
+                $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+                Finch.navigate('/financiamiento/ciaz');
+            }
+        */
     }
 /* ------------------------------------------------------ *\
- [Methods] concessionairesMethods
+ [Methods] concessionaires
 \* ------------------------------------------------------ */
     var concessionairesMethods = {
         get_concessionaries_list: function(url) {
@@ -4536,7 +4844,7 @@
             SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list, concessionairesData);
             SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, '#content-concessionaires-list-hidden-nomobil', concessionairesData);
 
-            $('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
+            /*$('#concessionaires-dynamic-list li.concessionaire').removeClass('active');
             $('#concessionaires-dynamic-list li.concessionaire').each( function( ii ){
                 if( $(this).attr('data-key') == current_concessionaire ){
                     $(this).addClass('active');
@@ -4547,7 +4855,7 @@
                     return false;
                 }
             });
-            $("#concessionaires-data").addClass('active');
+            $("#concessionaires-data").addClass('active');*/
 
             $.open_concessionaire_by_key();
             $.set_concessionaire_by_url(url);
@@ -4728,7 +5036,7 @@
                 //console.log('else click data');
                 //console.log($(this));
             }
-            $("#concessionaires-data").addClass('active');
+            //$("#concessionaires-data").addClass('active');
 
             SUK.setValue('#hidden_id_concessionaire', id_agencia);
             Finch.navigate('/concesionarias/suzuki-' + agencia );
@@ -4744,6 +5052,24 @@
             console.log('click close');
             console.log(concessionaire_open);
         }
+    }
+/* ------------------------------------------------------ *\
+ [Methods] concessionaires by key
+\* ------------------------------------------------------ */
+    var concessionairesByKeyMethods = {
+        get_concessionaries_list_by_key: function(url) {
+            concessionairesByKeyMethods.urlsApijs_concessionaires();
+        },
+        urlsApijs_concessionaires: function() {
+            var concessionairesData;
+            concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
+            //concessionairesData = concessionairesData.sukpa[0];
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list, concessionairesData);
+            SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, '#content-concessionaires-list-hidden-nomobil', concessionairesData);
+            console.log(concessionairesData);
+            return concessionairesData;
+        },
+        urlsApijs_concessionaires_by_concessionaire: function () {}
     }
 /* ------------------------------------------------------ *\
  [functions] $.open_concessionaire_by_key

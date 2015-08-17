@@ -650,18 +650,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_financing_by_model_email,
                     'from_name' => $send_suk_gdl_financing_by_model_name . ' ' . $send_suk_gdl_financing_by_model_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Financiamiento Newsletter - '.$send_suk_gdl_financing_by_model_concesionarie.'.',
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'webmaster@medigraf.com.mx',
                             'name' => 'Financiamiento Newsletter - '.$send_suk_gdl_financing_by_model_concesionarie.'.',
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'webmaster@medigraf.com.mx'),
                     'important' => false,
@@ -935,18 +935,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_financing_by_model_email,
                     'from_name' => $send_suk_gdl_financing_by_model_name . ' ' . $send_suk_gdl_financing_by_model_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Financiamiento - Solicitud de la pagina de internet '.$send_suk_gdl_financing_by_model_concesionarie.' para cotizar.',
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'mercadotecnia@suzuki-lm.com.mx',
                             'name' => 'Financiamiento - Solicitud de la pagina de internet '.$send_suk_gdl_financing_by_model_concesionarie.' para cotizar.',
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'mercadotecnia@suzuki-lm.com.mx'),
                     'important' => false,
@@ -1402,18 +1402,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_financing_general_email,
                     'from_name' => $send_suk_gdl_financing_general_name . ' ' . $send_suk_gdl_financing_general_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Financiamiento Newsletter - '.$send_suk_gdl_financing_general_concesionarie.'.',
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'webmaster@medigraf.com.mx',
                             'name' => 'Financiamiento Newsletter - '.$send_suk_gdl_financing_general_concesionarie.'.',
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'webmaster@medigraf.com.mx'),
                     'important' => false,
@@ -1687,18 +1687,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_financing_general_email,
                     'from_name' => $send_suk_gdl_financing_general_name . ' ' . $send_suk_gdl_financing_general_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Financiamiento - Solicitud de la pagina de internet '.$send_suk_gdl_financing_general_concesionarie.' para cotizar.',
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'mercadotecnia@suzuki-lm.com.mx',
                             'name' => 'Financiamiento - Solicitud de la pagina de internet '.$send_suk_gdl_financing_general_concesionarie.' para cotizar.',
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'mercadotecnia@suzuki-lm.com.mx'),
                     'important' => false,
@@ -2144,18 +2144,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_test_drive_model_email,
                     'from_name' => $send_suk_gdl_test_drive_model_name . ' ' . $send_suk_gdl_test_drive_model_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Prueba de manejo - Noticias y promociones - '.$send_suk_gdl_test_drive_model_concesionaria,
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'webmaster@medigraf.com.mx',
                             'name' => 'Prueba de manejo - Noticias y promociones - '.$send_suk_gdl_test_drive_model_concesionaria,
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'webmaster@medigraf.com.mx'),
                     'important' => false,
@@ -2378,18 +2378,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_test_drive_model_email,
                     'from_name' => $send_suk_gdl_test_drive_model_name . ' ' . $send_suk_gdl_test_drive_model_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Agendar prueba de manejo '.$send_suk_gdl_test_drive_model_auto,
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'mercadotecnia@suzuki-lm.com.mx',
                             'name' => 'Agendar prueba de manejo '.$send_suk_gdl_test_drive_model_auto,
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'mercadotecnia@suzuki-lm.com.mx'),
                     'important' => false,
@@ -2556,18 +2556,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_contact_email,
                     'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Contacto - Noticias y promociones - '.$suk_gdl_contact_concesionary,
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'webmaster@medigraf.com.mx',
                             'name' => 'Contacto - Noticias y promociones - '.$suk_gdl_contact_concesionary,
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'webmaster@medigraf.com.mx'),
                     'important' => false,
@@ -2799,18 +2799,18 @@ $app->run();
                     'from_email' => $send_suk_gdl_contact_email,
                     'from_name' => $send_suk_gdl_contact_name . ' ' . $send_suk_gdl_contact_lastname,
                     'to' => array(
+                        /*
                         array(
                             'email' => 'hevelmo060683@gmail.com',
                             'name' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department,
                             'type' => 'to'
                         )
-                        /*
+                        */
                         array(
                             'email' => 'mercadotecnia@suzuki-lm.com.mx',
                             'name' => 'Contacto - Mensaje dirigido al departamento de '.$send_suk_gdl_contact_department,
                             'type' => 'to'
                         )
-                        */
                     ),
                     'headers' => array('Reply-To' => 'mercadotecnia@suzuki-lm.com.mx'),
                     'important' => false,

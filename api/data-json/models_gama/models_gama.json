@@ -1,46 +1,46 @@
 {
 	"sukpa": [
 		{
-			"suk_gama_id": "1",
-			"suk_gama_key": "swift-sport",
-			"suk_gama_nombre": "Swift-Sport",
-			"suk_gama_slogan": "Experimenta agilidad",
-			"suk_gama_info": "Rendimiento: 15.70 km/lt."
+			"id": "1",
+			"key": "swift-sport",
+			"nombre": "Swift-Sport",
+			"slogan": "Experimenta agilidad",
+			"info": "Rendimiento: 15.70 km/lt."
 		},
 		{
-			"suk_gama_id": "2",
-			"suk_gama_key": "swift",
-			"suk_gama_nombre": "Swift",
-			"suk_gama_slogan": "Experimenta desaf\u00edo.",
-			"suk_gama_info": "Rendimiento: 17.90 km/lt."
+			"id": "2",
+			"key": "swift",
+			"nombre": "Swift",
+			"slogan": "Experimenta desaf\u00edo.",
+			"info": "Rendimiento: 17.90 km/lt."
 		},
 		{
-			"suk_gama_id": "3",
-			"suk_gama_key": "kizashi",
-			"suk_gama_nombre": "Kizashi",
-			"suk_gama_slogan": "Experimenta evoluci\u00f3n.",
-			"suk_gama_info": "Rendimiento: 14.50 km/lt."
+			"id": "3",
+			"key": "kizashi",
+			"nombre": "Kizashi",
+			"slogan": "Experimenta evoluci\u00f3n.",
+			"info": "Rendimiento: 14.50 km/lt."
 		},
 		{
-			"suk_gama_id": "4",
-			"suk_gama_key": "grand-vitara",
-			"suk_gama_nombre": "Grand Vitara",
-			"suk_gama_slogan": "Experimenta libertad.",
-			"suk_gama_info": "Rendimiento: 11.90 km/lt."
+			"id": "4",
+			"key": "grand-vitara",
+			"nombre": "Grand Vitara",
+			"slogan": "Experimenta libertad.",
+			"info": "Rendimiento: 11.90 km/lt."
 		},
 		{
-			"suk_gama_id": "5",
-			"suk_gama_key": "s-cross",
-			"suk_gama_nombre": "S-Cross",
-			"suk_gama_slogan": "Experimenta sin l\u00edmite.",
-			"suk_gama_info": "Rendimiento: 17.00 km/lt."
+			"id": "5",
+			"key": "s-cross",
+			"nombre": "S-Cross",
+			"slogan": "Experimenta sin l\u00edmite.",
+			"info": "Rendimiento: 17.00 km/lt."
 		},
 		{
-			"suk_gama_id": "6",
-			"suk_gama_key": "ciaz",
-			"suk_gama_nombre": "Ciaz",
-			"suk_gama_slogan": "Experimenta tu momento.",
-			"suk_gama_info": "Rendimiento: 19.40 km/lt."
+			"id": "6",
+			"key": "ciaz",
+			"nombre": "Ciaz",
+			"slogan": "Experimenta tu momento.",
+			"info": "Rendimiento: 19.40 km/lt."
 		}
 	]
 }

@@ -5,6 +5,7 @@
 */
 
 $(document).ready(function() {
+
     $("#header-panel").resize(function(){
         var _this = $(this);
         $('#header-spacer').stop().animate({height: _this.height()}, 300);
@@ -169,12 +170,12 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.header_financing_button, openPanelMenuMethods.clickFinnacingPanel);
     $(domEl.div_recurrent).on('click', '#tdr_end', formFinancingGeneral.finchNavigateReturn);
     // EVENT CLICK GO FINANCING BY MODELS
-    $(domEl.div_recurrent).on('click', '#go-financing-swift-sport', financingByModelsMethods.clickGoFinancingSwiftSport);
-    $(domEl.div_recurrent).on('click', '#go-financing-swift', financingByModelsMethods.clickGoFinancingSwift);
-    $(domEl.div_recurrent).on('click', '#go-financing-kizashi', financingByModelsMethods.clickGoFinancingKizashi);
-    $(domEl.div_recurrent).on('click', '#go-financing-grand-vitara', financingByModelsMethods.clickGoFinancingGrandVitara);
-    $(domEl.div_recurrent).on('click', '#go-financing-s-cross', financingByModelsMethods.clickGoFinancingSCross);
-    $(domEl.div_recurrent).on('click', '#go-financing-ciaz', financingByModelsMethods.clickGoFinancingCiaz);
+    $(domEl.div_recurrent).on('click', '#go-financing-swift-sport', financingByModelsMethods.clickGoFinancing);
+    $(domEl.div_recurrent).on('click', '#go-financing-swift', financingByModelsMethods.clickGoFinancing);
+    $(domEl.div_recurrent).on('click', '#go-financing-kizashi', financingByModelsMethods.clickGoFinancing);
+    $(domEl.div_recurrent).on('click', '#go-financing-grand-vitara', financingByModelsMethods.clickGoFinancing);
+    $(domEl.div_recurrent).on('click', '#go-financing-s-cross', financingByModelsMethods.clickGoFinancing);
+    $(domEl.div_recurrent).on('click', '#go-financing-ciaz', financingByModelsMethods.clickGoFinancing);
     // EVENT CLICK GO OWNERS
     $(domEl.div_recurrent_body).on('click', domEl.header_owners_button, openPanelMenuMethods.clickOwnersPanel);
     // EVENT CLICK GO BEFORE BYU
