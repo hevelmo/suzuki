@@ -35,10 +35,10 @@ $(document).ready(function() {
 
     // DINAMIC LIST CONCESSIONAIRES
     // CLICK DINAMIC LIST
-    $(domEl.div_recurrent).on('click', '#concessionaires-dynamic-list li.concessionaire, #concessionaires-dynamic-list a', concessionairesMethods.preventDefault_dinamic_list);
+    //$(domEl.div_recurrent).on('click', '#concessionaires-dynamic-list li.concessionaire, #concessionaires-dynamic-list a', concessionairesMethods.preventDefault_dinamic_list);
     // CLOSE CONCESIONAIRES
     // CLICK CLOSE CONCESSIONAIRES
-    $(domEl.div_recurrent).on('click', 'a.concessionaire-close', concessionairesMethods.preventDefault_concessionaires_close);
+    //$(domEl.div_recurrent).on('click', 'a.concessionaire-close', concessionairesMethods.preventDefault_concessionaires_close);
     /* ------------------------------------------------------ *\
      [METHOS Control] Serialize Form
     \* ------------------------------------------------------ */

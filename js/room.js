@@ -53,16 +53,12 @@
             var $concessionaire;
             $agencia = bindings.agencie;
             SUK.loadTemplate(tempsNames.tmp_section_content_concesionaries, domEl.div_recurrent);
-            // CONCESSIONAIRES
-            //console.log('hola');
 
             if ( $agencia === undefined ) {
                 section="concesionaries";
                 $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
 
-                //SUK.loadTemplate(tempsNames.tmp_content_concessionaires_list, domEl.div_recurrent_concessionaires_list);
                 concessionairesMethods.get_concessionaries_list('');
-                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
 
                 console.log('Concesionarias principales : ' + $concessionaire);
 
@@ -71,12 +67,11 @@
                 $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
 
                 concessionairesByKeyMethods.get_concessionaries_list_by_key($agencia);
-                SUK.loadTemplate(tempsNames.tmp_info_concessionaire_data_wrapper, domEl.div_recurrent_info_concessionaire_data_wrapper);
 
                 console.log('Concesionaria seleccionada : ' + $concessionaire);
-            }/* else {
+            } else {
                 Finch.navigate('/concesionarias');
-            }*/
+            }
             catalogMethods.addAttrCatalog();
             //init_geo_core();
         },

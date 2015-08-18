@@ -39,6 +39,7 @@ domEl = {
 	"div_recurrent_head":"head#recurrent-head",
 	"div_recurrent_info_concessionaire_data_wrapper":"#content-info-concessionaire-data-wrapper",
 	"div_recurrent_instant_drive_section":"div#instant-drive-section",
+	"div_recurrent_map_concessionaire_map_canvas":"#concessionaires-map",
 	"div_recurrent_panel_menu":"div#header-sections-wrapper",
 	"div_recurrent_prices_section_model":"#prices-section-model",
 	"div_recurrent_select_list_by_model":"#content-select-list-by-model",
@@ -66,8 +67,6 @@ domEl = {
 	"validate_input":".validate_input"
 };
 tempsNames = {
-	"concessionaires_mobile":"tmp_section_block_concessionaires_mobile",
-	"concessionaires_normal":"tmp_section_block_concessionaires_normal",
 	"model_ciaz":"tmp_section_content_model_ciaz",
 	"model_grand_vitara":"tmp_section_content_model_grand_vitara",
 	"model_kizashi":"tmp_section_content_model_kizashi",
@@ -93,6 +92,7 @@ tempsNames = {
 	"tmp_funding_version_tabs":"tmp_funding_version_tabs",
 	"tmp_info_concessionaire_data_wrapper":"tmp_info_concessionaire_data_wrapper",
 	"tmp_instant_drive_section":"tmp_instant_drive_section",
+	"tmp_map_concessionaire_map_canvas":"tmp_map_concessionaire_map_canvas",
 	"tmp_mobile_menu":"tmp_mobile_menu",
 	"tmp_model_promo":"tmp_model_promo",
 	"tmp_models_menu":"tmp_models_menu",
@@ -101,8 +101,6 @@ tempsNames = {
 	"tmp_panel_menu_models":"tmp_panel_menu_models",
 	"tmp_panel_menu_owners":"tmp_panel_menu_owners",
 	"tmp_phone_call":"tmp_phone_call",
-	"tmp_section_block_concessionaires_mobile":"tmp_section_block_concessionaires_mobile",
-	"tmp_section_block_concessionaires_normal":"tmp_section_block_concessionaires_normal",
 	"tmp_section_content_catalogs":"tmp_section_content_catalogs",
 	"tmp_section_content_concesionaries":"tmp_section_content_concesionaries",
 	"tmp_section_content_contact_us":"tmp_section_content_contact_us",

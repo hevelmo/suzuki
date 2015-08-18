@@ -68,14 +68,8 @@ function tempsNames() {
         'tmp_mobile_menu' => 'tmp_mobile_menu',
 
         // CONCESSIONAIRES
-        'concessionaires_mobile' => 'tmp_section_block_concessionaires_mobile',
-        'concessionaires_normal' => 'tmp_section_block_concessionaires_normal',
-        'tmp_section_block_concessionaires_mobile' => 'tmp_section_block_concessionaires_mobile',
-        'tmp_section_block_concessionaires_normal' => 'tmp_section_block_concessionaires_normal',
-
-
-
         'tmp_content_concessionaires_list' => 'tmp_content_concessionaires_list',
-        'tmp_info_concessionaire_data_wrapper' => 'tmp_info_concessionaire_data_wrapper'
+        'tmp_info_concessionaire_data_wrapper' => 'tmp_info_concessionaire_data_wrapper',
+        'tmp_map_concessionaire_map_canvas' => 'tmp_map_concessionaire_map_canvas'
     );
 }

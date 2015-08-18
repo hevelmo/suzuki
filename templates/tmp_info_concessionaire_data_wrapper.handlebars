@@ -1,29 +1,29 @@
 <div class="concessionaire-data-wrapper">
     <div class="wrapper-title">
         <div class="data title">
-            <h1 id="concessionaire-title">Suzuki López Mateos</h1>
+            <h1 id="concessionaire-title">{{name}}</h1>
         </div>
     </div>
     <div class="wrapper-data">
         <div class="data address">
             <div class="section-name">Dirección</div>
             <address id="concessionaire-address">
-                Av. López Mateos Núm. 5654 Col. Arboledas, Zapopan, Jalisco.
+                {{address}}
             </address>
-            <p>CP: <span id="concessionaire-zip">44200</span></p>
+            <p>CP: <span id="concessionaire-zip">{{zip}}</span></p>
         </div>
         <div class="data phone">
             <div class="section-name">Teléfono</div>
-            <a id="concessionaire-phone" href="call:01-(33)-3884-8200" target="_blank">01-(33)-3884-8200</a>
+            <a id="concessionaire-phone" href="call:+{{call}}" target="_blank">{{phone}}</a>
         </div>
         <div class="data website" id="concessionaire-website-wrapper">
             <div class="section-name">Sitio Web</div>
-            <p><a id="concessionaire-website" href="#" target="_blank">Sitio Web</a></p>
+            <p><a id="concessionaire-website" href="{{website}}" target="_blank">Sitio Web</a></p>
         </div>
     </div>
     <div class="wrapper-image">
         <div class="big-image">
-            <img id="concessionaire-image" src="img/sections/concessionaires/previews/lopez-mateos-big.jpg" alt="Suzuki Aguascalientes" title="Suzuki Aguascalientes" />
+            <img id="concessionaire-image" src="img/sections/concessionaires/previews/{{img_big}}" alt="{{name}}" title="{{name}}" />
         </div>
     </div>
     <div class="wrapper-test-drive">

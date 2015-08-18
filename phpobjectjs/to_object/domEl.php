@@ -100,7 +100,9 @@ function domEl() {
         'div_recurrent_concessionaires_mobile_list' => '#content-concessionaires-list',
         'div_recurrent_concessionaires_nomobile_list' => '#content-concessionaires-list-hidden-nomobil',
 
-        'div_recurrent_info_concessionaire_data_wrapper' => '#content-info-concessionaire-data-wrapper'
+        'div_recurrent_info_concessionaire_data_wrapper' => '#content-info-concessionaire-data-wrapper',
+
+        'div_recurrent_map_concessionaire_map_canvas' => '#concessionaires-map'
 
     );
 }
