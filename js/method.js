@@ -1374,6 +1374,7 @@
         clickGoConcesinary : function (event) {
             actionMenuBarsMethods.removeCleanPanelMenu();
             $('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            $('#hidden_id_concessionaire').attr('value', '0');
             Finch.navigate('/concesionarias');
             //console.log('Click concesionarias');
         },
@@ -4851,7 +4852,7 @@
             concessionairesMethods.resize();
 
             concessionairesByKeyMethods.urlsApijs_concessionaires_by_concessionaire();
-            concessionairesByKeyMethods.urlsApijs_concessionaires_by_map();
+            concessionairesByKeyMethods.urlsApijs_concessionaires_by_map_general();
 
             initialize_map();
             concessionairesMethods.initMap();
@@ -4902,18 +4903,20 @@
                 pixelOffset: new google.maps.Size( -25, -71),
                 zIndex: null
             };
+            console.log(icon_options);
+
             conce_select_html = '';
 
             for( i1 in concessionaires ){
                 conce =  concessionaires[i1];
                 //console.log('6: conce');
-                //console.log(conce);
+                console.log(conce);
                 conce_select_html += '<option value="' + conce.key + '">' + conce.name + '</option>';
                 //console.log('7: conce_select_html');
-                //console.log(conce_select_html);
+                console.log(conce_select_html);
                 icon_latLon = new google.maps.LatLng( conce.latitud , conce.longitud );
                 //console.log('8: icon_latLon');
-                //console.log(icon_latLon);
+                console.log(icon_latLon);
 
                 var marker = new google.maps.Marker({
                     custom_data : conce,
@@ -4922,18 +4925,19 @@
                     icon        : icon_url,
 
                     reset_me    : function(){
-
+                        console.log('reset');
                     },
                     select_me   : function(){
+                        console.log('select');
                         if( title_box != null ){
                             title_box.close();
                         }
                         var html= '<div class="map-concessionaire-name"><span>' + this.custom_data.name +'</span></div>';
                         //console.log('10: click -> this.custom_data.name');
-                        //console.log(this.custom_data.name);
+                        console.log(this.custom_data.name);
                         icon_options.content = html;
                         //console.log('11: click -> html');
-                        //console.log(html);
+                        console.log(html);
                         title_box  = new InfoBox( icon_options );
                         title_box.open( map, this );
                     },
@@ -4942,12 +4946,13 @@
                 google.maps.event.addListener( marker, 'click', function() {
                     $.open_concessionaire_by_key( this.custom_data.key , true );
                     //console.log('click pin map');
-                    console.log(this.custom_data.key);
+                    //console.log(this.custom_data.key);
                 });
                 map_markers.push( marker );
+                //console.log(marker);
             }
 
-            $("#concessionaire-select").html( conce_select_html );
+            $("#concessionaire-select").prepend( conce_select_html );
             $("#concessionaire-select").chosen();
             $("#concessionaire-select").on('change', function( e ){
                 var val = $(this).val();
@@ -5053,7 +5058,12 @@
         preventDefault_concessionaires_close : function(event) {
             event.preventDefault();
             $("#concessionaires-data").removeClass('active');
+
+            $('#hidden_id_concessionaire').attr('value', '0');
+
             concessionaire_open = false;
+
+            concessionairesByKeyMethods.urlsApijs_concessionaires_by_map_general();
             $.adjust_map_width();
 
             Finch.navigate('/concesionarias');
@@ -5088,7 +5098,7 @@
                 }
             });
 
-
+            concessionairesMethods.get_map_data(url);
             $.open_concessionaire_by_key(url);
             $.set_concessionaire_by_url(url);
             $.adjust_map_width();
@@ -5125,7 +5135,15 @@
             concessionairesByKeyData = concessionairesByKeyData.sukpa[id_agencia -1];
 
             SUK.loadTemplate(tempsNames.tmp_map_concessionaire_map_canvas, domEl.div_recurrent_map_concessionaire_map_canvas, concessionairesByKeyData);
+        },
+        urlsApijs_concessionaires_by_map_general: function () {
+            var concessionairesByKeyData;
+
+            concessionairesByKeyData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
+
+            SUK.loadTemplate(tempsNames.tmp_map_concessionaire_map_canvas_general, domEl.div_recurrent_map_concessionaire_map_canvas, concessionairesByKeyData);
         }
+
     }
 /* ------------------------------------------------------ *\
  [functions] $.open_concessionaire_by_key
@@ -5299,8 +5317,8 @@
             map_center = new google.maps.LatLng( map_latLon[0] , map_latLon[1] );
             //console.log(map_center);
         }else{
-            //map_center = new google.maps.LatLng( 20.6244, -103.421 );
-            map_center = new google.maps.LatLng( map_latLon[0] , map_latLon[1] );
+            map_center = new google.maps.LatLng( 20.6244, -103.421 );
+            //map_center = new google.maps.LatLng( map_latLon[0] , map_latLon[1] );
         }
         var map_options = {
             center: map_center,

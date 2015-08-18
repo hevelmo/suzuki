@@ -93,6 +93,7 @@ tempsNames = {
 	"tmp_info_concessionaire_data_wrapper":"tmp_info_concessionaire_data_wrapper",
 	"tmp_instant_drive_section":"tmp_instant_drive_section",
 	"tmp_map_concessionaire_map_canvas":"tmp_map_concessionaire_map_canvas",
+	"tmp_map_concessionaire_map_canvas_general":"tmp_map_concessionaire_map_canvas_general",
 	"tmp_mobile_menu":"tmp_mobile_menu",
 	"tmp_model_promo":"tmp_model_promo",
 	"tmp_models_menu":"tmp_models_menu",

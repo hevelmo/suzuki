@@ -270,6 +270,12 @@
         height:auto !important;
         overflow:visible !important
     }
+    .window-adaptable.hidden-nomobil {
+        display: none;
+    }
+    #concessionaires #concessionaires-list .content .concessionaire-list {
+        display: block !important;
+    }
     #concessionaires #concessionaires-list .content .concessionaire-list li.separator {
         display:none
     }
