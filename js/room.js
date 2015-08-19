@@ -66,9 +66,13 @@
                 section="concesionaries_by_agencie";
                 $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
 
-                concessionairesByKeyMethods.get_concessionaries_list_by_key($agencia);
-
-                console.log('Concesionaria seleccionada : ' + $concessionaire);
+                if ($concessionaire == 0) {
+                    console.log('Retorna concesionaria : ' + $concessionaire);
+                    Finch.navigate('/concesionarias');
+                } else {
+                    concessionairesByKeyMethods.get_concessionaries_list_by_key($agencia);
+                    console.log('Concesionaria seleccionada : ' + $concessionaire);
+                }
             } else {
                 Finch.navigate('/concesionarias');
             }

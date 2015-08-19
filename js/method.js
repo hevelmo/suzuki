@@ -4859,11 +4859,10 @@
             /*
             concessionairesMethods.preventDefault_see_concessionaires();
             */
-            return concessionairesData;
+            //return concessionairesData;
         },
         get_map_data: function( sukpa, url ){
             var concessionairesData;
-
             var id_agencia = +SUK.getValue('#hidden_id_concessionaire');
 
             concessionairesData = SUK.getInternalJSON('api/data-json/concessionaires/all.json');
@@ -4875,7 +4874,7 @@
             concessionaires = newConcessionaires;
 
             //console.log('5: concessionaires');
-            console.log(concessionaires);
+            //console.log(concessionaires);
             //setup all markers
             var i1;
             var icon_latLon, conce, conce_select_html,
@@ -4903,20 +4902,20 @@
                 pixelOffset: new google.maps.Size( -25, -71),
                 zIndex: null
             };
-            console.log(icon_options);
+            //console.log(icon_options);
 
             conce_select_html = '';
 
             for( i1 in concessionaires ){
                 conce =  concessionaires[i1];
                 //console.log('6: conce');
-                console.log(conce);
+                //console.log(conce);
                 conce_select_html += '<option value="' + conce.key + '">' + conce.name + '</option>';
                 //console.log('7: conce_select_html');
-                console.log(conce_select_html);
+                //console.log(conce_select_html);
                 icon_latLon = new google.maps.LatLng( conce.latitud , conce.longitud );
                 //console.log('8: icon_latLon');
-                console.log(icon_latLon);
+                //console.log(icon_latLon);
 
                 var marker = new google.maps.Marker({
                     custom_data : conce,
@@ -4934,10 +4933,10 @@
                         }
                         var html= '<div class="map-concessionaire-name"><span>' + this.custom_data.name +'</span></div>';
                         //console.log('10: click -> this.custom_data.name');
-                        console.log(this.custom_data.name);
+                        //console.log(this.custom_data.name);
                         icon_options.content = html;
                         //console.log('11: click -> html');
-                        console.log(html);
+                        //console.log(html);
                         title_box  = new InfoBox( icon_options );
                         title_box.open( map, this );
                     },
@@ -5050,10 +5049,17 @@
             //console.log('click dinamic list');
             $.adjust_map_width();
 
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('#concessionaires #concessionaires-list .content .concessionaire-list').css('<display></display>','none');
+                $('#concessionaires #concessionaires-data').css('height','auto');
+                console.log('click');
+            }
+
             concessionairesByKeyMethods.urlsApijs_concessionaires_by_concessionaire(id_agencia);
             concessionairesByKeyMethods.urlsApijs_concessionaires_by_map(id_agencia);
 
-            console.log(agencia);
+
+            //console.log(agencia);
         },
         preventDefault_concessionaires_close : function(event) {
             event.preventDefault();
@@ -5179,8 +5185,8 @@
         //console.log(map_markers.length);
         while( ic-- ){
             cm = map_markers[ ic ];
-            console.log(cm);
-            console.log(map_markers[ ic ]);
+            //console.log(cm);
+            //console.log(map_markers[ ic ]);
             if( cm.custom_data.key ==  current_concessionaire  ){
                 //console.log(ic);
                 cm.select_me();
@@ -5313,7 +5319,7 @@
             //console.log(concessionaire_preselected);
             //console.log($("#map_canvas"));
             map_latLon = ( $("#map_canvas").attr("data-lat-lon") ).split(',');
-            console.log(map_latLon);
+            //console.log(map_latLon);
             map_center = new google.maps.LatLng( map_latLon[0] , map_latLon[1] );
             //console.log(map_center);
         }else{
