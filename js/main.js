@@ -33,6 +33,9 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('click', '.main-buttons a', warrantyMethods.main_buttons);
     $(domEl.div_recurrent).on('click', 'a.close-warranty-button', warrantyMethods.close_warranty_button);
 
+    // CLICK HOME CROSS
+    $(domEl.div_recurrent).on('click', '#home-scross', financingByModelsMethods.clickGoHomeCross);
+
     // DINAMIC LIST CONCESSIONAIRES
     // CLICK DINAMIC LIST
     //$(domEl.div_recurrent).on('click', '#concessionaires-dynamic-list li.concessionaire, #concessionaires-dynamic-list a', concessionairesMethods.preventDefault_dinamic_list);
@@ -85,13 +88,11 @@ $(document).ready(function() {
     /* ------------------------------------------------------ *\
      [Methods] DEMO'
     \* ------------------------------------------------------ */
-
     //This group of events will not be used, they are only example, remove later
 
     // GENERAL CLICK RADIO & CHECKBOX
     $(domEl.div_recurrent).on('change', ":checkbox", changeInputsMethods.clickChangeCheckbox);
     $(domEl.div_recurrent).on('click', ".label-radio", changeInputsMethods.clcikChangeRadio);
-
     // EVENT CLICK GO INDEX
     $(domEl.div_recurrent_body).on('click', domEl.button_return_index, actionMenuBarsMethods.clickReturnIndex);
     // EVENT CLICK GO GROUP
@@ -100,7 +101,6 @@ $(document).ready(function() {
     $(domEl.div_recurrent_body).on('click', domEl.button_go_concesionaries, actionMenuBarsMethods.clickGoConcesinary);
     // EVENT CLICK GO CATALOGS
     $(domEl.div_recurrent_body).on('click', domEl.button_go_catalogs, actionMenuBarsMethods.clickGoCatalogs);
-
     //$(domEl.div_recurrent).delegate('a.switch-catalog', 'click', '.catalog_cars_wrapper', addDelegatMethods.preventDefaultCatalogCarsWrapper);
     // EVENT CLICK GO CONTACT US
     $(domEl.div_recurrent_body).on('click', domEl.button_go_contact, actionMenuBarsMethods.clickGoContactUs);
@@ -139,7 +139,17 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('click', '#suk_financing_general_submit', formFinancingGeneral.sendFinancingGeneralForm);
     // SEND FORM FINANCING BY MODEL
     $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelSwiftSport.validate_fields_keyup);
-    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit', formFinancingByModelSwiftSport.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelSwift.validate_fields_keyup);
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelKizashi.validate_fields_keyup);
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelGrandVitara.validate_fields_keyup);
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelSCross.validate_fields_keyup);
+    $(domEl.div_recurrent).on('keyup', '.fbm_validate_input', formFinancingByModelCiaz.validate_fields_keyup);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit_swift_sport', formFinancingByModelSwiftSport.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit_swift', formFinancingByModelSwift.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit_kizashi', formFinancingByModelKizashi.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit_grand_vitara', formFinancingByModelGrandVitara.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit_s_cross', formFinancingByModelSCross.sendFinancingByModelForm);
+    $(domEl.div_recurrent).on('click', '#suk_financing_by_model_submit_ciaz', formFinancingByModelCiaz.sendFinancingByModelForm);
     // SEND FORM TEST DRIVE MODEL
     $(domEl.div_recurrent).on('keyup', '.tdm_validate_input', formTestDriveMethods.validate_fields_keyup);
     $(domEl.div_recurrent).on('click', '#suk_test_dirve_model_submit', formTestDriveMethods.sendTestDriveForm);
@@ -156,12 +166,12 @@ $(document).ready(function() {
     $('#footer-wrapper').on('click', domEl.header_models_button, openPanelMenuMethods.clickPanel_general);
     // EVENT CLICK GO MODEL
     $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
-    $(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
+    //$(domEl.div_recurrent_body).on('click', domEl.header_models_button, openPanelMenuMethods.clickModelsPanel);
     // EVENT CLICK GO BY MODEL
     $(domEl.div_recurrent_body).on('click', '#go-model-swift-sport', panelMenuModelsByModel.clickGoSwiftSport);
     $(domEl.div_recurrent_body).on('click', '#go-model-swift', panelMenuModelsByModel.clickGoSwift);
-    $(domEl.div_recurrent_body).on('click', '#go-model-sx4-crossover', panelMenuModelsByModel.clickGoSx4Crossover);
-    $(domEl.div_recurrent_body).on('click', '#go-model-sx4-sedan', panelMenuModelsByModel.clickGoSx4Sedan);
+    //$(domEl.div_recurrent_body).on('click', '#go-model-sx4-crossover', panelMenuModelsByModel.clickGoSx4Crossover);
+    //$(domEl.div_recurrent_body).on('click', '#go-model-sx4-sedan', panelMenuModelsByModel.clickGoSx4Sedan);
     $(domEl.div_recurrent_body).on('click', '#go-model-kizashi', panelMenuModelsByModel.clickGoKizashi);
     $(domEl.div_recurrent_body).on('click', '#go-model-grand-vitara', panelMenuModelsByModel.clickGoGrandVitara);
     $(domEl.div_recurrent_body).on('click', '#go-model-s-cross', panelMenuModelsByModel.clickGoSCross);
@@ -238,18 +248,7 @@ $(document).ready(function() {
         prevEffect  : 'none',
         width       : '70%'
     });
-    /*if(!IS_MOBILE){
-        $(".gallery-box-link").on('click mouseup', function( e ){
-            e.preventDefault();
-        }).fancybox({
-                'autoScale' : false,
-                'href' : $('.gallery-box-link.html').data('link'),
-                'type':'iframe',
-                'padding' : 0,
-                 maxWidth   : 1200,
-                 minWidth   : 920
-            });
-    }*/
+
     //Specifications Slider controls and functionality
     var specifications_i = 0;
     var specifications_total =  $('.specifications-wrapper .specification').length - 1;
@@ -306,4 +305,19 @@ $(document).ready(function() {
         }, 900 );
     });
     display_versions_comparative();
+    /*
+    */
+    /*if(!IS_MOBILE){
+        $(".gallery-box-link").on('click mouseup', function( e ){
+            e.preventDefault();
+        }).fancybox({
+                'autoScale' : false,
+                'href' : $('.gallery-box-link.html').data('link'),
+                'type':'iframe',
+                'padding' : 0,
+                 maxWidth   : 1200,
+                 minWidth   : 920
+            });
+    }*/
+
 });

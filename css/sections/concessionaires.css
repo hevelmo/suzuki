@@ -273,9 +273,9 @@
     .window-adaptable.hidden-nomobil {
         display: none;
     }
-    #concessionaires #concessionaires-list .content .concessionaire-list {
+    /*#concessionaires #concessionaires-list .content .concessionaire-list {
         display: block !important;
-    }
+    }*/
     #concessionaires #concessionaires-list .content .concessionaire-list li.separator {
         display:none
     }
@@ -356,7 +356,7 @@
         -moz-box-shadow:0 0px 5px #999
     }
     #concessionaires #concessionaires-data {
-        height:0;
+        /*height:0;*/
         padding-top:0;
         box-shadow:inset 0px 0 0px rgba(0, 0, 0, 0), 0px 0 0px rgba(0, 0, 0, 0);
         z-index:1
@@ -869,9 +869,20 @@
         text-align:center
     }
     #back-list-concessionaires {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        border-bottom: 0;
+        background: #0051ad;
+        text-align: center;
+        padding: 15px 0;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    /*#back-list-concessionaires {
         display:inline-block;
         margin:0 0 15px;
         color:#0051ad;
         text-decoration:underline
-    }
+    }*/
 }

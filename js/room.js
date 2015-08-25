@@ -60,18 +60,18 @@
 
                 concessionairesMethods.get_concessionaries_list('');
 
-                console.log('Concesionarias principales : ' + $concessionaire);
+                //console.log('Concesionarias principales : ' + $concessionaire);
 
             } else if ( $agencia !== undefined ) {
                 section="concesionaries_by_agencie";
                 $concessionaire = +SUK.getValue('#hidden_id_concessionaire');
 
                 if ($concessionaire == 0) {
-                    console.log('Retorna concesionaria : ' + $concessionaire);
+                    //console.log('Retorna concesionaria : ' + $concessionaire);
                     Finch.navigate('/concesionarias');
                 } else {
                     concessionairesByKeyMethods.get_concessionaries_list_by_key($agencia);
-                    console.log('Concesionaria seleccionada : ' + $concessionaire);
+                    //console.log('Concesionaria seleccionada : ' + $concessionaire);
                 }
             } else {
                 Finch.navigate('/concesionarias');
@@ -660,12 +660,58 @@
                 lugar = '';
                 section="financing-" + $gamaModel;
 
+                if ( $gamaModel === 'swift-sport') {
+                    SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+                    SUK.loadTemplate(tempsNames.tmp_financing_swift_sport, domEl.div_recurrent_test_drive_selection_section);
+                    financingByModelMethods.financingByModel();
+                    formFinancingByModelSwiftSport.refreshFrom();
+                    financingByModelMethods.valor($gamaModel);
+                    console.log($gamaModel);
+                } else if ( $gamaModel === 'swift') {
+                    SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+                    SUK.loadTemplate(tempsNames.tmp_financing_swift, domEl.div_recurrent_test_drive_selection_section);
+                    financingByModelMethods.financingByModel();
+                    formFinancingByModelSwift.refreshFrom();
+                    financingByModelMethods.valor($gamaModel);
+                    console.log($gamaModel);
+                } else if ( $gamaModel === 'kizashi') {
+                    SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+                    SUK.loadTemplate(tempsNames.tmp_financing_kizashi, domEl.div_recurrent_test_drive_selection_section);
+                    financingByModelMethods.financingByModel();
+                    formFinancingByModelKizashi.refreshFrom();
+                    financingByModelMethods.valor($gamaModel);
+                    console.log($gamaModel);
+                } else if ( $gamaModel === 'grand-vitara') {
+                    SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+                    SUK.loadTemplate(tempsNames.tmp_financing_grand_vitara, domEl.div_recurrent_test_drive_selection_section);
+                    financingByModelMethods.financingByModel();
+                    formFinancingByModelGrandVitara.refreshFrom();
+                    financingByModelMethods.valor($gamaModel);
+                    console.log($gamaModel);
+                } else if ( $gamaModel === 's-cross') {
+                    SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+                    SUK.loadTemplate(tempsNames.tmp_financing_scross, domEl.div_recurrent_test_drive_selection_section);
+                    financingByModelMethods.financingByModel();
+                    formFinancingByModelSCross.refreshFrom();
+                    financingByModelMethods.valor($gamaModel);
+                    console.log($gamaModel);
+                } else if ( $gamaModel === 'ciaz') {
+                    SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
+                    SUK.loadTemplate(tempsNames.tmp_financing_ciaz, domEl.div_recurrent_test_drive_selection_section);
+                    financingByModelMethods.financingByModel();
+                    formFinancingByModelCiaz.refreshFrom();
+                    financingByModelMethods.valor($gamaModel);
+                    console.log($gamaModel);
+                }
+
+                /*
                 SUK.loadTemplate(tempsNames.tmp_section_content_test_drive_selection, domEl.div_recurrent);
                 SUK.loadTemplate(tempsNames.tmp_panel_menu_financing, domEl.div_recurrent_test_drive_selection_section);
 
                 financingByModelMethods.financingByModel();
                 formFinancingGeneral.refreshFrom();
                 financingByModelMethods.valor($gamaModel);
+                */
             }
 
             //init_geo_core();

@@ -1,75 +1,447 @@
-.test_drive_service_phonebook{background:url("../../img/sections/home/slider/slider-full.jpg") center top no-repeat;padding:95px 0 0}
-.test_drive_service_phonebook_wrapper{height:auto}
-.test_drive_service_phonebook_container{height:auto}
-.test_drive_content{margin:291px auto 0;width:960px}
-.test_drive_content .test_drive_description{margin:0;height:50px;font-weight:300;color:#ffffff;font-size:18px;line-height:16px}
-.test_drive_content .test_drive_description p{color: #000;margin: 0;font-weight: bolder}
-.test_drive_content .test_drive_description p.test_drive_description_title{font-size:24px;line-height:24px}
+.test_drive_service_phonebook {
+    background: url("../../img/sections/home/slider/slider-full.jpg") center top no-repeat;
+    padding: 95px 0 0;
+}
 
-#form-wrapper{margin-top:31px}
-.test_drive_main{margin:0 auto 30px;width:960px}
-.test_drive_main .test_drive_service_content{float:left;width:540px}
-.test_drive_main .test_drive_service_content .contact_elements{width:540px;height:auto;float:left}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element{height:auto;width:49%}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container{width:265px !important}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element input{width:233px}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element.a{float:left;margin-right:1%}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element.b{float:right;margin-left:1%}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element.ab{float:none;height:auto;width:100%}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element.ab textarea{width:94%;height:60px}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element.ab .invalid-message{width:519px}
-.test_drive_main .contact_sidebar{float: left;width: 370px;margin: 30px 35px 0 auto}
-.test_drive_main .contact_sidebar .contact_social{width:330px;padding:20px;background-color:#f7f7f7;font-size:13px}
-.test_drive_main .contact_sidebar .contact_social p{font-size:13px}
-.test_drive_main .contact_sidebar .contact_social p.contact_social_title{font-weight:700;font-size:15px;line-height:15px}
-.test_drive_main .contact_sidebar .contact_social .social{width:200px;height:20px;line-height:27px;padding:0 0 0 35px;margin:10px 0}
-.test_drive_main .contact_sidebar .contact_social .social a,.test_drive_main .contact_sidebar .contact_social .social a:hover{line-height:27px;color:#000;text-decoration:none}
-.test_drive_main .contact_sidebar .contact_social .social.fb{margin-top:30px;background:url("../../img/sections/contact/fb.png") no-repeat}
-.test_drive_main .contact_sidebar .contact_social .social.in{background:url("../../img/sections/contact/in.png") no-repeat}
-.test_drive_main .contact_sidebar .contact_social .social.tw{background:url("../../img/sections/contact/tw.png") no-repeat}
-.contact_alert{background:url("../../img/sections/contact/alert-icon.png") no-repeat #e0261b;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#ffffff;display:none;font-size:15px;height:35px;margin:10px 0;padding:10px 0 0 45px;width:495px}
-.enviar{width:auto !important;font-family:'Lato';font-weight:300}
-#recibir_noticias{margin:20px 0}
-#revisa_aviso{margin-top:20px;font-size:14px;line-height:19px}
-#revisa_aviso a{color:#0051ad;text-decoration:underline}
-.enviar:hover{background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0c6dc4), color-stop(1, #0c6dc4));background:-moz-linear-gradient(center top, #0c6dc4 5%, #0c6dc4 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c6dc4', endColorstr='#0c6dc4');background-color:#0c6dc4;color:#ffffff;text-decoration:none}
-.enviar:active{top:1px}
-.contact_element_mistake{color:#e64f54;font-weight:700}
-.form-thanks{text-align:center;width:540px;margin-top:30px;position:relative}
-.form-thanks .agradecimiento_titulo{color:#003751;font-size:25px;font-weight:400}
-.form-thanks .agradecimiento_titulo2{font-size:16px;font-weight:400}
-.form-thanks .agradecimiento_titulo3{color:#000000;font-size:14px;font-weight:300;font-style:italic}
-.form-thanks hr{border:0;width:100%;color:#f00;background-color:#dfdfdf;height:1px}
-.form-thanks .arrow{position:absolute;bottom:-65px;right:-61px;z-index:9}
-@media only screen and (max-device-width: 767px){.promos-wrapper{height:auto;padding:15px}
-.promos-container{height:auto}
-.promotion{background:none;padding:0}
-.promo-content{width:100%;margin:0 auto}
-.promo-content .description{height:auto;color:#333}
-.promo-content .description .description_title{text-align:center;margin:18px 0 20px;font-size:20px;width:100%}
-.promo-content .description p{color:inherit;line-height:19px;font-size:14px;width:85%}
-.test_drive_main{width:100%;margin:0 auto}
-.test_drive_main .test_drive_service_content{width:100%;float:none;overflow:hidden}
-.test_drive_main .test_drive_service_content .contact_elements{width:100%;height:auto}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab{width:100%;height:auto !important;float:none;min-height:90px;margin:0}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element p,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a p,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b p,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab p{margin:0 0 5px 0}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element p label,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a p label,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b p label,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab p label{font-weight:bold;font-size:14px}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .invalid-message,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .invalid-message,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .invalid-message,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .invalid-message{margin:10px 0 0;width:96% !important;padding:7px 2%}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element input,.test_drive_main .test_drive_service_content .contact_elements .contact_element .icon,.test_drive_main .test_drive_service_content .contact_elements .contact_element textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .icon,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .icon,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b textarea,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab input,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .icon,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab textarea{width:95%;min-width:95% !important;padding:13px 2% !important}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b textarea,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab textarea{margin:0}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .enviar,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .enviar,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .enviar,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .enviar{background-color:#003f87 !important;width:100% !important;padding:12px 0 !important;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;text-align:center;font-weight:normal}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container{width:100% !important}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-single,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-single,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-single,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-single{padding:10px 5px}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-single div,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-single div,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-single div,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-single div{top:9px}
-.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-drop,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-drop,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-drop,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-drop{width:99.5% !important}.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-drop .chzn-search input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-drop .chzn-search input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-drop .chzn-search input,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-drop .chzn-search input{min-width:93.5% !important}.test_drive_main .contact_sidebar{float:none;width:100%;margin:25px 0 10px}.test_drive_main .contact_sidebar .contact_social{width:auto;display:block}.test_drive_main .contact_sidebar .contact_social .contact_social_title{font-size:18px !important;font-weight:normal !important}.test_drive_main .contact_sidebar .contact_social p,.test_drive_main .contact_sidebar .contact_social .social a{font-size:14px;color:#333}.contact_alert{width:100%;min-height:25px;height:auto;padding:10px 0;background-position:0 50%}.contact_alert span{padding:0 10px 0 45px;display:block}.form-thanks{width:100%;text-align:left}.form-thanks .agradecimiento_titulo{font-size:16px;text-align:center;font-weight:bold;padding-bottom:15px;border-bottom:1px solid #e5e5e5}.form-thanks .agradecimiento_titulo2{font-size:14px;color:#333}.form-thanks .agradecimiento_titulo2 span{display:block;margin:20px 0;color:inherit}.form-thanks .agradecimiento_titulo3{font-weight:normal}.form-thanks hr{display:none}.form-thanks .arrow{display:none}#recibir_noticias{margin:20px 0}#form-wrapper{margin-top:20px;overflow:hidden}}
+.test_drive_service_phonebook_wrapper {
+    height: auto;
+}
 
+.test_drive_service_phonebook_container {
+    height: auto;
+}
 
+.test_drive_content {
+    margin: 291px auto 0;
+    width: 960px;
+}
+
+.test_drive_content .test_drive_description {
+    margin: 0;
+    height: 50px;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 16px;
+}
+
+.test_drive_content .test_drive_description p {
+    color: #000;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.test_drive_content .test_drive_description p.test_drive_description_title {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+#form-wrapper {
+    margin-top: 31px;
+}
+
+.test_drive_main {
+    margin: 0 auto 30px;
+    width: 960px;
+}
+
+.test_drive_main .test_drive_service_content {
+    float: left;
+    width: 540px;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements {
+    width: 540px;
+    height: auto;
+    float: left;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element {
+    height: auto;
+    width: 49%;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container {
+    width: 265px !important;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element input {
+    width: 233px;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element.a {
+    float: left;
+    margin-right: 1%;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element.b {
+    float: right;
+    margin-left: 1%;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element.ab {
+    float: none;
+    height: auto;
+    width: 100%;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element.ab textarea {
+    width: 94%;
+    height: 60px;
+}
+
+.test_drive_main .test_drive_service_content .contact_elements .contact_element.ab .invalid-message {
+    width: 519px;
+}
+
+.test_drive_main .contact_sidebar {
+    float: left;
+    width: 370px;
+    margin: 30px 35px 0 auto;
+}
+
+.test_drive_main .contact_sidebar .contact_social {
+    width: 330px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    font-size: 13px;
+}
+
+.test_drive_main .contact_sidebar .contact_social p {
+    font-size: 13px;
+}
+
+.test_drive_main .contact_sidebar .contact_social p.contact_social_title {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.test_drive_main .contact_sidebar .contact_social .social {
+    width: 200px;
+    height: 20px;
+    line-height: 27px;
+    padding: 0 0 0 35px;
+    margin: 10px 0;
+}
+
+.test_drive_main .contact_sidebar .contact_social .social a,.test_drive_main .contact_sidebar .contact_social .social a:hover {
+    line-height: 27px;
+    color: #000;
+    text-decoration: none;
+}
+
+.test_drive_main .contact_sidebar .contact_social .social.fb {
+    margin-top: 30px;
+    background: url("../../img/sections/contact/fb.png") no-repeat;
+}
+
+.test_drive_main .contact_sidebar .contact_social .social.in {
+    background: url("../../img/sections/contact/in.png") no-repeat;
+}
+
+.test_drive_main .contact_sidebar .contact_social .social.tw {
+    background: url("../../img/sections/contact/tw.png") no-repeat;
+}
+
+.contact_alert {
+    background: url("../../img/sections/contact/alert-icon.png") no-repeat #e0261b;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #ffffff;
+    display: none;
+    font-size: 15px;
+    height: 35px;
+    margin: 10px 0;
+    padding: 10px 0 0 45px;
+    width: 495px;
+}
+
+.enviar {
+    width: auto !important;
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+#recibir_noticias {
+    margin: 20px 0;
+}
+
+#revisa_aviso {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+#revisa_aviso a {
+    color: #0051ad;
+    text-decoration: underline;
+}
+
+.enviar:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0c6dc4), color-stop(1, #0c6dc4));
+    background: -moz-linear-gradient(center top, #0c6dc4 5%, #0c6dc4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c6dc4', endColorstr='#0c6dc4');
+    background-color: #0c6dc4;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.enviar:active {
+    top: 1px;
+}
+
+.contact_element_mistake {
+    color: #e64f54;
+    font-weight: 700;
+}
+
+.form-thanks {
+    text-align: center;
+    width: 540px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.form-thanks .agradecimiento_titulo {
+    color: #003751;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.form-thanks .agradecimiento_titulo2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form-thanks .agradecimiento_titulo3 {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.form-thanks hr {
+    border: 0;
+    width: 100%;
+    color: #f00;
+    background-color: #dfdfdf;
+    height: 1px;
+}
+
+.form-thanks .arrow {
+    position: absolute;
+    bottom: -65px;
+    right: -61px;
+    z-index: 9;
+}
+
+@media only screen and (max-device-width: 767px) {
+    .promos-wrapper {
+        height: auto;
+        padding: 15px;
+    }
+
+    .promos-container {
+        height: auto;
+    }
+
+    .promotion {
+        background: none;
+        padding: 0;
+    }
+
+    .promo-content {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .promo-content .description {
+        height: auto;
+        color: #333;
+    }
+
+    .promo-content .description .description_title {
+        text-align: center;
+        margin: 18px 0 20px;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .promo-content .description p {
+        color: inherit;
+        line-height: 19px;
+        font-size: 14px;
+        width: 85%;
+    }
+
+    .test_drive_main {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .test_drive_main .test_drive_service_content {
+        width: 100%;
+        float: none;
+        overflow: hidden;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements {
+        width: 100%;
+        height: auto;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab {
+        width: 100%;
+        height: auto !important;
+        float: none;
+        min-height: 90px;
+        margin: 0;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element p,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a p,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b p,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab p {
+        margin: 0 0 5px 0;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element p label,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a p label,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b p label,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab p label {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .invalid-message,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .invalid-message,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .invalid-message,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .invalid-message {
+        margin: 10px 0 0;
+        width: 96% !important;
+        padding: 7px 2%;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element input,.test_drive_main .test_drive_service_content .contact_elements .contact_element .icon,.test_drive_main .test_drive_service_content .contact_elements .contact_element textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .icon,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .icon,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b textarea,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab input,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .icon,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab textarea {
+        width: 95%;
+        min-width: 95% !important;
+        padding: 13px 2% !important;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a textarea,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b textarea,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab textarea {
+        margin: 0;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .enviar,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .enviar,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .enviar,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .enviar {
+        background-color: #003f87 !important;
+        width: 100% !important;
+        padding: 12px 0 !important;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container {
+        width: 100% !important;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-single,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-single,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-single,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-single {
+        padding: 10px 5px;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-single div,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-single div,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-single div,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-single div {
+        top: 9px;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-drop,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-drop,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-drop,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-drop {
+        width: 99.5% !important;
+    }
+
+    .test_drive_main .test_drive_service_content .contact_elements .contact_element .chzn-container .chzn-drop .chzn-search input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.a .chzn-container .chzn-drop .chzn-search input,.test_drive_main .test_drive_service_content .contact_elements .contact_element.b .chzn-container .chzn-drop .chzn-search input,.test_drive_main .test_drive_service_content .contact_elements .contact-element.ab .chzn-container .chzn-drop .chzn-search input {
+        min-width: 93.5% !important;
+    }
+
+    .test_drive_main .contact_sidebar {
+        float: none;
+        width: 100%;
+        margin: 25px 0 10px;
+    }
+
+    .test_drive_main .contact_sidebar .contact_social {
+        width: auto;
+        display: block;
+    }
+
+    .test_drive_main .contact_sidebar .contact_social .contact_social_title {
+        font-size: 18px !important;
+        font-weight: normal !important;
+    }
+
+    .test_drive_main .contact_sidebar .contact_social p,.test_drive_main .contact_sidebar .contact_social .social a {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .contact_alert {
+        width: 100%;
+        min-height: 25px;
+        height: auto;
+        padding: 10px 0;
+        background-position: 0 50%;
+    }
+
+    .contact_alert span {
+        padding: 0 10px 0 45px;
+        display: block;
+    }
+
+    .form-thanks {
+        width: 100%;
+        text-align: left;
+    }
+
+    .form-thanks .agradecimiento_titulo {
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .form-thanks .agradecimiento_titulo2 {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .form-thanks .agradecimiento_titulo2 span {
+        display: block;
+        margin: 20px 0;
+        color: inherit;
+    }
+
+    .form-thanks .agradecimiento_titulo3 {
+        font-weight: normal;
+    }
+
+    .form-thanks hr {
+        display: none;
+    }
+
+    .form-thanks .arrow {
+        display: none;
+    }
+
+    #recibir_noticias {
+        margin: 20px 0;
+    }
+
+    #form-wrapper {
+        margin-top: 20px;
+        overflow: hidden;
+    };
+}
 
 .tdsp {
-	padding: 15px auto;
+    padding: 15px auto;
 }
+
 .tdsp_panel {
-	overflow: hidden;
-	overflow-x: hidden;
-	width: 960px;
+    overflow: hidden;
+    overflow-x: hidden;
+    width: 960px;
 }
