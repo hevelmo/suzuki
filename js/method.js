@@ -3771,10 +3771,10 @@
 
                     if ($('input[name="suk_gdl_financing_by_model_drive"]:checked').val() == 'Sí deseas manejarlo') {
                         $('#funding_resume_concessionaire').text( selected_concessionaire );
-                        ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                        ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: ' + fuh_data.key + ',' + 0.012 * funding_data.price, 0.012 * funding_data.price );
                         //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                     } else {
-                        ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key, 0.012 * funding_data.price );
+                        ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: ' + fuh_data.key + ',' + 0.012 * funding_data.price, 0.012 * funding_data.price );
                         //console.log("ga('send', 'event', 'Financiamiento', 'Confirmacion_No_Prueba', 'Financing: '" + fuh_data.key, price_total +")");
                     }
                     $('#funding_form').fadeOut( 300 , function(){
