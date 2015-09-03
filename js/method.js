@@ -4878,12 +4878,14 @@
                 SUK.setValue('#hidden_key_model_gama', $gama_model_key);
                 //console.log($gama_model_key);
 
-                change_model_key = $gama_model_key.replace("-"," ", $gama_model_key);
+                //change_model_key = $gama_model_key.replace("-"," ", $gama_model_key);
 
                 //console.log("ga('send', 'event', 'Financiamiento por Modelo', 'Cotización '" + change_model_key +"', 'Financiamiento '" + change_model_key + "')");
-                ga('send', 'event', 'Financiamiento por Modelo', 'Cotización ' + change_model_key, 'Financiamiento ' + change_model_key);
+                //ga('send', 'event', 'Financiamiento por Modelo', 'Cotización ' + change_model_key, 'Financiamiento ' + change_model_key);
+                ga('send', 'event', 'Financiamiento por Modelo', 'Cotización ' + $gama_model_key, 'Financiamiento ' + $gama_model_key);
 
                 Finch.navigate('/financiamiento/' + $gama_model_key);
+                console.log('/financiamiento/' + $gama_model_key);
                 //Finch.navigate('/financiamiento/swift-sport');
             },
             clickGoHomeCross : function(event) {
